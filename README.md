@@ -30,7 +30,7 @@ First, create an instance of the Vendure class:
 import 'package:vendure_sdk/vendure.dart';
 
 void main() async {
-  final vendure = Vendure('http://localhost:3000/shop-api');
+  final vendure = Vendure('http://localhost:3000/shop-api',token:'vendure-auth-token');
 
   // Use the vendure instance for various operations
 }
