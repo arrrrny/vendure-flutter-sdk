@@ -30,4 +30,32 @@ class AuthOperations {
         firebaseAuthMutation, variables, AuthenticationResult.fromJson,
         expectedDataType: 'authenticate');
   }
+
+  Future<String> getToken(
+      {required String username,
+      required String password,
+      String tokenName = 'vendure-auth-token'}) async {
+    var variables = {
+      'username': username,
+      'password': password,
+    };
+    var headersResponse = await CustomOperations(_client)
+        .extractResponseHeaders(OperationType.mutation, authenticateMutation,
+            variables, [tokenName]);
+    return headersResponse[tokenName];
+  }
+
+  Future<String> getTokenFirebase(
+      {required String uid,
+      required String jwt,
+      String tokenName = 'vendure-auth-token'}) async {
+    var variables = {
+      'uid': uid,
+      'jwt': jwt,
+    };
+    var headersResponse = await CustomOperations(_client)
+        .extractResponseHeaders(OperationType.mutation, firebaseAuthMutation,
+            variables, [tokenName]);
+    return headersResponse[tokenName];
+  }
 }

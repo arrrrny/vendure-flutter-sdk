@@ -1,6 +1,6 @@
 name: vendure
-description: A Flutter SDK for Vendure Open Source Headless Commerce Framework.
-version: 0.1.0
+description: Flutter SDK for Vendure Open Source Headless Commerce Framework.
+version: 0.2.0
 homepage: https://github.com/arrrrny/vendure-flutter-sdk
 
 environment:
