@@ -4,18 +4,23 @@ import 'package:vendure/src/types/update_order_items_result/update_order_items_r
 import 'package:vendure/src/vendure/custom_operations.dart';
 
 class OrderOperations {
-  final GraphQLClient _client;
+  final Future<GraphQLClient> Function() _client;
 
   OrderOperations(this._client);
 
-  Future<UpdateOrderItemsResult> addItemToOrder(
-      {required productVariantId, required int quantity}) async {
+  Future<UpdateOrderItemsResult> addItemToOrder({
+    required productVariantId,
+    required int quantity,
+  }) async {
     var variables = {
       'productVariantId': productVariantId,
       'quantity': quantity,
     };
     return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
-        addItemToOrderMutation, variables, UpdateOrderItemsResult.fromJson,
-        expectedDataType: 'addItemToOrder');
+      addItemToOrderMutation,
+      variables,
+      UpdateOrderItemsResult.fromJson,
+      expectedDataType: 'addItemToOrder',
+    );
   }
 }

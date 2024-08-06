@@ -1,10 +1,13 @@
 import 'package:graphql/client.dart';
+import 'package:vendure/src/vendure/operation_type_enum.dart';
 import 'package:vendure/src/vendure/vendure_utils.dart';
 
 class CustomOperations {
-  final GraphQLClient _client;
+  final Future<GraphQLClient> Function() _client;
 
   CustomOperations(this._client);
+
+  // final GraphQLClient _client;
 
   Future<T> mutate<T>(String mutation, dynamic variables,
       T Function(Map<String, dynamic>) fromJson,
@@ -13,14 +16,8 @@ class CustomOperations {
       document: gql(mutation),
       variables: variables,
     );
-
-    final result = await _client.mutate(options);
-
-    if (result.hasException) {
-      throw Exception(result.exception.toString());
-    }
-    // print(result.data);
-
+    final client = await _client();
+    final result = await client.mutate(options);
     var data = expectedDataType != null && result.data != null
         ? result.data![expectedDataType]
         : result.data;
@@ -28,6 +25,11 @@ class CustomOperations {
     if (data != null && data['__typename'] == 'ErrorResult') {
       throw Exception(data['message']);
     }
+
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+
     data = VendureUtils.normalizeGraphQLData(data!);
     return fromJson(data as Map<String, dynamic>);
   }
@@ -39,8 +41,8 @@ class CustomOperations {
       document: gql(query),
       variables: variables,
     );
-
-    final result = await _client.query(options);
+    final client = await _client();
+    final result = await client.query(options);
 
     if (result.hasException) {
       throw Exception(result.exception.toString());
@@ -61,13 +63,15 @@ class CustomOperations {
       String operation,
       Map<String, dynamic> variables,
       List<String> headers) async {
+    final client = await _client();
+
     if (operationType == OperationType.mutation) {
-      final response = await _client.mutate(
+      final response = await client.mutate(
           MutationOptions(document: gql(operation), variables: variables));
       print(response);
       return _extractHeadersFromResponse(response, headers);
     } else if (operationType == OperationType.query) {
-      final response = await _client
+      final response = await client
           .query(QueryOptions(document: gql(operation), variables: variables));
       return _extractHeadersFromResponse(response, headers);
     }
@@ -87,5 +91,3 @@ class CustomOperations {
     return result;
   }
 }
-
-enum OperationType { mutation, query }

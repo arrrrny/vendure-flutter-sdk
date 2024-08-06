@@ -1,4 +1,8 @@
-##0.2.0
+## 0.3.0
+
+- Added automated opinionated session refresh management
+
+## 0.2.0
 
 - Added extractResponseHeaders method to extract response headers.
 

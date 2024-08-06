@@ -1,0 +1,1 @@
+enum OperationType { mutation, query }
