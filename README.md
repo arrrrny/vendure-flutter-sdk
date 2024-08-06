@@ -1,39 +1,151 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Vendure Flutter SDK
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+[![Pub Version](https://img.shields.io/pub/v/vendure.svg)](https://pub.dev/packages/vendure)
+[![Build Status](https://github.com/your_username/vendure/workflows/CI/badge.svg)](https://github.com/arrrrny/vendure-flutter-sdk/actions)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter SDK for interacting with the Vendure e-commerce framework's GraphQL API. This SDK simplifies the process of connecting to Vendure and performing common operations like authentication, adding items to the cart, and more.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Authenticate users
+- Add items to the cart
+- Extendable to support custom GraphQL operations
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the following to your `pubspec.yaml`:
 
-## Usage
+```yaml
+dependencies:
+  vendure_sdk: ^0.1.0
+ ``` 
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+
+## Usage 
+
+First, create an instance of the Vendure class:
+
 
 ```dart
-const like = 'sample';
+import 'package:vendure_sdk/vendure.dart';
+
+void main() async {
+  final vendure = Vendure('http://localhost:3000/shop-api');
+
+  // Use the vendure instance for various operations
+}
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Authentication
+You can authenticate a user using the authenticate method:
+
+```dart
+Future<void> authenticateUser(Vendure vendure) async {
+  try {
+    final token = await vendure.authenticate('username', 'password');
+    print('Authenticated successfully. Token: $token');
+  } catch (e) {
+    print('Error authenticating: $e');
+  }
+}
+```
+Custom Firebase Authentication
+To use custom Firebase authentication:
+
+```dart
+Future<void> authenticateFirebaseUser(Vendure vendure) async {
+  var variables = {
+    "uid": 'your-firebase-uid',
+    "jwt": 'your-firebase-jwt-token'
+  };
+
+  try {
+    var result = await vendure.auth.authenticateFirebase(
+        uid: variables['uid']!, jwt: variables['jwt']!);
+    print('Firebase authenticated successfully. Result: $result');
+  } catch (e) {
+    print('Error on firebase auth: $e');
+  }
+}
+```
+
+### Order
+
+```dart
+Future<void> addItemToOrder(Vendure vendure) async {
+  try {
+    final result = await vendure.order.addItemToOrder(productVariantId: 86, quantity: 1);
+
+    print('Item added to order successfully: ${result.id}, ${result.code}, ${result.state}, ${result.total}');
+
+  } catch (e) {
+    print('Error adding item to order: $e');
+  }
+}
+```
+
+### Custom Operations
+You can also perform custom operations using the `custom` method:
+
+```dart
+Future<void> customMutation(Vendure vendure) async {
+  try {
+
+    const String firebaseAuthMutation = r'''
+mutation FirebaseAuth($uid: String!, $jwt: String!) {
+    authenticate(input:{
+        firebase:{
+            uid:$uid,
+            jwt:$jwt
+        }
+    }){
+          __typename
+          ... on CurrentUser {
+            id
+            identifier
+            channels{
+              id
+              token
+              code
+            }
+          }
+          ... on ErrorResult {
+            message
+          }
+        }
+}
+''';
+     var variables = {
+    "uid": 'your-firebase-uid',
+    "jwt": 'your-firebase-jwt-token'
+    };
+
+    final result = await vendure.custom.mutate(
+    firebaseAuthMutation, variables, AuthenticationResult.fromJson,
+    expectedDataType: 'authenticate');
+    print('Custom result: ${result.id}, ${result.code}, ${result.state}, ${result.total}');
+
+  } catch (e) {
+    print('Error custom mutation : $e');
+  }
+}
+
+Future<void> customQuery(Vendure vendure) async {
+  try {
+
+    final result = await vendure.custom.query(
+    customQuery, variables, CustomResult.fromJson,
+    expectedDataType: 'custom');
+
+    print('Custom result: ${result.id}, ${result.code}, ${result.state}, ${result.total}');
+
+  } catch (e) {
+    print('Error custom query : $e');
+  }
+}
+```
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/arrrrny/vendure-flutter-sdk).
