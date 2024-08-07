@@ -16,7 +16,7 @@ class Vendure {
   final TokenManager? _tokenManager;
   final String _endpoint;
   final DefaultPolicies? _policies;
-  final String? _token;
+  String? _token;
 
   Vendure._internal({
     required String endpoint,
@@ -107,15 +107,22 @@ class Vendure {
       );
     }
 
-    return await initialize(
-      endpoint: endpoint,
-      fetchToken: fetchToken,
-      tokenParams: {
-        'username': username,
-        'password': password,
-      },
-      sessionDuration: sessionDuration,
-    );
+    if (_instance != null) {
+      _instance!._token =
+          await fetchToken({'username': username, 'password': password});
+    } else {
+      _instance = await initialize(
+        endpoint: endpoint,
+        fetchToken: fetchToken,
+        tokenParams: {
+          'username': username,
+          'password': password,
+        },
+        sessionDuration: sessionDuration,
+      );
+    }
+
+    return _instance!;
   }
 
   static Future<Vendure> initializeWithFirebaseAuth({
@@ -136,15 +143,21 @@ class Vendure {
       );
     }
 
-    return await initialize(
-      endpoint: endpoint,
-      fetchToken: fetchToken,
-      tokenParams: {
-        'uid': uid,
-        'jwt': jwt,
-      },
-      sessionDuration: sessionDuration,
-    );
+    if (_instance != null) {
+      _instance!._token = await fetchToken({'uid': uid, 'jwt': jwt});
+    } else {
+      _instance = await initialize(
+        endpoint: endpoint,
+        fetchToken: fetchToken,
+        tokenParams: {
+          'uid': uid,
+          'jwt': jwt,
+        },
+        sessionDuration: sessionDuration,
+      );
+    }
+
+    return _instance!;
   }
 
   static Future<Vendure> initializeWithCustomAuth({
@@ -153,12 +166,18 @@ class Vendure {
     required Map<String, dynamic> tokenParams,
     Duration sessionDuration = const Duration(days: 365),
   }) async {
-    return await initialize(
-      endpoint: endpoint,
-      fetchToken: fetchToken,
-      tokenParams: tokenParams,
-      sessionDuration: sessionDuration,
-    );
+    if (_instance != null) {
+      _instance!._token = await fetchToken(tokenParams);
+    } else {
+      _instance = await initialize(
+        endpoint: endpoint,
+        fetchToken: fetchToken,
+        tokenParams: tokenParams,
+        sessionDuration: sessionDuration,
+      );
+    }
+
+    return _instance!;
   }
 
   static Vendure get instance {
