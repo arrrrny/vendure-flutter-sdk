@@ -1,3 +1,7 @@
+## 0.3.1
+
+- fixed http dependency
+
 ## 0.3.0
 
 - Added automated opinionated session refresh management
