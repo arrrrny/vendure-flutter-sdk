@@ -149,22 +149,22 @@ You can also perform custom operations using the `custom` method:
 Just pass in the expected data type and your response handler ie 
 CustomMutationResult.fromJson
 ```dart
-Future<void> customMutation(Vendure vendure) async {
+Future<CustomMutationResult> customMutation(Vendure vendure) async {
   try {
 
     const String myCustomMutation = r'''
-type CustomMutationInput{
- customField: String!
-}
-mutation CustomMutation($input:CustomMutationInput) {
-    customMethod(input:$input){
+      type CustomMutationInput{
+        customField: String!
+      }
+      mutation CustomMutation($input:CustomMutationInput) {
+        customMethod(input:$input){
           __typename
           {
             customField
           }
         }
-}
-''';
+      }
+    ''';
     var variables = {
     "customField": 'your-custom-value'
     };
@@ -173,29 +173,29 @@ mutation CustomMutation($input:CustomMutationInput) {
     myCustomMutation, variables, CustomMutationResult.fromJson,
     expectedDataType: 'custom');
     print('Custom result: ${result.customField}');
-
+    return result;
   } catch (e) {
     print('Error custom mutation : $e');
   }
 }
 
 //same as above pass your result handlerMethod ie CustomQueryResult.fromJson
-Future<void> customQuery(Vendure vendure) async {
+Future<CustomQueryResult> customQuery(Vendure vendure) async {
   try {
 
     const String myCustomQuery = r'''
-type CustomQueryInput{
- customField: String!
-}
-mutation CustomQuery($input:CustomQueryInput) {
-    customMethod(input:$input){
-          __typename
-          {
-            customField
-          }
-        }
-}
-''';
+      type CustomQueryInput{
+      customField: String!
+      }
+      query CustomQuery($input:CustomQueryInput) {
+        customMethod(input:$input){
+              __typename
+              {
+                customField
+              }
+            }
+      }
+    ''';  
     var variables = {
     "customField": 'your-custom-value'
     };
@@ -204,23 +204,36 @@ mutation CustomQuery($input:CustomQueryInput) {
     myCustomQuery, variables, CustomQueryResult.fromJson,
     expectedDataType: 'custom');
     print('Custom result: ${result.customField}');
-
+    return result;
   } catch (e) {
-    print('Error custom mutation : $e');
+    print('Error custom query : $e');
   }
 }
 
-Future<void> customQuery(Vendure vendure) async {
+Future<List<CustomQueryResult>> customQueryList(Vendure vendure) async {
   try {
 
-    final result = await vendure.custom.query(
-    customQuery, variables, CustomResult.fromJson,
-    expectedDataType: 'custom');
+    const String myCustomQueryList = r'''
+      query CustomQueryList {
+        customListMethod{
+              __typename
+              {
+                customListItem
+              }
+            }
+      }
+    ''';  
 
-    print('Custom result: ${result.customField}');
-
+    final result = await vendure.custom.queryList(
+    myCustomQueryList, {}, CustomQueryResult.fromJson,
+    expectedDataType: 'customListItems');
+ 
+    result.map((item)=>{
+         print('Custom list item: ${item.customListItem}');
+    })
+    return result;
   } catch (e) {
-    print('Error custom query : $e');
+    print('Error custom query list : $e');
   }
 }
 ```
@@ -228,3 +241,11 @@ Future<void> customQuery(Vendure vendure) async {
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/arrrrny/vendure-flutter-sdk).
+
+
+    return CustomOperations(_client).queryList<ShippingMethodQuote>(
+      getShippingMethodsQuery,
+      {},
+      ShippingMethodQuote.fromJson,
+      expectedDataType: 'eligibleShippingMethods',
+    );
