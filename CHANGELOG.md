@@ -1,4 +1,5 @@
-
+## 0.6.5
+- Updated README
 ## 0.6.3
 - Added `setOrderBillingAddress` method
 - Added `getActiveOrder` method

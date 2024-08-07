@@ -17,7 +17,7 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  vendure_sdk: ^0.1.0
+  vendure: ^0.6.5
  ``` 
 
 
