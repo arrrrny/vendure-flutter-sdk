@@ -1,3 +1,5 @@
+## 0.5.1
+- Added setOrderShippingAddress and updated README example
 ## 0.5.0
 
 - Exported types

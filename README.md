@@ -30,24 +30,6 @@ First, create an instance of the Vendure class:
 import 'package:vendure_sdk/vendure.dart';
 
 void main() async {
-      const endpoint = 'http://localhost:3000/shop-api';
-      final authClient = GraphQLClient(
-        link: HttpLink(endpoint),
-        cache: GraphQLCache(),
-      );
-      final authOperations = AuthOperations(authClient);
-
-      vendure = await Vendure.initialize(
-        endpoint: endpoint,
-        fetchToken: authOperations.getTokenFirebaseFetcher,
-        tokenParams: {
-          'uid': '8o6CuL3vvceCwjnSxtCTp08vEMr2',
-          'jwt':
-              'jwt',
-        },
-        sessionDuration: const Duration(hours: 1), // Example session duration
-      );
-
     //initialize with Native Auth
     Vendure vendure = await Vendure.initializeWithNativeAuth(
       endpoint: 'http://localhost:3000/shop-api',
@@ -100,7 +82,7 @@ Firebase updates tokens every hour. You should listen and update Vendure client 
         throw Exception('idToken is null');
       }
       await Vendure.initializeWithFirebaseAuth(
-          endpoint: 'http://localhost:3000', uid: event.uid, jwt: idToken);
+          endpoint: 'http://localhost:3000/shop-api', uid: event.uid, jwt: idToken);
     });
   }
 ```
@@ -108,58 +90,83 @@ Firebase updates tokens every hour. You should listen and update Vendure client 
 ### Order
 
 ```dart
-Future<void> addItemToOrder(Vendure vendure) async {
-  try {
-    final result = await vendure.order.addItemToOrder(productVariantId: 86, quantity: 1);
-
-    print('Item added to order successfully: ${result.id}, ${result.code}, ${result.state}, ${result.total}');
-
-  } catch (e) {
-    print('Error adding item to order: $e');
+  
+  Future<UpdateOrderItemsResult> addItemToOrder(int productVariantId, int quantity) async {
+    return _vendure.order.addItemToOrder(
+      productVariantId: productVariantId,
+      quantity: quantity,
+    );
   }
-}
+
+
+  Future<ActiveOrderResult> setOrderShippingAddress(
+      CreateAddressInput input) async {
+    return _vendure.order.setOrderShippingAddress(input);
+  }
+
 ```
 
 ### Custom Operations
 You can also perform custom operations using the `custom` method:
 
+Just pass in the expected data type and your response handler ie 
+CustomMutationResult.fromJson
 ```dart
 Future<void> customMutation(Vendure vendure) async {
   try {
 
-    const String firebaseAuthMutation = r'''
-mutation FirebaseAuth($uid: String!, $jwt: String!) {
-    authenticate(input:{
-        firebase:{
-            uid:$uid,
-            jwt:$jwt
-        }
-    }){
+    const String myCustomMutation = r'''
+type CustomMutationInput{
+ customField: String!
+}
+mutation CustomMutation($input:CustomMutationInput) {
+    customMethod(input:$input){
           __typename
-          ... on CurrentUser {
-            id
-            identifier
-            channels{
-              id
-              token
-              code
-            }
-          }
-          ... on ErrorResult {
-            message
+          {
+            customField
           }
         }
 }
 ''';
-     var variables = {
-    "uid": 'your-firebase-uid',
-    "jwt": 'your-firebase-jwt-token'
+    var variables = {
+    "customField": 'your-custom-value'
     };
 
     final result = await vendure.custom.mutate(
-    firebaseAuthMutation, variables, AuthenticationResult.fromJson,
-    expectedDataType: 'authenticate');
-    print('Custom result: ${result.id}, ${result.code}, ${result.state}, ${result.total}');
+    myCustomMutation, variables, CustomMutationResult.fromJson,
+    expectedDataType: 'custom');
+    print('Custom result: ${result.customField}');
+
+  } catch (e) {
+    print('Error custom mutation : $e');
+  }
+}
+
+//same as above pass your result handlerMethod ie CustomQueryResult.fromJson
+Future<void> customQuery(Vendure vendure) async {
+  try {
+
+    const String myCustomQuery = r'''
+type CustomQueryInput{
+ customField: String!
+}
+mutation CustomQuery($input:CustomQueryInput) {
+    customMethod(input:$input){
+          __typename
+          {
+            customField
+          }
+        }
+}
+''';
+    var variables = {
+    "customField": 'your-custom-value'
+    };
+
+    final result = await vendure.custom.query(
+    myCustomQuery, variables, CustomQueryResult.fromJson,
+    expectedDataType: 'custom');
+    print('Custom result: ${result.customField}');
 
   } catch (e) {
     print('Error custom mutation : $e');
@@ -173,7 +180,7 @@ Future<void> customQuery(Vendure vendure) async {
     customQuery, variables, CustomResult.fromJson,
     expectedDataType: 'custom');
 
-    print('Custom result: ${result.id}, ${result.code}, ${result.state}, ${result.total}');
+    print('Custom result: ${result.customField}');
 
   } catch (e) {
     print('Error custom query : $e');

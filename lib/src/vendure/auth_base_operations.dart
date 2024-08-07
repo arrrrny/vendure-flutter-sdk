@@ -7,8 +7,6 @@ class AuthBaseOperations {
 
   AuthBaseOperations(this._client);
 
-  // final GraphQLClient _client;
-
   Future<T> mutate<T>(String mutation, dynamic variables,
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
@@ -72,11 +70,9 @@ class AuthBaseOperations {
       Map<String, dynamic> variables,
       List<String> headers) async {
     try {
-      print('asdasdasdasdasdas');
       if (operationType == OperationType.mutation) {
         final response = await _client.mutate(
             MutationOptions(document: gql(operation), variables: variables));
-        print(response);
         return _extractHeadersFromResponse(response, headers);
       } else if (operationType == OperationType.query) {
         final response = await _client.query(
