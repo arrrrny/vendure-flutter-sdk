@@ -117,27 +117,27 @@ Firebase updates tokens every hour. You should listen and update Vendure client 
   }
 
   /// Adds a payment to the active order.
-  Future<ActiveOrderResult> addPaymentToOrder(PaymentInput input) async {
+  Future<AddPaymentToOrderResult> addPaymentToOrder(PaymentInput input) async {
     return _vendure.order.addPaymentToOrder(input);
   }
 
   /// Retrieves an order by its code.
-  Future<GetOrderByCodeResult> getOrderByCode(String code) async {
+  Future<ActiveOrderResult> getOrderByCode(String code) async {
     return _vendure.order.getOrderByCode(code);
   }
 
   /// Retrieves the available payment methods.
-  Future<GetPaymentMethodsResult> getPaymentMethods() async {
+  Future<List<PaymentMethodQuote>> getPaymentMethods() async {
     return _vendure.order.getPaymentMethods();
   }
 
   /// Retrieves the available shipping methods.
-  Future<GetShippingMethodsResult> getShippingMethods() async {
+  Future<List<ShippingMethodQuote>> getShippingMethods() async {
     return _vendure.order.getShippingMethods();
   }
 
   /// Sets the customer for the active order.
-  Future<ActiveOrderResult> setCustomerForOrder(CreateCustomerInput input) async {
+  Future<SetCustomerForOrderResult> setCustomerForOrder(CreateCustomerInput input) async {
     return _vendure.order.setCustomerForOrder(input);
   }
 
