@@ -1,4 +1,4 @@
-import 'package:vendure/src/fragments/shared_fragments.dart';
+import 'package:vendure/src/fragments/shared_fragment.dart';
 
 const String firebaseAuthMutation = userFragment +
     r'''
