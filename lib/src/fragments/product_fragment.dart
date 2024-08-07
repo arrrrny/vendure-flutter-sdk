@@ -1,4 +1,4 @@
-import 'package:vendure/src/fragments/shared_fragments.dart';
+import 'package:vendure/src/fragments/shared_fragment.dart';
 
 const String productVariantFragment = assetFragment +
     taxRateFragment +
@@ -203,8 +203,6 @@ fragment ProductVariant on ProductVariant {
     id
   }
   productId
-  createdAt
-  updatedAt
   languageCode
   sku
   name
