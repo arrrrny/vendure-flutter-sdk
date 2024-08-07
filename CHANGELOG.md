@@ -1,3 +1,7 @@
+##0.4.0
+
+- Made it singleton with predefined initialization methods NativeAuth,FirebaseAuth,Token and Custom Auth
+
 ## 0.3.1
 
 - fixed http dependency

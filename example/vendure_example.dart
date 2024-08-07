@@ -1,10 +1,12 @@
 import 'package:vendure/vendure.dart';
 
 void main() async {
-  final vendure = Vendure(
-      endpoint: 'http://localhost:3000/shop-api',
-      token:
-          '3e09931820c8a9542be087da474bd13f7ded7596a23b15b49fa946a4334d9e32');
+  final Vendure vendure = await Vendure.initializeWithFirebaseAuth(
+    endpoint: 'http://localhost:3000/shop-api',
+    uid: '8o6CuL3vvceCwjnSxtCTp08vEMr2',
+    jwt: 'your-jwt-token',
+    sessionDuration: const Duration(hours: 1), // Example session duration
+  );
 
   try {
     await vendure.order.addItemToOrder(productVariantId: 86, quantity: 1);
