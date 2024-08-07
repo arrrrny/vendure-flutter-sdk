@@ -13,12 +13,13 @@ mutation FirebaseAuth($uid: String!, $jwt: String!) {
             channels{
               id
               token
-              code
+              permissions
             }
           }
           ... on ErrorResult {
             message
+            errorCode
           }
-        }
+    }
 }
 ''';

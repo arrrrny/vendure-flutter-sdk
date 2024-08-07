@@ -9,7 +9,7 @@ class CustomOperations {
 
   // final GraphQLClient _client;
 
-  Future<T> mutate<T>(String mutation, dynamic variables,
+  Future<T> mutate<T>(String mutation, Map<String, dynamic> variables,
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
     final options = MutationOptions(
@@ -34,13 +34,14 @@ class CustomOperations {
     return fromJson(data as Map<String, dynamic>);
   }
 
-  Future<T> query<T>(String query, dynamic variables,
+  Future<T> query<T>(String query, Map<String, dynamic> variables,
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
     final options = QueryOptions(
       document: gql(query),
       variables: variables,
     );
+
     final client = await _client();
     final result = await client.query(options);
 
@@ -56,6 +57,36 @@ class CustomOperations {
     }
     data = VendureUtils.normalizeGraphQLData(data!);
     return fromJson(data as Map<String, dynamic>);
+  }
+
+  Future<List<T>> queryList<T>(String query, Map<String, dynamic> variables,
+      T Function(Map<String, dynamic>) fromJson,
+      {String? expectedDataType}) async {
+    final options = QueryOptions(
+      document: gql(query),
+      variables: variables,
+    );
+    final client = await _client();
+    final result = await client.query(options);
+
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+
+    var data = expectedDataType != null && result.data != null
+        ? result.data![expectedDataType]
+        : result.data;
+    if (data is Map && data['__typename'] == 'ErrorResult') {
+      throw Exception(data['message']);
+    }
+
+    if (data is! List) {
+      throw Exception('data must be a list in queryList');
+    }
+
+    return data
+        .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+        .toList();
   }
 
   Future<Map<String, dynamic>> extractResponseHeaders(

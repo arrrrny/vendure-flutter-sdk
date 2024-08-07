@@ -1,4 +1,5 @@
 const String activeOrderFragment = r'''
+
 fragment ActiveOrder on Order {
     __typename
     id
@@ -10,6 +11,34 @@ fragment ActiveOrder on Order {
     subTotalWithTax
     shippingWithTax
     totalWithTax
+    total
+    subTotalWithTax
+    subTotal
+    shipping
+    shippingAddress{
+        fullName
+        company
+        streetLine1
+        streetLine2
+        city
+        province
+        postalCode
+        country
+        phoneNumber
+        countryCode
+    }
+    billingAddress{
+        fullName
+        company
+        streetLine1
+        streetLine2
+        city
+        province
+        postalCode
+        country
+        phoneNumber
+        countryCode
+    }
     discounts {
         description
         amountWithTax
@@ -36,4 +65,5 @@ fragment ActiveOrder on Order {
         priceWithTax
     }
 }
+
 ''';

@@ -91,6 +91,7 @@ Firebase updates tokens every hour. You should listen and update Vendure client 
 
 ```dart
   
+  /// Adds an item to the active order.
   Future<UpdateOrderItemsResult> addItemToOrder(int productVariantId, int quantity) async {
     return _vendure.order.addItemToOrder(
       productVariantId: productVariantId,
@@ -98,10 +99,46 @@ Firebase updates tokens every hour. You should listen and update Vendure client 
     );
   }
 
-
+  /// Sets the shipping address for the active order.
   Future<ActiveOrderResult> setOrderShippingAddress(
       CreateAddressInput input) async {
     return _vendure.order.setOrderShippingAddress(input);
+  }
+
+  /// Sets the billing address for the active order.
+  Future<ActiveOrderResult> setOrderBillingAddress(
+      CreateAddressInput input) async {
+    return _vendure.order.setOrderBillingAddress(input);
+  }
+
+  /// Retrieves the active order.
+  Future<ActiveOrderResult> getActiveOrder() async {
+    return _vendure.order.getActiveOrder();
+  }
+
+  /// Adds a payment to the active order.
+  Future<ActiveOrderResult> addPaymentToOrder(PaymentInput input) async {
+    return _vendure.order.addPaymentToOrder(input);
+  }
+
+  /// Retrieves an order by its code.
+  Future<GetOrderByCodeResult> getOrderByCode(String code) async {
+    return _vendure.order.getOrderByCode(code);
+  }
+
+  /// Retrieves the available payment methods.
+  Future<GetPaymentMethodsResult> getPaymentMethods() async {
+    return _vendure.order.getPaymentMethods();
+  }
+
+  /// Retrieves the available shipping methods.
+  Future<GetShippingMethodsResult> getShippingMethods() async {
+    return _vendure.order.getShippingMethods();
+  }
+
+  /// Sets the customer for the active order.
+  Future<ActiveOrderResult> setCustomerForOrder(CreateCustomerInput input) async {
+    return _vendure.order.setCustomerForOrder(input);
   }
 
 ```
