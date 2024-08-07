@@ -1,3 +1,7 @@
+## 0.5.0
+
+- Exported types
+
 ## 0.4.2
 - Updated Readme explaining how to manage firebase token changes
 

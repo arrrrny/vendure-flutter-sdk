@@ -6,6 +6,8 @@ import 'package:vendure/src/vendure/custom_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
+export './src/types/exports.dart'; // Add this line
+
 class Vendure {
   static Vendure? _instance;
 
