@@ -1,7 +1,6 @@
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
-const String customerFragment = userFragment +
-    addressFragment +
+const String customerFragment = addressFragment +
     r'''
 fragment Customer on Customer {
   __typename
@@ -14,9 +13,9 @@ fragment Customer on Customer {
   addresses {
     ...Address
   }
-  user {
-    ...User
+  user{
+    id
   }
-  customFields
 }
+
 ''';

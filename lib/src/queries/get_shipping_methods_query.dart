@@ -1,7 +1,4 @@
-import 'package:vendure/src/fragments/order_fragment.dart';
-
-const String getShippingMethodsQuery = shippingMethodFragment +
-    r'''
+const String getShippingMethodsQuery = r'''
 query GetShippingMethods {
   eligibleShippingMethods {
     id

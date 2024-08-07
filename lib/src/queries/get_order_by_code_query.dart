@@ -5,5 +5,6 @@ const String getOrderByCodeQuery = orderFragment +
 query GetOrderByCode($code: String!) {
   orderByCode(code: $code) {
     ...Order
+  }
 }
 ''';

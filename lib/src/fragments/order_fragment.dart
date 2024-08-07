@@ -4,10 +4,12 @@ import 'package:vendure/src/fragments/shared_fragment.dart';
 
 const String orderFragment = customerFragment +
     promotionFragment +
-    orderLineFragment +
-    shippingLineFragment +
-    fulfillmentFragment +
     paymentFragment +
+    fulfillmentFragment +
+    shippingLineFragment +
+    orderAddressFragment +
+    surchargeFragment +
+    orderLineFragment +
     r'''
 fragment Order on Order {
   __typename
@@ -21,10 +23,10 @@ fragment Order on Order {
     ...Customer
   }
   shippingAddress {
-    ...Address
+    ...OrderAddress
   }
   billingAddress {
-    ...Address
+    ...OrderAddress
   }
   lines {
     ...OrderLine
@@ -46,7 +48,7 @@ fragment Order on Order {
     ...Fulfillment
   }
   totalQuantity
-  subTotal 
+  subTotal
   subTotalWithTax
   currencyCode
   shippingLines {
@@ -64,6 +66,7 @@ fragment Order on Order {
   }
   customFields
 }
+
 ''';
 
 const String fulfillmentLineFragment = r'''
@@ -72,13 +75,15 @@ fragment FulfillmentLine on FulfillmentLine {
   orderLineId
   quantity
   fulfillmentId
-  fullfillment{
+  fulfillment{
     state
     method
     trackingCode
     customFields
   }
-}''';
+}
+
+''';
 
 const String fulfillmentFragment = r'''
 fragment Fulfillment on Fulfillment {
@@ -93,7 +98,9 @@ fragment Fulfillment on Fulfillment {
   method
   trackingCode
   customFields
-}''';
+}
+
+''';
 
 const String discountFragment = r'''
 fragment Discount on Discount {
@@ -103,7 +110,9 @@ fragment Discount on Discount {
   description
   amount
   amountWithTax
-}''';
+}
+
+''';
 
 const String promotionFragment = r'''
 fragment Promotion on Promotion {
@@ -138,11 +147,12 @@ fragment Promotion on Promotion {
     description
   }
   customFields
-}''';
+}
 
-const String orderLineFragment = productVariantFragment +
-    assetFragment +
-    discountFragment +
+''';
+
+const String orderLineFragment = assetFragment +
+    productVariantFragment +
     fulfillmentLineFragment +
     r'''
 fragment OrderLine on OrderLine {
@@ -160,7 +170,7 @@ fragment OrderLine on OrderLine {
   unitPriceWithTaxChangeSinceAdded
   discountedUnitPrice
   discountedUnitPriceWithTax
-  proratedUnitPrice 
+  proratedUnitPrice
   proratedUnitPriceWithTax
   quantity
   orderPlacedQuantity
@@ -183,7 +193,9 @@ fragment OrderLine on OrderLine {
     ...FulfillmentLine
   }
   customFields
-}''';
+}
+
+''';
 
 const String historyFragment = r'''
 fragment HistoryEntryList on HistoryEntryList {
@@ -199,7 +211,9 @@ fragment HistoryEntry on HistoryEntry {
   id: ID!
   type: HistoryEntryType!
   data: JSON!
-}''';
+}
+
+''';
 
 const String shippingLineFragment = discountFragment +
     shippingMethodFragment +
@@ -207,20 +221,20 @@ const String shippingLineFragment = discountFragment +
 fragment ShippingLine on ShippingLine {
   __typename
   id
+  price
+  priceWithTax
+  discountedPrice
+  discountedPriceWithTax
+  discounts{
+    ...Discount
+  }
   shippingMethod {
     ...ShippingMethod
   }
-  priceWithTax
-  price
-  discounts {
-    ...Discount
-  }
-  taxLines {
-    description
-    taxRate
-  }
-  customFields
-}''';
+
+}
+
+''';
 
 const String shippingMethodFragment = r'''
 fragment ShippingMethod on ShippingMethod {
@@ -252,7 +266,9 @@ fragment ShippingMethod on ShippingMethod {
     description
   }
   customFields
-}''';
+}
+
+''';
 
 const String paymentFragment = refundFragment +
     r'''
@@ -268,7 +284,9 @@ fragment Payment on Payment {
   refunds{
     ...Refund
   }
-}''';
+}
+
+''';
 
 const String refundFragment = r'''
 fragment Refund on Refund {
@@ -289,4 +307,40 @@ fragment Refund on Refund {
   paymentId
   metadata
 }
+
+''';
+
+const String orderAddressFragment = r'''
+fragment OrderAddress on OrderAddress {
+  __typename
+  fullName
+  company
+  streetLine1
+  streetLine2
+  city
+  province
+  postalCode
+  country
+  countryCode
+  phoneNumber
+  customFields
+}
+
+''';
+
+const String surchargeFragment = r'''
+fragment Surcharge on Surcharge {
+  __typename
+    id
+    description
+    sku
+    taxLines{
+      description
+      taxRate
+    }
+    price
+    priceWithTax
+    taxRate
+}
+
 ''';

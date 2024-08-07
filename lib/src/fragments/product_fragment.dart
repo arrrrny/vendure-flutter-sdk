@@ -1,7 +1,6 @@
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
-const String productVariantFragment = assetFragment +
-    taxRateFragment +
+const String productVariantFragment = taxRateFragment +
     productOptionFragment +
     facetValueFragment +
     r'''
@@ -49,6 +48,7 @@ fragment ProductVariant on ProductVariant {
   }
   customFields
 }
+
 ''';
 const String productFragment = assetFragment +
     facetValueFragment +
@@ -97,6 +97,8 @@ fragment Product on Product {
     ...Collection
   }
   customFields
+}
+
 ''';
 
 const String collectionFragment = assetFragment +
@@ -153,6 +155,7 @@ fragment Collection on Collection {
   }
   customFields
 }
+
 ''';
 
 const String productOptionFragment = productOptionGroupFragment +
@@ -174,6 +177,7 @@ fragment ProductOption on ProductOption {
   }
   customFields
 }
+
 ''';
 const String productOptionGroupFragment = r'''
 fragment ProductOptionGroup on ProductOptionGroup {
@@ -189,6 +193,7 @@ fragment ProductOptionGroup on ProductOptionGroup {
   }
   customFields
 }
+
 ''';
 
 const String orderLineProductVariantFragment = assetFragment +
@@ -238,4 +243,5 @@ fragment ProductVariant on ProductVariant {
   }
   customFields
 }
+
 ''';

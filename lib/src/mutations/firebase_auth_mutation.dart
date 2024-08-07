@@ -1,7 +1,4 @@
-import 'package:vendure/src/fragments/shared_fragment.dart';
-
-const String firebaseAuthMutation = userFragment +
-    r'''
+const String firebaseAuthMutation = r'''
 mutation FirebaseAuth($uid: String!, $jwt: String!) {
     authenticate(input:{
         firebase:{
@@ -11,12 +8,18 @@ mutation FirebaseAuth($uid: String!, $jwt: String!) {
     }){
           __typename
           ... on CurrentUser {
-            ...User
+            id
+            identifier
+            channels{
+              id
+              token
+              permissions
+            }
           }
           ... on ErrorResult {
             message
             errorCode
           }
-        }
+    }
 }
 ''';

@@ -2,8 +2,8 @@ import 'package:vendure/src/fragments/active_order_fragment.dart';
 
 const String setCustomerForOrderMutation = activeOrderFragment +
     r'''
-mutation SetCustomerForOrder($customerId: ID!) {
-  setCustomerForOrder(customerId: $customerId) {
+mutation SetCustomerForOrder($input: CreateCustomerInput!) {
+  setCustomerForOrder(input: $input) {
     ... on SetCustomerForOrderResult {
       ... on AlreadyLoggedInError {
         errorCode

@@ -1,4 +1,5 @@
 const String activeOrderFragment = r'''
+
 fragment ActiveOrder on Order {
     __typename
     id
@@ -64,4 +65,5 @@ fragment ActiveOrder on Order {
         priceWithTax
     }
 }
+
 ''';

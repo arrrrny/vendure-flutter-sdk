@@ -1,5 +1,16 @@
+
+## 0.6.3
+- Added `setOrderBillingAddress` method
+- Added `getActiveOrder` method
+- Added `addPaymentToOrder` method
+- Added `getOrderByCode` method
+- Added `getPaymentMethods` method
+- Added `getShippingMethods` method
+- Added `setCustomerForOrder` method
+
 ## 0.5.1
 - Added setOrderShippingAddress and updated README example
+
 ## 0.5.0
 
 - Exported types

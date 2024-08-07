@@ -20,6 +20,7 @@ fragment Address on Address {
   defaultBillingAddress
   customFields
 }
+
 ''';
 
 const String countryFragment = regionFragment +
@@ -43,6 +44,7 @@ fragment Country on Country {
   }
   customFields
 }
+
 ''';
 
 const String regionFragment = r'''
@@ -67,7 +69,9 @@ fragment Region on Region {
     languageCode
     name
   }
-}''';
+}
+
+''';
 
 const String userFragment = roleFragment +
     r'''
@@ -85,7 +89,9 @@ fragment User on User {
     strategy
   }
   customFields
-}''';
+}
+
+''';
 
 const String channelFragment = r'''
 fragment Channel on Channel {
@@ -115,6 +121,7 @@ fragment Channel on Channel {
   }
   customFields
 }
+
 ''';
 
 const String roleFragment = channelFragment +
@@ -129,6 +136,7 @@ fragment Role on Role {
     ...Channel
   }
 }
+
 ''';
 
 const String assetFragment = r'''
@@ -153,6 +161,7 @@ fragment Asset on Asset {
   }
   customFields
 }
+
 ''';
 const String facetValueFragment = r'''
 fragment FacetValue on FacetValue {
@@ -173,10 +182,10 @@ fragment FacetValue on FacetValue {
   }
   customFields
 }
+
 ''';
 
-const String taxRateFragment = zoneFragment +
-    r'''
+const String taxRateFragment = r'''
 fragment TaxRate on TaxRate {
   __typename
   id
@@ -190,7 +199,9 @@ fragment TaxRate on TaxRate {
     customFields
   }
   zone {
-    ...Zone
+    id
+    name
+    customFields
   }
   customerGroup {
     id
@@ -198,17 +209,5 @@ fragment TaxRate on TaxRate {
   }
   customFields
 }
-''';
 
-const String zoneFragment = regionFragment +
-    r'''
-fragment Zone on Zone {
-  __typename
-    id
-    name
-    members {
-     ...Region
-    }
-    customFields
-}
 ''';
