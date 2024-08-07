@@ -1,3 +1,6 @@
+## 0.4.2
+- Updated Readme explaining how to manage firebase token changes
+
 ## 0.4.1
 
 - Update the instance credentials without reinitizialize

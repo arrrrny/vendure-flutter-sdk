@@ -88,6 +88,22 @@ void main() async {
 
 }
 ```
+### Firebase Authentication
+Firebase updates tokens every hour. You should listen and update Vendure client with new token
+
+```dart
+  Future<void> initializaRepository() async {
+    FirebaseAuth.instance.idTokenChanges().listen((event) async {
+      if (event == null) return;
+      String? idToken = await event.getIdToken();
+      if (idToken == null) {
+        throw Exception('idToken is null');
+      }
+      await Vendure.initializeWithFirebaseAuth(
+          endpoint: 'http://localhost:3000', uid: event.uid, jwt: idToken);
+    });
+  }
+```
 
 ### Order
 
