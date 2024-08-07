@@ -1,0 +1,15 @@
+
+const String setOrderShippingMethodMutation = r'''
+mutation SetOrderShippingMethod($shippingMethodId: ID!) {
+  setOrderShippingMethod(shippingMethodId: $shippingMethodId) {
+    __typename
+    ... ActiveOrder
+    ...on ErrorResult {
+      errorCode
+      message
+    }
+  }
+}
+
+''';
+

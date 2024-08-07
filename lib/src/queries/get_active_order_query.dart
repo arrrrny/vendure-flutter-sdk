@@ -1,5 +1,6 @@
-const String activeOrderFragment = r'''
-fragment ActiveOrder on Order {
+const String getActiveOrderQuery = r'''
+query GetActiveOrder {
+  activeOrder {
     __typename
     id
     code
@@ -63,5 +64,6 @@ fragment ActiveOrder on Order {
         }
         priceWithTax
     }
+  }
 }
 ''';

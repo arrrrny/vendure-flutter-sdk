@@ -1,4 +1,7 @@
-const String authenticateMutation = r'''
+import 'package:vendure/src/fragments/shared_fragments.dart';
+
+const String authenticateMutation = userFragment +
+    r'''
       mutation Authenticate($username: String!, $password: String!) {
         authenticate(input: {
           username: $username,
@@ -6,16 +9,11 @@ const String authenticateMutation = r'''
         }) {
           __typename
           ... on CurrentUser {
-            id
-            identifier
-            channels{
-              id
-              token
-              code
-            }
+            ...User
           }
           ... on ErrorResult {
             message
+            errorCode
           }
         }
       }

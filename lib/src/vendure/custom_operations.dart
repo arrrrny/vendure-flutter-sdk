@@ -58,6 +58,32 @@ class CustomOperations {
     return fromJson(data as Map<String, dynamic>);
   }
 
+  Future<List<T>> queryList<T>(String query, dynamic variables,
+      T Function(Map<String, dynamic>) fromJson,
+      {String? expectedDataType}) async {
+    final options = QueryOptions(
+      document: gql(query),
+      variables: variables,
+    );
+    final client = await _client();
+    final result = await client.query(options);
+
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+    var data = expectedDataType != null && result.data != null
+        ? result.data![expectedDataType]
+        : result.data;
+
+    if (data != null && data['__typename'] == 'ErrorResult') {
+      throw Exception(data['message']);
+    }
+    data = VendureUtils.normalizeGraphQLData(data!);
+    return (data as List)
+        .map((e) => fromJson(e as Map<String, dynamic>))
+        .toList();
+  }
+
   Future<Map<String, dynamic>> extractResponseHeaders(
       OperationType operationType,
       String operation,

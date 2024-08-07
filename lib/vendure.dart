@@ -3,10 +3,11 @@ library vendure;
 import 'package:graphql/client.dart';
 import 'package:vendure/src/vendure/auth_operations.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
+import 'package:vendure/src/vendure/customer_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
-export './src/types/exports.dart'; // Add this line
+export 'package:vendure/src/types/exports.dart'; // Add this line
 
 class Vendure {
   static Vendure? _instance;
@@ -15,6 +16,7 @@ class Vendure {
   late final OrderOperations order;
   late final AuthOperations auth;
   late final CustomOperations custom;
+  late final CustomerOperations customer;
   final TokenManager? _tokenManager;
   final String _endpoint;
   final DefaultPolicies? _policies;
@@ -53,6 +55,7 @@ class Vendure {
         ) {
     order = OrderOperations(_getClient);
     custom = CustomOperations(_getClient);
+    customer = CustomerOperations(_getClient);
     auth = AuthOperations(_authClient);
   }
 

@@ -14,6 +14,21 @@ mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
       order {
         ...ActiveOrder
       }
+      errorCode
+      message
+    }
+    ... on NegativeQuantityError {
+      errorCode
+      message
+    }
+    ... on OrderLimitError {
+      errorCode
+      message
+      maxItems
+    }
+    ... on OrderModificationError {
+      errorCode
+      message
     }
   }
 }
