@@ -14,7 +14,6 @@ class RefundLine with _$RefundLine {
     required OrderLine orderLine,
     required String orderLineId,
     required int quantity,
-    required Refund refund,
     required String refundId,
   }) = _RefundLine;
 

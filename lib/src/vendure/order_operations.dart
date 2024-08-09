@@ -34,14 +34,12 @@ class OrderOperations {
       'productVariantId': productVariantId,
       'quantity': quantity,
     };
-    var result = await CustomOperations(_client).mutate<UpdateOrderItemsResult>(
+    return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
       addItemToOrderMutation,
       variables,
       UpdateOrderItemsResult.fromJson,
       expectedDataType: 'addItemToOrder',
     );
-
-    return result;
   }
 
   Future<ActiveOrderResult> setOrderShippingAddress(
@@ -134,25 +132,21 @@ class OrderOperations {
     var variables = {
       'orderLineId': orderLineId,
     };
-    var result = await CustomOperations(_client).mutate<RemoveOrderItemsResult>(
+    return CustomOperations(_client).mutate<RemoveOrderItemsResult>(
       removeOrderLineMutation,
       variables,
       RemoveOrderItemsResult.fromJson,
       expectedDataType: 'removeOrderLine',
     );
-
-    return result;
   }
 
   Future<RemoveOrderItemsResult> removeAllOrderLines() async {
-    var result = await CustomOperations(_client).mutate<RemoveOrderItemsResult>(
+    return CustomOperations(_client).mutate<RemoveOrderItemsResult>(
       removeAllOrderLinesMutation,
       {},
       RemoveOrderItemsResult.fromJson,
       expectedDataType: 'removeAllOrderLines',
     );
-
-    return result;
   }
 
   Future<UpdateOrderItemsResult> adjustOrderLine({
@@ -163,14 +157,12 @@ class OrderOperations {
       'orderLineId': orderLineId,
       'quantity': quantity,
     };
-    var result = await CustomOperations(_client).mutate<UpdateOrderItemsResult>(
+    return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
       adjustOrderLineMutation,
       variables,
       UpdateOrderItemsResult.fromJson,
       expectedDataType: 'adjustOrderLine',
     );
-
-    return result;
   }
 
   Future<ApplyCouponCodeResult> applyCouponCode({
@@ -179,25 +171,21 @@ class OrderOperations {
     var variables = {
       'couponCode': couponCode,
     };
-    var result = await CustomOperations(_client).mutate<ApplyCouponCodeResult>(
+    return CustomOperations(_client).mutate<ApplyCouponCodeResult>(
       applyCouponCodeMutation,
       variables,
       ApplyCouponCodeResult.fromJson,
       expectedDataType: 'applyCouponCode',
     );
-
-    return result;
   }
 
   Future<Order> removeCouponCode({required String couponCode}) async {
-    var result = await CustomOperations(_client).mutate<Order>(
+    return CustomOperations(_client).mutate<Order>(
       removeCouponCodeMutation,
       {'couponCode': couponCode},
       Order.fromJson,
       expectedDataType: 'removeCouponCode',
     );
-
-    return result;
   }
 
   Future<TransitionOrderToStateResult> transitionOrderToState({
@@ -206,51 +194,40 @@ class OrderOperations {
     var variables = {
       'state': state,
     };
-    var result =
-        await CustomOperations(_client).mutate<TransitionOrderToStateResult>(
+    return CustomOperations(_client).mutate<TransitionOrderToStateResult>(
       transitionOrderToStateMutation,
       variables,
       TransitionOrderToStateResult.fromJson,
       expectedDataType: 'transitionOrderToState',
     );
-
-    return result;
   }
 
   Future<ActiveOrderResult> setOrderCustomFields({
     required UpdateOrderInput input,
   }) async {
-    var variables = {
-      'input': input,
-    };
-    var result = await CustomOperations(_client).mutate<ActiveOrderResult>(
+    return CustomOperations(_client).mutate<ActiveOrderResult>(
       setOrderCustomFieldsMutation,
-      variables,
+      {'input': input.toJson()},
       ActiveOrderResult.fromJson,
       expectedDataType: 'setOrderCustomFields',
     );
-
-    return result;
   }
 
   Future<SetOrderShippingMethodResult> setOrderShippingMethod({
-    required int shippingMethodId,
-    List<int> additionalMethodIds = const [],
+    required String shippingMethodId,
+    List<String> additionalMethodIds = const [],
   }) async {
-    List<int> methodIds = [];
+    List<String> methodIds = [];
     methodIds.add(shippingMethodId);
     methodIds.addAll(additionalMethodIds);
     var variables = {
       'shippingMethodId': methodIds,
     };
-    var result =
-        await CustomOperations(_client).mutate<SetOrderShippingMethodResult>(
+    return CustomOperations(_client).mutate<SetOrderShippingMethodResult>(
       setOrderShippingMethodMutation,
       variables,
       SetOrderShippingMethodResult.fromJson,
       expectedDataType: 'setOrderShippingMethod',
     );
-
-    return result;
   }
 }

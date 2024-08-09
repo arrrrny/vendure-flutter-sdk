@@ -8,6 +8,7 @@ import 'package:vendure/src/vendure/customer_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
 import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
+import 'package:http/http.dart';
 
 export '../src/input_types/exports.dart'; // Add this line
 
@@ -25,7 +26,8 @@ class Vendure {
   final String _endpoint;
   final DefaultPolicies? _policies;
   String? _token;
-
+  final bool _useVendureGuestSession;
+  String? get token => _token;
   Vendure._internal({
     required String endpoint,
     TokenFetcher? fetchToken,
@@ -33,6 +35,7 @@ class Vendure {
     DefaultPolicies? policies,
     Duration sessionDuration = const Duration(days: 365),
     String? token,
+    bool? useVendureGuestSession = false,
   })  : _tokenManager = fetchToken != null && tokenParams != null
             ? TokenManager(
                 fetchToken: fetchToken,
@@ -40,6 +43,7 @@ class Vendure {
                 sessionDuration: sessionDuration,
               )
             : null,
+        _useVendureGuestSession = useVendureGuestSession ?? false,
         _endpoint = endpoint,
         _policies = policies,
         _token = token,
@@ -72,6 +76,7 @@ class Vendure {
     DefaultPolicies? policies,
     Duration sessionDuration = const Duration(days: 365),
     String? token,
+    bool? useVendureGuestSession,
   }) async {
     _instance = Vendure._internal(
       endpoint: endpoint,
@@ -80,6 +85,7 @@ class Vendure {
       policies: policies,
       sessionDuration: sessionDuration,
       token: token,
+      useVendureGuestSession: useVendureGuestSession,
     );
 
     // Perform a connection check
@@ -200,6 +206,17 @@ class Vendure {
   }
 
   Future<GraphQLClient> _getClient() async {
+    HttpLink httpLink = HttpLink(_endpoint);
+    print(!_useVendureGuestSession);
+    if (_useVendureGuestSession) {
+      httpLink = HttpLink(_endpoint,
+          httpClient: TokenInterceptorClient(
+            Client(),
+            (token) {
+              _token = token;
+            },
+          ));
+    }
     final link = Link.from([
       AuthLink(
         getToken: () async {
@@ -211,8 +228,9 @@ class Vendure {
           return null;
         },
       ),
-      HttpLink(_endpoint),
+      httpLink,
     ]);
+
     return GraphQLClient(
       cache: GraphQLCache(),
       link: link,
@@ -228,5 +246,26 @@ class Vendure {
   Future<QueryResult> mutate(MutationOptions options) async {
     final client = await _getClient();
     return client.mutate(options);
+  }
+}
+
+class TokenInterceptorClient extends BaseClient {
+  final Client _inner;
+  final void Function(String token) onTokenReceived;
+
+  TokenInterceptorClient(this._inner, this.onTokenReceived);
+
+  @override
+  Future<StreamedResponse> send(BaseRequest request) async {
+    final response = await _inner.send(request);
+
+    if (response.headers.containsKey('vendure-auth-token')) {
+      final token = response.headers['vendure-auth-token'];
+      if (token != null) {
+        onTokenReceived(token);
+      }
+    }
+
+    return response;
   }
 }

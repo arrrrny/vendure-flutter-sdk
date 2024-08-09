@@ -1,9 +1,12 @@
-import 'package:vendure/src/fragments/active_order_fragment.dart';
+import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String setCustomerForOrderMutation = activeOrderFragment +
+const String setCustomerForOrderMutation = orderFragment +
     r'''
 mutation SetCustomerForOrder($input: CreateCustomerInput!) {
   setCustomerForOrder(input: $input) {
+    ... on Order{
+        ...Order
+    }
     ... on SetCustomerForOrderResult {
       ... on AlreadyLoggedInError {
         errorCode
@@ -27,7 +30,7 @@ mutation SetCustomerForOrder($input: CreateCustomerInput!) {
         errorDetail
         message
       }
-      ...ActiveOrder
+
     }
     ... on ErrorResult {
       errorCode

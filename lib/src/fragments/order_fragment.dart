@@ -70,7 +70,9 @@ fragment Order on Order {
     taxBase
     taxTotal
   }
-  customFields
+  customFields{
+   giftMessage
+  }
 }
 
 ''';
@@ -124,6 +126,8 @@ const String promotionFragment = r'''
 fragment Promotion on Promotion {
   __typename
   id
+  createdAt
+  updatedAt
   startsAt
   endsAt
   couponCode
@@ -147,6 +151,8 @@ fragment Promotion on Promotion {
     }
   }
   translations {
+    createdAt
+    updatedAt
     id
     languageCode
     name
@@ -293,6 +299,8 @@ const String paymentFragment = refundFragment +
     r'''
 fragment Payment on Payment {
   __typename
+  createdAt
+  updatedAt
   id
   method
   amount

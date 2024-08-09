@@ -1,10 +1,12 @@
-import 'package:vendure/src/fragments/active_order_fragment.dart';
+import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String setOrderBillingAddressMutation = activeOrderFragment +
+const String setOrderBillingAddressMutation = orderFragment +
     r'''
 mutation SetOrderBillingAddress($input: CreateAddressInput!) {
   setOrderBillingAddress(input: $input) {
-    ...ActiveOrder
+    ...on Order{
+        ...Order
+    }
     ...on ErrorResult {
       errorCode
       message

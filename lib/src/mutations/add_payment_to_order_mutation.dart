@@ -1,10 +1,12 @@
-import 'package:vendure/src/fragments/active_order_fragment.dart';
+import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String addPaymentToOrderMutation = activeOrderFragment +
+const String addPaymentToOrderMutation = orderFragment +
     r'''
 mutation AddPaymentToOrder($input: PaymentInput!) {
   addPaymentToOrder(input: $input) {
-    ... ActiveOrder
+    ... on Order {
+        ...Order
+    }
     ... on OrderPaymentStateError {
       errorCode
       message
