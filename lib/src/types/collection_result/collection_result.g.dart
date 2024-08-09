@@ -6,17 +6,16 @@ part of 'collection_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionResultImpl _$$CollectionResultImplFromJson(
-        Map<String, dynamic> json) =>
+_$CollectionResultImpl _$$CollectionResultImplFromJson(Map json) =>
     _$CollectionResultImpl(
-      collection:
-          Collection.fromJson(json['collection'] as Map<String, dynamic>),
+      collection: Collection.fromJson(
+          Map<String, dynamic>.from(json['collection'] as Map)),
       count: (json['count'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$CollectionResultImplToJson(
         _$CollectionResultImpl instance) =>
     <String, dynamic>{
-      'collection': instance.collection,
+      'collection': instance.collection.toJson(),
       'count': instance.count,
     };

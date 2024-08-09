@@ -6,8 +6,7 @@ part of 'missing_password_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(Map json) =>
     _$MissingPasswordErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,

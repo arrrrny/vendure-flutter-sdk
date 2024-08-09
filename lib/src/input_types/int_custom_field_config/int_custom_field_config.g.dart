@@ -6,19 +6,18 @@ part of 'int_custom_field_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+_$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(Map json) =>
     _$IntCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       max: (json['max'] as num?)?.toInt(),
@@ -31,7 +30,9 @@ _$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toInt(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
     );
 
 Map<String, dynamic> _$$IntCustomFieldConfigImplToJson(

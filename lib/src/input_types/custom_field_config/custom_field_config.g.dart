@@ -7,18 +7,18 @@ part of 'custom_field_config.dart';
 // **************************************************************************
 
 _$BooleanCustomFieldConfigImpl _$$BooleanCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$BooleanCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       name: json['name'] as String?,
@@ -28,7 +28,9 @@ _$BooleanCustomFieldConfigImpl _$$BooleanCustomFieldConfigImplFromJson(
           ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
           .toList(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -155,18 +157,18 @@ const _$PermissionEnumMap = {
 };
 
 _$DateTimeCustomFieldConfigImpl _$$DateTimeCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$DateTimeCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       max: json['max'] as String?,
@@ -179,7 +181,9 @@ _$DateTimeCustomFieldConfigImpl _$$DateTimeCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toInt(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -212,19 +216,18 @@ Map<String, dynamic> _$$DateTimeCustomFieldConfigImplToJson(
   return val;
 }
 
-_$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+_$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(Map json) =>
     _$FloatCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       max: (json['max'] as num?)?.toDouble(),
@@ -237,7 +240,9 @@ _$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toDouble(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -270,19 +275,18 @@ Map<String, dynamic> _$$FloatCustomFieldConfigImplToJson(
   return val;
 }
 
-_$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+_$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(Map json) =>
     _$IntCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       max: (json['max'] as num?)?.toInt(),
@@ -295,7 +299,9 @@ _$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toInt(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -329,18 +335,20 @@ Map<String, dynamic> _$$IntCustomFieldConfigImplToJson(
 }
 
 _$LocaleStringCustomFieldConfigImpl
-    _$$LocaleStringCustomFieldConfigImplFromJson(Map<String, dynamic> json) =>
+    _$$LocaleStringCustomFieldConfigImplFromJson(Map json) =>
         _$LocaleStringCustomFieldConfigImpl(
           description: (json['description'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
-                  : LocalizedString.fromJson(e as Map<String, dynamic>))
+                  : LocalizedString.fromJson(
+                      Map<String, dynamic>.from(e as Map)))
               .toList(),
           internal: json['internal'] as bool?,
           label: (json['label'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
-                  : LocalizedString.fromJson(e as Map<String, dynamic>))
+                  : LocalizedString.fromJson(
+                      Map<String, dynamic>.from(e as Map)))
               .toList(),
           length: (json['length'] as num?)?.toInt(),
           list: json['list'] as bool?,
@@ -352,7 +360,9 @@ _$LocaleStringCustomFieldConfigImpl
               ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
               .toList(),
           type: json['type'] as String?,
-          ui: json['ui'] as Map<String, dynamic>?,
+          ui: (json['ui'] as Map?)?.map(
+            (k, e) => MapEntry(k as String, e),
+          ),
           $type: json['runtimeType'] as String?,
         );
 
@@ -385,18 +395,18 @@ Map<String, dynamic> _$$LocaleStringCustomFieldConfigImplToJson(
 }
 
 _$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$LocaleTextCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       name: json['name'] as String?,
@@ -406,7 +416,9 @@ _$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
           ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
           .toList(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -437,19 +449,19 @@ Map<String, dynamic> _$$LocaleTextCustomFieldConfigImplToJson(
 }
 
 _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$RelationCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       entity: json['entity'] as String?,
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       name: json['name'] as String?,
@@ -462,7 +474,9 @@ _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
           ?.map((e) => e as String?)
           .toList(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -495,18 +509,18 @@ Map<String, dynamic> _$$RelationCustomFieldConfigImplToJson(
 }
 
 _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$StringCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       length: (json['length'] as num?)?.toInt(),
       list: json['list'] as bool?,
@@ -515,7 +529,7 @@ _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
       options: (json['options'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : StringFieldOption.fromJson(e as Map<String, dynamic>))
+              : StringFieldOption.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       pattern: json['pattern'] as String?,
       readonly: json['readonly'] as bool?,
@@ -523,7 +537,9 @@ _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
           ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
           .toList(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 
@@ -556,19 +572,18 @@ Map<String, dynamic> _$$StringCustomFieldConfigImplToJson(
   return val;
 }
 
-_$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+_$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(Map json) =>
     _$TextCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       name: json['name'] as String?,
@@ -578,7 +593,9 @@ _$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(
           ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
           .toList(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       $type: json['runtimeType'] as String?,
     );
 

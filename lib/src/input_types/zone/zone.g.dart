@@ -6,15 +6,18 @@ part of 'zone.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ZoneImpl _$$ZoneImplFromJson(Map<String, dynamic> json) => _$ZoneImpl(
+_$ZoneImpl _$$ZoneImplFromJson(Map json) => _$ZoneImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       id: json['id'] as String?,
       members: (json['members'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Region.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Region.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       name: json['name'] as String?,
       updatedAt: json['updatedAt'] == null

@@ -6,8 +6,7 @@ part of 'coupon_code_limit_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(Map json) =>
     _$CouponCodeLimitErrorImpl(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),

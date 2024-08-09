@@ -6,8 +6,7 @@ part of 'negative_quantity_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NegativeQuantityErrorImpl _$$NegativeQuantityErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$NegativeQuantityErrorImpl _$$NegativeQuantityErrorImplFromJson(Map json) =>
     _$NegativeQuantityErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

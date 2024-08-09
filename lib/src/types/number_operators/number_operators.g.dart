@@ -6,12 +6,12 @@ part of 'number_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NumberOperatorsImpl _$$NumberOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$NumberOperatorsImpl _$$NumberOperatorsImplFromJson(Map json) =>
     _$NumberOperatorsImpl(
       between: json['between'] == null
           ? null
-          : NumberRange.fromJson(json['between'] as Map<String, dynamic>),
+          : NumberRange.fromJson(
+              Map<String, dynamic>.from(json['between'] as Map)),
       eq: (json['eq'] as num?)?.toDouble(),
       gt: (json['gt'] as num?)?.toDouble(),
       gte: (json['gte'] as num?)?.toDouble(),
@@ -21,13 +21,21 @@ _$NumberOperatorsImpl _$$NumberOperatorsImplFromJson(
     );
 
 Map<String, dynamic> _$$NumberOperatorsImplToJson(
-        _$NumberOperatorsImpl instance) =>
-    <String, dynamic>{
-      'between': instance.between,
-      'eq': instance.eq,
-      'gt': instance.gt,
-      'gte': instance.gte,
-      'isNull': instance.isNull,
-      'lt': instance.lt,
-      'lte': instance.lte,
-    };
+    _$NumberOperatorsImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('between', instance.between?.toJson());
+  writeNotNull('eq', instance.eq);
+  writeNotNull('gt', instance.gt);
+  writeNotNull('gte', instance.gte);
+  writeNotNull('isNull', instance.isNull);
+  writeNotNull('lt', instance.lt);
+  writeNotNull('lte', instance.lte);
+  return val;
+}

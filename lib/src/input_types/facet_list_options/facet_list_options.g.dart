@@ -6,19 +6,19 @@ part of 'facet_list_options.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetListOptionsImpl _$$FacetListOptionsImplFromJson(
-        Map<String, dynamic> json) =>
+_$FacetListOptionsImpl _$$FacetListOptionsImplFromJson(Map json) =>
     _$FacetListOptionsImpl(
       filter: json['filter'] == null
           ? null
           : FacetFilterParameter.fromJson(
-              json['filter'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['filter'] as Map)),
       filterOperator:
           $enumDecodeNullable(_$LogicalOperatorEnumMap, json['filterOperator']),
       skip: (json['skip'] as num?)?.toInt(),
       sort: json['sort'] == null
           ? null
-          : FacetSortParameter.fromJson(json['sort'] as Map<String, dynamic>),
+          : FacetSortParameter.fromJson(
+              Map<String, dynamic>.from(json['sort'] as Map)),
       take: (json['take'] as num?)?.toInt(),
     );
 

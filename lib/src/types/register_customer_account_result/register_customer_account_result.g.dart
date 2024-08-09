@@ -6,8 +6,7 @@ part of 'register_customer_account_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(Map json) =>
     _$MissingPasswordErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -58,7 +57,7 @@ const _$ErrorCodeEnumMap = {
 };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -74,7 +73,7 @@ Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
     };
 
 _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PasswordValidationErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -91,8 +90,7 @@ Map<String, dynamic> _$$PasswordValidationErrorImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$SuccessImpl _$$SuccessImplFromJson(Map<String, dynamic> json) =>
-    _$SuccessImpl(
+_$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
       success: json['success'] as bool,
       $type: json['runtimeType'] as String?,
     );

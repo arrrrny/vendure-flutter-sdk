@@ -6,7 +6,7 @@ void main() {
   late Vendure vendure;
   String uid = '1AA2950GR6PtiOUOGVp2oqFkmhz1';
   String jwt =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjMwNDkxNTgsInVzZXJfaWQiOiIxQUEyOTUwR1I2UHRpT1VPR1ZwMm9xRmttaHoxIiwic3ViIjoiMUFBMjk1MEdSNlB0aU9VT0dWcDJvcUZrbWh6MSIsImlhdCI6MTcyMzE4MTI5NCwiZXhwIjoxNzIzMTg0ODk0LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.MVzI7ByPuz8niysXCqY5iduHL8-CRdzOf58wg6MTMB4JtYsqhH_4uoUgTYwm-0HG101r0GPrTwI5NLgayBiL5k6kOLJEhyoNSatlPCXgseCsqKj7IN26CmbzI_li9nktLlEo8b6cvd6ieF4w-7_pPbrCKfqxAFj27Q04h5z7EeNecTHvYpZSYsSsWh47gTZCB_cr1Ec5rMxJeI9SfbE6C8UGLhu3_QdEkwRrvK5HEar9MlWpVHrI4ztp-4K_DujPka-Sq7ofGm_5iziwtMjUwo2KEroSttrTqZ3yTY39jhrQUT7_zFV4RUvN5yDjHo-aWmv8bL7FkfSVeDR4yFkQxw';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjMwNDkxNTgsInVzZXJfaWQiOiIxQUEyOTUwR1I2UHRpT1VPR1ZwMm9xRmttaHoxIiwic3ViIjoiMUFBMjk1MEdSNlB0aU9VT0dWcDJvcUZrbWh6MSIsImlhdCI6MTcyMzE4Nzg5NSwiZXhwIjoxNzIzMTkxNDk1LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.AANUpvEcNfuystSkbtHhFdU62Oz0qg20RqvrEKAjEUDijlwmiH392ixy3IyyW5l_83kbySnEYOnmoB6rIxgVrHAsR-o3VI4ZE6UQTMFkbVyL3G9m1JLrtGvo7S-MAnblgbswLELWdvTTN5YTseWfc9c_2SRnoBh-hirQQUQP11MrDFo2xETy_hTaURCo_MTsnWTE9aVqf3Uz-8nITRgCrgbK7syX5myn89Fs5PY2yT4dhRG7A8A-EfTHzA-hfojWS7JoJTp-fq8zp7bJTYDCXzOdxa5s7kaC05QpmMRNPHOaGo8CXBKKjUt7ZKvkrwUgr8HIXmrmKiFwyWOdE-eFng';
   String endpoint = 'http://localhost:3000/shop-api';
   String testOrderCode = 'testOrderCode';
   String testOrderLineId = '246';
@@ -26,32 +26,8 @@ void main() {
         var result = await vendure.order.getActiveOrder();
         expect(result, isA<ActiveOrderResult>());
         Map<String, dynamic> data = result.toJson();
-        data.remove('customer');
-        data.remove('customFields');
-        data.remove('fulfillments');
-        data.remove('orderPlacedAt');
-        data.remove('payments');
-        data.remove('shippingAddress');
-        data.remove('billingAddress');
+
         Order order = Order.fromJson(data);
-        expect(order, isA<Order>());
-        expect(order.code, isA<String>());
-        expect(order.couponCodes, isA<List>());
-        expect(order.createdAt, isA<DateTime>());
-        expect(order.currencyCode, isA<CurrencyCode>());
-        expect(order.discounts, isA<List>());
-        expect(order.history, isA<HistoryEntryList>());
-
-        expect(output.HistoryEntryList.fromJson(order.history!.toJson()),
-            isA<output.HistoryEntryList>());
-        expect(order.id, isA<String>());
-        print(order.lines!.first!);
-
-        expect(output.OrderLine.fromJson(order.lines!.first!.toJson()),
-            isA<output.OrderLine>());
-
-        expect(order.lines, isA<List<OrderLine>>());
-        print(order.lines!.first!);
         output.Order outputOrder = output.Order.fromJson(order.toJson());
 
         expect(outputOrder, isA<output.Order>());

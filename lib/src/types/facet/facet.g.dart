@@ -6,37 +6,49 @@ part of 'facet.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetImpl _$$FacetImplFromJson(Map<String, dynamic> json) => _$FacetImpl(
+_$FacetImpl _$$FacetImplFromJson(Map json) => _$FacetImpl(
       code: json['code'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
       translations: (json['translations'] as List<dynamic>)
-          .map((e) => FacetTranslation.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              FacetTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
-      valueList:
-          FacetValueList.fromJson(json['valueList'] as Map<String, dynamic>),
+      valueList: FacetValueList.fromJson(
+          Map<String, dynamic>.from(json['valueList'] as Map)),
       values: (json['values'] as List<dynamic>)
-          .map((e) => FacetValue.fromJson(e as Map<String, dynamic>))
+          .map((e) => FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 
-Map<String, dynamic> _$$FacetImplToJson(_$FacetImpl instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'customFields': instance.customFields,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'translations': instance.translations,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'valueList': instance.valueList,
-      'values': instance.values,
-    };
+Map<String, dynamic> _$$FacetImplToJson(_$FacetImpl instance) {
+  final val = <String, dynamic>{
+    'code': instance.code,
+    'createdAt': instance.createdAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customFields', instance.customFields);
+  val['id'] = instance.id;
+  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
+  val['name'] = instance.name;
+  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
+  val['updatedAt'] = instance.updatedAt.toIso8601String();
+  val['valueList'] = instance.valueList.toJson();
+  val['values'] = instance.values.map((e) => e.toJson()).toList();
+  return val;
+}
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

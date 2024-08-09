@@ -6,8 +6,7 @@ part of 'date_range.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DateRangeImpl _$$DateRangeImplFromJson(Map<String, dynamic> json) =>
-    _$DateRangeImpl(
+_$DateRangeImpl _$$DateRangeImplFromJson(Map json) => _$DateRangeImpl(
       end: DateTime.parse(json['end'] as String),
       start: DateTime.parse(json['start'] as String),
     );

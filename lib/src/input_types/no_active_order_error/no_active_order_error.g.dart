@@ -6,8 +6,7 @@ part of 'no_active_order_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(Map json) =>
     _$NoActiveOrderErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,

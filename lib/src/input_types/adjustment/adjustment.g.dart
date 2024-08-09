@@ -6,11 +6,12 @@ part of 'adjustment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AdjustmentImpl _$$AdjustmentImplFromJson(Map<String, dynamic> json) =>
-    _$AdjustmentImpl(
+_$AdjustmentImpl _$$AdjustmentImplFromJson(Map json) => _$AdjustmentImpl(
       adjustmentSource: json['adjustmentSource'] as String?,
       amount: (json['amount'] as num?)?.toDouble(),
-      data: json['data'] as Map<String, dynamic>?,
+      data: (json['data'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String?,
       type: $enumDecodeNullable(_$AdjustmentTypeEnumMap, json['type']),
     );

@@ -6,8 +6,7 @@ part of 'order_tax_summary.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderTaxSummaryImpl _$$OrderTaxSummaryImplFromJson(
-        Map<String, dynamic> json) =>
+_$OrderTaxSummaryImpl _$$OrderTaxSummaryImplFromJson(Map json) =>
     _$OrderTaxSummaryImpl(
       description: json['description'] as String?,
       taxBase: (json['taxBase'] as num?)?.toDouble(),

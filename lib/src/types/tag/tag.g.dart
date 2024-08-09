@@ -6,7 +6,7 @@ part of 'tag.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
+_$TagImpl _$$TagImplFromJson(Map json) => _$TagImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
       id: json['id'] as String,
       updatedAt: DateTime.parse(json['updatedAt'] as String),

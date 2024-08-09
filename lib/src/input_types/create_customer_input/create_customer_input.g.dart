@@ -6,10 +6,11 @@ part of 'create_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(Map json) =>
     _$CreateCustomerInputImpl(
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       emailAddress: json['emailAddress'] as String,
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,

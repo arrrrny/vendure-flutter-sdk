@@ -6,11 +6,12 @@ part of 'payment_method_quote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(
-        Map<String, dynamic> json) =>
+_$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(Map json) =>
     _$PaymentMethodQuoteImpl(
       code: json['code'] as String?,
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String?,
       eligibilityMessage: json['eligibilityMessage'] as String?,
       id: json['id'] as String?,

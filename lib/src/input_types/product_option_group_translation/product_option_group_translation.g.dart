@@ -7,7 +7,7 @@ part of 'product_option_group_translation.dart';
 // **************************************************************************
 
 _$ProductOptionGroupTranslationImpl
-    _$$ProductOptionGroupTranslationImplFromJson(Map<String, dynamic> json) =>
+    _$$ProductOptionGroupTranslationImplFromJson(Map json) =>
         _$ProductOptionGroupTranslationImpl(
           createdAt: json['createdAt'] == null
               ? null

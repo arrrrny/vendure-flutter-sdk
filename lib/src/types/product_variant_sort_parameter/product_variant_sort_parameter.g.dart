@@ -7,7 +7,7 @@ part of 'product_variant_sort_parameter.dart';
 // **************************************************************************
 
 _$ProductVariantSortParameterImpl _$$ProductVariantSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$ProductVariantSortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
@@ -22,18 +22,26 @@ _$ProductVariantSortParameterImpl _$$ProductVariantSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$ProductVariantSortParameterImplToJson(
-        _$ProductVariantSortParameterImpl instance) =>
-    <String, dynamic>{
-      'createdAt': _$SortOrderEnumMap[instance.createdAt],
-      'id': _$SortOrderEnumMap[instance.id],
-      'name': _$SortOrderEnumMap[instance.name],
-      'price': _$SortOrderEnumMap[instance.price],
-      'priceWithTax': _$SortOrderEnumMap[instance.priceWithTax],
-      'productId': _$SortOrderEnumMap[instance.productId],
-      'sku': _$SortOrderEnumMap[instance.sku],
-      'stockLevel': _$SortOrderEnumMap[instance.stockLevel],
-      'updatedAt': _$SortOrderEnumMap[instance.updatedAt],
-    };
+    _$ProductVariantSortParameterImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
+  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
+  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
+  writeNotNull('price', _$SortOrderEnumMap[instance.price]);
+  writeNotNull('priceWithTax', _$SortOrderEnumMap[instance.priceWithTax]);
+  writeNotNull('productId', _$SortOrderEnumMap[instance.productId]);
+  writeNotNull('sku', _$SortOrderEnumMap[instance.sku]);
+  writeNotNull('stockLevel', _$SortOrderEnumMap[instance.stockLevel]);
+  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
+  return val;
+}
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

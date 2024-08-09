@@ -6,8 +6,7 @@ part of 'payment_declined_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentDeclinedErrorImpl _$$PaymentDeclinedErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$PaymentDeclinedErrorImpl _$$PaymentDeclinedErrorImplFromJson(Map json) =>
     _$PaymentDeclinedErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,

@@ -6,14 +6,13 @@ part of 'insufficient_stock_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InsufficientStockErrorImpl _$$InsufficientStockErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$InsufficientStockErrorImpl _$$InsufficientStockErrorImplFromJson(Map json) =>
     _$InsufficientStockErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       order: json['order'] == null
           ? null
-          : Order.fromJson(json['order'] as Map<String, dynamic>),
+          : Order.fromJson(Map<String, dynamic>.from(json['order'] as Map)),
       quantityAvailable: (json['quantityAvailable'] as num?)?.toInt(),
     );
 

@@ -7,7 +7,7 @@ part of 'payment_method_translation.dart';
 // **************************************************************************
 
 _$PaymentMethodTranslationImpl _$$PaymentMethodTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PaymentMethodTranslationImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String,

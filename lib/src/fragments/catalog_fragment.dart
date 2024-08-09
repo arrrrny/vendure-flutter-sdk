@@ -38,9 +38,11 @@ fragment ProductVariant on ProductVariant {
     ...FacetValue
   }
   translations {
+    createdAt
     id
     languageCode
     name
+    updatedAt
   }
   customFields
 }
@@ -146,31 +148,42 @@ fragment Collection on Collection {
 
 ''';
 
-const String productOptionFragment = productOptionGroupFragment +
-    r'''
+const String productOptionFragment = r'''
 fragment ProductOption on ProductOption {
   __typename
+  createdAt
+  updatedAt
   id
   languageCode
   code
   name
   groupId
   group {
-    ...ProductOptionGroup
+    id
+    name
+    code
   }
   translations {
     id
     languageCode
     name
+    createdAt
+    updatedAt
   }
   customFields
 }
 
 ''';
-const String productOptionGroupFragment = r'''
+const String productOptionGroupFragment = productOptionFragment +
+    r'''
 fragment ProductOptionGroup on ProductOptionGroup {
   __typename
   id
+  createdAt
+  updatedAt
+  options{
+    ...ProductOption
+  }
   languageCode
   code
   name
@@ -178,33 +191,43 @@ fragment ProductOptionGroup on ProductOptionGroup {
     id
     languageCode
     name
+    createdAt
+    updatedAt
   }
   customFields
 }
 
 ''';
 
-const String orderLineProductVariantFragment = assetFragment +
-    taxRateFragment +
-    productOptionFragment +
+const String orderLineProductVariantFragment = productOptionFragment +
     facetValueFragment +
+    taxRateFragment +
     r'''
-fragment ProductVariant on ProductVariant {
+fragment OrderLineProductVariant on ProductVariant {
   __typename
   id
+  createdAt
+  updatedAt
   product {
     id
   }
-  productId
-  languageCode
-  sku
-  name
   featuredAsset {
     ...Asset
   }
   assets {
     ...Asset
   }
+  facetValues {
+    ...FacetValue
+  }
+
+  options{
+    ...ProductOption
+  }
+  productId
+  languageCode
+  sku
+  name
   price
   currencyCode
   priceWithTax
@@ -213,21 +236,20 @@ fragment ProductVariant on ProductVariant {
     ...TaxRate
   }
   taxCategory {
+    createdAt
+    updatedAt
     id
     name
     isDefault
     customFields
   }
-  options {
-    ...ProductOption
-  }
-  facetValues {
-    ...FacetValue
-  }
+
   translations {
+    createdAt
     id
     languageCode
     name
+    updatedAt
   }
   customFields
 }

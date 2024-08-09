@@ -6,8 +6,7 @@ part of 'coupon_code_invalid_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CouponCodeInvalidErrorImpl _$$CouponCodeInvalidErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$CouponCodeInvalidErrorImpl _$$CouponCodeInvalidErrorImplFromJson(Map json) =>
     _$CouponCodeInvalidErrorImpl(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),

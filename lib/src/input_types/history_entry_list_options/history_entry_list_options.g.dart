@@ -7,19 +7,19 @@ part of 'history_entry_list_options.dart';
 // **************************************************************************
 
 _$HistoryEntryListOptionsImpl _$$HistoryEntryListOptionsImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$HistoryEntryListOptionsImpl(
       filter: json['filter'] == null
           ? null
           : HistoryEntryFilterParameter.fromJson(
-              json['filter'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['filter'] as Map)),
       filterOperator:
           $enumDecodeNullable(_$LogicalOperatorEnumMap, json['filterOperator']),
       skip: (json['skip'] as num?)?.toInt(),
       sort: json['sort'] == null
           ? null
           : HistoryEntrySortParameter.fromJson(
-              json['sort'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['sort'] as Map)),
       take: (json['take'] as num?)?.toInt(),
     );
 

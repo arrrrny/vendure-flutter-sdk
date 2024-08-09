@@ -7,7 +7,7 @@ part of 'request_password_reset_result.dart';
 // **************************************************************************
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -65,8 +65,7 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$SuccessImpl _$$SuccessImplFromJson(Map<String, dynamic> json) =>
-    _$SuccessImpl(
+_$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
       success: json['success'] as bool?,
       $type: json['runtimeType'] as String?,
     );

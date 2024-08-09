@@ -6,33 +6,39 @@ part of 'collection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionImpl _$$CollectionImplFromJson(Map<String, dynamic> json) =>
-    _$CollectionImpl(
+_$CollectionImpl _$$CollectionImplFromJson(Map json) => _$CollectionImpl(
       assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Asset.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Asset.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       breadcrumbs: (json['breadcrumbs'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : CollectionBreadcrumb.fromJson(e as Map<String, dynamic>))
+              : CollectionBreadcrumb.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       children: (json['children'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Collection.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Collection.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String?,
       featuredAsset: json['featuredAsset'] == null
           ? null
-          : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
+          : Asset.fromJson(
+              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
       filters: (json['filters'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ConfigurableOperation.fromJson(e as Map<String, dynamic>))
+              : ConfigurableOperation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String?,
       languageCode:
@@ -40,18 +46,20 @@ _$CollectionImpl _$$CollectionImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       parent: json['parent'] == null
           ? null
-          : Collection.fromJson(json['parent'] as Map<String, dynamic>),
+          : Collection.fromJson(
+              Map<String, dynamic>.from(json['parent'] as Map)),
       parentId: json['parentId'] as String?,
       position: (json['position'] as num?)?.toInt(),
       productVariants: json['productVariants'] == null
           ? null
           : ProductVariantList.fromJson(
-              json['productVariants'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['productVariants'] as Map)),
       slug: json['slug'] as String?,
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : CollectionTranslation.fromJson(e as Map<String, dynamic>))
+              : CollectionTranslation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null

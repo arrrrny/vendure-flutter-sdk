@@ -32,12 +32,10 @@ mixin _$ProductVariant {
   List<ProductOption> get options => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   double get priceWithTax => throw _privateConstructorUsedError;
-  Product get product => throw _privateConstructorUsedError;
   String get productId => throw _privateConstructorUsedError;
   String get sku => throw _privateConstructorUsedError;
   String get stockLevel => throw _privateConstructorUsedError;
   TaxCategory get taxCategory => throw _privateConstructorUsedError;
-  TaxRate get taxRateApplied => throw _privateConstructorUsedError;
   List<ProductVariantTranslation> get translations =>
       throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
@@ -67,19 +65,15 @@ abstract class $ProductVariantCopyWith<$Res> {
       List<ProductOption> options,
       double price,
       double priceWithTax,
-      Product product,
       String productId,
       String sku,
       String stockLevel,
       TaxCategory taxCategory,
-      TaxRate taxRateApplied,
       List<ProductVariantTranslation> translations,
       DateTime updatedAt});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $ProductCopyWith<$Res> get product;
   $TaxCategoryCopyWith<$Res> get taxCategory;
-  $TaxRateCopyWith<$Res> get taxRateApplied;
 }
 
 /// @nodoc
@@ -107,12 +101,10 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
     Object? options = null,
     Object? price = null,
     Object? priceWithTax = null,
-    Object? product = null,
     Object? productId = null,
     Object? sku = null,
     Object? stockLevel = null,
     Object? taxCategory = null,
-    Object? taxRateApplied = null,
     Object? translations = null,
     Object? updatedAt = null,
   }) {
@@ -165,10 +157,6 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
               as double,
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as Product,
       productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
@@ -185,10 +173,6 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
           ? _value.taxCategory
           : taxCategory // ignore: cast_nullable_to_non_nullable
               as TaxCategory,
-      taxRateApplied: null == taxRateApplied
-          ? _value.taxRateApplied
-          : taxRateApplied // ignore: cast_nullable_to_non_nullable
-              as TaxRate,
       translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
@@ -214,25 +198,9 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
 
   @override
   @pragma('vm:prefer-inline')
-  $ProductCopyWith<$Res> get product {
-    return $ProductCopyWith<$Res>(_value.product, (value) {
-      return _then(_value.copyWith(product: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $TaxCategoryCopyWith<$Res> get taxCategory {
     return $TaxCategoryCopyWith<$Res>(_value.taxCategory, (value) {
       return _then(_value.copyWith(taxCategory: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TaxRateCopyWith<$Res> get taxRateApplied {
-    return $TaxRateCopyWith<$Res>(_value.taxRateApplied, (value) {
-      return _then(_value.copyWith(taxRateApplied: value) as $Val);
     });
   }
 }
@@ -258,23 +226,17 @@ abstract class _$$ProductVariantImplCopyWith<$Res>
       List<ProductOption> options,
       double price,
       double priceWithTax,
-      Product product,
       String productId,
       String sku,
       String stockLevel,
       TaxCategory taxCategory,
-      TaxRate taxRateApplied,
       List<ProductVariantTranslation> translations,
       DateTime updatedAt});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
   @override
-  $ProductCopyWith<$Res> get product;
-  @override
   $TaxCategoryCopyWith<$Res> get taxCategory;
-  @override
-  $TaxRateCopyWith<$Res> get taxRateApplied;
 }
 
 /// @nodoc
@@ -300,12 +262,10 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
     Object? options = null,
     Object? price = null,
     Object? priceWithTax = null,
-    Object? product = null,
     Object? productId = null,
     Object? sku = null,
     Object? stockLevel = null,
     Object? taxCategory = null,
-    Object? taxRateApplied = null,
     Object? translations = null,
     Object? updatedAt = null,
   }) {
@@ -358,10 +318,6 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
               as double,
-      product: null == product
-          ? _value.product
-          : product // ignore: cast_nullable_to_non_nullable
-              as Product,
       productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
@@ -378,10 +334,6 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
           ? _value.taxCategory
           : taxCategory // ignore: cast_nullable_to_non_nullable
               as TaxCategory,
-      taxRateApplied: null == taxRateApplied
-          ? _value.taxRateApplied
-          : taxRateApplied // ignore: cast_nullable_to_non_nullable
-              as TaxRate,
       translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
@@ -411,12 +363,10 @@ class _$ProductVariantImpl extends _ProductVariant
       required final List<ProductOption> options,
       required this.price,
       required this.priceWithTax,
-      required this.product,
       required this.productId,
       required this.sku,
       required this.stockLevel,
       required this.taxCategory,
-      required this.taxRateApplied,
       required final List<ProductVariantTranslation> translations,
       required this.updatedAt})
       : _assets = assets,
@@ -480,8 +430,6 @@ class _$ProductVariantImpl extends _ProductVariant
   @override
   final double priceWithTax;
   @override
-  final Product product;
-  @override
   final String productId;
   @override
   final String sku;
@@ -489,8 +437,6 @@ class _$ProductVariantImpl extends _ProductVariant
   final String stockLevel;
   @override
   final TaxCategory taxCategory;
-  @override
-  final TaxRate taxRateApplied;
   final List<ProductVariantTranslation> _translations;
   @override
   List<ProductVariantTranslation> get translations {
@@ -504,7 +450,7 @@ class _$ProductVariantImpl extends _ProductVariant
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductVariant(assets: $assets, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, facetValues: $facetValues, featuredAsset: $featuredAsset, id: $id, languageCode: $languageCode, name: $name, options: $options, price: $price, priceWithTax: $priceWithTax, product: $product, productId: $productId, sku: $sku, stockLevel: $stockLevel, taxCategory: $taxCategory, taxRateApplied: $taxRateApplied, translations: $translations, updatedAt: $updatedAt)';
+    return 'ProductVariant(assets: $assets, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, facetValues: $facetValues, featuredAsset: $featuredAsset, id: $id, languageCode: $languageCode, name: $name, options: $options, price: $price, priceWithTax: $priceWithTax, productId: $productId, sku: $sku, stockLevel: $stockLevel, taxCategory: $taxCategory, translations: $translations, updatedAt: $updatedAt)';
   }
 
   @override
@@ -524,12 +470,10 @@ class _$ProductVariantImpl extends _ProductVariant
       ..add(DiagnosticsProperty('options', options))
       ..add(DiagnosticsProperty('price', price))
       ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('product', product))
       ..add(DiagnosticsProperty('productId', productId))
       ..add(DiagnosticsProperty('sku', sku))
       ..add(DiagnosticsProperty('stockLevel', stockLevel))
       ..add(DiagnosticsProperty('taxCategory', taxCategory))
-      ..add(DiagnosticsProperty('taxRateApplied', taxRateApplied))
       ..add(DiagnosticsProperty('translations', translations))
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
@@ -558,7 +502,6 @@ class _$ProductVariantImpl extends _ProductVariant
             (identical(other.price, price) || other.price == price) &&
             (identical(other.priceWithTax, priceWithTax) ||
                 other.priceWithTax == priceWithTax) &&
-            (identical(other.product, product) || other.product == product) &&
             (identical(other.productId, productId) ||
                 other.productId == productId) &&
             (identical(other.sku, sku) || other.sku == sku) &&
@@ -566,8 +509,6 @@ class _$ProductVariantImpl extends _ProductVariant
                 other.stockLevel == stockLevel) &&
             (identical(other.taxCategory, taxCategory) ||
                 other.taxCategory == taxCategory) &&
-            (identical(other.taxRateApplied, taxRateApplied) ||
-                other.taxRateApplied == taxRateApplied) &&
             const DeepCollectionEquality()
                 .equals(other._translations, _translations) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -576,29 +517,26 @@ class _$ProductVariantImpl extends _ProductVariant
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        const DeepCollectionEquality().hash(_assets),
-        createdAt,
-        currencyCode,
-        const DeepCollectionEquality().hash(_customFields),
-        const DeepCollectionEquality().hash(_facetValues),
-        featuredAsset,
-        id,
-        languageCode,
-        name,
-        const DeepCollectionEquality().hash(_options),
-        price,
-        priceWithTax,
-        product,
-        productId,
-        sku,
-        stockLevel,
-        taxCategory,
-        taxRateApplied,
-        const DeepCollectionEquality().hash(_translations),
-        updatedAt
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_assets),
+      createdAt,
+      currencyCode,
+      const DeepCollectionEquality().hash(_customFields),
+      const DeepCollectionEquality().hash(_facetValues),
+      featuredAsset,
+      id,
+      languageCode,
+      name,
+      const DeepCollectionEquality().hash(_options),
+      price,
+      priceWithTax,
+      productId,
+      sku,
+      stockLevel,
+      taxCategory,
+      const DeepCollectionEquality().hash(_translations),
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -629,12 +567,10 @@ abstract class _ProductVariant extends ProductVariant {
       required final List<ProductOption> options,
       required final double price,
       required final double priceWithTax,
-      required final Product product,
       required final String productId,
       required final String sku,
       required final String stockLevel,
       required final TaxCategory taxCategory,
-      required final TaxRate taxRateApplied,
       required final List<ProductVariantTranslation> translations,
       required final DateTime updatedAt}) = _$ProductVariantImpl;
   const _ProductVariant._() : super._();
@@ -667,8 +603,6 @@ abstract class _ProductVariant extends ProductVariant {
   @override
   double get priceWithTax;
   @override
-  Product get product;
-  @override
   String get productId;
   @override
   String get sku;
@@ -676,8 +610,6 @@ abstract class _ProductVariant extends ProductVariant {
   String get stockLevel;
   @override
   TaxCategory get taxCategory;
-  @override
-  TaxRate get taxRateApplied;
   @override
   List<ProductVariantTranslation> get translations;
   @override

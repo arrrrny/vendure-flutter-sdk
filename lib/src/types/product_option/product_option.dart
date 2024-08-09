@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../product_option_group/product_option_group.dart';
 import '../product_option_translation/product_option_translation.dart';
 import '../types/language_code/language_code.dart';
 
@@ -15,7 +14,6 @@ class ProductOption with _$ProductOption {
     required String code,
     required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    required ProductOptionGroup group,
     required String groupId,
     required String id,
     required LanguageCode languageCode,

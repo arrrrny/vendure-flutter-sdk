@@ -7,59 +7,73 @@ part of 'collection_filter_parameter.dart';
 // **************************************************************************
 
 _$CollectionFilterParameterImpl _$$CollectionFilterParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$CollectionFilterParameterImpl(
       and: (json['_and'] as List<dynamic>?)
-          ?.map((e) =>
-              CollectionFilterParameter.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CollectionFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       or: (json['_or'] as List<dynamic>?)
-          ?.map((e) =>
-              CollectionFilterParameter.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CollectionFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       createdAt: json['createdAt'] == null
           ? null
-          : DateOperators.fromJson(json['createdAt'] as Map<String, dynamic>),
+          : DateOperators.fromJson(
+              Map<String, dynamic>.from(json['createdAt'] as Map)),
       description: json['description'] == null
           ? null
           : StringOperators.fromJson(
-              json['description'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['description'] as Map)),
       id: json['id'] == null
           ? null
-          : IdOperators.fromJson(json['id'] as Map<String, dynamic>),
+          : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
       languageCode: json['languageCode'] == null
           ? null
           : StringOperators.fromJson(
-              json['languageCode'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['languageCode'] as Map)),
       name: json['name'] == null
           ? null
-          : StringOperators.fromJson(json['name'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['name'] as Map)),
       parentId: json['parentId'] == null
           ? null
-          : IdOperators.fromJson(json['parentId'] as Map<String, dynamic>),
+          : IdOperators.fromJson(
+              Map<String, dynamic>.from(json['parentId'] as Map)),
       position: json['position'] == null
           ? null
-          : NumberOperators.fromJson(json['position'] as Map<String, dynamic>),
+          : NumberOperators.fromJson(
+              Map<String, dynamic>.from(json['position'] as Map)),
       slug: json['slug'] == null
           ? null
-          : StringOperators.fromJson(json['slug'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['slug'] as Map)),
       updatedAt: json['updatedAt'] == null
           ? null
-          : DateOperators.fromJson(json['updatedAt'] as Map<String, dynamic>),
+          : DateOperators.fromJson(
+              Map<String, dynamic>.from(json['updatedAt'] as Map)),
     );
 
 Map<String, dynamic> _$$CollectionFilterParameterImplToJson(
-        _$CollectionFilterParameterImpl instance) =>
-    <String, dynamic>{
-      '_and': instance.and,
-      '_or': instance.or,
-      'createdAt': instance.createdAt,
-      'description': instance.description,
-      'id': instance.id,
-      'languageCode': instance.languageCode,
-      'name': instance.name,
-      'parentId': instance.parentId,
-      'position': instance.position,
-      'slug': instance.slug,
-      'updatedAt': instance.updatedAt,
-    };
+    _$CollectionFilterParameterImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
+  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
+  writeNotNull('createdAt', instance.createdAt?.toJson());
+  writeNotNull('description', instance.description?.toJson());
+  writeNotNull('id', instance.id?.toJson());
+  writeNotNull('languageCode', instance.languageCode?.toJson());
+  writeNotNull('name', instance.name?.toJson());
+  writeNotNull('parentId', instance.parentId?.toJson());
+  writeNotNull('position', instance.position?.toJson());
+  writeNotNull('slug', instance.slug?.toJson());
+  writeNotNull('updatedAt', instance.updatedAt?.toJson());
+  return val;
+}

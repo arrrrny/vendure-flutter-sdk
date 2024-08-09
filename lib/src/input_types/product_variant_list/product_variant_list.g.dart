@@ -6,13 +6,12 @@ part of 'product_variant_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductVariantListImpl _$$ProductVariantListImplFromJson(
-        Map<String, dynamic> json) =>
+_$ProductVariantListImpl _$$ProductVariantListImplFromJson(Map json) =>
     _$ProductVariantListImpl(
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ProductVariant.fromJson(e as Map<String, dynamic>))
+              : ProductVariant.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

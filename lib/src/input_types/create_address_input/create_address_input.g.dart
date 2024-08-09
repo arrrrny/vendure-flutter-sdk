@@ -6,13 +6,14 @@ part of 'create_address_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreateAddressInputImpl _$$CreateAddressInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$CreateAddressInputImpl _$$CreateAddressInputImplFromJson(Map json) =>
     _$CreateAddressInputImpl(
       city: json['city'] as String?,
       company: json['company'] as String?,
       countryCode: json['countryCode'] as String,
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       defaultBillingAddress: json['defaultBillingAddress'] as bool?,
       defaultShippingAddress: json['defaultShippingAddress'] as bool?,
       fullName: json['fullName'] as String?,

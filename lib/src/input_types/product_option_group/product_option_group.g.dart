@@ -6,14 +6,15 @@ part of 'product_option_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(
-        Map<String, dynamic> json) =>
+_$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
     _$ProductOptionGroupImpl(
       code: json['code'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       id: json['id'] as String?,
       languageCode:
           $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
@@ -21,13 +22,13 @@ _$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(
       options: (json['options'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ProductOption.fromJson(e as Map<String, dynamic>))
+              : ProductOption.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
               : ProductOptionGroupTranslation.fromJson(
-                  e as Map<String, dynamic>))
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null

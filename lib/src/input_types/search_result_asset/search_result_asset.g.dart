@@ -6,12 +6,12 @@ part of 'search_result_asset.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchResultAssetImpl _$$SearchResultAssetImplFromJson(
-        Map<String, dynamic> json) =>
+_$SearchResultAssetImpl _$$SearchResultAssetImplFromJson(Map json) =>
     _$SearchResultAssetImpl(
       focalPoint: json['focalPoint'] == null
           ? null
-          : Coordinate.fromJson(json['focalPoint'] as Map<String, dynamic>),
+          : Coordinate.fromJson(
+              Map<String, dynamic>.from(json['focalPoint'] as Map)),
       id: json['id'] as String?,
       preview: json['preview'] as String?,
     );

@@ -6,11 +6,11 @@ part of 'tax_rate_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaxRateListImpl _$$TaxRateListImplFromJson(Map<String, dynamic> json) =>
-    _$TaxRateListImpl(
+_$TaxRateListImpl _$$TaxRateListImplFromJson(Map json) => _$TaxRateListImpl(
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : TaxRate.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : TaxRate.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

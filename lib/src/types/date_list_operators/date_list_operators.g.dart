@@ -6,8 +6,7 @@ part of 'date_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DateListOperatorsImpl _$$DateListOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$DateListOperatorsImpl _$$DateListOperatorsImplFromJson(Map json) =>
     _$DateListOperatorsImpl(
       inList: DateTime.parse(json['inList'] as String),
     );

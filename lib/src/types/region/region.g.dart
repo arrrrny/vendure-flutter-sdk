@@ -6,7 +6,7 @@ part of 'region.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegionImpl _$$RegionImplFromJson(Map<String, dynamic> json) => _$RegionImpl(
+_$RegionImpl _$$RegionImplFromJson(Map json) => _$RegionImpl(
       id: json['id'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
@@ -17,24 +17,34 @@ _$RegionImpl _$$RegionImplFromJson(Map<String, dynamic> json) => _$RegionImpl(
       enabled: json['enabled'] as bool,
       parent: json['parent'] == null
           ? null
-          : Region.fromJson(json['parent'] as Map<String, dynamic>),
+          : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
       parentId: json['parentId'] as String?,
       translations: (json['translations'] as List<dynamic>)
-          .map((e) => RegionTranslation.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 
-Map<String, dynamic> _$$RegionImplToJson(_$RegionImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'languageCode': instance.languageCode,
-      'code': instance.code,
-      'type': instance.type,
-      'name': instance.name,
-      'enabled': instance.enabled,
-      'parent': instance.parent,
-      'parentId': instance.parentId,
-      'translations': instance.translations,
-    };
+Map<String, dynamic> _$$RegionImplToJson(_$RegionImpl instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'createdAt': instance.createdAt.toIso8601String(),
+    'updatedAt': instance.updatedAt.toIso8601String(),
+    'languageCode': instance.languageCode,
+    'code': instance.code,
+    'type': instance.type,
+    'name': instance.name,
+    'enabled': instance.enabled,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('parent', instance.parent?.toJson());
+  writeNotNull('parentId', instance.parentId);
+  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
+  return val;
+}

@@ -6,7 +6,7 @@ part of 'refund.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RefundImpl _$$RefundImplFromJson(Map<String, dynamic> json) => _$RefundImpl(
+_$RefundImpl _$$RefundImplFromJson(Map json) => _$RefundImpl(
       adjustment: (json['adjustment'] as num?)?.toDouble(),
       createdAt: json['createdAt'] == null
           ? null
@@ -14,10 +14,13 @@ _$RefundImpl _$$RefundImplFromJson(Map<String, dynamic> json) => _$RefundImpl(
       id: json['id'] as String?,
       items: (json['items'] as num?)?.toDouble(),
       lines: (json['lines'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : RefundLine.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : RefundLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
-      metadata: json['metadata'] as Map<String, dynamic>?,
+      metadata: (json['metadata'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       method: json['method'] as String?,
       paymentId: json['paymentId'] as String?,
       reason: json['reason'] as String?,

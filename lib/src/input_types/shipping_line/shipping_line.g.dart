@@ -6,14 +6,14 @@ part of 'shipping_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShippingLineImpl _$$ShippingLineImplFromJson(Map<String, dynamic> json) =>
-    _$ShippingLineImpl(
+_$ShippingLineImpl _$$ShippingLineImplFromJson(Map json) => _$ShippingLineImpl(
       discountedPrice: (json['discountedPrice'] as num?)?.toDouble(),
       discountedPriceWithTax:
           (json['discountedPriceWithTax'] as num?)?.toDouble(),
       discounts: (json['discounts'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Discount.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Discount.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String?,
       price: (json['price'] as num?)?.toDouble(),
@@ -21,7 +21,7 @@ _$ShippingLineImpl _$$ShippingLineImplFromJson(Map<String, dynamic> json) =>
       shippingMethod: json['shippingMethod'] == null
           ? null
           : ShippingMethod.fromJson(
-              json['shippingMethod'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['shippingMethod'] as Map)),
     );
 
 Map<String, dynamic> _$$ShippingLineImplToJson(_$ShippingLineImpl instance) {

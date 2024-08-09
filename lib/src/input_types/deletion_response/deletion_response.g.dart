@@ -6,8 +6,7 @@ part of 'deletion_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DeletionResponseImpl _$$DeletionResponseImplFromJson(
-        Map<String, dynamic> json) =>
+_$DeletionResponseImpl _$$DeletionResponseImplFromJson(Map json) =>
     _$DeletionResponseImpl(
       message: json['message'] as String?,
       result: $enumDecodeNullable(_$DeletionResultEnumMap, json['result']),

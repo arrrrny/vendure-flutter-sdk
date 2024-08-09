@@ -6,8 +6,7 @@ part of 'order_payment_state_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderPaymentStateErrorImpl _$$OrderPaymentStateErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$OrderPaymentStateErrorImpl _$$OrderPaymentStateErrorImplFromJson(Map json) =>
     _$OrderPaymentStateErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

@@ -7,7 +7,7 @@ part of 'invalid_credentials_error.dart';
 // **************************************************************************
 
 _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$InvalidCredentialsErrorImpl(
       authenticationError: json['authenticationError'] as String?,
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),

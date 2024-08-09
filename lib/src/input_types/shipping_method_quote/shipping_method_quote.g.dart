@@ -6,14 +6,17 @@ part of 'shipping_method_quote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShippingMethodQuoteImpl _$$ShippingMethodQuoteImplFromJson(
-        Map<String, dynamic> json) =>
+_$ShippingMethodQuoteImpl _$$ShippingMethodQuoteImplFromJson(Map json) =>
     _$ShippingMethodQuoteImpl(
       code: json['code'] as String?,
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String?,
       id: json['id'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
+      metadata: (json['metadata'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       name: json['name'] as String?,
       price: (json['price'] as num?)?.toDouble(),
       priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),

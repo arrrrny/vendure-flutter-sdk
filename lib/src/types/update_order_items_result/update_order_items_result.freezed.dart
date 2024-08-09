@@ -16,9 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 UpdateOrderItemsResult _$UpdateOrderItemsResultFromJson(
     Map<String, dynamic> json) {
-  print(
-      'Creating ExampleClass from JSON: $json'); // Add this log to check the input JSON
-
   switch (json['runtimeType']) {
     case 'insufficientStockError':
       return InsufficientStockError.fromJson(json);

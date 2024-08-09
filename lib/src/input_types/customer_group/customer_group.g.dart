@@ -6,15 +6,18 @@ part of 'customer_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CustomerGroupImpl _$$CustomerGroupImplFromJson(Map<String, dynamic> json) =>
+_$CustomerGroupImpl _$$CustomerGroupImplFromJson(Map json) =>
     _$CustomerGroupImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       customers: json['customers'] == null
           ? null
-          : CustomerList.fromJson(json['customers'] as Map<String, dynamic>),
+          : CustomerList.fromJson(
+              Map<String, dynamic>.from(json['customers'] as Map)),
       id: json['id'] as String?,
       name: json['name'] as String?,
       updatedAt: json['updatedAt'] == null

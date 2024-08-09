@@ -6,19 +6,21 @@ part of 'tax_rate.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaxRateImpl _$$TaxRateImplFromJson(Map<String, dynamic> json) =>
-    _$TaxRateImpl(
+_$TaxRateImpl _$$TaxRateImplFromJson(Map json) => _$TaxRateImpl(
       category: json['category'] == null
           ? null
-          : TaxCategory.fromJson(json['category'] as Map<String, dynamic>),
+          : TaxCategory.fromJson(
+              Map<String, dynamic>.from(json['category'] as Map)),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       customerGroup: json['customerGroup'] == null
           ? null
           : CustomerGroup.fromJson(
-              json['customerGroup'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['customerGroup'] as Map)),
       enabled: json['enabled'] as bool?,
       id: json['id'] as String?,
       name: json['name'] as String?,
@@ -28,7 +30,7 @@ _$TaxRateImpl _$$TaxRateImplFromJson(Map<String, dynamic> json) =>
       value: (json['value'] as num?)?.toDouble(),
       zone: json['zone'] == null
           ? null
-          : Zone.fromJson(json['zone'] as Map<String, dynamic>),
+          : Zone.fromJson(Map<String, dynamic>.from(json['zone'] as Map)),
     );
 
 Map<String, dynamic> _$$TaxRateImplToJson(_$TaxRateImpl instance) {

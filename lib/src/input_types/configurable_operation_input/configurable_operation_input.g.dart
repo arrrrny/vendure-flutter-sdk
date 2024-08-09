@@ -7,10 +7,11 @@ part of 'configurable_operation_input.dart';
 // **************************************************************************
 
 _$ConfigurableOperationInputImpl _$$ConfigurableOperationInputImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$ConfigurableOperationInputImpl(
       arguments: (json['arguments'] as List<dynamic>)
-          .map((e) => ConfigArgInput.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              ConfigArgInput.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       code: json['code'] as String,
     );

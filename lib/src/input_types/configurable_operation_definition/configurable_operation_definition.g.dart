@@ -7,12 +7,13 @@ part of 'configurable_operation_definition.dart';
 // **************************************************************************
 
 _$ConfigurableOperationDefinitionImpl
-    _$$ConfigurableOperationDefinitionImplFromJson(Map<String, dynamic> json) =>
+    _$$ConfigurableOperationDefinitionImplFromJson(Map json) =>
         _$ConfigurableOperationDefinitionImpl(
           args: (json['args'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
-                  : ConfigArgDefinition.fromJson(e as Map<String, dynamic>))
+                  : ConfigArgDefinition.fromJson(
+                      Map<String, dynamic>.from(e as Map)))
               .toList(),
           code: json['code'] as String?,
           description: json['description'] as String?,

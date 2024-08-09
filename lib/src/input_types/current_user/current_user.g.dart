@@ -6,12 +6,12 @@ part of 'current_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
-    _$CurrentUserImpl(
+_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       channels: (json['channels'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : CurrentUserChannel.fromJson(e as Map<String, dynamic>))
+              : CurrentUserChannel.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String?,
       identifier: json['identifier'] as String?,

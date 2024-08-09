@@ -142,6 +142,8 @@ fragment Role on Role {
 const String assetFragment = r'''
 fragment Asset on Asset {
   __typename
+  createdAt
+  updatedAt
   id
   name
   type
@@ -158,6 +160,8 @@ fragment Asset on Asset {
   tags {
     id
     value
+    createdAt
+    updatedAt
   }
   customFields
 }
@@ -170,10 +174,10 @@ fragment FacetValue on FacetValue {
   createdAt
   updatedAt
   languageCode
-  facet {
-    id
-    name
-    code
+  facet{
+   id
+   code
+   name
   }
   facetId
   name
@@ -182,6 +186,8 @@ fragment FacetValue on FacetValue {
     id
     languageCode
     name
+    createdAt
+    updatedAt
   }
   customFields
 }
@@ -238,6 +244,8 @@ const String facetFragment = facetValueFragment +
         id
         languageCode
         name
+        createdAt
+        updatedAt
       }
       customFields
     }

@@ -6,15 +6,16 @@ part of 'int_custom_field_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+_$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(Map json) =>
     _$IntCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool,
       max: (json['max'] as num?)?.toInt(),
@@ -27,28 +28,41 @@ _$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toInt(),
       type: json['type'] as String,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
     );
 
 Map<String, dynamic> _$$IntCustomFieldConfigImplToJson(
-        _$IntCustomFieldConfigImpl instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'internal': instance.internal,
-      'label': instance.label,
-      'list': instance.list,
-      'max': instance.max,
-      'min': instance.min,
-      'name': instance.name,
-      'nullable': instance.nullable,
-      'readonly': instance.readonly,
-      'requiresPermission': instance.requiresPermission
+    _$IntCustomFieldConfigImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'description', instance.description?.map((e) => e.toJson()).toList());
+  writeNotNull('internal', instance.internal);
+  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
+  val['list'] = instance.list;
+  writeNotNull('max', instance.max);
+  writeNotNull('min', instance.min);
+  val['name'] = instance.name;
+  writeNotNull('nullable', instance.nullable);
+  writeNotNull('readonly', instance.readonly);
+  writeNotNull(
+      'requiresPermission',
+      instance.requiresPermission
           ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList(),
-      'step': instance.step,
-      'type': instance.type,
-      'ui': instance.ui,
-    };
+          .toList());
+  writeNotNull('step', instance.step);
+  val['type'] = instance.type;
+  writeNotNull('ui', instance.ui);
+  return val;
+}
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

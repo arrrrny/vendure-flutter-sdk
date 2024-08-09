@@ -7,7 +7,7 @@ part of 'ineligible_payment_method_error.dart';
 // **************************************************************************
 
 _$IneligiblePaymentMethodErrorImpl _$$IneligiblePaymentMethodErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$IneligiblePaymentMethodErrorImpl(
       eligibilityCheckerMessage: json['eligibilityCheckerMessage'] as String?,
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),

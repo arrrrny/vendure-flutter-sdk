@@ -6,13 +6,14 @@ part of 'country.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CountryImpl _$$CountryImplFromJson(Map<String, dynamic> json) =>
-    _$CountryImpl(
+_$CountryImpl _$$CountryImplFromJson(Map json) => _$CountryImpl(
       code: json['code'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       enabled: json['enabled'] as bool?,
       id: json['id'] as String?,
       languageCode:
@@ -20,12 +21,12 @@ _$CountryImpl _$$CountryImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       parent: json['parent'] == null
           ? null
-          : Region.fromJson(json['parent'] as Map<String, dynamic>),
+          : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
       parentId: json['parentId'] as String?,
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : RegionTranslation.fromJson(e as Map<String, dynamic>))
+              : RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       type: json['type'] as String?,
       updatedAt: json['updatedAt'] == null

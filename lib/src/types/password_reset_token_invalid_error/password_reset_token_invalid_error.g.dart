@@ -7,7 +7,7 @@ part of 'password_reset_token_invalid_error.dart';
 // **************************************************************************
 
 _$PasswordResetTokenInvalidErrorImpl
-    _$$PasswordResetTokenInvalidErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$PasswordResetTokenInvalidErrorImplFromJson(Map json) =>
         _$PasswordResetTokenInvalidErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,

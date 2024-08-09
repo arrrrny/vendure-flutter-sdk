@@ -7,7 +7,7 @@ part of 'verification_token_invalid_error.dart';
 // **************************************************************************
 
 _$VerificationTokenInvalidErrorImpl
-    _$$VerificationTokenInvalidErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$VerificationTokenInvalidErrorImplFromJson(Map json) =>
         _$VerificationTokenInvalidErrorImpl(
           errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String?,

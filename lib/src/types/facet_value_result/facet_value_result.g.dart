@@ -6,17 +6,16 @@ part of 'facet_value_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetValueResultImpl _$$FacetValueResultImplFromJson(
-        Map<String, dynamic> json) =>
+_$FacetValueResultImpl _$$FacetValueResultImplFromJson(Map json) =>
     _$FacetValueResultImpl(
       count: (json['count'] as num).toInt(),
-      facetValue:
-          FacetValue.fromJson(json['facetValue'] as Map<String, dynamic>),
+      facetValue: FacetValue.fromJson(
+          Map<String, dynamic>.from(json['facetValue'] as Map)),
     );
 
 Map<String, dynamic> _$$FacetValueResultImplToJson(
         _$FacetValueResultImpl instance) =>
     <String, dynamic>{
       'count': instance.count,
-      'facetValue': instance.facetValue,
+      'facetValue': instance.facetValue.toJson(),
     };

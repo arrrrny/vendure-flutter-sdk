@@ -6,13 +6,12 @@ part of 'history_entry_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HistoryEntryListImpl _$$HistoryEntryListImplFromJson(
-        Map<String, dynamic> json) =>
+_$HistoryEntryListImpl _$$HistoryEntryListImplFromJson(Map json) =>
     _$HistoryEntryListImpl(
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : HistoryEntry.fromJson(e as Map<String, dynamic>))
+              : HistoryEntry.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

@@ -6,8 +6,7 @@ part of 'set_customer_for_order_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AlreadyLoggedInErrorImpl _$$AlreadyLoggedInErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$AlreadyLoggedInErrorImpl _$$AlreadyLoggedInErrorImplFromJson(Map json) =>
     _$AlreadyLoggedInErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -66,7 +65,7 @@ const _$ErrorCodeEnumMap = {
 };
 
 _$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$EmailAddressConflictErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -89,8 +88,7 @@ Map<String, dynamic> _$$EmailAddressConflictErrorImplToJson(
   return val;
 }
 
-_$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(Map json) =>
     _$GuestCheckoutErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       errorDetail: json['errorDetail'] as String?,
@@ -115,8 +113,7 @@ Map<String, dynamic> _$$GuestCheckoutErrorImplToJson(
   return val;
 }
 
-_$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(Map json) =>
     _$NoActiveOrderErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -139,12 +136,12 @@ Map<String, dynamic> _$$NoActiveOrderErrorImplToJson(
   return val;
 }
 
-_$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
+_$OrderImpl _$$OrderImplFromJson(Map json) => _$OrderImpl(
       active: json['active'] as bool?,
       billingAddress: json['billingAddress'] == null
           ? null
           : OrderAddress.fromJson(
-              json['billingAddress'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['billingAddress'] as Map)),
       code: json['code'] as String?,
       couponCodes: (json['couponCodes'] as List<dynamic>?)
           ?.map((e) => e as String?)
@@ -154,60 +151,69 @@ _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
           : DateTime.parse(json['createdAt'] as String),
       currencyCode:
           $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       customer: json['customer'] == null
           ? null
-          : Customer.fromJson(json['customer'] as Map<String, dynamic>),
+          : Customer.fromJson(
+              Map<String, dynamic>.from(json['customer'] as Map)),
       discounts: (json['discounts'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Discount.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Discount.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       fulfillments: (json['fulfillments'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : Fulfillment.fromJson(e as Map<String, dynamic>))
+              : Fulfillment.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       history: json['history'] == null
           ? null
-          : HistoryEntryList.fromJson(json['history'] as Map<String, dynamic>),
+          : HistoryEntryList.fromJson(
+              Map<String, dynamic>.from(json['history'] as Map)),
       id: json['id'] as String?,
       lines: (json['lines'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : OrderLine.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : OrderLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       orderPlacedAt: json['orderPlacedAt'] == null
           ? null
           : DateTime.parse(json['orderPlacedAt'] as String),
       payments: (json['payments'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Payment.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Payment.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       promotions: (json['promotions'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Promotion.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Promotion.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       shipping: (json['shipping'] as num?)?.toDouble(),
       shippingAddress: json['shippingAddress'] == null
           ? null
           : OrderAddress.fromJson(
-              json['shippingAddress'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['shippingAddress'] as Map)),
       shippingLines: (json['shippingLines'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ShippingLine.fromJson(e as Map<String, dynamic>))
+              : ShippingLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       shippingWithTax: (json['shippingWithTax'] as num?)?.toDouble(),
       state: json['state'] as String?,
       subTotal: (json['subTotal'] as num?)?.toDouble(),
       subTotalWithTax: (json['subTotalWithTax'] as num?)?.toDouble(),
       surcharges: (json['surcharges'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Surcharge.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Surcharge.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       taxSummary: (json['taxSummary'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : OrderTaxSummary.fromJson(e as Map<String, dynamic>))
+              : OrderTaxSummary.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       total: (json['total'] as num?)?.toDouble(),
       totalQuantity: (json['totalQuantity'] as num?)?.toInt(),

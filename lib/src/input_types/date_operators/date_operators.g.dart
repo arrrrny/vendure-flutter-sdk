@@ -6,7 +6,7 @@ part of 'date_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DateOperatorsImpl _$$DateOperatorsImplFromJson(Map<String, dynamic> json) =>
+_$DateOperatorsImpl _$$DateOperatorsImplFromJson(Map json) =>
     _$DateOperatorsImpl(
       after: json['after'] == null
           ? null
@@ -16,7 +16,8 @@ _$DateOperatorsImpl _$$DateOperatorsImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['before'] as String),
       between: json['between'] == null
           ? null
-          : DateRange.fromJson(json['between'] as Map<String, dynamic>),
+          : DateRange.fromJson(
+              Map<String, dynamic>.from(json['between'] as Map)),
       eq: json['eq'] == null ? null : DateTime.parse(json['eq'] as String),
       isNull: json['isNull'] as bool?,
     );

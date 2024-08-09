@@ -6,8 +6,7 @@ part of 'product_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductSortParameterImpl _$$ProductSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+_$ProductSortParameterImpl _$$ProductSortParameterImplFromJson(Map json) =>
     _$ProductSortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       description: $enumDecodeNullable(_$SortOrderEnumMap, json['description']),
@@ -18,15 +17,23 @@ _$ProductSortParameterImpl _$$ProductSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$ProductSortParameterImplToJson(
-        _$ProductSortParameterImpl instance) =>
-    <String, dynamic>{
-      'createdAt': _$SortOrderEnumMap[instance.createdAt],
-      'description': _$SortOrderEnumMap[instance.description],
-      'id': _$SortOrderEnumMap[instance.id],
-      'name': _$SortOrderEnumMap[instance.name],
-      'slug': _$SortOrderEnumMap[instance.slug],
-      'updatedAt': _$SortOrderEnumMap[instance.updatedAt],
-    };
+    _$ProductSortParameterImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
+  writeNotNull('description', _$SortOrderEnumMap[instance.description]);
+  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
+  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
+  writeNotNull('slug', _$SortOrderEnumMap[instance.slug]);
+  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
+  return val;
+}
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

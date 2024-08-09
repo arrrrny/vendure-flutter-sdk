@@ -6,12 +6,13 @@ part of 'tax_category.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaxCategoryImpl _$$TaxCategoryImplFromJson(Map<String, dynamic> json) =>
-    _$TaxCategoryImpl(
+_$TaxCategoryImpl _$$TaxCategoryImplFromJson(Map json) => _$TaxCategoryImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       id: json['id'] as String?,
       isDefault: json['isDefault'] as bool?,
       name: json['name'] as String?,

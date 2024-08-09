@@ -6,8 +6,7 @@ part of 'product_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductTranslationImpl _$$ProductTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+_$ProductTranslationImpl _$$ProductTranslationImplFromJson(Map json) =>
     _$ProductTranslationImpl(
       createdAt: json['createdAt'] == null
           ? null

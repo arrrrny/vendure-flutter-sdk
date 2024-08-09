@@ -6,8 +6,7 @@ part of 'number_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NumberListOperatorsImpl _$$NumberListOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$NumberListOperatorsImpl _$$NumberListOperatorsImplFromJson(Map json) =>
     _$NumberListOperatorsImpl(
       inList: (json['inList'] as num).toDouble(),
     );

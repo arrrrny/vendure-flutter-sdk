@@ -7,7 +7,7 @@ part of 'password_already_set_error.dart';
 // **************************************************************************
 
 _$PasswordAlreadySetErrorImpl _$$PasswordAlreadySetErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PasswordAlreadySetErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

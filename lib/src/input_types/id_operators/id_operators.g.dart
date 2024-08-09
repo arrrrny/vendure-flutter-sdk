@@ -6,8 +6,7 @@ part of 'id_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IdOperatorsImpl _$$IdOperatorsImplFromJson(Map<String, dynamic> json) =>
-    _$IdOperatorsImpl(
+_$IdOperatorsImpl _$$IdOperatorsImplFromJson(Map json) => _$IdOperatorsImpl(
       eq: json['eq'] as String?,
       in_: (json['in'] as List<dynamic>?)?.map((e) => e as String).toList(),
       isNull: json['isNull'] as bool?,

@@ -6,34 +6,39 @@ part of 'facet_filter_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetFilterParameterImpl _$$FacetFilterParameterImplFromJson(
-        Map<String, dynamic> json) =>
+_$FacetFilterParameterImpl _$$FacetFilterParameterImplFromJson(Map json) =>
     _$FacetFilterParameterImpl(
       and: (json['_and'] as List<dynamic>?)
-          ?.map((e) => FacetFilterParameter.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => FacetFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       or: (json['_or'] as List<dynamic>?)
-          ?.map((e) => FacetFilterParameter.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => FacetFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       code: json['code'] == null
           ? null
-          : StringOperators.fromJson(json['code'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['code'] as Map)),
       createdAt: json['createdAt'] == null
           ? null
-          : DateOperators.fromJson(json['createdAt'] as Map<String, dynamic>),
+          : DateOperators.fromJson(
+              Map<String, dynamic>.from(json['createdAt'] as Map)),
       id: json['id'] == null
           ? null
-          : IdOperators.fromJson(json['id'] as Map<String, dynamic>),
+          : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
       languageCode: json['languageCode'] == null
           ? null
           : StringOperators.fromJson(
-              json['languageCode'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['languageCode'] as Map)),
       name: json['name'] == null
           ? null
-          : StringOperators.fromJson(json['name'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['name'] as Map)),
       updatedAt: json['updatedAt'] == null
           ? null
-          : DateOperators.fromJson(json['updatedAt'] as Map<String, dynamic>),
+          : DateOperators.fromJson(
+              Map<String, dynamic>.from(json['updatedAt'] as Map)),
     );
 
 Map<String, dynamic> _$$FacetFilterParameterImplToJson(

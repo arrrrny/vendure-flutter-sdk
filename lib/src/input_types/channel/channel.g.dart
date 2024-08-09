@@ -6,8 +6,7 @@ part of 'channel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChannelImpl _$$ChannelImplFromJson(Map<String, dynamic> json) =>
-    _$ChannelImpl(
+_$ChannelImpl _$$ChannelImplFromJson(Map json) => _$ChannelImpl(
       availableCurrencyCodes: (json['availableCurrencyCodes'] as List<dynamic>?)
           ?.map((e) => $enumDecodeNullable(_$CurrencyCodeEnumMap, e))
           .toList(),
@@ -20,23 +19,27 @@ _$ChannelImpl _$$ChannelImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['createdAt'] as String),
       currencyCode:
           $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       defaultCurrencyCode: $enumDecodeNullable(
           _$CurrencyCodeEnumMap, json['defaultCurrencyCode']),
       defaultLanguageCode: $enumDecodeNullable(
           _$LanguageCodeEnumMap, json['defaultLanguageCode']),
       defaultShippingZone: json['defaultShippingZone'] == null
           ? null
-          : Zone.fromJson(json['defaultShippingZone'] as Map<String, dynamic>),
+          : Zone.fromJson(
+              Map<String, dynamic>.from(json['defaultShippingZone'] as Map)),
       defaultTaxZone: json['defaultTaxZone'] == null
           ? null
-          : Zone.fromJson(json['defaultTaxZone'] as Map<String, dynamic>),
+          : Zone.fromJson(
+              Map<String, dynamic>.from(json['defaultTaxZone'] as Map)),
       id: json['id'] as String?,
       outOfStockThreshold: (json['outOfStockThreshold'] as num?)?.toInt(),
       pricesIncludeTax: json['pricesIncludeTax'] as bool?,
       seller: json['seller'] == null
           ? null
-          : Seller.fromJson(json['seller'] as Map<String, dynamic>),
+          : Seller.fromJson(Map<String, dynamic>.from(json['seller'] as Map)),
       token: json['token'] as String?,
       trackInventory: json['trackInventory'] as bool?,
       updatedAt: json['updatedAt'] == null

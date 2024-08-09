@@ -6,16 +6,17 @@ part of 'fulfillment_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FulfillmentLineImpl _$$FulfillmentLineImplFromJson(
-        Map<String, dynamic> json) =>
+_$FulfillmentLineImpl _$$FulfillmentLineImplFromJson(Map json) =>
     _$FulfillmentLineImpl(
       fulfillment: json['fulfillment'] == null
           ? null
-          : Fulfillment.fromJson(json['fulfillment'] as Map<String, dynamic>),
+          : Fulfillment.fromJson(
+              Map<String, dynamic>.from(json['fulfillment'] as Map)),
       fulfillmentId: json['fulfillmentId'] as String?,
       orderLine: json['orderLine'] == null
           ? null
-          : OrderLine.fromJson(json['orderLine'] as Map<String, dynamic>),
+          : OrderLine.fromJson(
+              Map<String, dynamic>.from(json['orderLine'] as Map)),
       orderLineId: json['orderLineId'] as String?,
       quantity: (json['quantity'] as num?)?.toInt(),
     );

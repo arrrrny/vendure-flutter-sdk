@@ -6,9 +6,8 @@ part of 'payment_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentInputImpl _$$PaymentInputImplFromJson(Map<String, dynamic> json) =>
-    _$PaymentInputImpl(
-      metadata: json['metadata'] as Map<String, dynamic>,
+_$PaymentInputImpl _$$PaymentInputImplFromJson(Map json) => _$PaymentInputImpl(
+      metadata: Map<String, dynamic>.from(json['metadata'] as Map),
       method: json['method'] as String,
     );
 

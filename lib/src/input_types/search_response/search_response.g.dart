@@ -6,22 +6,22 @@ part of 'search_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchResponseImpl _$$SearchResponseImplFromJson(Map<String, dynamic> json) =>
+_$SearchResponseImpl _$$SearchResponseImplFromJson(Map json) =>
     _$SearchResponseImpl(
       collections: (json['collections'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : CollectionResult.fromJson(e as Map<String, dynamic>))
+              : CollectionResult.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       facetValues: (json['facetValues'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : FacetValueResult.fromJson(e as Map<String, dynamic>))
+              : FacetValueResult.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : SearchResult.fromJson(e as Map<String, dynamic>))
+              : SearchResult.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

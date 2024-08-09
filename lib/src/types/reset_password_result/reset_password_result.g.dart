@@ -6,10 +6,10 @@ part of 'reset_password_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
-    _$CurrentUserImpl(
+_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       channels: (json['channels'] as List<dynamic>)
-          .map((e) => CurrentUserChannel.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              CurrentUserChannel.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String,
       identifier: json['identifier'] as String,
@@ -18,14 +18,14 @@ _$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
     <String, dynamic>{
-      'channels': instance.channels,
+      'channels': instance.channels.map((e) => e.toJson()).toList(),
       'id': instance.id,
       'identifier': instance.identifier,
       'runtimeType': instance.$type,
     };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -75,8 +75,7 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
     _$NotVerifiedErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -92,7 +91,7 @@ Map<String, dynamic> _$$NotVerifiedErrorImplToJson(
     };
 
 _$PasswordResetTokenExpiredErrorImpl
-    _$$PasswordResetTokenExpiredErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$PasswordResetTokenExpiredErrorImplFromJson(Map json) =>
         _$PasswordResetTokenExpiredErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,
@@ -108,7 +107,7 @@ Map<String, dynamic> _$$PasswordResetTokenExpiredErrorImplToJson(
     };
 
 _$PasswordResetTokenInvalidErrorImpl
-    _$$PasswordResetTokenInvalidErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$PasswordResetTokenInvalidErrorImplFromJson(Map json) =>
         _$PasswordResetTokenInvalidErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,
@@ -124,7 +123,7 @@ Map<String, dynamic> _$$PasswordResetTokenInvalidErrorImplToJson(
     };
 
 _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PasswordValidationErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

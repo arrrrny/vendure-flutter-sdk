@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import '../asset/asset.dart';
 import '../discount/discount.dart';
 import '../fulfillment_line/fulfillment_line.dart';
-import '../order/order.dart';
 import '../product_variant/product_variant.dart';
 import '../tax_line/tax_line.dart';
 
@@ -47,7 +46,6 @@ class OrderLine with _$OrderLine {
 
     /// The total tax on this line
     required double lineTax,
-    required Order order,
 
     /// The quantity at the time the Order was placed
     required int orderPlacedQuantity,

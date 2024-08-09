@@ -7,7 +7,7 @@ part of 'ineligible_payment_method_error.dart';
 // **************************************************************************
 
 _$IneligiblePaymentMethodErrorImpl _$$IneligiblePaymentMethodErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$IneligiblePaymentMethodErrorImpl(
       eligibilityCheckerMessage: json['eligibilityCheckerMessage'] as String?,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
@@ -15,12 +15,20 @@ _$IneligiblePaymentMethodErrorImpl _$$IneligiblePaymentMethodErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$IneligiblePaymentMethodErrorImplToJson(
-        _$IneligiblePaymentMethodErrorImpl instance) =>
-    <String, dynamic>{
-      'eligibilityCheckerMessage': instance.eligibilityCheckerMessage,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+    _$IneligiblePaymentMethodErrorImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('eligibilityCheckerMessage', instance.eligibilityCheckerMessage);
+  val['errorCode'] = _$ErrorCodeEnumMap[instance.errorCode]!;
+  val['message'] = instance.message;
+  return val;
+}
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

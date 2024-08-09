@@ -7,7 +7,7 @@ part of 'facet_value_sort_parameter.dart';
 // **************************************************************************
 
 _$FacetValueSortParameterImpl _$$FacetValueSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$FacetValueSortParameterImpl(
       code: $enumDecodeNullable(_$SortOrderEnumMap, json['code']),
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),

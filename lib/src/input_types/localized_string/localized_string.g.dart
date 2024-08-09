@@ -6,8 +6,7 @@ part of 'localized_string.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LocalizedStringImpl _$$LocalizedStringImplFromJson(
-        Map<String, dynamic> json) =>
+_$LocalizedStringImpl _$$LocalizedStringImplFromJson(Map json) =>
     _$LocalizedStringImpl(
       languageCode:
           $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),

@@ -6,8 +6,7 @@ part of 'search_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchResultImpl _$$SearchResultImplFromJson(Map<String, dynamic> json) =>
-    _$SearchResultImpl(
+_$SearchResultImpl _$$SearchResultImplFromJson(Map json) => _$SearchResultImpl(
       collectionIds: (json['collectionIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -19,19 +18,20 @@ _$SearchResultImpl _$$SearchResultImplFromJson(Map<String, dynamic> json) =>
           .map((e) => e as String)
           .toList(),
       inStock: json['inStock'] as bool,
-      price: SearchResultPrice.fromJson(json['price'] as Map<String, dynamic>),
+      price: SearchResultPrice.fromJson(
+          Map<String, dynamic>.from(json['price'] as Map)),
       priceWithTax: SearchResultPrice.fromJson(
-          json['priceWithTax'] as Map<String, dynamic>),
+          Map<String, dynamic>.from(json['priceWithTax'] as Map)),
       productAsset: json['productAsset'] == null
           ? null
           : SearchResultAsset.fromJson(
-              json['productAsset'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['productAsset'] as Map)),
       productId: json['productId'] as String,
       productName: json['productName'] as String,
       productVariantAsset: json['productVariantAsset'] == null
           ? null
           : SearchResultAsset.fromJson(
-              json['productVariantAsset'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['productVariantAsset'] as Map)),
       productVariantId: json['productVariantId'] as String,
       productVariantName: json['productVariantName'] as String,
       score: (json['score'] as num).toDouble(),
@@ -39,26 +39,35 @@ _$SearchResultImpl _$$SearchResultImplFromJson(Map<String, dynamic> json) =>
       slug: json['slug'] as String,
     );
 
-Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) =>
-    <String, dynamic>{
-      'collectionIds': instance.collectionIds,
-      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
-      'description': instance.description,
-      'facetIds': instance.facetIds,
-      'facetValueIds': instance.facetValueIds,
-      'inStock': instance.inStock,
-      'price': instance.price,
-      'priceWithTax': instance.priceWithTax,
-      'productAsset': instance.productAsset,
-      'productId': instance.productId,
-      'productName': instance.productName,
-      'productVariantAsset': instance.productVariantAsset,
-      'productVariantId': instance.productVariantId,
-      'productVariantName': instance.productVariantName,
-      'score': instance.score,
-      'sku': instance.sku,
-      'slug': instance.slug,
-    };
+Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) {
+  final val = <String, dynamic>{
+    'collectionIds': instance.collectionIds,
+    'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+    'description': instance.description,
+    'facetIds': instance.facetIds,
+    'facetValueIds': instance.facetValueIds,
+    'inStock': instance.inStock,
+    'price': instance.price.toJson(),
+    'priceWithTax': instance.priceWithTax.toJson(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('productAsset', instance.productAsset?.toJson());
+  val['productId'] = instance.productId;
+  val['productName'] = instance.productName;
+  writeNotNull('productVariantAsset', instance.productVariantAsset?.toJson());
+  val['productVariantId'] = instance.productVariantId;
+  val['productVariantName'] = instance.productVariantName;
+  val['score'] = instance.score;
+  val['sku'] = instance.sku;
+  val['slug'] = instance.slug;
+  return val;
+}
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

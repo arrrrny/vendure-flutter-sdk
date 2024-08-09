@@ -6,8 +6,7 @@ part of 'register_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(Map json) =>
     _$RegisterCustomerInputImpl(
       emailAddress: json['emailAddress'] as String,
       firstName: json['firstName'] as String?,

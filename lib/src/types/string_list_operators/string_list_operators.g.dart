@@ -6,8 +6,7 @@ part of 'string_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StringListOperatorsImpl _$$StringListOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$StringListOperatorsImpl _$$StringListOperatorsImplFromJson(Map json) =>
     _$StringListOperatorsImpl(
       inList: json['inList'] as String,
     );

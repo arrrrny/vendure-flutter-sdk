@@ -7,7 +7,7 @@ part of 'shipping_method_translation.dart';
 // **************************************************************************
 
 _$ShippingMethodTranslationImpl _$$ShippingMethodTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$ShippingMethodTranslationImpl(
       createdAt: json['createdAt'] == null
           ? null

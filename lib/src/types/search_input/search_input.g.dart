@@ -6,13 +6,12 @@ part of 'search_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchInputImpl _$$SearchInputImplFromJson(Map<String, dynamic> json) =>
-    _$SearchInputImpl(
+_$SearchInputImpl _$$SearchInputImplFromJson(Map json) => _$SearchInputImpl(
       collectionId: json['collectionId'] as String?,
       collectionSlug: json['collectionSlug'] as String?,
       facetValueFilters: (json['facetValueFilters'] as List<dynamic>?)
-          ?.map(
-              (e) => FacetValueFilterInput.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => FacetValueFilterInput.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       groupByProduct: json['groupByProduct'] as bool?,
       inStock: json['inStock'] as bool?,
@@ -20,20 +19,29 @@ _$SearchInputImpl _$$SearchInputImplFromJson(Map<String, dynamic> json) =>
       sort: json['sort'] == null
           ? null
           : SearchResultSortParameter.fromJson(
-              json['sort'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['sort'] as Map)),
       take: (json['take'] as num?)?.toInt(),
       term: json['term'] as String?,
     );
 
-Map<String, dynamic> _$$SearchInputImplToJson(_$SearchInputImpl instance) =>
-    <String, dynamic>{
-      'collectionId': instance.collectionId,
-      'collectionSlug': instance.collectionSlug,
-      'facetValueFilters': instance.facetValueFilters,
-      'groupByProduct': instance.groupByProduct,
-      'inStock': instance.inStock,
-      'skip': instance.skip,
-      'sort': instance.sort,
-      'take': instance.take,
-      'term': instance.term,
-    };
+Map<String, dynamic> _$$SearchInputImplToJson(_$SearchInputImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('collectionId', instance.collectionId);
+  writeNotNull('collectionSlug', instance.collectionSlug);
+  writeNotNull('facetValueFilters',
+      instance.facetValueFilters?.map((e) => e.toJson()).toList());
+  writeNotNull('groupByProduct', instance.groupByProduct);
+  writeNotNull('inStock', instance.inStock);
+  writeNotNull('skip', instance.skip);
+  writeNotNull('sort', instance.sort?.toJson());
+  writeNotNull('take', instance.take);
+  writeNotNull('term', instance.term);
+  return val;
+}

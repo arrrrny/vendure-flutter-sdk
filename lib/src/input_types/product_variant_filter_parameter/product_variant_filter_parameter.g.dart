@@ -7,55 +7,60 @@ part of 'product_variant_filter_parameter.dart';
 // **************************************************************************
 
 _$ProductVariantFilterParameterImpl
-    _$$ProductVariantFilterParameterImplFromJson(Map<String, dynamic> json) =>
+    _$$ProductVariantFilterParameterImplFromJson(Map json) =>
         _$ProductVariantFilterParameterImpl(
           and: (json['_and'] as List<dynamic>?)
               ?.map((e) => ProductVariantFilterParameter.fromJson(
-                  e as Map<String, dynamic>))
+                  Map<String, dynamic>.from(e as Map)))
               .toList(),
           or: (json['_or'] as List<dynamic>?)
               ?.map((e) => ProductVariantFilterParameter.fromJson(
-                  e as Map<String, dynamic>))
+                  Map<String, dynamic>.from(e as Map)))
               .toList(),
           createdAt: json['createdAt'] == null
               ? null
               : DateOperators.fromJson(
-                  json['createdAt'] as Map<String, dynamic>),
+                  Map<String, dynamic>.from(json['createdAt'] as Map)),
           currencyCode: json['currencyCode'] == null
               ? null
               : StringOperators.fromJson(
-                  json['currencyCode'] as Map<String, dynamic>),
+                  Map<String, dynamic>.from(json['currencyCode'] as Map)),
           id: json['id'] == null
               ? null
-              : IdOperators.fromJson(json['id'] as Map<String, dynamic>),
+              : IdOperators.fromJson(
+                  Map<String, dynamic>.from(json['id'] as Map)),
           languageCode: json['languageCode'] == null
               ? null
               : StringOperators.fromJson(
-                  json['languageCode'] as Map<String, dynamic>),
+                  Map<String, dynamic>.from(json['languageCode'] as Map)),
           name: json['name'] == null
               ? null
-              : StringOperators.fromJson(json['name'] as Map<String, dynamic>),
+              : StringOperators.fromJson(
+                  Map<String, dynamic>.from(json['name'] as Map)),
           price: json['price'] == null
               ? null
-              : NumberOperators.fromJson(json['price'] as Map<String, dynamic>),
+              : NumberOperators.fromJson(
+                  Map<String, dynamic>.from(json['price'] as Map)),
           priceWithTax: json['priceWithTax'] == null
               ? null
               : NumberOperators.fromJson(
-                  json['priceWithTax'] as Map<String, dynamic>),
+                  Map<String, dynamic>.from(json['priceWithTax'] as Map)),
           productId: json['productId'] == null
               ? null
-              : IdOperators.fromJson(json['productId'] as Map<String, dynamic>),
+              : IdOperators.fromJson(
+                  Map<String, dynamic>.from(json['productId'] as Map)),
           sku: json['sku'] == null
               ? null
-              : StringOperators.fromJson(json['sku'] as Map<String, dynamic>),
+              : StringOperators.fromJson(
+                  Map<String, dynamic>.from(json['sku'] as Map)),
           stockLevel: json['stockLevel'] == null
               ? null
               : StringOperators.fromJson(
-                  json['stockLevel'] as Map<String, dynamic>),
+                  Map<String, dynamic>.from(json['stockLevel'] as Map)),
           updatedAt: json['updatedAt'] == null
               ? null
               : DateOperators.fromJson(
-                  json['updatedAt'] as Map<String, dynamic>),
+                  Map<String, dynamic>.from(json['updatedAt'] as Map)),
         );
 
 Map<String, dynamic> _$$ProductVariantFilterParameterImplToJson(

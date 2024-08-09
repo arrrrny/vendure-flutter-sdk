@@ -7,7 +7,7 @@ part of 'request_update_customer_email_address_result.dart';
 // **************************************************************************
 
 _$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$EmailAddressConflictErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -58,7 +58,7 @@ const _$ErrorCodeEnumMap = {
 };
 
 _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$InvalidCredentialsErrorImpl(
       authenticationError: json['authenticationError'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
@@ -76,7 +76,7 @@ Map<String, dynamic> _$$InvalidCredentialsErrorImplToJson(
     };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -91,8 +91,7 @@ Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$SuccessImpl _$$SuccessImplFromJson(Map<String, dynamic> json) =>
-    _$SuccessImpl(
+_$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
       success: json['success'] as bool,
       $type: json['runtimeType'] as String?,
     );

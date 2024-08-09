@@ -6,10 +6,11 @@ part of 'order_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
-    _$OrderLineImpl(
+_$OrderLineImpl _$$OrderLineImplFromJson(Map json) => _$OrderLineImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       discountedLinePrice: (json['discountedLinePrice'] as num).toDouble(),
       discountedLinePriceWithTax:
           (json['discountedLinePriceWithTax'] as num).toDouble(),
@@ -17,22 +18,23 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
       discountedUnitPriceWithTax:
           (json['discountedUnitPriceWithTax'] as num).toDouble(),
       discounts: (json['discounts'] as List<dynamic>)
-          .map((e) => Discount.fromJson(e as Map<String, dynamic>))
+          .map((e) => Discount.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       featuredAsset: json['featuredAsset'] == null
           ? null
-          : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
+          : Asset.fromJson(
+              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
       fulfillmentLines: (json['fulfillmentLines'] as List<dynamic>?)
-          ?.map((e) => FulfillmentLine.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              FulfillmentLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String,
       linePrice: (json['linePrice'] as num).toDouble(),
       linePriceWithTax: (json['linePriceWithTax'] as num).toDouble(),
       lineTax: (json['lineTax'] as num).toDouble(),
-      order: Order.fromJson(json['order'] as Map<String, dynamic>),
       orderPlacedQuantity: (json['orderPlacedQuantity'] as num).toInt(),
       productVariant: ProductVariant.fromJson(
-          json['productVariant'] as Map<String, dynamic>),
+          Map<String, dynamic>.from(json['productVariant'] as Map)),
       proratedLinePrice: (json['proratedLinePrice'] as num).toDouble(),
       proratedLinePriceWithTax:
           (json['proratedLinePriceWithTax'] as num).toDouble(),
@@ -41,7 +43,7 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
           (json['proratedUnitPriceWithTax'] as num).toDouble(),
       quantity: (json['quantity'] as num).toInt(),
       taxLines: (json['taxLines'] as List<dynamic>)
-          .map((e) => TaxLine.fromJson(e as Map<String, dynamic>))
+          .map((e) => TaxLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       taxRate: (json['taxRate'] as num).toDouble(),
       unitPrice: (json['unitPrice'] as num).toDouble(),
@@ -53,35 +55,44 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$OrderLineImplToJson(_$OrderLineImpl instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'customFields': instance.customFields,
-      'discountedLinePrice': instance.discountedLinePrice,
-      'discountedLinePriceWithTax': instance.discountedLinePriceWithTax,
-      'discountedUnitPrice': instance.discountedUnitPrice,
-      'discountedUnitPriceWithTax': instance.discountedUnitPriceWithTax,
-      'discounts': instance.discounts,
-      'featuredAsset': instance.featuredAsset,
-      'fulfillmentLines': instance.fulfillmentLines,
-      'id': instance.id,
-      'linePrice': instance.linePrice,
-      'linePriceWithTax': instance.linePriceWithTax,
-      'lineTax': instance.lineTax,
-      'order': instance.order,
-      'orderPlacedQuantity': instance.orderPlacedQuantity,
-      'productVariant': instance.productVariant,
-      'proratedLinePrice': instance.proratedLinePrice,
-      'proratedLinePriceWithTax': instance.proratedLinePriceWithTax,
-      'proratedUnitPrice': instance.proratedUnitPrice,
-      'proratedUnitPriceWithTax': instance.proratedUnitPriceWithTax,
-      'quantity': instance.quantity,
-      'taxLines': instance.taxLines,
-      'taxRate': instance.taxRate,
-      'unitPrice': instance.unitPrice,
-      'unitPriceChangeSinceAdded': instance.unitPriceChangeSinceAdded,
-      'unitPriceWithTax': instance.unitPriceWithTax,
-      'unitPriceWithTaxChangeSinceAdded':
-          instance.unitPriceWithTaxChangeSinceAdded,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$$OrderLineImplToJson(_$OrderLineImpl instance) {
+  final val = <String, dynamic>{
+    'createdAt': instance.createdAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customFields', instance.customFields);
+  val['discountedLinePrice'] = instance.discountedLinePrice;
+  val['discountedLinePriceWithTax'] = instance.discountedLinePriceWithTax;
+  val['discountedUnitPrice'] = instance.discountedUnitPrice;
+  val['discountedUnitPriceWithTax'] = instance.discountedUnitPriceWithTax;
+  val['discounts'] = instance.discounts.map((e) => e.toJson()).toList();
+  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
+  writeNotNull('fulfillmentLines',
+      instance.fulfillmentLines?.map((e) => e.toJson()).toList());
+  val['id'] = instance.id;
+  val['linePrice'] = instance.linePrice;
+  val['linePriceWithTax'] = instance.linePriceWithTax;
+  val['lineTax'] = instance.lineTax;
+  val['orderPlacedQuantity'] = instance.orderPlacedQuantity;
+  val['productVariant'] = instance.productVariant.toJson();
+  val['proratedLinePrice'] = instance.proratedLinePrice;
+  val['proratedLinePriceWithTax'] = instance.proratedLinePriceWithTax;
+  val['proratedUnitPrice'] = instance.proratedUnitPrice;
+  val['proratedUnitPriceWithTax'] = instance.proratedUnitPriceWithTax;
+  val['quantity'] = instance.quantity;
+  val['taxLines'] = instance.taxLines.map((e) => e.toJson()).toList();
+  val['taxRate'] = instance.taxRate;
+  val['unitPrice'] = instance.unitPrice;
+  val['unitPriceChangeSinceAdded'] = instance.unitPriceChangeSinceAdded;
+  val['unitPriceWithTax'] = instance.unitPriceWithTax;
+  val['unitPriceWithTaxChangeSinceAdded'] =
+      instance.unitPriceWithTaxChangeSinceAdded;
+  val['updatedAt'] = instance.updatedAt.toIso8601String();
+  return val;
+}

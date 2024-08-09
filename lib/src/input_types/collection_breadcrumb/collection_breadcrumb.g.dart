@@ -6,8 +6,7 @@ part of 'collection_breadcrumb.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionBreadcrumbImpl _$$CollectionBreadcrumbImplFromJson(
-        Map<String, dynamic> json) =>
+_$CollectionBreadcrumbImpl _$$CollectionBreadcrumbImplFromJson(Map json) =>
     _$CollectionBreadcrumbImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,

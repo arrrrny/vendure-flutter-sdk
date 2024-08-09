@@ -6,11 +6,12 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
+_$UserImpl _$$UserImplFromJson(Map json) => _$UserImpl(
       authenticationMethods: (json['authenticationMethods'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : AuthenticationMethod.fromJson(e as Map<String, dynamic>))
+              : AuthenticationMethod.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       createdAt: json['createdAt'] == null
           ? null
@@ -18,15 +19,16 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       customFields: json['customFields'] == null
           ? null
           : UserCustomFields.fromJson(
-              json['customFields'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['customFields'] as Map)),
       id: json['id'] as String?,
       identifier: json['identifier'] as String?,
       lastLogin: json['lastLogin'] == null
           ? null
           : DateTime.parse(json['lastLogin'] as String),
       roles: (json['roles'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Role.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Role.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null

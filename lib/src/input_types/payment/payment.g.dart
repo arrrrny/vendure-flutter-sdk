@@ -6,19 +6,21 @@ part of 'payment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentImpl _$$PaymentImplFromJson(Map<String, dynamic> json) =>
-    _$PaymentImpl(
+_$PaymentImpl _$$PaymentImplFromJson(Map json) => _$PaymentImpl(
       amount: (json['amount'] as num?)?.toDouble(),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
       errorMessage: json['errorMessage'] as String?,
       id: json['id'] as String?,
-      metadata: json['metadata'] as Map<String, dynamic>?,
+      metadata: (json['metadata'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       method: json['method'] as String?,
       refunds: (json['refunds'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Refund.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Refund.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       state: json['state'] as String?,
       transactionId: json['transactionId'] as String?,

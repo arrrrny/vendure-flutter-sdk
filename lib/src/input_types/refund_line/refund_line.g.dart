@@ -6,16 +6,16 @@ part of 'refund_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RefundLineImpl _$$RefundLineImplFromJson(Map<String, dynamic> json) =>
-    _$RefundLineImpl(
+_$RefundLineImpl _$$RefundLineImplFromJson(Map json) => _$RefundLineImpl(
       orderLine: json['orderLine'] == null
           ? null
-          : OrderLine.fromJson(json['orderLine'] as Map<String, dynamic>),
+          : OrderLine.fromJson(
+              Map<String, dynamic>.from(json['orderLine'] as Map)),
       orderLineId: json['orderLineId'] as String?,
       quantity: (json['quantity'] as num?)?.toInt(),
       refund: json['refund'] == null
           ? null
-          : Refund.fromJson(json['refund'] as Map<String, dynamic>),
+          : Refund.fromJson(Map<String, dynamic>.from(json['refund'] as Map)),
       refundId: json['refundId'] as String?,
     );
 

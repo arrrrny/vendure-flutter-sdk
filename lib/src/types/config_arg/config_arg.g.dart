@@ -6,8 +6,7 @@ part of 'config_arg.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ConfigArgImpl _$$ConfigArgImplFromJson(Map<String, dynamic> json) =>
-    _$ConfigArgImpl(
+_$ConfigArgImpl _$$ConfigArgImplFromJson(Map json) => _$ConfigArgImpl(
       name: json['name'] as String,
       value: json['value'] as String,
     );

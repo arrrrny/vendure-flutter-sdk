@@ -6,12 +6,14 @@ part of 'facet.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetImpl _$$FacetImplFromJson(Map<String, dynamic> json) => _$FacetImpl(
+_$FacetImpl _$$FacetImplFromJson(Map json) => _$FacetImpl(
       code: json['code'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       id: json['id'] as String?,
       languageCode:
           $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
@@ -19,17 +21,19 @@ _$FacetImpl _$$FacetImplFromJson(Map<String, dynamic> json) => _$FacetImpl(
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : FacetTranslation.fromJson(e as Map<String, dynamic>))
+              : FacetTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null
           : DateTime.parse(json['updatedAt'] as String),
       valueList: json['valueList'] == null
           ? null
-          : FacetValueList.fromJson(json['valueList'] as Map<String, dynamic>),
+          : FacetValueList.fromJson(
+              Map<String, dynamic>.from(json['valueList'] as Map)),
       values: (json['values'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : FacetValue.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 

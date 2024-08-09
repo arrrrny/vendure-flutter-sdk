@@ -6,10 +6,10 @@ part of 'facet_value_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetValueListImpl _$$FacetValueListImplFromJson(Map<String, dynamic> json) =>
+_$FacetValueListImpl _$$FacetValueListImplFromJson(Map json) =>
     _$FacetValueListImpl(
       items: (json['items'] as List<dynamic>)
-          .map((e) => FacetValue.fromJson(e as Map<String, dynamic>))
+          .map((e) => FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num).toInt(),
     );
@@ -17,6 +17,6 @@ _$FacetValueListImpl _$$FacetValueListImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$FacetValueListImplToJson(
         _$FacetValueListImpl instance) =>
     <String, dynamic>{
-      'items': instance.items,
+      'items': instance.items.map((e) => e.toJson()).toList(),
       'totalItems': instance.totalItems,
     };

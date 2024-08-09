@@ -6,11 +6,13 @@ part of 'seller.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SellerImpl _$$SellerImplFromJson(Map<String, dynamic> json) => _$SellerImpl(
+_$SellerImpl _$$SellerImplFromJson(Map json) => _$SellerImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       id: json['id'] as String?,
       name: json['name'] as String?,
       updatedAt: json['updatedAt'] == null

@@ -6,8 +6,7 @@ part of 'facet_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetTranslationImpl _$$FacetTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+_$FacetTranslationImpl _$$FacetTranslationImplFromJson(Map json) =>
     _$FacetTranslationImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
       id: json['id'] as String,

@@ -6,8 +6,7 @@ part of 'boolean_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BooleanOperatorsImpl _$$BooleanOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$BooleanOperatorsImpl _$$BooleanOperatorsImplFromJson(Map json) =>
     _$BooleanOperatorsImpl(
       eq: json['eq'] as bool?,
       isNull: json['isNull'] as bool?,

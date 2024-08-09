@@ -7,8 +7,7 @@ part of 'identifier_change_token_expired_error.dart';
 // **************************************************************************
 
 _$IdentifierChangeTokenExpiredErrorImpl
-    _$$IdentifierChangeTokenExpiredErrorImplFromJson(
-            Map<String, dynamic> json) =>
+    _$$IdentifierChangeTokenExpiredErrorImplFromJson(Map json) =>
         _$IdentifierChangeTokenExpiredErrorImpl(
           errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String?,

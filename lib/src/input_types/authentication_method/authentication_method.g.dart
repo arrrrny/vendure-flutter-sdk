@@ -6,8 +6,7 @@ part of 'authentication_method.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AuthenticationMethodImpl _$$AuthenticationMethodImplFromJson(
-        Map<String, dynamic> json) =>
+_$AuthenticationMethodImpl _$$AuthenticationMethodImplFromJson(Map json) =>
     _$AuthenticationMethodImpl(
       createdAt: json['createdAt'] == null
           ? null

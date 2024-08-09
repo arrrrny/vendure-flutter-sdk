@@ -6,13 +6,12 @@ part of 'search_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchInputImpl _$$SearchInputImplFromJson(Map<String, dynamic> json) =>
-    _$SearchInputImpl(
+_$SearchInputImpl _$$SearchInputImplFromJson(Map json) => _$SearchInputImpl(
       collectionId: json['collectionId'] as String?,
       collectionSlug: json['collectionSlug'] as String?,
       facetValueFilters: (json['facetValueFilters'] as List<dynamic>?)
-          ?.map(
-              (e) => FacetValueFilterInput.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => FacetValueFilterInput.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       groupByProduct: json['groupByProduct'] as bool?,
       inStock: json['inStock'] as bool?,
@@ -20,7 +19,7 @@ _$SearchInputImpl _$$SearchInputImplFromJson(Map<String, dynamic> json) =>
       sort: json['sort'] == null
           ? null
           : SearchResultSortParameter.fromJson(
-              json['sort'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['sort'] as Map)),
       take: (json['take'] as num?)?.toInt(),
       term: json['term'] as String?,
     );

@@ -6,8 +6,7 @@ part of 'surcharge.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SurchargeImpl _$$SurchargeImplFromJson(Map<String, dynamic> json) =>
-    _$SurchargeImpl(
+_$SurchargeImpl _$$SurchargeImplFromJson(Map json) => _$SurchargeImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
@@ -17,8 +16,9 @@ _$SurchargeImpl _$$SurchargeImplFromJson(Map<String, dynamic> json) =>
       priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),
       sku: json['sku'] as String?,
       taxLines: (json['taxLines'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : TaxLine.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : TaxLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       taxRate: (json['taxRate'] as num?)?.toDouble(),
       updatedAt: json['updatedAt'] == null

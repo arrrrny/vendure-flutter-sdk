@@ -7,7 +7,7 @@ part of 'email_address_conflict_error.dart';
 // **************************************************************************
 
 _$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$EmailAddressConflictErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

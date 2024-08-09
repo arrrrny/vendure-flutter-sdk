@@ -6,15 +6,18 @@ part of 'asset.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
+_$AssetImpl _$$AssetImplFromJson(Map json) => _$AssetImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       fileSize: (json['fileSize'] as num?)?.toInt(),
       focalPoint: json['focalPoint'] == null
           ? null
-          : Coordinate.fromJson(json['focalPoint'] as Map<String, dynamic>),
+          : Coordinate.fromJson(
+              Map<String, dynamic>.from(json['focalPoint'] as Map)),
       height: (json['height'] as num?)?.toInt(),
       id: json['id'] as String?,
       mimeType: json['mimeType'] as String?,
@@ -22,8 +25,9 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       preview: json['preview'] as String?,
       source: json['source'] as String?,
       tags: (json['tags'] as List<dynamic>?)
-          ?.map(
-              (e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Tag.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       type: $enumDecodeNullable(_$AssetTypeEnumMap, json['type']),
       updatedAt: json['updatedAt'] == null

@@ -7,7 +7,7 @@ part of 'collection_sort_parameter.dart';
 // **************************************************************************
 
 _$CollectionSortParameterImpl _$$CollectionSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$CollectionSortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       description: $enumDecodeNullable(_$SortOrderEnumMap, json['description']),

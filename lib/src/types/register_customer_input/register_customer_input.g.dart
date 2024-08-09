@@ -6,8 +6,7 @@ part of 'register_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(Map json) =>
     _$RegisterCustomerInputImpl(
       emailAddress: json['emailAddress'] as String,
       firstName: json['firstName'] as String?,
@@ -18,12 +17,21 @@ _$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(
     );
 
 Map<String, dynamic> _$$RegisterCustomerInputImplToJson(
-        _$RegisterCustomerInputImpl instance) =>
-    <String, dynamic>{
-      'emailAddress': instance.emailAddress,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'password': instance.password,
-      'phoneNumber': instance.phoneNumber,
-      'title': instance.title,
-    };
+    _$RegisterCustomerInputImpl instance) {
+  final val = <String, dynamic>{
+    'emailAddress': instance.emailAddress,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('firstName', instance.firstName);
+  writeNotNull('lastName', instance.lastName);
+  writeNotNull('password', instance.password);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('title', instance.title);
+  return val;
+}

@@ -6,8 +6,7 @@ part of 'user_custom_fields.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserCustomFieldsImpl _$$UserCustomFieldsImplFromJson(
-        Map<String, dynamic> json) =>
+_$UserCustomFieldsImpl _$$UserCustomFieldsImplFromJson(Map json) =>
     _$UserCustomFieldsImpl(
       city: json['city'] as String?,
       deviceToken: json['deviceToken'] as String?,

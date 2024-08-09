@@ -7,7 +7,7 @@ part of 'password_validation_error.dart';
 // **************************************************************************
 
 _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PasswordValidationErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

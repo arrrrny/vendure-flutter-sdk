@@ -6,12 +6,12 @@ part of 'authentication_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
-    _$CurrentUserImpl(
+_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       channels: (json['channels'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : CurrentUserChannel.fromJson(e as Map<String, dynamic>))
+              : CurrentUserChannel.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String?,
       identifier: json['identifier'] as String?,
@@ -35,7 +35,7 @@ Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) {
 }
 
 _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$InvalidCredentialsErrorImpl(
       authenticationError: json['authenticationError'] as String?,
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
@@ -95,8 +95,7 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
     _$NotVerifiedErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,

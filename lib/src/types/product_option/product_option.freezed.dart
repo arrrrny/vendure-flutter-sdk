@@ -23,7 +23,6 @@ mixin _$ProductOption {
   String get code => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  ProductOptionGroup get group => throw _privateConstructorUsedError;
   String get groupId => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   LanguageCode get languageCode => throw _privateConstructorUsedError;
@@ -48,15 +47,12 @@ abstract class $ProductOptionCopyWith<$Res> {
       {String code,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
-      ProductOptionGroup group,
       String groupId,
       String id,
       LanguageCode languageCode,
       String name,
       List<ProductOptionTranslation> translations,
       DateTime updatedAt});
-
-  $ProductOptionGroupCopyWith<$Res> get group;
 }
 
 /// @nodoc
@@ -75,7 +71,6 @@ class _$ProductOptionCopyWithImpl<$Res, $Val extends ProductOption>
     Object? code = null,
     Object? createdAt = null,
     Object? customFields = freezed,
-    Object? group = null,
     Object? groupId = null,
     Object? id = null,
     Object? languageCode = null,
@@ -96,10 +91,6 @@ class _$ProductOptionCopyWithImpl<$Res, $Val extends ProductOption>
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      group: null == group
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as ProductOptionGroup,
       groupId: null == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
@@ -126,14 +117,6 @@ class _$ProductOptionCopyWithImpl<$Res, $Val extends ProductOption>
               as DateTime,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductOptionGroupCopyWith<$Res> get group {
-    return $ProductOptionGroupCopyWith<$Res>(_value.group, (value) {
-      return _then(_value.copyWith(group: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -148,16 +131,12 @@ abstract class _$$ProductOptionImplCopyWith<$Res>
       {String code,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
-      ProductOptionGroup group,
       String groupId,
       String id,
       LanguageCode languageCode,
       String name,
       List<ProductOptionTranslation> translations,
       DateTime updatedAt});
-
-  @override
-  $ProductOptionGroupCopyWith<$Res> get group;
 }
 
 /// @nodoc
@@ -174,7 +153,6 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
     Object? code = null,
     Object? createdAt = null,
     Object? customFields = freezed,
-    Object? group = null,
     Object? groupId = null,
     Object? id = null,
     Object? languageCode = null,
@@ -195,10 +173,6 @@ class __$$ProductOptionImplCopyWithImpl<$Res>
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      group: null == group
-          ? _value.group
-          : group // ignore: cast_nullable_to_non_nullable
-              as ProductOptionGroup,
       groupId: null == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
@@ -234,7 +208,6 @@ class _$ProductOptionImpl extends _ProductOption with DiagnosticableTreeMixin {
       {required this.code,
       required this.createdAt,
       final Map<String, dynamic>? customFields,
-      required this.group,
       required this.groupId,
       required this.id,
       required this.languageCode,
@@ -263,8 +236,6 @@ class _$ProductOptionImpl extends _ProductOption with DiagnosticableTreeMixin {
   }
 
   @override
-  final ProductOptionGroup group;
-  @override
   final String groupId;
   @override
   final String id;
@@ -285,7 +256,7 @@ class _$ProductOptionImpl extends _ProductOption with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductOption(code: $code, createdAt: $createdAt, customFields: $customFields, group: $group, groupId: $groupId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt)';
+    return 'ProductOption(code: $code, createdAt: $createdAt, customFields: $customFields, groupId: $groupId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt)';
   }
 
   @override
@@ -296,7 +267,6 @@ class _$ProductOptionImpl extends _ProductOption with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('code', code))
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('group', group))
       ..add(DiagnosticsProperty('groupId', groupId))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('languageCode', languageCode))
@@ -315,7 +285,6 @@ class _$ProductOptionImpl extends _ProductOption with DiagnosticableTreeMixin {
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality()
                 .equals(other._customFields, _customFields) &&
-            (identical(other.group, group) || other.group == group) &&
             (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.languageCode, languageCode) ||
@@ -334,7 +303,6 @@ class _$ProductOptionImpl extends _ProductOption with DiagnosticableTreeMixin {
       code,
       createdAt,
       const DeepCollectionEquality().hash(_customFields),
-      group,
       groupId,
       id,
       languageCode,
@@ -361,7 +329,6 @@ abstract class _ProductOption extends ProductOption {
       {required final String code,
       required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      required final ProductOptionGroup group,
       required final String groupId,
       required final String id,
       required final LanguageCode languageCode,
@@ -379,8 +346,6 @@ abstract class _ProductOption extends ProductOption {
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
-  @override
-  ProductOptionGroup get group;
   @override
   String get groupId;
   @override

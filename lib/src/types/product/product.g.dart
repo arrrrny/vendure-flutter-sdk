@@ -6,62 +6,76 @@ part of 'product.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
-    _$ProductImpl(
+_$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
       assets: (json['assets'] as List<dynamic>)
-          .map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .map((e) => Asset.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       collections: (json['collections'] as List<dynamic>)
-          .map((e) => Collection.fromJson(e as Map<String, dynamic>))
+          .map((e) => Collection.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String,
       enabled: json['enabled'] as bool,
       facetValues: (json['facetValues'] as List<dynamic>)
-          .map((e) => FacetValue.fromJson(e as Map<String, dynamic>))
+          .map((e) => FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       featuredAsset: json['featuredAsset'] == null
           ? null
-          : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
+          : Asset.fromJson(
+              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
       optionGroups: (json['optionGroups'] as List<dynamic>)
-          .map((e) => ProductOptionGroup.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              ProductOptionGroup.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       slug: json['slug'] as String,
       translations: (json['translations'] as List<dynamic>)
-          .map((e) => ProductTranslation.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              ProductTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       variantList: ProductVariantList.fromJson(
-          json['variantList'] as Map<String, dynamic>),
+          Map<String, dynamic>.from(json['variantList'] as Map)),
       variants: (json['variants'] as List<dynamic>)
-          .map((e) => ProductVariant.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              ProductVariant.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 
-Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
-    <String, dynamic>{
-      'assets': instance.assets,
-      'collections': instance.collections,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'customFields': instance.customFields,
-      'description': instance.description,
-      'enabled': instance.enabled,
-      'facetValues': instance.facetValues,
-      'featuredAsset': instance.featuredAsset,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'optionGroups': instance.optionGroups,
-      'slug': instance.slug,
-      'translations': instance.translations,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'variantList': instance.variantList,
-      'variants': instance.variants,
-    };
+Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) {
+  final val = <String, dynamic>{
+    'assets': instance.assets.map((e) => e.toJson()).toList(),
+    'collections': instance.collections.map((e) => e.toJson()).toList(),
+    'createdAt': instance.createdAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customFields', instance.customFields);
+  val['description'] = instance.description;
+  val['enabled'] = instance.enabled;
+  val['facetValues'] = instance.facetValues.map((e) => e.toJson()).toList();
+  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
+  val['id'] = instance.id;
+  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
+  val['name'] = instance.name;
+  val['optionGroups'] = instance.optionGroups.map((e) => e.toJson()).toList();
+  val['slug'] = instance.slug;
+  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
+  val['updatedAt'] = instance.updatedAt.toIso8601String();
+  val['variantList'] = instance.variantList.toJson();
+  val['variants'] = instance.variants.map((e) => e.toJson()).toList();
+  return val;
+}
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

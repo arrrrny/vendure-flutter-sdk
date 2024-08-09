@@ -7,7 +7,7 @@ part of 'search_result_sort_parameter.dart';
 // **************************************************************************
 
 _$SearchResultSortParameterImpl _$$SearchResultSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$SearchResultSortParameterImpl(
       name: $enumDecodeNullable(_$SortOrderEnumMap, json['name']),
       price: $enumDecodeNullable(_$SortOrderEnumMap, json['price']),

@@ -6,8 +6,7 @@ part of 'number_range.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NumberRangeImpl _$$NumberRangeImplFromJson(Map<String, dynamic> json) =>
-    _$NumberRangeImpl(
+_$NumberRangeImpl _$$NumberRangeImplFromJson(Map json) => _$NumberRangeImpl(
       end: (json['end'] as num).toDouble(),
       start: (json['start'] as num).toDouble(),
     );

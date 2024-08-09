@@ -6,13 +6,12 @@ part of 'shipping_method_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShippingMethodListImpl _$$ShippingMethodListImplFromJson(
-        Map<String, dynamic> json) =>
+_$ShippingMethodListImpl _$$ShippingMethodListImplFromJson(Map json) =>
     _$ShippingMethodListImpl(
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ShippingMethod.fromJson(e as Map<String, dynamic>))
+              : ShippingMethod.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

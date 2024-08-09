@@ -23,7 +23,6 @@ mixin _$FacetValue {
   String get code => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  Facet get facet => throw _privateConstructorUsedError;
   String get facetId => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   LanguageCode get languageCode => throw _privateConstructorUsedError;
@@ -48,15 +47,12 @@ abstract class $FacetValueCopyWith<$Res> {
       {String code,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
-      Facet facet,
       String facetId,
       String id,
       LanguageCode languageCode,
       String name,
       List<FacetValueTranslation> translations,
       DateTime updatedAt});
-
-  $FacetCopyWith<$Res> get facet;
 }
 
 /// @nodoc
@@ -75,7 +71,6 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
     Object? code = null,
     Object? createdAt = null,
     Object? customFields = freezed,
-    Object? facet = null,
     Object? facetId = null,
     Object? id = null,
     Object? languageCode = null,
@@ -96,10 +91,6 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      facet: null == facet
-          ? _value.facet
-          : facet // ignore: cast_nullable_to_non_nullable
-              as Facet,
       facetId: null == facetId
           ? _value.facetId
           : facetId // ignore: cast_nullable_to_non_nullable
@@ -126,14 +117,6 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
               as DateTime,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $FacetCopyWith<$Res> get facet {
-    return $FacetCopyWith<$Res>(_value.facet, (value) {
-      return _then(_value.copyWith(facet: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -148,16 +131,12 @@ abstract class _$$FacetValueImplCopyWith<$Res>
       {String code,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
-      Facet facet,
       String facetId,
       String id,
       LanguageCode languageCode,
       String name,
       List<FacetValueTranslation> translations,
       DateTime updatedAt});
-
-  @override
-  $FacetCopyWith<$Res> get facet;
 }
 
 /// @nodoc
@@ -174,7 +153,6 @@ class __$$FacetValueImplCopyWithImpl<$Res>
     Object? code = null,
     Object? createdAt = null,
     Object? customFields = freezed,
-    Object? facet = null,
     Object? facetId = null,
     Object? id = null,
     Object? languageCode = null,
@@ -195,10 +173,6 @@ class __$$FacetValueImplCopyWithImpl<$Res>
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      facet: null == facet
-          ? _value.facet
-          : facet // ignore: cast_nullable_to_non_nullable
-              as Facet,
       facetId: null == facetId
           ? _value.facetId
           : facetId // ignore: cast_nullable_to_non_nullable
@@ -234,7 +208,6 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       {required this.code,
       required this.createdAt,
       final Map<String, dynamic>? customFields,
-      required this.facet,
       required this.facetId,
       required this.id,
       required this.languageCode,
@@ -263,8 +236,6 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
   }
 
   @override
-  final Facet facet;
-  @override
   final String facetId;
   @override
   final String id;
@@ -285,7 +256,7 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FacetValue(code: $code, createdAt: $createdAt, customFields: $customFields, facet: $facet, facetId: $facetId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt)';
+    return 'FacetValue(code: $code, createdAt: $createdAt, customFields: $customFields, facetId: $facetId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt)';
   }
 
   @override
@@ -296,7 +267,6 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('code', code))
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('facet', facet))
       ..add(DiagnosticsProperty('facetId', facetId))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('languageCode', languageCode))
@@ -315,7 +285,6 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality()
                 .equals(other._customFields, _customFields) &&
-            (identical(other.facet, facet) || other.facet == facet) &&
             (identical(other.facetId, facetId) || other.facetId == facetId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.languageCode, languageCode) ||
@@ -334,7 +303,6 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       code,
       createdAt,
       const DeepCollectionEquality().hash(_customFields),
-      facet,
       facetId,
       id,
       languageCode,
@@ -361,7 +329,6 @@ abstract class _FacetValue extends FacetValue {
       {required final String code,
       required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      required final Facet facet,
       required final String facetId,
       required final String id,
       required final LanguageCode languageCode,
@@ -379,8 +346,6 @@ abstract class _FacetValue extends FacetValue {
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
-  @override
-  Facet get facet;
   @override
   String get facetId;
   @override

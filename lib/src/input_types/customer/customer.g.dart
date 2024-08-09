@@ -6,23 +6,26 @@ part of 'customer.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CustomerImpl _$$CustomerImplFromJson(Map<String, dynamic> json) =>
-    _$CustomerImpl(
+_$CustomerImpl _$$CustomerImplFromJson(Map json) => _$CustomerImpl(
       addresses: (json['addresses'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Address.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Address.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       emailAddress: json['emailAddress'] as String?,
       firstName: json['firstName'] as String?,
       id: json['id'] as String?,
       lastName: json['lastName'] as String?,
       orders: json['orders'] == null
           ? null
-          : OrderList.fromJson(json['orders'] as Map<String, dynamic>),
+          : OrderList.fromJson(
+              Map<String, dynamic>.from(json['orders'] as Map)),
       phoneNumber: json['phoneNumber'] as String?,
       title: json['title'] as String?,
       updatedAt: json['updatedAt'] == null
@@ -30,7 +33,7 @@ _$CustomerImpl _$$CustomerImplFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['updatedAt'] as String),
       user: json['user'] == null
           ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+          : User.fromJson(Map<String, dynamic>.from(json['user'] as Map)),
     );
 
 Map<String, dynamic> _$$CustomerImplToJson(_$CustomerImpl instance) {

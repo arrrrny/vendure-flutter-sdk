@@ -6,8 +6,7 @@ part of 'search_result_price.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PriceRangeImpl _$$PriceRangeImplFromJson(Map<String, dynamic> json) =>
-    _$PriceRangeImpl(
+_$PriceRangeImpl _$$PriceRangeImplFromJson(Map json) => _$PriceRangeImpl(
       max: (json['max'] as num?)?.toDouble(),
       min: (json['min'] as num?)?.toDouble(),
       $type: json['runtimeType'] as String?,
@@ -28,8 +27,7 @@ Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) {
   return val;
 }
 
-_$SinglePriceImpl _$$SinglePriceImplFromJson(Map<String, dynamic> json) =>
-    _$SinglePriceImpl(
+_$SinglePriceImpl _$$SinglePriceImplFromJson(Map json) => _$SinglePriceImpl(
       value: (json['value'] as num?)?.toDouble(),
       $type: json['runtimeType'] as String?,
     );

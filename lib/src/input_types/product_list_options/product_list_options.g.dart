@@ -6,19 +6,19 @@ part of 'product_list_options.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductListOptionsImpl _$$ProductListOptionsImplFromJson(
-        Map<String, dynamic> json) =>
+_$ProductListOptionsImpl _$$ProductListOptionsImplFromJson(Map json) =>
     _$ProductListOptionsImpl(
       filter: json['filter'] == null
           ? null
           : ProductFilterParameter.fromJson(
-              json['filter'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['filter'] as Map)),
       filterOperator:
           $enumDecodeNullable(_$LogicalOperatorEnumMap, json['filterOperator']),
       skip: (json['skip'] as num?)?.toInt(),
       sort: json['sort'] == null
           ? null
-          : ProductSortParameter.fromJson(json['sort'] as Map<String, dynamic>),
+          : ProductSortParameter.fromJson(
+              Map<String, dynamic>.from(json['sort'] as Map)),
       take: (json['take'] as num?)?.toInt(),
     );
 

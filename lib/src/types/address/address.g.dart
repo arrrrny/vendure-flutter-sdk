@@ -6,13 +6,15 @@ part of 'address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
-    _$AddressImpl(
+_$AddressImpl _$$AddressImplFromJson(Map json) => _$AddressImpl(
       city: json['city'] as String?,
       company: json['company'] as String?,
-      country: Country.fromJson(json['country'] as Map<String, dynamic>),
+      country:
+          Country.fromJson(Map<String, dynamic>.from(json['country'] as Map)),
       createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       defaultBillingAddress: json['defaultBillingAddress'] as bool?,
       defaultShippingAddress: json['defaultShippingAddress'] as bool?,
       fullName: json['fullName'] as String?,
@@ -25,21 +27,29 @@ _$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
-    <String, dynamic>{
-      'city': instance.city,
-      'company': instance.company,
-      'country': instance.country,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'customFields': instance.customFields,
-      'defaultBillingAddress': instance.defaultBillingAddress,
-      'defaultShippingAddress': instance.defaultShippingAddress,
-      'fullName': instance.fullName,
-      'id': instance.id,
-      'phoneNumber': instance.phoneNumber,
-      'postalCode': instance.postalCode,
-      'province': instance.province,
-      'streetLine1': instance.streetLine1,
-      'streetLine2': instance.streetLine2,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('city', instance.city);
+  writeNotNull('company', instance.company);
+  val['country'] = instance.country.toJson();
+  val['createdAt'] = instance.createdAt.toIso8601String();
+  writeNotNull('customFields', instance.customFields);
+  writeNotNull('defaultBillingAddress', instance.defaultBillingAddress);
+  writeNotNull('defaultShippingAddress', instance.defaultShippingAddress);
+  writeNotNull('fullName', instance.fullName);
+  val['id'] = instance.id;
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('postalCode', instance.postalCode);
+  writeNotNull('province', instance.province);
+  val['streetLine1'] = instance.streetLine1;
+  writeNotNull('streetLine2', instance.streetLine2);
+  val['updatedAt'] = instance.updatedAt.toIso8601String();
+  return val;
+}

@@ -6,8 +6,7 @@ part of 'boolean_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BooleanListOperatorsImpl _$$BooleanListOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$BooleanListOperatorsImpl _$$BooleanListOperatorsImplFromJson(Map json) =>
     _$BooleanListOperatorsImpl(
       inList: json['inList'] as bool,
     );

@@ -6,11 +6,11 @@ part of 'asset_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AssetListImpl _$$AssetListImplFromJson(Map<String, dynamic> json) =>
-    _$AssetListImpl(
+_$AssetListImpl _$$AssetListImplFromJson(Map json) => _$AssetListImpl(
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Asset.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Asset.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

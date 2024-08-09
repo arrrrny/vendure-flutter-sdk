@@ -6,8 +6,7 @@ part of 'current_user_channel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserChannelImpl _$$CurrentUserChannelImplFromJson(
-        Map<String, dynamic> json) =>
+_$CurrentUserChannelImpl _$$CurrentUserChannelImplFromJson(Map json) =>
     _$CurrentUserChannelImpl(
       code: json['code'] as String,
       id: json['id'] as String,

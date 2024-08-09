@@ -158,7 +158,7 @@ fragment Promotion on Promotion {
 ''';
 
 const String orderLineFragment = assetFragment +
-    productVariantFragment +
+    orderLineProductVariantFragment +
     fulfillmentLineFragment +
     r'''
 fragment OrderLine on OrderLine {
@@ -167,7 +167,7 @@ fragment OrderLine on OrderLine {
   createdAt
   updatedAt
   productVariant {
-    ...ProductVariant
+    ...OrderLineProductVariant
   }
   featuredAsset {
     ...Asset
@@ -255,6 +255,8 @@ const String shippingMethodFragment = r'''
 fragment ShippingMethod on ShippingMethod {
   __typename
   id
+  createdAt
+  updatedAt
   languageCode
   code
   name
@@ -279,6 +281,8 @@ fragment ShippingMethod on ShippingMethod {
     languageCode
     name
     description
+    createdAt
+    updatedAt
   }
   customFields
 }

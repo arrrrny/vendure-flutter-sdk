@@ -6,8 +6,7 @@ part of 'single_price.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SinglePriceImpl _$$SinglePriceImplFromJson(Map<String, dynamic> json) =>
-    _$SinglePriceImpl(
+_$SinglePriceImpl _$$SinglePriceImplFromJson(Map json) => _$SinglePriceImpl(
       value: (json['value'] as num).toDouble(),
     );
 

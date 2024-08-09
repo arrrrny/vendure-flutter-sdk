@@ -6,13 +6,14 @@ part of 'update_address_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UpdateAddressInputImpl _$$UpdateAddressInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$UpdateAddressInputImpl _$$UpdateAddressInputImplFromJson(Map json) =>
     _$UpdateAddressInputImpl(
       city: json['city'] as String?,
       company: json['company'] as String?,
       countryCode: json['countryCode'] as String?,
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       defaultBillingAddress: json['defaultBillingAddress'] as bool?,
       defaultShippingAddress: json['defaultShippingAddress'] as bool?,
       fullName: json['fullName'] as String?,

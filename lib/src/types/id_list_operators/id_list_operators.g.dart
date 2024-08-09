@@ -6,8 +6,7 @@ part of 'id_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IdListOperatorsImpl _$$IdListOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$IdListOperatorsImpl _$$IdListOperatorsImplFromJson(Map json) =>
     _$IdListOperatorsImpl(
       inList: json['inList'] as String,
     );

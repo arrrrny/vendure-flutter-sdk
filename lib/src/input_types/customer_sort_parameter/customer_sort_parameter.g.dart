@@ -6,8 +6,7 @@ part of 'customer_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CustomerSortParameterImpl _$$CustomerSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+_$CustomerSortParameterImpl _$$CustomerSortParameterImplFromJson(Map json) =>
     _$CustomerSortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       emailAddress:

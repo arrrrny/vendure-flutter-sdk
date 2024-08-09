@@ -7,7 +7,7 @@ part of 'product_variant_translation.dart';
 // **************************************************************************
 
 _$ProductVariantTranslationImpl _$$ProductVariantTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$ProductVariantTranslationImpl(
       createdAt: json['createdAt'] == null
           ? null

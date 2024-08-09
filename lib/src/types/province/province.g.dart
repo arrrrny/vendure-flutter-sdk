@@ -6,41 +6,52 @@ part of 'province.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProvinceImpl _$$ProvinceImplFromJson(Map<String, dynamic> json) =>
-    _$ProvinceImpl(
+_$ProvinceImpl _$$ProvinceImplFromJson(Map json) => _$ProvinceImpl(
       code: json['code'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       enabled: json['enabled'] as bool,
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
       parent: json['parent'] == null
           ? null
-          : Region.fromJson(json['parent'] as Map<String, dynamic>),
+          : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
       parentId: json['parentId'] as String?,
       translations: (json['translations'] as List<dynamic>)
-          .map((e) => RegionTranslation.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       type: json['type'] as String,
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProvinceImplToJson(_$ProvinceImpl instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'customFields': instance.customFields,
-      'enabled': instance.enabled,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'parent': instance.parent,
-      'parentId': instance.parentId,
-      'translations': instance.translations,
-      'type': instance.type,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$$ProvinceImplToJson(_$ProvinceImpl instance) {
+  final val = <String, dynamic>{
+    'code': instance.code,
+    'createdAt': instance.createdAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customFields', instance.customFields);
+  val['enabled'] = instance.enabled;
+  val['id'] = instance.id;
+  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
+  val['name'] = instance.name;
+  writeNotNull('parent', instance.parent?.toJson());
+  writeNotNull('parentId', instance.parentId);
+  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
+  val['type'] = instance.type;
+  val['updatedAt'] = instance.updatedAt.toIso8601String();
+  return val;
+}
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

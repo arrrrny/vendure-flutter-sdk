@@ -6,13 +6,14 @@ part of 'order_address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderAddressImpl _$$OrderAddressImplFromJson(Map<String, dynamic> json) =>
-    _$OrderAddressImpl(
+_$OrderAddressImpl _$$OrderAddressImplFromJson(Map json) => _$OrderAddressImpl(
       city: json['city'] as String?,
       company: json['company'] as String?,
       country: json['country'] as String?,
       countryCode: json['countryCode'] as String?,
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       fullName: json['fullName'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
       postalCode: json['postalCode'] as String?,
@@ -21,17 +22,25 @@ _$OrderAddressImpl _$$OrderAddressImplFromJson(Map<String, dynamic> json) =>
       streetLine2: json['streetLine2'] as String?,
     );
 
-Map<String, dynamic> _$$OrderAddressImplToJson(_$OrderAddressImpl instance) =>
-    <String, dynamic>{
-      'city': instance.city,
-      'company': instance.company,
-      'country': instance.country,
-      'countryCode': instance.countryCode,
-      'customFields': instance.customFields,
-      'fullName': instance.fullName,
-      'phoneNumber': instance.phoneNumber,
-      'postalCode': instance.postalCode,
-      'province': instance.province,
-      'streetLine1': instance.streetLine1,
-      'streetLine2': instance.streetLine2,
-    };
+Map<String, dynamic> _$$OrderAddressImplToJson(_$OrderAddressImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('city', instance.city);
+  writeNotNull('company', instance.company);
+  writeNotNull('country', instance.country);
+  writeNotNull('countryCode', instance.countryCode);
+  writeNotNull('customFields', instance.customFields);
+  writeNotNull('fullName', instance.fullName);
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('postalCode', instance.postalCode);
+  writeNotNull('province', instance.province);
+  writeNotNull('streetLine1', instance.streetLine1);
+  writeNotNull('streetLine2', instance.streetLine2);
+  return val;
+}

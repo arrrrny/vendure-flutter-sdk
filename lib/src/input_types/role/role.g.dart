@@ -6,10 +6,11 @@ part of 'role.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RoleImpl _$$RoleImplFromJson(Map<String, dynamic> json) => _$RoleImpl(
+_$RoleImpl _$$RoleImplFromJson(Map json) => _$RoleImpl(
       channels: (json['channels'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Channel.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Channel.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       code: json['code'] as String?,
       createdAt: json['createdAt'] == null

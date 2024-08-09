@@ -6,8 +6,7 @@ part of 'discount.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DiscountImpl _$$DiscountImplFromJson(Map<String, dynamic> json) =>
-    _$DiscountImpl(
+_$DiscountImpl _$$DiscountImplFromJson(Map json) => _$DiscountImpl(
       adjustmentSource: json['adjustmentSource'] as String?,
       amount: (json['amount'] as num?)?.toDouble(),
       amountWithTax: (json['amountWithTax'] as num?)?.toDouble(),

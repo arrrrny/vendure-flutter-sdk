@@ -6,7 +6,7 @@ part of 'config_arg_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ConfigArgInputImpl _$$ConfigArgInputImplFromJson(Map<String, dynamic> json) =>
+_$ConfigArgInputImpl _$$ConfigArgInputImplFromJson(Map json) =>
     _$ConfigArgInputImpl(
       name: json['name'] as String,
       value: json['value'] as String,

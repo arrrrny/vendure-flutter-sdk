@@ -7,8 +7,7 @@ part of 'update_customer_email_address_result.dart';
 // **************************************************************************
 
 _$IdentifierChangeTokenExpiredErrorImpl
-    _$$IdentifierChangeTokenExpiredErrorImplFromJson(
-            Map<String, dynamic> json) =>
+    _$$IdentifierChangeTokenExpiredErrorImplFromJson(Map json) =>
         _$IdentifierChangeTokenExpiredErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,
@@ -59,8 +58,7 @@ const _$ErrorCodeEnumMap = {
 };
 
 _$IdentifierChangeTokenInvalidErrorImpl
-    _$$IdentifierChangeTokenInvalidErrorImplFromJson(
-            Map<String, dynamic> json) =>
+    _$$IdentifierChangeTokenInvalidErrorImplFromJson(Map json) =>
         _$IdentifierChangeTokenInvalidErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,
@@ -76,7 +74,7 @@ Map<String, dynamic> _$$IdentifierChangeTokenInvalidErrorImplToJson(
     };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -91,8 +89,7 @@ Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$SuccessImpl _$$SuccessImplFromJson(Map<String, dynamic> json) =>
-    _$SuccessImpl(
+_$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
       success: json['success'] as bool,
       $type: json['runtimeType'] as String?,
     );

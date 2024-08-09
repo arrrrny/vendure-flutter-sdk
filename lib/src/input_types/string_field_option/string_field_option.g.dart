@@ -6,13 +6,12 @@ part of 'string_field_option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StringFieldOptionImpl _$$StringFieldOptionImplFromJson(
-        Map<String, dynamic> json) =>
+_$StringFieldOptionImpl _$$StringFieldOptionImplFromJson(Map json) =>
     _$StringFieldOptionImpl(
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       value: json['value'] as String?,
     );

@@ -53,7 +53,6 @@ mixin _$OrderLine {
 
   /// The total tax on this line
   double get lineTax => throw _privateConstructorUsedError;
-  Order get order => throw _privateConstructorUsedError;
 
   /// The quantity at the time the Order was placed
   int get orderPlacedQuantity => throw _privateConstructorUsedError;
@@ -119,7 +118,6 @@ abstract class $OrderLineCopyWith<$Res> {
       double linePrice,
       double linePriceWithTax,
       double lineTax,
-      Order order,
       int orderPlacedQuantity,
       ProductVariant productVariant,
       double proratedLinePrice,
@@ -136,7 +134,6 @@ abstract class $OrderLineCopyWith<$Res> {
       DateTime updatedAt});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $OrderCopyWith<$Res> get order;
   $ProductVariantCopyWith<$Res> get productVariant;
 }
 
@@ -166,7 +163,6 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
     Object? linePrice = null,
     Object? linePriceWithTax = null,
     Object? lineTax = null,
-    Object? order = null,
     Object? orderPlacedQuantity = null,
     Object? productVariant = null,
     Object? proratedLinePrice = null,
@@ -235,10 +231,6 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
           ? _value.lineTax
           : lineTax // ignore: cast_nullable_to_non_nullable
               as double,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as Order,
       orderPlacedQuantity: null == orderPlacedQuantity
           ? _value.orderPlacedQuantity
           : orderPlacedQuantity // ignore: cast_nullable_to_non_nullable
@@ -312,14 +304,6 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
 
   @override
   @pragma('vm:prefer-inline')
-  $OrderCopyWith<$Res> get order {
-    return $OrderCopyWith<$Res>(_value.order, (value) {
-      return _then(_value.copyWith(order: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $ProductVariantCopyWith<$Res> get productVariant {
     return $ProductVariantCopyWith<$Res>(_value.productVariant, (value) {
       return _then(_value.copyWith(productVariant: value) as $Val);
@@ -349,7 +333,6 @@ abstract class _$$OrderLineImplCopyWith<$Res>
       double linePrice,
       double linePriceWithTax,
       double lineTax,
-      Order order,
       int orderPlacedQuantity,
       ProductVariant productVariant,
       double proratedLinePrice,
@@ -367,8 +350,6 @@ abstract class _$$OrderLineImplCopyWith<$Res>
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
-  @override
-  $OrderCopyWith<$Res> get order;
   @override
   $ProductVariantCopyWith<$Res> get productVariant;
 }
@@ -397,7 +378,6 @@ class __$$OrderLineImplCopyWithImpl<$Res>
     Object? linePrice = null,
     Object? linePriceWithTax = null,
     Object? lineTax = null,
-    Object? order = null,
     Object? orderPlacedQuantity = null,
     Object? productVariant = null,
     Object? proratedLinePrice = null,
@@ -466,10 +446,6 @@ class __$$OrderLineImplCopyWithImpl<$Res>
           ? _value.lineTax
           : lineTax // ignore: cast_nullable_to_non_nullable
               as double,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as Order,
       orderPlacedQuantity: null == orderPlacedQuantity
           ? _value.orderPlacedQuantity
           : orderPlacedQuantity // ignore: cast_nullable_to_non_nullable
@@ -547,7 +523,6 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
       required this.linePrice,
       required this.linePriceWithTax,
       required this.lineTax,
-      required this.order,
       required this.orderPlacedQuantity,
       required this.productVariant,
       required this.proratedLinePrice,
@@ -638,8 +613,6 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
   /// The total tax on this line
   @override
   final double lineTax;
-  @override
-  final Order order;
 
   /// The quantity at the time the Order was placed
   @override
@@ -701,7 +674,7 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OrderLine(createdAt: $createdAt, customFields: $customFields, discountedLinePrice: $discountedLinePrice, discountedLinePriceWithTax: $discountedLinePriceWithTax, discountedUnitPrice: $discountedUnitPrice, discountedUnitPriceWithTax: $discountedUnitPriceWithTax, discounts: $discounts, featuredAsset: $featuredAsset, fulfillmentLines: $fulfillmentLines, id: $id, linePrice: $linePrice, linePriceWithTax: $linePriceWithTax, lineTax: $lineTax, order: $order, orderPlacedQuantity: $orderPlacedQuantity, productVariant: $productVariant, proratedLinePrice: $proratedLinePrice, proratedLinePriceWithTax: $proratedLinePriceWithTax, proratedUnitPrice: $proratedUnitPrice, proratedUnitPriceWithTax: $proratedUnitPriceWithTax, quantity: $quantity, taxLines: $taxLines, taxRate: $taxRate, unitPrice: $unitPrice, unitPriceChangeSinceAdded: $unitPriceChangeSinceAdded, unitPriceWithTax: $unitPriceWithTax, unitPriceWithTaxChangeSinceAdded: $unitPriceWithTaxChangeSinceAdded, updatedAt: $updatedAt)';
+    return 'OrderLine(createdAt: $createdAt, customFields: $customFields, discountedLinePrice: $discountedLinePrice, discountedLinePriceWithTax: $discountedLinePriceWithTax, discountedUnitPrice: $discountedUnitPrice, discountedUnitPriceWithTax: $discountedUnitPriceWithTax, discounts: $discounts, featuredAsset: $featuredAsset, fulfillmentLines: $fulfillmentLines, id: $id, linePrice: $linePrice, linePriceWithTax: $linePriceWithTax, lineTax: $lineTax, orderPlacedQuantity: $orderPlacedQuantity, productVariant: $productVariant, proratedLinePrice: $proratedLinePrice, proratedLinePriceWithTax: $proratedLinePriceWithTax, proratedUnitPrice: $proratedUnitPrice, proratedUnitPriceWithTax: $proratedUnitPriceWithTax, quantity: $quantity, taxLines: $taxLines, taxRate: $taxRate, unitPrice: $unitPrice, unitPriceChangeSinceAdded: $unitPriceChangeSinceAdded, unitPriceWithTax: $unitPriceWithTax, unitPriceWithTaxChangeSinceAdded: $unitPriceWithTaxChangeSinceAdded, updatedAt: $updatedAt)';
   }
 
   @override
@@ -724,7 +697,6 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('linePrice', linePrice))
       ..add(DiagnosticsProperty('linePriceWithTax', linePriceWithTax))
       ..add(DiagnosticsProperty('lineTax', lineTax))
-      ..add(DiagnosticsProperty('order', order))
       ..add(DiagnosticsProperty('orderPlacedQuantity', orderPlacedQuantity))
       ..add(DiagnosticsProperty('productVariant', productVariant))
       ..add(DiagnosticsProperty('proratedLinePrice', proratedLinePrice))
@@ -776,7 +748,6 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
             (identical(other.linePriceWithTax, linePriceWithTax) ||
                 other.linePriceWithTax == linePriceWithTax) &&
             (identical(other.lineTax, lineTax) || other.lineTax == lineTax) &&
-            (identical(other.order, order) || other.order == order) &&
             (identical(other.orderPlacedQuantity, orderPlacedQuantity) ||
                 other.orderPlacedQuantity == orderPlacedQuantity) &&
             (identical(other.productVariant, productVariant) ||
@@ -824,7 +795,6 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
         linePrice,
         linePriceWithTax,
         lineTax,
-        order,
         orderPlacedQuantity,
         productVariant,
         proratedLinePrice,
@@ -870,7 +840,6 @@ abstract class _OrderLine extends OrderLine {
       required final double linePrice,
       required final double linePriceWithTax,
       required final double lineTax,
-      required final Order order,
       required final int orderPlacedQuantity,
       required final ProductVariant productVariant,
       required final double proratedLinePrice,
@@ -935,8 +904,6 @@ abstract class _OrderLine extends OrderLine {
 
   /// The total tax on this line
   double get lineTax;
-  @override
-  Order get order;
   @override
 
   /// The quantity at the time the Order was placed

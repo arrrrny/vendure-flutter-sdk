@@ -6,13 +6,14 @@ part of 'order_address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderAddressImpl _$$OrderAddressImplFromJson(Map<String, dynamic> json) =>
-    _$OrderAddressImpl(
+_$OrderAddressImpl _$$OrderAddressImplFromJson(Map json) => _$OrderAddressImpl(
       city: json['city'] as String?,
       company: json['company'] as String?,
       country: json['country'] as String?,
       countryCode: json['countryCode'] as String?,
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       fullName: json['fullName'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
       postalCode: json['postalCode'] as String?,

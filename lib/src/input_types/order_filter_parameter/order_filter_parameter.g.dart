@@ -6,69 +6,79 @@ part of 'order_filter_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderFilterParameterImpl _$$OrderFilterParameterImplFromJson(
-        Map<String, dynamic> json) =>
+_$OrderFilterParameterImpl _$$OrderFilterParameterImplFromJson(Map json) =>
     _$OrderFilterParameterImpl(
       and: (json['_and'] as List<dynamic>?)
-          ?.map((e) => OrderFilterParameter.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => OrderFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       or: (json['_or'] as List<dynamic>?)
-          ?.map((e) => OrderFilterParameter.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => OrderFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       active: json['active'] == null
           ? null
-          : BooleanOperators.fromJson(json['active'] as Map<String, dynamic>),
+          : BooleanOperators.fromJson(
+              Map<String, dynamic>.from(json['active'] as Map)),
       code: json['code'] == null
           ? null
-          : StringOperators.fromJson(json['code'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['code'] as Map)),
       createdAt: json['createdAt'] == null
           ? null
-          : DateOperators.fromJson(json['createdAt'] as Map<String, dynamic>),
+          : DateOperators.fromJson(
+              Map<String, dynamic>.from(json['createdAt'] as Map)),
       currencyCode: json['currencyCode'] == null
           ? null
           : StringOperators.fromJson(
-              json['currencyCode'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['currencyCode'] as Map)),
       id: json['id'] == null
           ? null
-          : IdOperators.fromJson(json['id'] as Map<String, dynamic>),
+          : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
       orderPlacedAt: json['orderPlacedAt'] == null
           ? null
           : DateOperators.fromJson(
-              json['orderPlacedAt'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['orderPlacedAt'] as Map)),
       shipping: json['shipping'] == null
           ? null
-          : NumberOperators.fromJson(json['shipping'] as Map<String, dynamic>),
+          : NumberOperators.fromJson(
+              Map<String, dynamic>.from(json['shipping'] as Map)),
       shippingWithTax: json['shippingWithTax'] == null
           ? null
           : NumberOperators.fromJson(
-              json['shippingWithTax'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['shippingWithTax'] as Map)),
       state: json['state'] == null
           ? null
-          : StringOperators.fromJson(json['state'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['state'] as Map)),
       subTotal: json['subTotal'] == null
           ? null
-          : NumberOperators.fromJson(json['subTotal'] as Map<String, dynamic>),
+          : NumberOperators.fromJson(
+              Map<String, dynamic>.from(json['subTotal'] as Map)),
       subTotalWithTax: json['subTotalWithTax'] == null
           ? null
           : NumberOperators.fromJson(
-              json['subTotalWithTax'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['subTotalWithTax'] as Map)),
       total: json['total'] == null
           ? null
-          : NumberOperators.fromJson(json['total'] as Map<String, dynamic>),
+          : NumberOperators.fromJson(
+              Map<String, dynamic>.from(json['total'] as Map)),
       totalQuantity: json['totalQuantity'] == null
           ? null
           : NumberOperators.fromJson(
-              json['totalQuantity'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['totalQuantity'] as Map)),
       totalWithTax: json['totalWithTax'] == null
           ? null
           : NumberOperators.fromJson(
-              json['totalWithTax'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['totalWithTax'] as Map)),
       type: json['type'] == null
           ? null
-          : StringOperators.fromJson(json['type'] as Map<String, dynamic>),
+          : StringOperators.fromJson(
+              Map<String, dynamic>.from(json['type'] as Map)),
       updatedAt: json['updatedAt'] == null
           ? null
-          : DateOperators.fromJson(json['updatedAt'] as Map<String, dynamic>),
+          : DateOperators.fromJson(
+              Map<String, dynamic>.from(json['updatedAt'] as Map)),
     );
 
 Map<String, dynamic> _$$OrderFilterParameterImplToJson(

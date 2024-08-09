@@ -6,8 +6,7 @@ part of 'price_range.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PriceRangeImpl _$$PriceRangeImplFromJson(Map<String, dynamic> json) =>
-    _$PriceRangeImpl(
+_$PriceRangeImpl _$$PriceRangeImplFromJson(Map json) => _$PriceRangeImpl(
       max: (json['max'] as num).toDouble(),
       min: (json['min'] as num).toDouble(),
     );

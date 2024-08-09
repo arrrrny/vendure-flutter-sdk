@@ -7,7 +7,7 @@ part of 'order_state_transition_error.dart';
 // **************************************************************************
 
 _$OrderStateTransitionErrorImpl _$$OrderStateTransitionErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$OrderStateTransitionErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       fromState: json['fromState'] as String?,

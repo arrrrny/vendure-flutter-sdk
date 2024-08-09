@@ -6,8 +6,7 @@ part of 'promotion_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PromotionTranslationImpl _$$PromotionTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+_$PromotionTranslationImpl _$$PromotionTranslationImplFromJson(Map json) =>
     _$PromotionTranslationImpl(
       createdAt: json['createdAt'] == null
           ? null

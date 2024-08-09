@@ -7,7 +7,7 @@ part of 'product_variant_sort_parameter.dart';
 // **************************************************************************
 
 _$ProductVariantSortParameterImpl _$$ProductVariantSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$ProductVariantSortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),

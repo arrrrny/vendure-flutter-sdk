@@ -7,19 +7,19 @@ part of 'relation_custom_field_config.dart';
 // **************************************************************************
 
 _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$RelationCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       entity: json['entity'] as String?,
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       name: json['name'] as String?,
@@ -32,7 +32,9 @@ _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
           ?.map((e) => e as String?)
           .toList(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
     );
 
 Map<String, dynamic> _$$RelationCustomFieldConfigImplToJson(

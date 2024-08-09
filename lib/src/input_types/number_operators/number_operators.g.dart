@@ -6,12 +6,12 @@ part of 'number_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NumberOperatorsImpl _$$NumberOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$NumberOperatorsImpl _$$NumberOperatorsImplFromJson(Map json) =>
     _$NumberOperatorsImpl(
       between: json['between'] == null
           ? null
-          : NumberRange.fromJson(json['between'] as Map<String, dynamic>),
+          : NumberRange.fromJson(
+              Map<String, dynamic>.from(json['between'] as Map)),
       eq: (json['eq'] as num?)?.toDouble(),
       gt: (json['gt'] as num?)?.toDouble(),
       gte: (json['gte'] as num?)?.toDouble(),

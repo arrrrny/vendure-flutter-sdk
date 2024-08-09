@@ -6,29 +6,34 @@ part of 'product.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
-    _$ProductImpl(
+_$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
       assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Asset.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Asset.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       collections: (json['collections'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Collection.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Collection.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String?,
       enabled: json['enabled'] as bool?,
       facetValues: (json['facetValues'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : FacetValue.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       featuredAsset: json['featuredAsset'] == null
           ? null
-          : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
+          : Asset.fromJson(
+              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
       id: json['id'] as String?,
       languageCode:
           $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
@@ -36,13 +41,15 @@ _$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
       optionGroups: (json['optionGroups'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ProductOptionGroup.fromJson(e as Map<String, dynamic>))
+              : ProductOptionGroup.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       slug: json['slug'] as String?,
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ProductTranslation.fromJson(e as Map<String, dynamic>))
+              : ProductTranslation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null
@@ -50,11 +57,11 @@ _$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
       variantList: json['variantList'] == null
           ? null
           : ProductVariantList.fromJson(
-              json['variantList'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['variantList'] as Map)),
       variants: (json['variants'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ProductVariant.fromJson(e as Map<String, dynamic>))
+              : ProductVariant.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 

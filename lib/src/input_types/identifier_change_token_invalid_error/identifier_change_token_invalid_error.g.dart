@@ -7,8 +7,7 @@ part of 'identifier_change_token_invalid_error.dart';
 // **************************************************************************
 
 _$IdentifierChangeTokenInvalidErrorImpl
-    _$$IdentifierChangeTokenInvalidErrorImplFromJson(
-            Map<String, dynamic> json) =>
+    _$$IdentifierChangeTokenInvalidErrorImplFromJson(Map json) =>
         _$IdentifierChangeTokenInvalidErrorImpl(
           errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String?,

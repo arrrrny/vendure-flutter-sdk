@@ -6,8 +6,7 @@ part of 'product_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductSortParameterImpl _$$ProductSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+_$ProductSortParameterImpl _$$ProductSortParameterImplFromJson(Map json) =>
     _$ProductSortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       description: $enumDecodeNullable(_$SortOrderEnumMap, json['description']),

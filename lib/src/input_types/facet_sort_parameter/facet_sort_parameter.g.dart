@@ -6,8 +6,7 @@ part of 'facet_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetSortParameterImpl _$$FacetSortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+_$FacetSortParameterImpl _$$FacetSortParameterImplFromJson(Map json) =>
     _$FacetSortParameterImpl(
       code: $enumDecodeNullable(_$SortOrderEnumMap, json['code']),
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),

@@ -6,10 +6,10 @@ part of 'native_authentication_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
-    _$CurrentUserImpl(
+_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       channels: (json['channels'] as List<dynamic>)
-          .map((e) => CurrentUserChannel.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              CurrentUserChannel.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String,
       identifier: json['identifier'] as String,
@@ -18,14 +18,14 @@ _$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
     <String, dynamic>{
-      'channels': instance.channels,
+      'channels': instance.channels.map((e) => e.toJson()).toList(),
       'id': instance.id,
       'identifier': instance.identifier,
       'runtimeType': instance.$type,
     };
 
 _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$InvalidCredentialsErrorImpl(
       authenticationError: json['authenticationError'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
@@ -78,7 +78,7 @@ const _$ErrorCodeEnumMap = {
 };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
@@ -93,8 +93,7 @@ Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
       'runtimeType': instance.$type,
     };
 
-_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
     _$NotVerifiedErrorImpl(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,

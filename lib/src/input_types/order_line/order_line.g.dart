@@ -6,12 +6,13 @@ part of 'order_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
-    _$OrderLineImpl(
+_$OrderLineImpl _$$OrderLineImplFromJson(Map json) => _$OrderLineImpl(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       discountedLinePrice: (json['discountedLinePrice'] as num?)?.toDouble(),
       discountedLinePriceWithTax:
           (json['discountedLinePriceWithTax'] as num?)?.toDouble(),
@@ -19,16 +20,18 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
       discountedUnitPriceWithTax:
           (json['discountedUnitPriceWithTax'] as num?)?.toDouble(),
       discounts: (json['discounts'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Discount.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Discount.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       featuredAsset: json['featuredAsset'] == null
           ? null
-          : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
+          : Asset.fromJson(
+              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
       fulfillmentLines: (json['fulfillmentLines'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : FulfillmentLine.fromJson(e as Map<String, dynamic>))
+              : FulfillmentLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String?,
       linePrice: (json['linePrice'] as num?)?.toDouble(),
@@ -36,12 +39,12 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
       lineTax: (json['lineTax'] as num?)?.toDouble(),
       order: json['order'] == null
           ? null
-          : Order.fromJson(json['order'] as Map<String, dynamic>),
+          : Order.fromJson(Map<String, dynamic>.from(json['order'] as Map)),
       orderPlacedQuantity: (json['orderPlacedQuantity'] as num?)?.toInt(),
       productVariant: json['productVariant'] == null
           ? null
           : ProductVariant.fromJson(
-              json['productVariant'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['productVariant'] as Map)),
       proratedLinePrice: (json['proratedLinePrice'] as num?)?.toDouble(),
       proratedLinePriceWithTax:
           (json['proratedLinePriceWithTax'] as num?)?.toDouble(),
@@ -50,8 +53,9 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map<String, dynamic> json) =>
           (json['proratedUnitPriceWithTax'] as num?)?.toDouble(),
       quantity: (json['quantity'] as num?)?.toInt(),
       taxLines: (json['taxLines'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : TaxLine.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : TaxLine.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       taxRate: (json['taxRate'] as num?)?.toDouble(),
       unitPrice: (json['unitPrice'] as num?)?.toDouble(),

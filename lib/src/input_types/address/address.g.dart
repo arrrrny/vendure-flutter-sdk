@@ -6,17 +6,18 @@ part of 'address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
-    _$AddressImpl(
+_$AddressImpl _$$AddressImplFromJson(Map json) => _$AddressImpl(
       city: json['city'] as String?,
       company: json['company'] as String?,
       country: json['country'] == null
           ? null
-          : Country.fromJson(json['country'] as Map<String, dynamic>),
+          : Country.fromJson(Map<String, dynamic>.from(json['country'] as Map)),
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       defaultBillingAddress: json['defaultBillingAddress'] as bool?,
       defaultShippingAddress: json['defaultShippingAddress'] as bool?,
       fullName: json['fullName'] as String?,

@@ -6,36 +6,45 @@ part of 'product_option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionImpl _$$ProductOptionImplFromJson(Map<String, dynamic> json) =>
+_$ProductOptionImpl _$$ProductOptionImplFromJson(Map json) =>
     _$ProductOptionImpl(
       code: json['code'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
-      group: ProductOptionGroup.fromJson(json['group'] as Map<String, dynamic>),
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       groupId: json['groupId'] as String,
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
       translations: (json['translations'] as List<dynamic>)
-          .map((e) =>
-              ProductOptionTranslation.fromJson(e as Map<String, dynamic>))
+          .map((e) => ProductOptionTranslation.fromJson(
+              Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'customFields': instance.customFields,
-      'group': instance.group,
-      'groupId': instance.groupId,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'translations': instance.translations,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) {
+  final val = <String, dynamic>{
+    'code': instance.code,
+    'createdAt': instance.createdAt.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customFields', instance.customFields);
+  val['groupId'] = instance.groupId;
+  val['id'] = instance.id;
+  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
+  val['name'] = instance.name;
+  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
+  val['updatedAt'] = instance.updatedAt.toIso8601String();
+  return val;
+}
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

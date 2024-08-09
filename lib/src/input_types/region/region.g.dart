@@ -6,7 +6,7 @@ part of 'region.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegionImpl _$$RegionImplFromJson(Map<String, dynamic> json) => _$RegionImpl(
+_$RegionImpl _$$RegionImplFromJson(Map json) => _$RegionImpl(
       id: json['id'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
@@ -17,10 +17,11 @@ _$RegionImpl _$$RegionImplFromJson(Map<String, dynamic> json) => _$RegionImpl(
       enabled: json['enabled'] as bool,
       parent: json['parent'] == null
           ? null
-          : Region.fromJson(json['parent'] as Map<String, dynamic>),
+          : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
       parentId: json['parentId'] as String?,
       translations: (json['translations'] as List<dynamic>)
-          .map((e) => RegionTranslation.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 

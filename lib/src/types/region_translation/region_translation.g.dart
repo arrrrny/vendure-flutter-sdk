@@ -6,8 +6,7 @@ part of 'region_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegionTranslationImpl _$$RegionTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+_$RegionTranslationImpl _$$RegionTranslationImplFromJson(Map json) =>
     _$RegionTranslationImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
       id: json['id'] as String,

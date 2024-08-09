@@ -7,7 +7,7 @@ part of 'ineligible_shipping_method_error.dart';
 // **************************************************************************
 
 _$IneligibleShippingMethodErrorImpl
-    _$$IneligibleShippingMethodErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$IneligibleShippingMethodErrorImplFromJson(Map json) =>
         _$IneligibleShippingMethodErrorImpl(
           errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String?,

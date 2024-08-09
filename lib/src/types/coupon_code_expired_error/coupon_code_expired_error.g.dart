@@ -6,8 +6,7 @@ part of 'coupon_code_expired_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CouponCodeExpiredErrorImpl _$$CouponCodeExpiredErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$CouponCodeExpiredErrorImpl _$$CouponCodeExpiredErrorImplFromJson(Map json) =>
     _$CouponCodeExpiredErrorImpl(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),

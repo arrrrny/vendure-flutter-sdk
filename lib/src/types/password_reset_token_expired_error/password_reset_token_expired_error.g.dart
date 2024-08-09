@@ -7,7 +7,7 @@ part of 'password_reset_token_expired_error.dart';
 // **************************************************************************
 
 _$PasswordResetTokenExpiredErrorImpl
-    _$$PasswordResetTokenExpiredErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$PasswordResetTokenExpiredErrorImplFromJson(Map json) =>
         _$PasswordResetTokenExpiredErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,

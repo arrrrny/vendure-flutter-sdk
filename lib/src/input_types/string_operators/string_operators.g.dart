@@ -6,8 +6,7 @@ part of 'string_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StringOperatorsImpl _$$StringOperatorsImplFromJson(
-        Map<String, dynamic> json) =>
+_$StringOperatorsImpl _$$StringOperatorsImplFromJson(Map json) =>
     _$StringOperatorsImpl(
       contains: json['contains'] as String?,
       eq: json['eq'] as String?,

@@ -7,7 +7,7 @@ part of 'history_entry_sort_parameter.dart';
 // **************************************************************************
 
 _$HistoryEntrySortParameterImpl _$$HistoryEntrySortParameterImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$HistoryEntrySortParameterImpl(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),

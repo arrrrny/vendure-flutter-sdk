@@ -6,8 +6,7 @@ part of 'search_reindex_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchReindexResponseImpl _$$SearchReindexResponseImplFromJson(
-        Map<String, dynamic> json) =>
+_$SearchReindexResponseImpl _$$SearchReindexResponseImplFromJson(Map json) =>
     _$SearchReindexResponseImpl(
       success: json['success'] as bool,
     );

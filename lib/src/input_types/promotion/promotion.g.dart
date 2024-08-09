@@ -6,23 +6,26 @@ part of 'promotion.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PromotionImpl _$$PromotionImplFromJson(Map<String, dynamic> json) =>
-    _$PromotionImpl(
+_$PromotionImpl _$$PromotionImplFromJson(Map json) => _$PromotionImpl(
       actions: (json['actions'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ConfigurableOperation.fromJson(e as Map<String, dynamic>))
+              : ConfigurableOperation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       conditions: (json['conditions'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : ConfigurableOperation.fromJson(e as Map<String, dynamic>))
+              : ConfigurableOperation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       couponCode: json['couponCode'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       description: json['description'] as String?,
       enabled: json['enabled'] as bool?,
       endsAt: json['endsAt'] == null
@@ -37,7 +40,8 @@ _$PromotionImpl _$$PromotionImplFromJson(Map<String, dynamic> json) =>
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : PromotionTranslation.fromJson(e as Map<String, dynamic>))
+              : PromotionTranslation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null

@@ -6,8 +6,7 @@ part of 'tax_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaxLineImpl _$$TaxLineImplFromJson(Map<String, dynamic> json) =>
-    _$TaxLineImpl(
+_$TaxLineImpl _$$TaxLineImplFromJson(Map json) => _$TaxLineImpl(
       description: json['description'] as String,
       taxRate: (json['taxRate'] as num).toDouble(),
     );

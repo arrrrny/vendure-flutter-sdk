@@ -6,11 +6,11 @@ part of 'product_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductListImpl _$$ProductListImplFromJson(Map<String, dynamic> json) =>
-    _$ProductListImpl(
+_$ProductListImpl _$$ProductListImplFromJson(Map json) => _$ProductListImpl(
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Product.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Product.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

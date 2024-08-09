@@ -6,10 +6,11 @@ part of 'create_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(Map json) =>
     _$CreateCustomerInputImpl(
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       emailAddress: json['emailAddress'] as String,
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
@@ -18,12 +19,20 @@ _$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(
     );
 
 Map<String, dynamic> _$$CreateCustomerInputImplToJson(
-        _$CreateCustomerInputImpl instance) =>
-    <String, dynamic>{
-      'customFields': instance.customFields,
-      'emailAddress': instance.emailAddress,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'phoneNumber': instance.phoneNumber,
-      'title': instance.title,
-    };
+    _$CreateCustomerInputImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('customFields', instance.customFields);
+  val['emailAddress'] = instance.emailAddress;
+  val['firstName'] = instance.firstName;
+  val['lastName'] = instance.lastName;
+  writeNotNull('phoneNumber', instance.phoneNumber);
+  writeNotNull('title', instance.title);
+  return val;
+}

@@ -6,19 +6,18 @@ part of 'float_custom_field_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+_$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(Map json) =>
     _$FloatCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       list: json['list'] as bool?,
       max: (json['max'] as num?)?.toDouble(),
@@ -31,7 +30,9 @@ _$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toDouble(),
       type: json['type'] as String?,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
     );
 
 Map<String, dynamic> _$$FloatCustomFieldConfigImplToJson(

@@ -7,21 +7,24 @@ part of 'string_custom_field_config.dart';
 // **************************************************************************
 
 _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$StringCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       length: (json['length'] as num?)?.toInt(),
       list: json['list'] as bool,
       name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       options: (json['options'] as List<dynamic>?)
-          ?.map((e) => StringFieldOption.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              StringFieldOption.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       pattern: json['pattern'] as String?,
       readonly: json['readonly'] as bool?,
@@ -29,28 +32,41 @@ _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       type: json['type'] as String,
-      ui: json['ui'] as Map<String, dynamic>?,
+      ui: (json['ui'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
     );
 
 Map<String, dynamic> _$$StringCustomFieldConfigImplToJson(
-        _$StringCustomFieldConfigImpl instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'internal': instance.internal,
-      'label': instance.label,
-      'length': instance.length,
-      'list': instance.list,
-      'name': instance.name,
-      'nullable': instance.nullable,
-      'options': instance.options,
-      'pattern': instance.pattern,
-      'readonly': instance.readonly,
-      'requiresPermission': instance.requiresPermission
+    _$StringCustomFieldConfigImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'description', instance.description?.map((e) => e.toJson()).toList());
+  writeNotNull('internal', instance.internal);
+  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
+  writeNotNull('length', instance.length);
+  val['list'] = instance.list;
+  val['name'] = instance.name;
+  writeNotNull('nullable', instance.nullable);
+  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
+  writeNotNull('pattern', instance.pattern);
+  writeNotNull('readonly', instance.readonly);
+  writeNotNull(
+      'requiresPermission',
+      instance.requiresPermission
           ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList(),
-      'type': instance.type,
-      'ui': instance.ui,
-    };
+          .toList());
+  val['type'] = instance.type;
+  writeNotNull('ui', instance.ui);
+  return val;
+}
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

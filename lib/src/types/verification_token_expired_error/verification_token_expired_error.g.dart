@@ -7,7 +7,7 @@ part of 'verification_token_expired_error.dart';
 // **************************************************************************
 
 _$VerificationTokenExpiredErrorImpl
-    _$$VerificationTokenExpiredErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$VerificationTokenExpiredErrorImplFromJson(Map json) =>
         _$VerificationTokenExpiredErrorImpl(
           errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String,

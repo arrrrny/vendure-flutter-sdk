@@ -6,12 +6,12 @@ part of 'authentication_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AuthenticationInputImpl _$$AuthenticationInputImplFromJson(
-        Map<String, dynamic> json) =>
+_$AuthenticationInputImpl _$$AuthenticationInputImplFromJson(Map json) =>
     _$AuthenticationInputImpl(
       native: json['native'] == null
           ? null
-          : NativeAuthInput.fromJson(json['native'] as Map<String, dynamic>),
+          : NativeAuthInput.fromJson(
+              Map<String, dynamic>.from(json['native'] as Map)),
     );
 
 Map<String, dynamic> _$$AuthenticationInputImplToJson(

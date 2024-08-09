@@ -6,13 +6,13 @@ part of 'fulfillment_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FulfillmentLineImpl _$$FulfillmentLineImplFromJson(
-        Map<String, dynamic> json) =>
+_$FulfillmentLineImpl _$$FulfillmentLineImplFromJson(Map json) =>
     _$FulfillmentLineImpl(
-      fulfillment:
-          Fulfillment.fromJson(json['fulfillment'] as Map<String, dynamic>),
+      fulfillment: Fulfillment.fromJson(
+          Map<String, dynamic>.from(json['fulfillment'] as Map)),
       fulfillmentId: json['fulfillmentId'] as String,
-      orderLine: OrderLine.fromJson(json['orderLine'] as Map<String, dynamic>),
+      orderLine: OrderLine.fromJson(
+          Map<String, dynamic>.from(json['orderLine'] as Map)),
       orderLineId: json['orderLineId'] as String,
       quantity: (json['quantity'] as num).toInt(),
     );
@@ -20,9 +20,9 @@ _$FulfillmentLineImpl _$$FulfillmentLineImplFromJson(
 Map<String, dynamic> _$$FulfillmentLineImplToJson(
         _$FulfillmentLineImpl instance) =>
     <String, dynamic>{
-      'fulfillment': instance.fulfillment,
+      'fulfillment': instance.fulfillment.toJson(),
       'fulfillmentId': instance.fulfillmentId,
-      'orderLine': instance.orderLine,
+      'orderLine': instance.orderLine.toJson(),
       'orderLineId': instance.orderLineId,
       'quantity': instance.quantity,
     };

@@ -6,8 +6,7 @@ part of 'success.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SuccessImpl _$$SuccessImplFromJson(Map<String, dynamic> json) =>
-    _$SuccessImpl(
+_$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
       success: json['success'] as bool?,
     );
 

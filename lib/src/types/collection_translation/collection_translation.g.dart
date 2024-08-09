@@ -6,8 +6,7 @@ part of 'collection_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionTranslationImpl _$$CollectionTranslationImplFromJson(
-        Map<String, dynamic> json) =>
+_$CollectionTranslationImpl _$$CollectionTranslationImplFromJson(Map json) =>
     _$CollectionTranslationImpl(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String,

@@ -15,7 +15,6 @@ class FacetValue with _$FacetValue {
     required String code,
     required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    required Facet facet,
     required String facetId,
     required String id,
     required LanguageCode languageCode,

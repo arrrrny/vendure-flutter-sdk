@@ -7,18 +7,20 @@ part of 'locale_string_custom_field_config.dart';
 // **************************************************************************
 
 _$LocaleStringCustomFieldConfigImpl
-    _$$LocaleStringCustomFieldConfigImplFromJson(Map<String, dynamic> json) =>
+    _$$LocaleStringCustomFieldConfigImplFromJson(Map json) =>
         _$LocaleStringCustomFieldConfigImpl(
           description: (json['description'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
-                  : LocalizedString.fromJson(e as Map<String, dynamic>))
+                  : LocalizedString.fromJson(
+                      Map<String, dynamic>.from(e as Map)))
               .toList(),
           internal: json['internal'] as bool?,
           label: (json['label'] as List<dynamic>?)
               ?.map((e) => e == null
                   ? null
-                  : LocalizedString.fromJson(e as Map<String, dynamic>))
+                  : LocalizedString.fromJson(
+                      Map<String, dynamic>.from(e as Map)))
               .toList(),
           length: (json['length'] as num?)?.toInt(),
           list: json['list'] as bool?,
@@ -30,7 +32,9 @@ _$LocaleStringCustomFieldConfigImpl
               ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
               .toList(),
           type: json['type'] as String?,
-          ui: json['ui'] as Map<String, dynamic>?,
+          ui: (json['ui'] as Map?)?.map(
+            (k, e) => MapEntry(k as String, e),
+          ),
         );
 
 Map<String, dynamic> _$$LocaleStringCustomFieldConfigImplToJson(

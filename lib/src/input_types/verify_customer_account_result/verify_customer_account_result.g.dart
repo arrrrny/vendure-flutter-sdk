@@ -6,12 +6,12 @@ part of 'verify_customer_account_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
-    _$CurrentUserImpl(
+_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       channels: (json['channels'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : CurrentUserChannel.fromJson(e as Map<String, dynamic>))
+              : CurrentUserChannel.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as String?,
       identifier: json['identifier'] as String?,
@@ -34,8 +34,7 @@ Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) {
   return val;
 }
 
-_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(
-        Map<String, dynamic> json) =>
+_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(Map json) =>
     _$MissingPasswordErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -94,7 +93,7 @@ const _$ErrorCodeEnumMap = {
 };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$NativeAuthStrategyErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -118,7 +117,7 @@ Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
 }
 
 _$PasswordAlreadySetErrorImpl _$$PasswordAlreadySetErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PasswordAlreadySetErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -142,7 +141,7 @@ Map<String, dynamic> _$$PasswordAlreadySetErrorImplToJson(
 }
 
 _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$PasswordValidationErrorImpl(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
@@ -168,7 +167,7 @@ Map<String, dynamic> _$$PasswordValidationErrorImplToJson(
 }
 
 _$VerificationTokenExpiredErrorImpl
-    _$$VerificationTokenExpiredErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$VerificationTokenExpiredErrorImplFromJson(Map json) =>
         _$VerificationTokenExpiredErrorImpl(
           errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String?,
@@ -192,7 +191,7 @@ Map<String, dynamic> _$$VerificationTokenExpiredErrorImplToJson(
 }
 
 _$VerificationTokenInvalidErrorImpl
-    _$$VerificationTokenInvalidErrorImplFromJson(Map<String, dynamic> json) =>
+    _$$VerificationTokenInvalidErrorImplFromJson(Map json) =>
         _$VerificationTokenInvalidErrorImpl(
           errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
           message: json['message'] as String?,

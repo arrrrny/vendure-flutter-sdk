@@ -6,19 +6,26 @@ part of 'deletion_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DeletionResponseImpl _$$DeletionResponseImplFromJson(
-        Map<String, dynamic> json) =>
+_$DeletionResponseImpl _$$DeletionResponseImplFromJson(Map json) =>
     _$DeletionResponseImpl(
       message: json['message'] as String?,
       result: $enumDecode(_$DeletionResultEnumMap, json['result']),
     );
 
 Map<String, dynamic> _$$DeletionResponseImplToJson(
-        _$DeletionResponseImpl instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'result': _$DeletionResultEnumMap[instance.result]!,
-    };
+    _$DeletionResponseImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('message', instance.message);
+  val['result'] = _$DeletionResultEnumMap[instance.result]!;
+  return val;
+}
 
 const _$DeletionResultEnumMap = {
   DeletionResult.deleted: 'deleted',

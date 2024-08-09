@@ -6,11 +6,12 @@ part of 'collection_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionListImpl _$$CollectionListImplFromJson(Map<String, dynamic> json) =>
+_$CollectionListImpl _$$CollectionListImplFromJson(Map json) =>
     _$CollectionListImpl(
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Collection.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => e == null
+              ? null
+              : Collection.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );

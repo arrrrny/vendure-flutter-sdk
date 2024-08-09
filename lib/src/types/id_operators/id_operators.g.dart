@@ -6,8 +6,7 @@ part of 'id_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IdOperatorsImpl _$$IdOperatorsImplFromJson(Map<String, dynamic> json) =>
-    _$IdOperatorsImpl(
+_$IdOperatorsImpl _$$IdOperatorsImplFromJson(Map json) => _$IdOperatorsImpl(
       eq: json['eq'] as String?,
       in_: (json['in'] as List<dynamic>?)?.map((e) => e as String).toList(),
       isNull: json['isNull'] as bool?,
@@ -16,11 +15,19 @@ _$IdOperatorsImpl _$$IdOperatorsImplFromJson(Map<String, dynamic> json) =>
           (json['notIn'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$IdOperatorsImplToJson(_$IdOperatorsImpl instance) =>
-    <String, dynamic>{
-      'eq': instance.eq,
-      'in': instance.in_,
-      'isNull': instance.isNull,
-      'notEq': instance.notEq,
-      'notIn': instance.notIn,
-    };
+Map<String, dynamic> _$$IdOperatorsImplToJson(_$IdOperatorsImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('eq', instance.eq);
+  writeNotNull('in', instance.in_);
+  writeNotNull('isNull', instance.isNull);
+  writeNotNull('notEq', instance.notEq);
+  writeNotNull('notIn', instance.notIn);
+  return val;
+}

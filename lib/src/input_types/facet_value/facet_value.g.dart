@@ -6,16 +6,17 @@ part of 'facet_value.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetValueImpl _$$FacetValueImplFromJson(Map<String, dynamic> json) =>
-    _$FacetValueImpl(
+_$FacetValueImpl _$$FacetValueImplFromJson(Map json) => _$FacetValueImpl(
       code: json['code'] as String?,
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
-      customFields: json['customFields'] as Map<String, dynamic>?,
+      customFields: (json['customFields'] as Map?)?.map(
+        (k, e) => MapEntry(k as String, e),
+      ),
       facet: json['facet'] == null
           ? null
-          : Facet.fromJson(json['facet'] as Map<String, dynamic>),
+          : Facet.fromJson(Map<String, dynamic>.from(json['facet'] as Map)),
       facetId: json['facetId'] as String?,
       id: json['id'] as String?,
       languageCode:
@@ -24,7 +25,8 @@ _$FacetValueImpl _$$FacetValueImplFromJson(Map<String, dynamic> json) =>
       translations: (json['translations'] as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : FacetValueTranslation.fromJson(e as Map<String, dynamic>))
+              : FacetValueTranslation.fromJson(
+                  Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null

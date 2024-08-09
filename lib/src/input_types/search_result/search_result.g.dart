@@ -6,8 +6,7 @@ part of 'search_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchResultImpl _$$SearchResultImplFromJson(Map<String, dynamic> json) =>
-    _$SearchResultImpl(
+_$SearchResultImpl _$$SearchResultImplFromJson(Map json) => _$SearchResultImpl(
       collectionIds: (json['collectionIds'] as List<dynamic>?)
           ?.map((e) => e as String?)
           .toList(),
@@ -23,21 +22,22 @@ _$SearchResultImpl _$$SearchResultImplFromJson(Map<String, dynamic> json) =>
       inStock: json['inStock'] as bool?,
       price: json['price'] == null
           ? null
-          : SearchResultPrice.fromJson(json['price'] as Map<String, dynamic>),
+          : SearchResultPrice.fromJson(
+              Map<String, dynamic>.from(json['price'] as Map)),
       priceWithTax: json['priceWithTax'] == null
           ? null
           : SearchResultPrice.fromJson(
-              json['priceWithTax'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['priceWithTax'] as Map)),
       productAsset: json['productAsset'] == null
           ? null
           : SearchResultAsset.fromJson(
-              json['productAsset'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['productAsset'] as Map)),
       productId: json['productId'] as String?,
       productName: json['productName'] as String?,
       productVariantAsset: json['productVariantAsset'] == null
           ? null
           : SearchResultAsset.fromJson(
-              json['productVariantAsset'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['productVariantAsset'] as Map)),
       productVariantId: json['productVariantId'] as String?,
       productVariantName: json['productVariantName'] as String?,
       score: (json['score'] as num?)?.toDouble(),

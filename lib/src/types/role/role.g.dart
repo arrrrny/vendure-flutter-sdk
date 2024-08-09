@@ -6,9 +6,9 @@ part of 'role.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RoleImpl _$$RoleImplFromJson(Map<String, dynamic> json) => _$RoleImpl(
+_$RoleImpl _$$RoleImplFromJson(Map json) => _$RoleImpl(
       channels: (json['channels'] as List<dynamic>)
-          .map((e) => Channel.fromJson(e as Map<String, dynamic>))
+          .map((e) => Channel.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       code: json['code'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
@@ -22,7 +22,7 @@ _$RoleImpl _$$RoleImplFromJson(Map<String, dynamic> json) => _$RoleImpl(
 
 Map<String, dynamic> _$$RoleImplToJson(_$RoleImpl instance) =>
     <String, dynamic>{
-      'channels': instance.channels,
+      'channels': instance.channels.map((e) => e.toJson()).toList(),
       'code': instance.code,
       'createdAt': instance.createdAt.toIso8601String(),
       'description': instance.description,

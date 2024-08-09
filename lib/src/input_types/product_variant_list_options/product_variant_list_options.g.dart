@@ -7,19 +7,19 @@ part of 'product_variant_list_options.dart';
 // **************************************************************************
 
 _$ProductVariantListOptionsImpl _$$ProductVariantListOptionsImplFromJson(
-        Map<String, dynamic> json) =>
+        Map json) =>
     _$ProductVariantListOptionsImpl(
       filter: json['filter'] == null
           ? null
           : ProductVariantFilterParameter.fromJson(
-              json['filter'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['filter'] as Map)),
       filterOperator:
           $enumDecodeNullable(_$LogicalOperatorEnumMap, json['filterOperator']),
       skip: (json['skip'] as num?)?.toInt(),
       sort: json['sort'] == null
           ? null
           : ProductVariantSortParameter.fromJson(
-              json['sort'] as Map<String, dynamic>),
+              Map<String, dynamic>.from(json['sort'] as Map)),
       take: (json['take'] as num?)?.toInt(),
     );
 
