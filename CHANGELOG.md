@@ -1,3 +1,6 @@
+## 0.7.0
+- All shop-api methods are implemented
+
 ## 0.6.6
 - Updated README
 ## 0.6.3

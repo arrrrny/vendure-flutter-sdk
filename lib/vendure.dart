@@ -207,7 +207,6 @@ class Vendure {
 
   Future<GraphQLClient> _getClient() async {
     HttpLink httpLink = HttpLink(_endpoint);
-    print(!_useVendureGuestSession);
     if (_useVendureGuestSession) {
       httpLink = HttpLink(_endpoint,
           httpClient: TokenInterceptorClient(
