@@ -20,23 +20,22 @@ Promotion _$PromotionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Promotion {
-  List<ConfigurableOperation?>? get actions =>
-      throw _privateConstructorUsedError;
-  List<ConfigurableOperation?>? get conditions =>
+  List<ConfigurableOperation> get actions => throw _privateConstructorUsedError;
+  List<ConfigurableOperation> get conditions =>
       throw _privateConstructorUsedError;
   String? get couponCode => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  bool? get enabled => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  bool get enabled => throw _privateConstructorUsedError;
   DateTime? get endsAt => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   int? get perCustomerUsageLimit => throw _privateConstructorUsedError;
   DateTime? get startsAt => throw _privateConstructorUsedError;
-  List<PromotionTranslation?>? get translations =>
+  List<PromotionTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
   int? get usageLimit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,20 +50,20 @@ abstract class $PromotionCopyWith<$Res> {
       _$PromotionCopyWithImpl<$Res, Promotion>;
   @useResult
   $Res call(
-      {List<ConfigurableOperation?>? actions,
-      List<ConfigurableOperation?>? conditions,
+      {List<ConfigurableOperation> actions,
+      List<ConfigurableOperation> conditions,
       String? couponCode,
-      DateTime? createdAt,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      bool? enabled,
+      String description,
+      bool enabled,
       DateTime? endsAt,
-      String? id,
-      String? name,
+      String id,
+      String name,
       int? perCustomerUsageLimit,
       DateTime? startsAt,
-      List<PromotionTranslation?>? translations,
-      DateTime? updatedAt,
+      List<PromotionTranslation> translations,
+      DateTime updatedAt,
       int? usageLimit});
 }
 
@@ -81,63 +80,63 @@ class _$PromotionCopyWithImpl<$Res, $Val extends Promotion>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? actions = freezed,
-    Object? conditions = freezed,
+    Object? actions = null,
+    Object? conditions = null,
     Object? couponCode = freezed,
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? enabled = freezed,
+    Object? description = null,
+    Object? enabled = null,
     Object? endsAt = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? perCustomerUsageLimit = freezed,
     Object? startsAt = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? translations = null,
+    Object? updatedAt = null,
     Object? usageLimit = freezed,
   }) {
     return _then(_value.copyWith(
-      actions: freezed == actions
+      actions: null == actions
           ? _value.actions
           : actions // ignore: cast_nullable_to_non_nullable
-              as List<ConfigurableOperation?>?,
-      conditions: freezed == conditions
+              as List<ConfigurableOperation>,
+      conditions: null == conditions
           ? _value.conditions
           : conditions // ignore: cast_nullable_to_non_nullable
-              as List<ConfigurableOperation?>?,
+              as List<ConfigurableOperation>,
       couponCode: freezed == couponCode
           ? _value.couponCode
           : couponCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      enabled: freezed == enabled
+              as String,
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       endsAt: freezed == endsAt
           ? _value.endsAt
           : endsAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       perCustomerUsageLimit: freezed == perCustomerUsageLimit
           ? _value.perCustomerUsageLimit
           : perCustomerUsageLimit // ignore: cast_nullable_to_non_nullable
@@ -146,14 +145,14 @@ class _$PromotionCopyWithImpl<$Res, $Val extends Promotion>
           ? _value.startsAt
           : startsAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      translations: freezed == translations
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<PromotionTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<PromotionTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       usageLimit: freezed == usageLimit
           ? _value.usageLimit
           : usageLimit // ignore: cast_nullable_to_non_nullable
@@ -171,20 +170,20 @@ abstract class _$$PromotionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<ConfigurableOperation?>? actions,
-      List<ConfigurableOperation?>? conditions,
+      {List<ConfigurableOperation> actions,
+      List<ConfigurableOperation> conditions,
       String? couponCode,
-      DateTime? createdAt,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      bool? enabled,
+      String description,
+      bool enabled,
       DateTime? endsAt,
-      String? id,
-      String? name,
+      String id,
+      String name,
       int? perCustomerUsageLimit,
       DateTime? startsAt,
-      List<PromotionTranslation?>? translations,
-      DateTime? updatedAt,
+      List<PromotionTranslation> translations,
+      DateTime updatedAt,
       int? usageLimit});
 }
 
@@ -199,63 +198,63 @@ class __$$PromotionImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? actions = freezed,
-    Object? conditions = freezed,
+    Object? actions = null,
+    Object? conditions = null,
     Object? couponCode = freezed,
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? enabled = freezed,
+    Object? description = null,
+    Object? enabled = null,
     Object? endsAt = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
     Object? perCustomerUsageLimit = freezed,
     Object? startsAt = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? translations = null,
+    Object? updatedAt = null,
     Object? usageLimit = freezed,
   }) {
     return _then(_$PromotionImpl(
-      actions: freezed == actions
+      actions: null == actions
           ? _value._actions
           : actions // ignore: cast_nullable_to_non_nullable
-              as List<ConfigurableOperation?>?,
-      conditions: freezed == conditions
+              as List<ConfigurableOperation>,
+      conditions: null == conditions
           ? _value._conditions
           : conditions // ignore: cast_nullable_to_non_nullable
-              as List<ConfigurableOperation?>?,
+              as List<ConfigurableOperation>,
       couponCode: freezed == couponCode
           ? _value.couponCode
           : couponCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      enabled: freezed == enabled
+              as String,
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       endsAt: freezed == endsAt
           ? _value.endsAt
           : endsAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       perCustomerUsageLimit: freezed == perCustomerUsageLimit
           ? _value.perCustomerUsageLimit
           : perCustomerUsageLimit // ignore: cast_nullable_to_non_nullable
@@ -264,14 +263,14 @@ class __$$PromotionImplCopyWithImpl<$Res>
           ? _value.startsAt
           : startsAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      translations: freezed == translations
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<PromotionTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<PromotionTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       usageLimit: freezed == usageLimit
           ? _value.usageLimit
           : usageLimit // ignore: cast_nullable_to_non_nullable
@@ -284,20 +283,20 @@ class __$$PromotionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
   const _$PromotionImpl(
-      {final List<ConfigurableOperation?>? actions,
-      final List<ConfigurableOperation?>? conditions,
+      {required final List<ConfigurableOperation> actions,
+      required final List<ConfigurableOperation> conditions,
       this.couponCode,
-      this.createdAt,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.description,
-      this.enabled,
+      required this.description,
+      required this.enabled,
       this.endsAt,
-      this.id,
-      this.name,
+      required this.id,
+      required this.name,
       this.perCustomerUsageLimit,
       this.startsAt,
-      final List<PromotionTranslation?>? translations,
-      this.updatedAt,
+      required final List<PromotionTranslation> translations,
+      required this.updatedAt,
       this.usageLimit})
       : _actions = actions,
         _conditions = conditions,
@@ -308,30 +307,26 @@ class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
   factory _$PromotionImpl.fromJson(Map<String, dynamic> json) =>
       _$$PromotionImplFromJson(json);
 
-  final List<ConfigurableOperation?>? _actions;
+  final List<ConfigurableOperation> _actions;
   @override
-  List<ConfigurableOperation?>? get actions {
-    final value = _actions;
-    if (value == null) return null;
+  List<ConfigurableOperation> get actions {
     if (_actions is EqualUnmodifiableListView) return _actions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_actions);
   }
 
-  final List<ConfigurableOperation?>? _conditions;
+  final List<ConfigurableOperation> _conditions;
   @override
-  List<ConfigurableOperation?>? get conditions {
-    final value = _conditions;
-    if (value == null) return null;
+  List<ConfigurableOperation> get conditions {
     if (_conditions is EqualUnmodifiableListView) return _conditions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_conditions);
   }
 
   @override
   final String? couponCode;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -343,31 +338,29 @@ class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? description;
+  final String description;
   @override
-  final bool? enabled;
+  final bool enabled;
   @override
   final DateTime? endsAt;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
   final int? perCustomerUsageLimit;
   @override
   final DateTime? startsAt;
-  final List<PromotionTranslation?>? _translations;
+  final List<PromotionTranslation> _translations;
   @override
-  List<PromotionTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<PromotionTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
   @override
   final int? usageLimit;
 
@@ -466,20 +459,20 @@ class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
 
 abstract class _Promotion extends Promotion {
   const factory _Promotion(
-      {final List<ConfigurableOperation?>? actions,
-      final List<ConfigurableOperation?>? conditions,
+      {required final List<ConfigurableOperation> actions,
+      required final List<ConfigurableOperation> conditions,
       final String? couponCode,
-      final DateTime? createdAt,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? description,
-      final bool? enabled,
+      required final String description,
+      required final bool enabled,
       final DateTime? endsAt,
-      final String? id,
-      final String? name,
+      required final String id,
+      required final String name,
       final int? perCustomerUsageLimit,
       final DateTime? startsAt,
-      final List<PromotionTranslation?>? translations,
-      final DateTime? updatedAt,
+      required final List<PromotionTranslation> translations,
+      required final DateTime updatedAt,
       final int? usageLimit}) = _$PromotionImpl;
   const _Promotion._() : super._();
 
@@ -487,33 +480,33 @@ abstract class _Promotion extends Promotion {
       _$PromotionImpl.fromJson;
 
   @override
-  List<ConfigurableOperation?>? get actions;
+  List<ConfigurableOperation> get actions;
   @override
-  List<ConfigurableOperation?>? get conditions;
+  List<ConfigurableOperation> get conditions;
   @override
   String? get couponCode;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
-  bool? get enabled;
+  bool get enabled;
   @override
   DateTime? get endsAt;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
   int? get perCustomerUsageLimit;
   @override
   DateTime? get startsAt;
   @override
-  List<PromotionTranslation?>? get translations;
+  List<PromotionTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   int? get usageLimit;
   @override

@@ -20,8 +20,8 @@ RoleList _$RoleListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RoleList {
-  List<Role?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Role> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $RoleListCopyWith<$Res> {
   factory $RoleListCopyWith(RoleList value, $Res Function(RoleList) then) =
       _$RoleListCopyWithImpl<$Res, RoleList>;
   @useResult
-  $Res call({List<Role?>? items, int? totalItems});
+  $Res call({List<Role> items, int totalItems});
 }
 
 /// @nodoc
@@ -50,18 +50,18 @@ class _$RoleListCopyWithImpl<$Res, $Val extends RoleList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Role?>?,
-      totalItems: freezed == totalItems
+              as List<Role>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -74,7 +74,7 @@ abstract class _$$RoleListImplCopyWith<$Res>
       __$$RoleListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Role?>? items, int? totalItems});
+  $Res call({List<Role> items, int totalItems});
 }
 
 /// @nodoc
@@ -88,18 +88,18 @@ class __$$RoleListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$RoleListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Role?>?,
-      totalItems: freezed == totalItems
+              as List<Role>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -107,25 +107,24 @@ class __$$RoleListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RoleListImpl extends _RoleList with DiagnosticableTreeMixin {
-  const _$RoleListImpl({final List<Role?>? items, this.totalItems})
+  const _$RoleListImpl(
+      {required final List<Role> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$RoleListImpl.fromJson(Map<String, dynamic> json) =>
       _$$RoleListImplFromJson(json);
 
-  final List<Role?>? _items;
+  final List<Role> _items;
   @override
-  List<Role?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Role> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -171,17 +170,18 @@ class _$RoleListImpl extends _RoleList with DiagnosticableTreeMixin {
 }
 
 abstract class _RoleList extends RoleList {
-  const factory _RoleList({final List<Role?>? items, final int? totalItems}) =
-      _$RoleListImpl;
+  const factory _RoleList(
+      {required final List<Role> items,
+      required final int totalItems}) = _$RoleListImpl;
   const _RoleList._() : super._();
 
   factory _RoleList.fromJson(Map<String, dynamic> json) =
       _$RoleListImpl.fromJson;
 
   @override
-  List<Role?>? get items;
+  List<Role> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$RoleListImplCopyWith<_$RoleListImpl> get copyWith =>

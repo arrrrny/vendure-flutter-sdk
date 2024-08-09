@@ -20,19 +20,18 @@ Facet _$FacetFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Facet {
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<FacetTranslation?>? get translations =>
-      throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<FacetTranslation> get translations => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Returns a paginated, sortable, filterable list of the Facet's values. Added in v2.1.0.
-  FacetValueList? get valueList => throw _privateConstructorUsedError;
-  List<FacetValue?>? get values => throw _privateConstructorUsedError;
+  FacetValueList get valueList => throw _privateConstructorUsedError;
+  List<FacetValue> get values => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,18 +44,18 @@ abstract class $FacetCopyWith<$Res> {
       _$FacetCopyWithImpl<$Res, Facet>;
   @useResult
   $Res call(
-      {String? code,
-      DateTime? createdAt,
+      {String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<FacetTranslation?>? translations,
-      DateTime? updatedAt,
-      FacetValueList? valueList,
-      List<FacetValue?>? values});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<FacetTranslation> translations,
+      DateTime updatedAt,
+      FacetValueList valueList,
+      List<FacetValue> values});
 
-  $FacetValueListCopyWith<$Res>? get valueList;
+  $FacetValueListCopyWith<$Res> get valueList;
 }
 
 /// @nodoc
@@ -72,69 +71,65 @@ class _$FacetCopyWithImpl<$Res, $Val extends Facet>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
-    Object? valueList = freezed,
-    Object? values = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? translations = null,
+    Object? updatedAt = null,
+    Object? valueList = null,
+    Object? values = null,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<FacetTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<FacetTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      valueList: freezed == valueList
+              as DateTime,
+      valueList: null == valueList
           ? _value.valueList
           : valueList // ignore: cast_nullable_to_non_nullable
-              as FacetValueList?,
-      values: freezed == values
+              as FacetValueList,
+      values: null == values
           ? _value.values
           : values // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
+              as List<FacetValue>,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FacetValueListCopyWith<$Res>? get valueList {
-    if (_value.valueList == null) {
-      return null;
-    }
-
-    return $FacetValueListCopyWith<$Res>(_value.valueList!, (value) {
+  $FacetValueListCopyWith<$Res> get valueList {
+    return $FacetValueListCopyWith<$Res>(_value.valueList, (value) {
       return _then(_value.copyWith(valueList: value) as $Val);
     });
   }
@@ -148,19 +143,19 @@ abstract class _$$FacetImplCopyWith<$Res> implements $FacetCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? code,
-      DateTime? createdAt,
+      {String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<FacetTranslation?>? translations,
-      DateTime? updatedAt,
-      FacetValueList? valueList,
-      List<FacetValue?>? values});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<FacetTranslation> translations,
+      DateTime updatedAt,
+      FacetValueList valueList,
+      List<FacetValue> values});
 
   @override
-  $FacetValueListCopyWith<$Res>? get valueList;
+  $FacetValueListCopyWith<$Res> get valueList;
 }
 
 /// @nodoc
@@ -174,58 +169,58 @@ class __$$FacetImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
-    Object? valueList = freezed,
-    Object? values = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? translations = null,
+    Object? updatedAt = null,
+    Object? valueList = null,
+    Object? values = null,
   }) {
     return _then(_$FacetImpl(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<FacetTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<FacetTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      valueList: freezed == valueList
+              as DateTime,
+      valueList: null == valueList
           ? _value.valueList
           : valueList // ignore: cast_nullable_to_non_nullable
-              as FacetValueList?,
-      values: freezed == values
+              as FacetValueList,
+      values: null == values
           ? _value._values
           : values // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
+              as List<FacetValue>,
     ));
   }
 }
@@ -234,16 +229,16 @@ class __$$FacetImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetImpl extends _Facet with DiagnosticableTreeMixin {
   const _$FacetImpl(
-      {this.code,
-      this.createdAt,
+      {required this.code,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.id,
-      this.languageCode,
-      this.name,
-      final List<FacetTranslation?>? translations,
-      this.updatedAt,
-      this.valueList,
-      final List<FacetValue?>? values})
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required final List<FacetTranslation> translations,
+      required this.updatedAt,
+      required this.valueList,
+      required final List<FacetValue> values})
       : _customFields = customFields,
         _translations = translations,
         _values = values,
@@ -253,9 +248,9 @@ class _$FacetImpl extends _Facet with DiagnosticableTreeMixin {
       _$$FacetImplFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -267,35 +262,31 @@ class _$FacetImpl extends _Facet with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
-  final List<FacetTranslation?>? _translations;
+  final String name;
+  final List<FacetTranslation> _translations;
   @override
-  List<FacetTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<FacetTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   /// Returns a paginated, sortable, filterable list of the Facet's values. Added in v2.1.0.
   @override
-  final FacetValueList? valueList;
-  final List<FacetValue?>? _values;
+  final FacetValueList valueList;
+  final List<FacetValue> _values;
   @override
-  List<FacetValue?>? get values {
-    final value = _values;
-    if (value == null) return null;
+  List<FacetValue> get values {
     if (_values is EqualUnmodifiableListView) return _values;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_values);
   }
 
   @override
@@ -374,42 +365,42 @@ class _$FacetImpl extends _Facet with DiagnosticableTreeMixin {
 
 abstract class _Facet extends Facet {
   const factory _Facet(
-      {final String? code,
-      final DateTime? createdAt,
+      {required final String code,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final List<FacetTranslation?>? translations,
-      final DateTime? updatedAt,
-      final FacetValueList? valueList,
-      final List<FacetValue?>? values}) = _$FacetImpl;
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final List<FacetTranslation> translations,
+      required final DateTime updatedAt,
+      required final FacetValueList valueList,
+      required final List<FacetValue> values}) = _$FacetImpl;
   const _Facet._() : super._();
 
   factory _Facet.fromJson(Map<String, dynamic> json) = _$FacetImpl.fromJson;
 
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  List<FacetTranslation?>? get translations;
+  List<FacetTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
 
   /// Returns a paginated, sortable, filterable list of the Facet's values. Added in v2.1.0.
-  FacetValueList? get valueList;
+  FacetValueList get valueList;
   @override
-  List<FacetValue?>? get values;
+  List<FacetValue> get values;
   @override
   @JsonKey(ignore: true)
   _$$FacetImplCopyWith<_$FacetImpl> get copyWith =>

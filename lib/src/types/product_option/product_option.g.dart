@@ -8,51 +8,34 @@ part of 'product_option.dart';
 
 _$ProductOptionImpl _$$ProductOptionImplFromJson(Map<String, dynamic> json) =>
     _$ProductOptionImpl(
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
+      code: json['code'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: json['customFields'] as Map<String, dynamic>?,
-      group: json['group'] == null
-          ? null
-          : ProductOptionGroup.fromJson(json['group'] as Map<String, dynamic>),
-      groupId: json['groupId'] as String?,
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOptionTranslation.fromJson(e as Map<String, dynamic>))
+      group: ProductOptionGroup.fromJson(json['group'] as Map<String, dynamic>),
+      groupId: json['groupId'] as String,
+      id: json['id'] as String,
+      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+      name: json['name'] as String,
+      translations: (json['translations'] as List<dynamic>)
+          .map((e) =>
+              ProductOptionTranslation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('group', instance.group?.toJson());
-  writeNotNull('groupId', instance.groupId);
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'customFields': instance.customFields,
+      'group': instance.group,
+      'groupId': instance.groupId,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'translations': instance.translations,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

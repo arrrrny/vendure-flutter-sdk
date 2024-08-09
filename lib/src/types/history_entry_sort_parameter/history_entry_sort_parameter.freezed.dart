@@ -22,8 +22,11 @@ HistoryEntrySortParameter _$HistoryEntrySortParameterFromJson(
 /// @nodoc
 mixin _$HistoryEntrySortParameter {
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -125,19 +128,18 @@ class __$$HistoryEntrySortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter
     with DiagnosticableTreeMixin {
-  const _$HistoryEntrySortParameterImpl(
-      {this.createdAt, this.id, this.updatedAt})
+  _$HistoryEntrySortParameterImpl({this.createdAt, this.id, this.updatedAt})
       : super._();
 
   factory _$HistoryEntrySortParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$HistoryEntrySortParameterImplFromJson(json);
 
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -153,22 +155,6 @@ class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HistoryEntrySortParameterImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, createdAt, id, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -186,21 +172,24 @@ class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter
 }
 
 abstract class _HistoryEntrySortParameter extends HistoryEntrySortParameter {
-  const factory _HistoryEntrySortParameter(
-      {final SortOrder? createdAt,
-      final SortOrder? id,
-      final SortOrder? updatedAt}) = _$HistoryEntrySortParameterImpl;
-  const _HistoryEntrySortParameter._() : super._();
+  factory _HistoryEntrySortParameter(
+      {SortOrder? createdAt,
+      SortOrder? id,
+      SortOrder? updatedAt}) = _$HistoryEntrySortParameterImpl;
+  _HistoryEntrySortParameter._() : super._();
 
   factory _HistoryEntrySortParameter.fromJson(Map<String, dynamic> json) =
       _$HistoryEntrySortParameterImpl.fromJson;
 
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$HistoryEntrySortParameterImplCopyWith<_$HistoryEntrySortParameterImpl>

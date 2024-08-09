@@ -20,8 +20,8 @@ ConfigArg _$ConfigArgFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ConfigArg {
-  String? get name => throw _privateConstructorUsedError;
-  String? get value => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $ConfigArgCopyWith<$Res> {
   factory $ConfigArgCopyWith(ConfigArg value, $Res Function(ConfigArg) then) =
       _$ConfigArgCopyWithImpl<$Res, ConfigArg>;
   @useResult
-  $Res call({String? name, String? value});
+  $Res call({String name, String value});
 }
 
 /// @nodoc
@@ -50,18 +50,18 @@ class _$ConfigArgCopyWithImpl<$Res, $Val extends ConfigArg>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? value = freezed,
+    Object? name = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
+              as String,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -74,7 +74,7 @@ abstract class _$$ConfigArgImplCopyWith<$Res>
       __$$ConfigArgImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String? value});
+  $Res call({String name, String value});
 }
 
 /// @nodoc
@@ -88,18 +88,18 @@ class __$$ConfigArgImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? value = freezed,
+    Object? name = null,
+    Object? value = null,
   }) {
     return _then(_$ConfigArgImpl(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
+              as String,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -107,15 +107,15 @@ class __$$ConfigArgImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ConfigArgImpl extends _ConfigArg with DiagnosticableTreeMixin {
-  const _$ConfigArgImpl({this.name, this.value}) : super._();
+  const _$ConfigArgImpl({required this.name, required this.value}) : super._();
 
   factory _$ConfigArgImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigArgImplFromJson(json);
 
   @override
-  final String? name;
+  final String name;
   @override
-  final String? value;
+  final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -159,17 +159,18 @@ class _$ConfigArgImpl extends _ConfigArg with DiagnosticableTreeMixin {
 }
 
 abstract class _ConfigArg extends ConfigArg {
-  const factory _ConfigArg({final String? name, final String? value}) =
-      _$ConfigArgImpl;
+  const factory _ConfigArg(
+      {required final String name,
+      required final String value}) = _$ConfigArgImpl;
   const _ConfigArg._() : super._();
 
   factory _ConfigArg.fromJson(Map<String, dynamic> json) =
       _$ConfigArgImpl.fromJson;
 
   @override
-  String? get name;
+  String get name;
   @override
-  String? get value;
+  String get value;
   @override
   @JsonKey(ignore: true)
   _$$ConfigArgImplCopyWith<_$ConfigArgImpl> get copyWith =>

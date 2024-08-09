@@ -20,8 +20,8 @@ AssetList _$AssetListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AssetList {
-  List<Asset?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Asset> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $AssetListCopyWith<$Res> {
   factory $AssetListCopyWith(AssetList value, $Res Function(AssetList) then) =
       _$AssetListCopyWithImpl<$Res, AssetList>;
   @useResult
-  $Res call({List<Asset?>? items, int? totalItems});
+  $Res call({List<Asset> items, int totalItems});
 }
 
 /// @nodoc
@@ -50,18 +50,18 @@ class _$AssetListCopyWithImpl<$Res, $Val extends AssetList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      totalItems: freezed == totalItems
+              as List<Asset>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -74,7 +74,7 @@ abstract class _$$AssetListImplCopyWith<$Res>
       __$$AssetListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Asset?>? items, int? totalItems});
+  $Res call({List<Asset> items, int totalItems});
 }
 
 /// @nodoc
@@ -88,18 +88,18 @@ class __$$AssetListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$AssetListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      totalItems: freezed == totalItems
+              as List<Asset>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -107,25 +107,24 @@ class __$$AssetListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AssetListImpl extends _AssetList with DiagnosticableTreeMixin {
-  const _$AssetListImpl({final List<Asset?>? items, this.totalItems})
+  const _$AssetListImpl(
+      {required final List<Asset> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$AssetListImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetListImplFromJson(json);
 
-  final List<Asset?>? _items;
+  final List<Asset> _items;
   @override
-  List<Asset?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Asset> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -171,17 +170,18 @@ class _$AssetListImpl extends _AssetList with DiagnosticableTreeMixin {
 }
 
 abstract class _AssetList extends AssetList {
-  const factory _AssetList({final List<Asset?>? items, final int? totalItems}) =
-      _$AssetListImpl;
+  const factory _AssetList(
+      {required final List<Asset> items,
+      required final int totalItems}) = _$AssetListImpl;
   const _AssetList._() : super._();
 
   factory _AssetList.fromJson(Map<String, dynamic> json) =
       _$AssetListImpl.fromJson;
 
   @override
-  List<Asset?>? get items;
+  List<Asset> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$AssetListImplCopyWith<_$AssetListImpl> get copyWith =>

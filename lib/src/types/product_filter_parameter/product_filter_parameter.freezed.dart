@@ -23,16 +23,31 @@ ProductFilterParameter _$ProductFilterParameterFromJson(
 mixin _$ProductFilterParameter {
   @JsonKey(name: '_and')
   List<ProductFilterParameter>? get and => throw _privateConstructorUsedError;
+  @JsonKey(name: '_and')
+  set and(List<ProductFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: '_or')
   List<ProductFilterParameter>? get or => throw _privateConstructorUsedError;
+  @JsonKey(name: '_or')
+  set or(List<ProductFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   DateOperators? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(DateOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get description => throw _privateConstructorUsedError;
+  set description(StringOperators? value) => throw _privateConstructorUsedError;
   BooleanOperators? get enabled => throw _privateConstructorUsedError;
+  set enabled(BooleanOperators? value) => throw _privateConstructorUsedError;
   IdOperators? get id => throw _privateConstructorUsedError;
+  set id(IdOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get languageCode => throw _privateConstructorUsedError;
+  set languageCode(StringOperators? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get name => throw _privateConstructorUsedError;
+  set name(StringOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get slug => throw _privateConstructorUsedError;
+  set slug(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -299,11 +314,11 @@ class __$$ProductFilterParameterImplCopyWithImpl<$Res>
   }) {
     return _then(_$ProductFilterParameterImpl(
       and: freezed == and
-          ? _value._and
+          ? _value.and
           : and // ignore: cast_nullable_to_non_nullable
               as List<ProductFilterParameter>?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<ProductFilterParameter>?,
       createdAt: freezed == createdAt
@@ -346,9 +361,9 @@ class __$$ProductFilterParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductFilterParameterImpl extends _ProductFilterParameter
     with DiagnosticableTreeMixin {
-  const _$ProductFilterParameterImpl(
-      {@JsonKey(name: '_and') final List<ProductFilterParameter>? and,
-      @JsonKey(name: '_or') final List<ProductFilterParameter>? or,
+  _$ProductFilterParameterImpl(
+      {@JsonKey(name: '_and') this.and,
+      @JsonKey(name: '_or') this.or,
       this.createdAt,
       this.description,
       this.enabled,
@@ -357,51 +372,33 @@ class _$ProductFilterParameterImpl extends _ProductFilterParameter
       this.name,
       this.slug,
       this.updatedAt})
-      : _and = and,
-        _or = or,
-        super._();
+      : super._();
 
   factory _$ProductFilterParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductFilterParameterImplFromJson(json);
 
-  final List<ProductFilterParameter>? _and;
   @override
   @JsonKey(name: '_and')
-  List<ProductFilterParameter>? get and {
-    final value = _and;
-    if (value == null) return null;
-    if (_and is EqualUnmodifiableListView) return _and;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<ProductFilterParameter>? _or;
+  List<ProductFilterParameter>? and;
   @override
   @JsonKey(name: '_or')
-  List<ProductFilterParameter>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<ProductFilterParameter>? or;
   @override
-  final DateOperators? createdAt;
+  DateOperators? createdAt;
   @override
-  final StringOperators? description;
+  StringOperators? description;
   @override
-  final BooleanOperators? enabled;
+  BooleanOperators? enabled;
   @override
-  final IdOperators? id;
+  IdOperators? id;
   @override
-  final StringOperators? languageCode;
+  StringOperators? languageCode;
   @override
-  final StringOperators? name;
+  StringOperators? name;
   @override
-  final StringOperators? slug;
+  StringOperators? slug;
   @override
-  final DateOperators? updatedAt;
+  DateOperators? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -425,42 +422,6 @@ class _$ProductFilterParameterImpl extends _ProductFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductFilterParameterImpl &&
-            const DeepCollectionEquality().equals(other._and, _and) &&
-            const DeepCollectionEquality().equals(other._or, _or) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.enabled, enabled) || other.enabled == enabled) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_and),
-      const DeepCollectionEquality().hash(_or),
-      createdAt,
-      description,
-      enabled,
-      id,
-      languageCode,
-      name,
-      slug,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -477,18 +438,18 @@ class _$ProductFilterParameterImpl extends _ProductFilterParameter
 }
 
 abstract class _ProductFilterParameter extends ProductFilterParameter {
-  const factory _ProductFilterParameter(
-      {@JsonKey(name: '_and') final List<ProductFilterParameter>? and,
-      @JsonKey(name: '_or') final List<ProductFilterParameter>? or,
-      final DateOperators? createdAt,
-      final StringOperators? description,
-      final BooleanOperators? enabled,
-      final IdOperators? id,
-      final StringOperators? languageCode,
-      final StringOperators? name,
-      final StringOperators? slug,
-      final DateOperators? updatedAt}) = _$ProductFilterParameterImpl;
-  const _ProductFilterParameter._() : super._();
+  factory _ProductFilterParameter(
+      {@JsonKey(name: '_and') List<ProductFilterParameter>? and,
+      @JsonKey(name: '_or') List<ProductFilterParameter>? or,
+      DateOperators? createdAt,
+      StringOperators? description,
+      BooleanOperators? enabled,
+      IdOperators? id,
+      StringOperators? languageCode,
+      StringOperators? name,
+      StringOperators? slug,
+      DateOperators? updatedAt}) = _$ProductFilterParameterImpl;
+  _ProductFilterParameter._() : super._();
 
   factory _ProductFilterParameter.fromJson(Map<String, dynamic> json) =
       _$ProductFilterParameterImpl.fromJson;
@@ -496,25 +457,37 @@ abstract class _ProductFilterParameter extends ProductFilterParameter {
   @override
   @JsonKey(name: '_and')
   List<ProductFilterParameter>? get and;
+  @JsonKey(name: '_and')
+  set and(List<ProductFilterParameter>? value);
   @override
   @JsonKey(name: '_or')
   List<ProductFilterParameter>? get or;
+  @JsonKey(name: '_or')
+  set or(List<ProductFilterParameter>? value);
   @override
   DateOperators? get createdAt;
+  set createdAt(DateOperators? value);
   @override
   StringOperators? get description;
+  set description(StringOperators? value);
   @override
   BooleanOperators? get enabled;
+  set enabled(BooleanOperators? value);
   @override
   IdOperators? get id;
+  set id(IdOperators? value);
   @override
   StringOperators? get languageCode;
+  set languageCode(StringOperators? value);
   @override
   StringOperators? get name;
+  set name(StringOperators? value);
   @override
   StringOperators? get slug;
+  set slug(StringOperators? value);
   @override
   DateOperators? get updatedAt;
+  set updatedAt(DateOperators? value);
   @override
   @JsonKey(ignore: true)
   _$$ProductFilterParameterImplCopyWith<_$ProductFilterParameterImpl>

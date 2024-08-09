@@ -21,11 +21,17 @@ ProductSortParameter _$ProductSortParameterFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProductSortParameter {
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get description => throw _privateConstructorUsedError;
+  set description(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get name => throw _privateConstructorUsedError;
+  set name(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get slug => throw _privateConstructorUsedError;
+  set slug(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -166,7 +172,7 @@ class __$$ProductSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductSortParameterImpl extends _ProductSortParameter
     with DiagnosticableTreeMixin {
-  const _$ProductSortParameterImpl(
+  _$ProductSortParameterImpl(
       {this.createdAt,
       this.description,
       this.id,
@@ -179,17 +185,17 @@ class _$ProductSortParameterImpl extends _ProductSortParameter
       _$$ProductSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? description;
+  SortOrder? description;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? name;
+  SortOrder? name;
   @override
-  final SortOrder? slug;
+  SortOrder? slug;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -209,27 +215,6 @@ class _$ProductSortParameterImpl extends _ProductSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductSortParameterImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, createdAt, description, id, name, slug, updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -247,30 +232,36 @@ class _$ProductSortParameterImpl extends _ProductSortParameter
 }
 
 abstract class _ProductSortParameter extends ProductSortParameter {
-  const factory _ProductSortParameter(
-      {final SortOrder? createdAt,
-      final SortOrder? description,
-      final SortOrder? id,
-      final SortOrder? name,
-      final SortOrder? slug,
-      final SortOrder? updatedAt}) = _$ProductSortParameterImpl;
-  const _ProductSortParameter._() : super._();
+  factory _ProductSortParameter(
+      {SortOrder? createdAt,
+      SortOrder? description,
+      SortOrder? id,
+      SortOrder? name,
+      SortOrder? slug,
+      SortOrder? updatedAt}) = _$ProductSortParameterImpl;
+  _ProductSortParameter._() : super._();
 
   factory _ProductSortParameter.fromJson(Map<String, dynamic> json) =
       _$ProductSortParameterImpl.fromJson;
 
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get description;
+  set description(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get name;
+  set name(SortOrder? value);
   @override
   SortOrder? get slug;
+  set slug(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$ProductSortParameterImplCopyWith<_$ProductSortParameterImpl>

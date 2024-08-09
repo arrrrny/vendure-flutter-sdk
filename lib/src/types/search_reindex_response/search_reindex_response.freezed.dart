@@ -21,7 +21,7 @@ SearchReindexResponse _$SearchReindexResponseFromJson(
 
 /// @nodoc
 mixin _$SearchReindexResponse {
-  bool? get success => throw _privateConstructorUsedError;
+  bool get success => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $SearchReindexResponseCopyWith<$Res> {
           $Res Function(SearchReindexResponse) then) =
       _$SearchReindexResponseCopyWithImpl<$Res, SearchReindexResponse>;
   @useResult
-  $Res call({bool? success});
+  $Res call({bool success});
 }
 
 /// @nodoc
@@ -52,13 +52,13 @@ class _$SearchReindexResponseCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = freezed,
+    Object? success = null,
   }) {
     return _then(_value.copyWith(
-      success: freezed == success
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$SearchReindexResponseImplCopyWith<$Res>
       __$$SearchReindexResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool? success});
+  $Res call({bool success});
 }
 
 /// @nodoc
@@ -87,13 +87,13 @@ class __$$SearchReindexResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = freezed,
+    Object? success = null,
   }) {
     return _then(_$SearchReindexResponseImpl(
-      success: freezed == success
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -102,13 +102,13 @@ class __$$SearchReindexResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SearchReindexResponseImpl extends _SearchReindexResponse
     with DiagnosticableTreeMixin {
-  const _$SearchReindexResponseImpl({this.success}) : super._();
+  const _$SearchReindexResponseImpl({required this.success}) : super._();
 
   factory _$SearchReindexResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchReindexResponseImplFromJson(json);
 
   @override
-  final bool? success;
+  final bool success;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -151,7 +151,7 @@ class _$SearchReindexResponseImpl extends _SearchReindexResponse
 }
 
 abstract class _SearchReindexResponse extends SearchReindexResponse {
-  const factory _SearchReindexResponse({final bool? success}) =
+  const factory _SearchReindexResponse({required final bool success}) =
       _$SearchReindexResponseImpl;
   const _SearchReindexResponse._() : super._();
 
@@ -159,7 +159,7 @@ abstract class _SearchReindexResponse extends SearchReindexResponse {
       _$SearchReindexResponseImpl.fromJson;
 
   @override
-  bool? get success;
+  bool get success;
   @override
   @JsonKey(ignore: true)
   _$$SearchReindexResponseImplCopyWith<_$SearchReindexResponseImpl>

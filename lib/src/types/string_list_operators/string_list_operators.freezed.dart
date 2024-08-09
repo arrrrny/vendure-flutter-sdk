@@ -21,6 +21,7 @@ StringListOperators _$StringListOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StringListOperators {
   String get inList => throw _privateConstructorUsedError;
+  set inList(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -98,13 +99,13 @@ class __$$StringListOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StringListOperatorsImpl extends _StringListOperators
     with DiagnosticableTreeMixin {
-  const _$StringListOperatorsImpl({required this.inList}) : super._();
+  _$StringListOperatorsImpl({required this.inList}) : super._();
 
   factory _$StringListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$StringListOperatorsImplFromJson(json);
 
   @override
-  final String inList;
+  String inList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -118,18 +119,6 @@ class _$StringListOperatorsImpl extends _StringListOperators
       ..add(DiagnosticsProperty('type', 'StringListOperators'))
       ..add(DiagnosticsProperty('inList', inList));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StringListOperatorsImpl &&
-            (identical(other.inList, inList) || other.inList == inList));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, inList);
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +136,16 @@ class _$StringListOperatorsImpl extends _StringListOperators
 }
 
 abstract class _StringListOperators extends StringListOperators {
-  const factory _StringListOperators({required final String inList}) =
+  factory _StringListOperators({required String inList}) =
       _$StringListOperatorsImpl;
-  const _StringListOperators._() : super._();
+  _StringListOperators._() : super._();
 
   factory _StringListOperators.fromJson(Map<String, dynamic> json) =
       _$StringListOperatorsImpl.fromJson;
 
   @override
   String get inList;
+  set inList(String value);
   @override
   @JsonKey(ignore: true)
   _$$StringListOperatorsImplCopyWith<_$StringListOperatorsImpl> get copyWith =>

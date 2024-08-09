@@ -8,90 +8,65 @@ part of 'product_variant.dart';
 
 _$ProductVariantImpl _$$ProductVariantImplFromJson(Map<String, dynamic> json) =>
     _$ProductVariantImpl(
-      assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Asset.fromJson(e as Map<String, dynamic>))
+      assets: (json['assets'] as List<dynamic>)
+          .map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      currencyCode:
-          $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
       customFields: json['customFields'] as Map<String, dynamic>?,
-      facetValues: (json['facetValues'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : FacetValue.fromJson(e as Map<String, dynamic>))
+      facetValues: (json['facetValues'] as List<dynamic>)
+          .map((e) => FacetValue.fromJson(e as Map<String, dynamic>))
           .toList(),
       featuredAsset: json['featuredAsset'] == null
           ? null
           : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      options: (json['options'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOption.fromJson(e as Map<String, dynamic>))
+      id: json['id'] as String,
+      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+      name: json['name'] as String,
+      options: (json['options'] as List<dynamic>)
+          .map((e) => ProductOption.fromJson(e as Map<String, dynamic>))
           .toList(),
-      price: (json['price'] as num?)?.toDouble(),
-      priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(json['product'] as Map<String, dynamic>),
-      productId: json['productId'] as String?,
-      sku: json['sku'] as String?,
-      stockLevel: json['stockLevel'] as String?,
-      taxCategory: json['taxCategory'] == null
-          ? null
-          : TaxCategory.fromJson(json['taxCategory'] as Map<String, dynamic>),
-      taxRateApplied: json['taxRateApplied'] == null
-          ? null
-          : TaxRate.fromJson(json['taxRateApplied'] as Map<String, dynamic>),
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductVariantTranslation.fromJson(e as Map<String, dynamic>))
+      price: (json['price'] as num).toDouble(),
+      priceWithTax: (json['priceWithTax'] as num).toDouble(),
+      product: Product.fromJson(json['product'] as Map<String, dynamic>),
+      productId: json['productId'] as String,
+      sku: json['sku'] as String,
+      stockLevel: json['stockLevel'] as String,
+      taxCategory:
+          TaxCategory.fromJson(json['taxCategory'] as Map<String, dynamic>),
+      taxRateApplied:
+          TaxRate.fromJson(json['taxRateApplied'] as Map<String, dynamic>),
+      translations: (json['translations'] as List<dynamic>)
+          .map((e) =>
+              ProductVariantTranslation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
 Map<String, dynamic> _$$ProductVariantImplToJson(
-    _$ProductVariantImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assets', instance.assets?.map((e) => e?.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('currencyCode', _$CurrencyCodeEnumMap[instance.currencyCode]);
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull(
-      'facetValues', instance.facetValues?.map((e) => e?.toJson()).toList());
-  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull('options', instance.options?.map((e) => e?.toJson()).toList());
-  writeNotNull('price', instance.price);
-  writeNotNull('priceWithTax', instance.priceWithTax);
-  writeNotNull('product', instance.product?.toJson());
-  writeNotNull('productId', instance.productId);
-  writeNotNull('sku', instance.sku);
-  writeNotNull('stockLevel', instance.stockLevel);
-  writeNotNull('taxCategory', instance.taxCategory?.toJson());
-  writeNotNull('taxRateApplied', instance.taxRateApplied?.toJson());
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+        _$ProductVariantImpl instance) =>
+    <String, dynamic>{
+      'assets': instance.assets,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      'customFields': instance.customFields,
+      'facetValues': instance.facetValues,
+      'featuredAsset': instance.featuredAsset,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'options': instance.options,
+      'price': instance.price,
+      'priceWithTax': instance.priceWithTax,
+      'product': instance.product,
+      'productId': instance.productId,
+      'sku': instance.sku,
+      'stockLevel': instance.stockLevel,
+      'taxCategory': instance.taxCategory,
+      'taxRateApplied': instance.taxRateApplied,
+      'translations': instance.translations,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/history_entry_filter_parameter/history_entry_filter_parameter.dart';
-import 'package:vendure/src/types/history_entry_sort_parameter/history_entry_sort_parameter.dart';
-import 'package:vendure/src/types/logical_operator/logical_operator.dart';
+import '../history_entry_filter_parameter/history_entry_filter_parameter.dart';
+import '../history_entry_sort_parameter/history_entry_sort_parameter.dart';
+import '../types/logical_operator/logical_operator.dart';
 
 part 'history_entry_list_options.freezed.dart';
 part 'history_entry_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class HistoryEntryListOptions with _$HistoryEntryListOptions {
   const HistoryEntryListOptions._();
 
-  const factory HistoryEntryListOptions({
+  factory HistoryEntryListOptions({
     /// Allows the results to be filtered
     HistoryEntryFilterParameter? filter,
 

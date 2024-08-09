@@ -8,26 +8,16 @@ part of 'current_user.dart';
 
 _$CurrentUserImpl _$$CurrentUserImplFromJson(Map<String, dynamic> json) =>
     _$CurrentUserImpl(
-      channels: (json['channels'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : CurrentUserChannel.fromJson(e as Map<String, dynamic>))
+      channels: (json['channels'] as List<dynamic>)
+          .map((e) => CurrentUserChannel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      id: json['id'] as String?,
-      identifier: json['identifier'] as String?,
+      id: json['id'] as String,
+      identifier: json['identifier'] as String,
     );
 
-Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('channels', instance.channels?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('identifier', instance.identifier);
-  return val;
-}
+Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
+    <String, dynamic>{
+      'channels': instance.channels,
+      'id': instance.id,
+      'identifier': instance.identifier,
+    };

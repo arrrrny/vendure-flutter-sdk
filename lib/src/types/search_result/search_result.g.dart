@@ -8,71 +8,57 @@ part of 'search_result.dart';
 
 _$SearchResultImpl _$$SearchResultImplFromJson(Map<String, dynamic> json) =>
     _$SearchResultImpl(
-      collectionIds: (json['collectionIds'] as List<dynamic>?)
-          ?.map((e) => e as String?)
+      collectionIds: (json['collectionIds'] as List<dynamic>)
+          .map((e) => e as String)
           .toList(),
-      currencyCode:
-          $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
-      description: json['description'] as String?,
-      facetIds: (json['facetIds'] as List<dynamic>?)
-          ?.map((e) => e as String?)
+      currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
+      description: json['description'] as String,
+      facetIds:
+          (json['facetIds'] as List<dynamic>).map((e) => e as String).toList(),
+      facetValueIds: (json['facetValueIds'] as List<dynamic>)
+          .map((e) => e as String)
           .toList(),
-      facetValueIds: (json['facetValueIds'] as List<dynamic>?)
-          ?.map((e) => e as String?)
-          .toList(),
-      inStock: json['inStock'] as bool?,
-      price: json['price'] == null
-          ? null
-          : SearchResultPrice.fromJson(json['price'] as Map<String, dynamic>),
-      priceWithTax: json['priceWithTax'] == null
-          ? null
-          : SearchResultPrice.fromJson(
-              json['priceWithTax'] as Map<String, dynamic>),
+      inStock: json['inStock'] as bool,
+      price: SearchResultPrice.fromJson(json['price'] as Map<String, dynamic>),
+      priceWithTax: SearchResultPrice.fromJson(
+          json['priceWithTax'] as Map<String, dynamic>),
       productAsset: json['productAsset'] == null
           ? null
           : SearchResultAsset.fromJson(
               json['productAsset'] as Map<String, dynamic>),
-      productId: json['productId'] as String?,
-      productName: json['productName'] as String?,
+      productId: json['productId'] as String,
+      productName: json['productName'] as String,
       productVariantAsset: json['productVariantAsset'] == null
           ? null
           : SearchResultAsset.fromJson(
               json['productVariantAsset'] as Map<String, dynamic>),
-      productVariantId: json['productVariantId'] as String?,
-      productVariantName: json['productVariantName'] as String?,
-      score: (json['score'] as num?)?.toDouble(),
-      sku: json['sku'] as String?,
-      slug: json['slug'] as String?,
+      productVariantId: json['productVariantId'] as String,
+      productVariantName: json['productVariantName'] as String,
+      score: (json['score'] as num).toDouble(),
+      sku: json['sku'] as String,
+      slug: json['slug'] as String,
     );
 
-Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('collectionIds', instance.collectionIds);
-  writeNotNull('currencyCode', _$CurrencyCodeEnumMap[instance.currencyCode]);
-  writeNotNull('description', instance.description);
-  writeNotNull('facetIds', instance.facetIds);
-  writeNotNull('facetValueIds', instance.facetValueIds);
-  writeNotNull('inStock', instance.inStock);
-  writeNotNull('price', instance.price?.toJson());
-  writeNotNull('priceWithTax', instance.priceWithTax?.toJson());
-  writeNotNull('productAsset', instance.productAsset?.toJson());
-  writeNotNull('productId', instance.productId);
-  writeNotNull('productName', instance.productName);
-  writeNotNull('productVariantAsset', instance.productVariantAsset?.toJson());
-  writeNotNull('productVariantId', instance.productVariantId);
-  writeNotNull('productVariantName', instance.productVariantName);
-  writeNotNull('score', instance.score);
-  writeNotNull('sku', instance.sku);
-  writeNotNull('slug', instance.slug);
-  return val;
-}
+Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) =>
+    <String, dynamic>{
+      'collectionIds': instance.collectionIds,
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      'description': instance.description,
+      'facetIds': instance.facetIds,
+      'facetValueIds': instance.facetValueIds,
+      'inStock': instance.inStock,
+      'price': instance.price,
+      'priceWithTax': instance.priceWithTax,
+      'productAsset': instance.productAsset,
+      'productId': instance.productId,
+      'productName': instance.productName,
+      'productVariantAsset': instance.productVariantAsset,
+      'productVariantId': instance.productVariantId,
+      'productVariantName': instance.productVariantName,
+      'score': instance.score,
+      'sku': instance.sku,
+      'slug': instance.slug,
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

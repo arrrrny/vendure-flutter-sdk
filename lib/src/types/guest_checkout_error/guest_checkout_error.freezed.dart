@@ -20,9 +20,9 @@ GuestCheckoutError _$GuestCheckoutErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GuestCheckoutError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get errorDetail => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get errorDetail => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $GuestCheckoutErrorCopyWith<$Res> {
           GuestCheckoutError value, $Res Function(GuestCheckoutError) then) =
       _$GuestCheckoutErrorCopyWithImpl<$Res, GuestCheckoutError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? errorDetail, String? message});
+  $Res call({ErrorCode errorCode, String errorDetail, String message});
 }
 
 /// @nodoc
@@ -52,23 +52,23 @@ class _$GuestCheckoutErrorCopyWithImpl<$Res, $Val extends GuestCheckoutError>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? errorDetail = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? errorDetail = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      errorDetail: freezed == errorDetail
+              as ErrorCode,
+      errorDetail: null == errorDetail
           ? _value.errorDetail
           : errorDetail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
+              as String,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$GuestCheckoutErrorImplCopyWith<$Res>
       __$$GuestCheckoutErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? errorDetail, String? message});
+  $Res call({ErrorCode errorCode, String errorDetail, String message});
 }
 
 /// @nodoc
@@ -95,23 +95,23 @@ class __$$GuestCheckoutErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? errorDetail = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? errorDetail = null,
+    Object? message = null,
   }) {
     return _then(_$GuestCheckoutErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      errorDetail: freezed == errorDetail
+              as ErrorCode,
+      errorDetail: null == errorDetail
           ? _value.errorDetail
           : errorDetail // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
+              as String,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -121,18 +121,20 @@ class __$$GuestCheckoutErrorImplCopyWithImpl<$Res>
 class _$GuestCheckoutErrorImpl extends _GuestCheckoutError
     with DiagnosticableTreeMixin {
   const _$GuestCheckoutErrorImpl(
-      {this.errorCode, this.errorDetail, this.message})
+      {required this.errorCode,
+      required this.errorDetail,
+      required this.message})
       : super._();
 
   factory _$GuestCheckoutErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$GuestCheckoutErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? errorDetail;
+  final String errorDetail;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -182,20 +184,20 @@ class _$GuestCheckoutErrorImpl extends _GuestCheckoutError
 
 abstract class _GuestCheckoutError extends GuestCheckoutError {
   const factory _GuestCheckoutError(
-      {final ErrorCode? errorCode,
-      final String? errorDetail,
-      final String? message}) = _$GuestCheckoutErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String errorDetail,
+      required final String message}) = _$GuestCheckoutErrorImpl;
   const _GuestCheckoutError._() : super._();
 
   factory _GuestCheckoutError.fromJson(Map<String, dynamic> json) =
       _$GuestCheckoutErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get errorDetail;
+  String get errorDetail;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$GuestCheckoutErrorImplCopyWith<_$GuestCheckoutErrorImpl> get copyWith =>

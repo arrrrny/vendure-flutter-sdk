@@ -21,8 +21,8 @@ EmailAddressConflictError _$EmailAddressConflictErrorFromJson(
 
 /// @nodoc
 mixin _$EmailAddressConflictError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $EmailAddressConflictErrorCopyWith<$Res> {
           $Res Function(EmailAddressConflictError) then) =
       _$EmailAddressConflictErrorCopyWithImpl<$Res, EmailAddressConflictError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -53,18 +53,18 @@ class _$EmailAddressConflictErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$EmailAddressConflictErrorImplCopyWith<$Res>
       __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -94,18 +94,18 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$EmailAddressConflictErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -114,16 +114,17 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$EmailAddressConflictErrorImpl extends _EmailAddressConflictError
     with DiagnosticableTreeMixin {
-  const _$EmailAddressConflictErrorImpl({this.errorCode, this.message})
+  const _$EmailAddressConflictErrorImpl(
+      {required this.errorCode, required this.message})
       : super._();
 
   factory _$EmailAddressConflictErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$EmailAddressConflictErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -170,17 +171,17 @@ class _$EmailAddressConflictErrorImpl extends _EmailAddressConflictError
 
 abstract class _EmailAddressConflictError extends EmailAddressConflictError {
   const factory _EmailAddressConflictError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$EmailAddressConflictErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$EmailAddressConflictErrorImpl;
   const _EmailAddressConflictError._() : super._();
 
   factory _EmailAddressConflictError.fromJson(Map<String, dynamic> json) =
       _$EmailAddressConflictErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>

@@ -1,19 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/sort_order/sort_order.dart';
+import '../types/sort_order/sort_order.dart';
 
 part 'facet_value_sort_parameter.freezed.dart';
 part 'facet_value_sort_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class FacetValueSortParameter with _$FacetValueSortParameter {
   const FacetValueSortParameter._();
 
-  const factory FacetValueSortParameter({
+  factory FacetValueSortParameter({
     SortOrder? code,
     SortOrder? createdAt,
     SortOrder? facetId,

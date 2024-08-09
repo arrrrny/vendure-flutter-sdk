@@ -8,42 +8,26 @@ part of 'search_result_price.dart';
 
 _$PriceRangeImpl _$$PriceRangeImplFromJson(Map<String, dynamic> json) =>
     _$PriceRangeImpl(
-      max: (json['max'] as num?)?.toDouble(),
-      min: (json['min'] as num?)?.toDouble(),
+      max: (json['max'] as num).toDouble(),
+      min: (json['min'] as num).toDouble(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) =>
+    <String, dynamic>{
+      'max': instance.max,
+      'min': instance.min,
+      'runtimeType': instance.$type,
+    };
 
 _$SinglePriceImpl _$$SinglePriceImplFromJson(Map<String, dynamic> json) =>
     _$SinglePriceImpl(
-      value: (json['value'] as num?)?.toDouble(),
+      value: (json['value'] as num).toDouble(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SinglePriceImplToJson(_$SinglePriceImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('value', instance.value);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$SinglePriceImplToJson(_$SinglePriceImpl instance) =>
+    <String, dynamic>{
+      'value': instance.value,
+      'runtimeType': instance.$type,
+    };

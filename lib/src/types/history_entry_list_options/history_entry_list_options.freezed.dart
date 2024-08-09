@@ -24,18 +24,37 @@ mixin _$HistoryEntryListOptions {
   /// Allows the results to be filtered
   HistoryEntryFilterParameter? get filter => throw _privateConstructorUsedError;
 
+  /// Allows the results to be filtered
+  set filter(HistoryEntryFilterParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
 
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value) =>
+      throw _privateConstructorUsedError;
+
   /// Skips the first n results, for use in pagination
   int? get skip => throw _privateConstructorUsedError;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value) => throw _privateConstructorUsedError;
 
   /// Specifies which properties to sort the results by
   HistoryEntrySortParameter? get sort => throw _privateConstructorUsedError;
 
+  /// Specifies which properties to sort the results by
+  set sort(HistoryEntrySortParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
+
+  /// Takes n results, for use in pagination
+  set take(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -199,7 +218,7 @@ class __$$HistoryEntryListOptionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
     with DiagnosticableTreeMixin {
-  const _$HistoryEntryListOptionsImpl(
+  _$HistoryEntryListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
 
@@ -208,24 +227,24 @@ class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
 
   /// Allows the results to be filtered
   @override
-  final HistoryEntryFilterParameter? filter;
+  HistoryEntryFilterParameter? filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   @override
-  final LogicalOperator? filterOperator;
+  LogicalOperator? filterOperator;
 
   /// Skips the first n results, for use in pagination
   @override
-  final int? skip;
+  int? skip;
 
   /// Specifies which properties to sort the results by
   @override
-  final HistoryEntrySortParameter? sort;
+  HistoryEntrySortParameter? sort;
 
   /// Takes n results, for use in pagination
   @override
-  final int? take;
+  int? take;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -244,24 +263,6 @@ class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HistoryEntryListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -278,13 +279,13 @@ class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
 }
 
 abstract class _HistoryEntryListOptions extends HistoryEntryListOptions {
-  const factory _HistoryEntryListOptions(
-      {final HistoryEntryFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final HistoryEntrySortParameter? sort,
-      final int? take}) = _$HistoryEntryListOptionsImpl;
-  const _HistoryEntryListOptions._() : super._();
+  factory _HistoryEntryListOptions(
+      {HistoryEntryFilterParameter? filter,
+      LogicalOperator? filterOperator,
+      int? skip,
+      HistoryEntrySortParameter? sort,
+      int? take}) = _$HistoryEntryListOptionsImpl;
+  _HistoryEntryListOptions._() : super._();
 
   factory _HistoryEntryListOptions.fromJson(Map<String, dynamic> json) =
       _$HistoryEntryListOptionsImpl.fromJson;
@@ -293,23 +294,39 @@ abstract class _HistoryEntryListOptions extends HistoryEntryListOptions {
 
   /// Allows the results to be filtered
   HistoryEntryFilterParameter? get filter;
+
+  /// Allows the results to be filtered
+  set filter(HistoryEntryFilterParameter? value);
   @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator;
+
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value);
   @override
 
   /// Skips the first n results, for use in pagination
   int? get skip;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value);
   @override
 
   /// Specifies which properties to sort the results by
   HistoryEntrySortParameter? get sort;
+
+  /// Specifies which properties to sort the results by
+  set sort(HistoryEntrySortParameter? value);
   @override
 
   /// Takes n results, for use in pagination
   int? get take;
+
+  /// Takes n results, for use in pagination
+  set take(int? value);
   @override
   @JsonKey(ignore: true)
   _$$HistoryEntryListOptionsImplCopyWith<_$HistoryEntryListOptionsImpl>

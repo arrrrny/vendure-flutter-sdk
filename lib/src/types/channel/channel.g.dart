@@ -8,80 +8,63 @@ part of 'channel.dart';
 
 _$ChannelImpl _$$ChannelImplFromJson(Map<String, dynamic> json) =>
     _$ChannelImpl(
-      availableCurrencyCodes: (json['availableCurrencyCodes'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$CurrencyCodeEnumMap, e))
+      availableCurrencyCodes: (json['availableCurrencyCodes'] as List<dynamic>)
+          .map((e) => $enumDecode(_$CurrencyCodeEnumMap, e))
           .toList(),
       availableLanguageCodes: (json['availableLanguageCodes'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$LanguageCodeEnumMap, e))
+          ?.map((e) => $enumDecode(_$LanguageCodeEnumMap, e))
           .toList(),
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      currencyCode:
-          $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
+      code: json['code'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
       customFields: json['customFields'] as Map<String, dynamic>?,
-      defaultCurrencyCode: $enumDecodeNullable(
-          _$CurrencyCodeEnumMap, json['defaultCurrencyCode']),
-      defaultLanguageCode: $enumDecodeNullable(
-          _$LanguageCodeEnumMap, json['defaultLanguageCode']),
+      defaultCurrencyCode:
+          $enumDecode(_$CurrencyCodeEnumMap, json['defaultCurrencyCode']),
+      defaultLanguageCode:
+          $enumDecode(_$LanguageCodeEnumMap, json['defaultLanguageCode']),
       defaultShippingZone: json['defaultShippingZone'] == null
           ? null
           : Zone.fromJson(json['defaultShippingZone'] as Map<String, dynamic>),
       defaultTaxZone: json['defaultTaxZone'] == null
           ? null
           : Zone.fromJson(json['defaultTaxZone'] as Map<String, dynamic>),
-      id: json['id'] as String?,
+      id: json['id'] as String,
       outOfStockThreshold: (json['outOfStockThreshold'] as num?)?.toInt(),
-      pricesIncludeTax: json['pricesIncludeTax'] as bool?,
+      pricesIncludeTax: json['pricesIncludeTax'] as bool,
       seller: json['seller'] == null
           ? null
           : Seller.fromJson(json['seller'] as Map<String, dynamic>),
-      token: json['token'] as String?,
+      token: json['token'] as String,
       trackInventory: json['trackInventory'] as bool?,
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ChannelImplToJson(_$ChannelImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'availableCurrencyCodes',
-      instance.availableCurrencyCodes
-          ?.map((e) => _$CurrencyCodeEnumMap[e])
-          .toList());
-  writeNotNull(
-      'availableLanguageCodes',
-      instance.availableLanguageCodes
-          ?.map((e) => _$LanguageCodeEnumMap[e])
-          .toList());
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('currencyCode', _$CurrencyCodeEnumMap[instance.currencyCode]);
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('defaultCurrencyCode',
-      _$CurrencyCodeEnumMap[instance.defaultCurrencyCode]);
-  writeNotNull('defaultLanguageCode',
-      _$LanguageCodeEnumMap[instance.defaultLanguageCode]);
-  writeNotNull('defaultShippingZone', instance.defaultShippingZone?.toJson());
-  writeNotNull('defaultTaxZone', instance.defaultTaxZone?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('outOfStockThreshold', instance.outOfStockThreshold);
-  writeNotNull('pricesIncludeTax', instance.pricesIncludeTax);
-  writeNotNull('seller', instance.seller?.toJson());
-  writeNotNull('token', instance.token);
-  writeNotNull('trackInventory', instance.trackInventory);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$ChannelImplToJson(_$ChannelImpl instance) =>
+    <String, dynamic>{
+      'availableCurrencyCodes': instance.availableCurrencyCodes
+          .map((e) => _$CurrencyCodeEnumMap[e]!)
+          .toList(),
+      'availableLanguageCodes': instance.availableLanguageCodes
+          ?.map((e) => _$LanguageCodeEnumMap[e]!)
+          .toList(),
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      'customFields': instance.customFields,
+      'defaultCurrencyCode':
+          _$CurrencyCodeEnumMap[instance.defaultCurrencyCode]!,
+      'defaultLanguageCode':
+          _$LanguageCodeEnumMap[instance.defaultLanguageCode]!,
+      'defaultShippingZone': instance.defaultShippingZone,
+      'defaultTaxZone': instance.defaultTaxZone,
+      'id': instance.id,
+      'outOfStockThreshold': instance.outOfStockThreshold,
+      'pricesIncludeTax': instance.pricesIncludeTax,
+      'seller': instance.seller,
+      'token': instance.token,
+      'trackInventory': instance.trackInventory,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

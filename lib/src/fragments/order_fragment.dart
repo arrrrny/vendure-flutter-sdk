@@ -1,5 +1,5 @@
 import 'package:vendure/src/fragments/customer_fragment.dart';
-import 'package:vendure/src/fragments/product_fragment.dart';
+import 'package:vendure/src/fragments/catalog_fragment.dart';
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
 const String orderFragment = customerFragment +
@@ -10,6 +10,7 @@ const String orderFragment = customerFragment +
     orderAddressFragment +
     surchargeFragment +
     orderLineFragment +
+    historyFragment +
     r'''
 fragment Order on Order {
   __typename
@@ -19,6 +20,8 @@ fragment Order on Order {
   code
   state
   active
+  createdAt
+  updatedAt
   customer {
     ...Customer
   }
@@ -46,6 +49,9 @@ fragment Order on Order {
   }
   fulfillments {
     ...Fulfillment
+  }
+  history {
+    ...HistoryEntryList
   }
   totalQuantity
   subTotal
@@ -158,6 +164,8 @@ const String orderLineFragment = assetFragment +
 fragment OrderLine on OrderLine {
   __typename
   id
+  createdAt
+  updatedAt
   productVariant {
     ...ProductVariant
   }
@@ -192,6 +200,11 @@ fragment OrderLine on OrderLine {
   fulfillmentLines {
     ...FulfillmentLine
   }
+  order{
+    id
+    code
+    state
+  }
   customFields
 }
 
@@ -208,9 +221,11 @@ fragment HistoryEntryList on HistoryEntryList {
 
 fragment HistoryEntry on HistoryEntry {
   __typename
-  id: ID!
-  type: HistoryEntryType!
-  data: JSON!
+  id
+  createdAt
+  updatedAt
+  type
+  data
 }
 
 ''';

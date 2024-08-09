@@ -23,16 +23,31 @@ CustomerFilterParameter _$CustomerFilterParameterFromJson(
 mixin _$CustomerFilterParameter {
   @JsonKey(name: '_and')
   List<CustomerFilterParameter>? get and => throw _privateConstructorUsedError;
+  @JsonKey(name: '_and')
+  set and(List<CustomerFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: '_or')
   List<CustomerFilterParameter>? get or => throw _privateConstructorUsedError;
+  @JsonKey(name: '_or')
+  set or(List<CustomerFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   DateOperators? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(DateOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get emailAddress => throw _privateConstructorUsedError;
+  set emailAddress(StringOperators? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get firstName => throw _privateConstructorUsedError;
+  set firstName(StringOperators? value) => throw _privateConstructorUsedError;
   IdOperators? get id => throw _privateConstructorUsedError;
+  set id(IdOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get lastName => throw _privateConstructorUsedError;
+  set lastName(StringOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get phoneNumber => throw _privateConstructorUsedError;
+  set phoneNumber(StringOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get title => throw _privateConstructorUsedError;
+  set title(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -299,11 +314,11 @@ class __$$CustomerFilterParameterImplCopyWithImpl<$Res>
   }) {
     return _then(_$CustomerFilterParameterImpl(
       and: freezed == and
-          ? _value._and
+          ? _value.and
           : and // ignore: cast_nullable_to_non_nullable
               as List<CustomerFilterParameter>?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<CustomerFilterParameter>?,
       createdAt: freezed == createdAt
@@ -346,9 +361,9 @@ class __$$CustomerFilterParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomerFilterParameterImpl extends _CustomerFilterParameter
     with DiagnosticableTreeMixin {
-  const _$CustomerFilterParameterImpl(
-      {@JsonKey(name: '_and') final List<CustomerFilterParameter>? and,
-      @JsonKey(name: '_or') final List<CustomerFilterParameter>? or,
+  _$CustomerFilterParameterImpl(
+      {@JsonKey(name: '_and') this.and,
+      @JsonKey(name: '_or') this.or,
       this.createdAt,
       this.emailAddress,
       this.firstName,
@@ -357,51 +372,33 @@ class _$CustomerFilterParameterImpl extends _CustomerFilterParameter
       this.phoneNumber,
       this.title,
       this.updatedAt})
-      : _and = and,
-        _or = or,
-        super._();
+      : super._();
 
   factory _$CustomerFilterParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomerFilterParameterImplFromJson(json);
 
-  final List<CustomerFilterParameter>? _and;
   @override
   @JsonKey(name: '_and')
-  List<CustomerFilterParameter>? get and {
-    final value = _and;
-    if (value == null) return null;
-    if (_and is EqualUnmodifiableListView) return _and;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<CustomerFilterParameter>? _or;
+  List<CustomerFilterParameter>? and;
   @override
   @JsonKey(name: '_or')
-  List<CustomerFilterParameter>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<CustomerFilterParameter>? or;
   @override
-  final DateOperators? createdAt;
+  DateOperators? createdAt;
   @override
-  final StringOperators? emailAddress;
+  StringOperators? emailAddress;
   @override
-  final StringOperators? firstName;
+  StringOperators? firstName;
   @override
-  final IdOperators? id;
+  IdOperators? id;
   @override
-  final StringOperators? lastName;
+  StringOperators? lastName;
   @override
-  final StringOperators? phoneNumber;
+  StringOperators? phoneNumber;
   @override
-  final StringOperators? title;
+  StringOperators? title;
   @override
-  final DateOperators? updatedAt;
+  DateOperators? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -425,44 +422,6 @@ class _$CustomerFilterParameterImpl extends _CustomerFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CustomerFilterParameterImpl &&
-            const DeepCollectionEquality().equals(other._and, _and) &&
-            const DeepCollectionEquality().equals(other._or, _or) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_and),
-      const DeepCollectionEquality().hash(_or),
-      createdAt,
-      emailAddress,
-      firstName,
-      id,
-      lastName,
-      phoneNumber,
-      title,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -479,18 +438,18 @@ class _$CustomerFilterParameterImpl extends _CustomerFilterParameter
 }
 
 abstract class _CustomerFilterParameter extends CustomerFilterParameter {
-  const factory _CustomerFilterParameter(
-      {@JsonKey(name: '_and') final List<CustomerFilterParameter>? and,
-      @JsonKey(name: '_or') final List<CustomerFilterParameter>? or,
-      final DateOperators? createdAt,
-      final StringOperators? emailAddress,
-      final StringOperators? firstName,
-      final IdOperators? id,
-      final StringOperators? lastName,
-      final StringOperators? phoneNumber,
-      final StringOperators? title,
-      final DateOperators? updatedAt}) = _$CustomerFilterParameterImpl;
-  const _CustomerFilterParameter._() : super._();
+  factory _CustomerFilterParameter(
+      {@JsonKey(name: '_and') List<CustomerFilterParameter>? and,
+      @JsonKey(name: '_or') List<CustomerFilterParameter>? or,
+      DateOperators? createdAt,
+      StringOperators? emailAddress,
+      StringOperators? firstName,
+      IdOperators? id,
+      StringOperators? lastName,
+      StringOperators? phoneNumber,
+      StringOperators? title,
+      DateOperators? updatedAt}) = _$CustomerFilterParameterImpl;
+  _CustomerFilterParameter._() : super._();
 
   factory _CustomerFilterParameter.fromJson(Map<String, dynamic> json) =
       _$CustomerFilterParameterImpl.fromJson;
@@ -498,25 +457,37 @@ abstract class _CustomerFilterParameter extends CustomerFilterParameter {
   @override
   @JsonKey(name: '_and')
   List<CustomerFilterParameter>? get and;
+  @JsonKey(name: '_and')
+  set and(List<CustomerFilterParameter>? value);
   @override
   @JsonKey(name: '_or')
   List<CustomerFilterParameter>? get or;
+  @JsonKey(name: '_or')
+  set or(List<CustomerFilterParameter>? value);
   @override
   DateOperators? get createdAt;
+  set createdAt(DateOperators? value);
   @override
   StringOperators? get emailAddress;
+  set emailAddress(StringOperators? value);
   @override
   StringOperators? get firstName;
+  set firstName(StringOperators? value);
   @override
   IdOperators? get id;
+  set id(IdOperators? value);
   @override
   StringOperators? get lastName;
+  set lastName(StringOperators? value);
   @override
   StringOperators? get phoneNumber;
+  set phoneNumber(StringOperators? value);
   @override
   StringOperators? get title;
+  set title(StringOperators? value);
   @override
   DateOperators? get updatedAt;
+  set updatedAt(DateOperators? value);
   @override
   @JsonKey(ignore: true)
   _$$CustomerFilterParameterImplCopyWith<_$CustomerFilterParameterImpl>

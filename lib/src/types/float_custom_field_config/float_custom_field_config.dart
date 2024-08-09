@@ -1,32 +1,28 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/localized_string/localized_string.dart';
-import 'package:vendure/src/types/permission/permission.dart';
+import '../localized_string/localized_string.dart';
+import '../types/permission/permission.dart';
 
 part 'float_custom_field_config.freezed.dart';
 part 'float_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class FloatCustomFieldConfig with _$FloatCustomFieldConfig {
   const FloatCustomFieldConfig._();
 
   const factory FloatCustomFieldConfig({
-    List<LocalizedString?>? description,
+    List<LocalizedString>? description,
     bool? internal,
-    List<LocalizedString?>? label,
-    bool? list,
+    List<LocalizedString>? label,
+    required bool list,
     double? max,
     double? min,
-    String? name,
+    required String name,
     bool? nullable,
     bool? readonly,
-    List<Permission?>? requiresPermission,
+    List<Permission>? requiresPermission,
     double? step,
-    String? type,
+    required String type,
     Map<String, dynamic>? ui,
   }) = _FloatCustomFieldConfig;
 

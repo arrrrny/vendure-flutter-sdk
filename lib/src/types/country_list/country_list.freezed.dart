@@ -20,8 +20,8 @@ CountryList _$CountryListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CountryList {
-  List<Country?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Country> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $CountryListCopyWith<$Res> {
           CountryList value, $Res Function(CountryList) then) =
       _$CountryListCopyWithImpl<$Res, CountryList>;
   @useResult
-  $Res call({List<Country?>? items, int? totalItems});
+  $Res call({List<Country> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$CountryListCopyWithImpl<$Res, $Val extends CountryList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Country?>?,
-      totalItems: freezed == totalItems
+              as List<Country>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$CountryListImplCopyWith<$Res>
       __$$CountryListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Country?>? items, int? totalItems});
+  $Res call({List<Country> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$CountryListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$CountryListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Country?>?,
-      totalItems: freezed == totalItems
+              as List<Country>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -108,25 +108,24 @@ class __$$CountryListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CountryListImpl extends _CountryList with DiagnosticableTreeMixin {
-  const _$CountryListImpl({final List<Country?>? items, this.totalItems})
+  const _$CountryListImpl(
+      {required final List<Country> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$CountryListImpl.fromJson(Map<String, dynamic> json) =>
       _$$CountryListImplFromJson(json);
 
-  final List<Country?>? _items;
+  final List<Country> _items;
   @override
-  List<Country?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Country> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -173,16 +172,17 @@ class _$CountryListImpl extends _CountryList with DiagnosticableTreeMixin {
 
 abstract class _CountryList extends CountryList {
   const factory _CountryList(
-      {final List<Country?>? items, final int? totalItems}) = _$CountryListImpl;
+      {required final List<Country> items,
+      required final int totalItems}) = _$CountryListImpl;
   const _CountryList._() : super._();
 
   factory _CountryList.fromJson(Map<String, dynamic> json) =
       _$CountryListImpl.fromJson;
 
   @override
-  List<Country?>? get items;
+  List<Country> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$CountryListImplCopyWith<_$CountryListImpl> get copyWith =>

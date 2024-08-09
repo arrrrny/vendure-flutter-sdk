@@ -43,141 +43,141 @@ CustomFieldConfig _$CustomFieldConfigFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CustomFieldConfig {
-  List<LocalizedString?>? get description => throw _privateConstructorUsedError;
+  List<LocalizedString>? get description => throw _privateConstructorUsedError;
   bool? get internal => throw _privateConstructorUsedError;
-  List<LocalizedString?>? get label => throw _privateConstructorUsedError;
-  bool? get list => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  List<LocalizedString>? get label => throw _privateConstructorUsedError;
+  bool get list => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   bool? get nullable => throw _privateConstructorUsedError;
   bool? get readonly => throw _privateConstructorUsedError;
-  List<Permission?>? get requiresPermission =>
+  List<Permission>? get requiresPermission =>
       throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) =>
@@ -185,127 +185,127 @@ mixin _$CustomFieldConfig {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) =>
@@ -313,127 +313,127 @@ mixin _$CustomFieldConfig {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -508,15 +508,15 @@ abstract class $CustomFieldConfigCopyWith<$Res> {
       _$CustomFieldConfigCopyWithImpl<$Res, CustomFieldConfig>;
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -536,19 +536,19 @@ class _$CustomFieldConfigCopyWithImpl<$Res, $Val extends CustomFieldConfig>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_value.copyWith(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -556,15 +556,15 @@ class _$CustomFieldConfigCopyWithImpl<$Res, $Val extends CustomFieldConfig>
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -576,11 +576,11 @@ class _$CustomFieldConfigCopyWithImpl<$Res, $Val extends CustomFieldConfig>
       requiresPermission: freezed == requiresPermission
           ? _value.requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -599,15 +599,15 @@ abstract class _$$BooleanCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -627,19 +627,19 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$BooleanCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -647,15 +647,15 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -667,11 +667,11 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -685,15 +685,15 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
 class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$BooleanCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
-      this.name,
+      final List<LocalizedString>? label,
+      required this.list,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -706,9 +706,9 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   factory _$BooleanCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$BooleanCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -718,9 +718,9 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -729,16 +729,16 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -748,7 +748,7 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -833,127 +833,127 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -965,127 +965,127 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -1097,127 +1097,127 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -1307,15 +1307,15 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
 
 abstract class BooleanCustomFieldConfig extends CustomFieldConfig {
   const factory BooleanCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
-      final String? name,
+      final List<LocalizedString>? label,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$BooleanCustomFieldConfigImpl;
   const BooleanCustomFieldConfig._() : super._();
 
@@ -1323,23 +1323,23 @@ abstract class BooleanCustomFieldConfig extends CustomFieldConfig {
       _$BooleanCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -1358,18 +1358,18 @@ abstract class _$$DateTimeCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
+      List<LocalizedString>? label,
+      bool list,
       String? max,
       String? min,
-      String? name,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
+      List<Permission>? requiresPermission,
       int? step,
-      String? type,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -1389,22 +1389,22 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
+    Object? list = null,
     Object? max = freezed,
     Object? min = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
     Object? step = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$DateTimeCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -1412,11 +1412,11 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
@@ -1425,10 +1425,10 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -1440,15 +1440,15 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
+              as List<Permission>?,
       step: freezed == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
               as int?,
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -1462,18 +1462,18 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
 class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$DateTimeCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
+      final List<LocalizedString>? label,
+      required this.list,
       this.max,
       this.min,
-      this.name,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       this.step,
-      this.type,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -1486,9 +1486,9 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   factory _$DateTimeCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$DateTimeCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -1498,9 +1498,9 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -1509,20 +1509,20 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
   final String? max;
   @override
   final String? min;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -1534,7 +1534,7 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   @override
   final int? step;
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -1628,127 +1628,127 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -1760,127 +1760,127 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -1892,127 +1892,127 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -2102,18 +2102,18 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
 
 abstract class DateTimeCustomFieldConfig extends CustomFieldConfig {
   const factory DateTimeCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
+      final List<LocalizedString>? label,
+      required final bool list,
       final String? max,
       final String? min,
-      final String? name,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       final int? step,
-      final String? type,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$DateTimeCustomFieldConfigImpl;
   const DateTimeCustomFieldConfig._() : super._();
 
@@ -2121,26 +2121,26 @@ abstract class DateTimeCustomFieldConfig extends CustomFieldConfig {
       _$DateTimeCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   String? get max;
   String? get min;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   int? get step;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -2159,18 +2159,18 @@ abstract class _$$FloatCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
+      List<LocalizedString>? label,
+      bool list,
       double? max,
       double? min,
-      String? name,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
+      List<Permission>? requiresPermission,
       double? step,
-      String? type,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -2189,22 +2189,22 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
+    Object? list = null,
     Object? max = freezed,
     Object? min = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
     Object? step = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$FloatCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -2212,11 +2212,11 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
@@ -2225,10 +2225,10 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as double?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -2240,15 +2240,15 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
+              as List<Permission>?,
       step: freezed == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
               as double?,
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -2262,18 +2262,18 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
 class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$FloatCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
+      final List<LocalizedString>? label,
+      required this.list,
       this.max,
       this.min,
-      this.name,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       this.step,
-      this.type,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -2286,9 +2286,9 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   factory _$FloatCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$FloatCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -2298,9 +2298,9 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -2309,20 +2309,20 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
   final double? max;
   @override
   final double? min;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -2334,7 +2334,7 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   @override
   final double? step;
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -2428,127 +2428,127 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -2560,127 +2560,127 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -2692,127 +2692,127 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -2902,18 +2902,18 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
 
 abstract class FloatCustomFieldConfig extends CustomFieldConfig {
   const factory FloatCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
+      final List<LocalizedString>? label,
+      required final bool list,
       final double? max,
       final double? min,
-      final String? name,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       final double? step,
-      final String? type,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$FloatCustomFieldConfigImpl;
   const FloatCustomFieldConfig._() : super._();
 
@@ -2921,26 +2921,26 @@ abstract class FloatCustomFieldConfig extends CustomFieldConfig {
       _$FloatCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   double? get max;
   double? get min;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   double? get step;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -2958,18 +2958,18 @@ abstract class _$$IntCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
+      List<LocalizedString>? label,
+      bool list,
       int? max,
       int? min,
-      String? name,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
+      List<Permission>? requiresPermission,
       int? step,
-      String? type,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -2987,22 +2987,22 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
+    Object? list = null,
     Object? max = freezed,
     Object? min = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
     Object? step = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$IntCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -3010,11 +3010,11 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
@@ -3023,10 +3023,10 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -3038,15 +3038,15 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
+              as List<Permission>?,
       step: freezed == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
               as int?,
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -3060,18 +3060,18 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
 class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$IntCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
+      final List<LocalizedString>? label,
+      required this.list,
       this.max,
       this.min,
-      this.name,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       this.step,
-      this.type,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -3084,9 +3084,9 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   factory _$IntCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$IntCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -3096,9 +3096,9 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -3107,20 +3107,20 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
   final int? max;
   @override
   final int? min;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -3132,7 +3132,7 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   @override
   final int? step;
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -3227,127 +3227,127 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -3359,127 +3359,127 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -3491,127 +3491,127 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -3701,18 +3701,18 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
 
 abstract class IntCustomFieldConfig extends CustomFieldConfig {
   const factory IntCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
+      final List<LocalizedString>? label,
+      required final bool list,
       final int? max,
       final int? min,
-      final String? name,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       final int? step,
-      final String? type,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$IntCustomFieldConfigImpl;
   const IntCustomFieldConfig._() : super._();
 
@@ -3720,26 +3720,26 @@ abstract class IntCustomFieldConfig extends CustomFieldConfig {
       _$IntCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   int? get max;
   int? get min;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   int? get step;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -3758,17 +3758,17 @@ abstract class _$$LocaleStringCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
+      List<LocalizedString>? label,
       int? length,
-      bool? list,
-      String? name,
+      bool list,
+      String name,
       bool? nullable,
       String? pattern,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -3789,20 +3789,20 @@ class __$$LocaleStringCustomFieldConfigImplCopyWithImpl<$Res>
     Object? internal = freezed,
     Object? label = freezed,
     Object? length = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? pattern = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$LocaleStringCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -3810,19 +3810,19 @@ class __$$LocaleStringCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       length: freezed == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int?,
-      list: freezed == list
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -3838,11 +3838,11 @@ class __$$LocaleStringCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -3856,17 +3856,17 @@ class __$$LocaleStringCustomFieldConfigImplCopyWithImpl<$Res>
 class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$LocaleStringCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
+      final List<LocalizedString>? label,
       this.length,
-      this.list,
-      this.name,
+      required this.list,
+      required this.name,
       this.nullable,
       this.pattern,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -3880,9 +3880,9 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
           Map<String, dynamic> json) =>
       _$$LocaleStringCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -3892,9 +3892,9 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -3905,18 +3905,18 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
   @override
   final int? length;
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final String? pattern;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -3926,7 +3926,7 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -4018,127 +4018,127 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -4150,127 +4150,127 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -4293,127 +4293,127 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -4514,17 +4514,17 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
 
 abstract class LocaleStringCustomFieldConfig extends CustomFieldConfig {
   const factory LocaleStringCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
+      final List<LocalizedString>? label,
       final int? length,
-      final bool? list,
-      final String? name,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final String? pattern,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$LocaleStringCustomFieldConfigImpl;
   const LocaleStringCustomFieldConfig._() : super._();
 
@@ -4532,25 +4532,25 @@ abstract class LocaleStringCustomFieldConfig extends CustomFieldConfig {
       _$LocaleStringCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   int? get length;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   String? get pattern;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -4570,15 +4570,15 @@ abstract class _$$LocaleTextCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -4598,19 +4598,19 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$LocaleTextCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -4618,15 +4618,15 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -4638,11 +4638,11 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -4656,15 +4656,15 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
 class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$LocaleTextCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
-      this.name,
+      final List<LocalizedString>? label,
+      required this.list,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -4678,9 +4678,9 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
           Map<String, dynamic> json) =>
       _$$LocaleTextCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -4690,9 +4690,9 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -4701,16 +4701,16 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -4720,7 +4720,7 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -4805,127 +4805,127 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -4937,127 +4937,127 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -5069,127 +5069,127 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -5279,15 +5279,15 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
 
 abstract class LocaleTextCustomFieldConfig extends CustomFieldConfig {
   const factory LocaleTextCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
-      final String? name,
+      final List<LocalizedString>? label,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$LocaleTextCustomFieldConfigImpl;
   const LocaleTextCustomFieldConfig._() : super._();
 
@@ -5295,23 +5295,23 @@ abstract class LocaleTextCustomFieldConfig extends CustomFieldConfig {
       _$LocaleTextCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -5330,17 +5330,17 @@ abstract class _$$RelationCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
-      String? entity,
+      {List<LocalizedString>? description,
+      String entity,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      List<String?>? scalarFields,
-      String? type,
+      List<Permission>? requiresPermission,
+      List<String> scalarFields,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -5358,27 +5358,27 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? description = freezed,
-    Object? entity = freezed,
+    Object? entity = null,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? scalarFields = freezed,
-    Object? type = freezed,
+    Object? scalarFields = null,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$RelationCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      entity: freezed == entity
+              as List<LocalizedString>?,
+      entity: null == entity
           ? _value.entity
           : entity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -5386,15 +5386,15 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -5406,15 +5406,15 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      scalarFields: freezed == scalarFields
+              as List<Permission>?,
+      scalarFields: null == scalarFields
           ? _value._scalarFields
           : scalarFields // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      type: freezed == type
+              as List<String>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -5428,17 +5428,17 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
 class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$RelationCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
-      this.entity,
+      {final List<LocalizedString>? description,
+      required this.entity,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
-      this.name,
+      final List<LocalizedString>? label,
+      required this.list,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      final List<String?>? scalarFields,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required final List<String> scalarFields,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -5452,9 +5452,9 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   factory _$RelationCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$RelationCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -5463,12 +5463,12 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   }
 
   @override
-  final String? entity;
+  final String entity;
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -5477,16 +5477,16 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -5495,18 +5495,16 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String?>? _scalarFields;
+  final List<String> _scalarFields;
   @override
-  List<String?>? get scalarFields {
-    final value = _scalarFields;
-    if (value == null) return null;
+  List<String> get scalarFields {
     if (_scalarFields is EqualUnmodifiableListView) return _scalarFields;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_scalarFields);
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -5598,127 +5596,127 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -5730,127 +5728,127 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -5873,127 +5871,127 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -6094,17 +6092,17 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
 
 abstract class RelationCustomFieldConfig extends CustomFieldConfig {
   const factory RelationCustomFieldConfig(
-      {final List<LocalizedString?>? description,
-      final String? entity,
+      {final List<LocalizedString>? description,
+      required final String entity,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
-      final String? name,
+      final List<LocalizedString>? label,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final List<String?>? scalarFields,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final List<String> scalarFields,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$RelationCustomFieldConfigImpl;
   const RelationCustomFieldConfig._() : super._();
 
@@ -6112,25 +6110,25 @@ abstract class RelationCustomFieldConfig extends CustomFieldConfig {
       _$RelationCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
-  String? get entity;
+  List<LocalizedString>? get description;
+  String get entity;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
-  List<String?>? get scalarFields;
+  List<Permission>? get requiresPermission;
+  List<String> get scalarFields;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -6149,18 +6147,18 @@ abstract class _$$StringCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
+      List<LocalizedString>? label,
       int? length,
-      bool? list,
-      String? name,
+      bool list,
+      String name,
       bool? nullable,
-      List<StringFieldOption?>? options,
+      List<StringFieldOption>? options,
       String? pattern,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -6180,21 +6178,21 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
     Object? internal = freezed,
     Object? label = freezed,
     Object? length = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? options = freezed,
     Object? pattern = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$StringCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -6202,19 +6200,19 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       length: freezed == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int?,
-      list: freezed == list
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -6222,7 +6220,7 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       options: freezed == options
           ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<StringFieldOption?>?,
+              as List<StringFieldOption>?,
       pattern: freezed == pattern
           ? _value.pattern
           : pattern // ignore: cast_nullable_to_non_nullable
@@ -6234,11 +6232,11 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -6252,18 +6250,18 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
 class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$StringCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
+      final List<LocalizedString>? label,
       this.length,
-      this.list,
-      this.name,
+      required this.list,
+      required this.name,
       this.nullable,
-      final List<StringFieldOption?>? options,
+      final List<StringFieldOption>? options,
       this.pattern,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -6277,9 +6275,9 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   factory _$StringCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$StringCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -6289,9 +6287,9 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -6302,14 +6300,14 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   @override
   final int? length;
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
-  final List<StringFieldOption?>? _options;
+  final List<StringFieldOption>? _options;
   @override
-  List<StringFieldOption?>? get options {
+  List<StringFieldOption>? get options {
     final value = _options;
     if (value == null) return null;
     if (_options is EqualUnmodifiableListView) return _options;
@@ -6321,9 +6319,9 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   final String? pattern;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -6333,7 +6331,7 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -6427,127 +6425,127 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -6571,127 +6569,127 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -6715,127 +6713,127 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -6937,18 +6935,18 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
 
 abstract class StringCustomFieldConfig extends CustomFieldConfig {
   const factory StringCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
+      final List<LocalizedString>? label,
       final int? length,
-      final bool? list,
-      final String? name,
+      required final bool list,
+      required final String name,
       final bool? nullable,
-      final List<StringFieldOption?>? options,
+      final List<StringFieldOption>? options,
       final String? pattern,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$StringCustomFieldConfigImpl;
   const StringCustomFieldConfig._() : super._();
 
@@ -6956,26 +6954,26 @@ abstract class StringCustomFieldConfig extends CustomFieldConfig {
       _$StringCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   int? get length;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
-  List<StringFieldOption?>? get options;
+  List<StringFieldOption>? get options;
   String? get pattern;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override
@@ -6994,15 +6992,15 @@ abstract class _$$TextCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -7020,19 +7018,19 @@ class __$$TextCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$TextCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -7040,15 +7038,15 @@ class __$$TextCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -7060,11 +7058,11 @@ class __$$TextCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -7078,15 +7076,15 @@ class __$$TextCustomFieldConfigImplCopyWithImpl<$Res>
 class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$TextCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
-      this.name,
+      final List<LocalizedString>? label,
+      required this.list,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui,
       final String? $type})
       : _description = description,
@@ -7099,9 +7097,9 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   factory _$TextCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$TextCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -7111,9 +7109,9 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -7122,16 +7120,16 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -7141,7 +7139,7 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -7226,127 +7224,127 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         booleanCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         dateTimeCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         floatCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)
         intCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeStringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         localeTextCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)
         relationCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         stringCustomFieldConfig,
     required TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)
         textCustomFieldConfig,
   }) {
@@ -7358,127 +7356,127 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult? Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
   }) {
@@ -7490,127 +7488,127 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         booleanCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             String? max,
             String? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         dateTimeCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             double? max,
             double? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             double? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         floatCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
+            List<LocalizedString>? label,
+            bool list,
             int? max,
             int? min,
-            String? name,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
+            List<Permission>? requiresPermission,
             int? step,
-            String? type,
+            String type,
             Map<String, dynamic>? ui)?
         intCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeStringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         localeTextCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
-            String? entity,
+            List<LocalizedString>? description,
+            String entity,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            List<String?>? scalarFields,
-            String? type,
+            List<Permission>? requiresPermission,
+            List<String> scalarFields,
+            String type,
             Map<String, dynamic>? ui)?
         relationCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
+            List<LocalizedString>? label,
             int? length,
-            bool? list,
-            String? name,
+            bool list,
+            String name,
             bool? nullable,
-            List<StringFieldOption?>? options,
+            List<StringFieldOption>? options,
             String? pattern,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         stringCustomFieldConfig,
     TResult Function(
-            List<LocalizedString?>? description,
+            List<LocalizedString>? description,
             bool? internal,
-            List<LocalizedString?>? label,
-            bool? list,
-            String? name,
+            List<LocalizedString>? label,
+            bool list,
+            String name,
             bool? nullable,
             bool? readonly,
-            List<Permission?>? requiresPermission,
-            String? type,
+            List<Permission>? requiresPermission,
+            String type,
             Map<String, dynamic>? ui)?
         textCustomFieldConfig,
     required TResult orElse(),
@@ -7700,15 +7698,15 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
 
 abstract class TextCustomFieldConfig extends CustomFieldConfig {
   const factory TextCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
-      final String? name,
+      final List<LocalizedString>? label,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$TextCustomFieldConfigImpl;
   const TextCustomFieldConfig._() : super._();
 
@@ -7716,23 +7714,23 @@ abstract class TextCustomFieldConfig extends CustomFieldConfig {
       _$TextCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override

@@ -20,8 +20,8 @@ ProvinceList _$ProvinceListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProvinceList {
-  List<Province?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Province> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $ProvinceListCopyWith<$Res> {
           ProvinceList value, $Res Function(ProvinceList) then) =
       _$ProvinceListCopyWithImpl<$Res, ProvinceList>;
   @useResult
-  $Res call({List<Province?>? items, int? totalItems});
+  $Res call({List<Province> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$ProvinceListCopyWithImpl<$Res, $Val extends ProvinceList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Province?>?,
-      totalItems: freezed == totalItems
+              as List<Province>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$ProvinceListImplCopyWith<$Res>
       __$$ProvinceListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Province?>? items, int? totalItems});
+  $Res call({List<Province> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$ProvinceListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$ProvinceListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Province?>?,
-      totalItems: freezed == totalItems
+              as List<Province>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -108,25 +108,24 @@ class __$$ProvinceListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProvinceListImpl extends _ProvinceList with DiagnosticableTreeMixin {
-  const _$ProvinceListImpl({final List<Province?>? items, this.totalItems})
+  const _$ProvinceListImpl(
+      {required final List<Province> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$ProvinceListImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProvinceListImplFromJson(json);
 
-  final List<Province?>? _items;
+  final List<Province> _items;
   @override
-  List<Province?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Province> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -173,17 +172,17 @@ class _$ProvinceListImpl extends _ProvinceList with DiagnosticableTreeMixin {
 
 abstract class _ProvinceList extends ProvinceList {
   const factory _ProvinceList(
-      {final List<Province?>? items,
-      final int? totalItems}) = _$ProvinceListImpl;
+      {required final List<Province> items,
+      required final int totalItems}) = _$ProvinceListImpl;
   const _ProvinceList._() : super._();
 
   factory _ProvinceList.fromJson(Map<String, dynamic> json) =
       _$ProvinceListImpl.fromJson;
 
   @override
-  List<Province?>? get items;
+  List<Province> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$ProvinceListImplCopyWith<_$ProvinceListImpl> get copyWith =>

@@ -21,6 +21,7 @@ NumberListOperators _$NumberListOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NumberListOperators {
   double get inList => throw _privateConstructorUsedError;
+  set inList(double value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -98,13 +99,13 @@ class __$$NumberListOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NumberListOperatorsImpl extends _NumberListOperators
     with DiagnosticableTreeMixin {
-  const _$NumberListOperatorsImpl({required this.inList}) : super._();
+  _$NumberListOperatorsImpl({required this.inList}) : super._();
 
   factory _$NumberListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$NumberListOperatorsImplFromJson(json);
 
   @override
-  final double inList;
+  double inList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -118,18 +119,6 @@ class _$NumberListOperatorsImpl extends _NumberListOperators
       ..add(DiagnosticsProperty('type', 'NumberListOperators'))
       ..add(DiagnosticsProperty('inList', inList));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NumberListOperatorsImpl &&
-            (identical(other.inList, inList) || other.inList == inList));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, inList);
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +136,16 @@ class _$NumberListOperatorsImpl extends _NumberListOperators
 }
 
 abstract class _NumberListOperators extends NumberListOperators {
-  const factory _NumberListOperators({required final double inList}) =
+  factory _NumberListOperators({required double inList}) =
       _$NumberListOperatorsImpl;
-  const _NumberListOperators._() : super._();
+  _NumberListOperators._() : super._();
 
   factory _NumberListOperators.fromJson(Map<String, dynamic> json) =
       _$NumberListOperatorsImpl.fromJson;
 
   @override
   double get inList;
+  set inList(double value);
   @override
   @JsonKey(ignore: true)
   _$$NumberListOperatorsImplCopyWith<_$NumberListOperatorsImpl> get copyWith =>

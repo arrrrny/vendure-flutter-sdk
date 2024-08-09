@@ -1,33 +1,29 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/configurable_operation/configurable_operation.dart';
-import 'package:vendure/src/types/language_code/language_code.dart';
-import 'package:vendure/src/types/shipping_method_translation/shipping_method_translation.dart';
+import '../configurable_operation/configurable_operation.dart';
+import '../shipping_method_translation/shipping_method_translation.dart';
+import '../types/language_code/language_code.dart';
 
 part 'shipping_method.freezed.dart';
 part 'shipping_method.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class ShippingMethod with _$ShippingMethod {
   const ShippingMethod._();
 
   const factory ShippingMethod({
-    ConfigurableOperation? calculator,
-    ConfigurableOperation? checker,
-    String? code,
-    DateTime? createdAt,
+    required ConfigurableOperation calculator,
+    required ConfigurableOperation checker,
+    required String code,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    String? description,
-    String? fulfillmentHandlerCode,
-    String? id,
-    LanguageCode? languageCode,
-    String? name,
-    List<ShippingMethodTranslation?>? translations,
-    DateTime? updatedAt,
+    required String description,
+    required String fulfillmentHandlerCode,
+    required String id,
+    required LanguageCode languageCode,
+    required String name,
+    required List<ShippingMethodTranslation> translations,
+    required DateTime updatedAt,
   }) = _ShippingMethod;
 
   factory ShippingMethod.fromJson(Map<String, dynamic> json) =>

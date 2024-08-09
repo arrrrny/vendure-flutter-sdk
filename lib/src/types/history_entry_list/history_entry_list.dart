@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/history_entry/history_entry.dart';
+import '../history_entry/history_entry.dart';
 
 part 'history_entry_list.freezed.dart';
 part 'history_entry_list.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class HistoryEntryList with _$HistoryEntryList {
   const HistoryEntryList._();
 
   const factory HistoryEntryList({
-    List<HistoryEntry?>? items,
-    int? totalItems,
+    required List<HistoryEntry> items,
+    required int totalItems,
   }) = _HistoryEntryList;
 
   factory HistoryEntryList.fromJson(Map<String, dynamic> json) =>

@@ -1,23 +1,19 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/boolean_operators/boolean_operators.dart';
-import 'package:vendure/src/types/date_operators/date_operators.dart';
-import 'package:vendure/src/types/id_operators/id_operators.dart';
-import 'package:vendure/src/types/number_operators/number_operators.dart';
-import 'package:vendure/src/types/string_operators/string_operators.dart';
+import '../boolean_operators/boolean_operators.dart';
+import '../date_operators/date_operators.dart';
+import '../id_operators/id_operators.dart';
+import '../number_operators/number_operators.dart';
+import '../string_operators/string_operators.dart';
 
 part 'order_filter_parameter.freezed.dart';
 part 'order_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class OrderFilterParameter with _$OrderFilterParameter {
   const OrderFilterParameter._();
 
-  const factory OrderFilterParameter({
+  factory OrderFilterParameter({
     @JsonKey(name: '_and') List<OrderFilterParameter>? and,
     @JsonKey(name: '_or') List<OrderFilterParameter>? or,
     BooleanOperators? active,

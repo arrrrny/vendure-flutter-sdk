@@ -15,15 +15,7 @@ _$AuthenticationInputImpl _$$AuthenticationInputImplFromJson(
     );
 
 Map<String, dynamic> _$$AuthenticationInputImplToJson(
-    _$AuthenticationInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('native', instance.native?.toJson());
-  return val;
-}
+        _$AuthenticationInputImpl instance) =>
+    <String, dynamic>{
+      'native': instance.native,
+    };

@@ -32,20 +32,12 @@ _$HistoryEntryFilterParameterImpl _$$HistoryEntryFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$HistoryEntryFilterParameterImplToJson(
-    _$HistoryEntryFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$HistoryEntryFilterParameterImpl instance) =>
+    <String, dynamic>{
+      '_and': instance.and,
+      '_or': instance.or,
+      'createdAt': instance.createdAt,
+      'id': instance.id,
+      'type': instance.type,
+      'updatedAt': instance.updatedAt,
+    };

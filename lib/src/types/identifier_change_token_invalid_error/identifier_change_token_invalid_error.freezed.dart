@@ -21,8 +21,8 @@ IdentifierChangeTokenInvalidError _$IdentifierChangeTokenInvalidErrorFromJson(
 
 /// @nodoc
 mixin _$IdentifierChangeTokenInvalidError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $IdentifierChangeTokenInvalidErrorCopyWith<$Res> {
       _$IdentifierChangeTokenInvalidErrorCopyWithImpl<$Res,
           IdentifierChangeTokenInvalidError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -55,18 +55,18 @@ class _$IdentifierChangeTokenInvalidErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$IdentifierChangeTokenInvalidErrorImplCopyWith<$Res>
       __$$IdentifierChangeTokenInvalidErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -96,18 +96,18 @@ class __$$IdentifierChangeTokenInvalidErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$IdentifierChangeTokenInvalidErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -116,7 +116,8 @@ class __$$IdentifierChangeTokenInvalidErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IdentifierChangeTokenInvalidErrorImpl
     extends _IdentifierChangeTokenInvalidError with DiagnosticableTreeMixin {
-  const _$IdentifierChangeTokenInvalidErrorImpl({this.errorCode, this.message})
+  const _$IdentifierChangeTokenInvalidErrorImpl(
+      {required this.errorCode, required this.message})
       : super._();
 
   factory _$IdentifierChangeTokenInvalidErrorImpl.fromJson(
@@ -124,9 +125,9 @@ class _$IdentifierChangeTokenInvalidErrorImpl
       _$$IdentifierChangeTokenInvalidErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,8 +176,8 @@ class _$IdentifierChangeTokenInvalidErrorImpl
 abstract class _IdentifierChangeTokenInvalidError
     extends IdentifierChangeTokenInvalidError {
   const factory _IdentifierChangeTokenInvalidError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$IdentifierChangeTokenInvalidErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$IdentifierChangeTokenInvalidErrorImpl;
   const _IdentifierChangeTokenInvalidError._() : super._();
 
   factory _IdentifierChangeTokenInvalidError.fromJson(
@@ -184,9 +185,9 @@ abstract class _IdentifierChangeTokenInvalidError
       _$IdentifierChangeTokenInvalidErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$IdentifierChangeTokenInvalidErrorImplCopyWith<

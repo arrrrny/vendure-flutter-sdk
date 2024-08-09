@@ -21,12 +21,12 @@ PaymentMethodTranslation _$PaymentMethodTranslationFromJson(
 
 /// @nodoc
 mixin _$PaymentMethodTranslation {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,12 +41,12 @@ abstract class $PaymentMethodTranslationCopyWith<$Res> {
       _$PaymentMethodTranslationCopyWithImpl<$Res, PaymentMethodTranslation>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      String? description,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      DateTime? updatedAt});
+      {DateTime createdAt,
+      String description,
+      String id,
+      LanguageCode languageCode,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -63,38 +63,38 @@ class _$PaymentMethodTranslationCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? description = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      description: freezed == description
+              as DateTime,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -109,12 +109,12 @@ abstract class _$$PaymentMethodTranslationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      String? description,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      DateTime? updatedAt});
+      {DateTime createdAt,
+      String description,
+      String id,
+      LanguageCode languageCode,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -130,38 +130,38 @@ class __$$PaymentMethodTranslationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? description = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$PaymentMethodTranslationImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      description: freezed == description
+              as DateTime,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -171,29 +171,29 @@ class __$$PaymentMethodTranslationImplCopyWithImpl<$Res>
 class _$PaymentMethodTranslationImpl extends _PaymentMethodTranslation
     with DiagnosticableTreeMixin {
   const _$PaymentMethodTranslationImpl(
-      {this.createdAt,
-      this.description,
-      this.id,
-      this.languageCode,
-      this.name,
-      this.updatedAt})
+      {required this.createdAt,
+      required this.description,
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required this.updatedAt})
       : super._();
 
   factory _$PaymentMethodTranslationImpl.fromJson(Map<String, dynamic> json) =>
       _$$PaymentMethodTranslationImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? description;
+  final String description;
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -252,29 +252,29 @@ class _$PaymentMethodTranslationImpl extends _PaymentMethodTranslation
 
 abstract class _PaymentMethodTranslation extends PaymentMethodTranslation {
   const factory _PaymentMethodTranslation(
-      {final DateTime? createdAt,
-      final String? description,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final DateTime? updatedAt}) = _$PaymentMethodTranslationImpl;
+      {required final DateTime createdAt,
+      required final String description,
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final DateTime updatedAt}) = _$PaymentMethodTranslationImpl;
   const _PaymentMethodTranslation._() : super._();
 
   factory _PaymentMethodTranslation.fromJson(Map<String, dynamic> json) =
       _$PaymentMethodTranslationImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get description;
+  String get description;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$PaymentMethodTranslationImplCopyWith<_$PaymentMethodTranslationImpl>

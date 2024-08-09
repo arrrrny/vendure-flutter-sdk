@@ -20,8 +20,8 @@ CollectionList _$CollectionListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CollectionList {
-  List<Collection?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Collection> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $CollectionListCopyWith<$Res> {
           CollectionList value, $Res Function(CollectionList) then) =
       _$CollectionListCopyWithImpl<$Res, CollectionList>;
   @useResult
-  $Res call({List<Collection?>? items, int? totalItems});
+  $Res call({List<Collection> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$CollectionListCopyWithImpl<$Res, $Val extends CollectionList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Collection?>?,
-      totalItems: freezed == totalItems
+              as List<Collection>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$CollectionListImplCopyWith<$Res>
       __$$CollectionListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Collection?>? items, int? totalItems});
+  $Res call({List<Collection> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$CollectionListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$CollectionListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Collection?>?,
-      totalItems: freezed == totalItems
+              as List<Collection>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -109,25 +109,24 @@ class __$$CollectionListImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionListImpl extends _CollectionList
     with DiagnosticableTreeMixin {
-  const _$CollectionListImpl({final List<Collection?>? items, this.totalItems})
+  const _$CollectionListImpl(
+      {required final List<Collection> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$CollectionListImpl.fromJson(Map<String, dynamic> json) =>
       _$$CollectionListImplFromJson(json);
 
-  final List<Collection?>? _items;
+  final List<Collection> _items;
   @override
-  List<Collection?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Collection> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,17 +174,17 @@ class _$CollectionListImpl extends _CollectionList
 
 abstract class _CollectionList extends CollectionList {
   const factory _CollectionList(
-      {final List<Collection?>? items,
-      final int? totalItems}) = _$CollectionListImpl;
+      {required final List<Collection> items,
+      required final int totalItems}) = _$CollectionListImpl;
   const _CollectionList._() : super._();
 
   factory _CollectionList.fromJson(Map<String, dynamic> json) =
       _$CollectionListImpl.fromJson;
 
   @override
-  List<Collection?>? get items;
+  List<Collection> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$CollectionListImplCopyWith<_$CollectionListImpl> get copyWith =>

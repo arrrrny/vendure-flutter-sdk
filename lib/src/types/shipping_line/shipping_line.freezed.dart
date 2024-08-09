@@ -20,13 +20,13 @@ ShippingLine _$ShippingLineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShippingLine {
-  double? get discountedPrice => throw _privateConstructorUsedError;
-  double? get discountedPriceWithTax => throw _privateConstructorUsedError;
-  List<Discount?>? get discounts => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  double? get price => throw _privateConstructorUsedError;
-  double? get priceWithTax => throw _privateConstructorUsedError;
-  ShippingMethod? get shippingMethod => throw _privateConstructorUsedError;
+  double get discountedPrice => throw _privateConstructorUsedError;
+  double get discountedPriceWithTax => throw _privateConstructorUsedError;
+  List<Discount> get discounts => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
+  double get priceWithTax => throw _privateConstructorUsedError;
+  ShippingMethod get shippingMethod => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,15 +41,15 @@ abstract class $ShippingLineCopyWith<$Res> {
       _$ShippingLineCopyWithImpl<$Res, ShippingLine>;
   @useResult
   $Res call(
-      {double? discountedPrice,
-      double? discountedPriceWithTax,
-      List<Discount?>? discounts,
-      String? id,
-      double? price,
-      double? priceWithTax,
-      ShippingMethod? shippingMethod});
+      {double discountedPrice,
+      double discountedPriceWithTax,
+      List<Discount> discounts,
+      String id,
+      double price,
+      double priceWithTax,
+      ShippingMethod shippingMethod});
 
-  $ShippingMethodCopyWith<$Res>? get shippingMethod;
+  $ShippingMethodCopyWith<$Res> get shippingMethod;
 }
 
 /// @nodoc
@@ -65,54 +65,50 @@ class _$ShippingLineCopyWithImpl<$Res, $Val extends ShippingLine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? discountedPrice = freezed,
-    Object? discountedPriceWithTax = freezed,
-    Object? discounts = freezed,
-    Object? id = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
-    Object? shippingMethod = freezed,
+    Object? discountedPrice = null,
+    Object? discountedPriceWithTax = null,
+    Object? discounts = null,
+    Object? id = null,
+    Object? price = null,
+    Object? priceWithTax = null,
+    Object? shippingMethod = null,
   }) {
     return _then(_value.copyWith(
-      discountedPrice: freezed == discountedPrice
+      discountedPrice: null == discountedPrice
           ? _value.discountedPrice
           : discountedPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedPriceWithTax: freezed == discountedPriceWithTax
+              as double,
+      discountedPriceWithTax: null == discountedPriceWithTax
           ? _value.discountedPriceWithTax
           : discountedPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discounts: freezed == discounts
+              as double,
+      discounts: null == discounts
           ? _value.discounts
           : discounts // ignore: cast_nullable_to_non_nullable
-              as List<Discount?>?,
-      id: freezed == id
+              as List<Discount>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      shippingMethod: freezed == shippingMethod
+              as double,
+      shippingMethod: null == shippingMethod
           ? _value.shippingMethod
           : shippingMethod // ignore: cast_nullable_to_non_nullable
-              as ShippingMethod?,
+              as ShippingMethod,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ShippingMethodCopyWith<$Res>? get shippingMethod {
-    if (_value.shippingMethod == null) {
-      return null;
-    }
-
-    return $ShippingMethodCopyWith<$Res>(_value.shippingMethod!, (value) {
+  $ShippingMethodCopyWith<$Res> get shippingMethod {
+    return $ShippingMethodCopyWith<$Res>(_value.shippingMethod, (value) {
       return _then(_value.copyWith(shippingMethod: value) as $Val);
     });
   }
@@ -127,16 +123,16 @@ abstract class _$$ShippingLineImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {double? discountedPrice,
-      double? discountedPriceWithTax,
-      List<Discount?>? discounts,
-      String? id,
-      double? price,
-      double? priceWithTax,
-      ShippingMethod? shippingMethod});
+      {double discountedPrice,
+      double discountedPriceWithTax,
+      List<Discount> discounts,
+      String id,
+      double price,
+      double priceWithTax,
+      ShippingMethod shippingMethod});
 
   @override
-  $ShippingMethodCopyWith<$Res>? get shippingMethod;
+  $ShippingMethodCopyWith<$Res> get shippingMethod;
 }
 
 /// @nodoc
@@ -150,43 +146,43 @@ class __$$ShippingLineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? discountedPrice = freezed,
-    Object? discountedPriceWithTax = freezed,
-    Object? discounts = freezed,
-    Object? id = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
-    Object? shippingMethod = freezed,
+    Object? discountedPrice = null,
+    Object? discountedPriceWithTax = null,
+    Object? discounts = null,
+    Object? id = null,
+    Object? price = null,
+    Object? priceWithTax = null,
+    Object? shippingMethod = null,
   }) {
     return _then(_$ShippingLineImpl(
-      discountedPrice: freezed == discountedPrice
+      discountedPrice: null == discountedPrice
           ? _value.discountedPrice
           : discountedPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedPriceWithTax: freezed == discountedPriceWithTax
+              as double,
+      discountedPriceWithTax: null == discountedPriceWithTax
           ? _value.discountedPriceWithTax
           : discountedPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discounts: freezed == discounts
+              as double,
+      discounts: null == discounts
           ? _value._discounts
           : discounts // ignore: cast_nullable_to_non_nullable
-              as List<Discount?>?,
-      id: freezed == id
+              as List<Discount>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      shippingMethod: freezed == shippingMethod
+              as double,
+      shippingMethod: null == shippingMethod
           ? _value.shippingMethod
           : shippingMethod // ignore: cast_nullable_to_non_nullable
-              as ShippingMethod?,
+              as ShippingMethod,
     ));
   }
 }
@@ -195,13 +191,13 @@ class __$$ShippingLineImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
   const _$ShippingLineImpl(
-      {this.discountedPrice,
-      this.discountedPriceWithTax,
-      final List<Discount?>? discounts,
-      this.id,
-      this.price,
-      this.priceWithTax,
-      this.shippingMethod})
+      {required this.discountedPrice,
+      required this.discountedPriceWithTax,
+      required final List<Discount> discounts,
+      required this.id,
+      required this.price,
+      required this.priceWithTax,
+      required this.shippingMethod})
       : _discounts = discounts,
         super._();
 
@@ -209,27 +205,25 @@ class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
       _$$ShippingLineImplFromJson(json);
 
   @override
-  final double? discountedPrice;
+  final double discountedPrice;
   @override
-  final double? discountedPriceWithTax;
-  final List<Discount?>? _discounts;
+  final double discountedPriceWithTax;
+  final List<Discount> _discounts;
   @override
-  List<Discount?>? get discounts {
-    final value = _discounts;
-    if (value == null) return null;
+  List<Discount> get discounts {
     if (_discounts is EqualUnmodifiableListView) return _discounts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_discounts);
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final double? price;
+  final double price;
   @override
-  final double? priceWithTax;
+  final double priceWithTax;
   @override
-  final ShippingMethod? shippingMethod;
+  final ShippingMethod shippingMethod;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -298,32 +292,32 @@ class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
 
 abstract class _ShippingLine extends ShippingLine {
   const factory _ShippingLine(
-      {final double? discountedPrice,
-      final double? discountedPriceWithTax,
-      final List<Discount?>? discounts,
-      final String? id,
-      final double? price,
-      final double? priceWithTax,
-      final ShippingMethod? shippingMethod}) = _$ShippingLineImpl;
+      {required final double discountedPrice,
+      required final double discountedPriceWithTax,
+      required final List<Discount> discounts,
+      required final String id,
+      required final double price,
+      required final double priceWithTax,
+      required final ShippingMethod shippingMethod}) = _$ShippingLineImpl;
   const _ShippingLine._() : super._();
 
   factory _ShippingLine.fromJson(Map<String, dynamic> json) =
       _$ShippingLineImpl.fromJson;
 
   @override
-  double? get discountedPrice;
+  double get discountedPrice;
   @override
-  double? get discountedPriceWithTax;
+  double get discountedPriceWithTax;
   @override
-  List<Discount?>? get discounts;
+  List<Discount> get discounts;
   @override
-  String? get id;
+  String get id;
   @override
-  double? get price;
+  double get price;
   @override
-  double? get priceWithTax;
+  double get priceWithTax;
   @override
-  ShippingMethod? get shippingMethod;
+  ShippingMethod get shippingMethod;
   @override
   @JsonKey(ignore: true)
   _$$ShippingLineImplCopyWith<_$ShippingLineImpl> get copyWith =>

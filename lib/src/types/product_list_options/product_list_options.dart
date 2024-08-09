@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/logical_operator/logical_operator.dart';
-import 'package:vendure/src/types/product_filter_parameter/product_filter_parameter.dart';
-import 'package:vendure/src/types/product_sort_parameter/product_sort_parameter.dart';
+import '../product_filter_parameter/product_filter_parameter.dart';
+import '../product_sort_parameter/product_sort_parameter.dart';
+import '../types/logical_operator/logical_operator.dart';
 
 part 'product_list_options.freezed.dart';
 part 'product_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class ProductListOptions with _$ProductListOptions {
   const ProductListOptions._();
 
-  const factory ProductListOptions({
+  factory ProductListOptions({
     /// Allows the results to be filtered
     ProductFilterParameter? filter,
 

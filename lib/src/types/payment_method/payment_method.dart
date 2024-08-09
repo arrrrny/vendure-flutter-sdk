@@ -1,31 +1,27 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/configurable_operation/configurable_operation.dart';
-import 'package:vendure/src/types/payment_method_translation/payment_method_translation.dart';
+import '../configurable_operation/configurable_operation.dart';
+import '../payment_method_translation/payment_method_translation.dart';
 
 part 'payment_method.freezed.dart';
 part 'payment_method.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class PaymentMethod with _$PaymentMethod {
   const PaymentMethod._();
 
   const factory PaymentMethod({
     ConfigurableOperation? checker,
-    String? code,
-    DateTime? createdAt,
+    required String code,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    String? description,
-    bool? enabled,
-    ConfigurableOperation? handler,
-    String? id,
-    String? name,
-    List<PaymentMethodTranslation?>? translations,
-    DateTime? updatedAt,
+    required String description,
+    required bool enabled,
+    required ConfigurableOperation handler,
+    required String id,
+    required String name,
+    required List<PaymentMethodTranslation> translations,
+    required DateTime updatedAt,
   }) = _PaymentMethod;
 
   factory PaymentMethod.fromJson(Map<String, dynamic> json) =>

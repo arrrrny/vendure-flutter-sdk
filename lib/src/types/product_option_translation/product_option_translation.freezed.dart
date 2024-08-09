@@ -21,11 +21,11 @@ ProductOptionTranslation _$ProductOptionTranslationFromJson(
 
 /// @nodoc
 mixin _$ProductOptionTranslation {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,11 +40,11 @@ abstract class $ProductOptionTranslationCopyWith<$Res> {
       _$ProductOptionTranslationCopyWithImpl<$Res, ProductOptionTranslation>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      DateTime? updatedAt});
+      {DateTime createdAt,
+      String id,
+      LanguageCode languageCode,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -61,33 +61,33 @@ class _$ProductOptionTranslationCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -102,11 +102,11 @@ abstract class _$$ProductOptionTranslationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      DateTime? updatedAt});
+      {DateTime createdAt,
+      String id,
+      LanguageCode languageCode,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -122,33 +122,33 @@ class __$$ProductOptionTranslationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ProductOptionTranslationImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -158,22 +158,26 @@ class __$$ProductOptionTranslationImplCopyWithImpl<$Res>
 class _$ProductOptionTranslationImpl extends _ProductOptionTranslation
     with DiagnosticableTreeMixin {
   const _$ProductOptionTranslationImpl(
-      {this.createdAt, this.id, this.languageCode, this.name, this.updatedAt})
+      {required this.createdAt,
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required this.updatedAt})
       : super._();
 
   factory _$ProductOptionTranslationImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductOptionTranslationImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -229,26 +233,26 @@ class _$ProductOptionTranslationImpl extends _ProductOptionTranslation
 
 abstract class _ProductOptionTranslation extends ProductOptionTranslation {
   const factory _ProductOptionTranslation(
-      {final DateTime? createdAt,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final DateTime? updatedAt}) = _$ProductOptionTranslationImpl;
+      {required final DateTime createdAt,
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final DateTime updatedAt}) = _$ProductOptionTranslationImpl;
   const _ProductOptionTranslation._() : super._();
 
   factory _ProductOptionTranslation.fromJson(Map<String, dynamic> json) =
       _$ProductOptionTranslationImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ProductOptionTranslationImplCopyWith<_$ProductOptionTranslationImpl>

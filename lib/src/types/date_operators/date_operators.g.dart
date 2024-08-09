@@ -21,19 +21,11 @@ _$DateOperatorsImpl _$$DateOperatorsImplFromJson(Map<String, dynamic> json) =>
       isNull: json['isNull'] as bool?,
     );
 
-Map<String, dynamic> _$$DateOperatorsImplToJson(_$DateOperatorsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('after', instance.after?.toIso8601String());
-  writeNotNull('before', instance.before?.toIso8601String());
-  writeNotNull('between', instance.between?.toJson());
-  writeNotNull('eq', instance.eq?.toIso8601String());
-  writeNotNull('isNull', instance.isNull);
-  return val;
-}
+Map<String, dynamic> _$$DateOperatorsImplToJson(_$DateOperatorsImpl instance) =>
+    <String, dynamic>{
+      'after': instance.after?.toIso8601String(),
+      'before': instance.before?.toIso8601String(),
+      'between': instance.between,
+      'eq': instance.eq?.toIso8601String(),
+      'isNull': instance.isNull,
+    };

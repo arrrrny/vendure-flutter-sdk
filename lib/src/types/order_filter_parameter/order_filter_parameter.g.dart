@@ -72,32 +72,24 @@ _$OrderFilterParameterImpl _$$OrderFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$OrderFilterParameterImplToJson(
-    _$OrderFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('active', instance.active?.toJson());
-  writeNotNull('code', instance.code?.toJson());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('currencyCode', instance.currencyCode?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('orderPlacedAt', instance.orderPlacedAt?.toJson());
-  writeNotNull('shipping', instance.shipping?.toJson());
-  writeNotNull('shippingWithTax', instance.shippingWithTax?.toJson());
-  writeNotNull('state', instance.state?.toJson());
-  writeNotNull('subTotal', instance.subTotal?.toJson());
-  writeNotNull('subTotalWithTax', instance.subTotalWithTax?.toJson());
-  writeNotNull('total', instance.total?.toJson());
-  writeNotNull('totalQuantity', instance.totalQuantity?.toJson());
-  writeNotNull('totalWithTax', instance.totalWithTax?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$OrderFilterParameterImpl instance) =>
+    <String, dynamic>{
+      '_and': instance.and,
+      '_or': instance.or,
+      'active': instance.active,
+      'code': instance.code,
+      'createdAt': instance.createdAt,
+      'currencyCode': instance.currencyCode,
+      'id': instance.id,
+      'orderPlacedAt': instance.orderPlacedAt,
+      'shipping': instance.shipping,
+      'shippingWithTax': instance.shippingWithTax,
+      'state': instance.state,
+      'subTotal': instance.subTotal,
+      'subTotalWithTax': instance.subTotalWithTax,
+      'total': instance.total,
+      'totalQuantity': instance.totalQuantity,
+      'totalWithTax': instance.totalWithTax,
+      'type': instance.type,
+      'updatedAt': instance.updatedAt,
+    };

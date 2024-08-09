@@ -20,8 +20,8 @@ HistoryEntryList _$HistoryEntryListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HistoryEntryList {
-  List<HistoryEntry?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<HistoryEntry> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $HistoryEntryListCopyWith<$Res> {
           HistoryEntryList value, $Res Function(HistoryEntryList) then) =
       _$HistoryEntryListCopyWithImpl<$Res, HistoryEntryList>;
   @useResult
-  $Res call({List<HistoryEntry?>? items, int? totalItems});
+  $Res call({List<HistoryEntry> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$HistoryEntryListCopyWithImpl<$Res, $Val extends HistoryEntryList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<HistoryEntry?>?,
-      totalItems: freezed == totalItems
+              as List<HistoryEntry>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$HistoryEntryListImplCopyWith<$Res>
       __$$HistoryEntryListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<HistoryEntry?>? items, int? totalItems});
+  $Res call({List<HistoryEntry> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$HistoryEntryListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$HistoryEntryListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<HistoryEntry?>?,
-      totalItems: freezed == totalItems
+              as List<HistoryEntry>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -110,25 +110,23 @@ class __$$HistoryEntryListImplCopyWithImpl<$Res>
 class _$HistoryEntryListImpl extends _HistoryEntryList
     with DiagnosticableTreeMixin {
   const _$HistoryEntryListImpl(
-      {final List<HistoryEntry?>? items, this.totalItems})
+      {required final List<HistoryEntry> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$HistoryEntryListImpl.fromJson(Map<String, dynamic> json) =>
       _$$HistoryEntryListImplFromJson(json);
 
-  final List<HistoryEntry?>? _items;
+  final List<HistoryEntry> _items;
   @override
-  List<HistoryEntry?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<HistoryEntry> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -176,17 +174,17 @@ class _$HistoryEntryListImpl extends _HistoryEntryList
 
 abstract class _HistoryEntryList extends HistoryEntryList {
   const factory _HistoryEntryList(
-      {final List<HistoryEntry?>? items,
-      final int? totalItems}) = _$HistoryEntryListImpl;
+      {required final List<HistoryEntry> items,
+      required final int totalItems}) = _$HistoryEntryListImpl;
   const _HistoryEntryList._() : super._();
 
   factory _HistoryEntryList.fromJson(Map<String, dynamic> json) =
       _$HistoryEntryListImpl.fromJson;
 
   @override
-  List<HistoryEntry?>? get items;
+  List<HistoryEntry> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$HistoryEntryListImplCopyWith<_$HistoryEntryListImpl> get copyWith =>

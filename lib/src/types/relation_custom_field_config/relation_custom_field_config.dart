@@ -1,31 +1,27 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/localized_string/localized_string.dart';
-import 'package:vendure/src/types/permission/permission.dart';
+import '../localized_string/localized_string.dart';
+import '../types/permission/permission.dart';
 
 part 'relation_custom_field_config.freezed.dart';
 part 'relation_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class RelationCustomFieldConfig with _$RelationCustomFieldConfig {
   const RelationCustomFieldConfig._();
 
   const factory RelationCustomFieldConfig({
-    List<LocalizedString?>? description,
-    String? entity,
+    List<LocalizedString>? description,
+    required String entity,
     bool? internal,
-    List<LocalizedString?>? label,
-    bool? list,
-    String? name,
+    List<LocalizedString>? label,
+    required bool list,
+    required String name,
     bool? nullable,
     bool? readonly,
-    List<Permission?>? requiresPermission,
-    List<String?>? scalarFields,
-    String? type,
+    List<Permission>? requiresPermission,
+    required List<String> scalarFields,
+    required String type,
     Map<String, dynamic>? ui,
   }) = _RelationCustomFieldConfig;
 

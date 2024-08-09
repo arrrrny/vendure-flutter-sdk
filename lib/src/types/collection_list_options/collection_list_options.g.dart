@@ -25,24 +25,15 @@ _$CollectionListOptionsImpl _$$CollectionListOptionsImplFromJson(
     );
 
 Map<String, dynamic> _$$CollectionListOptionsImplToJson(
-    _$CollectionListOptionsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('filter', instance.filter?.toJson());
-  writeNotNull(
-      'filterOperator', _$LogicalOperatorEnumMap[instance.filterOperator]);
-  writeNotNull('skip', instance.skip);
-  writeNotNull('sort', instance.sort?.toJson());
-  writeNotNull('take', instance.take);
-  writeNotNull('topLevelOnly', instance.topLevelOnly);
-  return val;
-}
+        _$CollectionListOptionsImpl instance) =>
+    <String, dynamic>{
+      'filter': instance.filter,
+      'filterOperator': _$LogicalOperatorEnumMap[instance.filterOperator],
+      'skip': instance.skip,
+      'sort': instance.sort,
+      'take': instance.take,
+      'topLevelOnly': instance.topLevelOnly,
+    };
 
 const _$LogicalOperatorEnumMap = {
   LogicalOperator.and: 'and',

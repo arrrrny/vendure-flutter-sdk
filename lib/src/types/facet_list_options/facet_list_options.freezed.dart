@@ -23,18 +23,35 @@ mixin _$FacetListOptions {
   /// Allows the results to be filtered
   FacetFilterParameter? get filter => throw _privateConstructorUsedError;
 
+  /// Allows the results to be filtered
+  set filter(FacetFilterParameter? value) => throw _privateConstructorUsedError;
+
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
 
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value) =>
+      throw _privateConstructorUsedError;
+
   /// Skips the first n results, for use in pagination
   int? get skip => throw _privateConstructorUsedError;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value) => throw _privateConstructorUsedError;
 
   /// Specifies which properties to sort the results by
   FacetSortParameter? get sort => throw _privateConstructorUsedError;
 
+  /// Specifies which properties to sort the results by
+  set sort(FacetSortParameter? value) => throw _privateConstructorUsedError;
+
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
+
+  /// Takes n results, for use in pagination
+  set take(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -194,7 +211,7 @@ class __$$FacetListOptionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetListOptionsImpl extends _FacetListOptions
     with DiagnosticableTreeMixin {
-  const _$FacetListOptionsImpl(
+  _$FacetListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
 
@@ -203,24 +220,24 @@ class _$FacetListOptionsImpl extends _FacetListOptions
 
   /// Allows the results to be filtered
   @override
-  final FacetFilterParameter? filter;
+  FacetFilterParameter? filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   @override
-  final LogicalOperator? filterOperator;
+  LogicalOperator? filterOperator;
 
   /// Skips the first n results, for use in pagination
   @override
-  final int? skip;
+  int? skip;
 
   /// Specifies which properties to sort the results by
   @override
-  final FacetSortParameter? sort;
+  FacetSortParameter? sort;
 
   /// Takes n results, for use in pagination
   @override
-  final int? take;
+  int? take;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -239,24 +256,6 @@ class _$FacetListOptionsImpl extends _FacetListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FacetListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -273,13 +272,13 @@ class _$FacetListOptionsImpl extends _FacetListOptions
 }
 
 abstract class _FacetListOptions extends FacetListOptions {
-  const factory _FacetListOptions(
-      {final FacetFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final FacetSortParameter? sort,
-      final int? take}) = _$FacetListOptionsImpl;
-  const _FacetListOptions._() : super._();
+  factory _FacetListOptions(
+      {FacetFilterParameter? filter,
+      LogicalOperator? filterOperator,
+      int? skip,
+      FacetSortParameter? sort,
+      int? take}) = _$FacetListOptionsImpl;
+  _FacetListOptions._() : super._();
 
   factory _FacetListOptions.fromJson(Map<String, dynamic> json) =
       _$FacetListOptionsImpl.fromJson;
@@ -288,23 +287,39 @@ abstract class _FacetListOptions extends FacetListOptions {
 
   /// Allows the results to be filtered
   FacetFilterParameter? get filter;
+
+  /// Allows the results to be filtered
+  set filter(FacetFilterParameter? value);
   @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator;
+
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value);
   @override
 
   /// Skips the first n results, for use in pagination
   int? get skip;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value);
   @override
 
   /// Specifies which properties to sort the results by
   FacetSortParameter? get sort;
+
+  /// Specifies which properties to sort the results by
+  set sort(FacetSortParameter? value);
   @override
 
   /// Takes n results, for use in pagination
   int? get take;
+
+  /// Takes n results, for use in pagination
+  set take(int? value);
   @override
   @JsonKey(ignore: true)
   _$$FacetListOptionsImplCopyWith<_$FacetListOptionsImpl> get copyWith =>

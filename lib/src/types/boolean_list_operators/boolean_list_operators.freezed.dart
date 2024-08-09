@@ -21,6 +21,7 @@ BooleanListOperators _$BooleanListOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BooleanListOperators {
   bool get inList => throw _privateConstructorUsedError;
+  set inList(bool value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -99,13 +100,13 @@ class __$$BooleanListOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BooleanListOperatorsImpl extends _BooleanListOperators
     with DiagnosticableTreeMixin {
-  const _$BooleanListOperatorsImpl({required this.inList}) : super._();
+  _$BooleanListOperatorsImpl({required this.inList}) : super._();
 
   factory _$BooleanListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$BooleanListOperatorsImplFromJson(json);
 
   @override
-  final bool inList;
+  bool inList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -119,18 +120,6 @@ class _$BooleanListOperatorsImpl extends _BooleanListOperators
       ..add(DiagnosticsProperty('type', 'BooleanListOperators'))
       ..add(DiagnosticsProperty('inList', inList));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BooleanListOperatorsImpl &&
-            (identical(other.inList, inList) || other.inList == inList));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, inList);
 
   @JsonKey(ignore: true)
   @override
@@ -149,15 +138,16 @@ class _$BooleanListOperatorsImpl extends _BooleanListOperators
 }
 
 abstract class _BooleanListOperators extends BooleanListOperators {
-  const factory _BooleanListOperators({required final bool inList}) =
+  factory _BooleanListOperators({required bool inList}) =
       _$BooleanListOperatorsImpl;
-  const _BooleanListOperators._() : super._();
+  _BooleanListOperators._() : super._();
 
   factory _BooleanListOperators.fromJson(Map<String, dynamic> json) =
       _$BooleanListOperatorsImpl.fromJson;
 
   @override
   bool get inList;
+  set inList(bool value);
   @override
   @JsonKey(ignore: true)
   _$$BooleanListOperatorsImplCopyWith<_$BooleanListOperatorsImpl>

@@ -22,24 +22,51 @@ OrderFilterParameter _$OrderFilterParameterFromJson(Map<String, dynamic> json) {
 mixin _$OrderFilterParameter {
   @JsonKey(name: '_and')
   List<OrderFilterParameter>? get and => throw _privateConstructorUsedError;
+  @JsonKey(name: '_and')
+  set and(List<OrderFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: '_or')
   List<OrderFilterParameter>? get or => throw _privateConstructorUsedError;
+  @JsonKey(name: '_or')
+  set or(List<OrderFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   BooleanOperators? get active => throw _privateConstructorUsedError;
+  set active(BooleanOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get code => throw _privateConstructorUsedError;
+  set code(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(DateOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get currencyCode => throw _privateConstructorUsedError;
+  set currencyCode(StringOperators? value) =>
+      throw _privateConstructorUsedError;
   IdOperators? get id => throw _privateConstructorUsedError;
+  set id(IdOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get orderPlacedAt => throw _privateConstructorUsedError;
+  set orderPlacedAt(DateOperators? value) => throw _privateConstructorUsedError;
   NumberOperators? get shipping => throw _privateConstructorUsedError;
+  set shipping(NumberOperators? value) => throw _privateConstructorUsedError;
   NumberOperators? get shippingWithTax => throw _privateConstructorUsedError;
+  set shippingWithTax(NumberOperators? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get state => throw _privateConstructorUsedError;
+  set state(StringOperators? value) => throw _privateConstructorUsedError;
   NumberOperators? get subTotal => throw _privateConstructorUsedError;
+  set subTotal(NumberOperators? value) => throw _privateConstructorUsedError;
   NumberOperators? get subTotalWithTax => throw _privateConstructorUsedError;
+  set subTotalWithTax(NumberOperators? value) =>
+      throw _privateConstructorUsedError;
   NumberOperators? get total => throw _privateConstructorUsedError;
+  set total(NumberOperators? value) => throw _privateConstructorUsedError;
   NumberOperators? get totalQuantity => throw _privateConstructorUsedError;
+  set totalQuantity(NumberOperators? value) =>
+      throw _privateConstructorUsedError;
   NumberOperators? get totalWithTax => throw _privateConstructorUsedError;
+  set totalWithTax(NumberOperators? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get type => throw _privateConstructorUsedError;
+  set type(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -487,11 +514,11 @@ class __$$OrderFilterParameterImplCopyWithImpl<$Res>
   }) {
     return _then(_$OrderFilterParameterImpl(
       and: freezed == and
-          ? _value._and
+          ? _value.and
           : and // ignore: cast_nullable_to_non_nullable
               as List<OrderFilterParameter>?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<OrderFilterParameter>?,
       active: freezed == active
@@ -566,9 +593,9 @@ class __$$OrderFilterParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderFilterParameterImpl extends _OrderFilterParameter
     with DiagnosticableTreeMixin {
-  const _$OrderFilterParameterImpl(
-      {@JsonKey(name: '_and') final List<OrderFilterParameter>? and,
-      @JsonKey(name: '_or') final List<OrderFilterParameter>? or,
+  _$OrderFilterParameterImpl(
+      {@JsonKey(name: '_and') this.and,
+      @JsonKey(name: '_or') this.or,
       this.active,
       this.code,
       this.createdAt,
@@ -585,67 +612,49 @@ class _$OrderFilterParameterImpl extends _OrderFilterParameter
       this.totalWithTax,
       this.type,
       this.updatedAt})
-      : _and = and,
-        _or = or,
-        super._();
+      : super._();
 
   factory _$OrderFilterParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderFilterParameterImplFromJson(json);
 
-  final List<OrderFilterParameter>? _and;
   @override
   @JsonKey(name: '_and')
-  List<OrderFilterParameter>? get and {
-    final value = _and;
-    if (value == null) return null;
-    if (_and is EqualUnmodifiableListView) return _and;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<OrderFilterParameter>? _or;
+  List<OrderFilterParameter>? and;
   @override
   @JsonKey(name: '_or')
-  List<OrderFilterParameter>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<OrderFilterParameter>? or;
   @override
-  final BooleanOperators? active;
+  BooleanOperators? active;
   @override
-  final StringOperators? code;
+  StringOperators? code;
   @override
-  final DateOperators? createdAt;
+  DateOperators? createdAt;
   @override
-  final StringOperators? currencyCode;
+  StringOperators? currencyCode;
   @override
-  final IdOperators? id;
+  IdOperators? id;
   @override
-  final DateOperators? orderPlacedAt;
+  DateOperators? orderPlacedAt;
   @override
-  final NumberOperators? shipping;
+  NumberOperators? shipping;
   @override
-  final NumberOperators? shippingWithTax;
+  NumberOperators? shippingWithTax;
   @override
-  final StringOperators? state;
+  StringOperators? state;
   @override
-  final NumberOperators? subTotal;
+  NumberOperators? subTotal;
   @override
-  final NumberOperators? subTotalWithTax;
+  NumberOperators? subTotalWithTax;
   @override
-  final NumberOperators? total;
+  NumberOperators? total;
   @override
-  final NumberOperators? totalQuantity;
+  NumberOperators? totalQuantity;
   @override
-  final NumberOperators? totalWithTax;
+  NumberOperators? totalWithTax;
   @override
-  final StringOperators? type;
+  StringOperators? type;
   @override
-  final DateOperators? updatedAt;
+  DateOperators? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -677,64 +686,6 @@ class _$OrderFilterParameterImpl extends _OrderFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OrderFilterParameterImpl &&
-            const DeepCollectionEquality().equals(other._and, _and) &&
-            const DeepCollectionEquality().equals(other._or, _or) &&
-            (identical(other.active, active) || other.active == active) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.currencyCode, currencyCode) ||
-                other.currencyCode == currencyCode) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.orderPlacedAt, orderPlacedAt) ||
-                other.orderPlacedAt == orderPlacedAt) &&
-            (identical(other.shipping, shipping) ||
-                other.shipping == shipping) &&
-            (identical(other.shippingWithTax, shippingWithTax) ||
-                other.shippingWithTax == shippingWithTax) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.subTotal, subTotal) ||
-                other.subTotal == subTotal) &&
-            (identical(other.subTotalWithTax, subTotalWithTax) ||
-                other.subTotalWithTax == subTotalWithTax) &&
-            (identical(other.total, total) || other.total == total) &&
-            (identical(other.totalQuantity, totalQuantity) ||
-                other.totalQuantity == totalQuantity) &&
-            (identical(other.totalWithTax, totalWithTax) ||
-                other.totalWithTax == totalWithTax) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_and),
-      const DeepCollectionEquality().hash(_or),
-      active,
-      code,
-      createdAt,
-      currencyCode,
-      id,
-      orderPlacedAt,
-      shipping,
-      shippingWithTax,
-      state,
-      subTotal,
-      subTotalWithTax,
-      total,
-      totalQuantity,
-      totalWithTax,
-      type,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -752,26 +703,26 @@ class _$OrderFilterParameterImpl extends _OrderFilterParameter
 }
 
 abstract class _OrderFilterParameter extends OrderFilterParameter {
-  const factory _OrderFilterParameter(
-      {@JsonKey(name: '_and') final List<OrderFilterParameter>? and,
-      @JsonKey(name: '_or') final List<OrderFilterParameter>? or,
-      final BooleanOperators? active,
-      final StringOperators? code,
-      final DateOperators? createdAt,
-      final StringOperators? currencyCode,
-      final IdOperators? id,
-      final DateOperators? orderPlacedAt,
-      final NumberOperators? shipping,
-      final NumberOperators? shippingWithTax,
-      final StringOperators? state,
-      final NumberOperators? subTotal,
-      final NumberOperators? subTotalWithTax,
-      final NumberOperators? total,
-      final NumberOperators? totalQuantity,
-      final NumberOperators? totalWithTax,
-      final StringOperators? type,
-      final DateOperators? updatedAt}) = _$OrderFilterParameterImpl;
-  const _OrderFilterParameter._() : super._();
+  factory _OrderFilterParameter(
+      {@JsonKey(name: '_and') List<OrderFilterParameter>? and,
+      @JsonKey(name: '_or') List<OrderFilterParameter>? or,
+      BooleanOperators? active,
+      StringOperators? code,
+      DateOperators? createdAt,
+      StringOperators? currencyCode,
+      IdOperators? id,
+      DateOperators? orderPlacedAt,
+      NumberOperators? shipping,
+      NumberOperators? shippingWithTax,
+      StringOperators? state,
+      NumberOperators? subTotal,
+      NumberOperators? subTotalWithTax,
+      NumberOperators? total,
+      NumberOperators? totalQuantity,
+      NumberOperators? totalWithTax,
+      StringOperators? type,
+      DateOperators? updatedAt}) = _$OrderFilterParameterImpl;
+  _OrderFilterParameter._() : super._();
 
   factory _OrderFilterParameter.fromJson(Map<String, dynamic> json) =
       _$OrderFilterParameterImpl.fromJson;
@@ -779,41 +730,61 @@ abstract class _OrderFilterParameter extends OrderFilterParameter {
   @override
   @JsonKey(name: '_and')
   List<OrderFilterParameter>? get and;
+  @JsonKey(name: '_and')
+  set and(List<OrderFilterParameter>? value);
   @override
   @JsonKey(name: '_or')
   List<OrderFilterParameter>? get or;
+  @JsonKey(name: '_or')
+  set or(List<OrderFilterParameter>? value);
   @override
   BooleanOperators? get active;
+  set active(BooleanOperators? value);
   @override
   StringOperators? get code;
+  set code(StringOperators? value);
   @override
   DateOperators? get createdAt;
+  set createdAt(DateOperators? value);
   @override
   StringOperators? get currencyCode;
+  set currencyCode(StringOperators? value);
   @override
   IdOperators? get id;
+  set id(IdOperators? value);
   @override
   DateOperators? get orderPlacedAt;
+  set orderPlacedAt(DateOperators? value);
   @override
   NumberOperators? get shipping;
+  set shipping(NumberOperators? value);
   @override
   NumberOperators? get shippingWithTax;
+  set shippingWithTax(NumberOperators? value);
   @override
   StringOperators? get state;
+  set state(StringOperators? value);
   @override
   NumberOperators? get subTotal;
+  set subTotal(NumberOperators? value);
   @override
   NumberOperators? get subTotalWithTax;
+  set subTotalWithTax(NumberOperators? value);
   @override
   NumberOperators? get total;
+  set total(NumberOperators? value);
   @override
   NumberOperators? get totalQuantity;
+  set totalQuantity(NumberOperators? value);
   @override
   NumberOperators? get totalWithTax;
+  set totalWithTax(NumberOperators? value);
   @override
   StringOperators? get type;
+  set type(StringOperators? value);
   @override
   DateOperators? get updatedAt;
+  set updatedAt(DateOperators? value);
   @override
   @JsonKey(ignore: true)
   _$$OrderFilterParameterImplCopyWith<_$OrderFilterParameterImpl>

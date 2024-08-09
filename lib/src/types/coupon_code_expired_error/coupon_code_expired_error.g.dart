@@ -9,26 +9,18 @@ part of 'coupon_code_expired_error.dart';
 _$CouponCodeExpiredErrorImpl _$$CouponCodeExpiredErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$CouponCodeExpiredErrorImpl(
-      couponCode: json['couponCode'] as String?,
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      couponCode: json['couponCode'] as String,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$CouponCodeExpiredErrorImplToJson(
-    _$CouponCodeExpiredErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('couponCode', instance.couponCode);
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$CouponCodeExpiredErrorImpl instance) =>
+    <String, dynamic>{
+      'couponCode': instance.couponCode,
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

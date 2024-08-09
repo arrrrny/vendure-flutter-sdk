@@ -10,53 +10,41 @@ _$BooleanCustomFieldConfigImpl _$$BooleanCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$BooleanCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
+      list: json['list'] as bool,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$BooleanCustomFieldConfigImplToJson(
-    _$BooleanCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$BooleanCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',
@@ -158,452 +146,354 @@ _$DateTimeCustomFieldConfigImpl _$$DateTimeCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$DateTimeCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
+      list: json['list'] as bool,
       max: json['max'] as String?,
       min: json['min'] as String?,
-      name: json['name'] as String?,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       step: (json['step'] as num?)?.toInt(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$DateTimeCustomFieldConfigImplToJson(
-    _$DateTimeCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('step', instance.step);
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$DateTimeCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'max': instance.max,
+      'min': instance.min,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'step': instance.step,
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$FloatCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
+      list: json['list'] as bool,
       max: (json['max'] as num?)?.toDouble(),
       min: (json['min'] as num?)?.toDouble(),
-      name: json['name'] as String?,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       step: (json['step'] as num?)?.toDouble(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$FloatCustomFieldConfigImplToJson(
-    _$FloatCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('step', instance.step);
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$FloatCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'max': instance.max,
+      'min': instance.min,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'step': instance.step,
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$IntCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
+      list: json['list'] as bool,
       max: (json['max'] as num?)?.toInt(),
       min: (json['min'] as num?)?.toInt(),
-      name: json['name'] as String?,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       step: (json['step'] as num?)?.toInt(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$IntCustomFieldConfigImplToJson(
-    _$IntCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('step', instance.step);
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$IntCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'max': instance.max,
+      'min': instance.min,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'step': instance.step,
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$LocaleStringCustomFieldConfigImpl
     _$$LocaleStringCustomFieldConfigImplFromJson(Map<String, dynamic> json) =>
         _$LocaleStringCustomFieldConfigImpl(
           description: (json['description'] as List<dynamic>?)
-              ?.map((e) => e == null
-                  ? null
-                  : LocalizedString.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
               .toList(),
           internal: json['internal'] as bool?,
           label: (json['label'] as List<dynamic>?)
-              ?.map((e) => e == null
-                  ? null
-                  : LocalizedString.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
               .toList(),
           length: (json['length'] as num?)?.toInt(),
-          list: json['list'] as bool?,
-          name: json['name'] as String?,
+          list: json['list'] as bool,
+          name: json['name'] as String,
           nullable: json['nullable'] as bool?,
           pattern: json['pattern'] as String?,
           readonly: json['readonly'] as bool?,
           requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-              ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+              ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
               .toList(),
-          type: json['type'] as String?,
+          type: json['type'] as String,
           ui: json['ui'] as Map<String, dynamic>?,
           $type: json['runtimeType'] as String?,
         );
 
 Map<String, dynamic> _$$LocaleStringCustomFieldConfigImplToJson(
-    _$LocaleStringCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('length', instance.length);
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('pattern', instance.pattern);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$LocaleStringCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'length': instance.length,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'pattern': instance.pattern,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$LocaleTextCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
+      list: json['list'] as bool,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$LocaleTextCustomFieldConfigImplToJson(
-    _$LocaleTextCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$LocaleTextCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$RelationCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      entity: json['entity'] as String?,
+      entity: json['entity'] as String,
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
+      list: json['list'] as bool,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      scalarFields: (json['scalarFields'] as List<dynamic>?)
-          ?.map((e) => e as String?)
+      scalarFields: (json['scalarFields'] as List<dynamic>)
+          .map((e) => e as String)
           .toList(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$RelationCustomFieldConfigImplToJson(
-    _$RelationCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('entity', instance.entity);
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('scalarFields', instance.scalarFields);
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$RelationCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'entity': instance.entity,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'scalarFields': instance.scalarFields,
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$StringCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       length: (json['length'] as num?)?.toInt(),
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
+      list: json['list'] as bool,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       options: (json['options'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : StringFieldOption.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => StringFieldOption.fromJson(e as Map<String, dynamic>))
           .toList(),
       pattern: json['pattern'] as String?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$StringCustomFieldConfigImplToJson(
-    _$StringCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('length', instance.length);
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('options', instance.options?.map((e) => e?.toJson()).toList());
-  writeNotNull('pattern', instance.pattern);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$StringCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'length': instance.length,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'options': instance.options,
+      'pattern': instance.pattern,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };
 
 _$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$TextCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
+      list: json['list'] as bool,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$TextCustomFieldConfigImplToJson(
-    _$TextCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$TextCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'type': instance.type,
+      'ui': instance.ui,
+      'runtimeType': instance.$type,
+    };

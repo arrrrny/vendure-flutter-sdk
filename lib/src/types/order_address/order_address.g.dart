@@ -21,25 +21,17 @@ _$OrderAddressImpl _$$OrderAddressImplFromJson(Map<String, dynamic> json) =>
       streetLine2: json['streetLine2'] as String?,
     );
 
-Map<String, dynamic> _$$OrderAddressImplToJson(_$OrderAddressImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('city', instance.city);
-  writeNotNull('company', instance.company);
-  writeNotNull('country', instance.country);
-  writeNotNull('countryCode', instance.countryCode);
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('postalCode', instance.postalCode);
-  writeNotNull('province', instance.province);
-  writeNotNull('streetLine1', instance.streetLine1);
-  writeNotNull('streetLine2', instance.streetLine2);
-  return val;
-}
+Map<String, dynamic> _$$OrderAddressImplToJson(_$OrderAddressImpl instance) =>
+    <String, dynamic>{
+      'city': instance.city,
+      'company': instance.company,
+      'country': instance.country,
+      'countryCode': instance.countryCode,
+      'customFields': instance.customFields,
+      'fullName': instance.fullName,
+      'phoneNumber': instance.phoneNumber,
+      'postalCode': instance.postalCode,
+      'province': instance.province,
+      'streetLine1': instance.streetLine1,
+      'streetLine2': instance.streetLine2,
+    };

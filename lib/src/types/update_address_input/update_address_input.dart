@@ -1,16 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/address/address.dart';
-import 'package:vendure/src/types/country/country.dart';
 
 part 'update_address_input.freezed.dart';
 part 'update_address_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class UpdateAddressInput with _$UpdateAddressInput {
   const UpdateAddressInput._();
 
@@ -19,7 +13,7 @@ class UpdateAddressInput with _$UpdateAddressInput {
   /// The countryCode must correspond to a `code` property of a Country that has been defined in the
   /// Vendure server. The `code` property is typically a 2-character ISO code such as "GB", "US", "DE" etc.
   /// If an invalid code is passed, the mutation will fail.
-  const factory UpdateAddressInput({
+  factory UpdateAddressInput({
     String? city,
     String? company,
     String? countryCode,

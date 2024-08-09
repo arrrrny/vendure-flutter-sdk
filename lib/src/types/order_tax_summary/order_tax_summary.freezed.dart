@@ -21,16 +21,16 @@ OrderTaxSummary _$OrderTaxSummaryFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderTaxSummary {
   /// A description of this tax
-  String? get description => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   /// The total net price of OrderLines to which this taxRate applies
-  double? get taxBase => throw _privateConstructorUsedError;
+  double get taxBase => throw _privateConstructorUsedError;
 
   /// The taxRate as a percentage
-  double? get taxRate => throw _privateConstructorUsedError;
+  double get taxRate => throw _privateConstructorUsedError;
 
   /// The total tax being applied to the Order at this taxRate
-  double? get taxTotal => throw _privateConstructorUsedError;
+  double get taxTotal => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,10 +45,7 @@ abstract class $OrderTaxSummaryCopyWith<$Res> {
       _$OrderTaxSummaryCopyWithImpl<$Res, OrderTaxSummary>;
   @useResult
   $Res call(
-      {String? description,
-      double? taxBase,
-      double? taxRate,
-      double? taxTotal});
+      {String description, double taxBase, double taxRate, double taxTotal});
 }
 
 /// @nodoc
@@ -64,28 +61,28 @@ class _$OrderTaxSummaryCopyWithImpl<$Res, $Val extends OrderTaxSummary>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? taxBase = freezed,
-    Object? taxRate = freezed,
-    Object? taxTotal = freezed,
+    Object? description = null,
+    Object? taxBase = null,
+    Object? taxRate = null,
+    Object? taxTotal = null,
   }) {
     return _then(_value.copyWith(
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxBase: freezed == taxBase
+              as String,
+      taxBase: null == taxBase
           ? _value.taxBase
           : taxBase // ignore: cast_nullable_to_non_nullable
-              as double?,
-      taxRate: freezed == taxRate
+              as double,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      taxTotal: freezed == taxTotal
+              as double,
+      taxTotal: null == taxTotal
           ? _value.taxTotal
           : taxTotal // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -99,10 +96,7 @@ abstract class _$$OrderTaxSummaryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? description,
-      double? taxBase,
-      double? taxRate,
-      double? taxTotal});
+      {String description, double taxBase, double taxRate, double taxTotal});
 }
 
 /// @nodoc
@@ -116,28 +110,28 @@ class __$$OrderTaxSummaryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? taxBase = freezed,
-    Object? taxRate = freezed,
-    Object? taxTotal = freezed,
+    Object? description = null,
+    Object? taxBase = null,
+    Object? taxRate = null,
+    Object? taxTotal = null,
   }) {
     return _then(_$OrderTaxSummaryImpl(
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxBase: freezed == taxBase
+              as String,
+      taxBase: null == taxBase
           ? _value.taxBase
           : taxBase // ignore: cast_nullable_to_non_nullable
-              as double?,
-      taxRate: freezed == taxRate
+              as double,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      taxTotal: freezed == taxTotal
+              as double,
+      taxTotal: null == taxTotal
           ? _value.taxTotal
           : taxTotal // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -147,7 +141,10 @@ class __$$OrderTaxSummaryImplCopyWithImpl<$Res>
 class _$OrderTaxSummaryImpl extends _OrderTaxSummary
     with DiagnosticableTreeMixin {
   const _$OrderTaxSummaryImpl(
-      {this.description, this.taxBase, this.taxRate, this.taxTotal})
+      {required this.description,
+      required this.taxBase,
+      required this.taxRate,
+      required this.taxTotal})
       : super._();
 
   factory _$OrderTaxSummaryImpl.fromJson(Map<String, dynamic> json) =>
@@ -155,19 +152,19 @@ class _$OrderTaxSummaryImpl extends _OrderTaxSummary
 
   /// A description of this tax
   @override
-  final String? description;
+  final String description;
 
   /// The total net price of OrderLines to which this taxRate applies
   @override
-  final double? taxBase;
+  final double taxBase;
 
   /// The taxRate as a percentage
   @override
-  final double? taxRate;
+  final double taxRate;
 
   /// The total tax being applied to the Order at this taxRate
   @override
-  final double? taxTotal;
+  final double taxTotal;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -220,10 +217,10 @@ class _$OrderTaxSummaryImpl extends _OrderTaxSummary
 
 abstract class _OrderTaxSummary extends OrderTaxSummary {
   const factory _OrderTaxSummary(
-      {final String? description,
-      final double? taxBase,
-      final double? taxRate,
-      final double? taxTotal}) = _$OrderTaxSummaryImpl;
+      {required final String description,
+      required final double taxBase,
+      required final double taxRate,
+      required final double taxTotal}) = _$OrderTaxSummaryImpl;
   const _OrderTaxSummary._() : super._();
 
   factory _OrderTaxSummary.fromJson(Map<String, dynamic> json) =
@@ -232,19 +229,19 @@ abstract class _OrderTaxSummary extends OrderTaxSummary {
   @override
 
   /// A description of this tax
-  String? get description;
+  String get description;
   @override
 
   /// The total net price of OrderLines to which this taxRate applies
-  double? get taxBase;
+  double get taxBase;
   @override
 
   /// The taxRate as a percentage
-  double? get taxRate;
+  double get taxRate;
   @override
 
   /// The total tax being applied to the Order at this taxRate
-  double? get taxTotal;
+  double get taxTotal;
   @override
   @JsonKey(ignore: true)
   _$$OrderTaxSummaryImplCopyWith<_$OrderTaxSummaryImpl> get copyWith =>

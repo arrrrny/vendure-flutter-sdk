@@ -21,7 +21,9 @@ DateRange _$DateRangeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DateRange {
   DateTime get end => throw _privateConstructorUsedError;
+  set end(DateTime value) => throw _privateConstructorUsedError;
   DateTime get start => throw _privateConstructorUsedError;
+  set start(DateTime value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -107,15 +109,15 @@ class __$$DateRangeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DateRangeImpl extends _DateRange with DiagnosticableTreeMixin {
-  const _$DateRangeImpl({required this.end, required this.start}) : super._();
+  _$DateRangeImpl({required this.end, required this.start}) : super._();
 
   factory _$DateRangeImpl.fromJson(Map<String, dynamic> json) =>
       _$$DateRangeImplFromJson(json);
 
   @override
-  final DateTime end;
+  DateTime end;
   @override
-  final DateTime start;
+  DateTime start;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -130,19 +132,6 @@ class _$DateRangeImpl extends _DateRange with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('end', end))
       ..add(DiagnosticsProperty('start', start));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DateRangeImpl &&
-            (identical(other.end, end) || other.end == end) &&
-            (identical(other.start, start) || other.start == start));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, end, start);
 
   @JsonKey(ignore: true)
   @override
@@ -159,18 +148,19 @@ class _$DateRangeImpl extends _DateRange with DiagnosticableTreeMixin {
 }
 
 abstract class _DateRange extends DateRange {
-  const factory _DateRange(
-      {required final DateTime end,
-      required final DateTime start}) = _$DateRangeImpl;
-  const _DateRange._() : super._();
+  factory _DateRange({required DateTime end, required DateTime start}) =
+      _$DateRangeImpl;
+  _DateRange._() : super._();
 
   factory _DateRange.fromJson(Map<String, dynamic> json) =
       _$DateRangeImpl.fromJson;
 
   @override
   DateTime get end;
+  set end(DateTime value);
   @override
   DateTime get start;
+  set start(DateTime value);
   @override
   @JsonKey(ignore: true)
   _$$DateRangeImplCopyWith<_$DateRangeImpl> get copyWith =>

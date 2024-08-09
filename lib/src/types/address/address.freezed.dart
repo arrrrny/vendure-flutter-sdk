@@ -22,19 +22,19 @@ Address _$AddressFromJson(Map<String, dynamic> json) {
 mixin _$Address {
   String? get city => throw _privateConstructorUsedError;
   String? get company => throw _privateConstructorUsedError;
-  Country? get country => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  Country get country => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
   bool? get defaultBillingAddress => throw _privateConstructorUsedError;
   bool? get defaultShippingAddress => throw _privateConstructorUsedError;
   String? get fullName => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get postalCode => throw _privateConstructorUsedError;
   String? get province => throw _privateConstructorUsedError;
-  String? get streetLine1 => throw _privateConstructorUsedError;
+  String get streetLine1 => throw _privateConstructorUsedError;
   String? get streetLine2 => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,21 +49,21 @@ abstract class $AddressCopyWith<$Res> {
   $Res call(
       {String? city,
       String? company,
-      Country? country,
-      DateTime? createdAt,
+      Country country,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
       bool? defaultBillingAddress,
       bool? defaultShippingAddress,
       String? fullName,
-      String? id,
+      String id,
       String? phoneNumber,
       String? postalCode,
       String? province,
-      String? streetLine1,
+      String streetLine1,
       String? streetLine2,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 
-  $CountryCopyWith<$Res>? get country;
+  $CountryCopyWith<$Res> get country;
 }
 
 /// @nodoc
@@ -81,19 +81,19 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
   $Res call({
     Object? city = freezed,
     Object? company = freezed,
-    Object? country = freezed,
-    Object? createdAt = freezed,
+    Object? country = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
     Object? defaultBillingAddress = freezed,
     Object? defaultShippingAddress = freezed,
     Object? fullName = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? phoneNumber = freezed,
     Object? postalCode = freezed,
     Object? province = freezed,
-    Object? streetLine1 = freezed,
+    Object? streetLine1 = null,
     Object? streetLine2 = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       city: freezed == city
@@ -104,14 +104,14 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String?,
-      country: freezed == country
+      country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as Country?,
-      createdAt: freezed == createdAt
+              as Country,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
@@ -128,10 +128,10 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -144,29 +144,25 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
           ? _value.province
           : province // ignore: cast_nullable_to_non_nullable
               as String?,
-      streetLine1: freezed == streetLine1
+      streetLine1: null == streetLine1
           ? _value.streetLine1
           : streetLine1 // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       streetLine2: freezed == streetLine2
           ? _value.streetLine2
           : streetLine2 // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CountryCopyWith<$Res>? get country {
-    if (_value.country == null) {
-      return null;
-    }
-
-    return $CountryCopyWith<$Res>(_value.country!, (value) {
+  $CountryCopyWith<$Res> get country {
+    return $CountryCopyWith<$Res>(_value.country, (value) {
       return _then(_value.copyWith(country: value) as $Val);
     });
   }
@@ -182,22 +178,22 @@ abstract class _$$AddressImplCopyWith<$Res> implements $AddressCopyWith<$Res> {
   $Res call(
       {String? city,
       String? company,
-      Country? country,
-      DateTime? createdAt,
+      Country country,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
       bool? defaultBillingAddress,
       bool? defaultShippingAddress,
       String? fullName,
-      String? id,
+      String id,
       String? phoneNumber,
       String? postalCode,
       String? province,
-      String? streetLine1,
+      String streetLine1,
       String? streetLine2,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 
   @override
-  $CountryCopyWith<$Res>? get country;
+  $CountryCopyWith<$Res> get country;
 }
 
 /// @nodoc
@@ -213,19 +209,19 @@ class __$$AddressImplCopyWithImpl<$Res>
   $Res call({
     Object? city = freezed,
     Object? company = freezed,
-    Object? country = freezed,
-    Object? createdAt = freezed,
+    Object? country = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
     Object? defaultBillingAddress = freezed,
     Object? defaultShippingAddress = freezed,
     Object? fullName = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? phoneNumber = freezed,
     Object? postalCode = freezed,
     Object? province = freezed,
-    Object? streetLine1 = freezed,
+    Object? streetLine1 = null,
     Object? streetLine2 = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_$AddressImpl(
       city: freezed == city
@@ -236,14 +232,14 @@ class __$$AddressImplCopyWithImpl<$Res>
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String?,
-      country: freezed == country
+      country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as Country?,
-      createdAt: freezed == createdAt
+              as Country,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
@@ -260,10 +256,10 @@ class __$$AddressImplCopyWithImpl<$Res>
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -276,18 +272,18 @@ class __$$AddressImplCopyWithImpl<$Res>
           ? _value.province
           : province // ignore: cast_nullable_to_non_nullable
               as String?,
-      streetLine1: freezed == streetLine1
+      streetLine1: null == streetLine1
           ? _value.streetLine1
           : streetLine1 // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       streetLine2: freezed == streetLine2
           ? _value.streetLine2
           : streetLine2 // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -298,19 +294,19 @@ class _$AddressImpl extends _Address with DiagnosticableTreeMixin {
   const _$AddressImpl(
       {this.city,
       this.company,
-      this.country,
-      this.createdAt,
+      required this.country,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
       this.defaultBillingAddress,
       this.defaultShippingAddress,
       this.fullName,
-      this.id,
+      required this.id,
       this.phoneNumber,
       this.postalCode,
       this.province,
-      this.streetLine1,
+      required this.streetLine1,
       this.streetLine2,
-      this.updatedAt})
+      required this.updatedAt})
       : _customFields = customFields,
         super._();
 
@@ -322,9 +318,9 @@ class _$AddressImpl extends _Address with DiagnosticableTreeMixin {
   @override
   final String? company;
   @override
-  final Country? country;
+  final Country country;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -342,7 +338,7 @@ class _$AddressImpl extends _Address with DiagnosticableTreeMixin {
   @override
   final String? fullName;
   @override
-  final String? id;
+  final String id;
   @override
   final String? phoneNumber;
   @override
@@ -350,11 +346,11 @@ class _$AddressImpl extends _Address with DiagnosticableTreeMixin {
   @override
   final String? province;
   @override
-  final String? streetLine1;
+  final String streetLine1;
   @override
   final String? streetLine2;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -455,19 +451,19 @@ abstract class _Address extends Address {
   const factory _Address(
       {final String? city,
       final String? company,
-      final Country? country,
-      final DateTime? createdAt,
+      required final Country country,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
       final bool? defaultBillingAddress,
       final bool? defaultShippingAddress,
       final String? fullName,
-      final String? id,
+      required final String id,
       final String? phoneNumber,
       final String? postalCode,
       final String? province,
-      final String? streetLine1,
+      required final String streetLine1,
       final String? streetLine2,
-      final DateTime? updatedAt}) = _$AddressImpl;
+      required final DateTime updatedAt}) = _$AddressImpl;
   const _Address._() : super._();
 
   factory _Address.fromJson(Map<String, dynamic> json) = _$AddressImpl.fromJson;
@@ -477,9 +473,9 @@ abstract class _Address extends Address {
   @override
   String? get company;
   @override
-  Country? get country;
+  Country get country;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
@@ -489,7 +485,7 @@ abstract class _Address extends Address {
   @override
   String? get fullName;
   @override
-  String? get id;
+  String get id;
   @override
   String? get phoneNumber;
   @override
@@ -497,11 +493,11 @@ abstract class _Address extends Address {
   @override
   String? get province;
   @override
-  String? get streetLine1;
+  String get streetLine1;
   @override
   String? get streetLine2;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>

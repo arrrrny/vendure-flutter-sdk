@@ -20,19 +20,19 @@ IntCustomFieldConfig _$IntCustomFieldConfigFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$IntCustomFieldConfig {
-  List<LocalizedString?>? get description => throw _privateConstructorUsedError;
+  List<LocalizedString>? get description => throw _privateConstructorUsedError;
   bool? get internal => throw _privateConstructorUsedError;
-  List<LocalizedString?>? get label => throw _privateConstructorUsedError;
-  bool? get list => throw _privateConstructorUsedError;
+  List<LocalizedString>? get label => throw _privateConstructorUsedError;
+  bool get list => throw _privateConstructorUsedError;
   int? get max => throw _privateConstructorUsedError;
   int? get min => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   bool? get nullable => throw _privateConstructorUsedError;
   bool? get readonly => throw _privateConstructorUsedError;
-  List<Permission?>? get requiresPermission =>
+  List<Permission>? get requiresPermission =>
       throw _privateConstructorUsedError;
   int? get step => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,18 +48,18 @@ abstract class $IntCustomFieldConfigCopyWith<$Res> {
       _$IntCustomFieldConfigCopyWithImpl<$Res, IntCustomFieldConfig>;
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
+      List<LocalizedString>? label,
+      bool list,
       int? max,
       int? min,
-      String? name,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
+      List<Permission>? requiresPermission,
       int? step,
-      String? type,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -80,22 +80,22 @@ class _$IntCustomFieldConfigCopyWithImpl<$Res,
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
+    Object? list = null,
     Object? max = freezed,
     Object? min = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
     Object? step = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_value.copyWith(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -103,11 +103,11 @@ class _$IntCustomFieldConfigCopyWithImpl<$Res,
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
@@ -116,10 +116,10 @@ class _$IntCustomFieldConfigCopyWithImpl<$Res,
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -131,15 +131,15 @@ class _$IntCustomFieldConfigCopyWithImpl<$Res,
       requiresPermission: freezed == requiresPermission
           ? _value.requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
+              as List<Permission>?,
       step: freezed == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
               as int?,
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -157,18 +157,18 @@ abstract class _$$IntCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
+      List<LocalizedString>? label,
+      bool list,
       int? max,
       int? min,
-      String? name,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
+      List<Permission>? requiresPermission,
       int? step,
-      String? type,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -186,22 +186,22 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
+    Object? list = null,
     Object? max = freezed,
     Object? min = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
     Object? step = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$IntCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -209,11 +209,11 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       max: freezed == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
@@ -222,10 +222,10 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
               as int?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -237,15 +237,15 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
+              as List<Permission>?,
       step: freezed == step
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
               as int?,
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -258,19 +258,19 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
     with DiagnosticableTreeMixin {
-  const _$IntCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+  _$IntCustomFieldConfigImpl(
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
+      final List<LocalizedString>? label,
+      required this.list,
       this.max,
       this.min,
-      this.name,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       this.step,
-      this.type,
+      required this.type,
       final Map<String, dynamic>? ui})
       : _description = description,
         _label = label,
@@ -281,9 +281,9 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
   factory _$IntCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$IntCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -293,9 +293,9 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -304,20 +304,20 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
   final int? max;
   @override
   final int? min;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -329,7 +329,7 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
   @override
   final int? step;
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -425,49 +425,49 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
 }
 
 abstract class _IntCustomFieldConfig extends IntCustomFieldConfig {
-  const factory _IntCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+  factory _IntCustomFieldConfig(
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
+      final List<LocalizedString>? label,
+      required final bool list,
       final int? max,
       final int? min,
-      final String? name,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
+      final List<Permission>? requiresPermission,
       final int? step,
-      final String? type,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$IntCustomFieldConfigImpl;
-  const _IntCustomFieldConfig._() : super._();
+  _IntCustomFieldConfig._() : super._();
 
   factory _IntCustomFieldConfig.fromJson(Map<String, dynamic> json) =
       _$IntCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
   int? get max;
   @override
   int? get min;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
   int? get step;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override

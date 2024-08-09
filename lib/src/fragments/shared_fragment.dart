@@ -131,7 +131,7 @@ fragment Role on Role {
   id
   code
   description
-  permissions 
+  permissions
   channels {
     ...Channel
   }
@@ -167,10 +167,13 @@ const String facetValueFragment = r'''
 fragment FacetValue on FacetValue {
   __typename
   id
+  createdAt
+  updatedAt
   languageCode
   facet {
     id
     name
+    code
   }
   facetId
   name
@@ -209,5 +212,34 @@ fragment TaxRate on TaxRate {
   }
   customFields
 }
+
+''';
+
+const String facetFragment = facetValueFragment +
+    r'''
+    fragment Facet on Facet {
+      __typename
+      id
+      createdAt
+      updatedAt
+      languageCode
+      code
+      name
+      values {
+        ...FacetValue
+      }
+      valueList{
+        items{
+        ...FacetValue
+        }
+        totalItems
+      }
+      translations {
+        id
+        languageCode
+        name
+      }
+      customFields
+    }
 
 ''';

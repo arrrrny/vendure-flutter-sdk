@@ -20,8 +20,8 @@ PriceRange _$PriceRangeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PriceRange {
-  double? get max => throw _privateConstructorUsedError;
-  double? get min => throw _privateConstructorUsedError;
+  double get max => throw _privateConstructorUsedError;
+  double get min => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $PriceRangeCopyWith<$Res> {
           PriceRange value, $Res Function(PriceRange) then) =
       _$PriceRangeCopyWithImpl<$Res, PriceRange>;
   @useResult
-  $Res call({double? max, double? min});
+  $Res call({double max, double min});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$PriceRangeCopyWithImpl<$Res, $Val extends PriceRange>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? max = freezed,
-    Object? min = freezed,
+    Object? max = null,
+    Object? min = null,
   }) {
     return _then(_value.copyWith(
-      max: freezed == max
+      max: null == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
-              as double?,
-      min: freezed == min
+              as double,
+      min: null == min
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$PriceRangeImplCopyWith<$Res>
       __$$PriceRangeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double? max, double? min});
+  $Res call({double max, double min});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? max = freezed,
-    Object? min = freezed,
+    Object? max = null,
+    Object? min = null,
   }) {
     return _then(_$PriceRangeImpl(
-      max: freezed == max
+      max: null == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
-              as double?,
-      min: freezed == min
+              as double,
+      min: null == min
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -108,15 +108,15 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PriceRangeImpl extends _PriceRange with DiagnosticableTreeMixin {
-  const _$PriceRangeImpl({this.max, this.min}) : super._();
+  const _$PriceRangeImpl({required this.max, required this.min}) : super._();
 
   factory _$PriceRangeImpl.fromJson(Map<String, dynamic> json) =>
       _$$PriceRangeImplFromJson(json);
 
   @override
-  final double? max;
+  final double max;
   @override
-  final double? min;
+  final double min;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -160,17 +160,18 @@ class _$PriceRangeImpl extends _PriceRange with DiagnosticableTreeMixin {
 }
 
 abstract class _PriceRange extends PriceRange {
-  const factory _PriceRange({final double? max, final double? min}) =
-      _$PriceRangeImpl;
+  const factory _PriceRange(
+      {required final double max,
+      required final double min}) = _$PriceRangeImpl;
   const _PriceRange._() : super._();
 
   factory _PriceRange.fromJson(Map<String, dynamic> json) =
       _$PriceRangeImpl.fromJson;
 
   @override
-  double? get max;
+  double get max;
   @override
-  double? get min;
+  double get min;
   @override
   @JsonKey(ignore: true)
   _$$PriceRangeImplCopyWith<_$PriceRangeImpl> get copyWith =>

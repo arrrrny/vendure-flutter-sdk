@@ -1,41 +1,37 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/currency_code/currency_code.dart';
-import 'package:vendure/src/types/search_result_asset/search_result_asset.dart';
-import 'package:vendure/src/types/search_result_price/search_result_price.dart';
+import '../search_result_asset/search_result_asset.dart';
+import '../search_result_price/search_result_price.dart';
+import '../types/currency_code/currency_code.dart';
 
 part 'search_result.freezed.dart';
 part 'search_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class SearchResult with _$SearchResult {
   const SearchResult._();
 
-  const factory SearchResult({
+  factory SearchResult({
     /// An array of ids of the Collections in which this result appears
-    List<String?>? collectionIds,
-    CurrencyCode? currencyCode,
-    String? description,
-    List<String?>? facetIds,
-    List<String?>? facetValueIds,
-    bool? inStock,
-    SearchResultPrice? price,
-    SearchResultPrice? priceWithTax,
+    required List<String> collectionIds,
+    required CurrencyCode currencyCode,
+    required String description,
+    required List<String> facetIds,
+    required List<String> facetValueIds,
+    required bool inStock,
+    required SearchResultPrice price,
+    required SearchResultPrice priceWithTax,
     SearchResultAsset? productAsset,
-    String? productId,
-    String? productName,
+    required String productId,
+    required String productName,
     SearchResultAsset? productVariantAsset,
-    String? productVariantId,
-    String? productVariantName,
+    required String productVariantId,
+    required String productVariantName,
 
     /// A relevance score for the result. Differs between database implementations
-    double? score,
-    String? sku,
-    String? slug,
+    required double score,
+    required String sku,
+    required String slug,
   }) = _SearchResult;
 
   factory SearchResult.fromJson(Map<String, dynamic> json) =>

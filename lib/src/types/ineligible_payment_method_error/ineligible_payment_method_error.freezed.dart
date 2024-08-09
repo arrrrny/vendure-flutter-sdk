@@ -22,8 +22,8 @@ IneligiblePaymentMethodError _$IneligiblePaymentMethodErrorFromJson(
 /// @nodoc
 mixin _$IneligiblePaymentMethodError {
   String? get eligibilityCheckerMessage => throw _privateConstructorUsedError;
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,9 +40,7 @@ abstract class $IneligiblePaymentMethodErrorCopyWith<$Res> {
           IneligiblePaymentMethodError>;
   @useResult
   $Res call(
-      {String? eligibilityCheckerMessage,
-      ErrorCode? errorCode,
-      String? message});
+      {String? eligibilityCheckerMessage, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -60,22 +58,22 @@ class _$IneligiblePaymentMethodErrorCopyWithImpl<$Res,
   @override
   $Res call({
     Object? eligibilityCheckerMessage = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
       eligibilityCheckerMessage: freezed == eligibilityCheckerMessage
           ? _value.eligibilityCheckerMessage
           : eligibilityCheckerMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -90,9 +88,7 @@ abstract class _$$IneligiblePaymentMethodErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? eligibilityCheckerMessage,
-      ErrorCode? errorCode,
-      String? message});
+      {String? eligibilityCheckerMessage, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -109,22 +105,22 @@ class __$$IneligiblePaymentMethodErrorImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? eligibilityCheckerMessage = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$IneligiblePaymentMethodErrorImpl(
       eligibilityCheckerMessage: freezed == eligibilityCheckerMessage
           ? _value.eligibilityCheckerMessage
           : eligibilityCheckerMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -134,7 +130,9 @@ class __$$IneligiblePaymentMethodErrorImplCopyWithImpl<$Res>
 class _$IneligiblePaymentMethodErrorImpl extends _IneligiblePaymentMethodError
     with DiagnosticableTreeMixin {
   const _$IneligiblePaymentMethodErrorImpl(
-      {this.eligibilityCheckerMessage, this.errorCode, this.message})
+      {this.eligibilityCheckerMessage,
+      required this.errorCode,
+      required this.message})
       : super._();
 
   factory _$IneligiblePaymentMethodErrorImpl.fromJson(
@@ -144,9 +142,9 @@ class _$IneligiblePaymentMethodErrorImpl extends _IneligiblePaymentMethodError
   @override
   final String? eligibilityCheckerMessage;
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -202,8 +200,8 @@ abstract class _IneligiblePaymentMethodError
     extends IneligiblePaymentMethodError {
   const factory _IneligiblePaymentMethodError(
       {final String? eligibilityCheckerMessage,
-      final ErrorCode? errorCode,
-      final String? message}) = _$IneligiblePaymentMethodErrorImpl;
+      required final ErrorCode errorCode,
+      required final String message}) = _$IneligiblePaymentMethodErrorImpl;
   const _IneligiblePaymentMethodError._() : super._();
 
   factory _IneligiblePaymentMethodError.fromJson(Map<String, dynamic> json) =
@@ -212,9 +210,9 @@ abstract class _IneligiblePaymentMethodError
   @override
   String? get eligibilityCheckerMessage;
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$IneligiblePaymentMethodErrorImplCopyWith<

@@ -20,8 +20,8 @@ ProductVariantList _$ProductVariantListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductVariantList {
-  List<ProductVariant?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<ProductVariant> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $ProductVariantListCopyWith<$Res> {
           ProductVariantList value, $Res Function(ProductVariantList) then) =
       _$ProductVariantListCopyWithImpl<$Res, ProductVariantList>;
   @useResult
-  $Res call({List<ProductVariant?>? items, int? totalItems});
+  $Res call({List<ProductVariant> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$ProductVariantListCopyWithImpl<$Res, $Val extends ProductVariantList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<ProductVariant?>?,
-      totalItems: freezed == totalItems
+              as List<ProductVariant>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$ProductVariantListImplCopyWith<$Res>
       __$$ProductVariantListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ProductVariant?>? items, int? totalItems});
+  $Res call({List<ProductVariant> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$ProductVariantListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$ProductVariantListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<ProductVariant?>?,
-      totalItems: freezed == totalItems
+              as List<ProductVariant>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -110,25 +110,23 @@ class __$$ProductVariantListImplCopyWithImpl<$Res>
 class _$ProductVariantListImpl extends _ProductVariantList
     with DiagnosticableTreeMixin {
   const _$ProductVariantListImpl(
-      {final List<ProductVariant?>? items, this.totalItems})
+      {required final List<ProductVariant> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$ProductVariantListImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductVariantListImplFromJson(json);
 
-  final List<ProductVariant?>? _items;
+  final List<ProductVariant> _items;
   @override
-  List<ProductVariant?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<ProductVariant> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -176,17 +174,17 @@ class _$ProductVariantListImpl extends _ProductVariantList
 
 abstract class _ProductVariantList extends ProductVariantList {
   const factory _ProductVariantList(
-      {final List<ProductVariant?>? items,
-      final int? totalItems}) = _$ProductVariantListImpl;
+      {required final List<ProductVariant> items,
+      required final int totalItems}) = _$ProductVariantListImpl;
   const _ProductVariantList._() : super._();
 
   factory _ProductVariantList.fromJson(Map<String, dynamic> json) =
       _$ProductVariantListImpl.fromJson;
 
   @override
-  List<ProductVariant?>? get items;
+  List<ProductVariant> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$ProductVariantListImplCopyWith<_$ProductVariantListImpl> get copyWith =>

@@ -20,11 +20,11 @@ RefundLine _$RefundLineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RefundLine {
-  OrderLine? get orderLine => throw _privateConstructorUsedError;
-  String? get orderLineId => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
-  Refund? get refund => throw _privateConstructorUsedError;
-  String? get refundId => throw _privateConstructorUsedError;
+  OrderLine get orderLine => throw _privateConstructorUsedError;
+  String get orderLineId => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
+  Refund get refund => throw _privateConstructorUsedError;
+  String get refundId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,14 +39,14 @@ abstract class $RefundLineCopyWith<$Res> {
       _$RefundLineCopyWithImpl<$Res, RefundLine>;
   @useResult
   $Res call(
-      {OrderLine? orderLine,
-      String? orderLineId,
-      int? quantity,
-      Refund? refund,
-      String? refundId});
+      {OrderLine orderLine,
+      String orderLineId,
+      int quantity,
+      Refund refund,
+      String refundId});
 
-  $OrderLineCopyWith<$Res>? get orderLine;
-  $RefundCopyWith<$Res>? get refund;
+  $OrderLineCopyWith<$Res> get orderLine;
+  $RefundCopyWith<$Res> get refund;
 }
 
 /// @nodoc
@@ -62,56 +62,48 @@ class _$RefundLineCopyWithImpl<$Res, $Val extends RefundLine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? orderLine = freezed,
-    Object? orderLineId = freezed,
-    Object? quantity = freezed,
-    Object? refund = freezed,
-    Object? refundId = freezed,
+    Object? orderLine = null,
+    Object? orderLineId = null,
+    Object? quantity = null,
+    Object? refund = null,
+    Object? refundId = null,
   }) {
     return _then(_value.copyWith(
-      orderLine: freezed == orderLine
+      orderLine: null == orderLine
           ? _value.orderLine
           : orderLine // ignore: cast_nullable_to_non_nullable
-              as OrderLine?,
-      orderLineId: freezed == orderLineId
+              as OrderLine,
+      orderLineId: null == orderLineId
           ? _value.orderLineId
           : orderLineId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quantity: freezed == quantity
+              as String,
+      quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      refund: freezed == refund
+              as int,
+      refund: null == refund
           ? _value.refund
           : refund // ignore: cast_nullable_to_non_nullable
-              as Refund?,
-      refundId: freezed == refundId
+              as Refund,
+      refundId: null == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $OrderLineCopyWith<$Res>? get orderLine {
-    if (_value.orderLine == null) {
-      return null;
-    }
-
-    return $OrderLineCopyWith<$Res>(_value.orderLine!, (value) {
+  $OrderLineCopyWith<$Res> get orderLine {
+    return $OrderLineCopyWith<$Res>(_value.orderLine, (value) {
       return _then(_value.copyWith(orderLine: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RefundCopyWith<$Res>? get refund {
-    if (_value.refund == null) {
-      return null;
-    }
-
-    return $RefundCopyWith<$Res>(_value.refund!, (value) {
+  $RefundCopyWith<$Res> get refund {
+    return $RefundCopyWith<$Res>(_value.refund, (value) {
       return _then(_value.copyWith(refund: value) as $Val);
     });
   }
@@ -126,16 +118,16 @@ abstract class _$$RefundLineImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {OrderLine? orderLine,
-      String? orderLineId,
-      int? quantity,
-      Refund? refund,
-      String? refundId});
+      {OrderLine orderLine,
+      String orderLineId,
+      int quantity,
+      Refund refund,
+      String refundId});
 
   @override
-  $OrderLineCopyWith<$Res>? get orderLine;
+  $OrderLineCopyWith<$Res> get orderLine;
   @override
-  $RefundCopyWith<$Res>? get refund;
+  $RefundCopyWith<$Res> get refund;
 }
 
 /// @nodoc
@@ -149,33 +141,33 @@ class __$$RefundLineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? orderLine = freezed,
-    Object? orderLineId = freezed,
-    Object? quantity = freezed,
-    Object? refund = freezed,
-    Object? refundId = freezed,
+    Object? orderLine = null,
+    Object? orderLineId = null,
+    Object? quantity = null,
+    Object? refund = null,
+    Object? refundId = null,
   }) {
     return _then(_$RefundLineImpl(
-      orderLine: freezed == orderLine
+      orderLine: null == orderLine
           ? _value.orderLine
           : orderLine // ignore: cast_nullable_to_non_nullable
-              as OrderLine?,
-      orderLineId: freezed == orderLineId
+              as OrderLine,
+      orderLineId: null == orderLineId
           ? _value.orderLineId
           : orderLineId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quantity: freezed == quantity
+              as String,
+      quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      refund: freezed == refund
+              as int,
+      refund: null == refund
           ? _value.refund
           : refund // ignore: cast_nullable_to_non_nullable
-              as Refund?,
-      refundId: freezed == refundId
+              as Refund,
+      refundId: null == refundId
           ? _value.refundId
           : refundId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -184,26 +176,26 @@ class __$$RefundLineImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
   const _$RefundLineImpl(
-      {this.orderLine,
-      this.orderLineId,
-      this.quantity,
-      this.refund,
-      this.refundId})
+      {required this.orderLine,
+      required this.orderLineId,
+      required this.quantity,
+      required this.refund,
+      required this.refundId})
       : super._();
 
   factory _$RefundLineImpl.fromJson(Map<String, dynamic> json) =>
       _$$RefundLineImplFromJson(json);
 
   @override
-  final OrderLine? orderLine;
+  final OrderLine orderLine;
   @override
-  final String? orderLineId;
+  final String orderLineId;
   @override
-  final int? quantity;
+  final int quantity;
   @override
-  final Refund? refund;
+  final Refund refund;
   @override
-  final String? refundId;
+  final String refundId;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -259,26 +251,26 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
 
 abstract class _RefundLine extends RefundLine {
   const factory _RefundLine(
-      {final OrderLine? orderLine,
-      final String? orderLineId,
-      final int? quantity,
-      final Refund? refund,
-      final String? refundId}) = _$RefundLineImpl;
+      {required final OrderLine orderLine,
+      required final String orderLineId,
+      required final int quantity,
+      required final Refund refund,
+      required final String refundId}) = _$RefundLineImpl;
   const _RefundLine._() : super._();
 
   factory _RefundLine.fromJson(Map<String, dynamic> json) =
       _$RefundLineImpl.fromJson;
 
   @override
-  OrderLine? get orderLine;
+  OrderLine get orderLine;
   @override
-  String? get orderLineId;
+  String get orderLineId;
   @override
-  int? get quantity;
+  int get quantity;
   @override
-  Refund? get refund;
+  Refund get refund;
   @override
-  String? get refundId;
+  String get refundId;
   @override
   @JsonKey(ignore: true)
   _$$RefundLineImplCopyWith<_$RefundLineImpl> get copyWith =>

@@ -20,15 +20,15 @@ Fulfillment _$FulfillmentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Fulfillment {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  List<FulfillmentLine?>? get lines => throw _privateConstructorUsedError;
-  String? get method => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
-  List<FulfillmentLine?>? get summary => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  List<FulfillmentLine> get lines => throw _privateConstructorUsedError;
+  String get method => throw _privateConstructorUsedError;
+  String get state => throw _privateConstructorUsedError;
+  List<FulfillmentLine> get summary => throw _privateConstructorUsedError;
   String? get trackingCode => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,15 +43,15 @@ abstract class $FulfillmentCopyWith<$Res> {
       _$FulfillmentCopyWithImpl<$Res, Fulfillment>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      List<FulfillmentLine?>? lines,
-      String? method,
-      String? state,
-      List<FulfillmentLine?>? summary,
+      String id,
+      List<FulfillmentLine> lines,
+      String method,
+      String state,
+      List<FulfillmentLine> summary,
       String? trackingCode,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -67,53 +67,53 @@ class _$FulfillmentCopyWithImpl<$Res, $Val extends Fulfillment>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? lines = freezed,
-    Object? method = freezed,
-    Object? state = freezed,
-    Object? summary = freezed,
+    Object? id = null,
+    Object? lines = null,
+    Object? method = null,
+    Object? state = null,
+    Object? summary = null,
     Object? trackingCode = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lines: freezed == lines
+              as String,
+      lines: null == lines
           ? _value.lines
           : lines // ignore: cast_nullable_to_non_nullable
-              as List<FulfillmentLine?>?,
-      method: freezed == method
+              as List<FulfillmentLine>,
+      method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
+              as String,
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      summary: freezed == summary
+              as String,
+      summary: null == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as List<FulfillmentLine?>?,
+              as List<FulfillmentLine>,
       trackingCode: freezed == trackingCode
           ? _value.trackingCode
           : trackingCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -127,15 +127,15 @@ abstract class _$$FulfillmentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      List<FulfillmentLine?>? lines,
-      String? method,
-      String? state,
-      List<FulfillmentLine?>? summary,
+      String id,
+      List<FulfillmentLine> lines,
+      String method,
+      String state,
+      List<FulfillmentLine> summary,
       String? trackingCode,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -149,53 +149,53 @@ class __$$FulfillmentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? lines = freezed,
-    Object? method = freezed,
-    Object? state = freezed,
-    Object? summary = freezed,
+    Object? id = null,
+    Object? lines = null,
+    Object? method = null,
+    Object? state = null,
+    Object? summary = null,
     Object? trackingCode = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_$FulfillmentImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lines: freezed == lines
+              as String,
+      lines: null == lines
           ? _value._lines
           : lines // ignore: cast_nullable_to_non_nullable
-              as List<FulfillmentLine?>?,
-      method: freezed == method
+              as List<FulfillmentLine>,
+      method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      state: freezed == state
+              as String,
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      summary: freezed == summary
+              as String,
+      summary: null == summary
           ? _value._summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as List<FulfillmentLine?>?,
+              as List<FulfillmentLine>,
       trackingCode: freezed == trackingCode
           ? _value.trackingCode
           : trackingCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -204,15 +204,15 @@ class __$$FulfillmentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FulfillmentImpl extends _Fulfillment with DiagnosticableTreeMixin {
   const _$FulfillmentImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.id,
-      final List<FulfillmentLine?>? lines,
-      this.method,
-      this.state,
-      final List<FulfillmentLine?>? summary,
+      required this.id,
+      required final List<FulfillmentLine> lines,
+      required this.method,
+      required this.state,
+      required final List<FulfillmentLine> summary,
       this.trackingCode,
-      this.updatedAt})
+      required this.updatedAt})
       : _customFields = customFields,
         _lines = lines,
         _summary = summary,
@@ -222,7 +222,7 @@ class _$FulfillmentImpl extends _Fulfillment with DiagnosticableTreeMixin {
       _$$FulfillmentImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -234,35 +234,31 @@ class _$FulfillmentImpl extends _Fulfillment with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? id;
-  final List<FulfillmentLine?>? _lines;
+  final String id;
+  final List<FulfillmentLine> _lines;
   @override
-  List<FulfillmentLine?>? get lines {
-    final value = _lines;
-    if (value == null) return null;
+  List<FulfillmentLine> get lines {
     if (_lines is EqualUnmodifiableListView) return _lines;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_lines);
   }
 
   @override
-  final String? method;
+  final String method;
   @override
-  final String? state;
-  final List<FulfillmentLine?>? _summary;
+  final String state;
+  final List<FulfillmentLine> _summary;
   @override
-  List<FulfillmentLine?>? get summary {
-    final value = _summary;
-    if (value == null) return null;
+  List<FulfillmentLine> get summary {
     if (_summary is EqualUnmodifiableListView) return _summary;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_summary);
   }
 
   @override
   final String? trackingCode;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -335,38 +331,38 @@ class _$FulfillmentImpl extends _Fulfillment with DiagnosticableTreeMixin {
 
 abstract class _Fulfillment extends Fulfillment {
   const factory _Fulfillment(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? id,
-      final List<FulfillmentLine?>? lines,
-      final String? method,
-      final String? state,
-      final List<FulfillmentLine?>? summary,
+      required final String id,
+      required final List<FulfillmentLine> lines,
+      required final String method,
+      required final String state,
+      required final List<FulfillmentLine> summary,
       final String? trackingCode,
-      final DateTime? updatedAt}) = _$FulfillmentImpl;
+      required final DateTime updatedAt}) = _$FulfillmentImpl;
   const _Fulfillment._() : super._();
 
   factory _Fulfillment.fromJson(Map<String, dynamic> json) =
       _$FulfillmentImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  List<FulfillmentLine?>? get lines;
+  List<FulfillmentLine> get lines;
   @override
-  String? get method;
+  String get method;
   @override
-  String? get state;
+  String get state;
   @override
-  List<FulfillmentLine?>? get summary;
+  List<FulfillmentLine> get summary;
   @override
   String? get trackingCode;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$FulfillmentImplCopyWith<_$FulfillmentImpl> get copyWith =>

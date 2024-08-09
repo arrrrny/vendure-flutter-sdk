@@ -21,18 +21,32 @@ UpdateAddressInput _$UpdateAddressInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UpdateAddressInput {
   String? get city => throw _privateConstructorUsedError;
+  set city(String? value) => throw _privateConstructorUsedError;
   String? get company => throw _privateConstructorUsedError;
+  set company(String? value) => throw _privateConstructorUsedError;
   String? get countryCode => throw _privateConstructorUsedError;
+  set countryCode(String? value) => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
+  set customFields(Map<String, dynamic>? value) =>
+      throw _privateConstructorUsedError;
   bool? get defaultBillingAddress => throw _privateConstructorUsedError;
+  set defaultBillingAddress(bool? value) => throw _privateConstructorUsedError;
   bool? get defaultShippingAddress => throw _privateConstructorUsedError;
+  set defaultShippingAddress(bool? value) => throw _privateConstructorUsedError;
   String? get fullName => throw _privateConstructorUsedError;
+  set fullName(String? value) => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
+  set id(String value) => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
+  set phoneNumber(String? value) => throw _privateConstructorUsedError;
   String? get postalCode => throw _privateConstructorUsedError;
+  set postalCode(String? value) => throw _privateConstructorUsedError;
   String? get province => throw _privateConstructorUsedError;
+  set province(String? value) => throw _privateConstructorUsedError;
   String? get streetLine1 => throw _privateConstructorUsedError;
+  set streetLine1(String? value) => throw _privateConstructorUsedError;
   String? get streetLine2 => throw _privateConstructorUsedError;
+  set streetLine2(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -209,7 +223,7 @@ class __$$UpdateAddressInputImplCopyWithImpl<$Res>
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
       customFields: freezed == customFields
-          ? _value._customFields
+          ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       defaultBillingAddress: freezed == defaultBillingAddress
@@ -256,11 +270,11 @@ class __$$UpdateAddressInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UpdateAddressInputImpl extends _UpdateAddressInput
     with DiagnosticableTreeMixin {
-  const _$UpdateAddressInputImpl(
+  _$UpdateAddressInputImpl(
       {this.city,
       this.company,
       this.countryCode,
-      final Map<String, dynamic>? customFields,
+      this.customFields,
       this.defaultBillingAddress,
       this.defaultShippingAddress,
       this.fullName,
@@ -270,46 +284,37 @@ class _$UpdateAddressInputImpl extends _UpdateAddressInput
       this.province,
       this.streetLine1,
       this.streetLine2})
-      : _customFields = customFields,
-        super._();
+      : super._();
 
   factory _$UpdateAddressInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdateAddressInputImplFromJson(json);
 
   @override
-  final String? city;
+  String? city;
   @override
-  final String? company;
+  String? company;
   @override
-  final String? countryCode;
-  final Map<String, dynamic>? _customFields;
+  String? countryCode;
   @override
-  Map<String, dynamic>? get customFields {
-    final value = _customFields;
-    if (value == null) return null;
-    if (_customFields is EqualUnmodifiableMapView) return _customFields;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+  Map<String, dynamic>? customFields;
   @override
-  final bool? defaultBillingAddress;
+  bool? defaultBillingAddress;
   @override
-  final bool? defaultShippingAddress;
+  bool? defaultShippingAddress;
   @override
-  final String? fullName;
+  String? fullName;
   @override
-  final String id;
+  String id;
   @override
-  final String? phoneNumber;
+  String? phoneNumber;
   @override
-  final String? postalCode;
+  String? postalCode;
   @override
-  final String? province;
+  String? province;
   @override
-  final String? streetLine1;
+  String? streetLine1;
   @override
-  final String? streetLine2;
+  String? streetLine2;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -337,54 +342,6 @@ class _$UpdateAddressInputImpl extends _UpdateAddressInput
       ..add(DiagnosticsProperty('streetLine2', streetLine2));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateAddressInputImpl &&
-            (identical(other.city, city) || other.city == city) &&
-            (identical(other.company, company) || other.company == company) &&
-            (identical(other.countryCode, countryCode) ||
-                other.countryCode == countryCode) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
-            (identical(other.defaultBillingAddress, defaultBillingAddress) ||
-                other.defaultBillingAddress == defaultBillingAddress) &&
-            (identical(other.defaultShippingAddress, defaultShippingAddress) ||
-                other.defaultShippingAddress == defaultShippingAddress) &&
-            (identical(other.fullName, fullName) ||
-                other.fullName == fullName) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.postalCode, postalCode) ||
-                other.postalCode == postalCode) &&
-            (identical(other.province, province) ||
-                other.province == province) &&
-            (identical(other.streetLine1, streetLine1) ||
-                other.streetLine1 == streetLine1) &&
-            (identical(other.streetLine2, streetLine2) ||
-                other.streetLine2 == streetLine2));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      city,
-      company,
-      countryCode,
-      const DeepCollectionEquality().hash(_customFields),
-      defaultBillingAddress,
-      defaultShippingAddress,
-      fullName,
-      id,
-      phoneNumber,
-      postalCode,
-      province,
-      streetLine1,
-      streetLine2);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -401,51 +358,64 @@ class _$UpdateAddressInputImpl extends _UpdateAddressInput
 }
 
 abstract class _UpdateAddressInput extends UpdateAddressInput {
-  const factory _UpdateAddressInput(
-      {final String? city,
-      final String? company,
-      final String? countryCode,
-      final Map<String, dynamic>? customFields,
-      final bool? defaultBillingAddress,
-      final bool? defaultShippingAddress,
-      final String? fullName,
-      required final String id,
-      final String? phoneNumber,
-      final String? postalCode,
-      final String? province,
-      final String? streetLine1,
-      final String? streetLine2}) = _$UpdateAddressInputImpl;
-  const _UpdateAddressInput._() : super._();
+  factory _UpdateAddressInput(
+      {String? city,
+      String? company,
+      String? countryCode,
+      Map<String, dynamic>? customFields,
+      bool? defaultBillingAddress,
+      bool? defaultShippingAddress,
+      String? fullName,
+      required String id,
+      String? phoneNumber,
+      String? postalCode,
+      String? province,
+      String? streetLine1,
+      String? streetLine2}) = _$UpdateAddressInputImpl;
+  _UpdateAddressInput._() : super._();
 
   factory _UpdateAddressInput.fromJson(Map<String, dynamic> json) =
       _$UpdateAddressInputImpl.fromJson;
 
   @override
   String? get city;
+  set city(String? value);
   @override
   String? get company;
+  set company(String? value);
   @override
   String? get countryCode;
+  set countryCode(String? value);
   @override
   Map<String, dynamic>? get customFields;
+  set customFields(Map<String, dynamic>? value);
   @override
   bool? get defaultBillingAddress;
+  set defaultBillingAddress(bool? value);
   @override
   bool? get defaultShippingAddress;
+  set defaultShippingAddress(bool? value);
   @override
   String? get fullName;
+  set fullName(String? value);
   @override
   String get id;
+  set id(String value);
   @override
   String? get phoneNumber;
+  set phoneNumber(String? value);
   @override
   String? get postalCode;
+  set postalCode(String? value);
   @override
   String? get province;
+  set province(String? value);
   @override
   String? get streetLine1;
+  set streetLine1(String? value);
   @override
   String? get streetLine2;
+  set streetLine2(String? value);
   @override
   @JsonKey(ignore: true)
   _$$UpdateAddressInputImplCopyWith<_$UpdateAddressInputImpl> get copyWith =>

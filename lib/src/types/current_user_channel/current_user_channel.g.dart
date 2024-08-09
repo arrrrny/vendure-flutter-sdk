@@ -9,31 +9,23 @@ part of 'current_user_channel.dart';
 _$CurrentUserChannelImpl _$$CurrentUserChannelImplFromJson(
         Map<String, dynamic> json) =>
     _$CurrentUserChannelImpl(
-      code: json['code'] as String?,
-      id: json['id'] as String?,
-      permissions: (json['permissions'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+      code: json['code'] as String,
+      id: json['id'] as String,
+      permissions: (json['permissions'] as List<dynamic>)
+          .map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      token: json['token'] as String?,
+      token: json['token'] as String,
     );
 
 Map<String, dynamic> _$$CurrentUserChannelImplToJson(
-    _$CurrentUserChannelImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('id', instance.id);
-  writeNotNull('permissions',
-      instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('token', instance.token);
-  return val;
-}
+        _$CurrentUserChannelImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'id': instance.id,
+      'permissions':
+          instance.permissions.map((e) => _$PermissionEnumMap[e]!).toList(),
+      'token': instance.token,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

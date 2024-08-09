@@ -24,26 +24,18 @@ _$CreateAddressInputImpl _$$CreateAddressInputImplFromJson(
     );
 
 Map<String, dynamic> _$$CreateAddressInputImplToJson(
-    _$CreateAddressInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('city', instance.city);
-  writeNotNull('company', instance.company);
-  val['countryCode'] = instance.countryCode;
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('defaultBillingAddress', instance.defaultBillingAddress);
-  writeNotNull('defaultShippingAddress', instance.defaultShippingAddress);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('postalCode', instance.postalCode);
-  writeNotNull('province', instance.province);
-  val['streetLine1'] = instance.streetLine1;
-  writeNotNull('streetLine2', instance.streetLine2);
-  return val;
-}
+        _$CreateAddressInputImpl instance) =>
+    <String, dynamic>{
+      'city': instance.city,
+      'company': instance.company,
+      'countryCode': instance.countryCode,
+      'customFields': instance.customFields,
+      'defaultBillingAddress': instance.defaultBillingAddress,
+      'defaultShippingAddress': instance.defaultShippingAddress,
+      'fullName': instance.fullName,
+      'phoneNumber': instance.phoneNumber,
+      'postalCode': instance.postalCode,
+      'province': instance.province,
+      'streetLine1': instance.streetLine1,
+      'streetLine2': instance.streetLine2,
+    };

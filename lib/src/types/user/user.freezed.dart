@@ -20,16 +20,16 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  List<AuthenticationMethod?>? get authenticationMethods =>
+  List<AuthenticationMethod> get authenticationMethods =>
       throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   UserCustomFields? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get identifier => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get identifier => throw _privateConstructorUsedError;
   DateTime? get lastLogin => throw _privateConstructorUsedError;
-  List<Role?>? get roles => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  bool? get verified => throw _privateConstructorUsedError;
+  List<Role> get roles => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  bool get verified => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,15 +42,15 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {List<AuthenticationMethod?>? authenticationMethods,
-      DateTime? createdAt,
+      {List<AuthenticationMethod> authenticationMethods,
+      DateTime createdAt,
       UserCustomFields? customFields,
-      String? id,
-      String? identifier,
+      String id,
+      String identifier,
       DateTime? lastLogin,
-      List<Role?>? roles,
-      DateTime? updatedAt,
-      bool? verified});
+      List<Role> roles,
+      DateTime updatedAt,
+      bool verified});
 
   $UserCustomFieldsCopyWith<$Res>? get customFields;
 }
@@ -68,53 +68,53 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authenticationMethods = freezed,
-    Object? createdAt = freezed,
+    Object? authenticationMethods = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? identifier = freezed,
+    Object? id = null,
+    Object? identifier = null,
     Object? lastLogin = freezed,
-    Object? roles = freezed,
-    Object? updatedAt = freezed,
-    Object? verified = freezed,
+    Object? roles = null,
+    Object? updatedAt = null,
+    Object? verified = null,
   }) {
     return _then(_value.copyWith(
-      authenticationMethods: freezed == authenticationMethods
+      authenticationMethods: null == authenticationMethods
           ? _value.authenticationMethods
           : authenticationMethods // ignore: cast_nullable_to_non_nullable
-              as List<AuthenticationMethod?>?,
-      createdAt: freezed == createdAt
+              as List<AuthenticationMethod>,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as UserCustomFields?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
+              as String,
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       lastLogin: freezed == lastLogin
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      roles: freezed == roles
+      roles: null == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
-              as List<Role?>?,
-      updatedAt: freezed == updatedAt
+              as List<Role>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      verified: freezed == verified
+              as DateTime,
+      verified: null == verified
           ? _value.verified
           : verified // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ) as $Val);
   }
 
@@ -139,15 +139,15 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {List<AuthenticationMethod?>? authenticationMethods,
-      DateTime? createdAt,
+      {List<AuthenticationMethod> authenticationMethods,
+      DateTime createdAt,
       UserCustomFields? customFields,
-      String? id,
-      String? identifier,
+      String id,
+      String identifier,
       DateTime? lastLogin,
-      List<Role?>? roles,
-      DateTime? updatedAt,
-      bool? verified});
+      List<Role> roles,
+      DateTime updatedAt,
+      bool verified});
 
   @override
   $UserCustomFieldsCopyWith<$Res>? get customFields;
@@ -163,53 +163,53 @@ class __$$UserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authenticationMethods = freezed,
-    Object? createdAt = freezed,
+    Object? authenticationMethods = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? identifier = freezed,
+    Object? id = null,
+    Object? identifier = null,
     Object? lastLogin = freezed,
-    Object? roles = freezed,
-    Object? updatedAt = freezed,
-    Object? verified = freezed,
+    Object? roles = null,
+    Object? updatedAt = null,
+    Object? verified = null,
   }) {
     return _then(_$UserImpl(
-      authenticationMethods: freezed == authenticationMethods
+      authenticationMethods: null == authenticationMethods
           ? _value._authenticationMethods
           : authenticationMethods // ignore: cast_nullable_to_non_nullable
-              as List<AuthenticationMethod?>?,
-      createdAt: freezed == createdAt
+              as List<AuthenticationMethod>,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as UserCustomFields?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
+              as String,
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       lastLogin: freezed == lastLogin
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      roles: freezed == roles
+      roles: null == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
-              as List<Role?>?,
-      updatedAt: freezed == updatedAt
+              as List<Role>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      verified: freezed == verified
+              as DateTime,
+      verified: null == verified
           ? _value.verified
           : verified // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -218,15 +218,15 @@ class __$$UserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserImpl extends _User with DiagnosticableTreeMixin {
   const _$UserImpl(
-      {final List<AuthenticationMethod?>? authenticationMethods,
-      this.createdAt,
+      {required final List<AuthenticationMethod> authenticationMethods,
+      required this.createdAt,
       this.customFields,
-      this.id,
-      this.identifier,
+      required this.id,
+      required this.identifier,
       this.lastLogin,
-      final List<Role?>? roles,
-      this.updatedAt,
-      this.verified})
+      required final List<Role> roles,
+      required this.updatedAt,
+      required this.verified})
       : _authenticationMethods = authenticationMethods,
         _roles = roles,
         super._();
@@ -234,41 +234,37 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
-  final List<AuthenticationMethod?>? _authenticationMethods;
+  final List<AuthenticationMethod> _authenticationMethods;
   @override
-  List<AuthenticationMethod?>? get authenticationMethods {
-    final value = _authenticationMethods;
-    if (value == null) return null;
+  List<AuthenticationMethod> get authenticationMethods {
     if (_authenticationMethods is EqualUnmodifiableListView)
       return _authenticationMethods;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_authenticationMethods);
   }
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
   final UserCustomFields? customFields;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? identifier;
+  final String identifier;
   @override
   final DateTime? lastLogin;
-  final List<Role?>? _roles;
+  final List<Role> _roles;
   @override
-  List<Role?>? get roles {
-    final value = _roles;
-    if (value == null) return null;
+  List<Role> get roles {
     if (_roles is EqualUnmodifiableListView) return _roles;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_roles);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
   @override
-  final bool? verified;
+  final bool verified;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -344,37 +340,37 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
 
 abstract class _User extends User {
   const factory _User(
-      {final List<AuthenticationMethod?>? authenticationMethods,
-      final DateTime? createdAt,
+      {required final List<AuthenticationMethod> authenticationMethods,
+      required final DateTime createdAt,
       final UserCustomFields? customFields,
-      final String? id,
-      final String? identifier,
+      required final String id,
+      required final String identifier,
       final DateTime? lastLogin,
-      final List<Role?>? roles,
-      final DateTime? updatedAt,
-      final bool? verified}) = _$UserImpl;
+      required final List<Role> roles,
+      required final DateTime updatedAt,
+      required final bool verified}) = _$UserImpl;
   const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  List<AuthenticationMethod?>? get authenticationMethods;
+  List<AuthenticationMethod> get authenticationMethods;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   UserCustomFields? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get identifier;
+  String get identifier;
   @override
   DateTime? get lastLogin;
   @override
-  List<Role?>? get roles;
+  List<Role> get roles;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
-  bool? get verified;
+  bool get verified;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

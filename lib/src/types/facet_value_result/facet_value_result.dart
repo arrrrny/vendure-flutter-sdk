@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/facet_value/facet_value.dart';
+import '../facet_value/facet_value.dart';
 
 part 'facet_value_result.freezed.dart';
 part 'facet_value_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class FacetValueResult with _$FacetValueResult {
   const FacetValueResult._();
 
   const factory FacetValueResult({
-    int? count,
-    FacetValue? facetValue,
+    required int count,
+    required FacetValue facetValue,
   }) = _FacetValueResult;
 
   factory FacetValueResult.fromJson(Map<String, dynamic> json) =>

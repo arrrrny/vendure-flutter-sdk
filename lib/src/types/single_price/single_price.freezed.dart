@@ -20,7 +20,7 @@ SinglePrice _$SinglePriceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SinglePrice {
-  double? get value => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $SinglePriceCopyWith<$Res> {
           SinglePrice value, $Res Function(SinglePrice) then) =
       _$SinglePriceCopyWithImpl<$Res, SinglePrice>;
   @useResult
-  $Res call({double? value});
+  $Res call({double value});
 }
 
 /// @nodoc
@@ -50,13 +50,13 @@ class _$SinglePriceCopyWithImpl<$Res, $Val extends SinglePrice>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      value: freezed == value
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -69,7 +69,7 @@ abstract class _$$SinglePriceImplCopyWith<$Res>
       __$$SinglePriceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double? value});
+  $Res call({double value});
 }
 
 /// @nodoc
@@ -83,13 +83,13 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$SinglePriceImpl(
-      value: freezed == value
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -97,13 +97,13 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SinglePriceImpl extends _SinglePrice with DiagnosticableTreeMixin {
-  const _$SinglePriceImpl({this.value}) : super._();
+  const _$SinglePriceImpl({required this.value}) : super._();
 
   factory _$SinglePriceImpl.fromJson(Map<String, dynamic> json) =>
       _$$SinglePriceImplFromJson(json);
 
   @override
-  final double? value;
+  final double value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -145,14 +145,14 @@ class _$SinglePriceImpl extends _SinglePrice with DiagnosticableTreeMixin {
 }
 
 abstract class _SinglePrice extends SinglePrice {
-  const factory _SinglePrice({final double? value}) = _$SinglePriceImpl;
+  const factory _SinglePrice({required final double value}) = _$SinglePriceImpl;
   const _SinglePrice._() : super._();
 
   factory _SinglePrice.fromJson(Map<String, dynamic> json) =
       _$SinglePriceImpl.fromJson;
 
   @override
-  double? get value;
+  double get value;
   @override
   @JsonKey(ignore: true)
   _$$SinglePriceImplCopyWith<_$SinglePriceImpl> get copyWith =>

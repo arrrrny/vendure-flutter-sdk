@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/customer_filter_parameter/customer_filter_parameter.dart';
-import 'package:vendure/src/types/customer_sort_parameter/customer_sort_parameter.dart';
-import 'package:vendure/src/types/logical_operator/logical_operator.dart';
+import '../customer_filter_parameter/customer_filter_parameter.dart';
+import '../customer_sort_parameter/customer_sort_parameter.dart';
+import '../types/logical_operator/logical_operator.dart';
 
 part 'customer_list_options.freezed.dart';
 part 'customer_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class CustomerListOptions with _$CustomerListOptions {
   const CustomerListOptions._();
 
-  const factory CustomerListOptions({
+  factory CustomerListOptions({
     /// Allows the results to be filtered
     CustomerFilterParameter? filter,
 

@@ -20,9 +20,9 @@ CollectionBreadcrumb _$CollectionBreadcrumbFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CollectionBreadcrumb {
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $CollectionBreadcrumbCopyWith<$Res> {
           $Res Function(CollectionBreadcrumb) then) =
       _$CollectionBreadcrumbCopyWithImpl<$Res, CollectionBreadcrumb>;
   @useResult
-  $Res call({String? id, String? name, String? slug});
+  $Res call({String id, String name, String slug});
 }
 
 /// @nodoc
@@ -53,23 +53,23 @@ class _$CollectionBreadcrumbCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? slug = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? slug = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: freezed == slug
+              as String,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -82,7 +82,7 @@ abstract class _$$CollectionBreadcrumbImplCopyWith<$Res>
       __$$CollectionBreadcrumbImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? name, String? slug});
+  $Res call({String id, String name, String slug});
 }
 
 /// @nodoc
@@ -96,23 +96,23 @@ class __$$CollectionBreadcrumbImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? slug = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? slug = null,
   }) {
     return _then(_$CollectionBreadcrumbImpl(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: freezed == slug
+              as String,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -121,17 +121,19 @@ class __$$CollectionBreadcrumbImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionBreadcrumbImpl extends _CollectionBreadcrumb
     with DiagnosticableTreeMixin {
-  const _$CollectionBreadcrumbImpl({this.id, this.name, this.slug}) : super._();
+  const _$CollectionBreadcrumbImpl(
+      {required this.id, required this.name, required this.slug})
+      : super._();
 
   factory _$CollectionBreadcrumbImpl.fromJson(Map<String, dynamic> json) =>
       _$$CollectionBreadcrumbImplFromJson(json);
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
-  final String? slug;
+  final String slug;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -180,20 +182,20 @@ class _$CollectionBreadcrumbImpl extends _CollectionBreadcrumb
 
 abstract class _CollectionBreadcrumb extends CollectionBreadcrumb {
   const factory _CollectionBreadcrumb(
-      {final String? id,
-      final String? name,
-      final String? slug}) = _$CollectionBreadcrumbImpl;
+      {required final String id,
+      required final String name,
+      required final String slug}) = _$CollectionBreadcrumbImpl;
   const _CollectionBreadcrumb._() : super._();
 
   factory _CollectionBreadcrumb.fromJson(Map<String, dynamic> json) =
       _$CollectionBreadcrumbImpl.fromJson;
 
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
-  String? get slug;
+  String get slug;
   @override
   @JsonKey(ignore: true)
   _$$CollectionBreadcrumbImplCopyWith<_$CollectionBreadcrumbImpl>

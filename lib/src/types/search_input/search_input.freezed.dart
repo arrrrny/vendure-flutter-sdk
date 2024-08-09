@@ -21,15 +21,26 @@ SearchInput _$SearchInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SearchInput {
   String? get collectionId => throw _privateConstructorUsedError;
+  set collectionId(String? value) => throw _privateConstructorUsedError;
   String? get collectionSlug => throw _privateConstructorUsedError;
+  set collectionSlug(String? value) => throw _privateConstructorUsedError;
   List<FacetValueFilterInput>? get facetValueFilters =>
       throw _privateConstructorUsedError;
+  set facetValueFilters(List<FacetValueFilterInput>? value) =>
+      throw _privateConstructorUsedError;
   bool? get groupByProduct => throw _privateConstructorUsedError;
+  set groupByProduct(bool? value) => throw _privateConstructorUsedError;
   bool? get inStock => throw _privateConstructorUsedError;
+  set inStock(bool? value) => throw _privateConstructorUsedError;
   int? get skip => throw _privateConstructorUsedError;
+  set skip(int? value) => throw _privateConstructorUsedError;
   SearchResultSortParameter? get sort => throw _privateConstructorUsedError;
+  set sort(SearchResultSortParameter? value) =>
+      throw _privateConstructorUsedError;
   int? get take => throw _privateConstructorUsedError;
+  set take(int? value) => throw _privateConstructorUsedError;
   String? get term => throw _privateConstructorUsedError;
+  set term(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -187,7 +198,7 @@ class __$$SearchInputImplCopyWithImpl<$Res>
           : collectionSlug // ignore: cast_nullable_to_non_nullable
               as String?,
       facetValueFilters: freezed == facetValueFilters
-          ? _value._facetValueFilters
+          ? _value.facetValueFilters
           : facetValueFilters // ignore: cast_nullable_to_non_nullable
               as List<FacetValueFilterInput>?,
       groupByProduct: freezed == groupByProduct
@@ -221,49 +232,39 @@ class __$$SearchInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
-  const _$SearchInputImpl(
+  _$SearchInputImpl(
       {this.collectionId,
       this.collectionSlug,
-      final List<FacetValueFilterInput>? facetValueFilters,
+      this.facetValueFilters,
       this.groupByProduct,
       this.inStock,
       this.skip,
       this.sort,
       this.take,
       this.term})
-      : _facetValueFilters = facetValueFilters,
-        super._();
+      : super._();
 
   factory _$SearchInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchInputImplFromJson(json);
 
   @override
-  final String? collectionId;
+  String? collectionId;
   @override
-  final String? collectionSlug;
-  final List<FacetValueFilterInput>? _facetValueFilters;
+  String? collectionSlug;
   @override
-  List<FacetValueFilterInput>? get facetValueFilters {
-    final value = _facetValueFilters;
-    if (value == null) return null;
-    if (_facetValueFilters is EqualUnmodifiableListView)
-      return _facetValueFilters;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<FacetValueFilterInput>? facetValueFilters;
   @override
-  final bool? groupByProduct;
+  bool? groupByProduct;
   @override
-  final bool? inStock;
+  bool? inStock;
   @override
-  final int? skip;
+  int? skip;
   @override
-  final SearchResultSortParameter? sort;
+  SearchResultSortParameter? sort;
   @override
-  final int? take;
+  int? take;
   @override
-  final String? term;
+  String? term;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -286,40 +287,6 @@ class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('term', term));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SearchInputImpl &&
-            (identical(other.collectionId, collectionId) ||
-                other.collectionId == collectionId) &&
-            (identical(other.collectionSlug, collectionSlug) ||
-                other.collectionSlug == collectionSlug) &&
-            const DeepCollectionEquality()
-                .equals(other._facetValueFilters, _facetValueFilters) &&
-            (identical(other.groupByProduct, groupByProduct) ||
-                other.groupByProduct == groupByProduct) &&
-            (identical(other.inStock, inStock) || other.inStock == inStock) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take) &&
-            (identical(other.term, term) || other.term == term));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      collectionId,
-      collectionSlug,
-      const DeepCollectionEquality().hash(_facetValueFilters),
-      groupByProduct,
-      inStock,
-      skip,
-      sort,
-      take,
-      term);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -335,39 +302,48 @@ class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
 }
 
 abstract class _SearchInput extends SearchInput {
-  const factory _SearchInput(
-      {final String? collectionId,
-      final String? collectionSlug,
-      final List<FacetValueFilterInput>? facetValueFilters,
-      final bool? groupByProduct,
-      final bool? inStock,
-      final int? skip,
-      final SearchResultSortParameter? sort,
-      final int? take,
-      final String? term}) = _$SearchInputImpl;
-  const _SearchInput._() : super._();
+  factory _SearchInput(
+      {String? collectionId,
+      String? collectionSlug,
+      List<FacetValueFilterInput>? facetValueFilters,
+      bool? groupByProduct,
+      bool? inStock,
+      int? skip,
+      SearchResultSortParameter? sort,
+      int? take,
+      String? term}) = _$SearchInputImpl;
+  _SearchInput._() : super._();
 
   factory _SearchInput.fromJson(Map<String, dynamic> json) =
       _$SearchInputImpl.fromJson;
 
   @override
   String? get collectionId;
+  set collectionId(String? value);
   @override
   String? get collectionSlug;
+  set collectionSlug(String? value);
   @override
   List<FacetValueFilterInput>? get facetValueFilters;
+  set facetValueFilters(List<FacetValueFilterInput>? value);
   @override
   bool? get groupByProduct;
+  set groupByProduct(bool? value);
   @override
   bool? get inStock;
+  set inStock(bool? value);
   @override
   int? get skip;
+  set skip(int? value);
   @override
   SearchResultSortParameter? get sort;
+  set sort(SearchResultSortParameter? value);
   @override
   int? get take;
+  set take(int? value);
   @override
   String? get term;
+  set term(String? value);
   @override
   @JsonKey(ignore: true)
   _$$SearchInputImplCopyWith<_$SearchInputImpl> get copyWith =>

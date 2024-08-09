@@ -18,20 +18,11 @@ class CustomOperations {
     );
     final client = await _client();
     final result = await client.mutate(options);
-    var data = expectedDataType != null && result.data != null
-        ? result.data![expectedDataType]
-        : result.data;
+    Map<String, dynamic> data = _handleErrors(result, expectedDataType);
 
-    if (data != null && data['__typename'] == 'ErrorResult') {
-      throw Exception(data['message']);
-    }
+    data = VendureUtils.normalizeGraphQLData(data);
 
-    if (result.hasException) {
-      throw Exception(result.exception.toString());
-    }
-
-    data = VendureUtils.normalizeGraphQLData(data!);
-    return fromJson(data as Map<String, dynamic>);
+    return fromJson(data);
   }
 
   Future<T> query<T>(String query, Map<String, dynamic> variables,
@@ -45,18 +36,30 @@ class CustomOperations {
     final client = await _client();
     final result = await client.query(options);
 
+    Map<String, dynamic> data = _handleErrors(result, expectedDataType);
+
+    data = VendureUtils.normalizeGraphQLData(data);
+    return fromJson(data);
+  }
+
+  Map<String, dynamic> _handleErrors(
+      QueryResult<Object?> result, String? expectedDataType) {
     if (result.hasException) {
       throw Exception(result.exception.toString());
     }
-    var data = expectedDataType != null && result.data != null
+    Map<String, dynamic>? data = expectedDataType != null &&
+            result.data != null &&
+            result.data!.containsKey(expectedDataType)
         ? result.data![expectedDataType]
         : result.data;
-
-    if (data != null && data['__typename'] == 'ErrorResult') {
+    if (data == null) {
+      throw Exception(
+          'No data returned or parsed from result ${result.toString()}');
+    }
+    if (data['__typename'] == 'ErrorResult') {
       throw Exception(data['message']);
     }
-    data = VendureUtils.normalizeGraphQLData(data!);
-    return fromJson(data as Map<String, dynamic>);
+    return data;
   }
 
   Future<List<T>> queryList<T>(String query, Map<String, dynamic> variables,
@@ -73,9 +76,18 @@ class CustomOperations {
       throw Exception(result.exception.toString());
     }
 
-    var data = expectedDataType != null && result.data != null
+    var data = expectedDataType != null &&
+            result.data != null &&
+            result.data!.containsKey(expectedDataType)
         ? result.data![expectedDataType]
         : result.data;
+    if (expectedDataType!.contains('.')) {
+      final parts = expectedDataType.split('.');
+      for (var part in parts) {
+        data = data[part];
+      }
+    }
+
     if (data is Map && data['__typename'] == 'ErrorResult') {
       throw Exception(data['message']);
     }
@@ -83,7 +95,9 @@ class CustomOperations {
     if (data is! List) {
       throw Exception('data must be a list in queryList');
     }
-
+    if (data.isNotEmpty && data.first is T) {
+      return List<T>.from(data);
+    }
     return data
         .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
         .toList();

@@ -10,51 +10,39 @@ _$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(
         Map<String, dynamic> json) =>
     _$TextCustomFieldConfigImpl(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => LocalizedString.fromJson(e as Map<String, dynamic>))
           .toList(),
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
+      list: json['list'] as bool,
+      name: json['name'] as String,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+          ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String?,
+      type: json['type'] as String,
       ui: json['ui'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$TextCustomFieldConfigImplToJson(
-    _$TextCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  return val;
-}
+        _$TextCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      'description': instance.description,
+      'internal': instance.internal,
+      'label': instance.label,
+      'list': instance.list,
+      'name': instance.name,
+      'nullable': instance.nullable,
+      'readonly': instance.readonly,
+      'requiresPermission': instance.requiresPermission
+          ?.map((e) => _$PermissionEnumMap[e]!)
+          .toList(),
+      'type': instance.type,
+      'ui': instance.ui,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

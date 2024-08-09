@@ -23,18 +23,35 @@ mixin _$OrderListOptions {
   /// Allows the results to be filtered
   OrderFilterParameter? get filter => throw _privateConstructorUsedError;
 
+  /// Allows the results to be filtered
+  set filter(OrderFilterParameter? value) => throw _privateConstructorUsedError;
+
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
 
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value) =>
+      throw _privateConstructorUsedError;
+
   /// Skips the first n results, for use in pagination
   int? get skip => throw _privateConstructorUsedError;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value) => throw _privateConstructorUsedError;
 
   /// Specifies which properties to sort the results by
   OrderSortParameter? get sort => throw _privateConstructorUsedError;
 
+  /// Specifies which properties to sort the results by
+  set sort(OrderSortParameter? value) => throw _privateConstructorUsedError;
+
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
+
+  /// Takes n results, for use in pagination
+  set take(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -194,7 +211,7 @@ class __$$OrderListOptionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderListOptionsImpl extends _OrderListOptions
     with DiagnosticableTreeMixin {
-  const _$OrderListOptionsImpl(
+  _$OrderListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
 
@@ -203,24 +220,24 @@ class _$OrderListOptionsImpl extends _OrderListOptions
 
   /// Allows the results to be filtered
   @override
-  final OrderFilterParameter? filter;
+  OrderFilterParameter? filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   @override
-  final LogicalOperator? filterOperator;
+  LogicalOperator? filterOperator;
 
   /// Skips the first n results, for use in pagination
   @override
-  final int? skip;
+  int? skip;
 
   /// Specifies which properties to sort the results by
   @override
-  final OrderSortParameter? sort;
+  OrderSortParameter? sort;
 
   /// Takes n results, for use in pagination
   @override
-  final int? take;
+  int? take;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -239,24 +256,6 @@ class _$OrderListOptionsImpl extends _OrderListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OrderListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -273,13 +272,13 @@ class _$OrderListOptionsImpl extends _OrderListOptions
 }
 
 abstract class _OrderListOptions extends OrderListOptions {
-  const factory _OrderListOptions(
-      {final OrderFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final OrderSortParameter? sort,
-      final int? take}) = _$OrderListOptionsImpl;
-  const _OrderListOptions._() : super._();
+  factory _OrderListOptions(
+      {OrderFilterParameter? filter,
+      LogicalOperator? filterOperator,
+      int? skip,
+      OrderSortParameter? sort,
+      int? take}) = _$OrderListOptionsImpl;
+  _OrderListOptions._() : super._();
 
   factory _OrderListOptions.fromJson(Map<String, dynamic> json) =
       _$OrderListOptionsImpl.fromJson;
@@ -288,23 +287,39 @@ abstract class _OrderListOptions extends OrderListOptions {
 
   /// Allows the results to be filtered
   OrderFilterParameter? get filter;
+
+  /// Allows the results to be filtered
+  set filter(OrderFilterParameter? value);
   @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator;
+
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value);
   @override
 
   /// Skips the first n results, for use in pagination
   int? get skip;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value);
   @override
 
   /// Specifies which properties to sort the results by
   OrderSortParameter? get sort;
+
+  /// Specifies which properties to sort the results by
+  set sort(OrderSortParameter? value);
   @override
 
   /// Takes n results, for use in pagination
   int? get take;
+
+  /// Takes n results, for use in pagination
+  set take(int? value);
   @override
   @JsonKey(ignore: true)
   _$$OrderListOptionsImplCopyWith<_$OrderListOptionsImpl> get copyWith =>

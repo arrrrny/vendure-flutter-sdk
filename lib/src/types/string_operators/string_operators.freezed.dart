@@ -21,14 +21,23 @@ StringOperators _$StringOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StringOperators {
   String? get contains => throw _privateConstructorUsedError;
+  set contains(String? value) => throw _privateConstructorUsedError;
   String? get eq => throw _privateConstructorUsedError;
+  set eq(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'in')
   List<String>? get in_ => throw _privateConstructorUsedError;
+  @JsonKey(name: 'in')
+  set in_(List<String>? value) => throw _privateConstructorUsedError;
   bool? get isNull => throw _privateConstructorUsedError;
+  set isNull(bool? value) => throw _privateConstructorUsedError;
   String? get notContains => throw _privateConstructorUsedError;
+  set notContains(String? value) => throw _privateConstructorUsedError;
   String? get notEq => throw _privateConstructorUsedError;
+  set notEq(String? value) => throw _privateConstructorUsedError;
   List<String>? get notIn => throw _privateConstructorUsedError;
+  set notIn(List<String>? value) => throw _privateConstructorUsedError;
   String? get regex => throw _privateConstructorUsedError;
+  set regex(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -161,7 +170,7 @@ class __$$StringOperatorsImplCopyWithImpl<$Res>
           : eq // ignore: cast_nullable_to_non_nullable
               as String?,
       in_: freezed == in_
-          ? _value._in_
+          ? _value.in_
           : in_ // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       isNull: freezed == isNull
@@ -177,7 +186,7 @@ class __$$StringOperatorsImplCopyWithImpl<$Res>
           : notEq // ignore: cast_nullable_to_non_nullable
               as String?,
       notIn: freezed == notIn
-          ? _value._notIn
+          ? _value.notIn
           : notIn // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       regex: freezed == regex
@@ -192,55 +201,37 @@ class __$$StringOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StringOperatorsImpl extends _StringOperators
     with DiagnosticableTreeMixin {
-  const _$StringOperatorsImpl(
+  _$StringOperatorsImpl(
       {this.contains,
       this.eq,
-      @JsonKey(name: 'in') final List<String>? in_,
+      @JsonKey(name: 'in') this.in_,
       this.isNull,
       this.notContains,
       this.notEq,
-      final List<String>? notIn,
+      this.notIn,
       this.regex})
-      : _in_ = in_,
-        _notIn = notIn,
-        super._();
+      : super._();
 
   factory _$StringOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$StringOperatorsImplFromJson(json);
 
   @override
-  final String? contains;
+  String? contains;
   @override
-  final String? eq;
-  final List<String>? _in_;
+  String? eq;
   @override
   @JsonKey(name: 'in')
-  List<String>? get in_ {
-    final value = _in_;
-    if (value == null) return null;
-    if (_in_ is EqualUnmodifiableListView) return _in_;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<String>? in_;
   @override
-  final bool? isNull;
+  bool? isNull;
   @override
-  final String? notContains;
+  String? notContains;
   @override
-  final String? notEq;
-  final List<String>? _notIn;
+  String? notEq;
   @override
-  List<String>? get notIn {
-    final value = _notIn;
-    if (value == null) return null;
-    if (_notIn is EqualUnmodifiableListView) return _notIn;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<String>? notIn;
   @override
-  final String? regex;
+  String? regex;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -262,36 +253,6 @@ class _$StringOperatorsImpl extends _StringOperators
       ..add(DiagnosticsProperty('regex', regex));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StringOperatorsImpl &&
-            (identical(other.contains, contains) ||
-                other.contains == contains) &&
-            (identical(other.eq, eq) || other.eq == eq) &&
-            const DeepCollectionEquality().equals(other._in_, _in_) &&
-            (identical(other.isNull, isNull) || other.isNull == isNull) &&
-            (identical(other.notContains, notContains) ||
-                other.notContains == notContains) &&
-            (identical(other.notEq, notEq) || other.notEq == notEq) &&
-            const DeepCollectionEquality().equals(other._notIn, _notIn) &&
-            (identical(other.regex, regex) || other.regex == regex));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      contains,
-      eq,
-      const DeepCollectionEquality().hash(_in_),
-      isNull,
-      notContains,
-      notEq,
-      const DeepCollectionEquality().hash(_notIn),
-      regex);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -308,37 +269,46 @@ class _$StringOperatorsImpl extends _StringOperators
 }
 
 abstract class _StringOperators extends StringOperators {
-  const factory _StringOperators(
-      {final String? contains,
-      final String? eq,
-      @JsonKey(name: 'in') final List<String>? in_,
-      final bool? isNull,
-      final String? notContains,
-      final String? notEq,
-      final List<String>? notIn,
-      final String? regex}) = _$StringOperatorsImpl;
-  const _StringOperators._() : super._();
+  factory _StringOperators(
+      {String? contains,
+      String? eq,
+      @JsonKey(name: 'in') List<String>? in_,
+      bool? isNull,
+      String? notContains,
+      String? notEq,
+      List<String>? notIn,
+      String? regex}) = _$StringOperatorsImpl;
+  _StringOperators._() : super._();
 
   factory _StringOperators.fromJson(Map<String, dynamic> json) =
       _$StringOperatorsImpl.fromJson;
 
   @override
   String? get contains;
+  set contains(String? value);
   @override
   String? get eq;
+  set eq(String? value);
   @override
   @JsonKey(name: 'in')
   List<String>? get in_;
+  @JsonKey(name: 'in')
+  set in_(List<String>? value);
   @override
   bool? get isNull;
+  set isNull(bool? value);
   @override
   String? get notContains;
+  set notContains(String? value);
   @override
   String? get notEq;
+  set notEq(String? value);
   @override
   List<String>? get notIn;
+  set notIn(List<String>? value);
   @override
   String? get regex;
+  set regex(String? value);
   @override
   @JsonKey(ignore: true)
   _$$StringOperatorsImplCopyWith<_$StringOperatorsImpl> get copyWith =>

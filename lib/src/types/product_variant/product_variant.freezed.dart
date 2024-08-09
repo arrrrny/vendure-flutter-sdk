@@ -20,27 +20,27 @@ ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductVariant {
-  List<Asset?>? get assets => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  CurrencyCode? get currencyCode => throw _privateConstructorUsedError;
+  List<Asset> get assets => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  CurrencyCode get currencyCode => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  List<FacetValue?>? get facetValues => throw _privateConstructorUsedError;
+  List<FacetValue> get facetValues => throw _privateConstructorUsedError;
   Asset? get featuredAsset => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<ProductOption?>? get options => throw _privateConstructorUsedError;
-  double? get price => throw _privateConstructorUsedError;
-  double? get priceWithTax => throw _privateConstructorUsedError;
-  Product? get product => throw _privateConstructorUsedError;
-  String? get productId => throw _privateConstructorUsedError;
-  String? get sku => throw _privateConstructorUsedError;
-  String? get stockLevel => throw _privateConstructorUsedError;
-  TaxCategory? get taxCategory => throw _privateConstructorUsedError;
-  TaxRate? get taxRateApplied => throw _privateConstructorUsedError;
-  List<ProductVariantTranslation?>? get translations =>
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<ProductOption> get options => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
+  double get priceWithTax => throw _privateConstructorUsedError;
+  Product get product => throw _privateConstructorUsedError;
+  String get productId => throw _privateConstructorUsedError;
+  String get sku => throw _privateConstructorUsedError;
+  String get stockLevel => throw _privateConstructorUsedError;
+  TaxCategory get taxCategory => throw _privateConstructorUsedError;
+  TaxRate get taxRateApplied => throw _privateConstructorUsedError;
+  List<ProductVariantTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,31 +55,31 @@ abstract class $ProductVariantCopyWith<$Res> {
       _$ProductVariantCopyWithImpl<$Res, ProductVariant>;
   @useResult
   $Res call(
-      {List<Asset?>? assets,
-      DateTime? createdAt,
-      CurrencyCode? currencyCode,
+      {List<Asset> assets,
+      DateTime createdAt,
+      CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
-      List<FacetValue?>? facetValues,
+      List<FacetValue> facetValues,
       Asset? featuredAsset,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ProductOption?>? options,
-      double? price,
-      double? priceWithTax,
-      Product? product,
-      String? productId,
-      String? sku,
-      String? stockLevel,
-      TaxCategory? taxCategory,
-      TaxRate? taxRateApplied,
-      List<ProductVariantTranslation?>? translations,
-      DateTime? updatedAt});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ProductOption> options,
+      double price,
+      double priceWithTax,
+      Product product,
+      String productId,
+      String sku,
+      String stockLevel,
+      TaxCategory taxCategory,
+      TaxRate taxRateApplied,
+      List<ProductVariantTranslation> translations,
+      DateTime updatedAt});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $ProductCopyWith<$Res>? get product;
-  $TaxCategoryCopyWith<$Res>? get taxCategory;
-  $TaxRateCopyWith<$Res>? get taxRateApplied;
+  $ProductCopyWith<$Res> get product;
+  $TaxCategoryCopyWith<$Res> get taxCategory;
+  $TaxRateCopyWith<$Res> get taxRateApplied;
 }
 
 /// @nodoc
@@ -95,108 +95,108 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assets = freezed,
-    Object? createdAt = freezed,
-    Object? currencyCode = freezed,
+    Object? assets = null,
+    Object? createdAt = null,
+    Object? currencyCode = null,
     Object? customFields = freezed,
-    Object? facetValues = freezed,
+    Object? facetValues = null,
     Object? featuredAsset = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? options = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
-    Object? product = freezed,
-    Object? productId = freezed,
-    Object? sku = freezed,
-    Object? stockLevel = freezed,
-    Object? taxCategory = freezed,
-    Object? taxRateApplied = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? options = null,
+    Object? price = null,
+    Object? priceWithTax = null,
+    Object? product = null,
+    Object? productId = null,
+    Object? sku = null,
+    Object? stockLevel = null,
+    Object? taxCategory = null,
+    Object? taxRateApplied = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      assets: freezed == assets
+      assets: null == assets
           ? _value.assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      createdAt: freezed == createdAt
+              as List<Asset>,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      currencyCode: freezed == currencyCode
+              as DateTime,
+      currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
+              as CurrencyCode,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      facetValues: freezed == facetValues
+      facetValues: null == facetValues
           ? _value.facetValues
           : facetValues // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
+              as List<FacetValue>,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      options: freezed == options
+              as String,
+      options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<ProductOption?>?,
-      price: freezed == price
+              as List<ProductOption>,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      product: freezed == product
+              as double,
+      product: null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as Product?,
-      productId: freezed == productId
+              as Product,
+      productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sku: freezed == sku
+              as String,
+      sku: null == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
-              as String?,
-      stockLevel: freezed == stockLevel
+              as String,
+      stockLevel: null == stockLevel
           ? _value.stockLevel
           : stockLevel // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxCategory: freezed == taxCategory
+              as String,
+      taxCategory: null == taxCategory
           ? _value.taxCategory
           : taxCategory // ignore: cast_nullable_to_non_nullable
-              as TaxCategory?,
-      taxRateApplied: freezed == taxRateApplied
+              as TaxCategory,
+      taxRateApplied: null == taxRateApplied
           ? _value.taxRateApplied
           : taxRateApplied // ignore: cast_nullable_to_non_nullable
-              as TaxRate?,
-      translations: freezed == translations
+              as TaxRate,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ProductVariantTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ProductVariantTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
@@ -214,36 +214,24 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
 
   @override
   @pragma('vm:prefer-inline')
-  $ProductCopyWith<$Res>? get product {
-    if (_value.product == null) {
-      return null;
-    }
-
-    return $ProductCopyWith<$Res>(_value.product!, (value) {
+  $ProductCopyWith<$Res> get product {
+    return $ProductCopyWith<$Res>(_value.product, (value) {
       return _then(_value.copyWith(product: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TaxCategoryCopyWith<$Res>? get taxCategory {
-    if (_value.taxCategory == null) {
-      return null;
-    }
-
-    return $TaxCategoryCopyWith<$Res>(_value.taxCategory!, (value) {
+  $TaxCategoryCopyWith<$Res> get taxCategory {
+    return $TaxCategoryCopyWith<$Res>(_value.taxCategory, (value) {
       return _then(_value.copyWith(taxCategory: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TaxRateCopyWith<$Res>? get taxRateApplied {
-    if (_value.taxRateApplied == null) {
-      return null;
-    }
-
-    return $TaxRateCopyWith<$Res>(_value.taxRateApplied!, (value) {
+  $TaxRateCopyWith<$Res> get taxRateApplied {
+    return $TaxRateCopyWith<$Res>(_value.taxRateApplied, (value) {
       return _then(_value.copyWith(taxRateApplied: value) as $Val);
     });
   }
@@ -258,35 +246,35 @@ abstract class _$$ProductVariantImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<Asset?>? assets,
-      DateTime? createdAt,
-      CurrencyCode? currencyCode,
+      {List<Asset> assets,
+      DateTime createdAt,
+      CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
-      List<FacetValue?>? facetValues,
+      List<FacetValue> facetValues,
       Asset? featuredAsset,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ProductOption?>? options,
-      double? price,
-      double? priceWithTax,
-      Product? product,
-      String? productId,
-      String? sku,
-      String? stockLevel,
-      TaxCategory? taxCategory,
-      TaxRate? taxRateApplied,
-      List<ProductVariantTranslation?>? translations,
-      DateTime? updatedAt});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ProductOption> options,
+      double price,
+      double priceWithTax,
+      Product product,
+      String productId,
+      String sku,
+      String stockLevel,
+      TaxCategory taxCategory,
+      TaxRate taxRateApplied,
+      List<ProductVariantTranslation> translations,
+      DateTime updatedAt});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
   @override
-  $ProductCopyWith<$Res>? get product;
+  $ProductCopyWith<$Res> get product;
   @override
-  $TaxCategoryCopyWith<$Res>? get taxCategory;
+  $TaxCategoryCopyWith<$Res> get taxCategory;
   @override
-  $TaxRateCopyWith<$Res>? get taxRateApplied;
+  $TaxRateCopyWith<$Res> get taxRateApplied;
 }
 
 /// @nodoc
@@ -300,108 +288,108 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assets = freezed,
-    Object? createdAt = freezed,
-    Object? currencyCode = freezed,
+    Object? assets = null,
+    Object? createdAt = null,
+    Object? currencyCode = null,
     Object? customFields = freezed,
-    Object? facetValues = freezed,
+    Object? facetValues = null,
     Object? featuredAsset = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? options = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
-    Object? product = freezed,
-    Object? productId = freezed,
-    Object? sku = freezed,
-    Object? stockLevel = freezed,
-    Object? taxCategory = freezed,
-    Object? taxRateApplied = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? options = null,
+    Object? price = null,
+    Object? priceWithTax = null,
+    Object? product = null,
+    Object? productId = null,
+    Object? sku = null,
+    Object? stockLevel = null,
+    Object? taxCategory = null,
+    Object? taxRateApplied = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ProductVariantImpl(
-      assets: freezed == assets
+      assets: null == assets
           ? _value._assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      createdAt: freezed == createdAt
+              as List<Asset>,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      currencyCode: freezed == currencyCode
+              as DateTime,
+      currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
+              as CurrencyCode,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      facetValues: freezed == facetValues
+      facetValues: null == facetValues
           ? _value._facetValues
           : facetValues // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
+              as List<FacetValue>,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      options: freezed == options
+              as String,
+      options: null == options
           ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<ProductOption?>?,
-      price: freezed == price
+              as List<ProductOption>,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      product: freezed == product
+              as double,
+      product: null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as Product?,
-      productId: freezed == productId
+              as Product,
+      productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sku: freezed == sku
+              as String,
+      sku: null == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
-              as String?,
-      stockLevel: freezed == stockLevel
+              as String,
+      stockLevel: null == stockLevel
           ? _value.stockLevel
           : stockLevel // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxCategory: freezed == taxCategory
+              as String,
+      taxCategory: null == taxCategory
           ? _value.taxCategory
           : taxCategory // ignore: cast_nullable_to_non_nullable
-              as TaxCategory?,
-      taxRateApplied: freezed == taxRateApplied
+              as TaxCategory,
+      taxRateApplied: null == taxRateApplied
           ? _value.taxRateApplied
           : taxRateApplied // ignore: cast_nullable_to_non_nullable
-              as TaxRate?,
-      translations: freezed == translations
+              as TaxRate,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ProductVariantTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ProductVariantTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -411,26 +399,26 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
 class _$ProductVariantImpl extends _ProductVariant
     with DiagnosticableTreeMixin {
   const _$ProductVariantImpl(
-      {final List<Asset?>? assets,
-      this.createdAt,
-      this.currencyCode,
+      {required final List<Asset> assets,
+      required this.createdAt,
+      required this.currencyCode,
       final Map<String, dynamic>? customFields,
-      final List<FacetValue?>? facetValues,
+      required final List<FacetValue> facetValues,
       this.featuredAsset,
-      this.id,
-      this.languageCode,
-      this.name,
-      final List<ProductOption?>? options,
-      this.price,
-      this.priceWithTax,
-      this.product,
-      this.productId,
-      this.sku,
-      this.stockLevel,
-      this.taxCategory,
-      this.taxRateApplied,
-      final List<ProductVariantTranslation?>? translations,
-      this.updatedAt})
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required final List<ProductOption> options,
+      required this.price,
+      required this.priceWithTax,
+      required this.product,
+      required this.productId,
+      required this.sku,
+      required this.stockLevel,
+      required this.taxCategory,
+      required this.taxRateApplied,
+      required final List<ProductVariantTranslation> translations,
+      required this.updatedAt})
       : _assets = assets,
         _customFields = customFields,
         _facetValues = facetValues,
@@ -441,20 +429,18 @@ class _$ProductVariantImpl extends _ProductVariant
   factory _$ProductVariantImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductVariantImplFromJson(json);
 
-  final List<Asset?>? _assets;
+  final List<Asset> _assets;
   @override
-  List<Asset?>? get assets {
-    final value = _assets;
-    if (value == null) return null;
+  List<Asset> get assets {
     if (_assets is EqualUnmodifiableListView) return _assets;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_assets);
   }
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final CurrencyCode? currencyCode;
+  final CurrencyCode currencyCode;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -465,62 +451,56 @@ class _$ProductVariantImpl extends _ProductVariant
     return EqualUnmodifiableMapView(value);
   }
 
-  final List<FacetValue?>? _facetValues;
+  final List<FacetValue> _facetValues;
   @override
-  List<FacetValue?>? get facetValues {
-    final value = _facetValues;
-    if (value == null) return null;
+  List<FacetValue> get facetValues {
     if (_facetValues is EqualUnmodifiableListView) return _facetValues;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_facetValues);
   }
 
   @override
   final Asset? featuredAsset;
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
-  final List<ProductOption?>? _options;
+  final String name;
+  final List<ProductOption> _options;
   @override
-  List<ProductOption?>? get options {
-    final value = _options;
-    if (value == null) return null;
+  List<ProductOption> get options {
     if (_options is EqualUnmodifiableListView) return _options;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_options);
   }
 
   @override
-  final double? price;
+  final double price;
   @override
-  final double? priceWithTax;
+  final double priceWithTax;
   @override
-  final Product? product;
+  final Product product;
   @override
-  final String? productId;
+  final String productId;
   @override
-  final String? sku;
+  final String sku;
   @override
-  final String? stockLevel;
+  final String stockLevel;
   @override
-  final TaxCategory? taxCategory;
+  final TaxCategory taxCategory;
   @override
-  final TaxRate? taxRateApplied;
-  final List<ProductVariantTranslation?>? _translations;
+  final TaxRate taxRateApplied;
+  final List<ProductVariantTranslation> _translations;
   @override
-  List<ProductVariantTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<ProductVariantTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -637,71 +617,71 @@ class _$ProductVariantImpl extends _ProductVariant
 
 abstract class _ProductVariant extends ProductVariant {
   const factory _ProductVariant(
-      {final List<Asset?>? assets,
-      final DateTime? createdAt,
-      final CurrencyCode? currencyCode,
+      {required final List<Asset> assets,
+      required final DateTime createdAt,
+      required final CurrencyCode currencyCode,
       final Map<String, dynamic>? customFields,
-      final List<FacetValue?>? facetValues,
+      required final List<FacetValue> facetValues,
       final Asset? featuredAsset,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final List<ProductOption?>? options,
-      final double? price,
-      final double? priceWithTax,
-      final Product? product,
-      final String? productId,
-      final String? sku,
-      final String? stockLevel,
-      final TaxCategory? taxCategory,
-      final TaxRate? taxRateApplied,
-      final List<ProductVariantTranslation?>? translations,
-      final DateTime? updatedAt}) = _$ProductVariantImpl;
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final List<ProductOption> options,
+      required final double price,
+      required final double priceWithTax,
+      required final Product product,
+      required final String productId,
+      required final String sku,
+      required final String stockLevel,
+      required final TaxCategory taxCategory,
+      required final TaxRate taxRateApplied,
+      required final List<ProductVariantTranslation> translations,
+      required final DateTime updatedAt}) = _$ProductVariantImpl;
   const _ProductVariant._() : super._();
 
   factory _ProductVariant.fromJson(Map<String, dynamic> json) =
       _$ProductVariantImpl.fromJson;
 
   @override
-  List<Asset?>? get assets;
+  List<Asset> get assets;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  CurrencyCode? get currencyCode;
+  CurrencyCode get currencyCode;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  List<FacetValue?>? get facetValues;
+  List<FacetValue> get facetValues;
   @override
   Asset? get featuredAsset;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  List<ProductOption?>? get options;
+  List<ProductOption> get options;
   @override
-  double? get price;
+  double get price;
   @override
-  double? get priceWithTax;
+  double get priceWithTax;
   @override
-  Product? get product;
+  Product get product;
   @override
-  String? get productId;
+  String get productId;
   @override
-  String? get sku;
+  String get sku;
   @override
-  String? get stockLevel;
+  String get stockLevel;
   @override
-  TaxCategory? get taxCategory;
+  TaxCategory get taxCategory;
   @override
-  TaxRate? get taxRateApplied;
+  TaxRate get taxRateApplied;
   @override
-  List<ProductVariantTranslation?>? get translations;
+  List<ProductVariantTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>

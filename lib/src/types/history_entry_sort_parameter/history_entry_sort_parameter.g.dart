@@ -15,20 +15,12 @@ _$HistoryEntrySortParameterImpl _$$HistoryEntrySortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$HistoryEntrySortParameterImplToJson(
-    _$HistoryEntrySortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$HistoryEntrySortParameterImpl instance) =>
+    <String, dynamic>{
+      'createdAt': _$SortOrderEnumMap[instance.createdAt],
+      'id': _$SortOrderEnumMap[instance.id],
+      'updatedAt': _$SortOrderEnumMap[instance.updatedAt],
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

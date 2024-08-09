@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/error_code/error_code.dart';
+import '../types/error_code/error_code.dart';
 
 part 'email_address_conflict_error.freezed.dart';
 part 'email_address_conflict_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class EmailAddressConflictError with _$EmailAddressConflictError {
   const EmailAddressConflictError._();
 
   const factory EmailAddressConflictError({
-    ErrorCode? errorCode,
-    String? message,
+    required ErrorCode errorCode,
+    required String message,
   }) = _EmailAddressConflictError;
 
   factory EmailAddressConflictError.fromJson(Map<String, dynamic> json) =>

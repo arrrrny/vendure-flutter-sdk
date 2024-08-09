@@ -21,12 +21,19 @@ NumberOperators _$NumberOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NumberOperators {
   NumberRange? get between => throw _privateConstructorUsedError;
+  set between(NumberRange? value) => throw _privateConstructorUsedError;
   double? get eq => throw _privateConstructorUsedError;
+  set eq(double? value) => throw _privateConstructorUsedError;
   double? get gt => throw _privateConstructorUsedError;
+  set gt(double? value) => throw _privateConstructorUsedError;
   double? get gte => throw _privateConstructorUsedError;
+  set gte(double? value) => throw _privateConstructorUsedError;
   bool? get isNull => throw _privateConstructorUsedError;
+  set isNull(bool? value) => throw _privateConstructorUsedError;
   double? get lt => throw _privateConstructorUsedError;
+  set lt(double? value) => throw _privateConstructorUsedError;
   double? get lte => throw _privateConstructorUsedError;
+  set lte(double? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -195,7 +202,7 @@ class __$$NumberOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NumberOperatorsImpl extends _NumberOperators
     with DiagnosticableTreeMixin {
-  const _$NumberOperatorsImpl(
+  _$NumberOperatorsImpl(
       {this.between,
       this.eq,
       this.gt,
@@ -209,19 +216,19 @@ class _$NumberOperatorsImpl extends _NumberOperators
       _$$NumberOperatorsImplFromJson(json);
 
   @override
-  final NumberRange? between;
+  NumberRange? between;
   @override
-  final double? eq;
+  double? eq;
   @override
-  final double? gt;
+  double? gt;
   @override
-  final double? gte;
+  double? gte;
   @override
-  final bool? isNull;
+  bool? isNull;
   @override
-  final double? lt;
+  double? lt;
   @override
-  final double? lte;
+  double? lte;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -242,25 +249,6 @@ class _$NumberOperatorsImpl extends _NumberOperators
       ..add(DiagnosticsProperty('lte', lte));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NumberOperatorsImpl &&
-            (identical(other.between, between) || other.between == between) &&
-            (identical(other.eq, eq) || other.eq == eq) &&
-            (identical(other.gt, gt) || other.gt == gt) &&
-            (identical(other.gte, gte) || other.gte == gte) &&
-            (identical(other.isNull, isNull) || other.isNull == isNull) &&
-            (identical(other.lt, lt) || other.lt == lt) &&
-            (identical(other.lte, lte) || other.lte == lte));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, between, eq, gt, gte, isNull, lt, lte);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -277,33 +265,40 @@ class _$NumberOperatorsImpl extends _NumberOperators
 }
 
 abstract class _NumberOperators extends NumberOperators {
-  const factory _NumberOperators(
-      {final NumberRange? between,
-      final double? eq,
-      final double? gt,
-      final double? gte,
-      final bool? isNull,
-      final double? lt,
-      final double? lte}) = _$NumberOperatorsImpl;
-  const _NumberOperators._() : super._();
+  factory _NumberOperators(
+      {NumberRange? between,
+      double? eq,
+      double? gt,
+      double? gte,
+      bool? isNull,
+      double? lt,
+      double? lte}) = _$NumberOperatorsImpl;
+  _NumberOperators._() : super._();
 
   factory _NumberOperators.fromJson(Map<String, dynamic> json) =
       _$NumberOperatorsImpl.fromJson;
 
   @override
   NumberRange? get between;
+  set between(NumberRange? value);
   @override
   double? get eq;
+  set eq(double? value);
   @override
   double? get gt;
+  set gt(double? value);
   @override
   double? get gte;
+  set gte(double? value);
   @override
   bool? get isNull;
+  set isNull(bool? value);
   @override
   double? get lt;
+  set lt(double? value);
   @override
   double? get lte;
+  set lte(double? value);
   @override
   @JsonKey(ignore: true)
   _$$NumberOperatorsImplCopyWith<_$NumberOperatorsImpl> get copyWith =>

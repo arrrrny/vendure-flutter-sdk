@@ -20,9 +20,9 @@ PaymentFailedError _$PaymentFailedErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PaymentFailedError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-  String? get paymentErrorMessage => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  String get paymentErrorMessage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,8 +36,7 @@ abstract class $PaymentFailedErrorCopyWith<$Res> {
           PaymentFailedError value, $Res Function(PaymentFailedError) then) =
       _$PaymentFailedErrorCopyWithImpl<$Res, PaymentFailedError>;
   @useResult
-  $Res call(
-      {ErrorCode? errorCode, String? message, String? paymentErrorMessage});
+  $Res call({ErrorCode errorCode, String message, String paymentErrorMessage});
 }
 
 /// @nodoc
@@ -53,23 +52,23 @@ class _$PaymentFailedErrorCopyWithImpl<$Res, $Val extends PaymentFailedError>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? paymentErrorMessage = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? paymentErrorMessage = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      paymentErrorMessage: freezed == paymentErrorMessage
+              as String,
+      paymentErrorMessage: null == paymentErrorMessage
           ? _value.paymentErrorMessage
           : paymentErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -82,8 +81,7 @@ abstract class _$$PaymentFailedErrorImplCopyWith<$Res>
       __$$PaymentFailedErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {ErrorCode? errorCode, String? message, String? paymentErrorMessage});
+  $Res call({ErrorCode errorCode, String message, String paymentErrorMessage});
 }
 
 /// @nodoc
@@ -97,23 +95,23 @@ class __$$PaymentFailedErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? paymentErrorMessage = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? paymentErrorMessage = null,
   }) {
     return _then(_$PaymentFailedErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      paymentErrorMessage: freezed == paymentErrorMessage
+              as String,
+      paymentErrorMessage: null == paymentErrorMessage
           ? _value.paymentErrorMessage
           : paymentErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -123,18 +121,20 @@ class __$$PaymentFailedErrorImplCopyWithImpl<$Res>
 class _$PaymentFailedErrorImpl extends _PaymentFailedError
     with DiagnosticableTreeMixin {
   const _$PaymentFailedErrorImpl(
-      {this.errorCode, this.message, this.paymentErrorMessage})
+      {required this.errorCode,
+      required this.message,
+      required this.paymentErrorMessage})
       : super._();
 
   factory _$PaymentFailedErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$PaymentFailedErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
   @override
-  final String? paymentErrorMessage;
+  final String paymentErrorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -185,20 +185,20 @@ class _$PaymentFailedErrorImpl extends _PaymentFailedError
 
 abstract class _PaymentFailedError extends PaymentFailedError {
   const factory _PaymentFailedError(
-      {final ErrorCode? errorCode,
-      final String? message,
-      final String? paymentErrorMessage}) = _$PaymentFailedErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message,
+      required final String paymentErrorMessage}) = _$PaymentFailedErrorImpl;
   const _PaymentFailedError._() : super._();
 
   factory _PaymentFailedError.fromJson(Map<String, dynamic> json) =
       _$PaymentFailedErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
-  String? get paymentErrorMessage;
+  String get paymentErrorMessage;
   @override
   @JsonKey(ignore: true)
   _$$PaymentFailedErrorImplCopyWith<_$PaymentFailedErrorImpl> get copyWith =>

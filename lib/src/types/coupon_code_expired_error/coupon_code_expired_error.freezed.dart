@@ -21,9 +21,9 @@ CouponCodeExpiredError _$CouponCodeExpiredErrorFromJson(
 
 /// @nodoc
 mixin _$CouponCodeExpiredError {
-  String? get couponCode => throw _privateConstructorUsedError;
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  String get couponCode => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,7 @@ abstract class $CouponCodeExpiredErrorCopyWith<$Res> {
           $Res Function(CouponCodeExpiredError) then) =
       _$CouponCodeExpiredErrorCopyWithImpl<$Res, CouponCodeExpiredError>;
   @useResult
-  $Res call({String? couponCode, ErrorCode? errorCode, String? message});
+  $Res call({String couponCode, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -54,23 +54,23 @@ class _$CouponCodeExpiredErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? couponCode = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? couponCode = null,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      couponCode: freezed == couponCode
+      couponCode: null == couponCode
           ? _value.couponCode
           : couponCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -84,7 +84,7 @@ abstract class _$$CouponCodeExpiredErrorImplCopyWith<$Res>
       __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? couponCode, ErrorCode? errorCode, String? message});
+  $Res call({String couponCode, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -100,23 +100,23 @@ class __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? couponCode = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? couponCode = null,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$CouponCodeExpiredErrorImpl(
-      couponCode: freezed == couponCode
+      couponCode: null == couponCode
           ? _value.couponCode
           : couponCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -126,18 +126,20 @@ class __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>
 class _$CouponCodeExpiredErrorImpl extends _CouponCodeExpiredError
     with DiagnosticableTreeMixin {
   const _$CouponCodeExpiredErrorImpl(
-      {this.couponCode, this.errorCode, this.message})
+      {required this.couponCode,
+      required this.errorCode,
+      required this.message})
       : super._();
 
   factory _$CouponCodeExpiredErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$CouponCodeExpiredErrorImplFromJson(json);
 
   @override
-  final String? couponCode;
+  final String couponCode;
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -187,20 +189,20 @@ class _$CouponCodeExpiredErrorImpl extends _CouponCodeExpiredError
 
 abstract class _CouponCodeExpiredError extends CouponCodeExpiredError {
   const factory _CouponCodeExpiredError(
-      {final String? couponCode,
-      final ErrorCode? errorCode,
-      final String? message}) = _$CouponCodeExpiredErrorImpl;
+      {required final String couponCode,
+      required final ErrorCode errorCode,
+      required final String message}) = _$CouponCodeExpiredErrorImpl;
   const _CouponCodeExpiredError._() : super._();
 
   factory _CouponCodeExpiredError.fromJson(Map<String, dynamic> json) =
       _$CouponCodeExpiredErrorImpl.fromJson;
 
   @override
-  String? get couponCode;
+  String get couponCode;
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$CouponCodeExpiredErrorImplCopyWith<_$CouponCodeExpiredErrorImpl>

@@ -20,11 +20,11 @@ Adjustment _$AdjustmentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Adjustment {
-  String? get adjustmentSource => throw _privateConstructorUsedError;
-  double? get amount => throw _privateConstructorUsedError;
+  String get adjustmentSource => throw _privateConstructorUsedError;
+  double get amount => throw _privateConstructorUsedError;
   Map<String, dynamic>? get data => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  AdjustmentType? get type => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  AdjustmentType get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,11 +39,11 @@ abstract class $AdjustmentCopyWith<$Res> {
       _$AdjustmentCopyWithImpl<$Res, Adjustment>;
   @useResult
   $Res call(
-      {String? adjustmentSource,
-      double? amount,
+      {String adjustmentSource,
+      double amount,
       Map<String, dynamic>? data,
-      String? description,
-      AdjustmentType? type});
+      String description,
+      AdjustmentType type});
 }
 
 /// @nodoc
@@ -59,33 +59,33 @@ class _$AdjustmentCopyWithImpl<$Res, $Val extends Adjustment>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adjustmentSource = freezed,
-    Object? amount = freezed,
+    Object? adjustmentSource = null,
+    Object? amount = null,
     Object? data = freezed,
-    Object? description = freezed,
-    Object? type = freezed,
+    Object? description = null,
+    Object? type = null,
   }) {
     return _then(_value.copyWith(
-      adjustmentSource: freezed == adjustmentSource
+      adjustmentSource: null == adjustmentSource
           ? _value.adjustmentSource
           : adjustmentSource // ignore: cast_nullable_to_non_nullable
-              as String?,
-      amount: freezed == amount
+              as String,
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
+              as String,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AdjustmentType?,
+              as AdjustmentType,
     ) as $Val);
   }
 }
@@ -99,11 +99,11 @@ abstract class _$$AdjustmentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? adjustmentSource,
-      double? amount,
+      {String adjustmentSource,
+      double amount,
       Map<String, dynamic>? data,
-      String? description,
-      AdjustmentType? type});
+      String description,
+      AdjustmentType type});
 }
 
 /// @nodoc
@@ -117,33 +117,33 @@ class __$$AdjustmentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adjustmentSource = freezed,
-    Object? amount = freezed,
+    Object? adjustmentSource = null,
+    Object? amount = null,
     Object? data = freezed,
-    Object? description = freezed,
-    Object? type = freezed,
+    Object? description = null,
+    Object? type = null,
   }) {
     return _then(_$AdjustmentImpl(
-      adjustmentSource: freezed == adjustmentSource
+      adjustmentSource: null == adjustmentSource
           ? _value.adjustmentSource
           : adjustmentSource // ignore: cast_nullable_to_non_nullable
-              as String?,
-      amount: freezed == amount
+              as String,
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       data: freezed == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
+              as String,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AdjustmentType?,
+              as AdjustmentType,
     ));
   }
 }
@@ -152,11 +152,11 @@ class __$$AdjustmentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
   const _$AdjustmentImpl(
-      {this.adjustmentSource,
-      this.amount,
+      {required this.adjustmentSource,
+      required this.amount,
       final Map<String, dynamic>? data,
-      this.description,
-      this.type})
+      required this.description,
+      required this.type})
       : _data = data,
         super._();
 
@@ -164,9 +164,9 @@ class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
       _$$AdjustmentImplFromJson(json);
 
   @override
-  final String? adjustmentSource;
+  final String adjustmentSource;
   @override
-  final double? amount;
+  final double amount;
   final Map<String, dynamic>? _data;
   @override
   Map<String, dynamic>? get data {
@@ -178,9 +178,9 @@ class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? description;
+  final String description;
   @override
-  final AdjustmentType? type;
+  final AdjustmentType type;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -234,26 +234,26 @@ class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
 
 abstract class _Adjustment extends Adjustment {
   const factory _Adjustment(
-      {final String? adjustmentSource,
-      final double? amount,
+      {required final String adjustmentSource,
+      required final double amount,
       final Map<String, dynamic>? data,
-      final String? description,
-      final AdjustmentType? type}) = _$AdjustmentImpl;
+      required final String description,
+      required final AdjustmentType type}) = _$AdjustmentImpl;
   const _Adjustment._() : super._();
 
   factory _Adjustment.fromJson(Map<String, dynamic> json) =
       _$AdjustmentImpl.fromJson;
 
   @override
-  String? get adjustmentSource;
+  String get adjustmentSource;
   @override
-  double? get amount;
+  double get amount;
   @override
   Map<String, dynamic>? get data;
   @override
-  String? get description;
+  String get description;
   @override
-  AdjustmentType? get type;
+  AdjustmentType get type;
   @override
   @JsonKey(ignore: true)
   _$$AdjustmentImplCopyWith<_$AdjustmentImpl> get copyWith =>

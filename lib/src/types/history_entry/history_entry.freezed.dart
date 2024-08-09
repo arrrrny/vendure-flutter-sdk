@@ -20,11 +20,11 @@ HistoryEntry _$HistoryEntryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HistoryEntry {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get data => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  HistoryEntryType? get type => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  Map<String, dynamic> get data => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  HistoryEntryType get type => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,11 +39,11 @@ abstract class $HistoryEntryCopyWith<$Res> {
       _$HistoryEntryCopyWithImpl<$Res, HistoryEntry>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      Map<String, dynamic>? data,
-      String? id,
-      HistoryEntryType? type,
-      DateTime? updatedAt});
+      {DateTime createdAt,
+      Map<String, dynamic> data,
+      String id,
+      HistoryEntryType type,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -59,33 +59,33 @@ class _$HistoryEntryCopyWithImpl<$Res, $Val extends HistoryEntry>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? data = freezed,
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? data = null,
+    Object? id = null,
+    Object? type = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      data: freezed == data
+              as DateTime,
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      id: freezed == id
+              as Map<String, dynamic>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
+              as String,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as HistoryEntryType?,
-      updatedAt: freezed == updatedAt
+              as HistoryEntryType,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -99,11 +99,11 @@ abstract class _$$HistoryEntryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      Map<String, dynamic>? data,
-      String? id,
-      HistoryEntryType? type,
-      DateTime? updatedAt});
+      {DateTime createdAt,
+      Map<String, dynamic> data,
+      String id,
+      HistoryEntryType type,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -117,33 +117,33 @@ class __$$HistoryEntryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? data = freezed,
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? data = null,
+    Object? id = null,
+    Object? type = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$HistoryEntryImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      data: freezed == data
+              as DateTime,
+      data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      id: freezed == id
+              as Map<String, dynamic>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
+              as String,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as HistoryEntryType?,
-      updatedAt: freezed == updatedAt
+              as HistoryEntryType,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -152,11 +152,11 @@ class __$$HistoryEntryImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HistoryEntryImpl extends _HistoryEntry with DiagnosticableTreeMixin {
   const _$HistoryEntryImpl(
-      {this.createdAt,
-      final Map<String, dynamic>? data,
-      this.id,
-      this.type,
-      this.updatedAt})
+      {required this.createdAt,
+      required final Map<String, dynamic> data,
+      required this.id,
+      required this.type,
+      required this.updatedAt})
       : _data = data,
         super._();
 
@@ -164,23 +164,21 @@ class _$HistoryEntryImpl extends _HistoryEntry with DiagnosticableTreeMixin {
       _$$HistoryEntryImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
-  final Map<String, dynamic>? _data;
+  final DateTime createdAt;
+  final Map<String, dynamic> _data;
   @override
-  Map<String, dynamic>? get data {
-    final value = _data;
-    if (value == null) return null;
+  Map<String, dynamic> get data {
     if (_data is EqualUnmodifiableMapView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+    return EqualUnmodifiableMapView(_data);
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final HistoryEntryType? type;
+  final HistoryEntryType type;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -234,26 +232,26 @@ class _$HistoryEntryImpl extends _HistoryEntry with DiagnosticableTreeMixin {
 
 abstract class _HistoryEntry extends HistoryEntry {
   const factory _HistoryEntry(
-      {final DateTime? createdAt,
-      final Map<String, dynamic>? data,
-      final String? id,
-      final HistoryEntryType? type,
-      final DateTime? updatedAt}) = _$HistoryEntryImpl;
+      {required final DateTime createdAt,
+      required final Map<String, dynamic> data,
+      required final String id,
+      required final HistoryEntryType type,
+      required final DateTime updatedAt}) = _$HistoryEntryImpl;
   const _HistoryEntry._() : super._();
 
   factory _HistoryEntry.fromJson(Map<String, dynamic> json) =
       _$HistoryEntryImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  Map<String, dynamic>? get data;
+  Map<String, dynamic> get data;
   @override
-  String? get id;
+  String get id;
   @override
-  HistoryEntryType? get type;
+  HistoryEntryType get type;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$HistoryEntryImplCopyWith<_$HistoryEntryImpl> get copyWith =>

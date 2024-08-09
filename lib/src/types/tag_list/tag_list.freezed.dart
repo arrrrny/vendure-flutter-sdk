@@ -20,8 +20,8 @@ TagList _$TagListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TagList {
-  List<Tag?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Tag> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $TagListCopyWith<$Res> {
   factory $TagListCopyWith(TagList value, $Res Function(TagList) then) =
       _$TagListCopyWithImpl<$Res, TagList>;
   @useResult
-  $Res call({List<Tag?>? items, int? totalItems});
+  $Res call({List<Tag> items, int totalItems});
 }
 
 /// @nodoc
@@ -49,18 +49,18 @@ class _$TagListCopyWithImpl<$Res, $Val extends TagList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Tag?>?,
-      totalItems: freezed == totalItems
+              as List<Tag>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$TagListImplCopyWith<$Res> implements $TagListCopyWith<$Res> {
       __$$TagListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Tag?>? items, int? totalItems});
+  $Res call({List<Tag> items, int totalItems});
 }
 
 /// @nodoc
@@ -86,18 +86,18 @@ class __$$TagListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$TagListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Tag?>?,
-      totalItems: freezed == totalItems
+              as List<Tag>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -105,25 +105,24 @@ class __$$TagListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TagListImpl extends _TagList with DiagnosticableTreeMixin {
-  const _$TagListImpl({final List<Tag?>? items, this.totalItems})
+  const _$TagListImpl(
+      {required final List<Tag> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$TagListImpl.fromJson(Map<String, dynamic> json) =>
       _$$TagListImplFromJson(json);
 
-  final List<Tag?>? _items;
+  final List<Tag> _items;
   @override
-  List<Tag?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Tag> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -169,16 +168,17 @@ class _$TagListImpl extends _TagList with DiagnosticableTreeMixin {
 }
 
 abstract class _TagList extends TagList {
-  const factory _TagList({final List<Tag?>? items, final int? totalItems}) =
-      _$TagListImpl;
+  const factory _TagList(
+      {required final List<Tag> items,
+      required final int totalItems}) = _$TagListImpl;
   const _TagList._() : super._();
 
   factory _TagList.fromJson(Map<String, dynamic> json) = _$TagListImpl.fromJson;
 
   @override
-  List<Tag?>? get items;
+  List<Tag> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$TagListImplCopyWith<_$TagListImpl> get copyWith =>

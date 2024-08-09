@@ -1,22 +1,18 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/error_code/error_code.dart';
+import '../types/error_code/error_code.dart';
 
 part 'identifier_change_token_expired_error.freezed.dart';
 part 'identifier_change_token_expired_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class IdentifierChangeTokenExpiredError
     with _$IdentifierChangeTokenExpiredError {
   const IdentifierChangeTokenExpiredError._();
 
   const factory IdentifierChangeTokenExpiredError({
-    ErrorCode? errorCode,
-    String? message,
+    required ErrorCode errorCode,
+    required String message,
   }) = _IdentifierChangeTokenExpiredError;
 
   factory IdentifierChangeTokenExpiredError.fromJson(

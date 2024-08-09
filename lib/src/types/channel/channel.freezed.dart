@@ -20,29 +20,29 @@ Channel _$ChannelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Channel {
-  List<CurrencyCode?>? get availableCurrencyCodes =>
+  List<CurrencyCode> get availableCurrencyCodes =>
       throw _privateConstructorUsedError;
-  List<LanguageCode?>? get availableLanguageCodes =>
+  List<LanguageCode>? get availableLanguageCodes =>
       throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  CurrencyCode? get currencyCode => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  CurrencyCode get currencyCode => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  CurrencyCode? get defaultCurrencyCode => throw _privateConstructorUsedError;
-  LanguageCode? get defaultLanguageCode => throw _privateConstructorUsedError;
+  CurrencyCode get defaultCurrencyCode => throw _privateConstructorUsedError;
+  LanguageCode get defaultLanguageCode => throw _privateConstructorUsedError;
   Zone? get defaultShippingZone => throw _privateConstructorUsedError;
   Zone? get defaultTaxZone => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   /// Not yet used - will be implemented in a future release.
   int? get outOfStockThreshold => throw _privateConstructorUsedError;
-  bool? get pricesIncludeTax => throw _privateConstructorUsedError;
+  bool get pricesIncludeTax => throw _privateConstructorUsedError;
   Seller? get seller => throw _privateConstructorUsedError;
-  String? get token => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
 
   /// Not yet used - will be implemented in a future release.
   bool? get trackInventory => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,23 +55,23 @@ abstract class $ChannelCopyWith<$Res> {
       _$ChannelCopyWithImpl<$Res, Channel>;
   @useResult
   $Res call(
-      {List<CurrencyCode?>? availableCurrencyCodes,
-      List<LanguageCode?>? availableLanguageCodes,
-      String? code,
-      DateTime? createdAt,
-      CurrencyCode? currencyCode,
+      {List<CurrencyCode> availableCurrencyCodes,
+      List<LanguageCode>? availableLanguageCodes,
+      String code,
+      DateTime createdAt,
+      CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
-      CurrencyCode? defaultCurrencyCode,
-      LanguageCode? defaultLanguageCode,
+      CurrencyCode defaultCurrencyCode,
+      LanguageCode defaultLanguageCode,
       Zone? defaultShippingZone,
       Zone? defaultTaxZone,
-      String? id,
+      String id,
       int? outOfStockThreshold,
-      bool? pricesIncludeTax,
+      bool pricesIncludeTax,
       Seller? seller,
-      String? token,
+      String token,
       bool? trackInventory,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 
   $ZoneCopyWith<$Res>? get defaultShippingZone;
   $ZoneCopyWith<$Res>? get defaultTaxZone;
@@ -91,57 +91,57 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? availableCurrencyCodes = freezed,
+    Object? availableCurrencyCodes = null,
     Object? availableLanguageCodes = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
-    Object? currencyCode = freezed,
+    Object? code = null,
+    Object? createdAt = null,
+    Object? currencyCode = null,
     Object? customFields = freezed,
-    Object? defaultCurrencyCode = freezed,
-    Object? defaultLanguageCode = freezed,
+    Object? defaultCurrencyCode = null,
+    Object? defaultLanguageCode = null,
     Object? defaultShippingZone = freezed,
     Object? defaultTaxZone = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? outOfStockThreshold = freezed,
-    Object? pricesIncludeTax = freezed,
+    Object? pricesIncludeTax = null,
     Object? seller = freezed,
-    Object? token = freezed,
+    Object? token = null,
     Object? trackInventory = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      availableCurrencyCodes: freezed == availableCurrencyCodes
+      availableCurrencyCodes: null == availableCurrencyCodes
           ? _value.availableCurrencyCodes
           : availableCurrencyCodes // ignore: cast_nullable_to_non_nullable
-              as List<CurrencyCode?>?,
+              as List<CurrencyCode>,
       availableLanguageCodes: freezed == availableLanguageCodes
           ? _value.availableLanguageCodes
           : availableLanguageCodes // ignore: cast_nullable_to_non_nullable
-              as List<LanguageCode?>?,
-      code: freezed == code
+              as List<LanguageCode>?,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      currencyCode: freezed == currencyCode
+              as DateTime,
+      currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
+              as CurrencyCode,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      defaultCurrencyCode: freezed == defaultCurrencyCode
+      defaultCurrencyCode: null == defaultCurrencyCode
           ? _value.defaultCurrencyCode
           : defaultCurrencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
-      defaultLanguageCode: freezed == defaultLanguageCode
+              as CurrencyCode,
+      defaultLanguageCode: null == defaultLanguageCode
           ? _value.defaultLanguageCode
           : defaultLanguageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
+              as LanguageCode,
       defaultShippingZone: freezed == defaultShippingZone
           ? _value.defaultShippingZone
           : defaultShippingZone // ignore: cast_nullable_to_non_nullable
@@ -150,34 +150,34 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
           ? _value.defaultTaxZone
           : defaultTaxZone // ignore: cast_nullable_to_non_nullable
               as Zone?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       outOfStockThreshold: freezed == outOfStockThreshold
           ? _value.outOfStockThreshold
           : outOfStockThreshold // ignore: cast_nullable_to_non_nullable
               as int?,
-      pricesIncludeTax: freezed == pricesIncludeTax
+      pricesIncludeTax: null == pricesIncludeTax
           ? _value.pricesIncludeTax
           : pricesIncludeTax // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       seller: freezed == seller
           ? _value.seller
           : seller // ignore: cast_nullable_to_non_nullable
               as Seller?,
-      token: freezed == token
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       trackInventory: freezed == trackInventory
           ? _value.trackInventory
           : trackInventory // ignore: cast_nullable_to_non_nullable
               as bool?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
@@ -226,23 +226,23 @@ abstract class _$$ChannelImplCopyWith<$Res> implements $ChannelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {List<CurrencyCode?>? availableCurrencyCodes,
-      List<LanguageCode?>? availableLanguageCodes,
-      String? code,
-      DateTime? createdAt,
-      CurrencyCode? currencyCode,
+      {List<CurrencyCode> availableCurrencyCodes,
+      List<LanguageCode>? availableLanguageCodes,
+      String code,
+      DateTime createdAt,
+      CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
-      CurrencyCode? defaultCurrencyCode,
-      LanguageCode? defaultLanguageCode,
+      CurrencyCode defaultCurrencyCode,
+      LanguageCode defaultLanguageCode,
       Zone? defaultShippingZone,
       Zone? defaultTaxZone,
-      String? id,
+      String id,
       int? outOfStockThreshold,
-      bool? pricesIncludeTax,
+      bool pricesIncludeTax,
       Seller? seller,
-      String? token,
+      String token,
       bool? trackInventory,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 
   @override
   $ZoneCopyWith<$Res>? get defaultShippingZone;
@@ -263,57 +263,57 @@ class __$$ChannelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? availableCurrencyCodes = freezed,
+    Object? availableCurrencyCodes = null,
     Object? availableLanguageCodes = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
-    Object? currencyCode = freezed,
+    Object? code = null,
+    Object? createdAt = null,
+    Object? currencyCode = null,
     Object? customFields = freezed,
-    Object? defaultCurrencyCode = freezed,
-    Object? defaultLanguageCode = freezed,
+    Object? defaultCurrencyCode = null,
+    Object? defaultLanguageCode = null,
     Object? defaultShippingZone = freezed,
     Object? defaultTaxZone = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? outOfStockThreshold = freezed,
-    Object? pricesIncludeTax = freezed,
+    Object? pricesIncludeTax = null,
     Object? seller = freezed,
-    Object? token = freezed,
+    Object? token = null,
     Object? trackInventory = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_$ChannelImpl(
-      availableCurrencyCodes: freezed == availableCurrencyCodes
+      availableCurrencyCodes: null == availableCurrencyCodes
           ? _value._availableCurrencyCodes
           : availableCurrencyCodes // ignore: cast_nullable_to_non_nullable
-              as List<CurrencyCode?>?,
+              as List<CurrencyCode>,
       availableLanguageCodes: freezed == availableLanguageCodes
           ? _value._availableLanguageCodes
           : availableLanguageCodes // ignore: cast_nullable_to_non_nullable
-              as List<LanguageCode?>?,
-      code: freezed == code
+              as List<LanguageCode>?,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      currencyCode: freezed == currencyCode
+              as DateTime,
+      currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
+              as CurrencyCode,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      defaultCurrencyCode: freezed == defaultCurrencyCode
+      defaultCurrencyCode: null == defaultCurrencyCode
           ? _value.defaultCurrencyCode
           : defaultCurrencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
-      defaultLanguageCode: freezed == defaultLanguageCode
+              as CurrencyCode,
+      defaultLanguageCode: null == defaultLanguageCode
           ? _value.defaultLanguageCode
           : defaultLanguageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
+              as LanguageCode,
       defaultShippingZone: freezed == defaultShippingZone
           ? _value.defaultShippingZone
           : defaultShippingZone // ignore: cast_nullable_to_non_nullable
@@ -322,34 +322,34 @@ class __$$ChannelImplCopyWithImpl<$Res>
           ? _value.defaultTaxZone
           : defaultTaxZone // ignore: cast_nullable_to_non_nullable
               as Zone?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       outOfStockThreshold: freezed == outOfStockThreshold
           ? _value.outOfStockThreshold
           : outOfStockThreshold // ignore: cast_nullable_to_non_nullable
               as int?,
-      pricesIncludeTax: freezed == pricesIncludeTax
+      pricesIncludeTax: null == pricesIncludeTax
           ? _value.pricesIncludeTax
           : pricesIncludeTax // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       seller: freezed == seller
           ? _value.seller
           : seller // ignore: cast_nullable_to_non_nullable
               as Seller?,
-      token: freezed == token
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       trackInventory: freezed == trackInventory
           ? _value.trackInventory
           : trackInventory // ignore: cast_nullable_to_non_nullable
               as bool?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -358,23 +358,23 @@ class __$$ChannelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
   const _$ChannelImpl(
-      {final List<CurrencyCode?>? availableCurrencyCodes,
-      final List<LanguageCode?>? availableLanguageCodes,
-      this.code,
-      this.createdAt,
-      this.currencyCode,
+      {required final List<CurrencyCode> availableCurrencyCodes,
+      final List<LanguageCode>? availableLanguageCodes,
+      required this.code,
+      required this.createdAt,
+      required this.currencyCode,
       final Map<String, dynamic>? customFields,
-      this.defaultCurrencyCode,
-      this.defaultLanguageCode,
+      required this.defaultCurrencyCode,
+      required this.defaultLanguageCode,
       this.defaultShippingZone,
       this.defaultTaxZone,
-      this.id,
+      required this.id,
       this.outOfStockThreshold,
-      this.pricesIncludeTax,
+      required this.pricesIncludeTax,
       this.seller,
-      this.token,
+      required this.token,
       this.trackInventory,
-      this.updatedAt})
+      required this.updatedAt})
       : _availableCurrencyCodes = availableCurrencyCodes,
         _availableLanguageCodes = availableLanguageCodes,
         _customFields = customFields,
@@ -383,20 +383,18 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
   factory _$ChannelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ChannelImplFromJson(json);
 
-  final List<CurrencyCode?>? _availableCurrencyCodes;
+  final List<CurrencyCode> _availableCurrencyCodes;
   @override
-  List<CurrencyCode?>? get availableCurrencyCodes {
-    final value = _availableCurrencyCodes;
-    if (value == null) return null;
+  List<CurrencyCode> get availableCurrencyCodes {
     if (_availableCurrencyCodes is EqualUnmodifiableListView)
       return _availableCurrencyCodes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_availableCurrencyCodes);
   }
 
-  final List<LanguageCode?>? _availableLanguageCodes;
+  final List<LanguageCode>? _availableLanguageCodes;
   @override
-  List<LanguageCode?>? get availableLanguageCodes {
+  List<LanguageCode>? get availableLanguageCodes {
     final value = _availableLanguageCodes;
     if (value == null) return null;
     if (_availableLanguageCodes is EqualUnmodifiableListView)
@@ -406,11 +404,11 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final CurrencyCode? currencyCode;
+  final CurrencyCode currencyCode;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -422,31 +420,31 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
   }
 
   @override
-  final CurrencyCode? defaultCurrencyCode;
+  final CurrencyCode defaultCurrencyCode;
   @override
-  final LanguageCode? defaultLanguageCode;
+  final LanguageCode defaultLanguageCode;
   @override
   final Zone? defaultShippingZone;
   @override
   final Zone? defaultTaxZone;
   @override
-  final String? id;
+  final String id;
 
   /// Not yet used - will be implemented in a future release.
   @override
   final int? outOfStockThreshold;
   @override
-  final bool? pricesIncludeTax;
+  final bool pricesIncludeTax;
   @override
   final Seller? seller;
   @override
-  final String? token;
+  final String token;
 
   /// Not yet used - will be implemented in a future release.
   @override
   final bool? trackInventory;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -554,65 +552,65 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
 
 abstract class _Channel extends Channel {
   const factory _Channel(
-      {final List<CurrencyCode?>? availableCurrencyCodes,
-      final List<LanguageCode?>? availableLanguageCodes,
-      final String? code,
-      final DateTime? createdAt,
-      final CurrencyCode? currencyCode,
+      {required final List<CurrencyCode> availableCurrencyCodes,
+      final List<LanguageCode>? availableLanguageCodes,
+      required final String code,
+      required final DateTime createdAt,
+      required final CurrencyCode currencyCode,
       final Map<String, dynamic>? customFields,
-      final CurrencyCode? defaultCurrencyCode,
-      final LanguageCode? defaultLanguageCode,
+      required final CurrencyCode defaultCurrencyCode,
+      required final LanguageCode defaultLanguageCode,
       final Zone? defaultShippingZone,
       final Zone? defaultTaxZone,
-      final String? id,
+      required final String id,
       final int? outOfStockThreshold,
-      final bool? pricesIncludeTax,
+      required final bool pricesIncludeTax,
       final Seller? seller,
-      final String? token,
+      required final String token,
       final bool? trackInventory,
-      final DateTime? updatedAt}) = _$ChannelImpl;
+      required final DateTime updatedAt}) = _$ChannelImpl;
   const _Channel._() : super._();
 
   factory _Channel.fromJson(Map<String, dynamic> json) = _$ChannelImpl.fromJson;
 
   @override
-  List<CurrencyCode?>? get availableCurrencyCodes;
+  List<CurrencyCode> get availableCurrencyCodes;
   @override
-  List<LanguageCode?>? get availableLanguageCodes;
+  List<LanguageCode>? get availableLanguageCodes;
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  CurrencyCode? get currencyCode;
+  CurrencyCode get currencyCode;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  CurrencyCode? get defaultCurrencyCode;
+  CurrencyCode get defaultCurrencyCode;
   @override
-  LanguageCode? get defaultLanguageCode;
+  LanguageCode get defaultLanguageCode;
   @override
   Zone? get defaultShippingZone;
   @override
   Zone? get defaultTaxZone;
   @override
-  String? get id;
+  String get id;
   @override
 
   /// Not yet used - will be implemented in a future release.
   int? get outOfStockThreshold;
   @override
-  bool? get pricesIncludeTax;
+  bool get pricesIncludeTax;
   @override
   Seller? get seller;
   @override
-  String? get token;
+  String get token;
   @override
 
   /// Not yet used - will be implemented in a future release.
   bool? get trackInventory;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith =>

@@ -20,8 +20,8 @@ LocalizedString _$LocalizedStringFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LocalizedString {
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get value => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $LocalizedStringCopyWith<$Res> {
           LocalizedString value, $Res Function(LocalizedString) then) =
       _$LocalizedStringCopyWithImpl<$Res, LocalizedString>;
   @useResult
-  $Res call({LanguageCode? languageCode, String? value});
+  $Res call({LanguageCode languageCode, String value});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$LocalizedStringCopyWithImpl<$Res, $Val extends LocalizedString>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? languageCode = freezed,
-    Object? value = freezed,
+    Object? languageCode = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      languageCode: freezed == languageCode
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      value: freezed == value
+              as LanguageCode,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$LocalizedStringImplCopyWith<$Res>
       __$$LocalizedStringImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({LanguageCode? languageCode, String? value});
+  $Res call({LanguageCode languageCode, String value});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$LocalizedStringImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? languageCode = freezed,
-    Object? value = freezed,
+    Object? languageCode = null,
+    Object? value = null,
   }) {
     return _then(_$LocalizedStringImpl(
-      languageCode: freezed == languageCode
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      value: freezed == value
+              as LanguageCode,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -109,15 +109,16 @@ class __$$LocalizedStringImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LocalizedStringImpl extends _LocalizedString
     with DiagnosticableTreeMixin {
-  const _$LocalizedStringImpl({this.languageCode, this.value}) : super._();
+  const _$LocalizedStringImpl({required this.languageCode, required this.value})
+      : super._();
 
   factory _$LocalizedStringImpl.fromJson(Map<String, dynamic> json) =>
       _$$LocalizedStringImplFromJson(json);
 
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? value;
+  final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -164,17 +165,17 @@ class _$LocalizedStringImpl extends _LocalizedString
 
 abstract class _LocalizedString extends LocalizedString {
   const factory _LocalizedString(
-      {final LanguageCode? languageCode,
-      final String? value}) = _$LocalizedStringImpl;
+      {required final LanguageCode languageCode,
+      required final String value}) = _$LocalizedStringImpl;
   const _LocalizedString._() : super._();
 
   factory _LocalizedString.fromJson(Map<String, dynamic> json) =
       _$LocalizedStringImpl.fromJson;
 
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get value;
+  String get value;
   @override
   @JsonKey(ignore: true)
   _$$LocalizedStringImplCopyWith<_$LocalizedStringImpl> get copyWith =>

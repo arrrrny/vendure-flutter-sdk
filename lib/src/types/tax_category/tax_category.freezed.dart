@@ -20,12 +20,12 @@ TaxCategory _$TaxCategoryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaxCategory {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  bool? get isDefault => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  bool get isDefault => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,12 +40,12 @@ abstract class $TaxCategoryCopyWith<$Res> {
       _$TaxCategoryCopyWithImpl<$Res, TaxCategory>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      bool? isDefault,
-      String? name,
-      DateTime? updatedAt});
+      String id,
+      bool isDefault,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -61,38 +61,38 @@ class _$TaxCategoryCopyWithImpl<$Res, $Val extends TaxCategory>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? isDefault = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? isDefault = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isDefault: freezed == isDefault
+              as String,
+      isDefault: null == isDefault
           ? _value.isDefault
           : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -106,12 +106,12 @@ abstract class _$$TaxCategoryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      bool? isDefault,
-      String? name,
-      DateTime? updatedAt});
+      String id,
+      bool isDefault,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -125,38 +125,38 @@ class __$$TaxCategoryImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? isDefault = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? isDefault = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$TaxCategoryImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isDefault: freezed == isDefault
+              as String,
+      isDefault: null == isDefault
           ? _value.isDefault
           : isDefault // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -165,12 +165,12 @@ class __$$TaxCategoryImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
   const _$TaxCategoryImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.id,
-      this.isDefault,
-      this.name,
-      this.updatedAt})
+      required this.id,
+      required this.isDefault,
+      required this.name,
+      required this.updatedAt})
       : _customFields = customFields,
         super._();
 
@@ -178,7 +178,7 @@ class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
       _$$TaxCategoryImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -190,13 +190,13 @@ class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final bool? isDefault;
+  final bool isDefault;
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -260,29 +260,29 @@ class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
 
 abstract class _TaxCategory extends TaxCategory {
   const factory _TaxCategory(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? id,
-      final bool? isDefault,
-      final String? name,
-      final DateTime? updatedAt}) = _$TaxCategoryImpl;
+      required final String id,
+      required final bool isDefault,
+      required final String name,
+      required final DateTime updatedAt}) = _$TaxCategoryImpl;
   const _TaxCategory._() : super._();
 
   factory _TaxCategory.fromJson(Map<String, dynamic> json) =
       _$TaxCategoryImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  bool? get isDefault;
+  bool get isDefault;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$TaxCategoryImplCopyWith<_$TaxCategoryImpl> get copyWith =>

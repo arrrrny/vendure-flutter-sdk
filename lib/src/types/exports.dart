@@ -3,14 +3,14 @@ export './add_payment_to_order_result/add_payment_to_order_result.dart'
     show AddPaymentToOrderResult;
 export './address/address.dart' show Address;
 export './adjustment/adjustment.dart' show Adjustment;
-export './adjustment_type/adjustment_type.dart' show AdjustmentType;
+export './types/adjustment_type/adjustment_type.dart' show AdjustmentType;
 export './already_logged_in_error/already_logged_in_error.dart'
     show AlreadyLoggedInError;
 export './apply_coupon_code_result/apply_coupon_code_result.dart'
     show ApplyCouponCodeResult;
 export './asset/asset.dart' show Asset;
 export './asset_list/asset_list.dart' show AssetList;
-export './asset_type/asset_type.dart' show AssetType;
+export './types/asset_type/asset_type.dart' show AssetType;
 export './authentication_input/authentication_input.dart'
     show AuthenticationInput;
 export './authentication_method/authentication_method.dart'
@@ -59,7 +59,7 @@ export './create_address_input/create_address_input.dart'
     show CreateAddressInput;
 export './create_customer_input/create_customer_input.dart'
     show CreateCustomerInput;
-export './currency_code/currency_code.dart' show CurrencyCode;
+export './types/currency_code/currency_code.dart' show CurrencyCode;
 export './current_user/current_user.dart' show CurrentUser;
 export './current_user_channel/current_user_channel.dart'
     show CurrentUserChannel;
@@ -79,11 +79,11 @@ export './date_range/date_range.dart' show DateRange;
 export './date_time_custom_field_config/date_time_custom_field_config.dart'
     show DateTimeCustomFieldConfig;
 export './deletion_response/deletion_response.dart' show DeletionResponse;
-export './deletion_result/deletion_result.dart' show DeletionResult;
+export './types/deletion_result/deletion_result.dart' show DeletionResult;
 export './discount/discount.dart' show Discount;
 export './email_address_conflict_error/email_address_conflict_error.dart'
     show EmailAddressConflictError;
-export './error_code/error_code.dart' show ErrorCode;
+export './types/error_code/error_code.dart' show ErrorCode;
 export './facet/facet.dart' show Facet;
 export './facet_filter_parameter/facet_filter_parameter.dart'
     show FacetFilterParameter;
@@ -109,7 +109,7 @@ export './float_custom_field_config/float_custom_field_config.dart'
     show FloatCustomFieldConfig;
 export './fulfillment/fulfillment.dart' show Fulfillment;
 export './fulfillment_line/fulfillment_line.dart' show FulfillmentLine;
-export './global_flag/global_flag.dart' show GlobalFlag;
+export './types/global_flag/global_flag.dart' show GlobalFlag;
 export './guest_checkout_error/guest_checkout_error.dart'
     show GuestCheckoutError;
 export './history_entry/history_entry.dart' show HistoryEntry;
@@ -120,7 +120,8 @@ export './history_entry_list_options/history_entry_list_options.dart'
     show HistoryEntryListOptions;
 export './history_entry_sort_parameter/history_entry_sort_parameter.dart'
     show HistoryEntrySortParameter;
-export './history_entry_type/history_entry_type.dart' show HistoryEntryType;
+export './types/history_entry_type/history_entry_type.dart'
+    show HistoryEntryType;
 export './id_list_operators/id_list_operators.dart' show IdListOperators;
 export './id_operators/id_operators.dart' show IdOperators;
 export './identifier_change_token_expired_error/identifier_change_token_expired_error.dart'
@@ -137,13 +138,13 @@ export './int_custom_field_config/int_custom_field_config.dart'
     show IntCustomFieldConfig;
 export './invalid_credentials_error/invalid_credentials_error.dart'
     show InvalidCredentialsError;
-export './language_code/language_code.dart' show LanguageCode;
+export './types/language_code/language_code.dart' show LanguageCode;
 export './locale_string_custom_field_config/locale_string_custom_field_config.dart'
     show LocaleStringCustomFieldConfig;
 export './locale_text_custom_field_config/locale_text_custom_field_config.dart'
     show LocaleTextCustomFieldConfig;
 export './localized_string/localized_string.dart' show LocalizedString;
-export './logical_operator/logical_operator.dart' show LogicalOperator;
+export './types/logical_operator/logical_operator.dart' show LogicalOperator;
 export './missing_password_error/missing_password_error.dart'
     show MissingPasswordError;
 export './native_auth_input/native_auth_input.dart' show NativeAuthInput;
@@ -177,7 +178,7 @@ export './order_sort_parameter/order_sort_parameter.dart'
 export './order_state_transition_error/order_state_transition_error.dart'
     show OrderStateTransitionError;
 export './order_tax_summary/order_tax_summary.dart' show OrderTaxSummary;
-export './order_type/order_type.dart' show OrderType;
+export './types/order_type/order_type.dart' show OrderType;
 export './password_already_set_error/password_already_set_error.dart'
     show PasswordAlreadySetError;
 export './password_reset_token_expired_error/password_reset_token_expired_error.dart'
@@ -197,7 +198,7 @@ export './payment_method_quote/payment_method_quote.dart'
     show PaymentMethodQuote;
 export './payment_method_translation/payment_method_translation.dart'
     show PaymentMethodTranslation;
-export './permission/permission.dart' show Permission;
+export './types/permission/permission.dart' show Permission;
 export './price_range/price_range.dart' show PriceRange;
 export './product/product.dart' show Product;
 export './product_filter_parameter/product_filter_parameter.dart'
@@ -277,7 +278,7 @@ export './shipping_method_quote/shipping_method_quote.dart'
 export './shipping_method_translation/shipping_method_translation.dart'
     show ShippingMethodTranslation;
 export './single_price/single_price.dart' show SinglePrice;
-export './sort_order/sort_order.dart' show SortOrder;
+export './types/sort_order/sort_order.dart' show SortOrder;
 export './string_custom_field_config/string_custom_field_config.dart'
     show StringCustomFieldConfig;
 export './string_field_option/string_field_option.dart' show StringFieldOption;

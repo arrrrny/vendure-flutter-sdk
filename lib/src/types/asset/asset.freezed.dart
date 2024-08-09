@@ -20,20 +20,20 @@ Asset _$AssetFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Asset {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  int? get fileSize => throw _privateConstructorUsedError;
+  int get fileSize => throw _privateConstructorUsedError;
   Coordinate? get focalPoint => throw _privateConstructorUsedError;
-  int? get height => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get mimeType => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get preview => throw _privateConstructorUsedError;
-  String? get source => throw _privateConstructorUsedError;
-  List<Tag?>? get tags => throw _privateConstructorUsedError;
-  AssetType? get type => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  int? get width => throw _privateConstructorUsedError;
+  int get height => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get mimeType => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get preview => throw _privateConstructorUsedError;
+  String get source => throw _privateConstructorUsedError;
+  List<Tag> get tags => throw _privateConstructorUsedError;
+  AssetType get type => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  int get width => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,20 +46,20 @@ abstract class $AssetCopyWith<$Res> {
       _$AssetCopyWithImpl<$Res, Asset>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      int? fileSize,
+      int fileSize,
       Coordinate? focalPoint,
-      int? height,
-      String? id,
-      String? mimeType,
-      String? name,
-      String? preview,
-      String? source,
-      List<Tag?>? tags,
-      AssetType? type,
-      DateTime? updatedAt,
-      int? width});
+      int height,
+      String id,
+      String mimeType,
+      String name,
+      String preview,
+      String source,
+      List<Tag> tags,
+      AssetType type,
+      DateTime updatedAt,
+      int width});
 
   $CoordinateCopyWith<$Res>? get focalPoint;
 }
@@ -77,78 +77,78 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? fileSize = freezed,
+    Object? fileSize = null,
     Object? focalPoint = freezed,
-    Object? height = freezed,
-    Object? id = freezed,
-    Object? mimeType = freezed,
-    Object? name = freezed,
-    Object? preview = freezed,
-    Object? source = freezed,
-    Object? tags = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
-    Object? width = freezed,
+    Object? height = null,
+    Object? id = null,
+    Object? mimeType = null,
+    Object? name = null,
+    Object? preview = null,
+    Object? source = null,
+    Object? tags = null,
+    Object? type = null,
+    Object? updatedAt = null,
+    Object? width = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      fileSize: freezed == fileSize
+      fileSize: null == fileSize
           ? _value.fileSize
           : fileSize // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       focalPoint: freezed == focalPoint
           ? _value.focalPoint
           : focalPoint // ignore: cast_nullable_to_non_nullable
               as Coordinate?,
-      height: freezed == height
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: freezed == id
+              as int,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mimeType: freezed == mimeType
+              as String,
+      mimeType: null == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preview: freezed == preview
+              as String,
+      preview: null == preview
           ? _value.preview
           : preview // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
+              as String,
+      source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: freezed == tags
+              as String,
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag?>?,
-      type: freezed == type
+              as List<Tag>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AssetType?,
-      updatedAt: freezed == updatedAt
+              as AssetType,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      width: freezed == width
+              as DateTime,
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 
@@ -173,20 +173,20 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      int? fileSize,
+      int fileSize,
       Coordinate? focalPoint,
-      int? height,
-      String? id,
-      String? mimeType,
-      String? name,
-      String? preview,
-      String? source,
-      List<Tag?>? tags,
-      AssetType? type,
-      DateTime? updatedAt,
-      int? width});
+      int height,
+      String id,
+      String mimeType,
+      String name,
+      String preview,
+      String source,
+      List<Tag> tags,
+      AssetType type,
+      DateTime updatedAt,
+      int width});
 
   @override
   $CoordinateCopyWith<$Res>? get focalPoint;
@@ -203,78 +203,78 @@ class __$$AssetImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? fileSize = freezed,
+    Object? fileSize = null,
     Object? focalPoint = freezed,
-    Object? height = freezed,
-    Object? id = freezed,
-    Object? mimeType = freezed,
-    Object? name = freezed,
-    Object? preview = freezed,
-    Object? source = freezed,
-    Object? tags = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
-    Object? width = freezed,
+    Object? height = null,
+    Object? id = null,
+    Object? mimeType = null,
+    Object? name = null,
+    Object? preview = null,
+    Object? source = null,
+    Object? tags = null,
+    Object? type = null,
+    Object? updatedAt = null,
+    Object? width = null,
   }) {
     return _then(_$AssetImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      fileSize: freezed == fileSize
+      fileSize: null == fileSize
           ? _value.fileSize
           : fileSize // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       focalPoint: freezed == focalPoint
           ? _value.focalPoint
           : focalPoint // ignore: cast_nullable_to_non_nullable
               as Coordinate?,
-      height: freezed == height
+      height: null == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: freezed == id
+              as int,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mimeType: freezed == mimeType
+              as String,
+      mimeType: null == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preview: freezed == preview
+              as String,
+      preview: null == preview
           ? _value.preview
           : preview // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
+              as String,
+      source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: freezed == tags
+              as String,
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag?>?,
-      type: freezed == type
+              as List<Tag>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AssetType?,
-      updatedAt: freezed == updatedAt
+              as AssetType,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      width: freezed == width
+              as DateTime,
+      width: null == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -283,20 +283,20 @@ class __$$AssetImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
   const _$AssetImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.fileSize,
+      required this.fileSize,
       this.focalPoint,
-      this.height,
-      this.id,
-      this.mimeType,
-      this.name,
-      this.preview,
-      this.source,
-      final List<Tag?>? tags,
-      this.type,
-      this.updatedAt,
-      this.width})
+      required this.height,
+      required this.id,
+      required this.mimeType,
+      required this.name,
+      required this.preview,
+      required this.source,
+      required final List<Tag> tags,
+      required this.type,
+      required this.updatedAt,
+      required this.width})
       : _customFields = customFields,
         _tags = tags,
         super._();
@@ -305,7 +305,7 @@ class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
       _$$AssetImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -317,37 +317,35 @@ class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
   }
 
   @override
-  final int? fileSize;
+  final int fileSize;
   @override
   final Coordinate? focalPoint;
   @override
-  final int? height;
+  final int height;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? mimeType;
+  final String mimeType;
   @override
-  final String? name;
+  final String name;
   @override
-  final String? preview;
+  final String preview;
   @override
-  final String? source;
-  final List<Tag?>? _tags;
+  final String source;
+  final List<Tag> _tags;
   @override
-  List<Tag?>? get tags {
-    final value = _tags;
-    if (value == null) return null;
+  List<Tag> get tags {
     if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_tags);
   }
 
   @override
-  final AssetType? type;
+  final AssetType type;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
   @override
-  final int? width;
+  final int width;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -437,52 +435,52 @@ class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
 
 abstract class _Asset extends Asset {
   const factory _Asset(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final int? fileSize,
+      required final int fileSize,
       final Coordinate? focalPoint,
-      final int? height,
-      final String? id,
-      final String? mimeType,
-      final String? name,
-      final String? preview,
-      final String? source,
-      final List<Tag?>? tags,
-      final AssetType? type,
-      final DateTime? updatedAt,
-      final int? width}) = _$AssetImpl;
+      required final int height,
+      required final String id,
+      required final String mimeType,
+      required final String name,
+      required final String preview,
+      required final String source,
+      required final List<Tag> tags,
+      required final AssetType type,
+      required final DateTime updatedAt,
+      required final int width}) = _$AssetImpl;
   const _Asset._() : super._();
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  int? get fileSize;
+  int get fileSize;
   @override
   Coordinate? get focalPoint;
   @override
-  int? get height;
+  int get height;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get mimeType;
+  String get mimeType;
   @override
-  String? get name;
+  String get name;
   @override
-  String? get preview;
+  String get preview;
   @override
-  String? get source;
+  String get source;
   @override
-  List<Tag?>? get tags;
+  List<Tag> get tags;
   @override
-  AssetType? get type;
+  AssetType get type;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
-  int? get width;
+  int get width;
   @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>

@@ -21,26 +21,26 @@ SearchResult _$SearchResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SearchResult {
   /// An array of ids of the Collections in which this result appears
-  List<String?>? get collectionIds => throw _privateConstructorUsedError;
-  CurrencyCode? get currencyCode => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<String?>? get facetIds => throw _privateConstructorUsedError;
-  List<String?>? get facetValueIds => throw _privateConstructorUsedError;
-  bool? get inStock => throw _privateConstructorUsedError;
-  SearchResultPrice? get price => throw _privateConstructorUsedError;
-  SearchResultPrice? get priceWithTax => throw _privateConstructorUsedError;
+  List<String> get collectionIds => throw _privateConstructorUsedError;
+  CurrencyCode get currencyCode => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  List<String> get facetIds => throw _privateConstructorUsedError;
+  List<String> get facetValueIds => throw _privateConstructorUsedError;
+  bool get inStock => throw _privateConstructorUsedError;
+  SearchResultPrice get price => throw _privateConstructorUsedError;
+  SearchResultPrice get priceWithTax => throw _privateConstructorUsedError;
   SearchResultAsset? get productAsset => throw _privateConstructorUsedError;
-  String? get productId => throw _privateConstructorUsedError;
-  String? get productName => throw _privateConstructorUsedError;
+  String get productId => throw _privateConstructorUsedError;
+  String get productName => throw _privateConstructorUsedError;
   SearchResultAsset? get productVariantAsset =>
       throw _privateConstructorUsedError;
-  String? get productVariantId => throw _privateConstructorUsedError;
-  String? get productVariantName => throw _privateConstructorUsedError;
+  String get productVariantId => throw _privateConstructorUsedError;
+  String get productVariantName => throw _privateConstructorUsedError;
 
   /// A relevance score for the result. Differs between database implementations
-  double? get score => throw _privateConstructorUsedError;
-  String? get sku => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
+  double get score => throw _privateConstructorUsedError;
+  String get sku => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,26 +55,26 @@ abstract class $SearchResultCopyWith<$Res> {
       _$SearchResultCopyWithImpl<$Res, SearchResult>;
   @useResult
   $Res call(
-      {List<String?>? collectionIds,
-      CurrencyCode? currencyCode,
-      String? description,
-      List<String?>? facetIds,
-      List<String?>? facetValueIds,
-      bool? inStock,
-      SearchResultPrice? price,
-      SearchResultPrice? priceWithTax,
+      {List<String> collectionIds,
+      CurrencyCode currencyCode,
+      String description,
+      List<String> facetIds,
+      List<String> facetValueIds,
+      bool inStock,
+      SearchResultPrice price,
+      SearchResultPrice priceWithTax,
       SearchResultAsset? productAsset,
-      String? productId,
-      String? productName,
+      String productId,
+      String productName,
       SearchResultAsset? productVariantAsset,
-      String? productVariantId,
-      String? productVariantName,
-      double? score,
-      String? sku,
-      String? slug});
+      String productVariantId,
+      String productVariantName,
+      double score,
+      String sku,
+      String slug});
 
-  $SearchResultPriceCopyWith<$Res>? get price;
-  $SearchResultPriceCopyWith<$Res>? get priceWithTax;
+  $SearchResultPriceCopyWith<$Res> get price;
+  $SearchResultPriceCopyWith<$Res> get priceWithTax;
   $SearchResultAssetCopyWith<$Res>? get productAsset;
   $SearchResultAssetCopyWith<$Res>? get productVariantAsset;
 }
@@ -92,116 +92,108 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? collectionIds = freezed,
-    Object? currencyCode = freezed,
-    Object? description = freezed,
-    Object? facetIds = freezed,
-    Object? facetValueIds = freezed,
-    Object? inStock = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
+    Object? collectionIds = null,
+    Object? currencyCode = null,
+    Object? description = null,
+    Object? facetIds = null,
+    Object? facetValueIds = null,
+    Object? inStock = null,
+    Object? price = null,
+    Object? priceWithTax = null,
     Object? productAsset = freezed,
-    Object? productId = freezed,
-    Object? productName = freezed,
+    Object? productId = null,
+    Object? productName = null,
     Object? productVariantAsset = freezed,
-    Object? productVariantId = freezed,
-    Object? productVariantName = freezed,
-    Object? score = freezed,
-    Object? sku = freezed,
-    Object? slug = freezed,
+    Object? productVariantId = null,
+    Object? productVariantName = null,
+    Object? score = null,
+    Object? sku = null,
+    Object? slug = null,
   }) {
     return _then(_value.copyWith(
-      collectionIds: freezed == collectionIds
+      collectionIds: null == collectionIds
           ? _value.collectionIds
           : collectionIds // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      currencyCode: freezed == currencyCode
+              as List<String>,
+      currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
-      description: freezed == description
+              as CurrencyCode,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      facetIds: freezed == facetIds
+              as String,
+      facetIds: null == facetIds
           ? _value.facetIds
           : facetIds // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      facetValueIds: freezed == facetValueIds
+              as List<String>,
+      facetValueIds: null == facetValueIds
           ? _value.facetValueIds
           : facetValueIds // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      inStock: freezed == inStock
+              as List<String>,
+      inStock: null == inStock
           ? _value.inStock
           : inStock // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      price: freezed == price
+              as bool,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as SearchResultPrice?,
-      priceWithTax: freezed == priceWithTax
+              as SearchResultPrice,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as SearchResultPrice?,
+              as SearchResultPrice,
       productAsset: freezed == productAsset
           ? _value.productAsset
           : productAsset // ignore: cast_nullable_to_non_nullable
               as SearchResultAsset?,
-      productId: freezed == productId
+      productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productName: freezed == productName
+              as String,
+      productName: null == productName
           ? _value.productName
           : productName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       productVariantAsset: freezed == productVariantAsset
           ? _value.productVariantAsset
           : productVariantAsset // ignore: cast_nullable_to_non_nullable
               as SearchResultAsset?,
-      productVariantId: freezed == productVariantId
+      productVariantId: null == productVariantId
           ? _value.productVariantId
           : productVariantId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productVariantName: freezed == productVariantName
+              as String,
+      productVariantName: null == productVariantName
           ? _value.productVariantName
           : productVariantName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      score: freezed == score
+              as String,
+      score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sku: freezed == sku
+              as double,
+      sku: null == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: freezed == slug
+              as String,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SearchResultPriceCopyWith<$Res>? get price {
-    if (_value.price == null) {
-      return null;
-    }
-
-    return $SearchResultPriceCopyWith<$Res>(_value.price!, (value) {
+  $SearchResultPriceCopyWith<$Res> get price {
+    return $SearchResultPriceCopyWith<$Res>(_value.price, (value) {
       return _then(_value.copyWith(price: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SearchResultPriceCopyWith<$Res>? get priceWithTax {
-    if (_value.priceWithTax == null) {
-      return null;
-    }
-
-    return $SearchResultPriceCopyWith<$Res>(_value.priceWithTax!, (value) {
+  $SearchResultPriceCopyWith<$Res> get priceWithTax {
+    return $SearchResultPriceCopyWith<$Res>(_value.priceWithTax, (value) {
       return _then(_value.copyWith(priceWithTax: value) as $Val);
     });
   }
@@ -241,28 +233,28 @@ abstract class _$$SearchResultImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<String?>? collectionIds,
-      CurrencyCode? currencyCode,
-      String? description,
-      List<String?>? facetIds,
-      List<String?>? facetValueIds,
-      bool? inStock,
-      SearchResultPrice? price,
-      SearchResultPrice? priceWithTax,
+      {List<String> collectionIds,
+      CurrencyCode currencyCode,
+      String description,
+      List<String> facetIds,
+      List<String> facetValueIds,
+      bool inStock,
+      SearchResultPrice price,
+      SearchResultPrice priceWithTax,
       SearchResultAsset? productAsset,
-      String? productId,
-      String? productName,
+      String productId,
+      String productName,
       SearchResultAsset? productVariantAsset,
-      String? productVariantId,
-      String? productVariantName,
-      double? score,
-      String? sku,
-      String? slug});
+      String productVariantId,
+      String productVariantName,
+      double score,
+      String sku,
+      String slug});
 
   @override
-  $SearchResultPriceCopyWith<$Res>? get price;
+  $SearchResultPriceCopyWith<$Res> get price;
   @override
-  $SearchResultPriceCopyWith<$Res>? get priceWithTax;
+  $SearchResultPriceCopyWith<$Res> get priceWithTax;
   @override
   $SearchResultAssetCopyWith<$Res>? get productAsset;
   @override
@@ -280,93 +272,93 @@ class __$$SearchResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? collectionIds = freezed,
-    Object? currencyCode = freezed,
-    Object? description = freezed,
-    Object? facetIds = freezed,
-    Object? facetValueIds = freezed,
-    Object? inStock = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
+    Object? collectionIds = null,
+    Object? currencyCode = null,
+    Object? description = null,
+    Object? facetIds = null,
+    Object? facetValueIds = null,
+    Object? inStock = null,
+    Object? price = null,
+    Object? priceWithTax = null,
     Object? productAsset = freezed,
-    Object? productId = freezed,
-    Object? productName = freezed,
+    Object? productId = null,
+    Object? productName = null,
     Object? productVariantAsset = freezed,
-    Object? productVariantId = freezed,
-    Object? productVariantName = freezed,
-    Object? score = freezed,
-    Object? sku = freezed,
-    Object? slug = freezed,
+    Object? productVariantId = null,
+    Object? productVariantName = null,
+    Object? score = null,
+    Object? sku = null,
+    Object? slug = null,
   }) {
     return _then(_$SearchResultImpl(
-      collectionIds: freezed == collectionIds
+      collectionIds: null == collectionIds
           ? _value._collectionIds
           : collectionIds // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      currencyCode: freezed == currencyCode
+              as List<String>,
+      currencyCode: null == currencyCode
           ? _value.currencyCode
           : currencyCode // ignore: cast_nullable_to_non_nullable
-              as CurrencyCode?,
-      description: freezed == description
+              as CurrencyCode,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      facetIds: freezed == facetIds
+              as String,
+      facetIds: null == facetIds
           ? _value._facetIds
           : facetIds // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      facetValueIds: freezed == facetValueIds
+              as List<String>,
+      facetValueIds: null == facetValueIds
           ? _value._facetValueIds
           : facetValueIds // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      inStock: freezed == inStock
+              as List<String>,
+      inStock: null == inStock
           ? _value.inStock
           : inStock // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      price: freezed == price
+              as bool,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as SearchResultPrice?,
-      priceWithTax: freezed == priceWithTax
+              as SearchResultPrice,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as SearchResultPrice?,
+              as SearchResultPrice,
       productAsset: freezed == productAsset
           ? _value.productAsset
           : productAsset // ignore: cast_nullable_to_non_nullable
               as SearchResultAsset?,
-      productId: freezed == productId
+      productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productName: freezed == productName
+              as String,
+      productName: null == productName
           ? _value.productName
           : productName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       productVariantAsset: freezed == productVariantAsset
           ? _value.productVariantAsset
           : productVariantAsset // ignore: cast_nullable_to_non_nullable
               as SearchResultAsset?,
-      productVariantId: freezed == productVariantId
+      productVariantId: null == productVariantId
           ? _value.productVariantId
           : productVariantId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      productVariantName: freezed == productVariantName
+              as String,
+      productVariantName: null == productVariantName
           ? _value.productVariantName
           : productVariantName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      score: freezed == score
+              as String,
+      score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sku: freezed == sku
+              as double,
+      sku: null == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: freezed == slug
+              as String,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -374,24 +366,24 @@ class __$$SearchResultImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
-  const _$SearchResultImpl(
-      {final List<String?>? collectionIds,
-      this.currencyCode,
-      this.description,
-      final List<String?>? facetIds,
-      final List<String?>? facetValueIds,
-      this.inStock,
-      this.price,
-      this.priceWithTax,
+  _$SearchResultImpl(
+      {required final List<String> collectionIds,
+      required this.currencyCode,
+      required this.description,
+      required final List<String> facetIds,
+      required final List<String> facetValueIds,
+      required this.inStock,
+      required this.price,
+      required this.priceWithTax,
       this.productAsset,
-      this.productId,
-      this.productName,
+      required this.productId,
+      required this.productName,
       this.productVariantAsset,
-      this.productVariantId,
-      this.productVariantName,
-      this.score,
-      this.sku,
-      this.slug})
+      required this.productVariantId,
+      required this.productVariantName,
+      required this.score,
+      required this.sku,
+      required this.slug})
       : _collectionIds = collectionIds,
         _facetIds = facetIds,
         _facetValueIds = facetValueIds,
@@ -401,68 +393,62 @@ class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
       _$$SearchResultImplFromJson(json);
 
   /// An array of ids of the Collections in which this result appears
-  final List<String?>? _collectionIds;
+  final List<String> _collectionIds;
 
   /// An array of ids of the Collections in which this result appears
   @override
-  List<String?>? get collectionIds {
-    final value = _collectionIds;
-    if (value == null) return null;
+  List<String> get collectionIds {
     if (_collectionIds is EqualUnmodifiableListView) return _collectionIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_collectionIds);
   }
 
   @override
-  final CurrencyCode? currencyCode;
+  final CurrencyCode currencyCode;
   @override
-  final String? description;
-  final List<String?>? _facetIds;
+  final String description;
+  final List<String> _facetIds;
   @override
-  List<String?>? get facetIds {
-    final value = _facetIds;
-    if (value == null) return null;
+  List<String> get facetIds {
     if (_facetIds is EqualUnmodifiableListView) return _facetIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_facetIds);
   }
 
-  final List<String?>? _facetValueIds;
+  final List<String> _facetValueIds;
   @override
-  List<String?>? get facetValueIds {
-    final value = _facetValueIds;
-    if (value == null) return null;
+  List<String> get facetValueIds {
     if (_facetValueIds is EqualUnmodifiableListView) return _facetValueIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_facetValueIds);
   }
 
   @override
-  final bool? inStock;
+  final bool inStock;
   @override
-  final SearchResultPrice? price;
+  final SearchResultPrice price;
   @override
-  final SearchResultPrice? priceWithTax;
+  final SearchResultPrice priceWithTax;
   @override
   final SearchResultAsset? productAsset;
   @override
-  final String? productId;
+  final String productId;
   @override
-  final String? productName;
+  final String productName;
   @override
   final SearchResultAsset? productVariantAsset;
   @override
-  final String? productVariantId;
+  final String productVariantId;
   @override
-  final String? productVariantName;
+  final String productVariantName;
 
   /// A relevance score for the result. Differs between database implementations
   @override
-  final double? score;
+  final double score;
   @override
-  final String? sku;
+  final String sku;
   @override
-  final String? slug;
+  final String slug;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -565,25 +551,25 @@ class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
 }
 
 abstract class _SearchResult extends SearchResult {
-  const factory _SearchResult(
-      {final List<String?>? collectionIds,
-      final CurrencyCode? currencyCode,
-      final String? description,
-      final List<String?>? facetIds,
-      final List<String?>? facetValueIds,
-      final bool? inStock,
-      final SearchResultPrice? price,
-      final SearchResultPrice? priceWithTax,
+  factory _SearchResult(
+      {required final List<String> collectionIds,
+      required final CurrencyCode currencyCode,
+      required final String description,
+      required final List<String> facetIds,
+      required final List<String> facetValueIds,
+      required final bool inStock,
+      required final SearchResultPrice price,
+      required final SearchResultPrice priceWithTax,
       final SearchResultAsset? productAsset,
-      final String? productId,
-      final String? productName,
+      required final String productId,
+      required final String productName,
       final SearchResultAsset? productVariantAsset,
-      final String? productVariantId,
-      final String? productVariantName,
-      final double? score,
-      final String? sku,
-      final String? slug}) = _$SearchResultImpl;
-  const _SearchResult._() : super._();
+      required final String productVariantId,
+      required final String productVariantName,
+      required final double score,
+      required final String sku,
+      required final String slug}) = _$SearchResultImpl;
+  _SearchResult._() : super._();
 
   factory _SearchResult.fromJson(Map<String, dynamic> json) =
       _$SearchResultImpl.fromJson;
@@ -591,41 +577,41 @@ abstract class _SearchResult extends SearchResult {
   @override
 
   /// An array of ids of the Collections in which this result appears
-  List<String?>? get collectionIds;
+  List<String> get collectionIds;
   @override
-  CurrencyCode? get currencyCode;
+  CurrencyCode get currencyCode;
   @override
-  String? get description;
+  String get description;
   @override
-  List<String?>? get facetIds;
+  List<String> get facetIds;
   @override
-  List<String?>? get facetValueIds;
+  List<String> get facetValueIds;
   @override
-  bool? get inStock;
+  bool get inStock;
   @override
-  SearchResultPrice? get price;
+  SearchResultPrice get price;
   @override
-  SearchResultPrice? get priceWithTax;
+  SearchResultPrice get priceWithTax;
   @override
   SearchResultAsset? get productAsset;
   @override
-  String? get productId;
+  String get productId;
   @override
-  String? get productName;
+  String get productName;
   @override
   SearchResultAsset? get productVariantAsset;
   @override
-  String? get productVariantId;
+  String get productVariantId;
   @override
-  String? get productVariantName;
+  String get productVariantName;
   @override
 
   /// A relevance score for the result. Differs between database implementations
-  double? get score;
+  double get score;
   @override
-  String? get sku;
+  String get sku;
   @override
-  String? get slug;
+  String get slug;
   @override
   @JsonKey(ignore: true)
   _$$SearchResultImplCopyWith<_$SearchResultImpl> get copyWith =>

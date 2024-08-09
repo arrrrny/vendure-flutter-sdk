@@ -20,13 +20,13 @@ Role _$RoleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Role {
-  List<Channel?>? get channels => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  List<Permission?>? get permissions => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  List<Channel> get channels => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  List<Permission> get permissions => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,13 +39,13 @@ abstract class $RoleCopyWith<$Res> {
       _$RoleCopyWithImpl<$Res, Role>;
   @useResult
   $Res call(
-      {List<Channel?>? channels,
-      String? code,
-      DateTime? createdAt,
-      String? description,
-      String? id,
-      List<Permission?>? permissions,
-      DateTime? updatedAt});
+      {List<Channel> channels,
+      String code,
+      DateTime createdAt,
+      String description,
+      String id,
+      List<Permission> permissions,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -61,43 +61,43 @@ class _$RoleCopyWithImpl<$Res, $Val extends Role>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channels = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? permissions = freezed,
-    Object? updatedAt = freezed,
+    Object? channels = null,
+    Object? code = null,
+    Object? createdAt = null,
+    Object? description = null,
+    Object? id = null,
+    Object? permissions = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      channels: freezed == channels
+      channels: null == channels
           ? _value.channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<Channel?>?,
-      code: freezed == code
+              as List<Channel>,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      description: freezed == description
+              as DateTime,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      permissions: freezed == permissions
+              as String,
+      permissions: null == permissions
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      updatedAt: freezed == updatedAt
+              as List<Permission>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -110,13 +110,13 @@ abstract class _$$RoleImplCopyWith<$Res> implements $RoleCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {List<Channel?>? channels,
-      String? code,
-      DateTime? createdAt,
-      String? description,
-      String? id,
-      List<Permission?>? permissions,
-      DateTime? updatedAt});
+      {List<Channel> channels,
+      String code,
+      DateTime createdAt,
+      String description,
+      String id,
+      List<Permission> permissions,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -129,43 +129,43 @@ class __$$RoleImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channels = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? permissions = freezed,
-    Object? updatedAt = freezed,
+    Object? channels = null,
+    Object? code = null,
+    Object? createdAt = null,
+    Object? description = null,
+    Object? id = null,
+    Object? permissions = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$RoleImpl(
-      channels: freezed == channels
+      channels: null == channels
           ? _value._channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<Channel?>?,
-      code: freezed == code
+              as List<Channel>,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      description: freezed == description
+              as DateTime,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      permissions: freezed == permissions
+              as String,
+      permissions: null == permissions
           ? _value._permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      updatedAt: freezed == updatedAt
+              as List<Permission>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -174,13 +174,13 @@ class __$$RoleImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RoleImpl extends _Role with DiagnosticableTreeMixin {
   const _$RoleImpl(
-      {final List<Channel?>? channels,
-      this.code,
-      this.createdAt,
-      this.description,
-      this.id,
-      final List<Permission?>? permissions,
-      this.updatedAt})
+      {required final List<Channel> channels,
+      required this.code,
+      required this.createdAt,
+      required this.description,
+      required this.id,
+      required final List<Permission> permissions,
+      required this.updatedAt})
       : _channels = channels,
         _permissions = permissions,
         super._();
@@ -188,36 +188,32 @@ class _$RoleImpl extends _Role with DiagnosticableTreeMixin {
   factory _$RoleImpl.fromJson(Map<String, dynamic> json) =>
       _$$RoleImplFromJson(json);
 
-  final List<Channel?>? _channels;
+  final List<Channel> _channels;
   @override
-  List<Channel?>? get channels {
-    final value = _channels;
-    if (value == null) return null;
+  List<Channel> get channels {
     if (_channels is EqualUnmodifiableListView) return _channels;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_channels);
   }
 
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? description;
+  final String description;
   @override
-  final String? id;
-  final List<Permission?>? _permissions;
+  final String id;
+  final List<Permission> _permissions;
   @override
-  List<Permission?>? get permissions {
-    final value = _permissions;
-    if (value == null) return null;
+  List<Permission> get permissions {
     if (_permissions is EqualUnmodifiableListView) return _permissions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_permissions);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -284,31 +280,31 @@ class _$RoleImpl extends _Role with DiagnosticableTreeMixin {
 
 abstract class _Role extends Role {
   const factory _Role(
-      {final List<Channel?>? channels,
-      final String? code,
-      final DateTime? createdAt,
-      final String? description,
-      final String? id,
-      final List<Permission?>? permissions,
-      final DateTime? updatedAt}) = _$RoleImpl;
+      {required final List<Channel> channels,
+      required final String code,
+      required final DateTime createdAt,
+      required final String description,
+      required final String id,
+      required final List<Permission> permissions,
+      required final DateTime updatedAt}) = _$RoleImpl;
   const _Role._() : super._();
 
   factory _Role.fromJson(Map<String, dynamic> json) = _$RoleImpl.fromJson;
 
   @override
-  List<Channel?>? get channels;
+  List<Channel> get channels;
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get description;
+  String get description;
   @override
-  String? get id;
+  String get id;
   @override
-  List<Permission?>? get permissions;
+  List<Permission> get permissions;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$RoleImplCopyWith<_$RoleImpl> get copyWith =>

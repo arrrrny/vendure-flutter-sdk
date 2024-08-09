@@ -20,15 +20,15 @@ Surcharge _$SurchargeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Surcharge {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  double? get price => throw _privateConstructorUsedError;
-  double? get priceWithTax => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
+  double get priceWithTax => throw _privateConstructorUsedError;
   String? get sku => throw _privateConstructorUsedError;
-  List<TaxLine?>? get taxLines => throw _privateConstructorUsedError;
-  double? get taxRate => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  List<TaxLine> get taxLines => throw _privateConstructorUsedError;
+  double get taxRate => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,15 +42,15 @@ abstract class $SurchargeCopyWith<$Res> {
       _$SurchargeCopyWithImpl<$Res, Surcharge>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      String? description,
-      String? id,
-      double? price,
-      double? priceWithTax,
+      {DateTime createdAt,
+      String description,
+      String id,
+      double price,
+      double priceWithTax,
       String? sku,
-      List<TaxLine?>? taxLines,
-      double? taxRate,
-      DateTime? updatedAt});
+      List<TaxLine> taxLines,
+      double taxRate,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -66,53 +66,53 @@ class _$SurchargeCopyWithImpl<$Res, $Val extends Surcharge>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
+    Object? createdAt = null,
+    Object? description = null,
+    Object? id = null,
+    Object? price = null,
+    Object? priceWithTax = null,
     Object? sku = freezed,
-    Object? taxLines = freezed,
-    Object? taxRate = freezed,
-    Object? updatedAt = freezed,
+    Object? taxLines = null,
+    Object? taxRate = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      description: freezed == description
+              as DateTime,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       sku: freezed == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxLines: freezed == taxLines
+      taxLines: null == taxLines
           ? _value.taxLines
           : taxLines // ignore: cast_nullable_to_non_nullable
-              as List<TaxLine?>?,
-      taxRate: freezed == taxRate
+              as List<TaxLine>,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      updatedAt: freezed == updatedAt
+              as double,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -126,15 +126,15 @@ abstract class _$$SurchargeImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
-      String? description,
-      String? id,
-      double? price,
-      double? priceWithTax,
+      {DateTime createdAt,
+      String description,
+      String id,
+      double price,
+      double priceWithTax,
       String? sku,
-      List<TaxLine?>? taxLines,
-      double? taxRate,
-      DateTime? updatedAt});
+      List<TaxLine> taxLines,
+      double taxRate,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -148,53 +148,53 @@ class __$$SurchargeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
+    Object? createdAt = null,
+    Object? description = null,
+    Object? id = null,
+    Object? price = null,
+    Object? priceWithTax = null,
     Object? sku = freezed,
-    Object? taxLines = freezed,
-    Object? taxRate = freezed,
-    Object? updatedAt = freezed,
+    Object? taxLines = null,
+    Object? taxRate = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$SurchargeImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      description: freezed == description
+              as DateTime,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       sku: freezed == sku
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
               as String?,
-      taxLines: freezed == taxLines
+      taxLines: null == taxLines
           ? _value._taxLines
           : taxLines // ignore: cast_nullable_to_non_nullable
-              as List<TaxLine?>?,
-      taxRate: freezed == taxRate
+              as List<TaxLine>,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      updatedAt: freezed == updatedAt
+              as double,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -203,15 +203,15 @@ class __$$SurchargeImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SurchargeImpl extends _Surcharge with DiagnosticableTreeMixin {
   const _$SurchargeImpl(
-      {this.createdAt,
-      this.description,
-      this.id,
-      this.price,
-      this.priceWithTax,
+      {required this.createdAt,
+      required this.description,
+      required this.id,
+      required this.price,
+      required this.priceWithTax,
       this.sku,
-      final List<TaxLine?>? taxLines,
-      this.taxRate,
-      this.updatedAt})
+      required final List<TaxLine> taxLines,
+      required this.taxRate,
+      required this.updatedAt})
       : _taxLines = taxLines,
         super._();
 
@@ -219,31 +219,29 @@ class _$SurchargeImpl extends _Surcharge with DiagnosticableTreeMixin {
       _$$SurchargeImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? description;
+  final String description;
   @override
-  final String? id;
+  final String id;
   @override
-  final double? price;
+  final double price;
   @override
-  final double? priceWithTax;
+  final double priceWithTax;
   @override
   final String? sku;
-  final List<TaxLine?>? _taxLines;
+  final List<TaxLine> _taxLines;
   @override
-  List<TaxLine?>? get taxLines {
-    final value = _taxLines;
-    if (value == null) return null;
+  List<TaxLine> get taxLines {
     if (_taxLines is EqualUnmodifiableListView) return _taxLines;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_taxLines);
   }
 
   @override
-  final double? taxRate;
+  final double taxRate;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -316,38 +314,38 @@ class _$SurchargeImpl extends _Surcharge with DiagnosticableTreeMixin {
 
 abstract class _Surcharge extends Surcharge {
   const factory _Surcharge(
-      {final DateTime? createdAt,
-      final String? description,
-      final String? id,
-      final double? price,
-      final double? priceWithTax,
+      {required final DateTime createdAt,
+      required final String description,
+      required final String id,
+      required final double price,
+      required final double priceWithTax,
       final String? sku,
-      final List<TaxLine?>? taxLines,
-      final double? taxRate,
-      final DateTime? updatedAt}) = _$SurchargeImpl;
+      required final List<TaxLine> taxLines,
+      required final double taxRate,
+      required final DateTime updatedAt}) = _$SurchargeImpl;
   const _Surcharge._() : super._();
 
   factory _Surcharge.fromJson(Map<String, dynamic> json) =
       _$SurchargeImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get description;
+  String get description;
   @override
-  String? get id;
+  String get id;
   @override
-  double? get price;
+  double get price;
   @override
-  double? get priceWithTax;
+  double get priceWithTax;
   @override
   String? get sku;
   @override
-  List<TaxLine?>? get taxLines;
+  List<TaxLine> get taxLines;
   @override
-  double? get taxRate;
+  double get taxRate;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$SurchargeImplCopyWith<_$SurchargeImpl> get copyWith =>

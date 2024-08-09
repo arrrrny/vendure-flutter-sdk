@@ -9,24 +9,16 @@ part of 'email_address_conflict_error.dart';
 _$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$EmailAddressConflictErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$EmailAddressConflictErrorImplToJson(
-    _$EmailAddressConflictErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$EmailAddressConflictErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

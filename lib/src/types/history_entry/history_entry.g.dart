@@ -8,33 +8,21 @@ part of 'history_entry.dart';
 
 _$HistoryEntryImpl _$$HistoryEntryImplFromJson(Map<String, dynamic> json) =>
     _$HistoryEntryImpl(
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      data: json['data'] as Map<String, dynamic>?,
-      id: json['id'] as String?,
-      type: $enumDecodeNullable(_$HistoryEntryTypeEnumMap, json['type']),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      data: json['data'] as Map<String, dynamic>,
+      id: json['id'] as String,
+      type: $enumDecode(_$HistoryEntryTypeEnumMap, json['type']),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$HistoryEntryImplToJson(_$HistoryEntryImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('data', instance.data);
-  writeNotNull('id', instance.id);
-  writeNotNull('type', _$HistoryEntryTypeEnumMap[instance.type]);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$HistoryEntryImplToJson(_$HistoryEntryImpl instance) =>
+    <String, dynamic>{
+      'createdAt': instance.createdAt.toIso8601String(),
+      'data': instance.data,
+      'id': instance.id,
+      'type': _$HistoryEntryTypeEnumMap[instance.type]!,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$HistoryEntryTypeEnumMap = {
   HistoryEntryType.customerAddedToGroup: 'customerAddedToGroup',

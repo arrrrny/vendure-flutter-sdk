@@ -2,12 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 part 'user_custom_fields.freezed.dart';
 part 'user_custom_fields.g.dart';
-
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class UserCustomFields with _$UserCustomFields {
   const UserCustomFields._();
 

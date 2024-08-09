@@ -21,7 +21,7 @@ DeletionResponse _$DeletionResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DeletionResponse {
   String? get message => throw _privateConstructorUsedError;
-  DeletionResult? get result => throw _privateConstructorUsedError;
+  DeletionResult get result => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $DeletionResponseCopyWith<$Res> {
           DeletionResponse value, $Res Function(DeletionResponse) then) =
       _$DeletionResponseCopyWithImpl<$Res, DeletionResponse>;
   @useResult
-  $Res call({String? message, DeletionResult? result});
+  $Res call({String? message, DeletionResult result});
 }
 
 /// @nodoc
@@ -52,17 +52,17 @@ class _$DeletionResponseCopyWithImpl<$Res, $Val extends DeletionResponse>
   @override
   $Res call({
     Object? message = freezed,
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_value.copyWith(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
-      result: freezed == result
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as DeletionResult?,
+              as DeletionResult,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$DeletionResponseImplCopyWith<$Res>
       __$$DeletionResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? message, DeletionResult? result});
+  $Res call({String? message, DeletionResult result});
 }
 
 /// @nodoc
@@ -90,17 +90,17 @@ class __$$DeletionResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = freezed,
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$DeletionResponseImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
-      result: freezed == result
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as DeletionResult?,
+              as DeletionResult,
     ));
   }
 }
@@ -109,7 +109,8 @@ class __$$DeletionResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DeletionResponseImpl extends _DeletionResponse
     with DiagnosticableTreeMixin {
-  const _$DeletionResponseImpl({this.message, this.result}) : super._();
+  const _$DeletionResponseImpl({this.message, required this.result})
+      : super._();
 
   factory _$DeletionResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeletionResponseImplFromJson(json);
@@ -117,7 +118,7 @@ class _$DeletionResponseImpl extends _DeletionResponse
   @override
   final String? message;
   @override
-  final DeletionResult? result;
+  final DeletionResult result;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -164,7 +165,7 @@ class _$DeletionResponseImpl extends _DeletionResponse
 abstract class _DeletionResponse extends DeletionResponse {
   const factory _DeletionResponse(
       {final String? message,
-      final DeletionResult? result}) = _$DeletionResponseImpl;
+      required final DeletionResult result}) = _$DeletionResponseImpl;
   const _DeletionResponse._() : super._();
 
   factory _DeletionResponse.fromJson(Map<String, dynamic> json) =
@@ -173,7 +174,7 @@ abstract class _DeletionResponse extends DeletionResponse {
   @override
   String? get message;
   @override
-  DeletionResult? get result;
+  DeletionResult get result;
   @override
   @JsonKey(ignore: true)
   _$$DeletionResponseImplCopyWith<_$DeletionResponseImpl> get copyWith =>

@@ -2,12 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 part 'order_address.freezed.dart';
 part 'order_address.g.dart';
-
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class OrderAddress with _$OrderAddress {
   const OrderAddress._();
 

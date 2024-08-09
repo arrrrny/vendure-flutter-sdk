@@ -20,11 +20,11 @@ Discount _$DiscountFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Discount {
-  String? get adjustmentSource => throw _privateConstructorUsedError;
-  double? get amount => throw _privateConstructorUsedError;
-  double? get amountWithTax => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  AdjustmentType? get type => throw _privateConstructorUsedError;
+  String get adjustmentSource => throw _privateConstructorUsedError;
+  double get amount => throw _privateConstructorUsedError;
+  double get amountWithTax => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  AdjustmentType get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,11 +38,11 @@ abstract class $DiscountCopyWith<$Res> {
       _$DiscountCopyWithImpl<$Res, Discount>;
   @useResult
   $Res call(
-      {String? adjustmentSource,
-      double? amount,
-      double? amountWithTax,
-      String? description,
-      AdjustmentType? type});
+      {String adjustmentSource,
+      double amount,
+      double amountWithTax,
+      String description,
+      AdjustmentType type});
 }
 
 /// @nodoc
@@ -58,33 +58,33 @@ class _$DiscountCopyWithImpl<$Res, $Val extends Discount>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adjustmentSource = freezed,
-    Object? amount = freezed,
-    Object? amountWithTax = freezed,
-    Object? description = freezed,
-    Object? type = freezed,
+    Object? adjustmentSource = null,
+    Object? amount = null,
+    Object? amountWithTax = null,
+    Object? description = null,
+    Object? type = null,
   }) {
     return _then(_value.copyWith(
-      adjustmentSource: freezed == adjustmentSource
+      adjustmentSource: null == adjustmentSource
           ? _value.adjustmentSource
           : adjustmentSource // ignore: cast_nullable_to_non_nullable
-              as String?,
-      amount: freezed == amount
+              as String,
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      amountWithTax: freezed == amountWithTax
+              as double,
+      amountWithTax: null == amountWithTax
           ? _value.amountWithTax
           : amountWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      description: freezed == description
+              as double,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
+              as String,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AdjustmentType?,
+              as AdjustmentType,
     ) as $Val);
   }
 }
@@ -98,11 +98,11 @@ abstract class _$$DiscountImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? adjustmentSource,
-      double? amount,
-      double? amountWithTax,
-      String? description,
-      AdjustmentType? type});
+      {String adjustmentSource,
+      double amount,
+      double amountWithTax,
+      String description,
+      AdjustmentType type});
 }
 
 /// @nodoc
@@ -116,33 +116,33 @@ class __$$DiscountImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adjustmentSource = freezed,
-    Object? amount = freezed,
-    Object? amountWithTax = freezed,
-    Object? description = freezed,
-    Object? type = freezed,
+    Object? adjustmentSource = null,
+    Object? amount = null,
+    Object? amountWithTax = null,
+    Object? description = null,
+    Object? type = null,
   }) {
     return _then(_$DiscountImpl(
-      adjustmentSource: freezed == adjustmentSource
+      adjustmentSource: null == adjustmentSource
           ? _value.adjustmentSource
           : adjustmentSource // ignore: cast_nullable_to_non_nullable
-              as String?,
-      amount: freezed == amount
+              as String,
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      amountWithTax: freezed == amountWithTax
+              as double,
+      amountWithTax: null == amountWithTax
           ? _value.amountWithTax
           : amountWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      description: freezed == description
+              as double,
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
+              as String,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as AdjustmentType?,
+              as AdjustmentType,
     ));
   }
 }
@@ -151,26 +151,26 @@ class __$$DiscountImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DiscountImpl extends _Discount with DiagnosticableTreeMixin {
   const _$DiscountImpl(
-      {this.adjustmentSource,
-      this.amount,
-      this.amountWithTax,
-      this.description,
-      this.type})
+      {required this.adjustmentSource,
+      required this.amount,
+      required this.amountWithTax,
+      required this.description,
+      required this.type})
       : super._();
 
   factory _$DiscountImpl.fromJson(Map<String, dynamic> json) =>
       _$$DiscountImplFromJson(json);
 
   @override
-  final String? adjustmentSource;
+  final String adjustmentSource;
   @override
-  final double? amount;
+  final double amount;
   @override
-  final double? amountWithTax;
+  final double amountWithTax;
   @override
-  final String? description;
+  final String description;
   @override
-  final AdjustmentType? type;
+  final AdjustmentType type;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -225,26 +225,26 @@ class _$DiscountImpl extends _Discount with DiagnosticableTreeMixin {
 
 abstract class _Discount extends Discount {
   const factory _Discount(
-      {final String? adjustmentSource,
-      final double? amount,
-      final double? amountWithTax,
-      final String? description,
-      final AdjustmentType? type}) = _$DiscountImpl;
+      {required final String adjustmentSource,
+      required final double amount,
+      required final double amountWithTax,
+      required final String description,
+      required final AdjustmentType type}) = _$DiscountImpl;
   const _Discount._() : super._();
 
   factory _Discount.fromJson(Map<String, dynamic> json) =
       _$DiscountImpl.fromJson;
 
   @override
-  String? get adjustmentSource;
+  String get adjustmentSource;
   @override
-  double? get amount;
+  double get amount;
   @override
-  double? get amountWithTax;
+  double get amountWithTax;
   @override
-  String? get description;
+  String get description;
   @override
-  AdjustmentType? get type;
+  AdjustmentType get type;
   @override
   @JsonKey(ignore: true)
   _$$DiscountImplCopyWith<_$DiscountImpl> get copyWith =>

@@ -1,31 +1,27 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/localized_string/localized_string.dart';
-import 'package:vendure/src/types/permission/permission.dart';
+import '../localized_string/localized_string.dart';
+import '../types/permission/permission.dart';
 
 part 'locale_string_custom_field_config.freezed.dart';
 part 'locale_string_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class LocaleStringCustomFieldConfig with _$LocaleStringCustomFieldConfig {
   const LocaleStringCustomFieldConfig._();
 
   const factory LocaleStringCustomFieldConfig({
-    List<LocalizedString?>? description,
+    List<LocalizedString>? description,
     bool? internal,
-    List<LocalizedString?>? label,
+    List<LocalizedString>? label,
     int? length,
-    bool? list,
-    String? name,
+    required bool list,
+    required String name,
     bool? nullable,
     String? pattern,
     bool? readonly,
-    List<Permission?>? requiresPermission,
-    String? type,
+    List<Permission>? requiresPermission,
+    required String type,
     Map<String, dynamic>? ui,
   }) = _LocaleStringCustomFieldConfig;
 

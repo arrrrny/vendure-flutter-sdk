@@ -20,10 +20,10 @@ Tag _$TagFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Tag {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  String? get value => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,8 +35,7 @@ abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
       _$TagCopyWithImpl<$Res, Tag>;
   @useResult
-  $Res call(
-      {DateTime? createdAt, String? id, DateTime? updatedAt, String? value});
+  $Res call({DateTime createdAt, String id, DateTime updatedAt, String value});
 }
 
 /// @nodoc
@@ -51,28 +50,28 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? updatedAt = freezed,
-    Object? value = freezed,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? updatedAt = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      value: freezed == value
+              as DateTime,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -83,8 +82,7 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       __$$TagImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {DateTime? createdAt, String? id, DateTime? updatedAt, String? value});
+  $Res call({DateTime createdAt, String id, DateTime updatedAt, String value});
 }
 
 /// @nodoc
@@ -96,28 +94,28 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? updatedAt = freezed,
-    Object? value = freezed,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? updatedAt = null,
+    Object? value = null,
   }) {
     return _then(_$TagImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      value: freezed == value
+              as DateTime,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -125,20 +123,24 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
 /// @nodoc
 @JsonSerializable()
 class _$TagImpl extends _Tag with DiagnosticableTreeMixin {
-  const _$TagImpl({this.createdAt, this.id, this.updatedAt, this.value})
+  const _$TagImpl(
+      {required this.createdAt,
+      required this.id,
+      required this.updatedAt,
+      required this.value})
       : super._();
 
   factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
       _$$TagImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? id;
+  final String id;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
   @override
-  final String? value;
+  final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -189,22 +191,22 @@ class _$TagImpl extends _Tag with DiagnosticableTreeMixin {
 
 abstract class _Tag extends Tag {
   const factory _Tag(
-      {final DateTime? createdAt,
-      final String? id,
-      final DateTime? updatedAt,
-      final String? value}) = _$TagImpl;
+      {required final DateTime createdAt,
+      required final String id,
+      required final DateTime updatedAt,
+      required final String value}) = _$TagImpl;
   const _Tag._() : super._();
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$TagImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get id;
+  String get id;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
-  String? get value;
+  String get value;
   @override
   @JsonKey(ignore: true)
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>

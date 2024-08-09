@@ -24,23 +24,14 @@ _$FacetValueListOptionsImpl _$$FacetValueListOptionsImplFromJson(
     );
 
 Map<String, dynamic> _$$FacetValueListOptionsImplToJson(
-    _$FacetValueListOptionsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('filter', instance.filter?.toJson());
-  writeNotNull(
-      'filterOperator', _$LogicalOperatorEnumMap[instance.filterOperator]);
-  writeNotNull('skip', instance.skip);
-  writeNotNull('sort', instance.sort?.toJson());
-  writeNotNull('take', instance.take);
-  return val;
-}
+        _$FacetValueListOptionsImpl instance) =>
+    <String, dynamic>{
+      'filter': instance.filter,
+      'filterOperator': _$LogicalOperatorEnumMap[instance.filterOperator],
+      'skip': instance.skip,
+      'sort': instance.sort,
+      'take': instance.take,
+    };
 
 const _$LogicalOperatorEnumMap = {
   LogicalOperator.and: 'and',

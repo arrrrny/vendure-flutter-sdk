@@ -20,19 +20,19 @@ ShippingMethod _$ShippingMethodFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShippingMethod {
-  ConfigurableOperation? get calculator => throw _privateConstructorUsedError;
-  ConfigurableOperation? get checker => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  ConfigurableOperation get calculator => throw _privateConstructorUsedError;
+  ConfigurableOperation get checker => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get fulfillmentHandlerCode => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<ShippingMethodTranslation?>? get translations =>
+  String get description => throw _privateConstructorUsedError;
+  String get fulfillmentHandlerCode => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<ShippingMethodTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,21 +47,21 @@ abstract class $ShippingMethodCopyWith<$Res> {
       _$ShippingMethodCopyWithImpl<$Res, ShippingMethod>;
   @useResult
   $Res call(
-      {ConfigurableOperation? calculator,
-      ConfigurableOperation? checker,
-      String? code,
-      DateTime? createdAt,
+      {ConfigurableOperation calculator,
+      ConfigurableOperation checker,
+      String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      String? fulfillmentHandlerCode,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ShippingMethodTranslation?>? translations,
-      DateTime? updatedAt});
+      String description,
+      String fulfillmentHandlerCode,
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ShippingMethodTranslation> translations,
+      DateTime updatedAt});
 
-  $ConfigurableOperationCopyWith<$Res>? get calculator;
-  $ConfigurableOperationCopyWith<$Res>? get checker;
+  $ConfigurableOperationCopyWith<$Res> get calculator;
+  $ConfigurableOperationCopyWith<$Res> get checker;
 }
 
 /// @nodoc
@@ -77,91 +77,83 @@ class _$ShippingMethodCopyWithImpl<$Res, $Val extends ShippingMethod>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? calculator = freezed,
-    Object? checker = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? calculator = null,
+    Object? checker = null,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? fulfillmentHandlerCode = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? description = null,
+    Object? fulfillmentHandlerCode = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      calculator: freezed == calculator
+      calculator: null == calculator
           ? _value.calculator
           : calculator // ignore: cast_nullable_to_non_nullable
-              as ConfigurableOperation?,
-      checker: freezed == checker
+              as ConfigurableOperation,
+      checker: null == checker
           ? _value.checker
           : checker // ignore: cast_nullable_to_non_nullable
-              as ConfigurableOperation?,
-      code: freezed == code
+              as ConfigurableOperation,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fulfillmentHandlerCode: freezed == fulfillmentHandlerCode
+              as String,
+      fulfillmentHandlerCode: null == fulfillmentHandlerCode
           ? _value.fulfillmentHandlerCode
           : fulfillmentHandlerCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ShippingMethodTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ShippingMethodTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ConfigurableOperationCopyWith<$Res>? get calculator {
-    if (_value.calculator == null) {
-      return null;
-    }
-
-    return $ConfigurableOperationCopyWith<$Res>(_value.calculator!, (value) {
+  $ConfigurableOperationCopyWith<$Res> get calculator {
+    return $ConfigurableOperationCopyWith<$Res>(_value.calculator, (value) {
       return _then(_value.copyWith(calculator: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ConfigurableOperationCopyWith<$Res>? get checker {
-    if (_value.checker == null) {
-      return null;
-    }
-
-    return $ConfigurableOperationCopyWith<$Res>(_value.checker!, (value) {
+  $ConfigurableOperationCopyWith<$Res> get checker {
+    return $ConfigurableOperationCopyWith<$Res>(_value.checker, (value) {
       return _then(_value.copyWith(checker: value) as $Val);
     });
   }
@@ -176,23 +168,23 @@ abstract class _$$ShippingMethodImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ConfigurableOperation? calculator,
-      ConfigurableOperation? checker,
-      String? code,
-      DateTime? createdAt,
+      {ConfigurableOperation calculator,
+      ConfigurableOperation checker,
+      String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      String? fulfillmentHandlerCode,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ShippingMethodTranslation?>? translations,
-      DateTime? updatedAt});
+      String description,
+      String fulfillmentHandlerCode,
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ShippingMethodTranslation> translations,
+      DateTime updatedAt});
 
   @override
-  $ConfigurableOperationCopyWith<$Res>? get calculator;
+  $ConfigurableOperationCopyWith<$Res> get calculator;
   @override
-  $ConfigurableOperationCopyWith<$Res>? get checker;
+  $ConfigurableOperationCopyWith<$Res> get checker;
 }
 
 /// @nodoc
@@ -206,68 +198,68 @@ class __$$ShippingMethodImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? calculator = freezed,
-    Object? checker = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? calculator = null,
+    Object? checker = null,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? fulfillmentHandlerCode = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? description = null,
+    Object? fulfillmentHandlerCode = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ShippingMethodImpl(
-      calculator: freezed == calculator
+      calculator: null == calculator
           ? _value.calculator
           : calculator // ignore: cast_nullable_to_non_nullable
-              as ConfigurableOperation?,
-      checker: freezed == checker
+              as ConfigurableOperation,
+      checker: null == checker
           ? _value.checker
           : checker // ignore: cast_nullable_to_non_nullable
-              as ConfigurableOperation?,
-      code: freezed == code
+              as ConfigurableOperation,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fulfillmentHandlerCode: freezed == fulfillmentHandlerCode
+              as String,
+      fulfillmentHandlerCode: null == fulfillmentHandlerCode
           ? _value.fulfillmentHandlerCode
           : fulfillmentHandlerCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ShippingMethodTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ShippingMethodTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -277,18 +269,18 @@ class __$$ShippingMethodImplCopyWithImpl<$Res>
 class _$ShippingMethodImpl extends _ShippingMethod
     with DiagnosticableTreeMixin {
   const _$ShippingMethodImpl(
-      {this.calculator,
-      this.checker,
-      this.code,
-      this.createdAt,
+      {required this.calculator,
+      required this.checker,
+      required this.code,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.description,
-      this.fulfillmentHandlerCode,
-      this.id,
-      this.languageCode,
-      this.name,
-      final List<ShippingMethodTranslation?>? translations,
-      this.updatedAt})
+      required this.description,
+      required this.fulfillmentHandlerCode,
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required final List<ShippingMethodTranslation> translations,
+      required this.updatedAt})
       : _customFields = customFields,
         _translations = translations,
         super._();
@@ -297,13 +289,13 @@ class _$ShippingMethodImpl extends _ShippingMethod
       _$$ShippingMethodImplFromJson(json);
 
   @override
-  final ConfigurableOperation? calculator;
+  final ConfigurableOperation calculator;
   @override
-  final ConfigurableOperation? checker;
+  final ConfigurableOperation checker;
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -315,27 +307,25 @@ class _$ShippingMethodImpl extends _ShippingMethod
   }
 
   @override
-  final String? description;
+  final String description;
   @override
-  final String? fulfillmentHandlerCode;
+  final String fulfillmentHandlerCode;
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
-  final List<ShippingMethodTranslation?>? _translations;
+  final String name;
+  final List<ShippingMethodTranslation> _translations;
   @override
-  List<ShippingMethodTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<ShippingMethodTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -423,47 +413,47 @@ class _$ShippingMethodImpl extends _ShippingMethod
 
 abstract class _ShippingMethod extends ShippingMethod {
   const factory _ShippingMethod(
-      {final ConfigurableOperation? calculator,
-      final ConfigurableOperation? checker,
-      final String? code,
-      final DateTime? createdAt,
+      {required final ConfigurableOperation calculator,
+      required final ConfigurableOperation checker,
+      required final String code,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? description,
-      final String? fulfillmentHandlerCode,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final List<ShippingMethodTranslation?>? translations,
-      final DateTime? updatedAt}) = _$ShippingMethodImpl;
+      required final String description,
+      required final String fulfillmentHandlerCode,
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final List<ShippingMethodTranslation> translations,
+      required final DateTime updatedAt}) = _$ShippingMethodImpl;
   const _ShippingMethod._() : super._();
 
   factory _ShippingMethod.fromJson(Map<String, dynamic> json) =
       _$ShippingMethodImpl.fromJson;
 
   @override
-  ConfigurableOperation? get calculator;
+  ConfigurableOperation get calculator;
   @override
-  ConfigurableOperation? get checker;
+  ConfigurableOperation get checker;
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
-  String? get fulfillmentHandlerCode;
+  String get fulfillmentHandlerCode;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  List<ShippingMethodTranslation?>? get translations;
+  List<ShippingMethodTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ShippingMethodImplCopyWith<_$ShippingMethodImpl> get copyWith =>

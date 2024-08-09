@@ -21,8 +21,8 @@ SearchResultAsset _$SearchResultAssetFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SearchResultAsset {
   Coordinate? get focalPoint => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get preview => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get preview => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $SearchResultAssetCopyWith<$Res> {
           SearchResultAsset value, $Res Function(SearchResultAsset) then) =
       _$SearchResultAssetCopyWithImpl<$Res, SearchResultAsset>;
   @useResult
-  $Res call({Coordinate? focalPoint, String? id, String? preview});
+  $Res call({Coordinate? focalPoint, String id, String preview});
 
   $CoordinateCopyWith<$Res>? get focalPoint;
 }
@@ -55,22 +55,22 @@ class _$SearchResultAssetCopyWithImpl<$Res, $Val extends SearchResultAsset>
   @override
   $Res call({
     Object? focalPoint = freezed,
-    Object? id = freezed,
-    Object? preview = freezed,
+    Object? id = null,
+    Object? preview = null,
   }) {
     return _then(_value.copyWith(
       focalPoint: freezed == focalPoint
           ? _value.focalPoint
           : focalPoint // ignore: cast_nullable_to_non_nullable
               as Coordinate?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preview: freezed == preview
+              as String,
+      preview: null == preview
           ? _value.preview
           : preview // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 
@@ -95,7 +95,7 @@ abstract class _$$SearchResultAssetImplCopyWith<$Res>
       __$$SearchResultAssetImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Coordinate? focalPoint, String? id, String? preview});
+  $Res call({Coordinate? focalPoint, String id, String preview});
 
   @override
   $CoordinateCopyWith<$Res>? get focalPoint;
@@ -113,22 +113,22 @@ class __$$SearchResultAssetImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? focalPoint = freezed,
-    Object? id = freezed,
-    Object? preview = freezed,
+    Object? id = null,
+    Object? preview = null,
   }) {
     return _then(_$SearchResultAssetImpl(
       focalPoint: freezed == focalPoint
           ? _value.focalPoint
           : focalPoint // ignore: cast_nullable_to_non_nullable
               as Coordinate?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preview: freezed == preview
+              as String,
+      preview: null == preview
           ? _value.preview
           : preview // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -137,7 +137,8 @@ class __$$SearchResultAssetImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SearchResultAssetImpl extends _SearchResultAsset
     with DiagnosticableTreeMixin {
-  const _$SearchResultAssetImpl({this.focalPoint, this.id, this.preview})
+  const _$SearchResultAssetImpl(
+      {this.focalPoint, required this.id, required this.preview})
       : super._();
 
   factory _$SearchResultAssetImpl.fromJson(Map<String, dynamic> json) =>
@@ -146,9 +147,9 @@ class _$SearchResultAssetImpl extends _SearchResultAsset
   @override
   final Coordinate? focalPoint;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? preview;
+  final String preview;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -198,8 +199,8 @@ class _$SearchResultAssetImpl extends _SearchResultAsset
 abstract class _SearchResultAsset extends SearchResultAsset {
   const factory _SearchResultAsset(
       {final Coordinate? focalPoint,
-      final String? id,
-      final String? preview}) = _$SearchResultAssetImpl;
+      required final String id,
+      required final String preview}) = _$SearchResultAssetImpl;
   const _SearchResultAsset._() : super._();
 
   factory _SearchResultAsset.fromJson(Map<String, dynamic> json) =
@@ -208,9 +209,9 @@ abstract class _SearchResultAsset extends SearchResultAsset {
   @override
   Coordinate? get focalPoint;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get preview;
+  String get preview;
   @override
   @JsonKey(ignore: true)
   _$$SearchResultAssetImplCopyWith<_$SearchResultAssetImpl> get copyWith =>

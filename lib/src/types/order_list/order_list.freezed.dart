@@ -20,8 +20,8 @@ OrderList _$OrderListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderList {
-  List<Order?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Order> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $OrderListCopyWith<$Res> {
   factory $OrderListCopyWith(OrderList value, $Res Function(OrderList) then) =
       _$OrderListCopyWithImpl<$Res, OrderList>;
   @useResult
-  $Res call({List<Order?>? items, int? totalItems});
+  $Res call({List<Order> items, int totalItems});
 }
 
 /// @nodoc
@@ -50,18 +50,18 @@ class _$OrderListCopyWithImpl<$Res, $Val extends OrderList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Order?>?,
-      totalItems: freezed == totalItems
+              as List<Order>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -74,7 +74,7 @@ abstract class _$$OrderListImplCopyWith<$Res>
       __$$OrderListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Order?>? items, int? totalItems});
+  $Res call({List<Order> items, int totalItems});
 }
 
 /// @nodoc
@@ -88,18 +88,18 @@ class __$$OrderListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$OrderListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Order?>?,
-      totalItems: freezed == totalItems
+              as List<Order>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -107,25 +107,24 @@ class __$$OrderListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$OrderListImpl extends _OrderList with DiagnosticableTreeMixin {
-  const _$OrderListImpl({final List<Order?>? items, this.totalItems})
+  const _$OrderListImpl(
+      {required final List<Order> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$OrderListImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderListImplFromJson(json);
 
-  final List<Order?>? _items;
+  final List<Order> _items;
   @override
-  List<Order?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Order> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -171,17 +170,18 @@ class _$OrderListImpl extends _OrderList with DiagnosticableTreeMixin {
 }
 
 abstract class _OrderList extends OrderList {
-  const factory _OrderList({final List<Order?>? items, final int? totalItems}) =
-      _$OrderListImpl;
+  const factory _OrderList(
+      {required final List<Order> items,
+      required final int totalItems}) = _$OrderListImpl;
   const _OrderList._() : super._();
 
   factory _OrderList.fromJson(Map<String, dynamic> json) =
       _$OrderListImpl.fromJson;
 
   @override
-  List<Order?>? get items;
+  List<Order> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$OrderListImplCopyWith<_$OrderListImpl> get copyWith =>

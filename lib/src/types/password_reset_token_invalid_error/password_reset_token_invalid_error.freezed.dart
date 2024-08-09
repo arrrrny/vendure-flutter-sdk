@@ -21,8 +21,8 @@ PasswordResetTokenInvalidError _$PasswordResetTokenInvalidErrorFromJson(
 
 /// @nodoc
 mixin _$PasswordResetTokenInvalidError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $PasswordResetTokenInvalidErrorCopyWith<$Res> {
       _$PasswordResetTokenInvalidErrorCopyWithImpl<$Res,
           PasswordResetTokenInvalidError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -55,18 +55,18 @@ class _$PasswordResetTokenInvalidErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$PasswordResetTokenInvalidErrorImplCopyWith<$Res>
       __$$PasswordResetTokenInvalidErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -96,18 +96,18 @@ class __$$PasswordResetTokenInvalidErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$PasswordResetTokenInvalidErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -116,7 +116,8 @@ class __$$PasswordResetTokenInvalidErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PasswordResetTokenInvalidErrorImpl
     extends _PasswordResetTokenInvalidError with DiagnosticableTreeMixin {
-  const _$PasswordResetTokenInvalidErrorImpl({this.errorCode, this.message})
+  const _$PasswordResetTokenInvalidErrorImpl(
+      {required this.errorCode, required this.message})
       : super._();
 
   factory _$PasswordResetTokenInvalidErrorImpl.fromJson(
@@ -124,9 +125,9 @@ class _$PasswordResetTokenInvalidErrorImpl
       _$$PasswordResetTokenInvalidErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,17 +176,17 @@ class _$PasswordResetTokenInvalidErrorImpl
 abstract class _PasswordResetTokenInvalidError
     extends PasswordResetTokenInvalidError {
   const factory _PasswordResetTokenInvalidError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$PasswordResetTokenInvalidErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$PasswordResetTokenInvalidErrorImpl;
   const _PasswordResetTokenInvalidError._() : super._();
 
   factory _PasswordResetTokenInvalidError.fromJson(Map<String, dynamic> json) =
       _$PasswordResetTokenInvalidErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$PasswordResetTokenInvalidErrorImplCopyWith<

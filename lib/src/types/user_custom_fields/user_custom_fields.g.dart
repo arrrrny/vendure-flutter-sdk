@@ -22,24 +22,16 @@ _$UserCustomFieldsImpl _$$UserCustomFieldsImplFromJson(
     );
 
 Map<String, dynamic> _$$UserCustomFieldsImplToJson(
-    _$UserCustomFieldsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('city', instance.city);
-  writeNotNull('deviceToken', instance.deviceToken);
-  writeNotNull('email', instance.email);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('neighborhood', instance.neighborhood);
-  writeNotNull('os', instance.os);
-  writeNotNull('osVersion', instance.osVersion);
-  writeNotNull('phoneBrand', instance.phoneBrand);
-  writeNotNull('phoneModel', instance.phoneModel);
-  writeNotNull('town', instance.town);
-  return val;
-}
+        _$UserCustomFieldsImpl instance) =>
+    <String, dynamic>{
+      'city': instance.city,
+      'deviceToken': instance.deviceToken,
+      'email': instance.email,
+      'fullName': instance.fullName,
+      'neighborhood': instance.neighborhood,
+      'os': instance.os,
+      'osVersion': instance.osVersion,
+      'phoneBrand': instance.phoneBrand,
+      'phoneModel': instance.phoneModel,
+      'town': instance.town,
+    };

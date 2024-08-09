@@ -1,15 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/region_translation/region_translation.dart';
+import '../region_translation/region_translation.dart';
 
 part 'region.freezed.dart';
 part 'region.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class Region with _$Region {
   const Region._();
   const factory Region({

@@ -22,14 +22,27 @@ FacetFilterParameter _$FacetFilterParameterFromJson(Map<String, dynamic> json) {
 mixin _$FacetFilterParameter {
   @JsonKey(name: '_and')
   List<FacetFilterParameter>? get and => throw _privateConstructorUsedError;
+  @JsonKey(name: '_and')
+  set and(List<FacetFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: '_or')
   List<FacetFilterParameter>? get or => throw _privateConstructorUsedError;
+  @JsonKey(name: '_or')
+  set or(List<FacetFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get code => throw _privateConstructorUsedError;
+  set code(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(DateOperators? value) => throw _privateConstructorUsedError;
   IdOperators? get id => throw _privateConstructorUsedError;
+  set id(IdOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get languageCode => throw _privateConstructorUsedError;
+  set languageCode(StringOperators? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get name => throw _privateConstructorUsedError;
+  set name(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -247,11 +260,11 @@ class __$$FacetFilterParameterImplCopyWithImpl<$Res>
   }) {
     return _then(_$FacetFilterParameterImpl(
       and: freezed == and
-          ? _value._and
+          ? _value.and
           : and // ignore: cast_nullable_to_non_nullable
               as List<FacetFilterParameter>?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<FacetFilterParameter>?,
       code: freezed == code
@@ -286,56 +299,38 @@ class __$$FacetFilterParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetFilterParameterImpl extends _FacetFilterParameter
     with DiagnosticableTreeMixin {
-  const _$FacetFilterParameterImpl(
-      {@JsonKey(name: '_and') final List<FacetFilterParameter>? and,
-      @JsonKey(name: '_or') final List<FacetFilterParameter>? or,
+  _$FacetFilterParameterImpl(
+      {@JsonKey(name: '_and') this.and,
+      @JsonKey(name: '_or') this.or,
       this.code,
       this.createdAt,
       this.id,
       this.languageCode,
       this.name,
       this.updatedAt})
-      : _and = and,
-        _or = or,
-        super._();
+      : super._();
 
   factory _$FacetFilterParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$FacetFilterParameterImplFromJson(json);
 
-  final List<FacetFilterParameter>? _and;
   @override
   @JsonKey(name: '_and')
-  List<FacetFilterParameter>? get and {
-    final value = _and;
-    if (value == null) return null;
-    if (_and is EqualUnmodifiableListView) return _and;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<FacetFilterParameter>? _or;
+  List<FacetFilterParameter>? and;
   @override
   @JsonKey(name: '_or')
-  List<FacetFilterParameter>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<FacetFilterParameter>? or;
   @override
-  final StringOperators? code;
+  StringOperators? code;
   @override
-  final DateOperators? createdAt;
+  DateOperators? createdAt;
   @override
-  final IdOperators? id;
+  IdOperators? id;
   @override
-  final StringOperators? languageCode;
+  StringOperators? languageCode;
   @override
-  final StringOperators? name;
+  StringOperators? name;
   @override
-  final DateOperators? updatedAt;
+  DateOperators? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -357,37 +352,6 @@ class _$FacetFilterParameterImpl extends _FacetFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FacetFilterParameterImpl &&
-            const DeepCollectionEquality().equals(other._and, _and) &&
-            const DeepCollectionEquality().equals(other._or, _or) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_and),
-      const DeepCollectionEquality().hash(_or),
-      code,
-      createdAt,
-      id,
-      languageCode,
-      name,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -405,16 +369,16 @@ class _$FacetFilterParameterImpl extends _FacetFilterParameter
 }
 
 abstract class _FacetFilterParameter extends FacetFilterParameter {
-  const factory _FacetFilterParameter(
-      {@JsonKey(name: '_and') final List<FacetFilterParameter>? and,
-      @JsonKey(name: '_or') final List<FacetFilterParameter>? or,
-      final StringOperators? code,
-      final DateOperators? createdAt,
-      final IdOperators? id,
-      final StringOperators? languageCode,
-      final StringOperators? name,
-      final DateOperators? updatedAt}) = _$FacetFilterParameterImpl;
-  const _FacetFilterParameter._() : super._();
+  factory _FacetFilterParameter(
+      {@JsonKey(name: '_and') List<FacetFilterParameter>? and,
+      @JsonKey(name: '_or') List<FacetFilterParameter>? or,
+      StringOperators? code,
+      DateOperators? createdAt,
+      IdOperators? id,
+      StringOperators? languageCode,
+      StringOperators? name,
+      DateOperators? updatedAt}) = _$FacetFilterParameterImpl;
+  _FacetFilterParameter._() : super._();
 
   factory _FacetFilterParameter.fromJson(Map<String, dynamic> json) =
       _$FacetFilterParameterImpl.fromJson;
@@ -422,21 +386,31 @@ abstract class _FacetFilterParameter extends FacetFilterParameter {
   @override
   @JsonKey(name: '_and')
   List<FacetFilterParameter>? get and;
+  @JsonKey(name: '_and')
+  set and(List<FacetFilterParameter>? value);
   @override
   @JsonKey(name: '_or')
   List<FacetFilterParameter>? get or;
+  @JsonKey(name: '_or')
+  set or(List<FacetFilterParameter>? value);
   @override
   StringOperators? get code;
+  set code(StringOperators? value);
   @override
   DateOperators? get createdAt;
+  set createdAt(DateOperators? value);
   @override
   IdOperators? get id;
+  set id(IdOperators? value);
   @override
   StringOperators? get languageCode;
+  set languageCode(StringOperators? value);
   @override
   StringOperators? get name;
+  set name(StringOperators? value);
   @override
   DateOperators? get updatedAt;
+  set updatedAt(DateOperators? value);
   @override
   @JsonKey(ignore: true)
   _$$FacetFilterParameterImplCopyWith<_$FacetFilterParameterImpl>

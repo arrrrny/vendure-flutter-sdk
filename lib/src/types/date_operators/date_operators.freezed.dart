@@ -21,10 +21,15 @@ DateOperators _$DateOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DateOperators {
   DateTime? get after => throw _privateConstructorUsedError;
+  set after(DateTime? value) => throw _privateConstructorUsedError;
   DateTime? get before => throw _privateConstructorUsedError;
+  set before(DateTime? value) => throw _privateConstructorUsedError;
   DateRange? get between => throw _privateConstructorUsedError;
+  set between(DateRange? value) => throw _privateConstructorUsedError;
   DateTime? get eq => throw _privateConstructorUsedError;
+  set eq(DateTime? value) => throw _privateConstructorUsedError;
   bool? get isNull => throw _privateConstructorUsedError;
+  set isNull(bool? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -168,7 +173,7 @@ class __$$DateOperatorsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
-  const _$DateOperatorsImpl(
+  _$DateOperatorsImpl(
       {this.after, this.before, this.between, this.eq, this.isNull})
       : super._();
 
@@ -176,15 +181,15 @@ class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
       _$$DateOperatorsImplFromJson(json);
 
   @override
-  final DateTime? after;
+  DateTime? after;
   @override
-  final DateTime? before;
+  DateTime? before;
   @override
-  final DateRange? between;
+  DateRange? between;
   @override
-  final DateTime? eq;
+  DateTime? eq;
   @override
-  final bool? isNull;
+  bool? isNull;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -203,23 +208,6 @@ class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('isNull', isNull));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DateOperatorsImpl &&
-            (identical(other.after, after) || other.after == after) &&
-            (identical(other.before, before) || other.before == before) &&
-            (identical(other.between, between) || other.between == between) &&
-            (identical(other.eq, eq) || other.eq == eq) &&
-            (identical(other.isNull, isNull) || other.isNull == isNull));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, after, before, between, eq, isNull);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -235,27 +223,32 @@ class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
 }
 
 abstract class _DateOperators extends DateOperators {
-  const factory _DateOperators(
-      {final DateTime? after,
-      final DateTime? before,
-      final DateRange? between,
-      final DateTime? eq,
-      final bool? isNull}) = _$DateOperatorsImpl;
-  const _DateOperators._() : super._();
+  factory _DateOperators(
+      {DateTime? after,
+      DateTime? before,
+      DateRange? between,
+      DateTime? eq,
+      bool? isNull}) = _$DateOperatorsImpl;
+  _DateOperators._() : super._();
 
   factory _DateOperators.fromJson(Map<String, dynamic> json) =
       _$DateOperatorsImpl.fromJson;
 
   @override
   DateTime? get after;
+  set after(DateTime? value);
   @override
   DateTime? get before;
+  set before(DateTime? value);
   @override
   DateRange? get between;
+  set between(DateRange? value);
   @override
   DateTime? get eq;
+  set eq(DateTime? value);
   @override
   bool? get isNull;
+  set isNull(bool? value);
   @override
   @JsonKey(ignore: true)
   _$$DateOperatorsImplCopyWith<_$DateOperatorsImpl> get copyWith =>

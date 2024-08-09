@@ -30,30 +30,22 @@ _$OrderSortParameterImpl _$$OrderSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$OrderSortParameterImplToJson(
-    _$OrderSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', _$SortOrderEnumMap[instance.code]);
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('orderPlacedAt', _$SortOrderEnumMap[instance.orderPlacedAt]);
-  writeNotNull('shipping', _$SortOrderEnumMap[instance.shipping]);
-  writeNotNull('shippingWithTax', _$SortOrderEnumMap[instance.shippingWithTax]);
-  writeNotNull('state', _$SortOrderEnumMap[instance.state]);
-  writeNotNull('subTotal', _$SortOrderEnumMap[instance.subTotal]);
-  writeNotNull('subTotalWithTax', _$SortOrderEnumMap[instance.subTotalWithTax]);
-  writeNotNull('total', _$SortOrderEnumMap[instance.total]);
-  writeNotNull('totalQuantity', _$SortOrderEnumMap[instance.totalQuantity]);
-  writeNotNull('totalWithTax', _$SortOrderEnumMap[instance.totalWithTax]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$OrderSortParameterImpl instance) =>
+    <String, dynamic>{
+      'code': _$SortOrderEnumMap[instance.code],
+      'createdAt': _$SortOrderEnumMap[instance.createdAt],
+      'id': _$SortOrderEnumMap[instance.id],
+      'orderPlacedAt': _$SortOrderEnumMap[instance.orderPlacedAt],
+      'shipping': _$SortOrderEnumMap[instance.shipping],
+      'shippingWithTax': _$SortOrderEnumMap[instance.shippingWithTax],
+      'state': _$SortOrderEnumMap[instance.state],
+      'subTotal': _$SortOrderEnumMap[instance.subTotal],
+      'subTotalWithTax': _$SortOrderEnumMap[instance.subTotalWithTax],
+      'total': _$SortOrderEnumMap[instance.total],
+      'totalQuantity': _$SortOrderEnumMap[instance.totalQuantity],
+      'totalWithTax': _$SortOrderEnumMap[instance.totalWithTax],
+      'updatedAt': _$SortOrderEnumMap[instance.updatedAt],
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

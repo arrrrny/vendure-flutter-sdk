@@ -1,10 +1,10 @@
-import 'package:vendure/src/fragments/active_order_fragment.dart';
+import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String getActiveOrderQuery = activeOrderFragment +
+const String getActiveOrderQuery = orderFragment +
     r'''
 query GetActiveOrder {
   activeOrder {
-    ...ActiveOrder
+    ...Order
   }
 }
 ''';

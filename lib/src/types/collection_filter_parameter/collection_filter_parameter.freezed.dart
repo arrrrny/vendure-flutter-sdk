@@ -24,17 +24,33 @@ mixin _$CollectionFilterParameter {
   @JsonKey(name: '_and')
   List<CollectionFilterParameter>? get and =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: '_and')
+  set and(List<CollectionFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: '_or')
   List<CollectionFilterParameter>? get or => throw _privateConstructorUsedError;
+  @JsonKey(name: '_or')
+  set or(List<CollectionFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   DateOperators? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(DateOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get description => throw _privateConstructorUsedError;
+  set description(StringOperators? value) => throw _privateConstructorUsedError;
   IdOperators? get id => throw _privateConstructorUsedError;
+  set id(IdOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get languageCode => throw _privateConstructorUsedError;
+  set languageCode(StringOperators? value) =>
+      throw _privateConstructorUsedError;
   StringOperators? get name => throw _privateConstructorUsedError;
+  set name(StringOperators? value) => throw _privateConstructorUsedError;
   IdOperators? get parentId => throw _privateConstructorUsedError;
+  set parentId(IdOperators? value) => throw _privateConstructorUsedError;
   NumberOperators? get position => throw _privateConstructorUsedError;
+  set position(NumberOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get slug => throw _privateConstructorUsedError;
+  set slug(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -324,11 +340,11 @@ class __$$CollectionFilterParameterImplCopyWithImpl<$Res>
   }) {
     return _then(_$CollectionFilterParameterImpl(
       and: freezed == and
-          ? _value._and
+          ? _value.and
           : and // ignore: cast_nullable_to_non_nullable
               as List<CollectionFilterParameter>?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<CollectionFilterParameter>?,
       createdAt: freezed == createdAt
@@ -375,9 +391,9 @@ class __$$CollectionFilterParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
     with DiagnosticableTreeMixin {
-  const _$CollectionFilterParameterImpl(
-      {@JsonKey(name: '_and') final List<CollectionFilterParameter>? and,
-      @JsonKey(name: '_or') final List<CollectionFilterParameter>? or,
+  _$CollectionFilterParameterImpl(
+      {@JsonKey(name: '_and') this.and,
+      @JsonKey(name: '_or') this.or,
       this.createdAt,
       this.description,
       this.id,
@@ -387,53 +403,35 @@ class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
       this.position,
       this.slug,
       this.updatedAt})
-      : _and = and,
-        _or = or,
-        super._();
+      : super._();
 
   factory _$CollectionFilterParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$CollectionFilterParameterImplFromJson(json);
 
-  final List<CollectionFilterParameter>? _and;
   @override
   @JsonKey(name: '_and')
-  List<CollectionFilterParameter>? get and {
-    final value = _and;
-    if (value == null) return null;
-    if (_and is EqualUnmodifiableListView) return _and;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<CollectionFilterParameter>? _or;
+  List<CollectionFilterParameter>? and;
   @override
   @JsonKey(name: '_or')
-  List<CollectionFilterParameter>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<CollectionFilterParameter>? or;
   @override
-  final DateOperators? createdAt;
+  DateOperators? createdAt;
   @override
-  final StringOperators? description;
+  StringOperators? description;
   @override
-  final IdOperators? id;
+  IdOperators? id;
   @override
-  final StringOperators? languageCode;
+  StringOperators? languageCode;
   @override
-  final StringOperators? name;
+  StringOperators? name;
   @override
-  final IdOperators? parentId;
+  IdOperators? parentId;
   @override
-  final NumberOperators? position;
+  NumberOperators? position;
   @override
-  final StringOperators? slug;
+  StringOperators? slug;
   @override
-  final DateOperators? updatedAt;
+  DateOperators? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -458,46 +456,6 @@ class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CollectionFilterParameterImpl &&
-            const DeepCollectionEquality().equals(other._and, _and) &&
-            const DeepCollectionEquality().equals(other._or, _or) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_and),
-      const DeepCollectionEquality().hash(_or),
-      createdAt,
-      description,
-      id,
-      languageCode,
-      name,
-      parentId,
-      position,
-      slug,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -514,19 +472,19 @@ class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
 }
 
 abstract class _CollectionFilterParameter extends CollectionFilterParameter {
-  const factory _CollectionFilterParameter(
-      {@JsonKey(name: '_and') final List<CollectionFilterParameter>? and,
-      @JsonKey(name: '_or') final List<CollectionFilterParameter>? or,
-      final DateOperators? createdAt,
-      final StringOperators? description,
-      final IdOperators? id,
-      final StringOperators? languageCode,
-      final StringOperators? name,
-      final IdOperators? parentId,
-      final NumberOperators? position,
-      final StringOperators? slug,
-      final DateOperators? updatedAt}) = _$CollectionFilterParameterImpl;
-  const _CollectionFilterParameter._() : super._();
+  factory _CollectionFilterParameter(
+      {@JsonKey(name: '_and') List<CollectionFilterParameter>? and,
+      @JsonKey(name: '_or') List<CollectionFilterParameter>? or,
+      DateOperators? createdAt,
+      StringOperators? description,
+      IdOperators? id,
+      StringOperators? languageCode,
+      StringOperators? name,
+      IdOperators? parentId,
+      NumberOperators? position,
+      StringOperators? slug,
+      DateOperators? updatedAt}) = _$CollectionFilterParameterImpl;
+  _CollectionFilterParameter._() : super._();
 
   factory _CollectionFilterParameter.fromJson(Map<String, dynamic> json) =
       _$CollectionFilterParameterImpl.fromJson;
@@ -534,27 +492,40 @@ abstract class _CollectionFilterParameter extends CollectionFilterParameter {
   @override
   @JsonKey(name: '_and')
   List<CollectionFilterParameter>? get and;
+  @JsonKey(name: '_and')
+  set and(List<CollectionFilterParameter>? value);
   @override
   @JsonKey(name: '_or')
   List<CollectionFilterParameter>? get or;
+  @JsonKey(name: '_or')
+  set or(List<CollectionFilterParameter>? value);
   @override
   DateOperators? get createdAt;
+  set createdAt(DateOperators? value);
   @override
   StringOperators? get description;
+  set description(StringOperators? value);
   @override
   IdOperators? get id;
+  set id(IdOperators? value);
   @override
   StringOperators? get languageCode;
+  set languageCode(StringOperators? value);
   @override
   StringOperators? get name;
+  set name(StringOperators? value);
   @override
   IdOperators? get parentId;
+  set parentId(IdOperators? value);
   @override
   NumberOperators? get position;
+  set position(NumberOperators? value);
   @override
   StringOperators? get slug;
+  set slug(StringOperators? value);
   @override
   DateOperators? get updatedAt;
+  set updatedAt(DateOperators? value);
   @override
   @JsonKey(ignore: true)
   _$$CollectionFilterParameterImplCopyWith<_$CollectionFilterParameterImpl>

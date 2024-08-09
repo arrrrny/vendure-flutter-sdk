@@ -25,24 +25,15 @@ _$SearchInputImpl _$$SearchInputImplFromJson(Map<String, dynamic> json) =>
       term: json['term'] as String?,
     );
 
-Map<String, dynamic> _$$SearchInputImplToJson(_$SearchInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('collectionId', instance.collectionId);
-  writeNotNull('collectionSlug', instance.collectionSlug);
-  writeNotNull('facetValueFilters',
-      instance.facetValueFilters?.map((e) => e.toJson()).toList());
-  writeNotNull('groupByProduct', instance.groupByProduct);
-  writeNotNull('inStock', instance.inStock);
-  writeNotNull('skip', instance.skip);
-  writeNotNull('sort', instance.sort?.toJson());
-  writeNotNull('take', instance.take);
-  writeNotNull('term', instance.term);
-  return val;
-}
+Map<String, dynamic> _$$SearchInputImplToJson(_$SearchInputImpl instance) =>
+    <String, dynamic>{
+      'collectionId': instance.collectionId,
+      'collectionSlug': instance.collectionSlug,
+      'facetValueFilters': instance.facetValueFilters,
+      'groupByProduct': instance.groupByProduct,
+      'inStock': instance.inStock,
+      'skip': instance.skip,
+      'sort': instance.sort,
+      'take': instance.take,
+      'term': instance.term,
+    };

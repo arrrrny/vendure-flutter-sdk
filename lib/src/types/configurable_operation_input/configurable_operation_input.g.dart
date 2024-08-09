@@ -18,6 +18,6 @@ _$ConfigurableOperationInputImpl _$$ConfigurableOperationInputImplFromJson(
 Map<String, dynamic> _$$ConfigurableOperationInputImplToJson(
         _$ConfigurableOperationInputImpl instance) =>
     <String, dynamic>{
-      'arguments': instance.arguments.map((e) => e.toJson()).toList(),
+      'arguments': instance.arguments,
       'code': instance.code,
     };

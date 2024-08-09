@@ -20,9 +20,9 @@ OrderLimitError _$OrderLimitErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderLimitError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  int? get maxItems => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  int get maxItems => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $OrderLimitErrorCopyWith<$Res> {
           OrderLimitError value, $Res Function(OrderLimitError) then) =
       _$OrderLimitErrorCopyWithImpl<$Res, OrderLimitError>;
   @useResult
-  $Res call({ErrorCode? errorCode, int? maxItems, String? message});
+  $Res call({ErrorCode errorCode, int maxItems, String message});
 }
 
 /// @nodoc
@@ -52,23 +52,23 @@ class _$OrderLimitErrorCopyWithImpl<$Res, $Val extends OrderLimitError>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? maxItems = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? maxItems = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      maxItems: freezed == maxItems
+              as ErrorCode,
+      maxItems: null == maxItems
           ? _value.maxItems
           : maxItems // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: freezed == message
+              as int,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$OrderLimitErrorImplCopyWith<$Res>
       __$$OrderLimitErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, int? maxItems, String? message});
+  $Res call({ErrorCode errorCode, int maxItems, String message});
 }
 
 /// @nodoc
@@ -95,23 +95,23 @@ class __$$OrderLimitErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? maxItems = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? maxItems = null,
+    Object? message = null,
   }) {
     return _then(_$OrderLimitErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      maxItems: freezed == maxItems
+              as ErrorCode,
+      maxItems: null == maxItems
           ? _value.maxItems
           : maxItems // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: freezed == message
+              as int,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -120,18 +120,19 @@ class __$$OrderLimitErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderLimitErrorImpl extends _OrderLimitError
     with DiagnosticableTreeMixin {
-  const _$OrderLimitErrorImpl({this.errorCode, this.maxItems, this.message})
+  const _$OrderLimitErrorImpl(
+      {required this.errorCode, required this.maxItems, required this.message})
       : super._();
 
   factory _$OrderLimitErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderLimitErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final int? maxItems;
+  final int maxItems;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -181,20 +182,20 @@ class _$OrderLimitErrorImpl extends _OrderLimitError
 
 abstract class _OrderLimitError extends OrderLimitError {
   const factory _OrderLimitError(
-      {final ErrorCode? errorCode,
-      final int? maxItems,
-      final String? message}) = _$OrderLimitErrorImpl;
+      {required final ErrorCode errorCode,
+      required final int maxItems,
+      required final String message}) = _$OrderLimitErrorImpl;
   const _OrderLimitError._() : super._();
 
   factory _OrderLimitError.fromJson(Map<String, dynamic> json) =
       _$OrderLimitErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  int? get maxItems;
+  int get maxItems;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$OrderLimitErrorImplCopyWith<_$OrderLimitErrorImpl> get copyWith =>

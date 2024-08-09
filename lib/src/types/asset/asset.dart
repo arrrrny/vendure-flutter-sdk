@@ -1,35 +1,31 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/asset_type/asset_type.dart';
-import 'package:vendure/src/types/coordinate/coordinate.dart';
-import 'package:vendure/src/types/tag/tag.dart';
+import '../coordinate/coordinate.dart';
+import '../tag/tag.dart';
+import '../types/asset_type/asset_type.dart';
 
 part 'asset.freezed.dart';
 part 'asset.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class Asset with _$Asset {
   const Asset._();
 
   const factory Asset({
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    int? fileSize,
+    required int fileSize,
     Coordinate? focalPoint,
-    int? height,
-    String? id,
-    String? mimeType,
-    String? name,
-    String? preview,
-    String? source,
-    List<Tag?>? tags,
-    AssetType? type,
-    DateTime? updatedAt,
-    int? width,
+    required int height,
+    required String id,
+    required String mimeType,
+    required String name,
+    required String preview,
+    required String source,
+    required List<Tag> tags,
+    required AssetType type,
+    required DateTime updatedAt,
+    required int width,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);

@@ -21,7 +21,9 @@ NumberRange _$NumberRangeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NumberRange {
   double get end => throw _privateConstructorUsedError;
+  set end(double value) => throw _privateConstructorUsedError;
   double get start => throw _privateConstructorUsedError;
+  set start(double value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -108,15 +110,15 @@ class __$$NumberRangeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
-  const _$NumberRangeImpl({required this.end, required this.start}) : super._();
+  _$NumberRangeImpl({required this.end, required this.start}) : super._();
 
   factory _$NumberRangeImpl.fromJson(Map<String, dynamic> json) =>
       _$$NumberRangeImplFromJson(json);
 
   @override
-  final double end;
+  double end;
   @override
-  final double start;
+  double start;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -131,19 +133,6 @@ class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('end', end))
       ..add(DiagnosticsProperty('start', start));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NumberRangeImpl &&
-            (identical(other.end, end) || other.end == end) &&
-            (identical(other.start, start) || other.start == start));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, end, start);
 
   @JsonKey(ignore: true)
   @override
@@ -160,18 +149,19 @@ class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
 }
 
 abstract class _NumberRange extends NumberRange {
-  const factory _NumberRange(
-      {required final double end,
-      required final double start}) = _$NumberRangeImpl;
-  const _NumberRange._() : super._();
+  factory _NumberRange({required double end, required double start}) =
+      _$NumberRangeImpl;
+  _NumberRange._() : super._();
 
   factory _NumberRange.fromJson(Map<String, dynamic> json) =
       _$NumberRangeImpl.fromJson;
 
   @override
   double get end;
+  set end(double value);
   @override
   double get start;
+  set start(double value);
   @override
   @JsonKey(ignore: true)
   _$$NumberRangeImplCopyWith<_$NumberRangeImpl> get copyWith =>

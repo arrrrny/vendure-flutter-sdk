@@ -24,13 +24,23 @@ mixin _$HistoryEntryFilterParameter {
   @JsonKey(name: '_and')
   List<HistoryEntryFilterParameter>? get and =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: '_and')
+  set and(List<HistoryEntryFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: '_or')
   List<HistoryEntryFilterParameter>? get or =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: '_or')
+  set or(List<HistoryEntryFilterParameter>? value) =>
+      throw _privateConstructorUsedError;
   DateOperators? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(DateOperators? value) => throw _privateConstructorUsedError;
   IdOperators? get id => throw _privateConstructorUsedError;
+  set id(IdOperators? value) => throw _privateConstructorUsedError;
   StringOperators? get type => throw _privateConstructorUsedError;
+  set type(StringOperators? value) => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -207,11 +217,11 @@ class __$$HistoryEntryFilterParameterImplCopyWithImpl<$Res>
   }) {
     return _then(_$HistoryEntryFilterParameterImpl(
       and: freezed == and
-          ? _value._and
+          ? _value.and
           : and // ignore: cast_nullable_to_non_nullable
               as List<HistoryEntryFilterParameter>?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<HistoryEntryFilterParameter>?,
       createdAt: freezed == createdAt
@@ -238,51 +248,33 @@ class __$$HistoryEntryFilterParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
     with DiagnosticableTreeMixin {
-  const _$HistoryEntryFilterParameterImpl(
-      {@JsonKey(name: '_and') final List<HistoryEntryFilterParameter>? and,
-      @JsonKey(name: '_or') final List<HistoryEntryFilterParameter>? or,
+  _$HistoryEntryFilterParameterImpl(
+      {@JsonKey(name: '_and') this.and,
+      @JsonKey(name: '_or') this.or,
       this.createdAt,
       this.id,
       this.type,
       this.updatedAt})
-      : _and = and,
-        _or = or,
-        super._();
+      : super._();
 
   factory _$HistoryEntryFilterParameterImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$HistoryEntryFilterParameterImplFromJson(json);
 
-  final List<HistoryEntryFilterParameter>? _and;
   @override
   @JsonKey(name: '_and')
-  List<HistoryEntryFilterParameter>? get and {
-    final value = _and;
-    if (value == null) return null;
-    if (_and is EqualUnmodifiableListView) return _and;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<HistoryEntryFilterParameter>? _or;
+  List<HistoryEntryFilterParameter>? and;
   @override
   @JsonKey(name: '_or')
-  List<HistoryEntryFilterParameter>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<HistoryEntryFilterParameter>? or;
   @override
-  final DateOperators? createdAt;
+  DateOperators? createdAt;
   @override
-  final IdOperators? id;
+  IdOperators? id;
   @override
-  final StringOperators? type;
+  StringOperators? type;
   @override
-  final DateOperators? updatedAt;
+  DateOperators? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -302,32 +294,6 @@ class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HistoryEntryFilterParameterImpl &&
-            const DeepCollectionEquality().equals(other._and, _and) &&
-            const DeepCollectionEquality().equals(other._or, _or) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_and),
-      const DeepCollectionEquality().hash(_or),
-      createdAt,
-      id,
-      type,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -345,14 +311,14 @@ class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
 
 abstract class _HistoryEntryFilterParameter
     extends HistoryEntryFilterParameter {
-  const factory _HistoryEntryFilterParameter(
-      {@JsonKey(name: '_and') final List<HistoryEntryFilterParameter>? and,
-      @JsonKey(name: '_or') final List<HistoryEntryFilterParameter>? or,
-      final DateOperators? createdAt,
-      final IdOperators? id,
-      final StringOperators? type,
-      final DateOperators? updatedAt}) = _$HistoryEntryFilterParameterImpl;
-  const _HistoryEntryFilterParameter._() : super._();
+  factory _HistoryEntryFilterParameter(
+      {@JsonKey(name: '_and') List<HistoryEntryFilterParameter>? and,
+      @JsonKey(name: '_or') List<HistoryEntryFilterParameter>? or,
+      DateOperators? createdAt,
+      IdOperators? id,
+      StringOperators? type,
+      DateOperators? updatedAt}) = _$HistoryEntryFilterParameterImpl;
+  _HistoryEntryFilterParameter._() : super._();
 
   factory _HistoryEntryFilterParameter.fromJson(Map<String, dynamic> json) =
       _$HistoryEntryFilterParameterImpl.fromJson;
@@ -360,17 +326,25 @@ abstract class _HistoryEntryFilterParameter
   @override
   @JsonKey(name: '_and')
   List<HistoryEntryFilterParameter>? get and;
+  @JsonKey(name: '_and')
+  set and(List<HistoryEntryFilterParameter>? value);
   @override
   @JsonKey(name: '_or')
   List<HistoryEntryFilterParameter>? get or;
+  @JsonKey(name: '_or')
+  set or(List<HistoryEntryFilterParameter>? value);
   @override
   DateOperators? get createdAt;
+  set createdAt(DateOperators? value);
   @override
   IdOperators? get id;
+  set id(IdOperators? value);
   @override
   StringOperators? get type;
+  set type(StringOperators? value);
   @override
   DateOperators? get updatedAt;
+  set updatedAt(DateOperators? value);
   @override
   @JsonKey(ignore: true)
   _$$HistoryEntryFilterParameterImplCopyWith<_$HistoryEntryFilterParameterImpl>

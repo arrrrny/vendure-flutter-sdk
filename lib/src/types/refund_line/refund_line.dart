@@ -1,25 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/order_line/order_line.dart';
-import 'package:vendure/src/types/refund/refund.dart';
+import '../order_line/order_line.dart';
+import '../refund/refund.dart';
 
 part 'refund_line.freezed.dart';
 part 'refund_line.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class RefundLine with _$RefundLine {
   const RefundLine._();
 
   const factory RefundLine({
-    OrderLine? orderLine,
-    String? orderLineId,
-    int? quantity,
-    Refund? refund,
-    String? refundId,
+    required OrderLine orderLine,
+    required String orderLineId,
+    required int quantity,
+    required Refund refund,
+    required String refundId,
   }) = _RefundLine;
 
   factory RefundLine.fromJson(Map<String, dynamic> json) =>

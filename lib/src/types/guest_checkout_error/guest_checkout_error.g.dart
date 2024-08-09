@@ -9,26 +9,18 @@ part of 'guest_checkout_error.dart';
 _$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$GuestCheckoutErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      errorDetail: json['errorDetail'] as String?,
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      errorDetail: json['errorDetail'] as String,
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$GuestCheckoutErrorImplToJson(
-    _$GuestCheckoutErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('errorDetail', instance.errorDetail);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$GuestCheckoutErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'errorDetail': instance.errorDetail,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

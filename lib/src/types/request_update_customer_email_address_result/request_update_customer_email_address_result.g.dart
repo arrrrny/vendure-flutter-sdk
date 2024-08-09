@@ -9,26 +9,18 @@ part of 'request_update_customer_email_address_result.dart';
 _$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$EmailAddressConflictErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$EmailAddressConflictErrorImplToJson(
-    _$EmailAddressConflictErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$EmailAddressConflictErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+      'runtimeType': instance.$type,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -68,69 +60,45 @@ const _$ErrorCodeEnumMap = {
 _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$InvalidCredentialsErrorImpl(
-      authenticationError: json['authenticationError'] as String?,
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      authenticationError: json['authenticationError'] as String,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$InvalidCredentialsErrorImplToJson(
-    _$InvalidCredentialsErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('authenticationError', instance.authenticationError);
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$InvalidCredentialsErrorImpl instance) =>
+    <String, dynamic>{
+      'authenticationError': instance.authenticationError,
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+      'runtimeType': instance.$type,
+    };
 
 _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$NativeAuthStrategyErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
-    _$NativeAuthStrategyErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$NativeAuthStrategyErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+      'runtimeType': instance.$type,
+    };
 
 _$SuccessImpl _$$SuccessImplFromJson(Map<String, dynamic> json) =>
     _$SuccessImpl(
-      success: json['success'] as bool?,
+      success: json['success'] as bool,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SuccessImplToJson(_$SuccessImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('success', instance.success);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$SuccessImplToJson(_$SuccessImpl instance) =>
+    <String, dynamic>{
+      'success': instance.success,
+      'runtimeType': instance.$type,
+    };

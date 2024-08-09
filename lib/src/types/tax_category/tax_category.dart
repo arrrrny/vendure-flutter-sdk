@@ -2,22 +2,17 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 part 'tax_category.freezed.dart';
 part 'tax_category.g.dart';
-
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class TaxCategory with _$TaxCategory {
   const TaxCategory._();
 
   const factory TaxCategory({
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    String? id,
-    bool? isDefault,
-    String? name,
-    DateTime? updatedAt,
+    required String id,
+    required bool isDefault,
+    required String name,
+    required DateTime updatedAt,
   }) = _TaxCategory;
 
   factory TaxCategory.fromJson(Map<String, dynamic> json) => _$TaxCategoryFromJson(json);

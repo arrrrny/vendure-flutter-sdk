@@ -59,27 +59,19 @@ _$ProductVariantFilterParameterImpl
         );
 
 Map<String, dynamic> _$$ProductVariantFilterParameterImplToJson(
-    _$ProductVariantFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('currencyCode', instance.currencyCode?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('languageCode', instance.languageCode?.toJson());
-  writeNotNull('name', instance.name?.toJson());
-  writeNotNull('price', instance.price?.toJson());
-  writeNotNull('priceWithTax', instance.priceWithTax?.toJson());
-  writeNotNull('productId', instance.productId?.toJson());
-  writeNotNull('sku', instance.sku?.toJson());
-  writeNotNull('stockLevel', instance.stockLevel?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$ProductVariantFilterParameterImpl instance) =>
+    <String, dynamic>{
+      '_and': instance.and,
+      '_or': instance.or,
+      'createdAt': instance.createdAt,
+      'currencyCode': instance.currencyCode,
+      'id': instance.id,
+      'languageCode': instance.languageCode,
+      'name': instance.name,
+      'price': instance.price,
+      'priceWithTax': instance.priceWithTax,
+      'productId': instance.productId,
+      'sku': instance.sku,
+      'stockLevel': instance.stockLevel,
+      'updatedAt': instance.updatedAt,
+    };

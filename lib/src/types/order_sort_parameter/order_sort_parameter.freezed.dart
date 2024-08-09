@@ -21,18 +21,31 @@ OrderSortParameter _$OrderSortParameterFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderSortParameter {
   SortOrder? get code => throw _privateConstructorUsedError;
+  set code(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get orderPlacedAt => throw _privateConstructorUsedError;
+  set orderPlacedAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get shipping => throw _privateConstructorUsedError;
+  set shipping(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get shippingWithTax => throw _privateConstructorUsedError;
+  set shippingWithTax(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get state => throw _privateConstructorUsedError;
+  set state(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get subTotal => throw _privateConstructorUsedError;
+  set subTotal(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get subTotalWithTax => throw _privateConstructorUsedError;
+  set subTotalWithTax(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get total => throw _privateConstructorUsedError;
+  set total(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get totalQuantity => throw _privateConstructorUsedError;
+  set totalQuantity(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get totalWithTax => throw _privateConstructorUsedError;
+  set totalWithTax(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -256,7 +269,7 @@ class __$$OrderSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderSortParameterImpl extends _OrderSortParameter
     with DiagnosticableTreeMixin {
-  const _$OrderSortParameterImpl(
+  _$OrderSortParameterImpl(
       {this.code,
       this.createdAt,
       this.id,
@@ -276,31 +289,31 @@ class _$OrderSortParameterImpl extends _OrderSortParameter
       _$$OrderSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? code;
+  SortOrder? code;
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? orderPlacedAt;
+  SortOrder? orderPlacedAt;
   @override
-  final SortOrder? shipping;
+  SortOrder? shipping;
   @override
-  final SortOrder? shippingWithTax;
+  SortOrder? shippingWithTax;
   @override
-  final SortOrder? state;
+  SortOrder? state;
   @override
-  final SortOrder? subTotal;
+  SortOrder? subTotal;
   @override
-  final SortOrder? subTotalWithTax;
+  SortOrder? subTotalWithTax;
   @override
-  final SortOrder? total;
+  SortOrder? total;
   @override
-  final SortOrder? totalQuantity;
+  SortOrder? totalQuantity;
   @override
-  final SortOrder? totalWithTax;
+  SortOrder? totalWithTax;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -327,53 +340,6 @@ class _$OrderSortParameterImpl extends _OrderSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OrderSortParameterImpl &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.orderPlacedAt, orderPlacedAt) ||
-                other.orderPlacedAt == orderPlacedAt) &&
-            (identical(other.shipping, shipping) ||
-                other.shipping == shipping) &&
-            (identical(other.shippingWithTax, shippingWithTax) ||
-                other.shippingWithTax == shippingWithTax) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.subTotal, subTotal) ||
-                other.subTotal == subTotal) &&
-            (identical(other.subTotalWithTax, subTotalWithTax) ||
-                other.subTotalWithTax == subTotalWithTax) &&
-            (identical(other.total, total) || other.total == total) &&
-            (identical(other.totalQuantity, totalQuantity) ||
-                other.totalQuantity == totalQuantity) &&
-            (identical(other.totalWithTax, totalWithTax) ||
-                other.totalWithTax == totalWithTax) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      createdAt,
-      id,
-      orderPlacedAt,
-      shipping,
-      shippingWithTax,
-      state,
-      subTotal,
-      subTotalWithTax,
-      total,
-      totalQuantity,
-      totalWithTax,
-      updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -390,51 +356,64 @@ class _$OrderSortParameterImpl extends _OrderSortParameter
 }
 
 abstract class _OrderSortParameter extends OrderSortParameter {
-  const factory _OrderSortParameter(
-      {final SortOrder? code,
-      final SortOrder? createdAt,
-      final SortOrder? id,
-      final SortOrder? orderPlacedAt,
-      final SortOrder? shipping,
-      final SortOrder? shippingWithTax,
-      final SortOrder? state,
-      final SortOrder? subTotal,
-      final SortOrder? subTotalWithTax,
-      final SortOrder? total,
-      final SortOrder? totalQuantity,
-      final SortOrder? totalWithTax,
-      final SortOrder? updatedAt}) = _$OrderSortParameterImpl;
-  const _OrderSortParameter._() : super._();
+  factory _OrderSortParameter(
+      {SortOrder? code,
+      SortOrder? createdAt,
+      SortOrder? id,
+      SortOrder? orderPlacedAt,
+      SortOrder? shipping,
+      SortOrder? shippingWithTax,
+      SortOrder? state,
+      SortOrder? subTotal,
+      SortOrder? subTotalWithTax,
+      SortOrder? total,
+      SortOrder? totalQuantity,
+      SortOrder? totalWithTax,
+      SortOrder? updatedAt}) = _$OrderSortParameterImpl;
+  _OrderSortParameter._() : super._();
 
   factory _OrderSortParameter.fromJson(Map<String, dynamic> json) =
       _$OrderSortParameterImpl.fromJson;
 
   @override
   SortOrder? get code;
+  set code(SortOrder? value);
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get orderPlacedAt;
+  set orderPlacedAt(SortOrder? value);
   @override
   SortOrder? get shipping;
+  set shipping(SortOrder? value);
   @override
   SortOrder? get shippingWithTax;
+  set shippingWithTax(SortOrder? value);
   @override
   SortOrder? get state;
+  set state(SortOrder? value);
   @override
   SortOrder? get subTotal;
+  set subTotal(SortOrder? value);
   @override
   SortOrder? get subTotalWithTax;
+  set subTotalWithTax(SortOrder? value);
   @override
   SortOrder? get total;
+  set total(SortOrder? value);
   @override
   SortOrder? get totalQuantity;
+  set totalQuantity(SortOrder? value);
   @override
   SortOrder? get totalWithTax;
+  set totalWithTax(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$OrderSortParameterImplCopyWith<_$OrderSortParameterImpl> get copyWith =>

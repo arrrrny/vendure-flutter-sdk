@@ -1,27 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/error_code/error_code.dart';
-import 'package:vendure/src/types/native_auth_strategy_error/native_auth_strategy_error.dart';
-import 'package:vendure/src/types/success/success.dart';
+import '../types/error_code/error_code.dart';
 
 part 'request_password_reset_result.freezed.dart';
 part 'request_password_reset_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class RequestPasswordResetResult with _$RequestPasswordResetResult {
   const RequestPasswordResetResult._();
 
   const factory RequestPasswordResetResult.nativeAuthStrategyError({
-    ErrorCode? errorCode,
-    String? message,
+    required ErrorCode errorCode,
+    required String message,
   }) = NativeAuthStrategyError;
 
   const factory RequestPasswordResetResult.success({
-    bool? success,
+    required bool success,
   }) = Success;
 
   factory RequestPasswordResetResult.fromJson(Map<String, dynamic> json) =>

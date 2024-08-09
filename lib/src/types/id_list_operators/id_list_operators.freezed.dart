@@ -21,6 +21,7 @@ IdListOperators _$IdListOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$IdListOperators {
   String get inList => throw _privateConstructorUsedError;
+  set inList(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -98,13 +99,13 @@ class __$$IdListOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IdListOperatorsImpl extends _IdListOperators
     with DiagnosticableTreeMixin {
-  const _$IdListOperatorsImpl({required this.inList}) : super._();
+  _$IdListOperatorsImpl({required this.inList}) : super._();
 
   factory _$IdListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$IdListOperatorsImplFromJson(json);
 
   @override
-  final String inList;
+  String inList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -118,18 +119,6 @@ class _$IdListOperatorsImpl extends _IdListOperators
       ..add(DiagnosticsProperty('type', 'IdListOperators'))
       ..add(DiagnosticsProperty('inList', inList));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$IdListOperatorsImpl &&
-            (identical(other.inList, inList) || other.inList == inList));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, inList);
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +136,15 @@ class _$IdListOperatorsImpl extends _IdListOperators
 }
 
 abstract class _IdListOperators extends IdListOperators {
-  const factory _IdListOperators({required final String inList}) =
-      _$IdListOperatorsImpl;
-  const _IdListOperators._() : super._();
+  factory _IdListOperators({required String inList}) = _$IdListOperatorsImpl;
+  _IdListOperators._() : super._();
 
   factory _IdListOperators.fromJson(Map<String, dynamic> json) =
       _$IdListOperatorsImpl.fromJson;
 
   @override
   String get inList;
+  set inList(String value);
   @override
   @JsonKey(ignore: true)
   _$$IdListOperatorsImplCopyWith<_$IdListOperatorsImpl> get copyWith =>

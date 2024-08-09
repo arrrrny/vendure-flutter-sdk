@@ -2,20 +2,15 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 part 'authentication_method.freezed.dart';
 part 'authentication_method.g.dart';
-
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class AuthenticationMethod with _$AuthenticationMethod {
   const AuthenticationMethod._();
 
   const factory AuthenticationMethod({
-    DateTime? createdAt,
-    String? id,
-    String? strategy,
-    DateTime? updatedAt,
+    required DateTime createdAt,
+    required String id,
+    required String strategy,
+    required DateTime updatedAt,
   }) = _AuthenticationMethod;
 
   factory AuthenticationMethod.fromJson(Map<String, dynamic> json) => _$AuthenticationMethodFromJson(json);

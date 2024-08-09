@@ -21,9 +21,9 @@ PasswordValidationError _$PasswordValidationErrorFromJson(
 
 /// @nodoc
 mixin _$PasswordValidationError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-  String? get validationErrorMessage => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  String get validationErrorMessage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $PasswordValidationErrorCopyWith<$Res> {
       _$PasswordValidationErrorCopyWithImpl<$Res, PasswordValidationError>;
   @useResult
   $Res call(
-      {ErrorCode? errorCode, String? message, String? validationErrorMessage});
+      {ErrorCode errorCode, String message, String validationErrorMessage});
 }
 
 /// @nodoc
@@ -55,23 +55,23 @@ class _$PasswordValidationErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? validationErrorMessage = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? validationErrorMessage = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validationErrorMessage: freezed == validationErrorMessage
+              as String,
+      validationErrorMessage: null == validationErrorMessage
           ? _value.validationErrorMessage
           : validationErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -86,7 +86,7 @@ abstract class _$$PasswordValidationErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ErrorCode? errorCode, String? message, String? validationErrorMessage});
+      {ErrorCode errorCode, String message, String validationErrorMessage});
 }
 
 /// @nodoc
@@ -102,23 +102,23 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? validationErrorMessage = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? validationErrorMessage = null,
   }) {
     return _then(_$PasswordValidationErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validationErrorMessage: freezed == validationErrorMessage
+              as String,
+      validationErrorMessage: null == validationErrorMessage
           ? _value.validationErrorMessage
           : validationErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -128,18 +128,20 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 class _$PasswordValidationErrorImpl extends _PasswordValidationError
     with DiagnosticableTreeMixin {
   const _$PasswordValidationErrorImpl(
-      {this.errorCode, this.message, this.validationErrorMessage})
+      {required this.errorCode,
+      required this.message,
+      required this.validationErrorMessage})
       : super._();
 
   factory _$PasswordValidationErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$PasswordValidationErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
   @override
-  final String? validationErrorMessage;
+  final String validationErrorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -191,20 +193,21 @@ class _$PasswordValidationErrorImpl extends _PasswordValidationError
 
 abstract class _PasswordValidationError extends PasswordValidationError {
   const factory _PasswordValidationError(
-      {final ErrorCode? errorCode,
-      final String? message,
-      final String? validationErrorMessage}) = _$PasswordValidationErrorImpl;
+          {required final ErrorCode errorCode,
+          required final String message,
+          required final String validationErrorMessage}) =
+      _$PasswordValidationErrorImpl;
   const _PasswordValidationError._() : super._();
 
   factory _PasswordValidationError.fromJson(Map<String, dynamic> json) =
       _$PasswordValidationErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
-  String? get validationErrorMessage;
+  String get validationErrorMessage;
   @override
   @JsonKey(ignore: true)
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>

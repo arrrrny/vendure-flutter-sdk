@@ -21,6 +21,7 @@ DateListOperators _$DateListOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DateListOperators {
   DateTime get inList => throw _privateConstructorUsedError;
+  set inList(DateTime value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -98,13 +99,13 @@ class __$$DateListOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DateListOperatorsImpl extends _DateListOperators
     with DiagnosticableTreeMixin {
-  const _$DateListOperatorsImpl({required this.inList}) : super._();
+  _$DateListOperatorsImpl({required this.inList}) : super._();
 
   factory _$DateListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$DateListOperatorsImplFromJson(json);
 
   @override
-  final DateTime inList;
+  DateTime inList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -118,18 +119,6 @@ class _$DateListOperatorsImpl extends _DateListOperators
       ..add(DiagnosticsProperty('type', 'DateListOperators'))
       ..add(DiagnosticsProperty('inList', inList));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DateListOperatorsImpl &&
-            (identical(other.inList, inList) || other.inList == inList));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, inList);
 
   @JsonKey(ignore: true)
   @override
@@ -147,15 +136,16 @@ class _$DateListOperatorsImpl extends _DateListOperators
 }
 
 abstract class _DateListOperators extends DateListOperators {
-  const factory _DateListOperators({required final DateTime inList}) =
+  factory _DateListOperators({required DateTime inList}) =
       _$DateListOperatorsImpl;
-  const _DateListOperators._() : super._();
+  _DateListOperators._() : super._();
 
   factory _DateListOperators.fromJson(Map<String, dynamic> json) =
       _$DateListOperatorsImpl.fromJson;
 
   @override
   DateTime get inList;
+  set inList(DateTime value);
   @override
   @JsonKey(ignore: true)
   _$$DateListOperatorsImplCopyWith<_$DateListOperatorsImpl> get copyWith =>

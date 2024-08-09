@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/facet/facet.dart';
+import '../facet/facet.dart';
 
 part 'facet_list.freezed.dart';
 part 'facet_list.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class FacetList with _$FacetList {
   const FacetList._();
 
   const factory FacetList({
-    List<Facet?>? items,
-    int? totalItems,
+    required List<Facet> items,
+    required int totalItems,
   }) = _FacetList;
 
   factory FacetList.fromJson(Map<String, dynamic> json) =>

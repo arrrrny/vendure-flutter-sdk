@@ -21,7 +21,9 @@ NativeAuthInput _$NativeAuthInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NativeAuthInput {
   String get password => throw _privateConstructorUsedError;
+  set password(String value) => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
+  set username(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -109,16 +111,16 @@ class __$$NativeAuthInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NativeAuthInputImpl extends _NativeAuthInput
     with DiagnosticableTreeMixin {
-  const _$NativeAuthInputImpl({required this.password, required this.username})
+  _$NativeAuthInputImpl({required this.password, required this.username})
       : super._();
 
   factory _$NativeAuthInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$NativeAuthInputImplFromJson(json);
 
   @override
-  final String password;
+  String password;
   @override
-  final String username;
+  String username;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -133,21 +135,6 @@ class _$NativeAuthInputImpl extends _NativeAuthInput
       ..add(DiagnosticsProperty('password', password))
       ..add(DiagnosticsProperty('username', username));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NativeAuthInputImpl &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.username, username) ||
-                other.username == username));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, password, username);
 
   @JsonKey(ignore: true)
   @override
@@ -165,18 +152,20 @@ class _$NativeAuthInputImpl extends _NativeAuthInput
 }
 
 abstract class _NativeAuthInput extends NativeAuthInput {
-  const factory _NativeAuthInput(
-      {required final String password,
-      required final String username}) = _$NativeAuthInputImpl;
-  const _NativeAuthInput._() : super._();
+  factory _NativeAuthInput(
+      {required String password,
+      required String username}) = _$NativeAuthInputImpl;
+  _NativeAuthInput._() : super._();
 
   factory _NativeAuthInput.fromJson(Map<String, dynamic> json) =
       _$NativeAuthInputImpl.fromJson;
 
   @override
   String get password;
+  set password(String value);
   @override
   String get username;
+  set username(String value);
   @override
   @JsonKey(ignore: true)
   _$$NativeAuthInputImplCopyWith<_$NativeAuthInputImpl> get copyWith =>

@@ -20,14 +20,14 @@ OrderLine _$OrderLineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderLine {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
 
   /// The price of the line including discounts, excluding tax
-  double? get discountedLinePrice => throw _privateConstructorUsedError;
+  double get discountedLinePrice => throw _privateConstructorUsedError;
 
   /// The price of the line including discounts and tax
-  double? get discountedLinePriceWithTax => throw _privateConstructorUsedError;
+  double get discountedLinePriceWithTax => throw _privateConstructorUsedError;
 
   /// The price of a single unit including discounts, excluding tax.
   ///
@@ -35,64 +35,64 @@ mixin _$OrderLine {
   /// actual taxable unit price (see `proratedUnitPrice`), but is generally the
   /// correct price to display to customers to avoid confusion
   /// about the internal handling of distributed Order-level discounts.
-  double? get discountedUnitPrice => throw _privateConstructorUsedError;
+  double get discountedUnitPrice => throw _privateConstructorUsedError;
 
   /// The price of a single unit including discounts and tax
-  double? get discountedUnitPriceWithTax => throw _privateConstructorUsedError;
-  List<Discount?>? get discounts => throw _privateConstructorUsedError;
+  double get discountedUnitPriceWithTax => throw _privateConstructorUsedError;
+  List<Discount> get discounts => throw _privateConstructorUsedError;
   Asset? get featuredAsset => throw _privateConstructorUsedError;
-  List<FulfillmentLine?>? get fulfillmentLines =>
+  List<FulfillmentLine>? get fulfillmentLines =>
       throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   /// The total price of the line excluding tax and discounts.
-  double? get linePrice => throw _privateConstructorUsedError;
+  double get linePrice => throw _privateConstructorUsedError;
 
   /// The total price of the line including tax but excluding discounts.
-  double? get linePriceWithTax => throw _privateConstructorUsedError;
+  double get linePriceWithTax => throw _privateConstructorUsedError;
 
   /// The total tax on this line
-  double? get lineTax => throw _privateConstructorUsedError;
-  Order? get order => throw _privateConstructorUsedError;
+  double get lineTax => throw _privateConstructorUsedError;
+  Order get order => throw _privateConstructorUsedError;
 
   /// The quantity at the time the Order was placed
-  int? get orderPlacedQuantity => throw _privateConstructorUsedError;
-  ProductVariant? get productVariant => throw _privateConstructorUsedError;
+  int get orderPlacedQuantity => throw _privateConstructorUsedError;
+  ProductVariant get productVariant => throw _privateConstructorUsedError;
 
   /// The actual line price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderLine, and is used in tax
   /// and refund calculations.
-  double? get proratedLinePrice => throw _privateConstructorUsedError;
+  double get proratedLinePrice => throw _privateConstructorUsedError;
 
   /// The proratedLinePrice including tax
-  double? get proratedLinePriceWithTax => throw _privateConstructorUsedError;
+  double get proratedLinePriceWithTax => throw _privateConstructorUsedError;
 
   /// The actual unit price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderItem, and is used in tax
   /// and refund calculations.
-  double? get proratedUnitPrice => throw _privateConstructorUsedError;
+  double get proratedUnitPrice => throw _privateConstructorUsedError;
 
   /// The proratedUnitPrice including tax
-  double? get proratedUnitPriceWithTax => throw _privateConstructorUsedError;
+  double get proratedUnitPriceWithTax => throw _privateConstructorUsedError;
 
   /// The quantity of items purchased
-  int? get quantity => throw _privateConstructorUsedError;
-  List<TaxLine?>? get taxLines => throw _privateConstructorUsedError;
-  double? get taxRate => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
+  List<TaxLine> get taxLines => throw _privateConstructorUsedError;
+  double get taxRate => throw _privateConstructorUsedError;
 
   /// The price of a single unit, excluding tax and discounts
-  double? get unitPrice => throw _privateConstructorUsedError;
+  double get unitPrice => throw _privateConstructorUsedError;
 
   /// Non-zero if the unitPrice has changed since it was initially added to Order
-  double? get unitPriceChangeSinceAdded => throw _privateConstructorUsedError;
+  double get unitPriceChangeSinceAdded => throw _privateConstructorUsedError;
 
   /// The price of a single unit, including tax but excluding discounts
-  double? get unitPriceWithTax => throw _privateConstructorUsedError;
+  double get unitPriceWithTax => throw _privateConstructorUsedError;
 
   /// Non-zero if the unitPriceWithTax has changed since it was initially added to Order
-  double? get unitPriceWithTaxChangeSinceAdded =>
+  double get unitPriceWithTaxChangeSinceAdded =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -106,38 +106,38 @@ abstract class $OrderLineCopyWith<$Res> {
       _$OrderLineCopyWithImpl<$Res, OrderLine>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      double? discountedLinePrice,
-      double? discountedLinePriceWithTax,
-      double? discountedUnitPrice,
-      double? discountedUnitPriceWithTax,
-      List<Discount?>? discounts,
+      double discountedLinePrice,
+      double discountedLinePriceWithTax,
+      double discountedUnitPrice,
+      double discountedUnitPriceWithTax,
+      List<Discount> discounts,
       Asset? featuredAsset,
-      List<FulfillmentLine?>? fulfillmentLines,
-      String? id,
-      double? linePrice,
-      double? linePriceWithTax,
-      double? lineTax,
-      Order? order,
-      int? orderPlacedQuantity,
-      ProductVariant? productVariant,
-      double? proratedLinePrice,
-      double? proratedLinePriceWithTax,
-      double? proratedUnitPrice,
-      double? proratedUnitPriceWithTax,
-      int? quantity,
-      List<TaxLine?>? taxLines,
-      double? taxRate,
-      double? unitPrice,
-      double? unitPriceChangeSinceAdded,
-      double? unitPriceWithTax,
-      double? unitPriceWithTaxChangeSinceAdded,
-      DateTime? updatedAt});
+      List<FulfillmentLine>? fulfillmentLines,
+      String id,
+      double linePrice,
+      double linePriceWithTax,
+      double lineTax,
+      Order order,
+      int orderPlacedQuantity,
+      ProductVariant productVariant,
+      double proratedLinePrice,
+      double proratedLinePriceWithTax,
+      double proratedUnitPrice,
+      double proratedUnitPriceWithTax,
+      int quantity,
+      List<TaxLine> taxLines,
+      double taxRate,
+      double unitPrice,
+      double unitPriceChangeSinceAdded,
+      double unitPriceWithTax,
+      double unitPriceWithTaxChangeSinceAdded,
+      DateTime updatedAt});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $OrderCopyWith<$Res>? get order;
-  $ProductVariantCopyWith<$Res>? get productVariant;
+  $OrderCopyWith<$Res> get order;
+  $ProductVariantCopyWith<$Res> get productVariant;
 }
 
 /// @nodoc
@@ -153,64 +153,64 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? discountedLinePrice = freezed,
-    Object? discountedLinePriceWithTax = freezed,
-    Object? discountedUnitPrice = freezed,
-    Object? discountedUnitPriceWithTax = freezed,
-    Object? discounts = freezed,
+    Object? discountedLinePrice = null,
+    Object? discountedLinePriceWithTax = null,
+    Object? discountedUnitPrice = null,
+    Object? discountedUnitPriceWithTax = null,
+    Object? discounts = null,
     Object? featuredAsset = freezed,
     Object? fulfillmentLines = freezed,
-    Object? id = freezed,
-    Object? linePrice = freezed,
-    Object? linePriceWithTax = freezed,
-    Object? lineTax = freezed,
-    Object? order = freezed,
-    Object? orderPlacedQuantity = freezed,
-    Object? productVariant = freezed,
-    Object? proratedLinePrice = freezed,
-    Object? proratedLinePriceWithTax = freezed,
-    Object? proratedUnitPrice = freezed,
-    Object? proratedUnitPriceWithTax = freezed,
-    Object? quantity = freezed,
-    Object? taxLines = freezed,
-    Object? taxRate = freezed,
-    Object? unitPrice = freezed,
-    Object? unitPriceChangeSinceAdded = freezed,
-    Object? unitPriceWithTax = freezed,
-    Object? unitPriceWithTaxChangeSinceAdded = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? linePrice = null,
+    Object? linePriceWithTax = null,
+    Object? lineTax = null,
+    Object? order = null,
+    Object? orderPlacedQuantity = null,
+    Object? productVariant = null,
+    Object? proratedLinePrice = null,
+    Object? proratedLinePriceWithTax = null,
+    Object? proratedUnitPrice = null,
+    Object? proratedUnitPriceWithTax = null,
+    Object? quantity = null,
+    Object? taxLines = null,
+    Object? taxRate = null,
+    Object? unitPrice = null,
+    Object? unitPriceChangeSinceAdded = null,
+    Object? unitPriceWithTax = null,
+    Object? unitPriceWithTaxChangeSinceAdded = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      discountedLinePrice: freezed == discountedLinePrice
+      discountedLinePrice: null == discountedLinePrice
           ? _value.discountedLinePrice
           : discountedLinePrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedLinePriceWithTax: freezed == discountedLinePriceWithTax
+              as double,
+      discountedLinePriceWithTax: null == discountedLinePriceWithTax
           ? _value.discountedLinePriceWithTax
           : discountedLinePriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedUnitPrice: freezed == discountedUnitPrice
+              as double,
+      discountedUnitPrice: null == discountedUnitPrice
           ? _value.discountedUnitPrice
           : discountedUnitPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedUnitPriceWithTax: freezed == discountedUnitPriceWithTax
+              as double,
+      discountedUnitPriceWithTax: null == discountedUnitPriceWithTax
           ? _value.discountedUnitPriceWithTax
           : discountedUnitPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discounts: freezed == discounts
+              as double,
+      discounts: null == discounts
           ? _value.discounts
           : discounts // ignore: cast_nullable_to_non_nullable
-              as List<Discount?>?,
+              as List<Discount>,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
@@ -218,84 +218,83 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
       fulfillmentLines: freezed == fulfillmentLines
           ? _value.fulfillmentLines
           : fulfillmentLines // ignore: cast_nullable_to_non_nullable
-              as List<FulfillmentLine?>?,
-      id: freezed == id
+              as List<FulfillmentLine>?,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      linePrice: freezed == linePrice
+              as String,
+      linePrice: null == linePrice
           ? _value.linePrice
           : linePrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      linePriceWithTax: freezed == linePriceWithTax
+              as double,
+      linePriceWithTax: null == linePriceWithTax
           ? _value.linePriceWithTax
           : linePriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lineTax: freezed == lineTax
+              as double,
+      lineTax: null == lineTax
           ? _value.lineTax
           : lineTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      order: freezed == order
+              as double,
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as Order?,
-      orderPlacedQuantity: freezed == orderPlacedQuantity
+              as Order,
+      orderPlacedQuantity: null == orderPlacedQuantity
           ? _value.orderPlacedQuantity
           : orderPlacedQuantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      productVariant: freezed == productVariant
+              as int,
+      productVariant: null == productVariant
           ? _value.productVariant
           : productVariant // ignore: cast_nullable_to_non_nullable
-              as ProductVariant?,
-      proratedLinePrice: freezed == proratedLinePrice
+              as ProductVariant,
+      proratedLinePrice: null == proratedLinePrice
           ? _value.proratedLinePrice
           : proratedLinePrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      proratedLinePriceWithTax: freezed == proratedLinePriceWithTax
+              as double,
+      proratedLinePriceWithTax: null == proratedLinePriceWithTax
           ? _value.proratedLinePriceWithTax
           : proratedLinePriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      proratedUnitPrice: freezed == proratedUnitPrice
+              as double,
+      proratedUnitPrice: null == proratedUnitPrice
           ? _value.proratedUnitPrice
           : proratedUnitPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      proratedUnitPriceWithTax: freezed == proratedUnitPriceWithTax
+              as double,
+      proratedUnitPriceWithTax: null == proratedUnitPriceWithTax
           ? _value.proratedUnitPriceWithTax
           : proratedUnitPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      quantity: freezed == quantity
+              as double,
+      quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      taxLines: freezed == taxLines
+              as int,
+      taxLines: null == taxLines
           ? _value.taxLines
           : taxLines // ignore: cast_nullable_to_non_nullable
-              as List<TaxLine?>?,
-      taxRate: freezed == taxRate
+              as List<TaxLine>,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPrice: freezed == unitPrice
+              as double,
+      unitPrice: null == unitPrice
           ? _value.unitPrice
           : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPriceChangeSinceAdded: freezed == unitPriceChangeSinceAdded
+              as double,
+      unitPriceChangeSinceAdded: null == unitPriceChangeSinceAdded
           ? _value.unitPriceChangeSinceAdded
           : unitPriceChangeSinceAdded // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPriceWithTax: freezed == unitPriceWithTax
+              as double,
+      unitPriceWithTax: null == unitPriceWithTax
           ? _value.unitPriceWithTax
           : unitPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPriceWithTaxChangeSinceAdded: freezed ==
-              unitPriceWithTaxChangeSinceAdded
+              as double,
+      unitPriceWithTaxChangeSinceAdded: null == unitPriceWithTaxChangeSinceAdded
           ? _value.unitPriceWithTaxChangeSinceAdded
           : unitPriceWithTaxChangeSinceAdded // ignore: cast_nullable_to_non_nullable
-              as double?,
-      updatedAt: freezed == updatedAt
+              as double,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
@@ -313,24 +312,16 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
 
   @override
   @pragma('vm:prefer-inline')
-  $OrderCopyWith<$Res>? get order {
-    if (_value.order == null) {
-      return null;
-    }
-
-    return $OrderCopyWith<$Res>(_value.order!, (value) {
+  $OrderCopyWith<$Res> get order {
+    return $OrderCopyWith<$Res>(_value.order, (value) {
       return _then(_value.copyWith(order: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ProductVariantCopyWith<$Res>? get productVariant {
-    if (_value.productVariant == null) {
-      return null;
-    }
-
-    return $ProductVariantCopyWith<$Res>(_value.productVariant!, (value) {
+  $ProductVariantCopyWith<$Res> get productVariant {
+    return $ProductVariantCopyWith<$Res>(_value.productVariant, (value) {
       return _then(_value.copyWith(productVariant: value) as $Val);
     });
   }
@@ -345,41 +336,41 @@ abstract class _$$OrderLineImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      double? discountedLinePrice,
-      double? discountedLinePriceWithTax,
-      double? discountedUnitPrice,
-      double? discountedUnitPriceWithTax,
-      List<Discount?>? discounts,
+      double discountedLinePrice,
+      double discountedLinePriceWithTax,
+      double discountedUnitPrice,
+      double discountedUnitPriceWithTax,
+      List<Discount> discounts,
       Asset? featuredAsset,
-      List<FulfillmentLine?>? fulfillmentLines,
-      String? id,
-      double? linePrice,
-      double? linePriceWithTax,
-      double? lineTax,
-      Order? order,
-      int? orderPlacedQuantity,
-      ProductVariant? productVariant,
-      double? proratedLinePrice,
-      double? proratedLinePriceWithTax,
-      double? proratedUnitPrice,
-      double? proratedUnitPriceWithTax,
-      int? quantity,
-      List<TaxLine?>? taxLines,
-      double? taxRate,
-      double? unitPrice,
-      double? unitPriceChangeSinceAdded,
-      double? unitPriceWithTax,
-      double? unitPriceWithTaxChangeSinceAdded,
-      DateTime? updatedAt});
+      List<FulfillmentLine>? fulfillmentLines,
+      String id,
+      double linePrice,
+      double linePriceWithTax,
+      double lineTax,
+      Order order,
+      int orderPlacedQuantity,
+      ProductVariant productVariant,
+      double proratedLinePrice,
+      double proratedLinePriceWithTax,
+      double proratedUnitPrice,
+      double proratedUnitPriceWithTax,
+      int quantity,
+      List<TaxLine> taxLines,
+      double taxRate,
+      double unitPrice,
+      double unitPriceChangeSinceAdded,
+      double unitPriceWithTax,
+      double unitPriceWithTaxChangeSinceAdded,
+      DateTime updatedAt});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
   @override
-  $OrderCopyWith<$Res>? get order;
+  $OrderCopyWith<$Res> get order;
   @override
-  $ProductVariantCopyWith<$Res>? get productVariant;
+  $ProductVariantCopyWith<$Res> get productVariant;
 }
 
 /// @nodoc
@@ -393,64 +384,64 @@ class __$$OrderLineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? discountedLinePrice = freezed,
-    Object? discountedLinePriceWithTax = freezed,
-    Object? discountedUnitPrice = freezed,
-    Object? discountedUnitPriceWithTax = freezed,
-    Object? discounts = freezed,
+    Object? discountedLinePrice = null,
+    Object? discountedLinePriceWithTax = null,
+    Object? discountedUnitPrice = null,
+    Object? discountedUnitPriceWithTax = null,
+    Object? discounts = null,
     Object? featuredAsset = freezed,
     Object? fulfillmentLines = freezed,
-    Object? id = freezed,
-    Object? linePrice = freezed,
-    Object? linePriceWithTax = freezed,
-    Object? lineTax = freezed,
-    Object? order = freezed,
-    Object? orderPlacedQuantity = freezed,
-    Object? productVariant = freezed,
-    Object? proratedLinePrice = freezed,
-    Object? proratedLinePriceWithTax = freezed,
-    Object? proratedUnitPrice = freezed,
-    Object? proratedUnitPriceWithTax = freezed,
-    Object? quantity = freezed,
-    Object? taxLines = freezed,
-    Object? taxRate = freezed,
-    Object? unitPrice = freezed,
-    Object? unitPriceChangeSinceAdded = freezed,
-    Object? unitPriceWithTax = freezed,
-    Object? unitPriceWithTaxChangeSinceAdded = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? linePrice = null,
+    Object? linePriceWithTax = null,
+    Object? lineTax = null,
+    Object? order = null,
+    Object? orderPlacedQuantity = null,
+    Object? productVariant = null,
+    Object? proratedLinePrice = null,
+    Object? proratedLinePriceWithTax = null,
+    Object? proratedUnitPrice = null,
+    Object? proratedUnitPriceWithTax = null,
+    Object? quantity = null,
+    Object? taxLines = null,
+    Object? taxRate = null,
+    Object? unitPrice = null,
+    Object? unitPriceChangeSinceAdded = null,
+    Object? unitPriceWithTax = null,
+    Object? unitPriceWithTaxChangeSinceAdded = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$OrderLineImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      discountedLinePrice: freezed == discountedLinePrice
+      discountedLinePrice: null == discountedLinePrice
           ? _value.discountedLinePrice
           : discountedLinePrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedLinePriceWithTax: freezed == discountedLinePriceWithTax
+              as double,
+      discountedLinePriceWithTax: null == discountedLinePriceWithTax
           ? _value.discountedLinePriceWithTax
           : discountedLinePriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedUnitPrice: freezed == discountedUnitPrice
+              as double,
+      discountedUnitPrice: null == discountedUnitPrice
           ? _value.discountedUnitPrice
           : discountedUnitPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountedUnitPriceWithTax: freezed == discountedUnitPriceWithTax
+              as double,
+      discountedUnitPriceWithTax: null == discountedUnitPriceWithTax
           ? _value.discountedUnitPriceWithTax
           : discountedUnitPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discounts: freezed == discounts
+              as double,
+      discounts: null == discounts
           ? _value._discounts
           : discounts // ignore: cast_nullable_to_non_nullable
-              as List<Discount?>?,
+              as List<Discount>,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
@@ -458,84 +449,83 @@ class __$$OrderLineImplCopyWithImpl<$Res>
       fulfillmentLines: freezed == fulfillmentLines
           ? _value._fulfillmentLines
           : fulfillmentLines // ignore: cast_nullable_to_non_nullable
-              as List<FulfillmentLine?>?,
-      id: freezed == id
+              as List<FulfillmentLine>?,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      linePrice: freezed == linePrice
+              as String,
+      linePrice: null == linePrice
           ? _value.linePrice
           : linePrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      linePriceWithTax: freezed == linePriceWithTax
+              as double,
+      linePriceWithTax: null == linePriceWithTax
           ? _value.linePriceWithTax
           : linePriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lineTax: freezed == lineTax
+              as double,
+      lineTax: null == lineTax
           ? _value.lineTax
           : lineTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      order: freezed == order
+              as double,
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as Order?,
-      orderPlacedQuantity: freezed == orderPlacedQuantity
+              as Order,
+      orderPlacedQuantity: null == orderPlacedQuantity
           ? _value.orderPlacedQuantity
           : orderPlacedQuantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      productVariant: freezed == productVariant
+              as int,
+      productVariant: null == productVariant
           ? _value.productVariant
           : productVariant // ignore: cast_nullable_to_non_nullable
-              as ProductVariant?,
-      proratedLinePrice: freezed == proratedLinePrice
+              as ProductVariant,
+      proratedLinePrice: null == proratedLinePrice
           ? _value.proratedLinePrice
           : proratedLinePrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      proratedLinePriceWithTax: freezed == proratedLinePriceWithTax
+              as double,
+      proratedLinePriceWithTax: null == proratedLinePriceWithTax
           ? _value.proratedLinePriceWithTax
           : proratedLinePriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      proratedUnitPrice: freezed == proratedUnitPrice
+              as double,
+      proratedUnitPrice: null == proratedUnitPrice
           ? _value.proratedUnitPrice
           : proratedUnitPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      proratedUnitPriceWithTax: freezed == proratedUnitPriceWithTax
+              as double,
+      proratedUnitPriceWithTax: null == proratedUnitPriceWithTax
           ? _value.proratedUnitPriceWithTax
           : proratedUnitPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      quantity: freezed == quantity
+              as double,
+      quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      taxLines: freezed == taxLines
+              as int,
+      taxLines: null == taxLines
           ? _value._taxLines
           : taxLines // ignore: cast_nullable_to_non_nullable
-              as List<TaxLine?>?,
-      taxRate: freezed == taxRate
+              as List<TaxLine>,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPrice: freezed == unitPrice
+              as double,
+      unitPrice: null == unitPrice
           ? _value.unitPrice
           : unitPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPriceChangeSinceAdded: freezed == unitPriceChangeSinceAdded
+              as double,
+      unitPriceChangeSinceAdded: null == unitPriceChangeSinceAdded
           ? _value.unitPriceChangeSinceAdded
           : unitPriceChangeSinceAdded // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPriceWithTax: freezed == unitPriceWithTax
+              as double,
+      unitPriceWithTax: null == unitPriceWithTax
           ? _value.unitPriceWithTax
           : unitPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      unitPriceWithTaxChangeSinceAdded: freezed ==
-              unitPriceWithTaxChangeSinceAdded
+              as double,
+      unitPriceWithTaxChangeSinceAdded: null == unitPriceWithTaxChangeSinceAdded
           ? _value.unitPriceWithTaxChangeSinceAdded
           : unitPriceWithTaxChangeSinceAdded // ignore: cast_nullable_to_non_nullable
-              as double?,
-      updatedAt: freezed == updatedAt
+              as double,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -544,34 +534,34 @@ class __$$OrderLineImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
   const _$OrderLineImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.discountedLinePrice,
-      this.discountedLinePriceWithTax,
-      this.discountedUnitPrice,
-      this.discountedUnitPriceWithTax,
-      final List<Discount?>? discounts,
+      required this.discountedLinePrice,
+      required this.discountedLinePriceWithTax,
+      required this.discountedUnitPrice,
+      required this.discountedUnitPriceWithTax,
+      required final List<Discount> discounts,
       this.featuredAsset,
-      final List<FulfillmentLine?>? fulfillmentLines,
-      this.id,
-      this.linePrice,
-      this.linePriceWithTax,
-      this.lineTax,
-      this.order,
-      this.orderPlacedQuantity,
-      this.productVariant,
-      this.proratedLinePrice,
-      this.proratedLinePriceWithTax,
-      this.proratedUnitPrice,
-      this.proratedUnitPriceWithTax,
-      this.quantity,
-      final List<TaxLine?>? taxLines,
-      this.taxRate,
-      this.unitPrice,
-      this.unitPriceChangeSinceAdded,
-      this.unitPriceWithTax,
-      this.unitPriceWithTaxChangeSinceAdded,
-      this.updatedAt})
+      final List<FulfillmentLine>? fulfillmentLines,
+      required this.id,
+      required this.linePrice,
+      required this.linePriceWithTax,
+      required this.lineTax,
+      required this.order,
+      required this.orderPlacedQuantity,
+      required this.productVariant,
+      required this.proratedLinePrice,
+      required this.proratedLinePriceWithTax,
+      required this.proratedUnitPrice,
+      required this.proratedUnitPriceWithTax,
+      required this.quantity,
+      required final List<TaxLine> taxLines,
+      required this.taxRate,
+      required this.unitPrice,
+      required this.unitPriceChangeSinceAdded,
+      required this.unitPriceWithTax,
+      required this.unitPriceWithTaxChangeSinceAdded,
+      required this.updatedAt})
       : _customFields = customFields,
         _discounts = discounts,
         _fulfillmentLines = fulfillmentLines,
@@ -582,7 +572,7 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
       _$$OrderLineImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -595,11 +585,11 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
 
   /// The price of the line including discounts, excluding tax
   @override
-  final double? discountedLinePrice;
+  final double discountedLinePrice;
 
   /// The price of the line including discounts and tax
   @override
-  final double? discountedLinePriceWithTax;
+  final double discountedLinePriceWithTax;
 
   /// The price of a single unit including discounts, excluding tax.
   ///
@@ -608,26 +598,24 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
   /// correct price to display to customers to avoid confusion
   /// about the internal handling of distributed Order-level discounts.
   @override
-  final double? discountedUnitPrice;
+  final double discountedUnitPrice;
 
   /// The price of a single unit including discounts and tax
   @override
-  final double? discountedUnitPriceWithTax;
-  final List<Discount?>? _discounts;
+  final double discountedUnitPriceWithTax;
+  final List<Discount> _discounts;
   @override
-  List<Discount?>? get discounts {
-    final value = _discounts;
-    if (value == null) return null;
+  List<Discount> get discounts {
     if (_discounts is EqualUnmodifiableListView) return _discounts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_discounts);
   }
 
   @override
   final Asset? featuredAsset;
-  final List<FulfillmentLine?>? _fulfillmentLines;
+  final List<FulfillmentLine>? _fulfillmentLines;
   @override
-  List<FulfillmentLine?>? get fulfillmentLines {
+  List<FulfillmentLine>? get fulfillmentLines {
     final value = _fulfillmentLines;
     if (value == null) return null;
     if (_fulfillmentLines is EqualUnmodifiableListView)
@@ -637,81 +625,79 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? id;
+  final String id;
 
   /// The total price of the line excluding tax and discounts.
   @override
-  final double? linePrice;
+  final double linePrice;
 
   /// The total price of the line including tax but excluding discounts.
   @override
-  final double? linePriceWithTax;
+  final double linePriceWithTax;
 
   /// The total tax on this line
   @override
-  final double? lineTax;
+  final double lineTax;
   @override
-  final Order? order;
+  final Order order;
 
   /// The quantity at the time the Order was placed
   @override
-  final int? orderPlacedQuantity;
+  final int orderPlacedQuantity;
   @override
-  final ProductVariant? productVariant;
+  final ProductVariant productVariant;
 
   /// The actual line price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderLine, and is used in tax
   /// and refund calculations.
   @override
-  final double? proratedLinePrice;
+  final double proratedLinePrice;
 
   /// The proratedLinePrice including tax
   @override
-  final double? proratedLinePriceWithTax;
+  final double proratedLinePriceWithTax;
 
   /// The actual unit price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderItem, and is used in tax
   /// and refund calculations.
   @override
-  final double? proratedUnitPrice;
+  final double proratedUnitPrice;
 
   /// The proratedUnitPrice including tax
   @override
-  final double? proratedUnitPriceWithTax;
+  final double proratedUnitPriceWithTax;
 
   /// The quantity of items purchased
   @override
-  final int? quantity;
-  final List<TaxLine?>? _taxLines;
+  final int quantity;
+  final List<TaxLine> _taxLines;
   @override
-  List<TaxLine?>? get taxLines {
-    final value = _taxLines;
-    if (value == null) return null;
+  List<TaxLine> get taxLines {
     if (_taxLines is EqualUnmodifiableListView) return _taxLines;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_taxLines);
   }
 
   @override
-  final double? taxRate;
+  final double taxRate;
 
   /// The price of a single unit, excluding tax and discounts
   @override
-  final double? unitPrice;
+  final double unitPrice;
 
   /// Non-zero if the unitPrice has changed since it was initially added to Order
   @override
-  final double? unitPriceChangeSinceAdded;
+  final double unitPriceChangeSinceAdded;
 
   /// The price of a single unit, including tax but excluding discounts
   @override
-  final double? unitPriceWithTax;
+  final double unitPriceWithTax;
 
   /// Non-zero if the unitPriceWithTax has changed since it was initially added to Order
   @override
-  final double? unitPriceWithTaxChangeSinceAdded;
+  final double unitPriceWithTaxChangeSinceAdded;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -871,51 +857,51 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
 
 abstract class _OrderLine extends OrderLine {
   const factory _OrderLine(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final double? discountedLinePrice,
-      final double? discountedLinePriceWithTax,
-      final double? discountedUnitPrice,
-      final double? discountedUnitPriceWithTax,
-      final List<Discount?>? discounts,
+      required final double discountedLinePrice,
+      required final double discountedLinePriceWithTax,
+      required final double discountedUnitPrice,
+      required final double discountedUnitPriceWithTax,
+      required final List<Discount> discounts,
       final Asset? featuredAsset,
-      final List<FulfillmentLine?>? fulfillmentLines,
-      final String? id,
-      final double? linePrice,
-      final double? linePriceWithTax,
-      final double? lineTax,
-      final Order? order,
-      final int? orderPlacedQuantity,
-      final ProductVariant? productVariant,
-      final double? proratedLinePrice,
-      final double? proratedLinePriceWithTax,
-      final double? proratedUnitPrice,
-      final double? proratedUnitPriceWithTax,
-      final int? quantity,
-      final List<TaxLine?>? taxLines,
-      final double? taxRate,
-      final double? unitPrice,
-      final double? unitPriceChangeSinceAdded,
-      final double? unitPriceWithTax,
-      final double? unitPriceWithTaxChangeSinceAdded,
-      final DateTime? updatedAt}) = _$OrderLineImpl;
+      final List<FulfillmentLine>? fulfillmentLines,
+      required final String id,
+      required final double linePrice,
+      required final double linePriceWithTax,
+      required final double lineTax,
+      required final Order order,
+      required final int orderPlacedQuantity,
+      required final ProductVariant productVariant,
+      required final double proratedLinePrice,
+      required final double proratedLinePriceWithTax,
+      required final double proratedUnitPrice,
+      required final double proratedUnitPriceWithTax,
+      required final int quantity,
+      required final List<TaxLine> taxLines,
+      required final double taxRate,
+      required final double unitPrice,
+      required final double unitPriceChangeSinceAdded,
+      required final double unitPriceWithTax,
+      required final double unitPriceWithTaxChangeSinceAdded,
+      required final DateTime updatedAt}) = _$OrderLineImpl;
   const _OrderLine._() : super._();
 
   factory _OrderLine.fromJson(Map<String, dynamic> json) =
       _$OrderLineImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
 
   /// The price of the line including discounts, excluding tax
-  double? get discountedLinePrice;
+  double get discountedLinePrice;
   @override
 
   /// The price of the line including discounts and tax
-  double? get discountedLinePriceWithTax;
+  double get discountedLinePriceWithTax;
   @override
 
   /// The price of a single unit including discounts, excluding tax.
@@ -924,85 +910,85 @@ abstract class _OrderLine extends OrderLine {
   /// actual taxable unit price (see `proratedUnitPrice`), but is generally the
   /// correct price to display to customers to avoid confusion
   /// about the internal handling of distributed Order-level discounts.
-  double? get discountedUnitPrice;
+  double get discountedUnitPrice;
   @override
 
   /// The price of a single unit including discounts and tax
-  double? get discountedUnitPriceWithTax;
+  double get discountedUnitPriceWithTax;
   @override
-  List<Discount?>? get discounts;
+  List<Discount> get discounts;
   @override
   Asset? get featuredAsset;
   @override
-  List<FulfillmentLine?>? get fulfillmentLines;
+  List<FulfillmentLine>? get fulfillmentLines;
   @override
-  String? get id;
+  String get id;
   @override
 
   /// The total price of the line excluding tax and discounts.
-  double? get linePrice;
+  double get linePrice;
   @override
 
   /// The total price of the line including tax but excluding discounts.
-  double? get linePriceWithTax;
+  double get linePriceWithTax;
   @override
 
   /// The total tax on this line
-  double? get lineTax;
+  double get lineTax;
   @override
-  Order? get order;
+  Order get order;
   @override
 
   /// The quantity at the time the Order was placed
-  int? get orderPlacedQuantity;
+  int get orderPlacedQuantity;
   @override
-  ProductVariant? get productVariant;
+  ProductVariant get productVariant;
   @override
 
   /// The actual line price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderLine, and is used in tax
   /// and refund calculations.
-  double? get proratedLinePrice;
+  double get proratedLinePrice;
   @override
 
   /// The proratedLinePrice including tax
-  double? get proratedLinePriceWithTax;
+  double get proratedLinePriceWithTax;
   @override
 
   /// The actual unit price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderItem, and is used in tax
   /// and refund calculations.
-  double? get proratedUnitPrice;
+  double get proratedUnitPrice;
   @override
 
   /// The proratedUnitPrice including tax
-  double? get proratedUnitPriceWithTax;
+  double get proratedUnitPriceWithTax;
   @override
 
   /// The quantity of items purchased
-  int? get quantity;
+  int get quantity;
   @override
-  List<TaxLine?>? get taxLines;
+  List<TaxLine> get taxLines;
   @override
-  double? get taxRate;
+  double get taxRate;
   @override
 
   /// The price of a single unit, excluding tax and discounts
-  double? get unitPrice;
+  double get unitPrice;
   @override
 
   /// Non-zero if the unitPrice has changed since it was initially added to Order
-  double? get unitPriceChangeSinceAdded;
+  double get unitPriceChangeSinceAdded;
   @override
 
   /// The price of a single unit, including tax but excluding discounts
-  double? get unitPriceWithTax;
+  double get unitPriceWithTax;
   @override
 
   /// Non-zero if the unitPriceWithTax has changed since it was initially added to Order
-  double? get unitPriceWithTaxChangeSinceAdded;
+  double get unitPriceWithTaxChangeSinceAdded;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$OrderLineImplCopyWith<_$OrderLineImpl> get copyWith =>

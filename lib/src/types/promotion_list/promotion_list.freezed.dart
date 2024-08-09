@@ -20,8 +20,8 @@ PromotionList _$PromotionListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PromotionList {
-  List<Promotion?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Promotion> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $PromotionListCopyWith<$Res> {
           PromotionList value, $Res Function(PromotionList) then) =
       _$PromotionListCopyWithImpl<$Res, PromotionList>;
   @useResult
-  $Res call({List<Promotion?>? items, int? totalItems});
+  $Res call({List<Promotion> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$PromotionListCopyWithImpl<$Res, $Val extends PromotionList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Promotion?>?,
-      totalItems: freezed == totalItems
+              as List<Promotion>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$PromotionListImplCopyWith<$Res>
       __$$PromotionListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Promotion?>? items, int? totalItems});
+  $Res call({List<Promotion> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$PromotionListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$PromotionListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Promotion?>?,
-      totalItems: freezed == totalItems
+              as List<Promotion>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -108,25 +108,24 @@ class __$$PromotionListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PromotionListImpl extends _PromotionList with DiagnosticableTreeMixin {
-  const _$PromotionListImpl({final List<Promotion?>? items, this.totalItems})
+  const _$PromotionListImpl(
+      {required final List<Promotion> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$PromotionListImpl.fromJson(Map<String, dynamic> json) =>
       _$$PromotionListImplFromJson(json);
 
-  final List<Promotion?>? _items;
+  final List<Promotion> _items;
   @override
-  List<Promotion?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Promotion> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -173,17 +172,17 @@ class _$PromotionListImpl extends _PromotionList with DiagnosticableTreeMixin {
 
 abstract class _PromotionList extends PromotionList {
   const factory _PromotionList(
-      {final List<Promotion?>? items,
-      final int? totalItems}) = _$PromotionListImpl;
+      {required final List<Promotion> items,
+      required final int totalItems}) = _$PromotionListImpl;
   const _PromotionList._() : super._();
 
   factory _PromotionList.fromJson(Map<String, dynamic> json) =
       _$PromotionListImpl.fromJson;
 
   @override
-  List<Promotion?>? get items;
+  List<Promotion> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$PromotionListImplCopyWith<_$PromotionListImpl> get copyWith =>

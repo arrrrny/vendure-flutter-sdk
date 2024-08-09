@@ -1,24 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/adjustment_type/adjustment_type.dart';
+import '../types/adjustment_type/adjustment_type.dart';
 
 part 'discount.freezed.dart';
 part 'discount.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class Discount with _$Discount {
   const Discount._();
 
   const factory Discount({
-    String? adjustmentSource,
-    double? amount,
-    double? amountWithTax,
-    String? description,
-    AdjustmentType? type,
+    required String adjustmentSource,
+    required double amount,
+    required double amountWithTax,
+    required String description,
+    required AdjustmentType type,
   }) = _Discount;
 
   factory Discount.fromJson(Map<String, dynamic> json) =>

@@ -8,87 +8,63 @@ part of 'collection.dart';
 
 _$CollectionImpl _$$CollectionImplFromJson(Map<String, dynamic> json) =>
     _$CollectionImpl(
-      assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Asset.fromJson(e as Map<String, dynamic>))
+      assets: (json['assets'] as List<dynamic>)
+          .map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      breadcrumbs: (json['breadcrumbs'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : CollectionBreadcrumb.fromJson(e as Map<String, dynamic>))
+      breadcrumbs: (json['breadcrumbs'] as List<dynamic>)
+          .map((e) => CollectionBreadcrumb.fromJson(e as Map<String, dynamic>))
           .toList(),
       children: (json['children'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Collection.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Collection.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
+      createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: json['customFields'] as Map<String, dynamic>?,
-      description: json['description'] as String?,
+      description: json['description'] as String,
       featuredAsset: json['featuredAsset'] == null
           ? null
           : Asset.fromJson(json['featuredAsset'] as Map<String, dynamic>),
-      filters: (json['filters'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ConfigurableOperation.fromJson(e as Map<String, dynamic>))
+      filters: (json['filters'] as List<dynamic>)
+          .map((e) => ConfigurableOperation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      id: json['id'] as String?,
+      id: json['id'] as String,
       languageCode:
           $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
+      name: json['name'] as String,
       parent: json['parent'] == null
           ? null
           : Collection.fromJson(json['parent'] as Map<String, dynamic>),
-      parentId: json['parentId'] as String?,
-      position: (json['position'] as num?)?.toInt(),
-      productVariants: json['productVariants'] == null
-          ? null
-          : ProductVariantList.fromJson(
-              json['productVariants'] as Map<String, dynamic>),
-      slug: json['slug'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : CollectionTranslation.fromJson(e as Map<String, dynamic>))
+      parentId: json['parentId'] as String,
+      position: (json['position'] as num).toInt(),
+      productVariants: ProductVariantList.fromJson(
+          json['productVariants'] as Map<String, dynamic>),
+      slug: json['slug'] as String,
+      translations: (json['translations'] as List<dynamic>)
+          .map((e) => CollectionTranslation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assets', instance.assets?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'breadcrumbs', instance.breadcrumbs?.map((e) => e?.toJson()).toList());
-  writeNotNull('children', instance.children?.map((e) => e?.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('description', instance.description);
-  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
-  writeNotNull('filters', instance.filters?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull('parent', instance.parent?.toJson());
-  writeNotNull('parentId', instance.parentId);
-  writeNotNull('position', instance.position);
-  writeNotNull('productVariants', instance.productVariants?.toJson());
-  writeNotNull('slug', instance.slug);
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) =>
+    <String, dynamic>{
+      'assets': instance.assets,
+      'breadcrumbs': instance.breadcrumbs,
+      'children': instance.children,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'customFields': instance.customFields,
+      'description': instance.description,
+      'featuredAsset': instance.featuredAsset,
+      'filters': instance.filters,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode],
+      'name': instance.name,
+      'parent': instance.parent,
+      'parentId': instance.parentId,
+      'position': instance.position,
+      'productVariants': instance.productVariants,
+      'slug': instance.slug,
+      'translations': instance.translations,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

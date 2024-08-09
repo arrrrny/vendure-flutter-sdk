@@ -10,24 +10,16 @@ _$IdentifierChangeTokenInvalidErrorImpl
     _$$IdentifierChangeTokenInvalidErrorImplFromJson(
             Map<String, dynamic> json) =>
         _$IdentifierChangeTokenInvalidErrorImpl(
-          errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String?,
+          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+          message: json['message'] as String,
         );
 
 Map<String, dynamic> _$$IdentifierChangeTokenInvalidErrorImplToJson(
-    _$IdentifierChangeTokenInvalidErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$IdentifierChangeTokenInvalidErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

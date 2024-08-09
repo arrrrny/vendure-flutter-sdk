@@ -21,6 +21,7 @@ AuthenticationInput _$AuthenticationInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AuthenticationInput {
   NativeAuthInput? get native => throw _privateConstructorUsedError;
+  set native(NativeAuthInput? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -115,13 +116,13 @@ class __$$AuthenticationInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AuthenticationInputImpl extends _AuthenticationInput
     with DiagnosticableTreeMixin {
-  const _$AuthenticationInputImpl({this.native}) : super._();
+  _$AuthenticationInputImpl({this.native}) : super._();
 
   factory _$AuthenticationInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$AuthenticationInputImplFromJson(json);
 
   @override
-  final NativeAuthInput? native;
+  NativeAuthInput? native;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -135,18 +136,6 @@ class _$AuthenticationInputImpl extends _AuthenticationInput
       ..add(DiagnosticsProperty('type', 'AuthenticationInput'))
       ..add(DiagnosticsProperty('native', native));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AuthenticationInputImpl &&
-            (identical(other.native, native) || other.native == native));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, native);
 
   @JsonKey(ignore: true)
   @override
@@ -164,15 +153,16 @@ class _$AuthenticationInputImpl extends _AuthenticationInput
 }
 
 abstract class _AuthenticationInput extends AuthenticationInput {
-  const factory _AuthenticationInput({final NativeAuthInput? native}) =
+  factory _AuthenticationInput({NativeAuthInput? native}) =
       _$AuthenticationInputImpl;
-  const _AuthenticationInput._() : super._();
+  _AuthenticationInput._() : super._();
 
   factory _AuthenticationInput.fromJson(Map<String, dynamic> json) =
       _$AuthenticationInputImpl.fromJson;
 
   @override
   NativeAuthInput? get native;
+  set native(NativeAuthInput? value);
   @override
   @JsonKey(ignore: true)
   _$$AuthenticationInputImplCopyWith<_$AuthenticationInputImpl> get copyWith =>

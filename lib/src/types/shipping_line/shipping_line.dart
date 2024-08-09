@@ -1,27 +1,23 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/discount/discount.dart';
-import 'package:vendure/src/types/shipping_method/shipping_method.dart';
+import '../discount/discount.dart';
+import '../shipping_method/shipping_method.dart';
 
 part 'shipping_line.freezed.dart';
 part 'shipping_line.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class ShippingLine with _$ShippingLine {
   const ShippingLine._();
 
   const factory ShippingLine({
-    double? discountedPrice,
-    double? discountedPriceWithTax,
-    List<Discount?>? discounts,
-    String? id,
-    double? price,
-    double? priceWithTax,
-    ShippingMethod? shippingMethod,
+    required double discountedPrice,
+    required double discountedPriceWithTax,
+    required List<Discount> discounts,
+    required String id,
+    required double price,
+    required double priceWithTax,
+    required ShippingMethod shippingMethod,
   }) = _ShippingLine;
 
   factory ShippingLine.fromJson(Map<String, dynamic> json) =>

@@ -46,24 +46,16 @@ _$CustomerFilterParameterImpl _$$CustomerFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$CustomerFilterParameterImplToJson(
-    _$CustomerFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('emailAddress', instance.emailAddress?.toJson());
-  writeNotNull('firstName', instance.firstName?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('lastName', instance.lastName?.toJson());
-  writeNotNull('phoneNumber', instance.phoneNumber?.toJson());
-  writeNotNull('title', instance.title?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$CustomerFilterParameterImpl instance) =>
+    <String, dynamic>{
+      '_and': instance.and,
+      '_or': instance.or,
+      'createdAt': instance.createdAt,
+      'emailAddress': instance.emailAddress,
+      'firstName': instance.firstName,
+      'id': instance.id,
+      'lastName': instance.lastName,
+      'phoneNumber': instance.phoneNumber,
+      'title': instance.title,
+      'updatedAt': instance.updatedAt,
+    };

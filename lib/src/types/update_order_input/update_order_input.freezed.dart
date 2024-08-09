@@ -21,6 +21,8 @@ UpdateOrderInput _$UpdateOrderInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UpdateOrderInput {
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
+  set customFields(Map<String, dynamic>? value) =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -87,7 +89,7 @@ class __$$UpdateOrderInputImplCopyWithImpl<$Res>
   }) {
     return _then(_$UpdateOrderInputImpl(
       customFields: freezed == customFields
-          ? _value._customFields
+          ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -98,22 +100,13 @@ class __$$UpdateOrderInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UpdateOrderInputImpl extends _UpdateOrderInput
     with DiagnosticableTreeMixin {
-  const _$UpdateOrderInputImpl({final Map<String, dynamic>? customFields})
-      : _customFields = customFields,
-        super._();
+  _$UpdateOrderInputImpl({this.customFields}) : super._();
 
   factory _$UpdateOrderInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdateOrderInputImplFromJson(json);
 
-  final Map<String, dynamic>? _customFields;
   @override
-  Map<String, dynamic>? get customFields {
-    final value = _customFields;
-    if (value == null) return null;
-    if (_customFields is EqualUnmodifiableMapView) return _customFields;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  Map<String, dynamic>? customFields;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -127,20 +120,6 @@ class _$UpdateOrderInputImpl extends _UpdateOrderInput
       ..add(DiagnosticsProperty('type', 'UpdateOrderInput'))
       ..add(DiagnosticsProperty('customFields', customFields));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateOrderInputImpl &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_customFields));
 
   @JsonKey(ignore: true)
   @override
@@ -158,15 +137,16 @@ class _$UpdateOrderInputImpl extends _UpdateOrderInput
 }
 
 abstract class _UpdateOrderInput extends UpdateOrderInput {
-  const factory _UpdateOrderInput({final Map<String, dynamic>? customFields}) =
+  factory _UpdateOrderInput({Map<String, dynamic>? customFields}) =
       _$UpdateOrderInputImpl;
-  const _UpdateOrderInput._() : super._();
+  _UpdateOrderInput._() : super._();
 
   factory _UpdateOrderInput.fromJson(Map<String, dynamic> json) =
       _$UpdateOrderInputImpl.fromJson;
 
   @override
   Map<String, dynamic>? get customFields;
+  set customFields(Map<String, dynamic>? value);
   @override
   @JsonKey(ignore: true)
   _$$UpdateOrderInputImplCopyWith<_$UpdateOrderInputImpl> get copyWith =>

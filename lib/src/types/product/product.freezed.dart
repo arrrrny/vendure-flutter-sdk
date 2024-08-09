@@ -20,29 +20,29 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Product {
-  List<Asset?>? get assets => throw _privateConstructorUsedError;
-  List<Collection?>? get collections => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  List<Asset> get assets => throw _privateConstructorUsedError;
+  List<Collection> get collections => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  bool? get enabled => throw _privateConstructorUsedError;
-  List<FacetValue?>? get facetValues => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  bool get enabled => throw _privateConstructorUsedError;
+  List<FacetValue> get facetValues => throw _privateConstructorUsedError;
   Asset? get featuredAsset => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<ProductOptionGroup?>? get optionGroups =>
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<ProductOptionGroup> get optionGroups =>
       throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
-  List<ProductTranslation?>? get translations =>
+  String get slug => throw _privateConstructorUsedError;
+  List<ProductTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
-  ProductVariantList? get variantList => throw _privateConstructorUsedError;
+  ProductVariantList get variantList => throw _privateConstructorUsedError;
 
   /// Returns all ProductVariants
-  List<ProductVariant?>? get variants => throw _privateConstructorUsedError;
+  List<ProductVariant> get variants => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,26 +55,26 @@ abstract class $ProductCopyWith<$Res> {
       _$ProductCopyWithImpl<$Res, Product>;
   @useResult
   $Res call(
-      {List<Asset?>? assets,
-      List<Collection?>? collections,
-      DateTime? createdAt,
+      {List<Asset> assets,
+      List<Collection> collections,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      bool? enabled,
-      List<FacetValue?>? facetValues,
+      String description,
+      bool enabled,
+      List<FacetValue> facetValues,
       Asset? featuredAsset,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ProductOptionGroup?>? optionGroups,
-      String? slug,
-      List<ProductTranslation?>? translations,
-      DateTime? updatedAt,
-      ProductVariantList? variantList,
-      List<ProductVariant?>? variants});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ProductOptionGroup> optionGroups,
+      String slug,
+      List<ProductTranslation> translations,
+      DateTime updatedAt,
+      ProductVariantList variantList,
+      List<ProductVariant> variants});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $ProductVariantListCopyWith<$Res>? get variantList;
+  $ProductVariantListCopyWith<$Res> get variantList;
 }
 
 /// @nodoc
@@ -90,93 +90,93 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assets = freezed,
-    Object? collections = freezed,
-    Object? createdAt = freezed,
+    Object? assets = null,
+    Object? collections = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? enabled = freezed,
-    Object? facetValues = freezed,
+    Object? description = null,
+    Object? enabled = null,
+    Object? facetValues = null,
     Object? featuredAsset = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? optionGroups = freezed,
-    Object? slug = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
-    Object? variantList = freezed,
-    Object? variants = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? optionGroups = null,
+    Object? slug = null,
+    Object? translations = null,
+    Object? updatedAt = null,
+    Object? variantList = null,
+    Object? variants = null,
   }) {
     return _then(_value.copyWith(
-      assets: freezed == assets
+      assets: null == assets
           ? _value.assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      collections: freezed == collections
+              as List<Asset>,
+      collections: null == collections
           ? _value.collections
           : collections // ignore: cast_nullable_to_non_nullable
-              as List<Collection?>?,
-      createdAt: freezed == createdAt
+              as List<Collection>,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      enabled: freezed == enabled
+              as String,
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      facetValues: freezed == facetValues
+              as bool,
+      facetValues: null == facetValues
           ? _value.facetValues
           : facetValues // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
+              as List<FacetValue>,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      optionGroups: freezed == optionGroups
+              as String,
+      optionGroups: null == optionGroups
           ? _value.optionGroups
           : optionGroups // ignore: cast_nullable_to_non_nullable
-              as List<ProductOptionGroup?>?,
-      slug: freezed == slug
+              as List<ProductOptionGroup>,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ProductTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ProductTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      variantList: freezed == variantList
+              as DateTime,
+      variantList: null == variantList
           ? _value.variantList
           : variantList // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList?,
-      variants: freezed == variants
+              as ProductVariantList,
+      variants: null == variants
           ? _value.variants
           : variants // ignore: cast_nullable_to_non_nullable
-              as List<ProductVariant?>?,
+              as List<ProductVariant>,
     ) as $Val);
   }
 
@@ -194,12 +194,8 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
 
   @override
   @pragma('vm:prefer-inline')
-  $ProductVariantListCopyWith<$Res>? get variantList {
-    if (_value.variantList == null) {
-      return null;
-    }
-
-    return $ProductVariantListCopyWith<$Res>(_value.variantList!, (value) {
+  $ProductVariantListCopyWith<$Res> get variantList {
+    return $ProductVariantListCopyWith<$Res>(_value.variantList, (value) {
       return _then(_value.copyWith(variantList: value) as $Val);
     });
   }
@@ -213,28 +209,28 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {List<Asset?>? assets,
-      List<Collection?>? collections,
-      DateTime? createdAt,
+      {List<Asset> assets,
+      List<Collection> collections,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      bool? enabled,
-      List<FacetValue?>? facetValues,
+      String description,
+      bool enabled,
+      List<FacetValue> facetValues,
       Asset? featuredAsset,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ProductOptionGroup?>? optionGroups,
-      String? slug,
-      List<ProductTranslation?>? translations,
-      DateTime? updatedAt,
-      ProductVariantList? variantList,
-      List<ProductVariant?>? variants});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ProductOptionGroup> optionGroups,
+      String slug,
+      List<ProductTranslation> translations,
+      DateTime updatedAt,
+      ProductVariantList variantList,
+      List<ProductVariant> variants});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
   @override
-  $ProductVariantListCopyWith<$Res>? get variantList;
+  $ProductVariantListCopyWith<$Res> get variantList;
 }
 
 /// @nodoc
@@ -248,93 +244,93 @@ class __$$ProductImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assets = freezed,
-    Object? collections = freezed,
-    Object? createdAt = freezed,
+    Object? assets = null,
+    Object? collections = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? enabled = freezed,
-    Object? facetValues = freezed,
+    Object? description = null,
+    Object? enabled = null,
+    Object? facetValues = null,
     Object? featuredAsset = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? optionGroups = freezed,
-    Object? slug = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
-    Object? variantList = freezed,
-    Object? variants = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? optionGroups = null,
+    Object? slug = null,
+    Object? translations = null,
+    Object? updatedAt = null,
+    Object? variantList = null,
+    Object? variants = null,
   }) {
     return _then(_$ProductImpl(
-      assets: freezed == assets
+      assets: null == assets
           ? _value._assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      collections: freezed == collections
+              as List<Asset>,
+      collections: null == collections
           ? _value._collections
           : collections // ignore: cast_nullable_to_non_nullable
-              as List<Collection?>?,
-      createdAt: freezed == createdAt
+              as List<Collection>,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      enabled: freezed == enabled
+              as String,
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      facetValues: freezed == facetValues
+              as bool,
+      facetValues: null == facetValues
           ? _value._facetValues
           : facetValues // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
+              as List<FacetValue>,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      optionGroups: freezed == optionGroups
+              as String,
+      optionGroups: null == optionGroups
           ? _value._optionGroups
           : optionGroups // ignore: cast_nullable_to_non_nullable
-              as List<ProductOptionGroup?>?,
-      slug: freezed == slug
+              as List<ProductOptionGroup>,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ProductTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ProductTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      variantList: freezed == variantList
+              as DateTime,
+      variantList: null == variantList
           ? _value.variantList
           : variantList // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList?,
-      variants: freezed == variants
+              as ProductVariantList,
+      variants: null == variants
           ? _value._variants
           : variants // ignore: cast_nullable_to_non_nullable
-              as List<ProductVariant?>?,
+              as List<ProductVariant>,
     ));
   }
 }
@@ -343,23 +339,23 @@ class __$$ProductImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   const _$ProductImpl(
-      {final List<Asset?>? assets,
-      final List<Collection?>? collections,
-      this.createdAt,
+      {required final List<Asset> assets,
+      required final List<Collection> collections,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.description,
-      this.enabled,
-      final List<FacetValue?>? facetValues,
+      required this.description,
+      required this.enabled,
+      required final List<FacetValue> facetValues,
       this.featuredAsset,
-      this.id,
-      this.languageCode,
-      this.name,
-      final List<ProductOptionGroup?>? optionGroups,
-      this.slug,
-      final List<ProductTranslation?>? translations,
-      this.updatedAt,
-      this.variantList,
-      final List<ProductVariant?>? variants})
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required final List<ProductOptionGroup> optionGroups,
+      required this.slug,
+      required final List<ProductTranslation> translations,
+      required this.updatedAt,
+      required this.variantList,
+      required final List<ProductVariant> variants})
       : _assets = assets,
         _collections = collections,
         _customFields = customFields,
@@ -372,28 +368,24 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductImplFromJson(json);
 
-  final List<Asset?>? _assets;
+  final List<Asset> _assets;
   @override
-  List<Asset?>? get assets {
-    final value = _assets;
-    if (value == null) return null;
+  List<Asset> get assets {
     if (_assets is EqualUnmodifiableListView) return _assets;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_assets);
   }
 
-  final List<Collection?>? _collections;
+  final List<Collection> _collections;
   @override
-  List<Collection?>? get collections {
-    final value = _collections;
-    if (value == null) return null;
+  List<Collection> get collections {
     if (_collections is EqualUnmodifiableListView) return _collections;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_collections);
   }
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -405,67 +397,59 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? description;
+  final String description;
   @override
-  final bool? enabled;
-  final List<FacetValue?>? _facetValues;
+  final bool enabled;
+  final List<FacetValue> _facetValues;
   @override
-  List<FacetValue?>? get facetValues {
-    final value = _facetValues;
-    if (value == null) return null;
+  List<FacetValue> get facetValues {
     if (_facetValues is EqualUnmodifiableListView) return _facetValues;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_facetValues);
   }
 
   @override
   final Asset? featuredAsset;
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
-  final List<ProductOptionGroup?>? _optionGroups;
+  final String name;
+  final List<ProductOptionGroup> _optionGroups;
   @override
-  List<ProductOptionGroup?>? get optionGroups {
-    final value = _optionGroups;
-    if (value == null) return null;
+  List<ProductOptionGroup> get optionGroups {
     if (_optionGroups is EqualUnmodifiableListView) return _optionGroups;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_optionGroups);
   }
 
   @override
-  final String? slug;
-  final List<ProductTranslation?>? _translations;
+  final String slug;
+  final List<ProductTranslation> _translations;
   @override
-  List<ProductTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<ProductTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
   @override
-  final ProductVariantList? variantList;
+  final ProductVariantList variantList;
 
   /// Returns all ProductVariants
-  final List<ProductVariant?>? _variants;
+  final List<ProductVariant> _variants;
 
   /// Returns all ProductVariants
   @override
-  List<ProductVariant?>? get variants {
-    final value = _variants;
-    if (value == null) return null;
+  List<ProductVariant> get variants {
     if (_variants is EqualUnmodifiableListView) return _variants;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_variants);
   }
 
   @override
@@ -570,65 +554,65 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
 
 abstract class _Product extends Product {
   const factory _Product(
-      {final List<Asset?>? assets,
-      final List<Collection?>? collections,
-      final DateTime? createdAt,
+      {required final List<Asset> assets,
+      required final List<Collection> collections,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? description,
-      final bool? enabled,
-      final List<FacetValue?>? facetValues,
+      required final String description,
+      required final bool enabled,
+      required final List<FacetValue> facetValues,
       final Asset? featuredAsset,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final List<ProductOptionGroup?>? optionGroups,
-      final String? slug,
-      final List<ProductTranslation?>? translations,
-      final DateTime? updatedAt,
-      final ProductVariantList? variantList,
-      final List<ProductVariant?>? variants}) = _$ProductImpl;
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final List<ProductOptionGroup> optionGroups,
+      required final String slug,
+      required final List<ProductTranslation> translations,
+      required final DateTime updatedAt,
+      required final ProductVariantList variantList,
+      required final List<ProductVariant> variants}) = _$ProductImpl;
   const _Product._() : super._();
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$ProductImpl.fromJson;
 
   @override
-  List<Asset?>? get assets;
+  List<Asset> get assets;
   @override
-  List<Collection?>? get collections;
+  List<Collection> get collections;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
-  bool? get enabled;
+  bool get enabled;
   @override
-  List<FacetValue?>? get facetValues;
+  List<FacetValue> get facetValues;
   @override
   Asset? get featuredAsset;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  List<ProductOptionGroup?>? get optionGroups;
+  List<ProductOptionGroup> get optionGroups;
   @override
-  String? get slug;
+  String get slug;
   @override
-  List<ProductTranslation?>? get translations;
+  List<ProductTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
-  ProductVariantList? get variantList;
+  ProductVariantList get variantList;
   @override
 
   /// Returns all ProductVariants
-  List<ProductVariant?>? get variants;
+  List<ProductVariant> get variants;
   @override
   @JsonKey(ignore: true)
   _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>

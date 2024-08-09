@@ -25,18 +25,37 @@ mixin _$ProductVariantListOptions {
   ProductVariantFilterParameter? get filter =>
       throw _privateConstructorUsedError;
 
+  /// Allows the results to be filtered
+  set filter(ProductVariantFilterParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
 
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value) =>
+      throw _privateConstructorUsedError;
+
   /// Skips the first n results, for use in pagination
   int? get skip => throw _privateConstructorUsedError;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value) => throw _privateConstructorUsedError;
 
   /// Specifies which properties to sort the results by
   ProductVariantSortParameter? get sort => throw _privateConstructorUsedError;
 
+  /// Specifies which properties to sort the results by
+  set sort(ProductVariantSortParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
+
+  /// Takes n results, for use in pagination
+  set take(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -201,7 +220,7 @@ class __$$ProductVariantListOptionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductVariantListOptionsImpl extends _ProductVariantListOptions
     with DiagnosticableTreeMixin {
-  const _$ProductVariantListOptionsImpl(
+  _$ProductVariantListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
 
@@ -210,24 +229,24 @@ class _$ProductVariantListOptionsImpl extends _ProductVariantListOptions
 
   /// Allows the results to be filtered
   @override
-  final ProductVariantFilterParameter? filter;
+  ProductVariantFilterParameter? filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   @override
-  final LogicalOperator? filterOperator;
+  LogicalOperator? filterOperator;
 
   /// Skips the first n results, for use in pagination
   @override
-  final int? skip;
+  int? skip;
 
   /// Specifies which properties to sort the results by
   @override
-  final ProductVariantSortParameter? sort;
+  ProductVariantSortParameter? sort;
 
   /// Takes n results, for use in pagination
   @override
-  final int? take;
+  int? take;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -246,24 +265,6 @@ class _$ProductVariantListOptionsImpl extends _ProductVariantListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductVariantListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -280,13 +281,13 @@ class _$ProductVariantListOptionsImpl extends _ProductVariantListOptions
 }
 
 abstract class _ProductVariantListOptions extends ProductVariantListOptions {
-  const factory _ProductVariantListOptions(
-      {final ProductVariantFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final ProductVariantSortParameter? sort,
-      final int? take}) = _$ProductVariantListOptionsImpl;
-  const _ProductVariantListOptions._() : super._();
+  factory _ProductVariantListOptions(
+      {ProductVariantFilterParameter? filter,
+      LogicalOperator? filterOperator,
+      int? skip,
+      ProductVariantSortParameter? sort,
+      int? take}) = _$ProductVariantListOptionsImpl;
+  _ProductVariantListOptions._() : super._();
 
   factory _ProductVariantListOptions.fromJson(Map<String, dynamic> json) =
       _$ProductVariantListOptionsImpl.fromJson;
@@ -295,23 +296,39 @@ abstract class _ProductVariantListOptions extends ProductVariantListOptions {
 
   /// Allows the results to be filtered
   ProductVariantFilterParameter? get filter;
+
+  /// Allows the results to be filtered
+  set filter(ProductVariantFilterParameter? value);
   @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator;
+
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value);
   @override
 
   /// Skips the first n results, for use in pagination
   int? get skip;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value);
   @override
 
   /// Specifies which properties to sort the results by
   ProductVariantSortParameter? get sort;
+
+  /// Specifies which properties to sort the results by
+  set sort(ProductVariantSortParameter? value);
   @override
 
   /// Takes n results, for use in pagination
   int? get take;
+
+  /// Takes n results, for use in pagination
+  set take(int? value);
   @override
   @JsonKey(ignore: true)
   _$$ProductVariantListOptionsImplCopyWith<_$ProductVariantListOptionsImpl>

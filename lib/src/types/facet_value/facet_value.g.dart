@@ -8,51 +8,33 @@ part of 'facet_value.dart';
 
 _$FacetValueImpl _$$FacetValueImplFromJson(Map<String, dynamic> json) =>
     _$FacetValueImpl(
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
+      code: json['code'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: json['customFields'] as Map<String, dynamic>?,
-      facet: json['facet'] == null
-          ? null
-          : Facet.fromJson(json['facet'] as Map<String, dynamic>),
-      facetId: json['facetId'] as String?,
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : FacetValueTranslation.fromJson(e as Map<String, dynamic>))
+      facet: Facet.fromJson(json['facet'] as Map<String, dynamic>),
+      facetId: json['facetId'] as String,
+      id: json['id'] as String,
+      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+      name: json['name'] as String,
+      translations: (json['translations'] as List<dynamic>)
+          .map((e) => FacetValueTranslation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('facet', instance.facet?.toJson());
-  writeNotNull('facetId', instance.facetId);
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'customFields': instance.customFields,
+      'facet': instance.facet,
+      'facetId': instance.facetId,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'translations': instance.translations,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

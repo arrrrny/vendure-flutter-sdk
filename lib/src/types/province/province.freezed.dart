@@ -20,19 +20,19 @@ Province _$ProvinceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Province {
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  bool? get enabled => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  bool get enabled => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   Region? get parent => throw _privateConstructorUsedError;
   String? get parentId => throw _privateConstructorUsedError;
-  List<RegionTranslation?>? get translations =>
+  List<RegionTranslation> get translations =>
       throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,18 +46,18 @@ abstract class $ProvinceCopyWith<$Res> {
       _$ProvinceCopyWithImpl<$Res, Province>;
   @useResult
   $Res call(
-      {String? code,
-      DateTime? createdAt,
+      {String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      bool? enabled,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
+      bool enabled,
+      String id,
+      LanguageCode languageCode,
+      String name,
       Region? parent,
       String? parentId,
-      List<RegionTranslation?>? translations,
-      String? type,
-      DateTime? updatedAt});
+      List<RegionTranslation> translations,
+      String type,
+      DateTime updatedAt});
 
   $RegionCopyWith<$Res>? get parent;
 }
@@ -75,48 +75,48 @@ class _$ProvinceCopyWithImpl<$Res, $Val extends Province>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? enabled = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
+    Object? enabled = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
     Object? parent = freezed,
     Object? parentId = freezed,
-    Object? translations = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
+    Object? translations = null,
+    Object? type = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      enabled: freezed == enabled
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      id: freezed == id
+              as bool,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parent: freezed == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
@@ -125,18 +125,18 @@ class _$ProvinceCopyWithImpl<$Res, $Val extends Province>
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      translations: freezed == translations
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<RegionTranslation?>?,
-      type: freezed == type
+              as List<RegionTranslation>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
@@ -162,18 +162,18 @@ abstract class _$$ProvinceImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? code,
-      DateTime? createdAt,
+      {String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      bool? enabled,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
+      bool enabled,
+      String id,
+      LanguageCode languageCode,
+      String name,
       Region? parent,
       String? parentId,
-      List<RegionTranslation?>? translations,
-      String? type,
-      DateTime? updatedAt});
+      List<RegionTranslation> translations,
+      String type,
+      DateTime updatedAt});
 
   @override
   $RegionCopyWith<$Res>? get parent;
@@ -190,48 +190,48 @@ class __$$ProvinceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? enabled = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
+    Object? enabled = null,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
     Object? parent = freezed,
     Object? parentId = freezed,
-    Object? translations = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
+    Object? translations = null,
+    Object? type = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ProvinceImpl(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      enabled: freezed == enabled
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      id: freezed == id
+              as bool,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parent: freezed == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
@@ -240,18 +240,18 @@ class __$$ProvinceImplCopyWithImpl<$Res>
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      translations: freezed == translations
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<RegionTranslation?>?,
-      type: freezed == type
+              as List<RegionTranslation>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -260,18 +260,18 @@ class __$$ProvinceImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProvinceImpl extends _Province with DiagnosticableTreeMixin {
   const _$ProvinceImpl(
-      {this.code,
-      this.createdAt,
+      {required this.code,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.enabled,
-      this.id,
-      this.languageCode,
-      this.name,
+      required this.enabled,
+      required this.id,
+      required this.languageCode,
+      required this.name,
       this.parent,
       this.parentId,
-      final List<RegionTranslation?>? translations,
-      this.type,
-      this.updatedAt})
+      required final List<RegionTranslation> translations,
+      required this.type,
+      required this.updatedAt})
       : _customFields = customFields,
         _translations = translations,
         super._();
@@ -280,9 +280,9 @@ class _$ProvinceImpl extends _Province with DiagnosticableTreeMixin {
       _$$ProvinceImplFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -294,31 +294,29 @@ class _$ProvinceImpl extends _Province with DiagnosticableTreeMixin {
   }
 
   @override
-  final bool? enabled;
+  final bool enabled;
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
+  final String name;
   @override
   final Region? parent;
   @override
   final String? parentId;
-  final List<RegionTranslation?>? _translations;
+  final List<RegionTranslation> _translations;
   @override
-  List<RegionTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<RegionTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final String? type;
+  final String type;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -402,47 +400,47 @@ class _$ProvinceImpl extends _Province with DiagnosticableTreeMixin {
 
 abstract class _Province extends Province {
   const factory _Province(
-      {final String? code,
-      final DateTime? createdAt,
+      {required final String code,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final bool? enabled,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
+      required final bool enabled,
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
       final Region? parent,
       final String? parentId,
-      final List<RegionTranslation?>? translations,
-      final String? type,
-      final DateTime? updatedAt}) = _$ProvinceImpl;
+      required final List<RegionTranslation> translations,
+      required final String type,
+      required final DateTime updatedAt}) = _$ProvinceImpl;
   const _Province._() : super._();
 
   factory _Province.fromJson(Map<String, dynamic> json) =
       _$ProvinceImpl.fromJson;
 
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  bool? get enabled;
+  bool get enabled;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
   Region? get parent;
   @override
   String? get parentId;
   @override
-  List<RegionTranslation?>? get translations;
+  List<RegionTranslation> get translations;
   @override
-  String? get type;
+  String get type;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ProvinceImplCopyWith<_$ProvinceImpl> get copyWith =>

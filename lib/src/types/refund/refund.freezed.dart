@@ -20,20 +20,20 @@ Refund _$RefundFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Refund {
-  double? get adjustment => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  double? get items => throw _privateConstructorUsedError;
-  List<RefundLine?>? get lines => throw _privateConstructorUsedError;
+  double get adjustment => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  double get items => throw _privateConstructorUsedError;
+  List<RefundLine> get lines => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
   String? get method => throw _privateConstructorUsedError;
-  String? get paymentId => throw _privateConstructorUsedError;
+  String get paymentId => throw _privateConstructorUsedError;
   String? get reason => throw _privateConstructorUsedError;
-  double? get shipping => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
-  double? get total => throw _privateConstructorUsedError;
+  double get shipping => throw _privateConstructorUsedError;
+  String get state => throw _privateConstructorUsedError;
+  double get total => throw _privateConstructorUsedError;
   String? get transactionId => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,20 +46,20 @@ abstract class $RefundCopyWith<$Res> {
       _$RefundCopyWithImpl<$Res, Refund>;
   @useResult
   $Res call(
-      {double? adjustment,
-      DateTime? createdAt,
-      String? id,
-      double? items,
-      List<RefundLine?>? lines,
+      {double adjustment,
+      DateTime createdAt,
+      String id,
+      double items,
+      List<RefundLine> lines,
       Map<String, dynamic>? metadata,
       String? method,
-      String? paymentId,
+      String paymentId,
       String? reason,
-      double? shipping,
-      String? state,
-      double? total,
+      double shipping,
+      String state,
+      double total,
       String? transactionId,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -75,42 +75,42 @@ class _$RefundCopyWithImpl<$Res, $Val extends Refund>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adjustment = freezed,
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? items = freezed,
-    Object? lines = freezed,
+    Object? adjustment = null,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? items = null,
+    Object? lines = null,
     Object? metadata = freezed,
     Object? method = freezed,
-    Object? paymentId = freezed,
+    Object? paymentId = null,
     Object? reason = freezed,
-    Object? shipping = freezed,
-    Object? state = freezed,
-    Object? total = freezed,
+    Object? shipping = null,
+    Object? state = null,
+    Object? total = null,
     Object? transactionId = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      adjustment: freezed == adjustment
+      adjustment: null == adjustment
           ? _value.adjustment
           : adjustment // ignore: cast_nullable_to_non_nullable
-              as double?,
-      createdAt: freezed == createdAt
+              as double,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      items: freezed == items
+              as String,
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lines: freezed == lines
+              as double,
+      lines: null == lines
           ? _value.lines
           : lines // ignore: cast_nullable_to_non_nullable
-              as List<RefundLine?>?,
+              as List<RefundLine>,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
@@ -119,34 +119,34 @@ class _$RefundCopyWithImpl<$Res, $Val extends Refund>
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentId: freezed == paymentId
+      paymentId: null == paymentId
           ? _value.paymentId
           : paymentId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       reason: freezed == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
-      shipping: freezed == shipping
+      shipping: null == shipping
           ? _value.shipping
           : shipping // ignore: cast_nullable_to_non_nullable
-              as double?,
-      state: freezed == state
+              as double,
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      total: freezed == total
+              as String,
+      total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       transactionId: freezed == transactionId
           ? _value.transactionId
           : transactionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -159,20 +159,20 @@ abstract class _$$RefundImplCopyWith<$Res> implements $RefundCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {double? adjustment,
-      DateTime? createdAt,
-      String? id,
-      double? items,
-      List<RefundLine?>? lines,
+      {double adjustment,
+      DateTime createdAt,
+      String id,
+      double items,
+      List<RefundLine> lines,
       Map<String, dynamic>? metadata,
       String? method,
-      String? paymentId,
+      String paymentId,
       String? reason,
-      double? shipping,
-      String? state,
-      double? total,
+      double shipping,
+      String state,
+      double total,
       String? transactionId,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -186,42 +186,42 @@ class __$$RefundImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adjustment = freezed,
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? items = freezed,
-    Object? lines = freezed,
+    Object? adjustment = null,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? items = null,
+    Object? lines = null,
     Object? metadata = freezed,
     Object? method = freezed,
-    Object? paymentId = freezed,
+    Object? paymentId = null,
     Object? reason = freezed,
-    Object? shipping = freezed,
-    Object? state = freezed,
-    Object? total = freezed,
+    Object? shipping = null,
+    Object? state = null,
+    Object? total = null,
     Object? transactionId = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_$RefundImpl(
-      adjustment: freezed == adjustment
+      adjustment: null == adjustment
           ? _value.adjustment
           : adjustment // ignore: cast_nullable_to_non_nullable
-              as double?,
-      createdAt: freezed == createdAt
+              as double,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      items: freezed == items
+              as String,
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lines: freezed == lines
+              as double,
+      lines: null == lines
           ? _value._lines
           : lines // ignore: cast_nullable_to_non_nullable
-              as List<RefundLine?>?,
+              as List<RefundLine>,
       metadata: freezed == metadata
           ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
@@ -230,34 +230,34 @@ class __$$RefundImplCopyWithImpl<$Res>
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
               as String?,
-      paymentId: freezed == paymentId
+      paymentId: null == paymentId
           ? _value.paymentId
           : paymentId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       reason: freezed == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
-      shipping: freezed == shipping
+      shipping: null == shipping
           ? _value.shipping
           : shipping // ignore: cast_nullable_to_non_nullable
-              as double?,
-      state: freezed == state
+              as double,
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
-      total: freezed == total
+              as String,
+      total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       transactionId: freezed == transactionId
           ? _value.transactionId
           : transactionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -266,20 +266,20 @@ class __$$RefundImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RefundImpl extends _Refund with DiagnosticableTreeMixin {
   const _$RefundImpl(
-      {this.adjustment,
-      this.createdAt,
-      this.id,
-      this.items,
-      final List<RefundLine?>? lines,
+      {required this.adjustment,
+      required this.createdAt,
+      required this.id,
+      required this.items,
+      required final List<RefundLine> lines,
       final Map<String, dynamic>? metadata,
       this.method,
-      this.paymentId,
+      required this.paymentId,
       this.reason,
-      this.shipping,
-      this.state,
-      this.total,
+      required this.shipping,
+      required this.state,
+      required this.total,
       this.transactionId,
-      this.updatedAt})
+      required this.updatedAt})
       : _lines = lines,
         _metadata = metadata,
         super._();
@@ -288,21 +288,19 @@ class _$RefundImpl extends _Refund with DiagnosticableTreeMixin {
       _$$RefundImplFromJson(json);
 
   @override
-  final double? adjustment;
+  final double adjustment;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? id;
+  final String id;
   @override
-  final double? items;
-  final List<RefundLine?>? _lines;
+  final double items;
+  final List<RefundLine> _lines;
   @override
-  List<RefundLine?>? get lines {
-    final value = _lines;
-    if (value == null) return null;
+  List<RefundLine> get lines {
     if (_lines is EqualUnmodifiableListView) return _lines;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_lines);
   }
 
   final Map<String, dynamic>? _metadata;
@@ -318,19 +316,19 @@ class _$RefundImpl extends _Refund with DiagnosticableTreeMixin {
   @override
   final String? method;
   @override
-  final String? paymentId;
+  final String paymentId;
   @override
   final String? reason;
   @override
-  final double? shipping;
+  final double shipping;
   @override
-  final String? state;
+  final String state;
   @override
-  final double? total;
+  final double total;
   @override
   final String? transactionId;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -420,52 +418,52 @@ class _$RefundImpl extends _Refund with DiagnosticableTreeMixin {
 
 abstract class _Refund extends Refund {
   const factory _Refund(
-      {final double? adjustment,
-      final DateTime? createdAt,
-      final String? id,
-      final double? items,
-      final List<RefundLine?>? lines,
+      {required final double adjustment,
+      required final DateTime createdAt,
+      required final String id,
+      required final double items,
+      required final List<RefundLine> lines,
       final Map<String, dynamic>? metadata,
       final String? method,
-      final String? paymentId,
+      required final String paymentId,
       final String? reason,
-      final double? shipping,
-      final String? state,
-      final double? total,
+      required final double shipping,
+      required final String state,
+      required final double total,
       final String? transactionId,
-      final DateTime? updatedAt}) = _$RefundImpl;
+      required final DateTime updatedAt}) = _$RefundImpl;
   const _Refund._() : super._();
 
   factory _Refund.fromJson(Map<String, dynamic> json) = _$RefundImpl.fromJson;
 
   @override
-  double? get adjustment;
+  double get adjustment;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get id;
+  String get id;
   @override
-  double? get items;
+  double get items;
   @override
-  List<RefundLine?>? get lines;
+  List<RefundLine> get lines;
   @override
   Map<String, dynamic>? get metadata;
   @override
   String? get method;
   @override
-  String? get paymentId;
+  String get paymentId;
   @override
   String? get reason;
   @override
-  double? get shipping;
+  double get shipping;
   @override
-  String? get state;
+  String get state;
   @override
-  double? get total;
+  double get total;
   @override
   String? get transactionId;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$RefundImplCopyWith<_$RefundImpl> get copyWith =>

@@ -21,8 +21,8 @@ ConfigurableOperation _$ConfigurableOperationFromJson(
 
 /// @nodoc
 mixin _$ConfigurableOperation {
-  List<ConfigArg?>? get args => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
+  List<ConfigArg> get args => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $ConfigurableOperationCopyWith<$Res> {
           $Res Function(ConfigurableOperation) then) =
       _$ConfigurableOperationCopyWithImpl<$Res, ConfigurableOperation>;
   @useResult
-  $Res call({List<ConfigArg?>? args, String? code});
+  $Res call({List<ConfigArg> args, String code});
 }
 
 /// @nodoc
@@ -53,18 +53,18 @@ class _$ConfigurableOperationCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? args = freezed,
-    Object? code = freezed,
+    Object? args = null,
+    Object? code = null,
   }) {
     return _then(_value.copyWith(
-      args: freezed == args
+      args: null == args
           ? _value.args
           : args // ignore: cast_nullable_to_non_nullable
-              as List<ConfigArg?>?,
-      code: freezed == code
+              as List<ConfigArg>,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$ConfigurableOperationImplCopyWith<$Res>
       __$$ConfigurableOperationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ConfigArg?>? args, String? code});
+  $Res call({List<ConfigArg> args, String code});
 }
 
 /// @nodoc
@@ -93,18 +93,18 @@ class __$$ConfigurableOperationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? args = freezed,
-    Object? code = freezed,
+    Object? args = null,
+    Object? code = null,
   }) {
     return _then(_$ConfigurableOperationImpl(
-      args: freezed == args
+      args: null == args
           ? _value._args
           : args // ignore: cast_nullable_to_non_nullable
-              as List<ConfigArg?>?,
-      code: freezed == code
+              as List<ConfigArg>,
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -113,25 +113,24 @@ class __$$ConfigurableOperationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigurableOperationImpl extends _ConfigurableOperation
     with DiagnosticableTreeMixin {
-  const _$ConfigurableOperationImpl({final List<ConfigArg?>? args, this.code})
+  const _$ConfigurableOperationImpl(
+      {required final List<ConfigArg> args, required this.code})
       : _args = args,
         super._();
 
   factory _$ConfigurableOperationImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigurableOperationImplFromJson(json);
 
-  final List<ConfigArg?>? _args;
+  final List<ConfigArg> _args;
   @override
-  List<ConfigArg?>? get args {
-    final value = _args;
-    if (value == null) return null;
+  List<ConfigArg> get args {
     if (_args is EqualUnmodifiableListView) return _args;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_args);
   }
 
   @override
-  final String? code;
+  final String code;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -178,17 +177,17 @@ class _$ConfigurableOperationImpl extends _ConfigurableOperation
 
 abstract class _ConfigurableOperation extends ConfigurableOperation {
   const factory _ConfigurableOperation(
-      {final List<ConfigArg?>? args,
-      final String? code}) = _$ConfigurableOperationImpl;
+      {required final List<ConfigArg> args,
+      required final String code}) = _$ConfigurableOperationImpl;
   const _ConfigurableOperation._() : super._();
 
   factory _ConfigurableOperation.fromJson(Map<String, dynamic> json) =
       _$ConfigurableOperationImpl.fromJson;
 
   @override
-  List<ConfigArg?>? get args;
+  List<ConfigArg> get args;
   @override
-  String? get code;
+  String get code;
   @override
   @JsonKey(ignore: true)
   _$$ConfigurableOperationImplCopyWith<_$ConfigurableOperationImpl>

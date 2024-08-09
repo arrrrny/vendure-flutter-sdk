@@ -20,8 +20,8 @@ StringFieldOption _$StringFieldOptionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StringFieldOption {
-  List<LocalizedString?>? get label => throw _privateConstructorUsedError;
-  String? get value => throw _privateConstructorUsedError;
+  List<LocalizedString>? get label => throw _privateConstructorUsedError;
+  String get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $StringFieldOptionCopyWith<$Res> {
           StringFieldOption value, $Res Function(StringFieldOption) then) =
       _$StringFieldOptionCopyWithImpl<$Res, StringFieldOption>;
   @useResult
-  $Res call({List<LocalizedString?>? label, String? value});
+  $Res call({List<LocalizedString>? label, String value});
 }
 
 /// @nodoc
@@ -52,17 +52,17 @@ class _$StringFieldOptionCopyWithImpl<$Res, $Val extends StringFieldOption>
   @override
   $Res call({
     Object? label = freezed,
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      value: freezed == value
+              as List<LocalizedString>?,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$StringFieldOptionImplCopyWith<$Res>
       __$$StringFieldOptionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<LocalizedString?>? label, String? value});
+  $Res call({List<LocalizedString>? label, String value});
 }
 
 /// @nodoc
@@ -90,17 +90,17 @@ class __$$StringFieldOptionImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? label = freezed,
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$StringFieldOptionImpl(
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      value: freezed == value
+              as List<LocalizedString>?,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -110,16 +110,16 @@ class __$$StringFieldOptionImplCopyWithImpl<$Res>
 class _$StringFieldOptionImpl extends _StringFieldOption
     with DiagnosticableTreeMixin {
   const _$StringFieldOptionImpl(
-      {final List<LocalizedString?>? label, this.value})
+      {final List<LocalizedString>? label, required this.value})
       : _label = label,
         super._();
 
   factory _$StringFieldOptionImpl.fromJson(Map<String, dynamic> json) =>
       _$$StringFieldOptionImplFromJson(json);
 
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -128,7 +128,7 @@ class _$StringFieldOptionImpl extends _StringFieldOption
   }
 
   @override
-  final String? value;
+  final String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,17 +175,17 @@ class _$StringFieldOptionImpl extends _StringFieldOption
 
 abstract class _StringFieldOption extends StringFieldOption {
   const factory _StringFieldOption(
-      {final List<LocalizedString?>? label,
-      final String? value}) = _$StringFieldOptionImpl;
+      {final List<LocalizedString>? label,
+      required final String value}) = _$StringFieldOptionImpl;
   const _StringFieldOption._() : super._();
 
   factory _StringFieldOption.fromJson(Map<String, dynamic> json) =
       _$StringFieldOptionImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  String? get value;
+  String get value;
   @override
   @JsonKey(ignore: true)
   _$$StringFieldOptionImplCopyWith<_$StringFieldOptionImpl> get copyWith =>

@@ -8,55 +8,39 @@ part of 'country.dart';
 
 _$CountryImpl _$$CountryImplFromJson(Map<String, dynamic> json) =>
     _$CountryImpl(
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
+      code: json['code'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: json['customFields'] as Map<String, dynamic>?,
-      enabled: json['enabled'] as bool?,
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
+      enabled: json['enabled'] as bool,
+      id: json['id'] as String,
+      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+      name: json['name'] as String,
       parent: json['parent'] == null
           ? null
           : Region.fromJson(json['parent'] as Map<String, dynamic>),
       parentId: json['parentId'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : RegionTranslation.fromJson(e as Map<String, dynamic>))
+      translations: (json['translations'] as List<dynamic>)
+          .map((e) => RegionTranslation.fromJson(e as Map<String, dynamic>))
           .toList(),
-      type: json['type'] as String?,
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      type: json['type'] as String,
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('enabled', instance.enabled);
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull('parent', instance.parent?.toJson());
-  writeNotNull('parentId', instance.parentId);
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'customFields': instance.customFields,
+      'enabled': instance.enabled,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'parent': instance.parent,
+      'parentId': instance.parentId,
+      'translations': instance.translations,
+      'type': instance.type,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

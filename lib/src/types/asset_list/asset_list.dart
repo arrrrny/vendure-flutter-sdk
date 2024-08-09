@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/asset/asset.dart';
+import '../asset/asset.dart';
 
 part 'asset_list.freezed.dart';
 part 'asset_list.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class AssetList with _$AssetList {
   const AssetList._();
 
   const factory AssetList({
-    List<Asset?>? items,
-    int? totalItems,
+    required List<Asset> items,
+    required int totalItems,
   }) = _AssetList;
 
   factory AssetList.fromJson(Map<String, dynamic> json) =>

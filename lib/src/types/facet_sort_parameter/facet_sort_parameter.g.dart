@@ -17,22 +17,14 @@ _$FacetSortParameterImpl _$$FacetSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$FacetSortParameterImplToJson(
-    _$FacetSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', _$SortOrderEnumMap[instance.code]);
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$FacetSortParameterImpl instance) =>
+    <String, dynamic>{
+      'code': _$SortOrderEnumMap[instance.code],
+      'createdAt': _$SortOrderEnumMap[instance.createdAt],
+      'id': _$SortOrderEnumMap[instance.id],
+      'name': _$SortOrderEnumMap[instance.name],
+      'updatedAt': _$SortOrderEnumMap[instance.updatedAt],
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

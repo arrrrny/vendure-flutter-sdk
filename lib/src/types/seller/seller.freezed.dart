@@ -20,11 +20,11 @@ Seller _$SellerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Seller {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,11 +37,11 @@ abstract class $SellerCopyWith<$Res> {
       _$SellerCopyWithImpl<$Res, Seller>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      String? name,
-      DateTime? updatedAt});
+      String id,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -57,33 +57,33 @@ class _$SellerCopyWithImpl<$Res, $Val extends Seller>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -96,11 +96,11 @@ abstract class _$$SellerImplCopyWith<$Res> implements $SellerCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      String? name,
-      DateTime? updatedAt});
+      String id,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -114,33 +114,33 @@ class __$$SellerImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$SellerImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -149,11 +149,11 @@ class __$$SellerImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SellerImpl extends _Seller with DiagnosticableTreeMixin {
   const _$SellerImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.id,
-      this.name,
-      this.updatedAt})
+      required this.id,
+      required this.name,
+      required this.updatedAt})
       : _customFields = customFields,
         super._();
 
@@ -161,7 +161,7 @@ class _$SellerImpl extends _Seller with DiagnosticableTreeMixin {
       _$$SellerImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -173,11 +173,11 @@ class _$SellerImpl extends _Seller with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -232,25 +232,25 @@ class _$SellerImpl extends _Seller with DiagnosticableTreeMixin {
 
 abstract class _Seller extends Seller {
   const factory _Seller(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? id,
-      final String? name,
-      final DateTime? updatedAt}) = _$SellerImpl;
+      required final String id,
+      required final String name,
+      required final DateTime updatedAt}) = _$SellerImpl;
   const _Seller._() : super._();
 
   factory _Seller.fromJson(Map<String, dynamic> json) = _$SellerImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$SellerImplCopyWith<_$SellerImpl> get copyWith =>

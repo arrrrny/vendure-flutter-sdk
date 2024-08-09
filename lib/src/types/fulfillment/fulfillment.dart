@@ -1,28 +1,24 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/fulfillment_line/fulfillment_line.dart';
+import '../fulfillment_line/fulfillment_line.dart';
 
 part 'fulfillment.freezed.dart';
 part 'fulfillment.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class Fulfillment with _$Fulfillment {
   const Fulfillment._();
 
   const factory Fulfillment({
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    String? id,
-    List<FulfillmentLine?>? lines,
-    String? method,
-    String? state,
-    List<FulfillmentLine?>? summary,
+    required String id,
+    required List<FulfillmentLine> lines,
+    required String method,
+    required String state,
+    required List<FulfillmentLine> summary,
     String? trackingCode,
-    DateTime? updatedAt,
+    required DateTime updatedAt,
   }) = _Fulfillment;
 
   factory Fulfillment.fromJson(Map<String, dynamic> json) =>

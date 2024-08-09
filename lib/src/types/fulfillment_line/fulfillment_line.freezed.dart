@@ -20,11 +20,11 @@ FulfillmentLine _$FulfillmentLineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FulfillmentLine {
-  Fulfillment? get fulfillment => throw _privateConstructorUsedError;
-  String? get fulfillmentId => throw _privateConstructorUsedError;
-  OrderLine? get orderLine => throw _privateConstructorUsedError;
-  String? get orderLineId => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
+  Fulfillment get fulfillment => throw _privateConstructorUsedError;
+  String get fulfillmentId => throw _privateConstructorUsedError;
+  OrderLine get orderLine => throw _privateConstructorUsedError;
+  String get orderLineId => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,14 +39,14 @@ abstract class $FulfillmentLineCopyWith<$Res> {
       _$FulfillmentLineCopyWithImpl<$Res, FulfillmentLine>;
   @useResult
   $Res call(
-      {Fulfillment? fulfillment,
-      String? fulfillmentId,
-      OrderLine? orderLine,
-      String? orderLineId,
-      int? quantity});
+      {Fulfillment fulfillment,
+      String fulfillmentId,
+      OrderLine orderLine,
+      String orderLineId,
+      int quantity});
 
-  $FulfillmentCopyWith<$Res>? get fulfillment;
-  $OrderLineCopyWith<$Res>? get orderLine;
+  $FulfillmentCopyWith<$Res> get fulfillment;
+  $OrderLineCopyWith<$Res> get orderLine;
 }
 
 /// @nodoc
@@ -62,56 +62,48 @@ class _$FulfillmentLineCopyWithImpl<$Res, $Val extends FulfillmentLine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fulfillment = freezed,
-    Object? fulfillmentId = freezed,
-    Object? orderLine = freezed,
-    Object? orderLineId = freezed,
-    Object? quantity = freezed,
+    Object? fulfillment = null,
+    Object? fulfillmentId = null,
+    Object? orderLine = null,
+    Object? orderLineId = null,
+    Object? quantity = null,
   }) {
     return _then(_value.copyWith(
-      fulfillment: freezed == fulfillment
+      fulfillment: null == fulfillment
           ? _value.fulfillment
           : fulfillment // ignore: cast_nullable_to_non_nullable
-              as Fulfillment?,
-      fulfillmentId: freezed == fulfillmentId
+              as Fulfillment,
+      fulfillmentId: null == fulfillmentId
           ? _value.fulfillmentId
           : fulfillmentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      orderLine: freezed == orderLine
+              as String,
+      orderLine: null == orderLine
           ? _value.orderLine
           : orderLine // ignore: cast_nullable_to_non_nullable
-              as OrderLine?,
-      orderLineId: freezed == orderLineId
+              as OrderLine,
+      orderLineId: null == orderLineId
           ? _value.orderLineId
           : orderLineId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quantity: freezed == quantity
+              as String,
+      quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FulfillmentCopyWith<$Res>? get fulfillment {
-    if (_value.fulfillment == null) {
-      return null;
-    }
-
-    return $FulfillmentCopyWith<$Res>(_value.fulfillment!, (value) {
+  $FulfillmentCopyWith<$Res> get fulfillment {
+    return $FulfillmentCopyWith<$Res>(_value.fulfillment, (value) {
       return _then(_value.copyWith(fulfillment: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $OrderLineCopyWith<$Res>? get orderLine {
-    if (_value.orderLine == null) {
-      return null;
-    }
-
-    return $OrderLineCopyWith<$Res>(_value.orderLine!, (value) {
+  $OrderLineCopyWith<$Res> get orderLine {
+    return $OrderLineCopyWith<$Res>(_value.orderLine, (value) {
       return _then(_value.copyWith(orderLine: value) as $Val);
     });
   }
@@ -126,16 +118,16 @@ abstract class _$$FulfillmentLineImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Fulfillment? fulfillment,
-      String? fulfillmentId,
-      OrderLine? orderLine,
-      String? orderLineId,
-      int? quantity});
+      {Fulfillment fulfillment,
+      String fulfillmentId,
+      OrderLine orderLine,
+      String orderLineId,
+      int quantity});
 
   @override
-  $FulfillmentCopyWith<$Res>? get fulfillment;
+  $FulfillmentCopyWith<$Res> get fulfillment;
   @override
-  $OrderLineCopyWith<$Res>? get orderLine;
+  $OrderLineCopyWith<$Res> get orderLine;
 }
 
 /// @nodoc
@@ -149,33 +141,33 @@ class __$$FulfillmentLineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fulfillment = freezed,
-    Object? fulfillmentId = freezed,
-    Object? orderLine = freezed,
-    Object? orderLineId = freezed,
-    Object? quantity = freezed,
+    Object? fulfillment = null,
+    Object? fulfillmentId = null,
+    Object? orderLine = null,
+    Object? orderLineId = null,
+    Object? quantity = null,
   }) {
     return _then(_$FulfillmentLineImpl(
-      fulfillment: freezed == fulfillment
+      fulfillment: null == fulfillment
           ? _value.fulfillment
           : fulfillment // ignore: cast_nullable_to_non_nullable
-              as Fulfillment?,
-      fulfillmentId: freezed == fulfillmentId
+              as Fulfillment,
+      fulfillmentId: null == fulfillmentId
           ? _value.fulfillmentId
           : fulfillmentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      orderLine: freezed == orderLine
+              as String,
+      orderLine: null == orderLine
           ? _value.orderLine
           : orderLine // ignore: cast_nullable_to_non_nullable
-              as OrderLine?,
-      orderLineId: freezed == orderLineId
+              as OrderLine,
+      orderLineId: null == orderLineId
           ? _value.orderLineId
           : orderLineId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      quantity: freezed == quantity
+              as String,
+      quantity: null == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -185,26 +177,26 @@ class __$$FulfillmentLineImplCopyWithImpl<$Res>
 class _$FulfillmentLineImpl extends _FulfillmentLine
     with DiagnosticableTreeMixin {
   const _$FulfillmentLineImpl(
-      {this.fulfillment,
-      this.fulfillmentId,
-      this.orderLine,
-      this.orderLineId,
-      this.quantity})
+      {required this.fulfillment,
+      required this.fulfillmentId,
+      required this.orderLine,
+      required this.orderLineId,
+      required this.quantity})
       : super._();
 
   factory _$FulfillmentLineImpl.fromJson(Map<String, dynamic> json) =>
       _$$FulfillmentLineImplFromJson(json);
 
   @override
-  final Fulfillment? fulfillment;
+  final Fulfillment fulfillment;
   @override
-  final String? fulfillmentId;
+  final String fulfillmentId;
   @override
-  final OrderLine? orderLine;
+  final OrderLine orderLine;
   @override
-  final String? orderLineId;
+  final String orderLineId;
   @override
-  final int? quantity;
+  final int quantity;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -262,26 +254,26 @@ class _$FulfillmentLineImpl extends _FulfillmentLine
 
 abstract class _FulfillmentLine extends FulfillmentLine {
   const factory _FulfillmentLine(
-      {final Fulfillment? fulfillment,
-      final String? fulfillmentId,
-      final OrderLine? orderLine,
-      final String? orderLineId,
-      final int? quantity}) = _$FulfillmentLineImpl;
+      {required final Fulfillment fulfillment,
+      required final String fulfillmentId,
+      required final OrderLine orderLine,
+      required final String orderLineId,
+      required final int quantity}) = _$FulfillmentLineImpl;
   const _FulfillmentLine._() : super._();
 
   factory _FulfillmentLine.fromJson(Map<String, dynamic> json) =
       _$FulfillmentLineImpl.fromJson;
 
   @override
-  Fulfillment? get fulfillment;
+  Fulfillment get fulfillment;
   @override
-  String? get fulfillmentId;
+  String get fulfillmentId;
   @override
-  OrderLine? get orderLine;
+  OrderLine get orderLine;
   @override
-  String? get orderLineId;
+  String get orderLineId;
   @override
-  int? get quantity;
+  int get quantity;
   @override
   @JsonKey(ignore: true)
   _$$FulfillmentLineImplCopyWith<_$FulfillmentLineImpl> get copyWith =>

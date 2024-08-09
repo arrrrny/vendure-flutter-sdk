@@ -22,13 +22,21 @@ CustomerSortParameter _$CustomerSortParameterFromJson(
 /// @nodoc
 mixin _$CustomerSortParameter {
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get emailAddress => throw _privateConstructorUsedError;
+  set emailAddress(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get firstName => throw _privateConstructorUsedError;
+  set firstName(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get lastName => throw _privateConstructorUsedError;
+  set lastName(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get phoneNumber => throw _privateConstructorUsedError;
+  set phoneNumber(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get title => throw _privateConstructorUsedError;
+  set title(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -195,7 +203,7 @@ class __$$CustomerSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomerSortParameterImpl extends _CustomerSortParameter
     with DiagnosticableTreeMixin {
-  const _$CustomerSortParameterImpl(
+  _$CustomerSortParameterImpl(
       {this.createdAt,
       this.emailAddress,
       this.firstName,
@@ -210,21 +218,21 @@ class _$CustomerSortParameterImpl extends _CustomerSortParameter
       _$$CustomerSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? emailAddress;
+  SortOrder? emailAddress;
   @override
-  final SortOrder? firstName;
+  SortOrder? firstName;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? lastName;
+  SortOrder? lastName;
   @override
-  final SortOrder? phoneNumber;
+  SortOrder? phoneNumber;
   @override
-  final SortOrder? title;
+  SortOrder? title;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -246,32 +254,6 @@ class _$CustomerSortParameterImpl extends _CustomerSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CustomerSortParameterImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, createdAt, emailAddress,
-      firstName, id, lastName, phoneNumber, title, updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -288,36 +270,44 @@ class _$CustomerSortParameterImpl extends _CustomerSortParameter
 }
 
 abstract class _CustomerSortParameter extends CustomerSortParameter {
-  const factory _CustomerSortParameter(
-      {final SortOrder? createdAt,
-      final SortOrder? emailAddress,
-      final SortOrder? firstName,
-      final SortOrder? id,
-      final SortOrder? lastName,
-      final SortOrder? phoneNumber,
-      final SortOrder? title,
-      final SortOrder? updatedAt}) = _$CustomerSortParameterImpl;
-  const _CustomerSortParameter._() : super._();
+  factory _CustomerSortParameter(
+      {SortOrder? createdAt,
+      SortOrder? emailAddress,
+      SortOrder? firstName,
+      SortOrder? id,
+      SortOrder? lastName,
+      SortOrder? phoneNumber,
+      SortOrder? title,
+      SortOrder? updatedAt}) = _$CustomerSortParameterImpl;
+  _CustomerSortParameter._() : super._();
 
   factory _CustomerSortParameter.fromJson(Map<String, dynamic> json) =
       _$CustomerSortParameterImpl.fromJson;
 
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get emailAddress;
+  set emailAddress(SortOrder? value);
   @override
   SortOrder? get firstName;
+  set firstName(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get lastName;
+  set lastName(SortOrder? value);
   @override
   SortOrder? get phoneNumber;
+  set phoneNumber(SortOrder? value);
   @override
   SortOrder? get title;
+  set title(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$CustomerSortParameterImplCopyWith<_$CustomerSortParameterImpl>

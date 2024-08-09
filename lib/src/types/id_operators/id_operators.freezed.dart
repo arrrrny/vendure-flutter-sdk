@@ -21,11 +21,17 @@ IdOperators _$IdOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$IdOperators {
   String? get eq => throw _privateConstructorUsedError;
+  set eq(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'in')
   List<String>? get in_ => throw _privateConstructorUsedError;
+  @JsonKey(name: 'in')
+  set in_(List<String>? value) => throw _privateConstructorUsedError;
   bool? get isNull => throw _privateConstructorUsedError;
+  set isNull(bool? value) => throw _privateConstructorUsedError;
   String? get notEq => throw _privateConstructorUsedError;
+  set notEq(String? value) => throw _privateConstructorUsedError;
   List<String>? get notIn => throw _privateConstructorUsedError;
+  set notIn(List<String>? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -130,7 +136,7 @@ class __$$IdOperatorsImplCopyWithImpl<$Res>
           : eq // ignore: cast_nullable_to_non_nullable
               as String?,
       in_: freezed == in_
-          ? _value._in_
+          ? _value.in_
           : in_ // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       isNull: freezed == isNull
@@ -142,7 +148,7 @@ class __$$IdOperatorsImplCopyWithImpl<$Res>
           : notEq // ignore: cast_nullable_to_non_nullable
               as String?,
       notIn: freezed == notIn
-          ? _value._notIn
+          ? _value.notIn
           : notIn // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -152,45 +158,28 @@ class __$$IdOperatorsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
-  const _$IdOperatorsImpl(
+  _$IdOperatorsImpl(
       {this.eq,
-      @JsonKey(name: 'in') final List<String>? in_,
+      @JsonKey(name: 'in') this.in_,
       this.isNull,
       this.notEq,
-      final List<String>? notIn})
-      : _in_ = in_,
-        _notIn = notIn,
-        super._();
+      this.notIn})
+      : super._();
 
   factory _$IdOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$IdOperatorsImplFromJson(json);
 
   @override
-  final String? eq;
-  final List<String>? _in_;
+  String? eq;
   @override
   @JsonKey(name: 'in')
-  List<String>? get in_ {
-    final value = _in_;
-    if (value == null) return null;
-    if (_in_ is EqualUnmodifiableListView) return _in_;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  List<String>? in_;
   @override
-  final bool? isNull;
+  bool? isNull;
   @override
-  final String? notEq;
-  final List<String>? _notIn;
+  String? notEq;
   @override
-  List<String>? get notIn {
-    final value = _notIn;
-    if (value == null) return null;
-    if (_notIn is EqualUnmodifiableListView) return _notIn;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  List<String>? notIn;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -209,28 +198,6 @@ class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('notIn', notIn));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$IdOperatorsImpl &&
-            (identical(other.eq, eq) || other.eq == eq) &&
-            const DeepCollectionEquality().equals(other._in_, _in_) &&
-            (identical(other.isNull, isNull) || other.isNull == isNull) &&
-            (identical(other.notEq, notEq) || other.notEq == notEq) &&
-            const DeepCollectionEquality().equals(other._notIn, _notIn));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      eq,
-      const DeepCollectionEquality().hash(_in_),
-      isNull,
-      notEq,
-      const DeepCollectionEquality().hash(_notIn));
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -246,28 +213,34 @@ class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
 }
 
 abstract class _IdOperators extends IdOperators {
-  const factory _IdOperators(
-      {final String? eq,
-      @JsonKey(name: 'in') final List<String>? in_,
-      final bool? isNull,
-      final String? notEq,
-      final List<String>? notIn}) = _$IdOperatorsImpl;
-  const _IdOperators._() : super._();
+  factory _IdOperators(
+      {String? eq,
+      @JsonKey(name: 'in') List<String>? in_,
+      bool? isNull,
+      String? notEq,
+      List<String>? notIn}) = _$IdOperatorsImpl;
+  _IdOperators._() : super._();
 
   factory _IdOperators.fromJson(Map<String, dynamic> json) =
       _$IdOperatorsImpl.fromJson;
 
   @override
   String? get eq;
+  set eq(String? value);
   @override
   @JsonKey(name: 'in')
   List<String>? get in_;
+  @JsonKey(name: 'in')
+  set in_(List<String>? value);
   @override
   bool? get isNull;
+  set isNull(bool? value);
   @override
   String? get notEq;
+  set notEq(String? value);
   @override
   List<String>? get notIn;
+  set notIn(List<String>? value);
   @override
   @JsonKey(ignore: true)
   _$$IdOperatorsImplCopyWith<_$IdOperatorsImpl> get copyWith =>

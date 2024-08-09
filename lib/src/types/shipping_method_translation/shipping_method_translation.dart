@@ -1,25 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/language_code/language_code.dart';
+import '../types/language_code/language_code.dart';
 
 part 'shipping_method_translation.freezed.dart';
 part 'shipping_method_translation.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class ShippingMethodTranslation with _$ShippingMethodTranslation {
   const ShippingMethodTranslation._();
 
   const factory ShippingMethodTranslation({
-    DateTime? createdAt,
-    String? description,
-    String? id,
-    LanguageCode? languageCode,
-    String? name,
-    DateTime? updatedAt,
+    required DateTime createdAt,
+    required String description,
+    required String id,
+    required LanguageCode languageCode,
+    required String name,
+    required DateTime updatedAt,
   }) = _ShippingMethodTranslation;
 
   factory ShippingMethodTranslation.fromJson(Map<String, dynamic> json) =>

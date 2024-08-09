@@ -20,8 +20,8 @@ ShippingMethodList _$ShippingMethodListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShippingMethodList {
-  List<ShippingMethod?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<ShippingMethod> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $ShippingMethodListCopyWith<$Res> {
           ShippingMethodList value, $Res Function(ShippingMethodList) then) =
       _$ShippingMethodListCopyWithImpl<$Res, ShippingMethodList>;
   @useResult
-  $Res call({List<ShippingMethod?>? items, int? totalItems});
+  $Res call({List<ShippingMethod> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$ShippingMethodListCopyWithImpl<$Res, $Val extends ShippingMethodList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<ShippingMethod?>?,
-      totalItems: freezed == totalItems
+              as List<ShippingMethod>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$ShippingMethodListImplCopyWith<$Res>
       __$$ShippingMethodListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ShippingMethod?>? items, int? totalItems});
+  $Res call({List<ShippingMethod> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$ShippingMethodListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$ShippingMethodListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<ShippingMethod?>?,
-      totalItems: freezed == totalItems
+              as List<ShippingMethod>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -110,25 +110,23 @@ class __$$ShippingMethodListImplCopyWithImpl<$Res>
 class _$ShippingMethodListImpl extends _ShippingMethodList
     with DiagnosticableTreeMixin {
   const _$ShippingMethodListImpl(
-      {final List<ShippingMethod?>? items, this.totalItems})
+      {required final List<ShippingMethod> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$ShippingMethodListImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShippingMethodListImplFromJson(json);
 
-  final List<ShippingMethod?>? _items;
+  final List<ShippingMethod> _items;
   @override
-  List<ShippingMethod?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<ShippingMethod> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -176,17 +174,17 @@ class _$ShippingMethodListImpl extends _ShippingMethodList
 
 abstract class _ShippingMethodList extends ShippingMethodList {
   const factory _ShippingMethodList(
-      {final List<ShippingMethod?>? items,
-      final int? totalItems}) = _$ShippingMethodListImpl;
+      {required final List<ShippingMethod> items,
+      required final int totalItems}) = _$ShippingMethodListImpl;
   const _ShippingMethodList._() : super._();
 
   factory _ShippingMethodList.fromJson(Map<String, dynamic> json) =
       _$ShippingMethodListImpl.fromJson;
 
   @override
-  List<ShippingMethod?>? get items;
+  List<ShippingMethod> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$ShippingMethodListImplCopyWith<_$ShippingMethodListImpl> get copyWith =>

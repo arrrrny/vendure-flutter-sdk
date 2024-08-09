@@ -49,25 +49,17 @@ _$CollectionFilterParameterImpl _$$CollectionFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$CollectionFilterParameterImplToJson(
-    _$CollectionFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('description', instance.description?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('languageCode', instance.languageCode?.toJson());
-  writeNotNull('name', instance.name?.toJson());
-  writeNotNull('parentId', instance.parentId?.toJson());
-  writeNotNull('position', instance.position?.toJson());
-  writeNotNull('slug', instance.slug?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$CollectionFilterParameterImpl instance) =>
+    <String, dynamic>{
+      '_and': instance.and,
+      '_or': instance.or,
+      'createdAt': instance.createdAt,
+      'description': instance.description,
+      'id': instance.id,
+      'languageCode': instance.languageCode,
+      'name': instance.name,
+      'parentId': instance.parentId,
+      'position': instance.position,
+      'slug': instance.slug,
+      'updatedAt': instance.updatedAt,
+    };

@@ -20,7 +20,7 @@ Success _$SuccessFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Success {
-  bool? get success => throw _privateConstructorUsedError;
+  bool get success => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +32,7 @@ abstract class $SuccessCopyWith<$Res> {
   factory $SuccessCopyWith(Success value, $Res Function(Success) then) =
       _$SuccessCopyWithImpl<$Res, Success>;
   @useResult
-  $Res call({bool? success});
+  $Res call({bool success});
 }
 
 /// @nodoc
@@ -48,13 +48,13 @@ class _$SuccessCopyWithImpl<$Res, $Val extends Success>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = freezed,
+    Object? success = null,
   }) {
     return _then(_value.copyWith(
-      success: freezed == success
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ) as $Val);
   }
 }
@@ -66,7 +66,7 @@ abstract class _$$SuccessImplCopyWith<$Res> implements $SuccessCopyWith<$Res> {
       __$$SuccessImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool? success});
+  $Res call({bool success});
 }
 
 /// @nodoc
@@ -80,13 +80,13 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = freezed,
+    Object? success = null,
   }) {
     return _then(_$SuccessImpl(
-      success: freezed == success
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -94,13 +94,13 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SuccessImpl extends _Success with DiagnosticableTreeMixin {
-  const _$SuccessImpl({this.success}) : super._();
+  const _$SuccessImpl({required this.success}) : super._();
 
   factory _$SuccessImpl.fromJson(Map<String, dynamic> json) =>
       _$$SuccessImplFromJson(json);
 
   @override
-  final bool? success;
+  final bool success;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -142,13 +142,13 @@ class _$SuccessImpl extends _Success with DiagnosticableTreeMixin {
 }
 
 abstract class _Success extends Success {
-  const factory _Success({final bool? success}) = _$SuccessImpl;
+  const factory _Success({required final bool success}) = _$SuccessImpl;
   const _Success._() : super._();
 
   factory _Success.fromJson(Map<String, dynamic> json) = _$SuccessImpl.fromJson;
 
   @override
-  bool? get success;
+  bool get success;
   @override
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>

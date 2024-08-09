@@ -20,16 +20,16 @@ ShippingMethodQuote _$ShippingMethodQuoteFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ShippingMethodQuote {
-  String? get code => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
 
   /// Any optional metadata returned by the ShippingCalculator in the ShippingCalculationResult
   Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  double? get price => throw _privateConstructorUsedError;
-  double? get priceWithTax => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  double get price => throw _privateConstructorUsedError;
+  double get priceWithTax => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,14 +44,14 @@ abstract class $ShippingMethodQuoteCopyWith<$Res> {
       _$ShippingMethodQuoteCopyWithImpl<$Res, ShippingMethodQuote>;
   @useResult
   $Res call(
-      {String? code,
+      {String code,
       Map<String, dynamic>? customFields,
-      String? description,
-      String? id,
+      String description,
+      String id,
       Map<String, dynamic>? metadata,
-      String? name,
-      double? price,
-      double? priceWithTax});
+      String name,
+      double price,
+      double priceWithTax});
 }
 
 /// @nodoc
@@ -67,48 +67,48 @@ class _$ShippingMethodQuoteCopyWithImpl<$Res, $Val extends ShippingMethodQuote>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
+    Object? code = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
+    Object? description = null,
+    Object? id = null,
     Object? metadata = freezed,
-    Object? name = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
+    Object? name = null,
+    Object? price = null,
+    Object? priceWithTax = null,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -122,14 +122,14 @@ abstract class _$$ShippingMethodQuoteImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? code,
+      {String code,
       Map<String, dynamic>? customFields,
-      String? description,
-      String? id,
+      String description,
+      String id,
       Map<String, dynamic>? metadata,
-      String? name,
-      double? price,
-      double? priceWithTax});
+      String name,
+      double price,
+      double priceWithTax});
 }
 
 /// @nodoc
@@ -143,48 +143,48 @@ class __$$ShippingMethodQuoteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
+    Object? code = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
+    Object? description = null,
+    Object? id = null,
     Object? metadata = freezed,
-    Object? name = freezed,
-    Object? price = freezed,
-    Object? priceWithTax = freezed,
+    Object? name = null,
+    Object? price = null,
+    Object? priceWithTax = null,
   }) {
     return _then(_$ShippingMethodQuoteImpl(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       metadata: freezed == metadata
           ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      price: freezed == price
+              as String,
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceWithTax: freezed == priceWithTax
+              as double,
+      priceWithTax: null == priceWithTax
           ? _value.priceWithTax
           : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -194,14 +194,14 @@ class __$$ShippingMethodQuoteImplCopyWithImpl<$Res>
 class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
     with DiagnosticableTreeMixin {
   const _$ShippingMethodQuoteImpl(
-      {this.code,
+      {required this.code,
       final Map<String, dynamic>? customFields,
-      this.description,
-      this.id,
+      required this.description,
+      required this.id,
       final Map<String, dynamic>? metadata,
-      this.name,
-      this.price,
-      this.priceWithTax})
+      required this.name,
+      required this.price,
+      required this.priceWithTax})
       : _customFields = customFields,
         _metadata = metadata,
         super._();
@@ -210,7 +210,7 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
       _$$ShippingMethodQuoteImplFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -222,9 +222,9 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
   }
 
   @override
-  final String? description;
+  final String description;
   @override
-  final String? id;
+  final String id;
 
   /// Any optional metadata returned by the ShippingCalculator in the ShippingCalculationResult
   final Map<String, dynamic>? _metadata;
@@ -240,11 +240,11 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
   }
 
   @override
-  final String? name;
+  final String name;
   @override
-  final double? price;
+  final double price;
   @override
-  final double? priceWithTax;
+  final double priceWithTax;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -314,37 +314,37 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
 
 abstract class _ShippingMethodQuote extends ShippingMethodQuote {
   const factory _ShippingMethodQuote(
-      {final String? code,
+      {required final String code,
       final Map<String, dynamic>? customFields,
-      final String? description,
-      final String? id,
+      required final String description,
+      required final String id,
       final Map<String, dynamic>? metadata,
-      final String? name,
-      final double? price,
-      final double? priceWithTax}) = _$ShippingMethodQuoteImpl;
+      required final String name,
+      required final double price,
+      required final double priceWithTax}) = _$ShippingMethodQuoteImpl;
   const _ShippingMethodQuote._() : super._();
 
   factory _ShippingMethodQuote.fromJson(Map<String, dynamic> json) =
       _$ShippingMethodQuoteImpl.fromJson;
 
   @override
-  String? get code;
+  String get code;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
-  String? get id;
+  String get id;
   @override
 
   /// Any optional metadata returned by the ShippingCalculator in the ShippingCalculationResult
   Map<String, dynamic>? get metadata;
   @override
-  String? get name;
+  String get name;
   @override
-  double? get price;
+  double get price;
   @override
-  double? get priceWithTax;
+  double get priceWithTax;
   @override
   @JsonKey(ignore: true)
   _$$ShippingMethodQuoteImplCopyWith<_$ShippingMethodQuoteImpl> get copyWith =>

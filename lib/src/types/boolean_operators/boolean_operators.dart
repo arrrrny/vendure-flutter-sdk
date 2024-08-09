@@ -3,18 +3,15 @@ import 'package:flutter/foundation.dart';
 part 'boolean_operators.freezed.dart';
 part 'boolean_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class BooleanOperators with _$BooleanOperators {
   const BooleanOperators._();
 
-  const factory BooleanOperators({
+  factory BooleanOperators({
     bool? eq,
     bool? isNull,
   }) = _BooleanOperators;
 
-  factory BooleanOperators.fromJson(Map<String, dynamic> json) => _$BooleanOperatorsFromJson(json);
+  factory BooleanOperators.fromJson(Map<String, dynamic> json) =>
+      _$BooleanOperatorsFromJson(json);
 }

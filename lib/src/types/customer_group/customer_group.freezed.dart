@@ -20,12 +20,12 @@ CustomerGroup _$CustomerGroupFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CustomerGroup {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  CustomerList? get customers => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  CustomerList get customers => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,14 +40,14 @@ abstract class $CustomerGroupCopyWith<$Res> {
       _$CustomerGroupCopyWithImpl<$Res, CustomerGroup>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      CustomerList? customers,
-      String? id,
-      String? name,
-      DateTime? updatedAt});
+      CustomerList customers,
+      String id,
+      String name,
+      DateTime updatedAt});
 
-  $CustomerListCopyWith<$Res>? get customers;
+  $CustomerListCopyWith<$Res> get customers;
 }
 
 /// @nodoc
@@ -63,49 +63,45 @@ class _$CustomerGroupCopyWithImpl<$Res, $Val extends CustomerGroup>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? customers = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? customers = null,
+    Object? id = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      customers: freezed == customers
+      customers: null == customers
           ? _value.customers
           : customers // ignore: cast_nullable_to_non_nullable
-              as CustomerList?,
-      id: freezed == id
+              as CustomerList,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CustomerListCopyWith<$Res>? get customers {
-    if (_value.customers == null) {
-      return null;
-    }
-
-    return $CustomerListCopyWith<$Res>(_value.customers!, (value) {
+  $CustomerListCopyWith<$Res> get customers {
+    return $CustomerListCopyWith<$Res>(_value.customers, (value) {
       return _then(_value.copyWith(customers: value) as $Val);
     });
   }
@@ -120,15 +116,15 @@ abstract class _$$CustomerGroupImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      CustomerList? customers,
-      String? id,
-      String? name,
-      DateTime? updatedAt});
+      CustomerList customers,
+      String id,
+      String name,
+      DateTime updatedAt});
 
   @override
-  $CustomerListCopyWith<$Res>? get customers;
+  $CustomerListCopyWith<$Res> get customers;
 }
 
 /// @nodoc
@@ -142,38 +138,38 @@ class __$$CustomerGroupImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? customers = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? customers = null,
+    Object? id = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$CustomerGroupImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      customers: freezed == customers
+      customers: null == customers
           ? _value.customers
           : customers // ignore: cast_nullable_to_non_nullable
-              as CustomerList?,
-      id: freezed == id
+              as CustomerList,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -182,12 +178,12 @@ class __$$CustomerGroupImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
   const _$CustomerGroupImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.customers,
-      this.id,
-      this.name,
-      this.updatedAt})
+      required this.customers,
+      required this.id,
+      required this.name,
+      required this.updatedAt})
       : _customFields = customFields,
         super._();
 
@@ -195,7 +191,7 @@ class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
       _$$CustomerGroupImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -207,13 +203,13 @@ class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
   }
 
   @override
-  final CustomerList? customers;
+  final CustomerList customers;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -277,29 +273,29 @@ class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
 
 abstract class _CustomerGroup extends CustomerGroup {
   const factory _CustomerGroup(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final CustomerList? customers,
-      final String? id,
-      final String? name,
-      final DateTime? updatedAt}) = _$CustomerGroupImpl;
+      required final CustomerList customers,
+      required final String id,
+      required final String name,
+      required final DateTime updatedAt}) = _$CustomerGroupImpl;
   const _CustomerGroup._() : super._();
 
   factory _CustomerGroup.fromJson(Map<String, dynamic> json) =
       _$CustomerGroupImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  CustomerList? get customers;
+  CustomerList get customers;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$CustomerGroupImplCopyWith<_$CustomerGroupImpl> get copyWith =>

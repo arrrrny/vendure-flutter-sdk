@@ -1,24 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/error_code/error_code.dart';
-import 'package:vendure/src/types/order/order.dart';
+import '../order/order.dart';
+import '../types/error_code/error_code.dart';
 
 part 'insufficient_stock_error.freezed.dart';
 part 'insufficient_stock_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class InsufficientStockError with _$InsufficientStockError {
   const InsufficientStockError._();
 
   const factory InsufficientStockError({
-    ErrorCode? errorCode,
-    String? message,
-    Order? order,
-    int? quantityAvailable,
+    required ErrorCode errorCode,
+    required String message,
+    required Order order,
+    required int quantityAvailable,
   }) = _InsufficientStockError;
 
   factory InsufficientStockError.fromJson(Map<String, dynamic> json) =>

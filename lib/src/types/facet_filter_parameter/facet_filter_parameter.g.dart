@@ -37,22 +37,14 @@ _$FacetFilterParameterImpl _$$FacetFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$FacetFilterParameterImplToJson(
-    _$FacetFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('code', instance.code?.toJson());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('languageCode', instance.languageCode?.toJson());
-  writeNotNull('name', instance.name?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$FacetFilterParameterImpl instance) =>
+    <String, dynamic>{
+      '_and': instance.and,
+      '_or': instance.or,
+      'code': instance.code,
+      'createdAt': instance.createdAt,
+      'id': instance.id,
+      'languageCode': instance.languageCode,
+      'name': instance.name,
+      'updatedAt': instance.updatedAt,
+    };

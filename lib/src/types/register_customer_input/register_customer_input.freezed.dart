@@ -22,11 +22,17 @@ RegisterCustomerInput _$RegisterCustomerInputFromJson(
 /// @nodoc
 mixin _$RegisterCustomerInput {
   String get emailAddress => throw _privateConstructorUsedError;
+  set emailAddress(String value) => throw _privateConstructorUsedError;
   String? get firstName => throw _privateConstructorUsedError;
+  set firstName(String? value) => throw _privateConstructorUsedError;
   String? get lastName => throw _privateConstructorUsedError;
+  set lastName(String? value) => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
+  set password(String? value) => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
+  set phoneNumber(String? value) => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
+  set title(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -169,7 +175,7 @@ class __$$RegisterCustomerInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RegisterCustomerInputImpl extends _RegisterCustomerInput
     with DiagnosticableTreeMixin {
-  const _$RegisterCustomerInputImpl(
+  _$RegisterCustomerInputImpl(
       {required this.emailAddress,
       this.firstName,
       this.lastName,
@@ -182,17 +188,17 @@ class _$RegisterCustomerInputImpl extends _RegisterCustomerInput
       _$$RegisterCustomerInputImplFromJson(json);
 
   @override
-  final String emailAddress;
+  String emailAddress;
   @override
-  final String? firstName;
+  String? firstName;
   @override
-  final String? lastName;
+  String? lastName;
   @override
-  final String? password;
+  String? password;
   @override
-  final String? phoneNumber;
+  String? phoneNumber;
   @override
-  final String? title;
+  String? title;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -212,29 +218,6 @@ class _$RegisterCustomerInputImpl extends _RegisterCustomerInput
       ..add(DiagnosticsProperty('title', title));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RegisterCustomerInputImpl &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.title, title) || other.title == title));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, emailAddress, firstName,
-      lastName, password, phoneNumber, title);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -251,30 +234,36 @@ class _$RegisterCustomerInputImpl extends _RegisterCustomerInput
 }
 
 abstract class _RegisterCustomerInput extends RegisterCustomerInput {
-  const factory _RegisterCustomerInput(
-      {required final String emailAddress,
-      final String? firstName,
-      final String? lastName,
-      final String? password,
-      final String? phoneNumber,
-      final String? title}) = _$RegisterCustomerInputImpl;
-  const _RegisterCustomerInput._() : super._();
+  factory _RegisterCustomerInput(
+      {required String emailAddress,
+      String? firstName,
+      String? lastName,
+      String? password,
+      String? phoneNumber,
+      String? title}) = _$RegisterCustomerInputImpl;
+  _RegisterCustomerInput._() : super._();
 
   factory _RegisterCustomerInput.fromJson(Map<String, dynamic> json) =
       _$RegisterCustomerInputImpl.fromJson;
 
   @override
   String get emailAddress;
+  set emailAddress(String value);
   @override
   String? get firstName;
+  set firstName(String? value);
   @override
   String? get lastName;
+  set lastName(String? value);
   @override
   String? get password;
+  set password(String? value);
   @override
   String? get phoneNumber;
+  set phoneNumber(String? value);
   @override
   String? get title;
+  set title(String? value);
   @override
   @JsonKey(ignore: true)
   _$$RegisterCustomerInputImplCopyWith<_$RegisterCustomerInputImpl>

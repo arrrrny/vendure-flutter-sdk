@@ -22,7 +22,9 @@ SearchResultSortParameter _$SearchResultSortParameterFromJson(
 /// @nodoc
 mixin _$SearchResultSortParameter {
   SortOrder? get name => throw _privateConstructorUsedError;
+  set name(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get price => throw _privateConstructorUsedError;
+  set price(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -114,15 +116,15 @@ class __$$SearchResultSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SearchResultSortParameterImpl extends _SearchResultSortParameter
     with DiagnosticableTreeMixin {
-  const _$SearchResultSortParameterImpl({this.name, this.price}) : super._();
+  _$SearchResultSortParameterImpl({this.name, this.price}) : super._();
 
   factory _$SearchResultSortParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchResultSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? name;
+  SortOrder? name;
   @override
-  final SortOrder? price;
+  SortOrder? price;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -137,19 +139,6 @@ class _$SearchResultSortParameterImpl extends _SearchResultSortParameter
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('price', price));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SearchResultSortParameterImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.price, price) || other.price == price));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, price);
 
   @JsonKey(ignore: true)
   @override
@@ -167,18 +156,19 @@ class _$SearchResultSortParameterImpl extends _SearchResultSortParameter
 }
 
 abstract class _SearchResultSortParameter extends SearchResultSortParameter {
-  const factory _SearchResultSortParameter(
-      {final SortOrder? name,
-      final SortOrder? price}) = _$SearchResultSortParameterImpl;
-  const _SearchResultSortParameter._() : super._();
+  factory _SearchResultSortParameter({SortOrder? name, SortOrder? price}) =
+      _$SearchResultSortParameterImpl;
+  _SearchResultSortParameter._() : super._();
 
   factory _SearchResultSortParameter.fromJson(Map<String, dynamic> json) =
       _$SearchResultSortParameterImpl.fromJson;
 
   @override
   SortOrder? get name;
+  set name(SortOrder? value);
   @override
   SortOrder? get price;
+  set price(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$SearchResultSortParameterImplCopyWith<_$SearchResultSortParameterImpl>

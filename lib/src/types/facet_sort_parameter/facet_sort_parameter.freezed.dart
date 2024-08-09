@@ -21,10 +21,15 @@ FacetSortParameter _$FacetSortParameterFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FacetSortParameter {
   SortOrder? get code => throw _privateConstructorUsedError;
+  set code(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get name => throw _privateConstructorUsedError;
+  set name(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -152,7 +157,7 @@ class __$$FacetSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetSortParameterImpl extends _FacetSortParameter
     with DiagnosticableTreeMixin {
-  const _$FacetSortParameterImpl(
+  _$FacetSortParameterImpl(
       {this.code, this.createdAt, this.id, this.name, this.updatedAt})
       : super._();
 
@@ -160,15 +165,15 @@ class _$FacetSortParameterImpl extends _FacetSortParameter
       _$$FacetSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? code;
+  SortOrder? code;
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? name;
+  SortOrder? name;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -187,25 +192,6 @@ class _$FacetSortParameterImpl extends _FacetSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FacetSortParameterImpl &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, code, createdAt, id, name, updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -222,27 +208,32 @@ class _$FacetSortParameterImpl extends _FacetSortParameter
 }
 
 abstract class _FacetSortParameter extends FacetSortParameter {
-  const factory _FacetSortParameter(
-      {final SortOrder? code,
-      final SortOrder? createdAt,
-      final SortOrder? id,
-      final SortOrder? name,
-      final SortOrder? updatedAt}) = _$FacetSortParameterImpl;
-  const _FacetSortParameter._() : super._();
+  factory _FacetSortParameter(
+      {SortOrder? code,
+      SortOrder? createdAt,
+      SortOrder? id,
+      SortOrder? name,
+      SortOrder? updatedAt}) = _$FacetSortParameterImpl;
+  _FacetSortParameter._() : super._();
 
   factory _FacetSortParameter.fromJson(Map<String, dynamic> json) =
       _$FacetSortParameterImpl.fromJson;
 
   @override
   SortOrder? get code;
+  set code(SortOrder? value);
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get name;
+  set name(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$FacetSortParameterImplCopyWith<_$FacetSortParameterImpl> get copyWith =>

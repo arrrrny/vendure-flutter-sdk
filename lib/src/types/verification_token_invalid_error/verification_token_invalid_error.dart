@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/error_code/error_code.dart';
+import '../types/error_code/error_code.dart';
 
 part 'verification_token_invalid_error.freezed.dart';
 part 'verification_token_invalid_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class VerificationTokenInvalidError with _$VerificationTokenInvalidError {
   const VerificationTokenInvalidError._();
 
   const factory VerificationTokenInvalidError({
-    ErrorCode? errorCode,
-    String? message,
+    required ErrorCode errorCode,
+    required String message,
   }) = _VerificationTokenInvalidError;
 
   factory VerificationTokenInvalidError.fromJson(Map<String, dynamic> json) =>

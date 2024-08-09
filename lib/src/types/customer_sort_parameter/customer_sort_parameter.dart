@@ -1,19 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/sort_order/sort_order.dart';
+import '../types/sort_order/sort_order.dart';
 
 part 'customer_sort_parameter.freezed.dart';
 part 'customer_sort_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class CustomerSortParameter with _$CustomerSortParameter {
   const CustomerSortParameter._();
 
-  const factory CustomerSortParameter({
+  factory CustomerSortParameter({
     SortOrder? createdAt,
     SortOrder? emailAddress,
     SortOrder? firstName,

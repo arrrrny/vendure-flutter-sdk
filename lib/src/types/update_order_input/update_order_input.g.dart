@@ -13,15 +13,7 @@ _$UpdateOrderInputImpl _$$UpdateOrderInputImplFromJson(
     );
 
 Map<String, dynamic> _$$UpdateOrderInputImplToJson(
-    _$UpdateOrderInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  return val;
-}
+        _$UpdateOrderInputImpl instance) =>
+    <String, dynamic>{
+      'customFields': instance.customFields,
+    };

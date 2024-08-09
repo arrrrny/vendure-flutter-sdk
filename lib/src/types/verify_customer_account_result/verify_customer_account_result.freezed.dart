@@ -46,60 +46,59 @@ mixin _$VerifyCustomerAccountResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) =>
@@ -177,8 +176,7 @@ abstract class _$$CurrentUserImplCopyWith<$Res> {
           _$CurrentUserImpl value, $Res Function(_$CurrentUserImpl) then) =
       __$$CurrentUserImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {List<CurrentUserChannel?>? channels, String? id, String? identifier});
+  $Res call({List<CurrentUserChannel> channels, String id, String identifier});
 }
 
 /// @nodoc
@@ -192,23 +190,23 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channels = freezed,
-    Object? id = freezed,
-    Object? identifier = freezed,
+    Object? channels = null,
+    Object? id = null,
+    Object? identifier = null,
   }) {
     return _then(_$CurrentUserImpl(
-      channels: freezed == channels
+      channels: null == channels
           ? _value._channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<CurrentUserChannel?>?,
-      id: freezed == id
+              as List<CurrentUserChannel>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
+              as String,
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -217,9 +215,9 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   const _$CurrentUserImpl(
-      {final List<CurrentUserChannel?>? channels,
-      this.id,
-      this.identifier,
+      {required final List<CurrentUserChannel> channels,
+      required this.id,
+      required this.identifier,
       final String? $type})
       : _channels = channels,
         $type = $type ?? 'currentUser',
@@ -228,20 +226,18 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   factory _$CurrentUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$CurrentUserImplFromJson(json);
 
-  final List<CurrentUserChannel?>? _channels;
+  final List<CurrentUserChannel> _channels;
   @override
-  List<CurrentUserChannel?>? get channels {
-    final value = _channels;
-    if (value == null) return null;
+  List<CurrentUserChannel> get channels {
     if (_channels is EqualUnmodifiableListView) return _channels;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_channels);
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? identifier;
+  final String identifier;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -288,20 +284,20 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return currentUser(channels, id, identifier);
@@ -310,21 +306,21 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return currentUser?.call(channels, id, identifier);
@@ -333,21 +329,20 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -422,17 +417,17 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
 
 abstract class CurrentUser extends VerifyCustomerAccountResult {
   const factory CurrentUser(
-      {final List<CurrentUserChannel?>? channels,
-      final String? id,
-      final String? identifier}) = _$CurrentUserImpl;
+      {required final List<CurrentUserChannel> channels,
+      required final String id,
+      required final String identifier}) = _$CurrentUserImpl;
   const CurrentUser._() : super._();
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =
       _$CurrentUserImpl.fromJson;
 
-  List<CurrentUserChannel?>? get channels;
-  String? get id;
-  String? get identifier;
+  List<CurrentUserChannel> get channels;
+  String get id;
+  String get identifier;
   @JsonKey(ignore: true)
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -444,7 +439,7 @@ abstract class _$$MissingPasswordErrorImplCopyWith<$Res> {
           $Res Function(_$MissingPasswordErrorImpl) then) =
       __$$MissingPasswordErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -459,18 +454,18 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$MissingPasswordErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -480,7 +475,7 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
 class _$MissingPasswordErrorImpl extends MissingPasswordError
     with DiagnosticableTreeMixin {
   const _$MissingPasswordErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'missingPasswordError',
         super._();
 
@@ -488,9 +483,9 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
       _$$MissingPasswordErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -536,20 +531,20 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return missingPasswordError(errorCode, message);
@@ -558,21 +553,21 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return missingPasswordError?.call(errorCode, message);
@@ -581,21 +576,20 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -670,15 +664,15 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
 
 abstract class MissingPasswordError extends VerifyCustomerAccountResult {
   const factory MissingPasswordError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$MissingPasswordErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$MissingPasswordErrorImpl;
   const MissingPasswordError._() : super._();
 
   factory MissingPasswordError.fromJson(Map<String, dynamic> json) =
       _$MissingPasswordErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$MissingPasswordErrorImplCopyWith<_$MissingPasswordErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -691,7 +685,7 @@ abstract class _$$NativeAuthStrategyErrorImplCopyWith<$Res> {
           $Res Function(_$NativeAuthStrategyErrorImpl) then) =
       __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -707,18 +701,18 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$NativeAuthStrategyErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -728,7 +722,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
     with DiagnosticableTreeMixin {
   const _$NativeAuthStrategyErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
         super._();
 
@@ -736,9 +730,9 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
       _$$NativeAuthStrategyErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -783,20 +777,20 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return nativeAuthStrategyError(errorCode, message);
@@ -805,21 +799,21 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return nativeAuthStrategyError?.call(errorCode, message);
@@ -828,21 +822,20 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -917,15 +910,15 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
 
 abstract class NativeAuthStrategyError extends VerifyCustomerAccountResult {
   const factory NativeAuthStrategyError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$NativeAuthStrategyErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$NativeAuthStrategyErrorImpl;
   const NativeAuthStrategyError._() : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) =
       _$NativeAuthStrategyErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -938,7 +931,7 @@ abstract class _$$PasswordAlreadySetErrorImplCopyWith<$Res> {
           $Res Function(_$PasswordAlreadySetErrorImpl) then) =
       __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -954,18 +947,18 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$PasswordAlreadySetErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -975,7 +968,7 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
 class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
     with DiagnosticableTreeMixin {
   const _$PasswordAlreadySetErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'passwordAlreadySetError',
         super._();
 
@@ -983,9 +976,9 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
       _$$PasswordAlreadySetErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1030,20 +1023,20 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return passwordAlreadySetError(errorCode, message);
@@ -1052,21 +1045,21 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return passwordAlreadySetError?.call(errorCode, message);
@@ -1075,21 +1068,20 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -1164,15 +1156,15 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
 
 abstract class PasswordAlreadySetError extends VerifyCustomerAccountResult {
   const factory PasswordAlreadySetError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$PasswordAlreadySetErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$PasswordAlreadySetErrorImpl;
   const PasswordAlreadySetError._() : super._();
 
   factory PasswordAlreadySetError.fromJson(Map<String, dynamic> json) =
       _$PasswordAlreadySetErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$PasswordAlreadySetErrorImplCopyWith<_$PasswordAlreadySetErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1186,7 +1178,7 @@ abstract class _$$PasswordValidationErrorImplCopyWith<$Res> {
       __$$PasswordValidationErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {ErrorCode? errorCode, String? message, String? validationErrorMessage});
+      {ErrorCode errorCode, String message, String validationErrorMessage});
 }
 
 /// @nodoc
@@ -1202,23 +1194,23 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? validationErrorMessage = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? validationErrorMessage = null,
   }) {
     return _then(_$PasswordValidationErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validationErrorMessage: freezed == validationErrorMessage
+              as String,
+      validationErrorMessage: null == validationErrorMessage
           ? _value.validationErrorMessage
           : validationErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1228,9 +1220,9 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 class _$PasswordValidationErrorImpl extends PasswordValidationError
     with DiagnosticableTreeMixin {
   const _$PasswordValidationErrorImpl(
-      {this.errorCode,
-      this.message,
-      this.validationErrorMessage,
+      {required this.errorCode,
+      required this.message,
+      required this.validationErrorMessage,
       final String? $type})
       : $type = $type ?? 'passwordValidationError',
         super._();
@@ -1239,11 +1231,11 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
       _$$PasswordValidationErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
   @override
-  final String? validationErrorMessage;
+  final String validationErrorMessage;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1293,20 +1285,20 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return passwordValidationError(errorCode, message, validationErrorMessage);
@@ -1315,21 +1307,21 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return passwordValidationError?.call(
@@ -1339,21 +1331,20 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -1429,17 +1420,18 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
 
 abstract class PasswordValidationError extends VerifyCustomerAccountResult {
   const factory PasswordValidationError(
-      {final ErrorCode? errorCode,
-      final String? message,
-      final String? validationErrorMessage}) = _$PasswordValidationErrorImpl;
+          {required final ErrorCode errorCode,
+          required final String message,
+          required final String validationErrorMessage}) =
+      _$PasswordValidationErrorImpl;
   const PasswordValidationError._() : super._();
 
   factory PasswordValidationError.fromJson(Map<String, dynamic> json) =
       _$PasswordValidationErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
-  String? get validationErrorMessage;
+  ErrorCode get errorCode;
+  String get message;
+  String get validationErrorMessage;
   @JsonKey(ignore: true)
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1452,7 +1444,7 @@ abstract class _$$VerificationTokenExpiredErrorImplCopyWith<$Res> {
           $Res Function(_$VerificationTokenExpiredErrorImpl) then) =
       __$$VerificationTokenExpiredErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -1468,18 +1460,18 @@ class __$$VerificationTokenExpiredErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$VerificationTokenExpiredErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1489,7 +1481,7 @@ class __$$VerificationTokenExpiredErrorImplCopyWithImpl<$Res>
 class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
     with DiagnosticableTreeMixin {
   const _$VerificationTokenExpiredErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'verificationTokenExpiredError',
         super._();
 
@@ -1498,9 +1490,9 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
       _$$VerificationTokenExpiredErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1546,20 +1538,20 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return verificationTokenExpiredError(errorCode, message);
@@ -1568,21 +1560,21 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return verificationTokenExpiredError?.call(errorCode, message);
@@ -1591,21 +1583,20 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -1681,15 +1672,15 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
 abstract class VerificationTokenExpiredError
     extends VerifyCustomerAccountResult {
   const factory VerificationTokenExpiredError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$VerificationTokenExpiredErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$VerificationTokenExpiredErrorImpl;
   const VerificationTokenExpiredError._() : super._();
 
   factory VerificationTokenExpiredError.fromJson(Map<String, dynamic> json) =
       _$VerificationTokenExpiredErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$VerificationTokenExpiredErrorImplCopyWith<
           _$VerificationTokenExpiredErrorImpl>
@@ -1703,7 +1694,7 @@ abstract class _$$VerificationTokenInvalidErrorImplCopyWith<$Res> {
           $Res Function(_$VerificationTokenInvalidErrorImpl) then) =
       __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -1719,18 +1710,18 @@ class __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$VerificationTokenInvalidErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1740,7 +1731,7 @@ class __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>
 class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
     with DiagnosticableTreeMixin {
   const _$VerificationTokenInvalidErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'verificationTokenInvalidError',
         super._();
 
@@ -1749,9 +1740,9 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
       _$$VerificationTokenInvalidErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -1797,20 +1788,20 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         missingPasswordError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         passwordAlreadySetError,
-    required TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)
+    required TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)
         passwordValidationError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenExpiredError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         verificationTokenInvalidError,
   }) {
     return verificationTokenInvalidError(errorCode, message);
@@ -1819,21 +1810,21 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         missingPasswordError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult? Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult? Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
   }) {
     return verificationTokenInvalidError?.call(errorCode, message);
@@ -1842,21 +1833,20 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        missingPasswordError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)? missingPasswordError,
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         passwordAlreadySetError,
-    TResult Function(ErrorCode? errorCode, String? message,
-            String? validationErrorMessage)?
+    TResult Function(
+            ErrorCode errorCode, String message, String validationErrorMessage)?
         passwordValidationError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenExpiredError,
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         verificationTokenInvalidError,
     required TResult orElse(),
   }) {
@@ -1932,15 +1922,15 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
 abstract class VerificationTokenInvalidError
     extends VerifyCustomerAccountResult {
   const factory VerificationTokenInvalidError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$VerificationTokenInvalidErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$VerificationTokenInvalidErrorImpl;
   const VerificationTokenInvalidError._() : super._();
 
   factory VerificationTokenInvalidError.fromJson(Map<String, dynamic> json) =
       _$VerificationTokenInvalidErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$VerificationTokenInvalidErrorImplCopyWith<
           _$VerificationTokenInvalidErrorImpl>

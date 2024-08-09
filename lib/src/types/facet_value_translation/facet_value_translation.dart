@@ -1,24 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/language_code/language_code.dart';
+import '../types/language_code/language_code.dart';
 
 part 'facet_value_translation.freezed.dart';
 part 'facet_value_translation.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class FacetValueTranslation with _$FacetValueTranslation {
   const FacetValueTranslation._();
 
   const factory FacetValueTranslation({
-    DateTime? createdAt,
-    String? id,
-    LanguageCode? languageCode,
-    String? name,
-    DateTime? updatedAt,
+    required DateTime createdAt,
+    required String id,
+    required LanguageCode languageCode,
+    required String name,
+    required DateTime updatedAt,
   }) = _FacetValueTranslation;
 
   factory FacetValueTranslation.fromJson(Map<String, dynamic> json) =>

@@ -20,8 +20,8 @@ Coordinate _$CoordinateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Coordinate {
-  double? get x => throw _privateConstructorUsedError;
-  double? get y => throw _privateConstructorUsedError;
+  double get x => throw _privateConstructorUsedError;
+  double get y => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $CoordinateCopyWith<$Res> {
           Coordinate value, $Res Function(Coordinate) then) =
       _$CoordinateCopyWithImpl<$Res, Coordinate>;
   @useResult
-  $Res call({double? x, double? y});
+  $Res call({double x, double y});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$CoordinateCopyWithImpl<$Res, $Val extends Coordinate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? x = freezed,
-    Object? y = freezed,
+    Object? x = null,
+    Object? y = null,
   }) {
     return _then(_value.copyWith(
-      x: freezed == x
+      x: null == x
           ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
-              as double?,
-      y: freezed == y
+              as double,
+      y: null == y
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$CoordinateImplCopyWith<$Res>
       __$$CoordinateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double? x, double? y});
+  $Res call({double x, double y});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$CoordinateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? x = freezed,
-    Object? y = freezed,
+    Object? x = null,
+    Object? y = null,
   }) {
     return _then(_$CoordinateImpl(
-      x: freezed == x
+      x: null == x
           ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
-              as double?,
-      y: freezed == y
+              as double,
+      y: null == y
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -108,15 +108,15 @@ class __$$CoordinateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CoordinateImpl extends _Coordinate with DiagnosticableTreeMixin {
-  const _$CoordinateImpl({this.x, this.y}) : super._();
+  const _$CoordinateImpl({required this.x, required this.y}) : super._();
 
   factory _$CoordinateImpl.fromJson(Map<String, dynamic> json) =>
       _$$CoordinateImplFromJson(json);
 
   @override
-  final double? x;
+  final double x;
   @override
-  final double? y;
+  final double y;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -160,17 +160,17 @@ class _$CoordinateImpl extends _Coordinate with DiagnosticableTreeMixin {
 }
 
 abstract class _Coordinate extends Coordinate {
-  const factory _Coordinate({final double? x, final double? y}) =
-      _$CoordinateImpl;
+  const factory _Coordinate(
+      {required final double x, required final double y}) = _$CoordinateImpl;
   const _Coordinate._() : super._();
 
   factory _Coordinate.fromJson(Map<String, dynamic> json) =
       _$CoordinateImpl.fromJson;
 
   @override
-  double? get x;
+  double get x;
   @override
-  double? get y;
+  double get y;
   @override
   @JsonKey(ignore: true)
   _$$CoordinateImplCopyWith<_$CoordinateImpl> get copyWith =>

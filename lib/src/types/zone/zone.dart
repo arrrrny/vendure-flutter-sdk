@@ -1,24 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/region/region.dart';
+import '../region/region.dart';
+
 part 'zone.freezed.dart';
 part 'zone.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class Zone with _$Zone {
   const Zone._();
 
   const factory Zone({
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    String? id,
-    List<Region?>? members,
-    String? name,
-    DateTime? updatedAt,
+    required String id,
+    required List<Region> members,
+    required String name,
+    required DateTime updatedAt,
   }) = _Zone;
 
   factory Zone.fromJson(Map<String, dynamic> json) => _$ZoneFromJson(json);

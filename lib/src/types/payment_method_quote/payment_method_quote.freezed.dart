@@ -20,13 +20,13 @@ PaymentMethodQuote _$PaymentMethodQuoteFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PaymentMethodQuote {
-  String? get code => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String? get eligibilityMessage => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  bool? get isEligible => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  bool get isEligible => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,13 +41,13 @@ abstract class $PaymentMethodQuoteCopyWith<$Res> {
       _$PaymentMethodQuoteCopyWithImpl<$Res, PaymentMethodQuote>;
   @useResult
   $Res call(
-      {String? code,
+      {String code,
       Map<String, dynamic>? customFields,
-      String? description,
+      String description,
       String? eligibilityMessage,
-      String? id,
-      bool? isEligible,
-      String? name});
+      String id,
+      bool isEligible,
+      String name});
 }
 
 /// @nodoc
@@ -63,43 +63,43 @@ class _$PaymentMethodQuoteCopyWithImpl<$Res, $Val extends PaymentMethodQuote>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
+    Object? code = null,
     Object? customFields = freezed,
-    Object? description = freezed,
+    Object? description = null,
     Object? eligibilityMessage = freezed,
-    Object? id = freezed,
-    Object? isEligible = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? isEligible = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       eligibilityMessage: freezed == eligibilityMessage
           ? _value.eligibilityMessage
           : eligibilityMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isEligible: freezed == isEligible
+              as String,
+      isEligible: null == isEligible
           ? _value.isEligible
           : isEligible // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -113,13 +113,13 @@ abstract class _$$PaymentMethodQuoteImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? code,
+      {String code,
       Map<String, dynamic>? customFields,
-      String? description,
+      String description,
       String? eligibilityMessage,
-      String? id,
-      bool? isEligible,
-      String? name});
+      String id,
+      bool isEligible,
+      String name});
 }
 
 /// @nodoc
@@ -133,43 +133,43 @@ class __$$PaymentMethodQuoteImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
+    Object? code = null,
     Object? customFields = freezed,
-    Object? description = freezed,
+    Object? description = null,
     Object? eligibilityMessage = freezed,
-    Object? id = freezed,
-    Object? isEligible = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? isEligible = null,
+    Object? name = null,
   }) {
     return _then(_$PaymentMethodQuoteImpl(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       eligibilityMessage: freezed == eligibilityMessage
           ? _value.eligibilityMessage
           : eligibilityMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isEligible: freezed == isEligible
+              as String,
+      isEligible: null == isEligible
           ? _value.isEligible
           : isEligible // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -179,13 +179,13 @@ class __$$PaymentMethodQuoteImplCopyWithImpl<$Res>
 class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
     with DiagnosticableTreeMixin {
   const _$PaymentMethodQuoteImpl(
-      {this.code,
+      {required this.code,
       final Map<String, dynamic>? customFields,
-      this.description,
+      required this.description,
       this.eligibilityMessage,
-      this.id,
-      this.isEligible,
-      this.name})
+      required this.id,
+      required this.isEligible,
+      required this.name})
       : _customFields = customFields,
         super._();
 
@@ -193,7 +193,7 @@ class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
       _$$PaymentMethodQuoteImplFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -205,15 +205,15 @@ class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
   }
 
   @override
-  final String? description;
+  final String description;
   @override
   final String? eligibilityMessage;
   @override
-  final String? id;
+  final String id;
   @override
-  final bool? isEligible;
+  final bool isEligible;
   @override
-  final String? name;
+  final String name;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -281,32 +281,32 @@ class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
 
 abstract class _PaymentMethodQuote extends PaymentMethodQuote {
   const factory _PaymentMethodQuote(
-      {final String? code,
+      {required final String code,
       final Map<String, dynamic>? customFields,
-      final String? description,
+      required final String description,
       final String? eligibilityMessage,
-      final String? id,
-      final bool? isEligible,
-      final String? name}) = _$PaymentMethodQuoteImpl;
+      required final String id,
+      required final bool isEligible,
+      required final String name}) = _$PaymentMethodQuoteImpl;
   const _PaymentMethodQuote._() : super._();
 
   factory _PaymentMethodQuote.fromJson(Map<String, dynamic> json) =
       _$PaymentMethodQuoteImpl.fromJson;
 
   @override
-  String? get code;
+  String get code;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
   String? get eligibilityMessage;
   @override
-  String? get id;
+  String get id;
   @override
-  bool? get isEligible;
+  bool get isEligible;
   @override
-  String? get name;
+  String get name;
   @override
   @JsonKey(ignore: true)
   _$$PaymentMethodQuoteImplCopyWith<_$PaymentMethodQuoteImpl> get copyWith =>

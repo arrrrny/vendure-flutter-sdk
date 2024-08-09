@@ -20,12 +20,10 @@ SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SearchResponse {
-  List<CollectionResult?>? get collections =>
-      throw _privateConstructorUsedError;
-  List<FacetValueResult?>? get facetValues =>
-      throw _privateConstructorUsedError;
-  List<SearchResult?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<CollectionResult> get collections => throw _privateConstructorUsedError;
+  List<FacetValueResult> get facetValues => throw _privateConstructorUsedError;
+  List<SearchResult> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,10 +38,10 @@ abstract class $SearchResponseCopyWith<$Res> {
       _$SearchResponseCopyWithImpl<$Res, SearchResponse>;
   @useResult
   $Res call(
-      {List<CollectionResult?>? collections,
-      List<FacetValueResult?>? facetValues,
-      List<SearchResult?>? items,
-      int? totalItems});
+      {List<CollectionResult> collections,
+      List<FacetValueResult> facetValues,
+      List<SearchResult> items,
+      int totalItems});
 }
 
 /// @nodoc
@@ -59,28 +57,28 @@ class _$SearchResponseCopyWithImpl<$Res, $Val extends SearchResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? collections = freezed,
-    Object? facetValues = freezed,
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? collections = null,
+    Object? facetValues = null,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      collections: freezed == collections
+      collections: null == collections
           ? _value.collections
           : collections // ignore: cast_nullable_to_non_nullable
-              as List<CollectionResult?>?,
-      facetValues: freezed == facetValues
+              as List<CollectionResult>,
+      facetValues: null == facetValues
           ? _value.facetValues
           : facetValues // ignore: cast_nullable_to_non_nullable
-              as List<FacetValueResult?>?,
-      items: freezed == items
+              as List<FacetValueResult>,
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<SearchResult?>?,
-      totalItems: freezed == totalItems
+              as List<SearchResult>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -94,10 +92,10 @@ abstract class _$$SearchResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<CollectionResult?>? collections,
-      List<FacetValueResult?>? facetValues,
-      List<SearchResult?>? items,
-      int? totalItems});
+      {List<CollectionResult> collections,
+      List<FacetValueResult> facetValues,
+      List<SearchResult> items,
+      int totalItems});
 }
 
 /// @nodoc
@@ -111,28 +109,28 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? collections = freezed,
-    Object? facetValues = freezed,
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? collections = null,
+    Object? facetValues = null,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$SearchResponseImpl(
-      collections: freezed == collections
+      collections: null == collections
           ? _value._collections
           : collections // ignore: cast_nullable_to_non_nullable
-              as List<CollectionResult?>?,
-      facetValues: freezed == facetValues
+              as List<CollectionResult>,
+      facetValues: null == facetValues
           ? _value._facetValues
           : facetValues // ignore: cast_nullable_to_non_nullable
-              as List<FacetValueResult?>?,
-      items: freezed == items
+              as List<FacetValueResult>,
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<SearchResult?>?,
-      totalItems: freezed == totalItems
+              as List<SearchResult>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -142,10 +140,10 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
 class _$SearchResponseImpl extends _SearchResponse
     with DiagnosticableTreeMixin {
   const _$SearchResponseImpl(
-      {final List<CollectionResult?>? collections,
-      final List<FacetValueResult?>? facetValues,
-      final List<SearchResult?>? items,
-      this.totalItems})
+      {required final List<CollectionResult> collections,
+      required final List<FacetValueResult> facetValues,
+      required final List<SearchResult> items,
+      required this.totalItems})
       : _collections = collections,
         _facetValues = facetValues,
         _items = items,
@@ -154,38 +152,32 @@ class _$SearchResponseImpl extends _SearchResponse
   factory _$SearchResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchResponseImplFromJson(json);
 
-  final List<CollectionResult?>? _collections;
+  final List<CollectionResult> _collections;
   @override
-  List<CollectionResult?>? get collections {
-    final value = _collections;
-    if (value == null) return null;
+  List<CollectionResult> get collections {
     if (_collections is EqualUnmodifiableListView) return _collections;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_collections);
   }
 
-  final List<FacetValueResult?>? _facetValues;
+  final List<FacetValueResult> _facetValues;
   @override
-  List<FacetValueResult?>? get facetValues {
-    final value = _facetValues;
-    if (value == null) return null;
+  List<FacetValueResult> get facetValues {
     if (_facetValues is EqualUnmodifiableListView) return _facetValues;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_facetValues);
   }
 
-  final List<SearchResult?>? _items;
+  final List<SearchResult> _items;
   @override
-  List<SearchResult?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<SearchResult> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -243,23 +235,23 @@ class _$SearchResponseImpl extends _SearchResponse
 
 abstract class _SearchResponse extends SearchResponse {
   const factory _SearchResponse(
-      {final List<CollectionResult?>? collections,
-      final List<FacetValueResult?>? facetValues,
-      final List<SearchResult?>? items,
-      final int? totalItems}) = _$SearchResponseImpl;
+      {required final List<CollectionResult> collections,
+      required final List<FacetValueResult> facetValues,
+      required final List<SearchResult> items,
+      required final int totalItems}) = _$SearchResponseImpl;
   const _SearchResponse._() : super._();
 
   factory _SearchResponse.fromJson(Map<String, dynamic> json) =
       _$SearchResponseImpl.fromJson;
 
   @override
-  List<CollectionResult?>? get collections;
+  List<CollectionResult> get collections;
   @override
-  List<FacetValueResult?>? get facetValues;
+  List<FacetValueResult> get facetValues;
   @override
-  List<SearchResult?>? get items;
+  List<SearchResult> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$SearchResponseImplCopyWith<_$SearchResponseImpl> get copyWith =>

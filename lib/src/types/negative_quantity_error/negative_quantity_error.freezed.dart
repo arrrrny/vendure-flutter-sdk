@@ -21,8 +21,8 @@ NegativeQuantityError _$NegativeQuantityErrorFromJson(
 
 /// @nodoc
 mixin _$NegativeQuantityError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $NegativeQuantityErrorCopyWith<$Res> {
           $Res Function(NegativeQuantityError) then) =
       _$NegativeQuantityErrorCopyWithImpl<$Res, NegativeQuantityError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -53,18 +53,18 @@ class _$NegativeQuantityErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$NegativeQuantityErrorImplCopyWith<$Res>
       __$$NegativeQuantityErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -93,18 +93,18 @@ class __$$NegativeQuantityErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$NegativeQuantityErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -113,15 +113,17 @@ class __$$NegativeQuantityErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NegativeQuantityErrorImpl extends _NegativeQuantityError
     with DiagnosticableTreeMixin {
-  const _$NegativeQuantityErrorImpl({this.errorCode, this.message}) : super._();
+  const _$NegativeQuantityErrorImpl(
+      {required this.errorCode, required this.message})
+      : super._();
 
   factory _$NegativeQuantityErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$NegativeQuantityErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -168,17 +170,17 @@ class _$NegativeQuantityErrorImpl extends _NegativeQuantityError
 
 abstract class _NegativeQuantityError extends NegativeQuantityError {
   const factory _NegativeQuantityError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$NegativeQuantityErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$NegativeQuantityErrorImpl;
   const _NegativeQuantityError._() : super._();
 
   factory _NegativeQuantityError.fromJson(Map<String, dynamic> json) =
       _$NegativeQuantityErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$NegativeQuantityErrorImplCopyWith<_$NegativeQuantityErrorImpl>

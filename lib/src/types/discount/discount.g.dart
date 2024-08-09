@@ -8,29 +8,21 @@ part of 'discount.dart';
 
 _$DiscountImpl _$$DiscountImplFromJson(Map<String, dynamic> json) =>
     _$DiscountImpl(
-      adjustmentSource: json['adjustmentSource'] as String?,
-      amount: (json['amount'] as num?)?.toDouble(),
-      amountWithTax: (json['amountWithTax'] as num?)?.toDouble(),
-      description: json['description'] as String?,
-      type: $enumDecodeNullable(_$AdjustmentTypeEnumMap, json['type']),
+      adjustmentSource: json['adjustmentSource'] as String,
+      amount: (json['amount'] as num).toDouble(),
+      amountWithTax: (json['amountWithTax'] as num).toDouble(),
+      description: json['description'] as String,
+      type: $enumDecode(_$AdjustmentTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$$DiscountImplToJson(_$DiscountImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('adjustmentSource', instance.adjustmentSource);
-  writeNotNull('amount', instance.amount);
-  writeNotNull('amountWithTax', instance.amountWithTax);
-  writeNotNull('description', instance.description);
-  writeNotNull('type', _$AdjustmentTypeEnumMap[instance.type]);
-  return val;
-}
+Map<String, dynamic> _$$DiscountImplToJson(_$DiscountImpl instance) =>
+    <String, dynamic>{
+      'adjustmentSource': instance.adjustmentSource,
+      'amount': instance.amount,
+      'amountWithTax': instance.amountWithTax,
+      'description': instance.description,
+      'type': _$AdjustmentTypeEnumMap[instance.type]!,
+    };
 
 const _$AdjustmentTypeEnumMap = {
   AdjustmentType.distributedOrderPromotion: 'distributedOrderPromotion',

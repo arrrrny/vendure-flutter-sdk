@@ -1,32 +1,28 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/asset/asset.dart';
-import 'package:vendure/src/types/discount/discount.dart';
-import 'package:vendure/src/types/fulfillment_line/fulfillment_line.dart';
-import 'package:vendure/src/types/order/order.dart';
-import 'package:vendure/src/types/product_variant/product_variant.dart';
-import 'package:vendure/src/types/tax_line/tax_line.dart';
+import '../asset/asset.dart';
+import '../discount/discount.dart';
+import '../fulfillment_line/fulfillment_line.dart';
+import '../order/order.dart';
+import '../product_variant/product_variant.dart';
+import '../tax_line/tax_line.dart';
 
 part 'order_line.freezed.dart';
 part 'order_line.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class OrderLine with _$OrderLine {
   const OrderLine._();
 
   const factory OrderLine({
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
 
     /// The price of the line including discounts, excluding tax
-    double? discountedLinePrice,
+    required double discountedLinePrice,
 
     /// The price of the line including discounts and tax
-    double? discountedLinePriceWithTax,
+    required double discountedLinePriceWithTax,
 
     /// The price of a single unit including discounts, excluding tax.
     ///
@@ -34,62 +30,62 @@ class OrderLine with _$OrderLine {
     /// actual taxable unit price (see `proratedUnitPrice`), but is generally the
     /// correct price to display to customers to avoid confusion
     /// about the internal handling of distributed Order-level discounts.
-    double? discountedUnitPrice,
+    required double discountedUnitPrice,
 
     /// The price of a single unit including discounts and tax
-    double? discountedUnitPriceWithTax,
-    List<Discount?>? discounts,
+    required double discountedUnitPriceWithTax,
+    required List<Discount> discounts,
     Asset? featuredAsset,
-    List<FulfillmentLine?>? fulfillmentLines,
-    String? id,
+    List<FulfillmentLine>? fulfillmentLines,
+    required String id,
 
     /// The total price of the line excluding tax and discounts.
-    double? linePrice,
+    required double linePrice,
 
     /// The total price of the line including tax but excluding discounts.
-    double? linePriceWithTax,
+    required double linePriceWithTax,
 
     /// The total tax on this line
-    double? lineTax,
-    Order? order,
+    required double lineTax,
+    required Order order,
 
     /// The quantity at the time the Order was placed
-    int? orderPlacedQuantity,
-    ProductVariant? productVariant,
+    required int orderPlacedQuantity,
+    required ProductVariant productVariant,
 
     /// The actual line price, taking into account both item discounts _and_ prorated (proportionally-distributed)
     /// Order-level discounts. This value is the true economic value of the OrderLine, and is used in tax
     /// and refund calculations.
-    double? proratedLinePrice,
+    required double proratedLinePrice,
 
     /// The proratedLinePrice including tax
-    double? proratedLinePriceWithTax,
+    required double proratedLinePriceWithTax,
 
     /// The actual unit price, taking into account both item discounts _and_ prorated (proportionally-distributed)
     /// Order-level discounts. This value is the true economic value of the OrderItem, and is used in tax
     /// and refund calculations.
-    double? proratedUnitPrice,
+    required double proratedUnitPrice,
 
     /// The proratedUnitPrice including tax
-    double? proratedUnitPriceWithTax,
+    required double proratedUnitPriceWithTax,
 
     /// The quantity of items purchased
-    int? quantity,
-    List<TaxLine?>? taxLines,
-    double? taxRate,
+    required int quantity,
+    required List<TaxLine> taxLines,
+    required double taxRate,
 
     /// The price of a single unit, excluding tax and discounts
-    double? unitPrice,
+    required double unitPrice,
 
     /// Non-zero if the unitPrice has changed since it was initially added to Order
-    double? unitPriceChangeSinceAdded,
+    required double unitPriceChangeSinceAdded,
 
     /// The price of a single unit, including tax but excluding discounts
-    double? unitPriceWithTax,
+    required double unitPriceWithTax,
 
     /// Non-zero if the unitPriceWithTax has changed since it was initially added to Order
-    double? unitPriceWithTaxChangeSinceAdded,
-    DateTime? updatedAt,
+    required double unitPriceWithTaxChangeSinceAdded,
+    required DateTime updatedAt,
   }) = _OrderLine;
 
   factory OrderLine.fromJson(Map<String, dynamic> json) =>

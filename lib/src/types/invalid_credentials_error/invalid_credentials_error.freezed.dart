@@ -21,9 +21,9 @@ InvalidCredentialsError _$InvalidCredentialsErrorFromJson(
 
 /// @nodoc
 mixin _$InvalidCredentialsError {
-  String? get authenticationError => throw _privateConstructorUsedError;
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  String get authenticationError => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,8 +37,7 @@ abstract class $InvalidCredentialsErrorCopyWith<$Res> {
           $Res Function(InvalidCredentialsError) then) =
       _$InvalidCredentialsErrorCopyWithImpl<$Res, InvalidCredentialsError>;
   @useResult
-  $Res call(
-      {String? authenticationError, ErrorCode? errorCode, String? message});
+  $Res call({String authenticationError, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -55,23 +54,23 @@ class _$InvalidCredentialsErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authenticationError = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? authenticationError = null,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      authenticationError: freezed == authenticationError
+      authenticationError: null == authenticationError
           ? _value.authenticationError
           : authenticationError // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -85,8 +84,7 @@ abstract class _$$InvalidCredentialsErrorImplCopyWith<$Res>
       __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? authenticationError, ErrorCode? errorCode, String? message});
+  $Res call({String authenticationError, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -102,23 +100,23 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authenticationError = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? authenticationError = null,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$InvalidCredentialsErrorImpl(
-      authenticationError: freezed == authenticationError
+      authenticationError: null == authenticationError
           ? _value.authenticationError
           : authenticationError // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -128,18 +126,20 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 class _$InvalidCredentialsErrorImpl extends _InvalidCredentialsError
     with DiagnosticableTreeMixin {
   const _$InvalidCredentialsErrorImpl(
-      {this.authenticationError, this.errorCode, this.message})
+      {required this.authenticationError,
+      required this.errorCode,
+      required this.message})
       : super._();
 
   factory _$InvalidCredentialsErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$InvalidCredentialsErrorImplFromJson(json);
 
   @override
-  final String? authenticationError;
+  final String authenticationError;
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -190,20 +190,20 @@ class _$InvalidCredentialsErrorImpl extends _InvalidCredentialsError
 
 abstract class _InvalidCredentialsError extends InvalidCredentialsError {
   const factory _InvalidCredentialsError(
-      {final String? authenticationError,
-      final ErrorCode? errorCode,
-      final String? message}) = _$InvalidCredentialsErrorImpl;
+      {required final String authenticationError,
+      required final ErrorCode errorCode,
+      required final String message}) = _$InvalidCredentialsErrorImpl;
   const _InvalidCredentialsError._() : super._();
 
   factory _InvalidCredentialsError.fromJson(Map<String, dynamic> json) =
       _$InvalidCredentialsErrorImpl.fromJson;
 
   @override
-  String? get authenticationError;
+  String get authenticationError;
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>

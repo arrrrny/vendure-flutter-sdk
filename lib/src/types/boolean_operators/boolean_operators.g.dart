@@ -14,16 +14,8 @@ _$BooleanOperatorsImpl _$$BooleanOperatorsImplFromJson(
     );
 
 Map<String, dynamic> _$$BooleanOperatorsImplToJson(
-    _$BooleanOperatorsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('eq', instance.eq);
-  writeNotNull('isNull', instance.isNull);
-  return val;
-}
+        _$BooleanOperatorsImpl instance) =>
+    <String, dynamic>{
+      'eq': instance.eq,
+      'isNull': instance.isNull,
+    };

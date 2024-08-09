@@ -1,20 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/facet_value_filter_input/facet_value_filter_input.dart';
-import 'package:vendure/src/types/search_result_sort_parameter/search_result_sort_parameter.dart';
+import '../facet_value_filter_input/facet_value_filter_input.dart';
+import '../search_result_sort_parameter/search_result_sort_parameter.dart';
 
 part 'search_input.freezed.dart';
 part 'search_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class SearchInput with _$SearchInput {
   const SearchInput._();
 
-  const factory SearchInput({
+  factory SearchInput({
     String? collectionId,
     String? collectionSlug,
     List<FacetValueFilterInput>? facetValueFilters,

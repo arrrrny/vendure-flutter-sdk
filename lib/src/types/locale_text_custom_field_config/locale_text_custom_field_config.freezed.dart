@@ -21,16 +21,16 @@ LocaleTextCustomFieldConfig _$LocaleTextCustomFieldConfigFromJson(
 
 /// @nodoc
 mixin _$LocaleTextCustomFieldConfig {
-  List<LocalizedString?>? get description => throw _privateConstructorUsedError;
+  List<LocalizedString>? get description => throw _privateConstructorUsedError;
   bool? get internal => throw _privateConstructorUsedError;
-  List<LocalizedString?>? get label => throw _privateConstructorUsedError;
-  bool? get list => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  List<LocalizedString>? get label => throw _privateConstructorUsedError;
+  bool get list => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   bool? get nullable => throw _privateConstructorUsedError;
   bool? get readonly => throw _privateConstructorUsedError;
-  List<Permission?>? get requiresPermission =>
+  List<Permission>? get requiresPermission =>
       throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,15 +48,15 @@ abstract class $LocaleTextCustomFieldConfigCopyWith<$Res> {
           LocaleTextCustomFieldConfig>;
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -77,19 +77,19 @@ class _$LocaleTextCustomFieldConfigCopyWithImpl<$Res,
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_value.copyWith(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -97,15 +97,15 @@ class _$LocaleTextCustomFieldConfigCopyWithImpl<$Res,
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -117,11 +117,11 @@ class _$LocaleTextCustomFieldConfigCopyWithImpl<$Res,
       requiresPermission: freezed == requiresPermission
           ? _value.requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -140,15 +140,15 @@ abstract class _$$LocaleTextCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -168,19 +168,19 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$LocaleTextCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -188,15 +188,15 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -208,11 +208,11 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -226,15 +226,15 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
 class _$LocaleTextCustomFieldConfigImpl extends _LocaleTextCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$LocaleTextCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
-      this.name,
+      final List<LocalizedString>? label,
+      required this.list,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui})
       : _description = description,
         _label = label,
@@ -246,9 +246,9 @@ class _$LocaleTextCustomFieldConfigImpl extends _LocaleTextCustomFieldConfig
           Map<String, dynamic> json) =>
       _$$LocaleTextCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -258,9 +258,9 @@ class _$LocaleTextCustomFieldConfigImpl extends _LocaleTextCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -269,16 +269,16 @@ class _$LocaleTextCustomFieldConfigImpl extends _LocaleTextCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -288,7 +288,7 @@ class _$LocaleTextCustomFieldConfigImpl extends _LocaleTextCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -376,15 +376,15 @@ class _$LocaleTextCustomFieldConfigImpl extends _LocaleTextCustomFieldConfig
 abstract class _LocaleTextCustomFieldConfig
     extends LocaleTextCustomFieldConfig {
   const factory _LocaleTextCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
-      final String? name,
+      final List<LocalizedString>? label,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$LocaleTextCustomFieldConfigImpl;
   const _LocaleTextCustomFieldConfig._() : super._();
 
@@ -392,23 +392,23 @@ abstract class _LocaleTextCustomFieldConfig
       _$LocaleTextCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override

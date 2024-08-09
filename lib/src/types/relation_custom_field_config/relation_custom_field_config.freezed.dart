@@ -21,18 +21,18 @@ RelationCustomFieldConfig _$RelationCustomFieldConfigFromJson(
 
 /// @nodoc
 mixin _$RelationCustomFieldConfig {
-  List<LocalizedString?>? get description => throw _privateConstructorUsedError;
-  String? get entity => throw _privateConstructorUsedError;
+  List<LocalizedString>? get description => throw _privateConstructorUsedError;
+  String get entity => throw _privateConstructorUsedError;
   bool? get internal => throw _privateConstructorUsedError;
-  List<LocalizedString?>? get label => throw _privateConstructorUsedError;
-  bool? get list => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  List<LocalizedString>? get label => throw _privateConstructorUsedError;
+  bool get list => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   bool? get nullable => throw _privateConstructorUsedError;
   bool? get readonly => throw _privateConstructorUsedError;
-  List<Permission?>? get requiresPermission =>
+  List<Permission>? get requiresPermission =>
       throw _privateConstructorUsedError;
-  List<String?>? get scalarFields => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
+  List<String> get scalarFields => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,17 +48,17 @@ abstract class $RelationCustomFieldConfigCopyWith<$Res> {
       _$RelationCustomFieldConfigCopyWithImpl<$Res, RelationCustomFieldConfig>;
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
-      String? entity,
+      {List<LocalizedString>? description,
+      String entity,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      List<String?>? scalarFields,
-      String? type,
+      List<Permission>? requiresPermission,
+      List<String> scalarFields,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -77,27 +77,27 @@ class _$RelationCustomFieldConfigCopyWithImpl<$Res,
   @override
   $Res call({
     Object? description = freezed,
-    Object? entity = freezed,
+    Object? entity = null,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? scalarFields = freezed,
-    Object? type = freezed,
+    Object? scalarFields = null,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_value.copyWith(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      entity: freezed == entity
+              as List<LocalizedString>?,
+      entity: null == entity
           ? _value.entity
           : entity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -105,15 +105,15 @@ class _$RelationCustomFieldConfigCopyWithImpl<$Res,
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -125,15 +125,15 @@ class _$RelationCustomFieldConfigCopyWithImpl<$Res,
       requiresPermission: freezed == requiresPermission
           ? _value.requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      scalarFields: freezed == scalarFields
+              as List<Permission>?,
+      scalarFields: null == scalarFields
           ? _value.scalarFields
           : scalarFields // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      type: freezed == type
+              as List<String>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -152,17 +152,17 @@ abstract class _$$RelationCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
-      String? entity,
+      {List<LocalizedString>? description,
+      String entity,
       bool? internal,
-      List<LocalizedString?>? label,
-      bool? list,
-      String? name,
+      List<LocalizedString>? label,
+      bool list,
+      String name,
       bool? nullable,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      List<String?>? scalarFields,
-      String? type,
+      List<Permission>? requiresPermission,
+      List<String> scalarFields,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -180,27 +180,27 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? description = freezed,
-    Object? entity = freezed,
+    Object? entity = null,
     Object? internal = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? scalarFields = freezed,
-    Object? type = freezed,
+    Object? scalarFields = null,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$RelationCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      entity: freezed == entity
+              as List<LocalizedString>?,
+      entity: null == entity
           ? _value.entity
           : entity // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -208,15 +208,15 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
-      list: freezed == list
+              as List<LocalizedString>?,
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -228,15 +228,15 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      scalarFields: freezed == scalarFields
+              as List<Permission>?,
+      scalarFields: null == scalarFields
           ? _value._scalarFields
           : scalarFields // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
-      type: freezed == type
+              as List<String>,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -250,17 +250,17 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
 class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$RelationCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
-      this.entity,
+      {final List<LocalizedString>? description,
+      required this.entity,
       this.internal,
-      final List<LocalizedString?>? label,
-      this.list,
-      this.name,
+      final List<LocalizedString>? label,
+      required this.list,
+      required this.name,
       this.nullable,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      final List<String?>? scalarFields,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required final List<String> scalarFields,
+      required this.type,
       final Map<String, dynamic>? ui})
       : _description = description,
         _label = label,
@@ -272,9 +272,9 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
   factory _$RelationCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$RelationCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -283,12 +283,12 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
   }
 
   @override
-  final String? entity;
+  final String entity;
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -297,16 +297,16 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
   }
 
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -315,18 +315,16 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String?>? _scalarFields;
+  final List<String> _scalarFields;
   @override
-  List<String?>? get scalarFields {
-    final value = _scalarFields;
-    if (value == null) return null;
+  List<String> get scalarFields {
     if (_scalarFields is EqualUnmodifiableListView) return _scalarFields;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_scalarFields);
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -420,17 +418,17 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
 
 abstract class _RelationCustomFieldConfig extends RelationCustomFieldConfig {
   const factory _RelationCustomFieldConfig(
-      {final List<LocalizedString?>? description,
-      final String? entity,
+      {final List<LocalizedString>? description,
+      required final String entity,
       final bool? internal,
-      final List<LocalizedString?>? label,
-      final bool? list,
-      final String? name,
+      final List<LocalizedString>? label,
+      required final bool list,
+      required final String name,
       final bool? nullable,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final List<String?>? scalarFields,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final List<String> scalarFields,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$RelationCustomFieldConfigImpl;
   const _RelationCustomFieldConfig._() : super._();
 
@@ -438,27 +436,27 @@ abstract class _RelationCustomFieldConfig extends RelationCustomFieldConfig {
       _$RelationCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
-  String? get entity;
+  String get entity;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  List<String?>? get scalarFields;
+  List<String> get scalarFields;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override

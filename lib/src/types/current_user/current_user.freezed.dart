@@ -20,9 +20,9 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CurrentUser {
-  List<CurrentUserChannel?>? get channels => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get identifier => throw _privateConstructorUsedError;
+  List<CurrentUserChannel> get channels => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get identifier => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,8 +36,7 @@ abstract class $CurrentUserCopyWith<$Res> {
           CurrentUser value, $Res Function(CurrentUser) then) =
       _$CurrentUserCopyWithImpl<$Res, CurrentUser>;
   @useResult
-  $Res call(
-      {List<CurrentUserChannel?>? channels, String? id, String? identifier});
+  $Res call({List<CurrentUserChannel> channels, String id, String identifier});
 }
 
 /// @nodoc
@@ -53,23 +52,23 @@ class _$CurrentUserCopyWithImpl<$Res, $Val extends CurrentUser>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channels = freezed,
-    Object? id = freezed,
-    Object? identifier = freezed,
+    Object? channels = null,
+    Object? id = null,
+    Object? identifier = null,
   }) {
     return _then(_value.copyWith(
-      channels: freezed == channels
+      channels: null == channels
           ? _value.channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<CurrentUserChannel?>?,
-      id: freezed == id
+              as List<CurrentUserChannel>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
+              as String,
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -82,8 +81,7 @@ abstract class _$$CurrentUserImplCopyWith<$Res>
       __$$CurrentUserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<CurrentUserChannel?>? channels, String? id, String? identifier});
+  $Res call({List<CurrentUserChannel> channels, String id, String identifier});
 }
 
 /// @nodoc
@@ -97,23 +95,23 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channels = freezed,
-    Object? id = freezed,
-    Object? identifier = freezed,
+    Object? channels = null,
+    Object? id = null,
+    Object? identifier = null,
   }) {
     return _then(_$CurrentUserImpl(
-      channels: freezed == channels
+      channels: null == channels
           ? _value._channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<CurrentUserChannel?>?,
-      id: freezed == id
+              as List<CurrentUserChannel>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
+              as String,
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -122,27 +120,27 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CurrentUserImpl extends _CurrentUser with DiagnosticableTreeMixin {
   const _$CurrentUserImpl(
-      {final List<CurrentUserChannel?>? channels, this.id, this.identifier})
+      {required final List<CurrentUserChannel> channels,
+      required this.id,
+      required this.identifier})
       : _channels = channels,
         super._();
 
   factory _$CurrentUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$CurrentUserImplFromJson(json);
 
-  final List<CurrentUserChannel?>? _channels;
+  final List<CurrentUserChannel> _channels;
   @override
-  List<CurrentUserChannel?>? get channels {
-    final value = _channels;
-    if (value == null) return null;
+  List<CurrentUserChannel> get channels {
     if (_channels is EqualUnmodifiableListView) return _channels;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_channels);
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? identifier;
+  final String identifier;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -191,20 +189,20 @@ class _$CurrentUserImpl extends _CurrentUser with DiagnosticableTreeMixin {
 
 abstract class _CurrentUser extends CurrentUser {
   const factory _CurrentUser(
-      {final List<CurrentUserChannel?>? channels,
-      final String? id,
-      final String? identifier}) = _$CurrentUserImpl;
+      {required final List<CurrentUserChannel> channels,
+      required final String id,
+      required final String identifier}) = _$CurrentUserImpl;
   const _CurrentUser._() : super._();
 
   factory _CurrentUser.fromJson(Map<String, dynamic> json) =
       _$CurrentUserImpl.fromJson;
 
   @override
-  List<CurrentUserChannel?>? get channels;
+  List<CurrentUserChannel> get channels;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get identifier;
+  String get identifier;
   @override
   @JsonKey(ignore: true)
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>

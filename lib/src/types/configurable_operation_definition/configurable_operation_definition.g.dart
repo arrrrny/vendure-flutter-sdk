@@ -9,27 +9,18 @@ part of 'configurable_operation_definition.dart';
 _$ConfigurableOperationDefinitionImpl
     _$$ConfigurableOperationDefinitionImplFromJson(Map<String, dynamic> json) =>
         _$ConfigurableOperationDefinitionImpl(
-          args: (json['args'] as List<dynamic>?)
-              ?.map((e) => e == null
-                  ? null
-                  : ConfigArgDefinition.fromJson(e as Map<String, dynamic>))
+          args: (json['args'] as List<dynamic>)
+              .map((e) =>
+                  ConfigArgDefinition.fromJson(e as Map<String, dynamic>))
               .toList(),
-          code: json['code'] as String?,
-          description: json['description'] as String?,
+          code: json['code'] as String,
+          description: json['description'] as String,
         );
 
 Map<String, dynamic> _$$ConfigurableOperationDefinitionImplToJson(
-    _$ConfigurableOperationDefinitionImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('args', instance.args?.map((e) => e?.toJson()).toList());
-  writeNotNull('code', instance.code);
-  writeNotNull('description', instance.description);
-  return val;
-}
+        _$ConfigurableOperationDefinitionImpl instance) =>
+    <String, dynamic>{
+      'args': instance.args,
+      'code': instance.code,
+      'description': instance.description,
+    };

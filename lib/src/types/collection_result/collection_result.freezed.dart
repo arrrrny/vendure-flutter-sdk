@@ -20,8 +20,8 @@ CollectionResult _$CollectionResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CollectionResult {
-  Collection? get collection => throw _privateConstructorUsedError;
-  int? get count => throw _privateConstructorUsedError;
+  Collection get collection => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,9 +35,9 @@ abstract class $CollectionResultCopyWith<$Res> {
           CollectionResult value, $Res Function(CollectionResult) then) =
       _$CollectionResultCopyWithImpl<$Res, CollectionResult>;
   @useResult
-  $Res call({Collection? collection, int? count});
+  $Res call({Collection collection, int count});
 
-  $CollectionCopyWith<$Res>? get collection;
+  $CollectionCopyWith<$Res> get collection;
 }
 
 /// @nodoc
@@ -53,29 +53,25 @@ class _$CollectionResultCopyWithImpl<$Res, $Val extends CollectionResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? collection = freezed,
-    Object? count = freezed,
+    Object? collection = null,
+    Object? count = null,
   }) {
     return _then(_value.copyWith(
-      collection: freezed == collection
+      collection: null == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
-              as Collection?,
-      count: freezed == count
+              as Collection,
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CollectionCopyWith<$Res>? get collection {
-    if (_value.collection == null) {
-      return null;
-    }
-
-    return $CollectionCopyWith<$Res>(_value.collection!, (value) {
+  $CollectionCopyWith<$Res> get collection {
+    return $CollectionCopyWith<$Res>(_value.collection, (value) {
       return _then(_value.copyWith(collection: value) as $Val);
     });
   }
@@ -89,10 +85,10 @@ abstract class _$$CollectionResultImplCopyWith<$Res>
       __$$CollectionResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Collection? collection, int? count});
+  $Res call({Collection collection, int count});
 
   @override
-  $CollectionCopyWith<$Res>? get collection;
+  $CollectionCopyWith<$Res> get collection;
 }
 
 /// @nodoc
@@ -106,18 +102,18 @@ class __$$CollectionResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? collection = freezed,
-    Object? count = freezed,
+    Object? collection = null,
+    Object? count = null,
   }) {
     return _then(_$CollectionResultImpl(
-      collection: freezed == collection
+      collection: null == collection
           ? _value.collection
           : collection // ignore: cast_nullable_to_non_nullable
-              as Collection?,
-      count: freezed == count
+              as Collection,
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -126,15 +122,16 @@ class __$$CollectionResultImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionResultImpl extends _CollectionResult
     with DiagnosticableTreeMixin {
-  const _$CollectionResultImpl({this.collection, this.count}) : super._();
+  const _$CollectionResultImpl({required this.collection, required this.count})
+      : super._();
 
   factory _$CollectionResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$CollectionResultImplFromJson(json);
 
   @override
-  final Collection? collection;
+  final Collection collection;
   @override
-  final int? count;
+  final int count;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -181,17 +178,17 @@ class _$CollectionResultImpl extends _CollectionResult
 
 abstract class _CollectionResult extends CollectionResult {
   const factory _CollectionResult(
-      {final Collection? collection,
-      final int? count}) = _$CollectionResultImpl;
+      {required final Collection collection,
+      required final int count}) = _$CollectionResultImpl;
   const _CollectionResult._() : super._();
 
   factory _CollectionResult.fromJson(Map<String, dynamic> json) =
       _$CollectionResultImpl.fromJson;
 
   @override
-  Collection? get collection;
+  Collection get collection;
   @override
-  int? get count;
+  int get count;
   @override
   @JsonKey(ignore: true)
   _$$CollectionResultImplCopyWith<_$CollectionResultImpl> get copyWith =>

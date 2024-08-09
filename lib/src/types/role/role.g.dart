@@ -7,43 +7,30 @@ part of 'role.dart';
 // **************************************************************************
 
 _$RoleImpl _$$RoleImplFromJson(Map<String, dynamic> json) => _$RoleImpl(
-      channels: (json['channels'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Channel.fromJson(e as Map<String, dynamic>))
+      channels: (json['channels'] as List<dynamic>)
+          .map((e) => Channel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      description: json['description'] as String?,
-      id: json['id'] as String?,
-      permissions: (json['permissions'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+      code: json['code'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      description: json['description'] as String,
+      id: json['id'] as String,
+      permissions: (json['permissions'] as List<dynamic>)
+          .map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$RoleImplToJson(_$RoleImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('channels', instance.channels?.map((e) => e?.toJson()).toList());
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('description', instance.description);
-  writeNotNull('id', instance.id);
-  writeNotNull('permissions',
-      instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$RoleImplToJson(_$RoleImpl instance) =>
+    <String, dynamic>{
+      'channels': instance.channels,
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'description': instance.description,
+      'id': instance.id,
+      'permissions':
+          instance.permissions.map((e) => _$PermissionEnumMap[e]!).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

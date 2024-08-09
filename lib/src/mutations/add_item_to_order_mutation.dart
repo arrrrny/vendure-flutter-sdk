@@ -1,10 +1,12 @@
-import 'package:vendure/src/fragments/active_order_fragment.dart';
+import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String addItemToOrderMutation = activeOrderFragment +
+const String addItemToOrderMutation = orderFragment +
     r'''
 mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
   addItemToOrder(productVariantId: $productVariantId, quantity: $quantity) {
-    ...ActiveOrder
+    ... on Order {
+      ...Order
+    }
     ... on ErrorResult {
       errorCode
       message
@@ -12,7 +14,7 @@ mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
     ... on InsufficientStockError {
       quantityAvailable
       order {
-        ...ActiveOrder
+        ...Order
       }
       errorCode
       message

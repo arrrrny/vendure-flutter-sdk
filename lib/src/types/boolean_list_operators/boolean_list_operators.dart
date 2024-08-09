@@ -3,17 +3,14 @@ import 'package:flutter/foundation.dart';
 part 'boolean_list_operators.freezed.dart';
 part 'boolean_list_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class BooleanListOperators with _$BooleanListOperators {
   const BooleanListOperators._();
 
-  const factory BooleanListOperators({
+  factory BooleanListOperators({
     required bool inList,
   }) = _BooleanListOperators;
 
-  factory BooleanListOperators.fromJson(Map<String, dynamic> json) => _$BooleanListOperatorsFromJson(json);
+  factory BooleanListOperators.fromJson(Map<String, dynamic> json) =>
+      _$BooleanListOperatorsFromJson(json);
 }

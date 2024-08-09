@@ -9,30 +9,20 @@ part of 'insufficient_stock_error.dart';
 _$InsufficientStockErrorImpl _$$InsufficientStockErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$InsufficientStockErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
-      order: json['order'] == null
-          ? null
-          : Order.fromJson(json['order'] as Map<String, dynamic>),
-      quantityAvailable: (json['quantityAvailable'] as num?)?.toInt(),
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
+      order: Order.fromJson(json['order'] as Map<String, dynamic>),
+      quantityAvailable: (json['quantityAvailable'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$InsufficientStockErrorImplToJson(
-    _$InsufficientStockErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  writeNotNull('order', instance.order?.toJson());
-  writeNotNull('quantityAvailable', instance.quantityAvailable);
-  return val;
-}
+        _$InsufficientStockErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+      'order': instance.order,
+      'quantityAvailable': instance.quantityAvailable,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

@@ -21,8 +21,8 @@ IneligibleShippingMethodError _$IneligibleShippingMethodErrorFromJson(
 
 /// @nodoc
 mixin _$IneligibleShippingMethodError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $IneligibleShippingMethodErrorCopyWith<$Res> {
       _$IneligibleShippingMethodErrorCopyWithImpl<$Res,
           IneligibleShippingMethodError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -55,18 +55,18 @@ class _$IneligibleShippingMethodErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$IneligibleShippingMethodErrorImplCopyWith<$Res>
       __$$IneligibleShippingMethodErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -96,18 +96,18 @@ class __$$IneligibleShippingMethodErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$IneligibleShippingMethodErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -116,7 +116,8 @@ class __$$IneligibleShippingMethodErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IneligibleShippingMethodErrorImpl extends _IneligibleShippingMethodError
     with DiagnosticableTreeMixin {
-  const _$IneligibleShippingMethodErrorImpl({this.errorCode, this.message})
+  const _$IneligibleShippingMethodErrorImpl(
+      {required this.errorCode, required this.message})
       : super._();
 
   factory _$IneligibleShippingMethodErrorImpl.fromJson(
@@ -124,9 +125,9 @@ class _$IneligibleShippingMethodErrorImpl extends _IneligibleShippingMethodError
       _$$IneligibleShippingMethodErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,17 +176,17 @@ class _$IneligibleShippingMethodErrorImpl extends _IneligibleShippingMethodError
 abstract class _IneligibleShippingMethodError
     extends IneligibleShippingMethodError {
   const factory _IneligibleShippingMethodError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$IneligibleShippingMethodErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$IneligibleShippingMethodErrorImpl;
   const _IneligibleShippingMethodError._() : super._();
 
   factory _IneligibleShippingMethodError.fromJson(Map<String, dynamic> json) =
       _$IneligibleShippingMethodErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$IneligibleShippingMethodErrorImplCopyWith<

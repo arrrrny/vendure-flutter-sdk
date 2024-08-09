@@ -20,8 +20,8 @@ TaxRateList _$TaxRateListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaxRateList {
-  List<TaxRate?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<TaxRate> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $TaxRateListCopyWith<$Res> {
           TaxRateList value, $Res Function(TaxRateList) then) =
       _$TaxRateListCopyWithImpl<$Res, TaxRateList>;
   @useResult
-  $Res call({List<TaxRate?>? items, int? totalItems});
+  $Res call({List<TaxRate> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$TaxRateListCopyWithImpl<$Res, $Val extends TaxRateList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<TaxRate?>?,
-      totalItems: freezed == totalItems
+              as List<TaxRate>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$TaxRateListImplCopyWith<$Res>
       __$$TaxRateListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<TaxRate?>? items, int? totalItems});
+  $Res call({List<TaxRate> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$TaxRateListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$TaxRateListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<TaxRate?>?,
-      totalItems: freezed == totalItems
+              as List<TaxRate>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -108,25 +108,24 @@ class __$$TaxRateListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TaxRateListImpl extends _TaxRateList with DiagnosticableTreeMixin {
-  const _$TaxRateListImpl({final List<TaxRate?>? items, this.totalItems})
+  const _$TaxRateListImpl(
+      {required final List<TaxRate> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$TaxRateListImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaxRateListImplFromJson(json);
 
-  final List<TaxRate?>? _items;
+  final List<TaxRate> _items;
   @override
-  List<TaxRate?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<TaxRate> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -173,16 +172,17 @@ class _$TaxRateListImpl extends _TaxRateList with DiagnosticableTreeMixin {
 
 abstract class _TaxRateList extends TaxRateList {
   const factory _TaxRateList(
-      {final List<TaxRate?>? items, final int? totalItems}) = _$TaxRateListImpl;
+      {required final List<TaxRate> items,
+      required final int totalItems}) = _$TaxRateListImpl;
   const _TaxRateList._() : super._();
 
   factory _TaxRateList.fromJson(Map<String, dynamic> json) =
       _$TaxRateListImpl.fromJson;
 
   @override
-  List<TaxRate?>? get items;
+  List<TaxRate> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$TaxRateListImplCopyWith<_$TaxRateListImpl> get copyWith =>

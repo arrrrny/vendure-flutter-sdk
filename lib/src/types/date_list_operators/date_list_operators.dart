@@ -3,18 +3,15 @@ import 'package:flutter/foundation.dart';
 part 'date_list_operators.freezed.dart';
 part 'date_list_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class DateListOperators with _$DateListOperators {
   const DateListOperators._();
 
-/// Operators for filtering on a list of Date fields
-  const factory DateListOperators({
+  /// Operators for filtering on a list of Date fields
+  factory DateListOperators({
     required DateTime inList,
   }) = _DateListOperators;
 
-  factory DateListOperators.fromJson(Map<String, dynamic> json) => _$DateListOperatorsFromJson(json);
+  factory DateListOperators.fromJson(Map<String, dynamic> json) =>
+      _$DateListOperatorsFromJson(json);
 }

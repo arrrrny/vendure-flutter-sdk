@@ -1,30 +1,26 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/authentication_method/authentication_method.dart';
-import 'package:vendure/src/types/role/role.dart';
-import 'package:vendure/src/types/user_custom_fields/user_custom_fields.dart';
+import '../authentication_method/authentication_method.dart';
+import '../role/role.dart';
+import '../user_custom_fields/user_custom_fields.dart';
 
 part 'user.freezed.dart';
 part 'user.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class User with _$User {
   const User._();
 
   const factory User({
-    List<AuthenticationMethod?>? authenticationMethods,
-    DateTime? createdAt,
+    required List<AuthenticationMethod> authenticationMethods,
+    required DateTime createdAt,
     UserCustomFields? customFields,
-    String? id,
-    String? identifier,
+    required String id,
+    required String identifier,
     DateTime? lastLogin,
-    List<Role?>? roles,
-    DateTime? updatedAt,
-    bool? verified,
+    required List<Role> roles,
+    required DateTime updatedAt,
+    required bool verified,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

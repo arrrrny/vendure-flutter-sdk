@@ -20,8 +20,8 @@ FacetValueResult _$FacetValueResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FacetValueResult {
-  int? get count => throw _privateConstructorUsedError;
-  FacetValue? get facetValue => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
+  FacetValue get facetValue => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,9 +35,9 @@ abstract class $FacetValueResultCopyWith<$Res> {
           FacetValueResult value, $Res Function(FacetValueResult) then) =
       _$FacetValueResultCopyWithImpl<$Res, FacetValueResult>;
   @useResult
-  $Res call({int? count, FacetValue? facetValue});
+  $Res call({int count, FacetValue facetValue});
 
-  $FacetValueCopyWith<$Res>? get facetValue;
+  $FacetValueCopyWith<$Res> get facetValue;
 }
 
 /// @nodoc
@@ -53,29 +53,25 @@ class _$FacetValueResultCopyWithImpl<$Res, $Val extends FacetValueResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = freezed,
-    Object? facetValue = freezed,
+    Object? count = null,
+    Object? facetValue = null,
   }) {
     return _then(_value.copyWith(
-      count: freezed == count
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int?,
-      facetValue: freezed == facetValue
+              as int,
+      facetValue: null == facetValue
           ? _value.facetValue
           : facetValue // ignore: cast_nullable_to_non_nullable
-              as FacetValue?,
+              as FacetValue,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $FacetValueCopyWith<$Res>? get facetValue {
-    if (_value.facetValue == null) {
-      return null;
-    }
-
-    return $FacetValueCopyWith<$Res>(_value.facetValue!, (value) {
+  $FacetValueCopyWith<$Res> get facetValue {
+    return $FacetValueCopyWith<$Res>(_value.facetValue, (value) {
       return _then(_value.copyWith(facetValue: value) as $Val);
     });
   }
@@ -89,10 +85,10 @@ abstract class _$$FacetValueResultImplCopyWith<$Res>
       __$$FacetValueResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? count, FacetValue? facetValue});
+  $Res call({int count, FacetValue facetValue});
 
   @override
-  $FacetValueCopyWith<$Res>? get facetValue;
+  $FacetValueCopyWith<$Res> get facetValue;
 }
 
 /// @nodoc
@@ -106,18 +102,18 @@ class __$$FacetValueResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? count = freezed,
-    Object? facetValue = freezed,
+    Object? count = null,
+    Object? facetValue = null,
   }) {
     return _then(_$FacetValueResultImpl(
-      count: freezed == count
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int?,
-      facetValue: freezed == facetValue
+              as int,
+      facetValue: null == facetValue
           ? _value.facetValue
           : facetValue // ignore: cast_nullable_to_non_nullable
-              as FacetValue?,
+              as FacetValue,
     ));
   }
 }
@@ -126,15 +122,16 @@ class __$$FacetValueResultImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetValueResultImpl extends _FacetValueResult
     with DiagnosticableTreeMixin {
-  const _$FacetValueResultImpl({this.count, this.facetValue}) : super._();
+  const _$FacetValueResultImpl({required this.count, required this.facetValue})
+      : super._();
 
   factory _$FacetValueResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$FacetValueResultImplFromJson(json);
 
   @override
-  final int? count;
+  final int count;
   @override
-  final FacetValue? facetValue;
+  final FacetValue facetValue;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -181,17 +178,17 @@ class _$FacetValueResultImpl extends _FacetValueResult
 
 abstract class _FacetValueResult extends FacetValueResult {
   const factory _FacetValueResult(
-      {final int? count,
-      final FacetValue? facetValue}) = _$FacetValueResultImpl;
+      {required final int count,
+      required final FacetValue facetValue}) = _$FacetValueResultImpl;
   const _FacetValueResult._() : super._();
 
   factory _FacetValueResult.fromJson(Map<String, dynamic> json) =
       _$FacetValueResultImpl.fromJson;
 
   @override
-  int? get count;
+  int get count;
   @override
-  FacetValue? get facetValue;
+  FacetValue get facetValue;
   @override
   @JsonKey(ignore: true)
   _$$FacetValueResultImplCopyWith<_$FacetValueResultImpl> get copyWith =>

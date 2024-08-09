@@ -23,11 +23,11 @@ mixin _$ConfigArgDefinition {
   Map<String, dynamic>? get defaultValue => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get label => throw _privateConstructorUsedError;
-  bool? get list => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  bool get list => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'required')
-  bool? get required_ => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
+  bool get required_ => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,10 +46,10 @@ abstract class $ConfigArgDefinitionCopyWith<$Res> {
       {Map<String, dynamic>? defaultValue,
       String? description,
       String? label,
-      bool? list,
-      String? name,
-      @JsonKey(name: 'required') bool? required_,
-      String? type,
+      bool list,
+      String name,
+      @JsonKey(name: 'required') bool required_,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -69,10 +69,10 @@ class _$ConfigArgDefinitionCopyWithImpl<$Res, $Val extends ConfigArgDefinition>
     Object? defaultValue = freezed,
     Object? description = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
-    Object? required_ = freezed,
-    Object? type = freezed,
+    Object? list = null,
+    Object? name = null,
+    Object? required_ = null,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_value.copyWith(
@@ -88,22 +88,22 @@ class _$ConfigArgDefinitionCopyWithImpl<$Res, $Val extends ConfigArgDefinition>
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
-      list: freezed == list
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required_: freezed == required_
+              as String,
+      required_: null == required_
           ? _value.required_
           : required_ // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      type: freezed == type
+              as bool,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -124,10 +124,10 @@ abstract class _$$ConfigArgDefinitionImplCopyWith<$Res>
       {Map<String, dynamic>? defaultValue,
       String? description,
       String? label,
-      bool? list,
-      String? name,
-      @JsonKey(name: 'required') bool? required_,
-      String? type,
+      bool list,
+      String name,
+      @JsonKey(name: 'required') bool required_,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -145,10 +145,10 @@ class __$$ConfigArgDefinitionImplCopyWithImpl<$Res>
     Object? defaultValue = freezed,
     Object? description = freezed,
     Object? label = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
-    Object? required_ = freezed,
-    Object? type = freezed,
+    Object? list = null,
+    Object? name = null,
+    Object? required_ = null,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$ConfigArgDefinitionImpl(
@@ -164,22 +164,22 @@ class __$$ConfigArgDefinitionImplCopyWithImpl<$Res>
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
               as String?,
-      list: freezed == list
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      required_: freezed == required_
+              as String,
+      required_: null == required_
           ? _value.required_
           : required_ // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      type: freezed == type
+              as bool,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -196,10 +196,10 @@ class _$ConfigArgDefinitionImpl extends _ConfigArgDefinition
       {final Map<String, dynamic>? defaultValue,
       this.description,
       this.label,
-      this.list,
-      this.name,
-      @JsonKey(name: 'required') this.required_,
-      this.type,
+      required this.list,
+      required this.name,
+      @JsonKey(name: 'required') required this.required_,
+      required this.type,
       final Map<String, dynamic>? ui})
       : _defaultValue = defaultValue,
         _ui = ui,
@@ -223,14 +223,14 @@ class _$ConfigArgDefinitionImpl extends _ConfigArgDefinition
   @override
   final String? label;
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   @JsonKey(name: 'required')
-  final bool? required_;
+  final bool required_;
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -312,10 +312,10 @@ abstract class _ConfigArgDefinition extends ConfigArgDefinition {
       {final Map<String, dynamic>? defaultValue,
       final String? description,
       final String? label,
-      final bool? list,
-      final String? name,
-      @JsonKey(name: 'required') final bool? required_,
-      final String? type,
+      required final bool list,
+      required final String name,
+      @JsonKey(name: 'required') required final bool required_,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$ConfigArgDefinitionImpl;
   const _ConfigArgDefinition._() : super._();
 
@@ -329,14 +329,14 @@ abstract class _ConfigArgDefinition extends ConfigArgDefinition {
   @override
   String? get label;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   @JsonKey(name: 'required')
-  bool? get required_;
+  bool get required_;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override

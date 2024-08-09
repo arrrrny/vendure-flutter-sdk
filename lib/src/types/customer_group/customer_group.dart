@@ -1,25 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/customer_list/customer_list.dart';
+import '../customer_list/customer_list.dart';
 
 part 'customer_group.freezed.dart';
 part 'customer_group.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class CustomerGroup with _$CustomerGroup {
   const CustomerGroup._();
 
   const factory CustomerGroup({
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    CustomerList? customers,
-    String? id,
-    String? name,
-    DateTime? updatedAt,
+    required CustomerList customers,
+    required String id,
+    required String name,
+    required DateTime updatedAt,
   }) = _CustomerGroup;
 
   factory CustomerGroup.fromJson(Map<String, dynamic> json) =>

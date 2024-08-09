@@ -10,25 +10,17 @@ _$IneligiblePaymentMethodErrorImpl _$$IneligiblePaymentMethodErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$IneligiblePaymentMethodErrorImpl(
       eligibilityCheckerMessage: json['eligibilityCheckerMessage'] as String?,
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$IneligiblePaymentMethodErrorImplToJson(
-    _$IneligiblePaymentMethodErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('eligibilityCheckerMessage', instance.eligibilityCheckerMessage);
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$IneligiblePaymentMethodErrorImpl instance) =>
+    <String, dynamic>{
+      'eligibilityCheckerMessage': instance.eligibilityCheckerMessage,
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

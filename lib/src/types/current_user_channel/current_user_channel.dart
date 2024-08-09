@@ -1,23 +1,19 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/permission/permission.dart';
+import '../types/permission/permission.dart';
 
 part 'current_user_channel.freezed.dart';
 part 'current_user_channel.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class CurrentUserChannel with _$CurrentUserChannel {
   const CurrentUserChannel._();
 
   const factory CurrentUserChannel({
-    String? code,
-    String? id,
-    List<Permission?>? permissions,
-    String? token,
+    required String code,
+    required String id,
+    required List<Permission> permissions,
+    required String token,
   }) = _CurrentUserChannel;
 
   factory CurrentUserChannel.fromJson(Map<String, dynamic> json) =>

@@ -21,9 +21,13 @@ ConfigArgInput _$ConfigArgInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ConfigArgInput {
   String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
 
   /// A JSON stringified representation of the actual value
   String get value => throw _privateConstructorUsedError;
+
+  /// A JSON stringified representation of the actual value
+  set value(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -111,18 +115,17 @@ class __$$ConfigArgInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigArgInputImpl extends _ConfigArgInput
     with DiagnosticableTreeMixin {
-  const _$ConfigArgInputImpl({required this.name, required this.value})
-      : super._();
+  _$ConfigArgInputImpl({required this.name, required this.value}) : super._();
 
   factory _$ConfigArgInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigArgInputImplFromJson(json);
 
   @override
-  final String name;
+  String name;
 
   /// A JSON stringified representation of the actual value
   @override
-  final String value;
+  String value;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -137,19 +140,6 @@ class _$ConfigArgInputImpl extends _ConfigArgInput
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('value', value));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ConfigArgInputImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, value);
 
   @JsonKey(ignore: true)
   @override
@@ -167,20 +157,23 @@ class _$ConfigArgInputImpl extends _ConfigArgInput
 }
 
 abstract class _ConfigArgInput extends ConfigArgInput {
-  const factory _ConfigArgInput(
-      {required final String name,
-      required final String value}) = _$ConfigArgInputImpl;
-  const _ConfigArgInput._() : super._();
+  factory _ConfigArgInput({required String name, required String value}) =
+      _$ConfigArgInputImpl;
+  _ConfigArgInput._() : super._();
 
   factory _ConfigArgInput.fromJson(Map<String, dynamic> json) =
       _$ConfigArgInputImpl.fromJson;
 
   @override
   String get name;
+  set name(String value);
   @override
 
   /// A JSON stringified representation of the actual value
   String get value;
+
+  /// A JSON stringified representation of the actual value
+  set value(String value);
   @override
   @JsonKey(ignore: true)
   _$$ConfigArgInputImplCopyWith<_$ConfigArgInputImpl> get copyWith =>

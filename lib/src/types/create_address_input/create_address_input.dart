@@ -3,15 +3,11 @@ import 'package:flutter/foundation.dart';
 part 'create_address_input.freezed.dart';
 part 'create_address_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class CreateAddressInput with _$CreateAddressInput {
   const CreateAddressInput._();
 
-  const factory CreateAddressInput({
+  factory CreateAddressInput({
     String? city,
     String? company,
     required String countryCode,
@@ -26,5 +22,6 @@ class CreateAddressInput with _$CreateAddressInput {
     String? streetLine2,
   }) = _CreateAddressInput;
 
-  factory CreateAddressInput.fromJson(Map<String, dynamic> json) => _$CreateAddressInputFromJson(json);
+  factory CreateAddressInput.fromJson(Map<String, dynamic> json) =>
+      _$CreateAddressInputFromJson(json);
 }

@@ -1,25 +1,21 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/collection_result/collection_result.dart';
-import 'package:vendure/src/types/facet_value_result/facet_value_result.dart';
-import 'package:vendure/src/types/search_result/search_result.dart';
+import '../collection_result/collection_result.dart';
+import '../facet_value_result/facet_value_result.dart';
+import '../search_result/search_result.dart';
 
 part 'search_response.freezed.dart';
 part 'search_response.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class SearchResponse with _$SearchResponse {
   const SearchResponse._();
 
   const factory SearchResponse({
-    List<CollectionResult?>? collections,
-    List<FacetValueResult?>? facetValues,
-    List<SearchResult?>? items,
-    int? totalItems,
+    required List<CollectionResult> collections,
+    required List<FacetValueResult> facetValues,
+    required List<SearchResult> items,
+    required int totalItems,
   }) = _SearchResponse;
 
   factory SearchResponse.fromJson(Map<String, dynamic> json) =>

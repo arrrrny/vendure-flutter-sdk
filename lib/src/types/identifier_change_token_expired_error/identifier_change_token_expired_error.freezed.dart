@@ -21,8 +21,8 @@ IdentifierChangeTokenExpiredError _$IdentifierChangeTokenExpiredErrorFromJson(
 
 /// @nodoc
 mixin _$IdentifierChangeTokenExpiredError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $IdentifierChangeTokenExpiredErrorCopyWith<$Res> {
       _$IdentifierChangeTokenExpiredErrorCopyWithImpl<$Res,
           IdentifierChangeTokenExpiredError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -55,18 +55,18 @@ class _$IdentifierChangeTokenExpiredErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$IdentifierChangeTokenExpiredErrorImplCopyWith<$Res>
       __$$IdentifierChangeTokenExpiredErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -96,18 +96,18 @@ class __$$IdentifierChangeTokenExpiredErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$IdentifierChangeTokenExpiredErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -116,7 +116,8 @@ class __$$IdentifierChangeTokenExpiredErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IdentifierChangeTokenExpiredErrorImpl
     extends _IdentifierChangeTokenExpiredError with DiagnosticableTreeMixin {
-  const _$IdentifierChangeTokenExpiredErrorImpl({this.errorCode, this.message})
+  const _$IdentifierChangeTokenExpiredErrorImpl(
+      {required this.errorCode, required this.message})
       : super._();
 
   factory _$IdentifierChangeTokenExpiredErrorImpl.fromJson(
@@ -124,9 +125,9 @@ class _$IdentifierChangeTokenExpiredErrorImpl
       _$$IdentifierChangeTokenExpiredErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,8 +176,8 @@ class _$IdentifierChangeTokenExpiredErrorImpl
 abstract class _IdentifierChangeTokenExpiredError
     extends IdentifierChangeTokenExpiredError {
   const factory _IdentifierChangeTokenExpiredError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$IdentifierChangeTokenExpiredErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$IdentifierChangeTokenExpiredErrorImpl;
   const _IdentifierChangeTokenExpiredError._() : super._();
 
   factory _IdentifierChangeTokenExpiredError.fromJson(
@@ -184,9 +185,9 @@ abstract class _IdentifierChangeTokenExpiredError
       _$IdentifierChangeTokenExpiredErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$IdentifierChangeTokenExpiredErrorImplCopyWith<

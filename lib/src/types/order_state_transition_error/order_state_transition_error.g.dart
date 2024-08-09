@@ -9,30 +9,22 @@ part of 'order_state_transition_error.dart';
 _$OrderStateTransitionErrorImpl _$$OrderStateTransitionErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$OrderStateTransitionErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      fromState: json['fromState'] as String?,
-      message: json['message'] as String?,
-      toState: json['toState'] as String?,
-      transitionError: json['transitionError'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      fromState: json['fromState'] as String,
+      message: json['message'] as String,
+      toState: json['toState'] as String,
+      transitionError: json['transitionError'] as String,
     );
 
 Map<String, dynamic> _$$OrderStateTransitionErrorImplToJson(
-    _$OrderStateTransitionErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('fromState', instance.fromState);
-  writeNotNull('message', instance.message);
-  writeNotNull('toState', instance.toState);
-  writeNotNull('transitionError', instance.transitionError);
-  return val;
-}
+        _$OrderStateTransitionErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'fromState': instance.fromState,
+      'message': instance.message,
+      'toState': instance.toState,
+      'transitionError': instance.transitionError,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

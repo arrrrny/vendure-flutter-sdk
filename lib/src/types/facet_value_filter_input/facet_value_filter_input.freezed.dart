@@ -22,7 +22,9 @@ FacetValueFilterInput _$FacetValueFilterInputFromJson(
 /// @nodoc
 mixin _$FacetValueFilterInput {
   String? get and => throw _privateConstructorUsedError;
+  set and(String? value) => throw _privateConstructorUsedError;
   List<String>? get or => throw _privateConstructorUsedError;
+  set or(List<String>? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -102,7 +104,7 @@ class __$$FacetValueFilterInputImplCopyWithImpl<$Res>
           : and // ignore: cast_nullable_to_non_nullable
               as String?,
       or: freezed == or
-          ? _value._or
+          ? _value.or
           : or // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -113,24 +115,15 @@ class __$$FacetValueFilterInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetValueFilterInputImpl extends _FacetValueFilterInput
     with DiagnosticableTreeMixin {
-  const _$FacetValueFilterInputImpl({this.and, final List<String>? or})
-      : _or = or,
-        super._();
+  _$FacetValueFilterInputImpl({this.and, this.or}) : super._();
 
   factory _$FacetValueFilterInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$FacetValueFilterInputImplFromJson(json);
 
   @override
-  final String? and;
-  final List<String>? _or;
+  String? and;
   @override
-  List<String>? get or {
-    final value = _or;
-    if (value == null) return null;
-    if (_or is EqualUnmodifiableListView) return _or;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  List<String>? or;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -145,20 +138,6 @@ class _$FacetValueFilterInputImpl extends _FacetValueFilterInput
       ..add(DiagnosticsProperty('and', and))
       ..add(DiagnosticsProperty('or', or));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FacetValueFilterInputImpl &&
-            (identical(other.and, and) || other.and == and) &&
-            const DeepCollectionEquality().equals(other._or, _or));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, and, const DeepCollectionEquality().hash(_or));
 
   @JsonKey(ignore: true)
   @override
@@ -176,18 +155,19 @@ class _$FacetValueFilterInputImpl extends _FacetValueFilterInput
 }
 
 abstract class _FacetValueFilterInput extends FacetValueFilterInput {
-  const factory _FacetValueFilterInput(
-      {final String? and,
-      final List<String>? or}) = _$FacetValueFilterInputImpl;
-  const _FacetValueFilterInput._() : super._();
+  factory _FacetValueFilterInput({String? and, List<String>? or}) =
+      _$FacetValueFilterInputImpl;
+  _FacetValueFilterInput._() : super._();
 
   factory _FacetValueFilterInput.fromJson(Map<String, dynamic> json) =
       _$FacetValueFilterInputImpl.fromJson;
 
   @override
   String? get and;
+  set and(String? value);
   @override
   List<String>? get or;
+  set or(List<String>? value);
   @override
   @JsonKey(ignore: true)
   _$$FacetValueFilterInputImplCopyWith<_$FacetValueFilterInputImpl>

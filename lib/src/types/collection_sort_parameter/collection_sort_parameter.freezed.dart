@@ -22,13 +22,21 @@ CollectionSortParameter _$CollectionSortParameterFromJson(
 /// @nodoc
 mixin _$CollectionSortParameter {
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get description => throw _privateConstructorUsedError;
+  set description(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get name => throw _privateConstructorUsedError;
+  set name(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get parentId => throw _privateConstructorUsedError;
+  set parentId(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get position => throw _privateConstructorUsedError;
+  set position(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get slug => throw _privateConstructorUsedError;
+  set slug(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -196,7 +204,7 @@ class __$$CollectionSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionSortParameterImpl extends _CollectionSortParameter
     with DiagnosticableTreeMixin {
-  const _$CollectionSortParameterImpl(
+  _$CollectionSortParameterImpl(
       {this.createdAt,
       this.description,
       this.id,
@@ -211,21 +219,21 @@ class _$CollectionSortParameterImpl extends _CollectionSortParameter
       _$$CollectionSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? description;
+  SortOrder? description;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? name;
+  SortOrder? name;
   @override
-  final SortOrder? parentId;
+  SortOrder? parentId;
   @override
-  final SortOrder? position;
+  SortOrder? position;
   @override
-  final SortOrder? slug;
+  SortOrder? slug;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -247,31 +255,6 @@ class _$CollectionSortParameterImpl extends _CollectionSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CollectionSortParameterImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, createdAt, description, id, name,
-      parentId, position, slug, updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -288,36 +271,44 @@ class _$CollectionSortParameterImpl extends _CollectionSortParameter
 }
 
 abstract class _CollectionSortParameter extends CollectionSortParameter {
-  const factory _CollectionSortParameter(
-      {final SortOrder? createdAt,
-      final SortOrder? description,
-      final SortOrder? id,
-      final SortOrder? name,
-      final SortOrder? parentId,
-      final SortOrder? position,
-      final SortOrder? slug,
-      final SortOrder? updatedAt}) = _$CollectionSortParameterImpl;
-  const _CollectionSortParameter._() : super._();
+  factory _CollectionSortParameter(
+      {SortOrder? createdAt,
+      SortOrder? description,
+      SortOrder? id,
+      SortOrder? name,
+      SortOrder? parentId,
+      SortOrder? position,
+      SortOrder? slug,
+      SortOrder? updatedAt}) = _$CollectionSortParameterImpl;
+  _CollectionSortParameter._() : super._();
 
   factory _CollectionSortParameter.fromJson(Map<String, dynamic> json) =
       _$CollectionSortParameterImpl.fromJson;
 
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get description;
+  set description(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get name;
+  set name(SortOrder? value);
   @override
   SortOrder? get parentId;
+  set parentId(SortOrder? value);
   @override
   SortOrder? get position;
+  set position(SortOrder? value);
   @override
   SortOrder? get slug;
+  set slug(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$CollectionSortParameterImplCopyWith<_$CollectionSortParameterImpl>

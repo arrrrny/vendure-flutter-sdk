@@ -21,17 +21,17 @@ PaymentMethod _$PaymentMethodFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PaymentMethod {
   ConfigurableOperation? get checker => throw _privateConstructorUsedError;
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  bool? get enabled => throw _privateConstructorUsedError;
-  ConfigurableOperation? get handler => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<PaymentMethodTranslation?>? get translations =>
+  String get description => throw _privateConstructorUsedError;
+  bool get enabled => throw _privateConstructorUsedError;
+  ConfigurableOperation get handler => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<PaymentMethodTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,19 +47,19 @@ abstract class $PaymentMethodCopyWith<$Res> {
   @useResult
   $Res call(
       {ConfigurableOperation? checker,
-      String? code,
-      DateTime? createdAt,
+      String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      bool? enabled,
-      ConfigurableOperation? handler,
-      String? id,
-      String? name,
-      List<PaymentMethodTranslation?>? translations,
-      DateTime? updatedAt});
+      String description,
+      bool enabled,
+      ConfigurableOperation handler,
+      String id,
+      String name,
+      List<PaymentMethodTranslation> translations,
+      DateTime updatedAt});
 
   $ConfigurableOperationCopyWith<$Res>? get checker;
-  $ConfigurableOperationCopyWith<$Res>? get handler;
+  $ConfigurableOperationCopyWith<$Res> get handler;
 }
 
 /// @nodoc
@@ -76,62 +76,62 @@ class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
   @override
   $Res call({
     Object? checker = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? enabled = freezed,
-    Object? handler = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? description = null,
+    Object? enabled = null,
+    Object? handler = null,
+    Object? id = null,
+    Object? name = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       checker: freezed == checker
           ? _value.checker
           : checker // ignore: cast_nullable_to_non_nullable
               as ConfigurableOperation?,
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      enabled: freezed == enabled
+              as String,
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      handler: freezed == handler
+              as bool,
+      handler: null == handler
           ? _value.handler
           : handler // ignore: cast_nullable_to_non_nullable
-              as ConfigurableOperation?,
-      id: freezed == id
+              as ConfigurableOperation,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<PaymentMethodTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<PaymentMethodTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
@@ -149,12 +149,8 @@ class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
 
   @override
   @pragma('vm:prefer-inline')
-  $ConfigurableOperationCopyWith<$Res>? get handler {
-    if (_value.handler == null) {
-      return null;
-    }
-
-    return $ConfigurableOperationCopyWith<$Res>(_value.handler!, (value) {
+  $ConfigurableOperationCopyWith<$Res> get handler {
+    return $ConfigurableOperationCopyWith<$Res>(_value.handler, (value) {
       return _then(_value.copyWith(handler: value) as $Val);
     });
   }
@@ -170,21 +166,21 @@ abstract class _$$PaymentMethodImplCopyWith<$Res>
   @useResult
   $Res call(
       {ConfigurableOperation? checker,
-      String? code,
-      DateTime? createdAt,
+      String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
-      bool? enabled,
-      ConfigurableOperation? handler,
-      String? id,
-      String? name,
-      List<PaymentMethodTranslation?>? translations,
-      DateTime? updatedAt});
+      String description,
+      bool enabled,
+      ConfigurableOperation handler,
+      String id,
+      String name,
+      List<PaymentMethodTranslation> translations,
+      DateTime updatedAt});
 
   @override
   $ConfigurableOperationCopyWith<$Res>? get checker;
   @override
-  $ConfigurableOperationCopyWith<$Res>? get handler;
+  $ConfigurableOperationCopyWith<$Res> get handler;
 }
 
 /// @nodoc
@@ -199,62 +195,62 @@ class __$$PaymentMethodImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? checker = freezed,
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
-    Object? enabled = freezed,
-    Object? handler = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? description = null,
+    Object? enabled = null,
+    Object? handler = null,
+    Object? id = null,
+    Object? name = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$PaymentMethodImpl(
       checker: freezed == checker
           ? _value.checker
           : checker // ignore: cast_nullable_to_non_nullable
               as ConfigurableOperation?,
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      enabled: freezed == enabled
+              as String,
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      handler: freezed == handler
+              as bool,
+      handler: null == handler
           ? _value.handler
           : handler // ignore: cast_nullable_to_non_nullable
-              as ConfigurableOperation?,
-      id: freezed == id
+              as ConfigurableOperation,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<PaymentMethodTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<PaymentMethodTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -264,16 +260,16 @@ class __$$PaymentMethodImplCopyWithImpl<$Res>
 class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
   const _$PaymentMethodImpl(
       {this.checker,
-      this.code,
-      this.createdAt,
+      required this.code,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.description,
-      this.enabled,
-      this.handler,
-      this.id,
-      this.name,
-      final List<PaymentMethodTranslation?>? translations,
-      this.updatedAt})
+      required this.description,
+      required this.enabled,
+      required this.handler,
+      required this.id,
+      required this.name,
+      required final List<PaymentMethodTranslation> translations,
+      required this.updatedAt})
       : _customFields = customFields,
         _translations = translations,
         super._();
@@ -284,9 +280,9 @@ class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
   @override
   final ConfigurableOperation? checker;
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -298,27 +294,25 @@ class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? description;
+  final String description;
   @override
-  final bool? enabled;
+  final bool enabled;
   @override
-  final ConfigurableOperation? handler;
+  final ConfigurableOperation handler;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
-  final List<PaymentMethodTranslation?>? _translations;
+  final String name;
+  final List<PaymentMethodTranslation> _translations;
   @override
-  List<PaymentMethodTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<PaymentMethodTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -399,16 +393,16 @@ class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
 abstract class _PaymentMethod extends PaymentMethod {
   const factory _PaymentMethod(
       {final ConfigurableOperation? checker,
-      final String? code,
-      final DateTime? createdAt,
+      required final String code,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? description,
-      final bool? enabled,
-      final ConfigurableOperation? handler,
-      final String? id,
-      final String? name,
-      final List<PaymentMethodTranslation?>? translations,
-      final DateTime? updatedAt}) = _$PaymentMethodImpl;
+      required final String description,
+      required final bool enabled,
+      required final ConfigurableOperation handler,
+      required final String id,
+      required final String name,
+      required final List<PaymentMethodTranslation> translations,
+      required final DateTime updatedAt}) = _$PaymentMethodImpl;
   const _PaymentMethod._() : super._();
 
   factory _PaymentMethod.fromJson(Map<String, dynamic> json) =
@@ -417,25 +411,25 @@ abstract class _PaymentMethod extends PaymentMethod {
   @override
   ConfigurableOperation? get checker;
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
-  bool? get enabled;
+  bool get enabled;
   @override
-  ConfigurableOperation? get handler;
+  ConfigurableOperation get handler;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
-  List<PaymentMethodTranslation?>? get translations;
+  List<PaymentMethodTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$PaymentMethodImplCopyWith<_$PaymentMethodImpl> get copyWith =>

@@ -8,20 +8,12 @@ part of 'config_arg.dart';
 
 _$ConfigArgImpl _$$ConfigArgImplFromJson(Map<String, dynamic> json) =>
     _$ConfigArgImpl(
-      name: json['name'] as String?,
-      value: json['value'] as String?,
+      name: json['name'] as String,
+      value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$ConfigArgImplToJson(_$ConfigArgImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', instance.name);
-  writeNotNull('value', instance.value);
-  return val;
-}
+Map<String, dynamic> _$$ConfigArgImplToJson(_$ConfigArgImpl instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'value': instance.value,
+    };

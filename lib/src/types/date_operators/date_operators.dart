@@ -1,19 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/date_range/date_range.dart';
+import '../date_range/date_range.dart';
 
 part 'date_operators.freezed.dart';
 part 'date_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class DateOperators with _$DateOperators {
   const DateOperators._();
 
-  const factory DateOperators({
+  factory DateOperators({
     DateTime? after,
     DateTime? before,
     DateRange? between,

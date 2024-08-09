@@ -9,26 +9,18 @@ part of 'order_limit_error.dart';
 _$OrderLimitErrorImpl _$$OrderLimitErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$OrderLimitErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      maxItems: (json['maxItems'] as num?)?.toInt(),
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      maxItems: (json['maxItems'] as num).toInt(),
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$OrderLimitErrorImplToJson(
-    _$OrderLimitErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('maxItems', instance.maxItems);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$OrderLimitErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'maxItems': instance.maxItems,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

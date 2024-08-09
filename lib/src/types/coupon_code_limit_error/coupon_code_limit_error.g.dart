@@ -9,28 +9,20 @@ part of 'coupon_code_limit_error.dart';
 _$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$CouponCodeLimitErrorImpl(
-      couponCode: json['couponCode'] as String?,
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      limit: (json['limit'] as num?)?.toInt(),
-      message: json['message'] as String?,
+      couponCode: json['couponCode'] as String,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      limit: (json['limit'] as num).toInt(),
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$CouponCodeLimitErrorImplToJson(
-    _$CouponCodeLimitErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('couponCode', instance.couponCode);
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('limit', instance.limit);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$CouponCodeLimitErrorImpl instance) =>
+    <String, dynamic>{
+      'couponCode': instance.couponCode,
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'limit': instance.limit,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

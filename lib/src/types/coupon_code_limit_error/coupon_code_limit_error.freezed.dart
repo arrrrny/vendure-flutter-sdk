@@ -20,10 +20,10 @@ CouponCodeLimitError _$CouponCodeLimitErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CouponCodeLimitError {
-  String? get couponCode => throw _privateConstructorUsedError;
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  int? get limit => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  String get couponCode => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  int get limit => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $CouponCodeLimitErrorCopyWith<$Res> {
       _$CouponCodeLimitErrorCopyWithImpl<$Res, CouponCodeLimitError>;
   @useResult
   $Res call(
-      {String? couponCode, ErrorCode? errorCode, int? limit, String? message});
+      {String couponCode, ErrorCode errorCode, int limit, String message});
 }
 
 /// @nodoc
@@ -55,28 +55,28 @@ class _$CouponCodeLimitErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? couponCode = freezed,
-    Object? errorCode = freezed,
-    Object? limit = freezed,
-    Object? message = freezed,
+    Object? couponCode = null,
+    Object? errorCode = null,
+    Object? limit = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      couponCode: freezed == couponCode
+      couponCode: null == couponCode
           ? _value.couponCode
           : couponCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      limit: freezed == limit
+              as ErrorCode,
+      limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: freezed == message
+              as int,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -90,7 +90,7 @@ abstract class _$$CouponCodeLimitErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? couponCode, ErrorCode? errorCode, int? limit, String? message});
+      {String couponCode, ErrorCode errorCode, int limit, String message});
 }
 
 /// @nodoc
@@ -104,28 +104,28 @@ class __$$CouponCodeLimitErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? couponCode = freezed,
-    Object? errorCode = freezed,
-    Object? limit = freezed,
-    Object? message = freezed,
+    Object? couponCode = null,
+    Object? errorCode = null,
+    Object? limit = null,
+    Object? message = null,
   }) {
     return _then(_$CouponCodeLimitErrorImpl(
-      couponCode: freezed == couponCode
+      couponCode: null == couponCode
           ? _value.couponCode
           : couponCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      limit: freezed == limit
+              as ErrorCode,
+      limit: null == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: freezed == message
+              as int,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -135,20 +135,23 @@ class __$$CouponCodeLimitErrorImplCopyWithImpl<$Res>
 class _$CouponCodeLimitErrorImpl extends _CouponCodeLimitError
     with DiagnosticableTreeMixin {
   const _$CouponCodeLimitErrorImpl(
-      {this.couponCode, this.errorCode, this.limit, this.message})
+      {required this.couponCode,
+      required this.errorCode,
+      required this.limit,
+      required this.message})
       : super._();
 
   factory _$CouponCodeLimitErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$CouponCodeLimitErrorImplFromJson(json);
 
   @override
-  final String? couponCode;
+  final String couponCode;
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final int? limit;
+  final int limit;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -202,23 +205,23 @@ class _$CouponCodeLimitErrorImpl extends _CouponCodeLimitError
 
 abstract class _CouponCodeLimitError extends CouponCodeLimitError {
   const factory _CouponCodeLimitError(
-      {final String? couponCode,
-      final ErrorCode? errorCode,
-      final int? limit,
-      final String? message}) = _$CouponCodeLimitErrorImpl;
+      {required final String couponCode,
+      required final ErrorCode errorCode,
+      required final int limit,
+      required final String message}) = _$CouponCodeLimitErrorImpl;
   const _CouponCodeLimitError._() : super._();
 
   factory _CouponCodeLimitError.fromJson(Map<String, dynamic> json) =
       _$CouponCodeLimitErrorImpl.fromJson;
 
   @override
-  String? get couponCode;
+  String get couponCode;
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  int? get limit;
+  int get limit;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$CouponCodeLimitErrorImplCopyWith<_$CouponCodeLimitErrorImpl>

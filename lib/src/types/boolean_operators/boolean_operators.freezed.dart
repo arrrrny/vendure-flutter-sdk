@@ -21,7 +21,9 @@ BooleanOperators _$BooleanOperatorsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BooleanOperators {
   bool? get eq => throw _privateConstructorUsedError;
+  set eq(bool? value) => throw _privateConstructorUsedError;
   bool? get isNull => throw _privateConstructorUsedError;
+  set isNull(bool? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -109,15 +111,15 @@ class __$$BooleanOperatorsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BooleanOperatorsImpl extends _BooleanOperators
     with DiagnosticableTreeMixin {
-  const _$BooleanOperatorsImpl({this.eq, this.isNull}) : super._();
+  _$BooleanOperatorsImpl({this.eq, this.isNull}) : super._();
 
   factory _$BooleanOperatorsImpl.fromJson(Map<String, dynamic> json) =>
       _$$BooleanOperatorsImplFromJson(json);
 
   @override
-  final bool? eq;
+  bool? eq;
   @override
-  final bool? isNull;
+  bool? isNull;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -132,19 +134,6 @@ class _$BooleanOperatorsImpl extends _BooleanOperators
       ..add(DiagnosticsProperty('eq', eq))
       ..add(DiagnosticsProperty('isNull', isNull));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BooleanOperatorsImpl &&
-            (identical(other.eq, eq) || other.eq == eq) &&
-            (identical(other.isNull, isNull) || other.isNull == isNull));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, eq, isNull);
 
   @JsonKey(ignore: true)
   @override
@@ -162,17 +151,18 @@ class _$BooleanOperatorsImpl extends _BooleanOperators
 }
 
 abstract class _BooleanOperators extends BooleanOperators {
-  const factory _BooleanOperators({final bool? eq, final bool? isNull}) =
-      _$BooleanOperatorsImpl;
-  const _BooleanOperators._() : super._();
+  factory _BooleanOperators({bool? eq, bool? isNull}) = _$BooleanOperatorsImpl;
+  _BooleanOperators._() : super._();
 
   factory _BooleanOperators.fromJson(Map<String, dynamic> json) =
       _$BooleanOperatorsImpl.fromJson;
 
   @override
   bool? get eq;
+  set eq(bool? value);
   @override
   bool? get isNull;
+  set isNull(bool? value);
   @override
   @JsonKey(ignore: true)
   _$$BooleanOperatorsImplCopyWith<_$BooleanOperatorsImpl> get copyWith =>

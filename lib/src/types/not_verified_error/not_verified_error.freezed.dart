@@ -20,8 +20,8 @@ NotVerifiedError _$NotVerifiedErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$NotVerifiedError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $NotVerifiedErrorCopyWith<$Res> {
           NotVerifiedError value, $Res Function(NotVerifiedError) then) =
       _$NotVerifiedErrorCopyWithImpl<$Res, NotVerifiedError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$NotVerifiedErrorCopyWithImpl<$Res, $Val extends NotVerifiedError>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$NotVerifiedErrorImplCopyWith<$Res>
       __$$NotVerifiedErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$NotVerifiedErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -109,15 +109,16 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$NotVerifiedErrorImpl extends _NotVerifiedError
     with DiagnosticableTreeMixin {
-  const _$NotVerifiedErrorImpl({this.errorCode, this.message}) : super._();
+  const _$NotVerifiedErrorImpl({required this.errorCode, required this.message})
+      : super._();
 
   factory _$NotVerifiedErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$NotVerifiedErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -164,17 +165,17 @@ class _$NotVerifiedErrorImpl extends _NotVerifiedError
 
 abstract class _NotVerifiedError extends NotVerifiedError {
   const factory _NotVerifiedError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$NotVerifiedErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$NotVerifiedErrorImpl;
   const _NotVerifiedError._() : super._();
 
   factory _NotVerifiedError.fromJson(Map<String, dynamic> json) =
       _$NotVerifiedErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$NotVerifiedErrorImplCopyWith<_$NotVerifiedErrorImpl> get copyWith =>

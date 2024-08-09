@@ -24,19 +24,39 @@ mixin _$CollectionListOptions {
   /// Allows the results to be filtered
   CollectionFilterParameter? get filter => throw _privateConstructorUsedError;
 
+  /// Allows the results to be filtered
+  set filter(CollectionFilterParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
 
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value) =>
+      throw _privateConstructorUsedError;
+
   /// Skips the first n results, for use in pagination
   int? get skip => throw _privateConstructorUsedError;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value) => throw _privateConstructorUsedError;
 
   /// Specifies which properties to sort the results by
   CollectionSortParameter? get sort => throw _privateConstructorUsedError;
 
+  /// Specifies which properties to sort the results by
+  set sort(CollectionSortParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
+
+  /// Takes n results, for use in pagination
+  set take(int? value) => throw _privateConstructorUsedError;
   bool? get topLevelOnly => throw _privateConstructorUsedError;
+  set topLevelOnly(bool? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -211,7 +231,7 @@ class __$$CollectionListOptionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionListOptionsImpl extends _CollectionListOptions
     with DiagnosticableTreeMixin {
-  const _$CollectionListOptionsImpl(
+  _$CollectionListOptionsImpl(
       {this.filter,
       this.filterOperator,
       this.skip,
@@ -225,26 +245,26 @@ class _$CollectionListOptionsImpl extends _CollectionListOptions
 
   /// Allows the results to be filtered
   @override
-  final CollectionFilterParameter? filter;
+  CollectionFilterParameter? filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   @override
-  final LogicalOperator? filterOperator;
+  LogicalOperator? filterOperator;
 
   /// Skips the first n results, for use in pagination
   @override
-  final int? skip;
+  int? skip;
 
   /// Specifies which properties to sort the results by
   @override
-  final CollectionSortParameter? sort;
+  CollectionSortParameter? sort;
 
   /// Takes n results, for use in pagination
   @override
-  final int? take;
+  int? take;
   @override
-  final bool? topLevelOnly;
+  bool? topLevelOnly;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -264,26 +284,6 @@ class _$CollectionListOptionsImpl extends _CollectionListOptions
       ..add(DiagnosticsProperty('topLevelOnly', topLevelOnly));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CollectionListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take) &&
-            (identical(other.topLevelOnly, topLevelOnly) ||
-                other.topLevelOnly == topLevelOnly));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, filter, filterOperator, skip, sort, take, topLevelOnly);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -300,14 +300,14 @@ class _$CollectionListOptionsImpl extends _CollectionListOptions
 }
 
 abstract class _CollectionListOptions extends CollectionListOptions {
-  const factory _CollectionListOptions(
-      {final CollectionFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final CollectionSortParameter? sort,
-      final int? take,
-      final bool? topLevelOnly}) = _$CollectionListOptionsImpl;
-  const _CollectionListOptions._() : super._();
+  factory _CollectionListOptions(
+      {CollectionFilterParameter? filter,
+      LogicalOperator? filterOperator,
+      int? skip,
+      CollectionSortParameter? sort,
+      int? take,
+      bool? topLevelOnly}) = _$CollectionListOptionsImpl;
+  _CollectionListOptions._() : super._();
 
   factory _CollectionListOptions.fromJson(Map<String, dynamic> json) =
       _$CollectionListOptionsImpl.fromJson;
@@ -316,25 +316,42 @@ abstract class _CollectionListOptions extends CollectionListOptions {
 
   /// Allows the results to be filtered
   CollectionFilterParameter? get filter;
+
+  /// Allows the results to be filtered
+  set filter(CollectionFilterParameter? value);
   @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator;
+
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value);
   @override
 
   /// Skips the first n results, for use in pagination
   int? get skip;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value);
   @override
 
   /// Specifies which properties to sort the results by
   CollectionSortParameter? get sort;
+
+  /// Specifies which properties to sort the results by
+  set sort(CollectionSortParameter? value);
   @override
 
   /// Takes n results, for use in pagination
   int? get take;
+
+  /// Takes n results, for use in pagination
+  set take(int? value);
   @override
   bool? get topLevelOnly;
+  set topLevelOnly(bool? value);
   @override
   @JsonKey(ignore: true)
   _$$CollectionListOptionsImplCopyWith<_$CollectionListOptionsImpl>

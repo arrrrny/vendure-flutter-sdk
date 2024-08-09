@@ -21,19 +21,19 @@ StringCustomFieldConfig _$StringCustomFieldConfigFromJson(
 
 /// @nodoc
 mixin _$StringCustomFieldConfig {
-  List<LocalizedString?>? get description => throw _privateConstructorUsedError;
+  List<LocalizedString>? get description => throw _privateConstructorUsedError;
   bool? get internal => throw _privateConstructorUsedError;
-  List<LocalizedString?>? get label => throw _privateConstructorUsedError;
+  List<LocalizedString>? get label => throw _privateConstructorUsedError;
   int? get length => throw _privateConstructorUsedError;
-  bool? get list => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  bool get list => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   bool? get nullable => throw _privateConstructorUsedError;
-  List<StringFieldOption?>? get options => throw _privateConstructorUsedError;
+  List<StringFieldOption>? get options => throw _privateConstructorUsedError;
   String? get pattern => throw _privateConstructorUsedError;
   bool? get readonly => throw _privateConstructorUsedError;
-  List<Permission?>? get requiresPermission =>
+  List<Permission>? get requiresPermission =>
       throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,18 +49,18 @@ abstract class $StringCustomFieldConfigCopyWith<$Res> {
       _$StringCustomFieldConfigCopyWithImpl<$Res, StringCustomFieldConfig>;
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
+      List<LocalizedString>? label,
       int? length,
-      bool? list,
-      String? name,
+      bool list,
+      String name,
       bool? nullable,
-      List<StringFieldOption?>? options,
+      List<StringFieldOption>? options,
       String? pattern,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -82,21 +82,21 @@ class _$StringCustomFieldConfigCopyWithImpl<$Res,
     Object? internal = freezed,
     Object? label = freezed,
     Object? length = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? options = freezed,
     Object? pattern = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_value.copyWith(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -104,19 +104,19 @@ class _$StringCustomFieldConfigCopyWithImpl<$Res,
       label: freezed == label
           ? _value.label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       length: freezed == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int?,
-      list: freezed == list
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -124,7 +124,7 @@ class _$StringCustomFieldConfigCopyWithImpl<$Res,
       options: freezed == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<StringFieldOption?>?,
+              as List<StringFieldOption>?,
       pattern: freezed == pattern
           ? _value.pattern
           : pattern // ignore: cast_nullable_to_non_nullable
@@ -136,11 +136,11 @@ class _$StringCustomFieldConfigCopyWithImpl<$Res,
       requiresPermission: freezed == requiresPermission
           ? _value.requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -159,18 +159,18 @@ abstract class _$$StringCustomFieldConfigImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<LocalizedString?>? description,
+      {List<LocalizedString>? description,
       bool? internal,
-      List<LocalizedString?>? label,
+      List<LocalizedString>? label,
       int? length,
-      bool? list,
-      String? name,
+      bool list,
+      String name,
       bool? nullable,
-      List<StringFieldOption?>? options,
+      List<StringFieldOption>? options,
       String? pattern,
       bool? readonly,
-      List<Permission?>? requiresPermission,
-      String? type,
+      List<Permission>? requiresPermission,
+      String type,
       Map<String, dynamic>? ui});
 }
 
@@ -191,21 +191,21 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
     Object? internal = freezed,
     Object? label = freezed,
     Object? length = freezed,
-    Object? list = freezed,
-    Object? name = freezed,
+    Object? list = null,
+    Object? name = null,
     Object? nullable = freezed,
     Object? options = freezed,
     Object? pattern = freezed,
     Object? readonly = freezed,
     Object? requiresPermission = freezed,
-    Object? type = freezed,
+    Object? type = null,
     Object? ui = freezed,
   }) {
     return _then(_$StringCustomFieldConfigImpl(
       description: freezed == description
           ? _value._description
           : description // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       internal: freezed == internal
           ? _value.internal
           : internal // ignore: cast_nullable_to_non_nullable
@@ -213,19 +213,19 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       label: freezed == label
           ? _value._label
           : label // ignore: cast_nullable_to_non_nullable
-              as List<LocalizedString?>?,
+              as List<LocalizedString>?,
       length: freezed == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
               as int?,
-      list: freezed == list
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      name: freezed == name
+              as bool,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       nullable: freezed == nullable
           ? _value.nullable
           : nullable // ignore: cast_nullable_to_non_nullable
@@ -233,7 +233,7 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       options: freezed == options
           ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<StringFieldOption?>?,
+              as List<StringFieldOption>?,
       pattern: freezed == pattern
           ? _value.pattern
           : pattern // ignore: cast_nullable_to_non_nullable
@@ -245,11 +245,11 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       requiresPermission: freezed == requiresPermission
           ? _value._requiresPermission
           : requiresPermission // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      type: freezed == type
+              as List<Permission>?,
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ui: freezed == ui
           ? _value._ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -263,18 +263,18 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
 class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
     with DiagnosticableTreeMixin {
   const _$StringCustomFieldConfigImpl(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       this.internal,
-      final List<LocalizedString?>? label,
+      final List<LocalizedString>? label,
       this.length,
-      this.list,
-      this.name,
+      required this.list,
+      required this.name,
       this.nullable,
-      final List<StringFieldOption?>? options,
+      final List<StringFieldOption>? options,
       this.pattern,
       this.readonly,
-      final List<Permission?>? requiresPermission,
-      this.type,
+      final List<Permission>? requiresPermission,
+      required this.type,
       final Map<String, dynamic>? ui})
       : _description = description,
         _label = label,
@@ -286,9 +286,9 @@ class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
   factory _$StringCustomFieldConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$StringCustomFieldConfigImplFromJson(json);
 
-  final List<LocalizedString?>? _description;
+  final List<LocalizedString>? _description;
   @override
-  List<LocalizedString?>? get description {
+  List<LocalizedString>? get description {
     final value = _description;
     if (value == null) return null;
     if (_description is EqualUnmodifiableListView) return _description;
@@ -298,9 +298,9 @@ class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
 
   @override
   final bool? internal;
-  final List<LocalizedString?>? _label;
+  final List<LocalizedString>? _label;
   @override
-  List<LocalizedString?>? get label {
+  List<LocalizedString>? get label {
     final value = _label;
     if (value == null) return null;
     if (_label is EqualUnmodifiableListView) return _label;
@@ -311,14 +311,14 @@ class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
   @override
   final int? length;
   @override
-  final bool? list;
+  final bool list;
   @override
-  final String? name;
+  final String name;
   @override
   final bool? nullable;
-  final List<StringFieldOption?>? _options;
+  final List<StringFieldOption>? _options;
   @override
-  List<StringFieldOption?>? get options {
+  List<StringFieldOption>? get options {
     final value = _options;
     if (value == null) return null;
     if (_options is EqualUnmodifiableListView) return _options;
@@ -330,9 +330,9 @@ class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
   final String? pattern;
   @override
   final bool? readonly;
-  final List<Permission?>? _requiresPermission;
+  final List<Permission>? _requiresPermission;
   @override
-  List<Permission?>? get requiresPermission {
+  List<Permission>? get requiresPermission {
     final value = _requiresPermission;
     if (value == null) return null;
     if (_requiresPermission is EqualUnmodifiableListView)
@@ -342,7 +342,7 @@ class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
   }
 
   @override
-  final String? type;
+  final String type;
   final Map<String, dynamic>? _ui;
   @override
   Map<String, dynamic>? get ui {
@@ -438,18 +438,18 @@ class _$StringCustomFieldConfigImpl extends _StringCustomFieldConfig
 
 abstract class _StringCustomFieldConfig extends StringCustomFieldConfig {
   const factory _StringCustomFieldConfig(
-      {final List<LocalizedString?>? description,
+      {final List<LocalizedString>? description,
       final bool? internal,
-      final List<LocalizedString?>? label,
+      final List<LocalizedString>? label,
       final int? length,
-      final bool? list,
-      final String? name,
+      required final bool list,
+      required final String name,
       final bool? nullable,
-      final List<StringFieldOption?>? options,
+      final List<StringFieldOption>? options,
       final String? pattern,
       final bool? readonly,
-      final List<Permission?>? requiresPermission,
-      final String? type,
+      final List<Permission>? requiresPermission,
+      required final String type,
       final Map<String, dynamic>? ui}) = _$StringCustomFieldConfigImpl;
   const _StringCustomFieldConfig._() : super._();
 
@@ -457,29 +457,29 @@ abstract class _StringCustomFieldConfig extends StringCustomFieldConfig {
       _$StringCustomFieldConfigImpl.fromJson;
 
   @override
-  List<LocalizedString?>? get description;
+  List<LocalizedString>? get description;
   @override
   bool? get internal;
   @override
-  List<LocalizedString?>? get label;
+  List<LocalizedString>? get label;
   @override
   int? get length;
   @override
-  bool? get list;
+  bool get list;
   @override
-  String? get name;
+  String get name;
   @override
   bool? get nullable;
   @override
-  List<StringFieldOption?>? get options;
+  List<StringFieldOption>? get options;
   @override
   String? get pattern;
   @override
   bool? get readonly;
   @override
-  List<Permission?>? get requiresPermission;
+  List<Permission>? get requiresPermission;
   @override
-  String? get type;
+  String get type;
   @override
   Map<String, dynamic>? get ui;
   @override

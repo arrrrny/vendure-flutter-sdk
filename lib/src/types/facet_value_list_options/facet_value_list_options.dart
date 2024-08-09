@@ -1,21 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/facet_value_filter_parameter/facet_value_filter_parameter.dart';
-import 'package:vendure/src/types/facet_value_sort_parameter/facet_value_sort_parameter.dart';
-import 'package:vendure/src/types/logical_operator/logical_operator.dart';
+import '../facet_value_filter_parameter/facet_value_filter_parameter.dart';
+import '../facet_value_sort_parameter/facet_value_sort_parameter.dart';
+import '../types/logical_operator/logical_operator.dart';
 
 part 'facet_value_list_options.freezed.dart';
 part 'facet_value_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class FacetValueListOptions with _$FacetValueListOptions {
   const FacetValueListOptions._();
 
-  const factory FacetValueListOptions({
+  factory FacetValueListOptions({
     /// Allows the results to be filtered
     FacetValueFilterParameter? filter,
 

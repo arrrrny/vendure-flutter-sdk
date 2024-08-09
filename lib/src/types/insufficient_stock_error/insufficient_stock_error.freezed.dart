@@ -21,10 +21,10 @@ InsufficientStockError _$InsufficientStockErrorFromJson(
 
 /// @nodoc
 mixin _$InsufficientStockError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-  Order? get order => throw _privateConstructorUsedError;
-  int? get quantityAvailable => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  Order get order => throw _privateConstructorUsedError;
+  int get quantityAvailable => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,12 +39,12 @@ abstract class $InsufficientStockErrorCopyWith<$Res> {
       _$InsufficientStockErrorCopyWithImpl<$Res, InsufficientStockError>;
   @useResult
   $Res call(
-      {ErrorCode? errorCode,
-      String? message,
-      Order? order,
-      int? quantityAvailable});
+      {ErrorCode errorCode,
+      String message,
+      Order order,
+      int quantityAvailable});
 
-  $OrderCopyWith<$Res>? get order;
+  $OrderCopyWith<$Res> get order;
 }
 
 /// @nodoc
@@ -61,39 +61,35 @@ class _$InsufficientStockErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? order = freezed,
-    Object? quantityAvailable = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? order = null,
+    Object? quantityAvailable = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      order: freezed == order
+              as String,
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as Order?,
-      quantityAvailable: freezed == quantityAvailable
+              as Order,
+      quantityAvailable: null == quantityAvailable
           ? _value.quantityAvailable
           : quantityAvailable // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $OrderCopyWith<$Res>? get order {
-    if (_value.order == null) {
-      return null;
-    }
-
-    return $OrderCopyWith<$Res>(_value.order!, (value) {
+  $OrderCopyWith<$Res> get order {
+    return $OrderCopyWith<$Res>(_value.order, (value) {
       return _then(_value.copyWith(order: value) as $Val);
     });
   }
@@ -109,13 +105,13 @@ abstract class _$$InsufficientStockErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ErrorCode? errorCode,
-      String? message,
-      Order? order,
-      int? quantityAvailable});
+      {ErrorCode errorCode,
+      String message,
+      Order order,
+      int quantityAvailable});
 
   @override
-  $OrderCopyWith<$Res>? get order;
+  $OrderCopyWith<$Res> get order;
 }
 
 /// @nodoc
@@ -131,28 +127,28 @@ class __$$InsufficientStockErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-    Object? order = freezed,
-    Object? quantityAvailable = freezed,
+    Object? errorCode = null,
+    Object? message = null,
+    Object? order = null,
+    Object? quantityAvailable = null,
   }) {
     return _then(_$InsufficientStockErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      order: freezed == order
+              as String,
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
-              as Order?,
-      quantityAvailable: freezed == quantityAvailable
+              as Order,
+      quantityAvailable: null == quantityAvailable
           ? _value.quantityAvailable
           : quantityAvailable // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -162,20 +158,23 @@ class __$$InsufficientStockErrorImplCopyWithImpl<$Res>
 class _$InsufficientStockErrorImpl extends _InsufficientStockError
     with DiagnosticableTreeMixin {
   const _$InsufficientStockErrorImpl(
-      {this.errorCode, this.message, this.order, this.quantityAvailable})
+      {required this.errorCode,
+      required this.message,
+      required this.order,
+      required this.quantityAvailable})
       : super._();
 
   factory _$InsufficientStockErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$InsufficientStockErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
   @override
-  final Order? order;
+  final Order order;
   @override
-  final int? quantityAvailable;
+  final int quantityAvailable;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -228,23 +227,23 @@ class _$InsufficientStockErrorImpl extends _InsufficientStockError
 
 abstract class _InsufficientStockError extends InsufficientStockError {
   const factory _InsufficientStockError(
-      {final ErrorCode? errorCode,
-      final String? message,
-      final Order? order,
-      final int? quantityAvailable}) = _$InsufficientStockErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message,
+      required final Order order,
+      required final int quantityAvailable}) = _$InsufficientStockErrorImpl;
   const _InsufficientStockError._() : super._();
 
   factory _InsufficientStockError.fromJson(Map<String, dynamic> json) =
       _$InsufficientStockErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
-  Order? get order;
+  Order get order;
   @override
-  int? get quantityAvailable;
+  int get quantityAvailable;
   @override
   @JsonKey(ignore: true)
   _$$InsufficientStockErrorImplCopyWith<_$InsufficientStockErrorImpl>

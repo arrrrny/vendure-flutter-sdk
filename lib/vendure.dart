@@ -2,12 +2,14 @@ library vendure;
 
 import 'package:graphql/client.dart';
 import 'package:vendure/src/vendure/auth_operations.dart';
+import 'package:vendure/src/vendure/catalog_operations.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
 import 'package:vendure/src/vendure/customer_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
+import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
-export 'package:vendure/src/types/exports.dart'; // Add this line
+export '../src/input_types/exports.dart'; // Add this line
 
 class Vendure {
   static Vendure? _instance;
@@ -17,6 +19,8 @@ class Vendure {
   late final AuthOperations auth;
   late final CustomOperations custom;
   late final CustomerOperations customer;
+  late final CatalogOperations catalog;
+  late final SystemOperations system;
   final TokenManager? _tokenManager;
   final String _endpoint;
   final DefaultPolicies? _policies;
@@ -53,10 +57,12 @@ class Vendure {
           link: HttpLink(endpoint),
           cache: GraphQLCache(),
         ) {
+    auth = AuthOperations(_authClient);
     order = OrderOperations(_getClient);
     custom = CustomOperations(_getClient);
     customer = CustomerOperations(_getClient);
-    auth = AuthOperations(_authClient);
+    catalog = CatalogOperations(_getClient);
+    system = SystemOperations(_getClient);
   }
 
   static Future<Vendure> initialize({

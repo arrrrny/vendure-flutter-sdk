@@ -20,16 +20,16 @@ ProductOptionGroup _$ProductOptionGroupFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductOptionGroup {
-  String? get code => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  List<ProductOption?>? get options => throw _privateConstructorUsedError;
-  List<ProductOptionGroupTranslation?>? get translations =>
+  String get id => throw _privateConstructorUsedError;
+  LanguageCode get languageCode => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<ProductOption> get options => throw _privateConstructorUsedError;
+  List<ProductOptionGroupTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,15 +44,15 @@ abstract class $ProductOptionGroupCopyWith<$Res> {
       _$ProductOptionGroupCopyWithImpl<$Res, ProductOptionGroup>;
   @useResult
   $Res call(
-      {String? code,
-      DateTime? createdAt,
+      {String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ProductOption?>? options,
-      List<ProductOptionGroupTranslation?>? translations,
-      DateTime? updatedAt});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ProductOption> options,
+      List<ProductOptionGroupTranslation> translations,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -68,53 +68,53 @@ class _$ProductOptionGroupCopyWithImpl<$Res, $Val extends ProductOptionGroup>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? options = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? options = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      options: freezed == options
+              as String,
+      options: null == options
           ? _value.options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<ProductOption?>?,
-      translations: freezed == translations
+              as List<ProductOption>,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ProductOptionGroupTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ProductOptionGroupTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -128,15 +128,15 @@ abstract class _$$ProductOptionGroupImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? code,
-      DateTime? createdAt,
+      {String code,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      LanguageCode? languageCode,
-      String? name,
-      List<ProductOption?>? options,
-      List<ProductOptionGroupTranslation?>? translations,
-      DateTime? updatedAt});
+      String id,
+      LanguageCode languageCode,
+      String name,
+      List<ProductOption> options,
+      List<ProductOptionGroupTranslation> translations,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -150,53 +150,53 @@ class __$$ProductOptionGroupImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? createdAt = freezed,
+    Object? code = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? languageCode = freezed,
-    Object? name = freezed,
-    Object? options = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? languageCode = null,
+    Object? name = null,
+    Object? options = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ProductOptionGroupImpl(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: freezed == createdAt
+              as String,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageCode: freezed == languageCode
+              as String,
+      languageCode: null == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
-              as LanguageCode?,
-      name: freezed == name
+              as LanguageCode,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      options: freezed == options
+              as String,
+      options: null == options
           ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
-              as List<ProductOption?>?,
-      translations: freezed == translations
+              as List<ProductOption>,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<ProductOptionGroupTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<ProductOptionGroupTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -206,15 +206,15 @@ class __$$ProductOptionGroupImplCopyWithImpl<$Res>
 class _$ProductOptionGroupImpl extends _ProductOptionGroup
     with DiagnosticableTreeMixin {
   const _$ProductOptionGroupImpl(
-      {this.code,
-      this.createdAt,
+      {required this.code,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.id,
-      this.languageCode,
-      this.name,
-      final List<ProductOption?>? options,
-      final List<ProductOptionGroupTranslation?>? translations,
-      this.updatedAt})
+      required this.id,
+      required this.languageCode,
+      required this.name,
+      required final List<ProductOption> options,
+      required final List<ProductOptionGroupTranslation> translations,
+      required this.updatedAt})
       : _customFields = customFields,
         _options = options,
         _translations = translations,
@@ -224,9 +224,9 @@ class _$ProductOptionGroupImpl extends _ProductOptionGroup
       _$$ProductOptionGroupImplFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -238,33 +238,29 @@ class _$ProductOptionGroupImpl extends _ProductOptionGroup
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final LanguageCode? languageCode;
+  final LanguageCode languageCode;
   @override
-  final String? name;
-  final List<ProductOption?>? _options;
+  final String name;
+  final List<ProductOption> _options;
   @override
-  List<ProductOption?>? get options {
-    final value = _options;
-    if (value == null) return null;
+  List<ProductOption> get options {
     if (_options is EqualUnmodifiableListView) return _options;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_options);
   }
 
-  final List<ProductOptionGroupTranslation?>? _translations;
+  final List<ProductOptionGroupTranslation> _translations;
   @override
-  List<ProductOptionGroupTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<ProductOptionGroupTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -339,38 +335,38 @@ class _$ProductOptionGroupImpl extends _ProductOptionGroup
 
 abstract class _ProductOptionGroup extends ProductOptionGroup {
   const factory _ProductOptionGroup(
-      {final String? code,
-      final DateTime? createdAt,
+      {required final String code,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? id,
-      final LanguageCode? languageCode,
-      final String? name,
-      final List<ProductOption?>? options,
-      final List<ProductOptionGroupTranslation?>? translations,
-      final DateTime? updatedAt}) = _$ProductOptionGroupImpl;
+      required final String id,
+      required final LanguageCode languageCode,
+      required final String name,
+      required final List<ProductOption> options,
+      required final List<ProductOptionGroupTranslation> translations,
+      required final DateTime updatedAt}) = _$ProductOptionGroupImpl;
   const _ProductOptionGroup._() : super._();
 
   factory _ProductOptionGroup.fromJson(Map<String, dynamic> json) =
       _$ProductOptionGroupImpl.fromJson;
 
   @override
-  String? get code;
+  String get code;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  LanguageCode? get languageCode;
+  LanguageCode get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
-  List<ProductOption?>? get options;
+  List<ProductOption> get options;
   @override
-  List<ProductOptionGroupTranslation?>? get translations;
+  List<ProductOptionGroupTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ProductOptionGroupImplCopyWith<_$ProductOptionGroupImpl> get copyWith =>

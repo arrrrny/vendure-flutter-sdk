@@ -22,7 +22,10 @@ ConfigurableOperationInput _$ConfigurableOperationInputFromJson(
 /// @nodoc
 mixin _$ConfigurableOperationInput {
   List<ConfigArgInput> get arguments => throw _privateConstructorUsedError;
+  set arguments(List<ConfigArgInput> value) =>
+      throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
+  set code(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -100,7 +103,7 @@ class __$$ConfigurableOperationInputImplCopyWithImpl<$Res>
   }) {
     return _then(_$ConfigurableOperationInputImpl(
       arguments: null == arguments
-          ? _value._arguments
+          ? _value.arguments
           : arguments // ignore: cast_nullable_to_non_nullable
               as List<ConfigArgInput>,
       code: null == code
@@ -115,25 +118,18 @@ class __$$ConfigurableOperationInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput
     with DiagnosticableTreeMixin {
-  const _$ConfigurableOperationInputImpl(
-      {required final List<ConfigArgInput> arguments, required this.code})
-      : _arguments = arguments,
-        super._();
+  _$ConfigurableOperationInputImpl(
+      {required this.arguments, required this.code})
+      : super._();
 
   factory _$ConfigurableOperationInputImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$ConfigurableOperationInputImplFromJson(json);
 
-  final List<ConfigArgInput> _arguments;
   @override
-  List<ConfigArgInput> get arguments {
-    if (_arguments is EqualUnmodifiableListView) return _arguments;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_arguments);
-  }
-
+  List<ConfigArgInput> arguments;
   @override
-  final String code;
+  String code;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -148,21 +144,6 @@ class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput
       ..add(DiagnosticsProperty('arguments', arguments))
       ..add(DiagnosticsProperty('code', code));
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ConfigurableOperationInputImpl &&
-            const DeepCollectionEquality()
-                .equals(other._arguments, _arguments) &&
-            (identical(other.code, code) || other.code == code));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_arguments), code);
 
   @JsonKey(ignore: true)
   @override
@@ -180,18 +161,20 @@ class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput
 }
 
 abstract class _ConfigurableOperationInput extends ConfigurableOperationInput {
-  const factory _ConfigurableOperationInput(
-      {required final List<ConfigArgInput> arguments,
-      required final String code}) = _$ConfigurableOperationInputImpl;
-  const _ConfigurableOperationInput._() : super._();
+  factory _ConfigurableOperationInput(
+      {required List<ConfigArgInput> arguments,
+      required String code}) = _$ConfigurableOperationInputImpl;
+  _ConfigurableOperationInput._() : super._();
 
   factory _ConfigurableOperationInput.fromJson(Map<String, dynamic> json) =
       _$ConfigurableOperationInputImpl.fromJson;
 
   @override
   List<ConfigArgInput> get arguments;
+  set arguments(List<ConfigArgInput> value);
   @override
   String get code;
+  set code(String value);
   @override
   @JsonKey(ignore: true)
   _$$ConfigurableOperationInputImplCopyWith<_$ConfigurableOperationInputImpl>

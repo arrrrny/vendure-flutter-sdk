@@ -17,19 +17,11 @@ _$UpdateCustomerInputImpl _$$UpdateCustomerInputImplFromJson(
     );
 
 Map<String, dynamic> _$$UpdateCustomerInputImplToJson(
-    _$UpdateCustomerInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('firstName', instance.firstName);
-  writeNotNull('lastName', instance.lastName);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('title', instance.title);
-  return val;
-}
+        _$UpdateCustomerInputImpl instance) =>
+    <String, dynamic>{
+      'customFields': instance.customFields,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'phoneNumber': instance.phoneNumber,
+      'title': instance.title,
+    };

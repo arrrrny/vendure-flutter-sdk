@@ -37,35 +37,35 @@ mixin _$AuthenticationResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
     required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
+            String authenticationError, ErrorCode errorCode, String message)
         invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         notVerifiedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult? Function(ErrorCode errorCode, String message)? notVerifiedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult Function(ErrorCode errorCode, String message)? notVerifiedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,8 +120,7 @@ abstract class _$$CurrentUserImplCopyWith<$Res> {
           _$CurrentUserImpl value, $Res Function(_$CurrentUserImpl) then) =
       __$$CurrentUserImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {List<CurrentUserChannel?>? channels, String? id, String? identifier});
+  $Res call({List<CurrentUserChannel> channels, String id, String identifier});
 }
 
 /// @nodoc
@@ -135,23 +134,23 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channels = freezed,
-    Object? id = freezed,
-    Object? identifier = freezed,
+    Object? channels = null,
+    Object? id = null,
+    Object? identifier = null,
   }) {
     return _then(_$CurrentUserImpl(
-      channels: freezed == channels
+      channels: null == channels
           ? _value._channels
           : channels // ignore: cast_nullable_to_non_nullable
-              as List<CurrentUserChannel?>?,
-      id: freezed == id
+              as List<CurrentUserChannel>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      identifier: freezed == identifier
+              as String,
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -160,9 +159,9 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   const _$CurrentUserImpl(
-      {final List<CurrentUserChannel?>? channels,
-      this.id,
-      this.identifier,
+      {required final List<CurrentUserChannel> channels,
+      required this.id,
+      required this.identifier,
       final String? $type})
       : _channels = channels,
         $type = $type ?? 'currentUser',
@@ -171,20 +170,18 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   factory _$CurrentUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$CurrentUserImplFromJson(json);
 
-  final List<CurrentUserChannel?>? _channels;
+  final List<CurrentUserChannel> _channels;
   @override
-  List<CurrentUserChannel?>? get channels {
-    final value = _channels;
-    if (value == null) return null;
+  List<CurrentUserChannel> get channels {
     if (_channels is EqualUnmodifiableListView) return _channels;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_channels);
   }
 
   @override
-  final String? id;
+  final String id;
   @override
-  final String? identifier;
+  final String identifier;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -230,12 +227,12 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
     required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
+            String authenticationError, ErrorCode errorCode, String message)
         invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         notVerifiedError,
   }) {
     return currentUser(channels, id, identifier);
@@ -244,13 +241,13 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult? Function(ErrorCode errorCode, String message)? notVerifiedError,
   }) {
     return currentUser?.call(channels, id, identifier);
   }
@@ -258,13 +255,13 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult Function(ErrorCode errorCode, String message)? notVerifiedError,
     required TResult orElse(),
   }) {
     if (currentUser != null) {
@@ -318,17 +315,17 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
 
 abstract class CurrentUser extends AuthenticationResult {
   const factory CurrentUser(
-      {final List<CurrentUserChannel?>? channels,
-      final String? id,
-      final String? identifier}) = _$CurrentUserImpl;
+      {required final List<CurrentUserChannel> channels,
+      required final String id,
+      required final String identifier}) = _$CurrentUserImpl;
   const CurrentUser._() : super._();
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) =
       _$CurrentUserImpl.fromJson;
 
-  List<CurrentUserChannel?>? get channels;
-  String? get id;
-  String? get identifier;
+  List<CurrentUserChannel> get channels;
+  String get id;
+  String get identifier;
   @JsonKey(ignore: true)
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -341,8 +338,7 @@ abstract class _$$InvalidCredentialsErrorImplCopyWith<$Res> {
           $Res Function(_$InvalidCredentialsErrorImpl) then) =
       __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {String? authenticationError, ErrorCode? errorCode, String? message});
+  $Res call({String authenticationError, ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -358,23 +354,23 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? authenticationError = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? authenticationError = null,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$InvalidCredentialsErrorImpl(
-      authenticationError: freezed == authenticationError
+      authenticationError: null == authenticationError
           ? _value.authenticationError
           : authenticationError // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
+              as String,
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -384,9 +380,9 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
     with DiagnosticableTreeMixin {
   const _$InvalidCredentialsErrorImpl(
-      {this.authenticationError,
-      this.errorCode,
-      this.message,
+      {required this.authenticationError,
+      required this.errorCode,
+      required this.message,
       final String? $type})
       : $type = $type ?? 'invalidCredentialsError',
         super._();
@@ -395,11 +391,11 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
       _$$InvalidCredentialsErrorImplFromJson(json);
 
   @override
-  final String? authenticationError;
+  final String authenticationError;
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -448,12 +444,12 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
     required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
+            String authenticationError, ErrorCode errorCode, String message)
         invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         notVerifiedError,
   }) {
     return invalidCredentialsError(authenticationError, errorCode, message);
@@ -462,13 +458,13 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult? Function(ErrorCode errorCode, String message)? notVerifiedError,
   }) {
     return invalidCredentialsError?.call(
         authenticationError, errorCode, message);
@@ -477,13 +473,13 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult Function(ErrorCode errorCode, String message)? notVerifiedError,
     required TResult orElse(),
   }) {
     if (invalidCredentialsError != null) {
@@ -537,17 +533,17 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
 
 abstract class InvalidCredentialsError extends AuthenticationResult {
   const factory InvalidCredentialsError(
-      {final String? authenticationError,
-      final ErrorCode? errorCode,
-      final String? message}) = _$InvalidCredentialsErrorImpl;
+      {required final String authenticationError,
+      required final ErrorCode errorCode,
+      required final String message}) = _$InvalidCredentialsErrorImpl;
   const InvalidCredentialsError._() : super._();
 
   factory InvalidCredentialsError.fromJson(Map<String, dynamic> json) =
       _$InvalidCredentialsErrorImpl.fromJson;
 
-  String? get authenticationError;
-  ErrorCode? get errorCode;
-  String? get message;
+  String get authenticationError;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -559,7 +555,7 @@ abstract class _$$NotVerifiedErrorImplCopyWith<$Res> {
           $Res Function(_$NotVerifiedErrorImpl) then) =
       __$$NotVerifiedErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -573,18 +569,18 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$NotVerifiedErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -594,7 +590,7 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
 class _$NotVerifiedErrorImpl extends NotVerifiedError
     with DiagnosticableTreeMixin {
   const _$NotVerifiedErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'notVerifiedError',
         super._();
 
@@ -602,9 +598,9 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
       _$$NotVerifiedErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -649,12 +645,12 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<CurrentUserChannel?>? channels, String? id, String? identifier)
+            List<CurrentUserChannel> channels, String id, String identifier)
         currentUser,
     required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
+            String authenticationError, ErrorCode errorCode, String message)
         invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         notVerifiedError,
   }) {
     return notVerifiedError(errorCode, message);
@@ -663,13 +659,13 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult? Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult? Function(ErrorCode errorCode, String message)? notVerifiedError,
   }) {
     return notVerifiedError?.call(errorCode, message);
   }
@@ -677,13 +673,13 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CurrentUserChannel?>? channels, String? id,
-            String? identifier)?
+    TResult Function(
+            List<CurrentUserChannel> channels, String id, String identifier)?
         currentUser,
     TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
+            String authenticationError, ErrorCode errorCode, String message)?
         invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)? notVerifiedError,
+    TResult Function(ErrorCode errorCode, String message)? notVerifiedError,
     required TResult orElse(),
   }) {
     if (notVerifiedError != null) {
@@ -737,15 +733,15 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
 
 abstract class NotVerifiedError extends AuthenticationResult {
   const factory NotVerifiedError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$NotVerifiedErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$NotVerifiedErrorImpl;
   const NotVerifiedError._() : super._();
 
   factory NotVerifiedError.fromJson(Map<String, dynamic> json) =
       _$NotVerifiedErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$NotVerifiedErrorImplCopyWith<_$NotVerifiedErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;

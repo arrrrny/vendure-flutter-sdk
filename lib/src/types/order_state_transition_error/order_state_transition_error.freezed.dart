@@ -21,11 +21,11 @@ OrderStateTransitionError _$OrderStateTransitionErrorFromJson(
 
 /// @nodoc
 mixin _$OrderStateTransitionError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get fromState => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-  String? get toState => throw _privateConstructorUsedError;
-  String? get transitionError => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get fromState => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  String get toState => throw _privateConstructorUsedError;
+  String get transitionError => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,11 +40,11 @@ abstract class $OrderStateTransitionErrorCopyWith<$Res> {
       _$OrderStateTransitionErrorCopyWithImpl<$Res, OrderStateTransitionError>;
   @useResult
   $Res call(
-      {ErrorCode? errorCode,
-      String? fromState,
-      String? message,
-      String? toState,
-      String? transitionError});
+      {ErrorCode errorCode,
+      String fromState,
+      String message,
+      String toState,
+      String transitionError});
 }
 
 /// @nodoc
@@ -61,33 +61,33 @@ class _$OrderStateTransitionErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? fromState = freezed,
-    Object? message = freezed,
-    Object? toState = freezed,
-    Object? transitionError = freezed,
+    Object? errorCode = null,
+    Object? fromState = null,
+    Object? message = null,
+    Object? toState = null,
+    Object? transitionError = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      fromState: freezed == fromState
+              as ErrorCode,
+      fromState: null == fromState
           ? _value.fromState
           : fromState // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
+              as String,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toState: freezed == toState
+              as String,
+      toState: null == toState
           ? _value.toState
           : toState // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transitionError: freezed == transitionError
+              as String,
+      transitionError: null == transitionError
           ? _value.transitionError
           : transitionError // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -102,11 +102,11 @@ abstract class _$$OrderStateTransitionErrorImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {ErrorCode? errorCode,
-      String? fromState,
-      String? message,
-      String? toState,
-      String? transitionError});
+      {ErrorCode errorCode,
+      String fromState,
+      String message,
+      String toState,
+      String transitionError});
 }
 
 /// @nodoc
@@ -122,33 +122,33 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? fromState = freezed,
-    Object? message = freezed,
-    Object? toState = freezed,
-    Object? transitionError = freezed,
+    Object? errorCode = null,
+    Object? fromState = null,
+    Object? message = null,
+    Object? toState = null,
+    Object? transitionError = null,
   }) {
     return _then(_$OrderStateTransitionErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      fromState: freezed == fromState
+              as ErrorCode,
+      fromState: null == fromState
           ? _value.fromState
           : fromState // ignore: cast_nullable_to_non_nullable
-              as String?,
-      message: freezed == message
+              as String,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toState: freezed == toState
+              as String,
+      toState: null == toState
           ? _value.toState
           : toState // ignore: cast_nullable_to_non_nullable
-              as String?,
-      transitionError: freezed == transitionError
+              as String,
+      transitionError: null == transitionError
           ? _value.transitionError
           : transitionError // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -158,26 +158,26 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
 class _$OrderStateTransitionErrorImpl extends _OrderStateTransitionError
     with DiagnosticableTreeMixin {
   const _$OrderStateTransitionErrorImpl(
-      {this.errorCode,
-      this.fromState,
-      this.message,
-      this.toState,
-      this.transitionError})
+      {required this.errorCode,
+      required this.fromState,
+      required this.message,
+      required this.toState,
+      required this.transitionError})
       : super._();
 
   factory _$OrderStateTransitionErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$OrderStateTransitionErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? fromState;
+  final String fromState;
   @override
-  final String? message;
+  final String message;
   @override
-  final String? toState;
+  final String toState;
   @override
-  final String? transitionError;
+  final String transitionError;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -233,26 +233,26 @@ class _$OrderStateTransitionErrorImpl extends _OrderStateTransitionError
 
 abstract class _OrderStateTransitionError extends OrderStateTransitionError {
   const factory _OrderStateTransitionError(
-      {final ErrorCode? errorCode,
-      final String? fromState,
-      final String? message,
-      final String? toState,
-      final String? transitionError}) = _$OrderStateTransitionErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String fromState,
+      required final String message,
+      required final String toState,
+      required final String transitionError}) = _$OrderStateTransitionErrorImpl;
   const _OrderStateTransitionError._() : super._();
 
   factory _OrderStateTransitionError.fromJson(Map<String, dynamic> json) =
       _$OrderStateTransitionErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get fromState;
+  String get fromState;
   @override
-  String? get message;
+  String get message;
   @override
-  String? get toState;
+  String get toState;
   @override
-  String? get transitionError;
+  String get transitionError;
   @override
   @JsonKey(ignore: true)
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>

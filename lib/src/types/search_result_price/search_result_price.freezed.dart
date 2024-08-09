@@ -31,20 +31,20 @@ SearchResultPrice _$SearchResultPriceFromJson(Map<String, dynamic> json) {
 mixin _$SearchResultPrice {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double? max, double? min) priceRange,
-    required TResult Function(double? value) singlePrice,
+    required TResult Function(double max, double min) priceRange,
+    required TResult Function(double value) singlePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double? max, double? min)? priceRange,
-    TResult? Function(double? value)? singlePrice,
+    TResult? Function(double max, double min)? priceRange,
+    TResult? Function(double value)? singlePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double? max, double? min)? priceRange,
-    TResult Function(double? value)? singlePrice,
+    TResult Function(double max, double min)? priceRange,
+    TResult Function(double value)? singlePrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,7 +94,7 @@ abstract class _$$PriceRangeImplCopyWith<$Res> {
           _$PriceRangeImpl value, $Res Function(_$PriceRangeImpl) then) =
       __$$PriceRangeImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({double? max, double? min});
+  $Res call({double max, double min});
 }
 
 /// @nodoc
@@ -108,18 +108,18 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? max = freezed,
-    Object? min = freezed,
+    Object? max = null,
+    Object? min = null,
   }) {
     return _then(_$PriceRangeImpl(
-      max: freezed == max
+      max: null == max
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
-              as double?,
-      min: freezed == min
+              as double,
+      min: null == min
           ? _value.min
           : min // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -127,7 +127,8 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
-  const _$PriceRangeImpl({this.max, this.min, final String? $type})
+  const _$PriceRangeImpl(
+      {required this.max, required this.min, final String? $type})
       : $type = $type ?? 'priceRange',
         super._();
 
@@ -135,9 +136,9 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
       _$$PriceRangeImplFromJson(json);
 
   @override
-  final double? max;
+  final double max;
   @override
-  final double? min;
+  final double min;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -178,8 +179,8 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double? max, double? min) priceRange,
-    required TResult Function(double? value) singlePrice,
+    required TResult Function(double max, double min) priceRange,
+    required TResult Function(double value) singlePrice,
   }) {
     return priceRange(max, min);
   }
@@ -187,8 +188,8 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double? max, double? min)? priceRange,
-    TResult? Function(double? value)? singlePrice,
+    TResult? Function(double max, double min)? priceRange,
+    TResult? Function(double value)? singlePrice,
   }) {
     return priceRange?.call(max, min);
   }
@@ -196,8 +197,8 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double? max, double? min)? priceRange,
-    TResult Function(double? value)? singlePrice,
+    TResult Function(double max, double min)? priceRange,
+    TResult Function(double value)? singlePrice,
     required TResult orElse(),
   }) {
     if (priceRange != null) {
@@ -246,15 +247,16 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
 }
 
 abstract class PriceRange extends SearchResultPrice {
-  const factory PriceRange({final double? max, final double? min}) =
-      _$PriceRangeImpl;
+  const factory PriceRange(
+      {required final double max,
+      required final double min}) = _$PriceRangeImpl;
   const PriceRange._() : super._();
 
   factory PriceRange.fromJson(Map<String, dynamic> json) =
       _$PriceRangeImpl.fromJson;
 
-  double? get max;
-  double? get min;
+  double get max;
+  double get min;
   @JsonKey(ignore: true)
   _$$PriceRangeImplCopyWith<_$PriceRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -266,7 +268,7 @@ abstract class _$$SinglePriceImplCopyWith<$Res> {
           _$SinglePriceImpl value, $Res Function(_$SinglePriceImpl) then) =
       __$$SinglePriceImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({double? value});
+  $Res call({double value});
 }
 
 /// @nodoc
@@ -280,13 +282,13 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = freezed,
+    Object? value = null,
   }) {
     return _then(_$SinglePriceImpl(
-      value: freezed == value
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -294,7 +296,7 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
-  const _$SinglePriceImpl({this.value, final String? $type})
+  const _$SinglePriceImpl({required this.value, final String? $type})
       : $type = $type ?? 'singlePrice',
         super._();
 
@@ -302,7 +304,7 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
       _$$SinglePriceImplFromJson(json);
 
   @override
-  final double? value;
+  final double value;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -341,8 +343,8 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double? max, double? min) priceRange,
-    required TResult Function(double? value) singlePrice,
+    required TResult Function(double max, double min) priceRange,
+    required TResult Function(double value) singlePrice,
   }) {
     return singlePrice(value);
   }
@@ -350,8 +352,8 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double? max, double? min)? priceRange,
-    TResult? Function(double? value)? singlePrice,
+    TResult? Function(double max, double min)? priceRange,
+    TResult? Function(double value)? singlePrice,
   }) {
     return singlePrice?.call(value);
   }
@@ -359,8 +361,8 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double? max, double? min)? priceRange,
-    TResult Function(double? value)? singlePrice,
+    TResult Function(double max, double min)? priceRange,
+    TResult Function(double value)? singlePrice,
     required TResult orElse(),
   }) {
     if (singlePrice != null) {
@@ -409,13 +411,13 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
 }
 
 abstract class SinglePrice extends SearchResultPrice {
-  const factory SinglePrice({final double? value}) = _$SinglePriceImpl;
+  const factory SinglePrice({required final double value}) = _$SinglePriceImpl;
   const SinglePrice._() : super._();
 
   factory SinglePrice.fromJson(Map<String, dynamic> json) =
       _$SinglePriceImpl.fromJson;
 
-  double? get value;
+  double get value;
   @JsonKey(ignore: true)
   _$$SinglePriceImplCopyWith<_$SinglePriceImpl> get copyWith =>
       throw _privateConstructorUsedError;

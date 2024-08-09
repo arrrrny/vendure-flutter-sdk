@@ -21,11 +21,18 @@ CreateCustomerInput _$CreateCustomerInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CreateCustomerInput {
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
+  set customFields(Map<String, dynamic>? value) =>
+      throw _privateConstructorUsedError;
   String get emailAddress => throw _privateConstructorUsedError;
+  set emailAddress(String value) => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
+  set firstName(String value) => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
+  set lastName(String value) => throw _privateConstructorUsedError;
   String? get phoneNumber => throw _privateConstructorUsedError;
+  set phoneNumber(String? value) => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
+  set title(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -134,7 +141,7 @@ class __$$CreateCustomerInputImplCopyWithImpl<$Res>
   }) {
     return _then(_$CreateCustomerInputImpl(
       customFields: freezed == customFields
-          ? _value._customFields
+          ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       emailAddress: null == emailAddress
@@ -165,39 +172,30 @@ class __$$CreateCustomerInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CreateCustomerInputImpl extends _CreateCustomerInput
     with DiagnosticableTreeMixin {
-  const _$CreateCustomerInputImpl(
-      {final Map<String, dynamic>? customFields,
+  _$CreateCustomerInputImpl(
+      {this.customFields,
       required this.emailAddress,
       required this.firstName,
       required this.lastName,
       this.phoneNumber,
       this.title})
-      : _customFields = customFields,
-        super._();
+      : super._();
 
   factory _$CreateCustomerInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$CreateCustomerInputImplFromJson(json);
 
-  final Map<String, dynamic>? _customFields;
   @override
-  Map<String, dynamic>? get customFields {
-    final value = _customFields;
-    if (value == null) return null;
-    if (_customFields is EqualUnmodifiableMapView) return _customFields;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
+  Map<String, dynamic>? customFields;
   @override
-  final String emailAddress;
+  String emailAddress;
   @override
-  final String firstName;
+  String firstName;
   @override
-  final String lastName;
+  String lastName;
   @override
-  final String? phoneNumber;
+  String? phoneNumber;
   @override
-  final String? title;
+  String? title;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -217,35 +215,6 @@ class _$CreateCustomerInputImpl extends _CreateCustomerInput
       ..add(DiagnosticsProperty('title', title));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateCustomerInputImpl &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.title, title) || other.title == title));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_customFields),
-      emailAddress,
-      firstName,
-      lastName,
-      phoneNumber,
-      title);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -262,30 +231,36 @@ class _$CreateCustomerInputImpl extends _CreateCustomerInput
 }
 
 abstract class _CreateCustomerInput extends CreateCustomerInput {
-  const factory _CreateCustomerInput(
-      {final Map<String, dynamic>? customFields,
-      required final String emailAddress,
-      required final String firstName,
-      required final String lastName,
-      final String? phoneNumber,
-      final String? title}) = _$CreateCustomerInputImpl;
-  const _CreateCustomerInput._() : super._();
+  factory _CreateCustomerInput(
+      {Map<String, dynamic>? customFields,
+      required String emailAddress,
+      required String firstName,
+      required String lastName,
+      String? phoneNumber,
+      String? title}) = _$CreateCustomerInputImpl;
+  _CreateCustomerInput._() : super._();
 
   factory _CreateCustomerInput.fromJson(Map<String, dynamic> json) =
       _$CreateCustomerInputImpl.fromJson;
 
   @override
   Map<String, dynamic>? get customFields;
+  set customFields(Map<String, dynamic>? value);
   @override
   String get emailAddress;
+  set emailAddress(String value);
   @override
   String get firstName;
+  set firstName(String value);
   @override
   String get lastName;
+  set lastName(String value);
   @override
   String? get phoneNumber;
+  set phoneNumber(String? value);
   @override
   String? get title;
+  set title(String? value);
   @override
   @JsonKey(ignore: true)
   _$$CreateCustomerInputImplCopyWith<_$CreateCustomerInputImpl> get copyWith =>

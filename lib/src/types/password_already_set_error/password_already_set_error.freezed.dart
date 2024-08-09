@@ -21,8 +21,8 @@ PasswordAlreadySetError _$PasswordAlreadySetErrorFromJson(
 
 /// @nodoc
 mixin _$PasswordAlreadySetError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+  ErrorCode get errorCode => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $PasswordAlreadySetErrorCopyWith<$Res> {
           $Res Function(PasswordAlreadySetError) then) =
       _$PasswordAlreadySetErrorCopyWithImpl<$Res, PasswordAlreadySetError>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -53,18 +53,18 @@ class _$PasswordAlreadySetErrorCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$PasswordAlreadySetErrorImplCopyWith<$Res>
       __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -94,18 +94,18 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$PasswordAlreadySetErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -114,16 +114,17 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PasswordAlreadySetErrorImpl extends _PasswordAlreadySetError
     with DiagnosticableTreeMixin {
-  const _$PasswordAlreadySetErrorImpl({this.errorCode, this.message})
+  const _$PasswordAlreadySetErrorImpl(
+      {required this.errorCode, required this.message})
       : super._();
 
   factory _$PasswordAlreadySetErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$PasswordAlreadySetErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -170,17 +171,17 @@ class _$PasswordAlreadySetErrorImpl extends _PasswordAlreadySetError
 
 abstract class _PasswordAlreadySetError extends PasswordAlreadySetError {
   const factory _PasswordAlreadySetError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$PasswordAlreadySetErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$PasswordAlreadySetErrorImpl;
   const _PasswordAlreadySetError._() : super._();
 
   factory _PasswordAlreadySetError.fromJson(Map<String, dynamic> json) =
       _$PasswordAlreadySetErrorImpl.fromJson;
 
   @override
-  ErrorCode? get errorCode;
+  ErrorCode get errorCode;
   @override
-  String? get message;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$PasswordAlreadySetErrorImplCopyWith<_$PasswordAlreadySetErrorImpl>

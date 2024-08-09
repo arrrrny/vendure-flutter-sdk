@@ -20,27 +20,26 @@ Collection _$CollectionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Collection {
-  List<Asset?>? get assets => throw _privateConstructorUsedError;
-  List<CollectionBreadcrumb?>? get breadcrumbs =>
+  List<Asset> get assets => throw _privateConstructorUsedError;
+  List<CollectionBreadcrumb> get breadcrumbs =>
       throw _privateConstructorUsedError;
-  List<Collection?>? get children => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  List<Collection>? get children => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   Asset? get featuredAsset => throw _privateConstructorUsedError;
-  List<ConfigurableOperation?>? get filters =>
-      throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
+  List<ConfigurableOperation> get filters => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   Collection? get parent => throw _privateConstructorUsedError;
-  String? get parentId => throw _privateConstructorUsedError;
-  int? get position => throw _privateConstructorUsedError;
-  ProductVariantList? get productVariants => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
-  List<CollectionTranslation?>? get translations =>
+  String get parentId => throw _privateConstructorUsedError;
+  int get position => throw _privateConstructorUsedError;
+  ProductVariantList get productVariants => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
+  List<CollectionTranslation> get translations =>
       throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,28 +54,28 @@ abstract class $CollectionCopyWith<$Res> {
       _$CollectionCopyWithImpl<$Res, Collection>;
   @useResult
   $Res call(
-      {List<Asset?>? assets,
-      List<CollectionBreadcrumb?>? breadcrumbs,
-      List<Collection?>? children,
-      DateTime? createdAt,
+      {List<Asset> assets,
+      List<CollectionBreadcrumb> breadcrumbs,
+      List<Collection>? children,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
+      String description,
       Asset? featuredAsset,
-      List<ConfigurableOperation?>? filters,
-      String? id,
+      List<ConfigurableOperation> filters,
+      String id,
       LanguageCode? languageCode,
-      String? name,
+      String name,
       Collection? parent,
-      String? parentId,
-      int? position,
-      ProductVariantList? productVariants,
-      String? slug,
-      List<CollectionTranslation?>? translations,
-      DateTime? updatedAt});
+      String parentId,
+      int position,
+      ProductVariantList productVariants,
+      String slug,
+      List<CollectionTranslation> translations,
+      DateTime updatedAt});
 
   $AssetCopyWith<$Res>? get featuredAsset;
   $CollectionCopyWith<$Res>? get parent;
-  $ProductVariantListCopyWith<$Res>? get productVariants;
+  $ProductVariantListCopyWith<$Res> get productVariants;
 }
 
 /// @nodoc
@@ -92,98 +91,98 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assets = freezed,
-    Object? breadcrumbs = freezed,
+    Object? assets = null,
+    Object? breadcrumbs = null,
     Object? children = freezed,
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
+    Object? description = null,
     Object? featuredAsset = freezed,
-    Object? filters = freezed,
-    Object? id = freezed,
+    Object? filters = null,
+    Object? id = null,
     Object? languageCode = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? parent = freezed,
-    Object? parentId = freezed,
-    Object? position = freezed,
-    Object? productVariants = freezed,
-    Object? slug = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? parentId = null,
+    Object? position = null,
+    Object? productVariants = null,
+    Object? slug = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      assets: freezed == assets
+      assets: null == assets
           ? _value.assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      breadcrumbs: freezed == breadcrumbs
+              as List<Asset>,
+      breadcrumbs: null == breadcrumbs
           ? _value.breadcrumbs
           : breadcrumbs // ignore: cast_nullable_to_non_nullable
-              as List<CollectionBreadcrumb?>?,
+              as List<CollectionBreadcrumb>,
       children: freezed == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<Collection?>?,
-      createdAt: freezed == createdAt
+              as List<Collection>?,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
-      filters: freezed == filters
+      filters: null == filters
           ? _value.filters
           : filters // ignore: cast_nullable_to_non_nullable
-              as List<ConfigurableOperation?>?,
-      id: freezed == id
+              as List<ConfigurableOperation>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       languageCode: freezed == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
               as LanguageCode?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parent: freezed == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
               as Collection?,
-      parentId: freezed == parentId
+      parentId: null == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: freezed == position
+              as String,
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
-              as int?,
-      productVariants: freezed == productVariants
+              as int,
+      productVariants: null == productVariants
           ? _value.productVariants
           : productVariants // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList?,
-      slug: freezed == slug
+              as ProductVariantList,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value.translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<CollectionTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<CollectionTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 
@@ -213,12 +212,8 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
 
   @override
   @pragma('vm:prefer-inline')
-  $ProductVariantListCopyWith<$Res>? get productVariants {
-    if (_value.productVariants == null) {
-      return null;
-    }
-
-    return $ProductVariantListCopyWith<$Res>(_value.productVariants!, (value) {
+  $ProductVariantListCopyWith<$Res> get productVariants {
+    return $ProductVariantListCopyWith<$Res>(_value.productVariants, (value) {
       return _then(_value.copyWith(productVariants: value) as $Val);
     });
   }
@@ -233,31 +228,31 @@ abstract class _$$CollectionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<Asset?>? assets,
-      List<CollectionBreadcrumb?>? breadcrumbs,
-      List<Collection?>? children,
-      DateTime? createdAt,
+      {List<Asset> assets,
+      List<CollectionBreadcrumb> breadcrumbs,
+      List<Collection>? children,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? description,
+      String description,
       Asset? featuredAsset,
-      List<ConfigurableOperation?>? filters,
-      String? id,
+      List<ConfigurableOperation> filters,
+      String id,
       LanguageCode? languageCode,
-      String? name,
+      String name,
       Collection? parent,
-      String? parentId,
-      int? position,
-      ProductVariantList? productVariants,
-      String? slug,
-      List<CollectionTranslation?>? translations,
-      DateTime? updatedAt});
+      String parentId,
+      int position,
+      ProductVariantList productVariants,
+      String slug,
+      List<CollectionTranslation> translations,
+      DateTime updatedAt});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
   @override
   $CollectionCopyWith<$Res>? get parent;
   @override
-  $ProductVariantListCopyWith<$Res>? get productVariants;
+  $ProductVariantListCopyWith<$Res> get productVariants;
 }
 
 /// @nodoc
@@ -271,98 +266,98 @@ class __$$CollectionImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assets = freezed,
-    Object? breadcrumbs = freezed,
+    Object? assets = null,
+    Object? breadcrumbs = null,
     Object? children = freezed,
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? description = freezed,
+    Object? description = null,
     Object? featuredAsset = freezed,
-    Object? filters = freezed,
-    Object? id = freezed,
+    Object? filters = null,
+    Object? id = null,
     Object? languageCode = freezed,
-    Object? name = freezed,
+    Object? name = null,
     Object? parent = freezed,
-    Object? parentId = freezed,
-    Object? position = freezed,
-    Object? productVariants = freezed,
-    Object? slug = freezed,
-    Object? translations = freezed,
-    Object? updatedAt = freezed,
+    Object? parentId = null,
+    Object? position = null,
+    Object? productVariants = null,
+    Object? slug = null,
+    Object? translations = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$CollectionImpl(
-      assets: freezed == assets
+      assets: null == assets
           ? _value._assets
           : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset?>?,
-      breadcrumbs: freezed == breadcrumbs
+              as List<Asset>,
+      breadcrumbs: null == breadcrumbs
           ? _value._breadcrumbs
           : breadcrumbs // ignore: cast_nullable_to_non_nullable
-              as List<CollectionBreadcrumb?>?,
+              as List<CollectionBreadcrumb>,
       children: freezed == children
           ? _value._children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<Collection?>?,
-      createdAt: freezed == createdAt
+              as List<Collection>?,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       featuredAsset: freezed == featuredAsset
           ? _value.featuredAsset
           : featuredAsset // ignore: cast_nullable_to_non_nullable
               as Asset?,
-      filters: freezed == filters
+      filters: null == filters
           ? _value._filters
           : filters // ignore: cast_nullable_to_non_nullable
-              as List<ConfigurableOperation?>?,
-      id: freezed == id
+              as List<ConfigurableOperation>,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       languageCode: freezed == languageCode
           ? _value.languageCode
           : languageCode // ignore: cast_nullable_to_non_nullable
               as LanguageCode?,
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       parent: freezed == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
               as Collection?,
-      parentId: freezed == parentId
+      parentId: null == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: freezed == position
+              as String,
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
-              as int?,
-      productVariants: freezed == productVariants
+              as int,
+      productVariants: null == productVariants
           ? _value.productVariants
           : productVariants // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList?,
-      slug: freezed == slug
+              as ProductVariantList,
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-      translations: freezed == translations
+              as String,
+      translations: null == translations
           ? _value._translations
           : translations // ignore: cast_nullable_to_non_nullable
-              as List<CollectionTranslation?>?,
-      updatedAt: freezed == updatedAt
+              as List<CollectionTranslation>,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -371,24 +366,24 @@ class __$$CollectionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   const _$CollectionImpl(
-      {final List<Asset?>? assets,
-      final List<CollectionBreadcrumb?>? breadcrumbs,
-      final List<Collection?>? children,
-      this.createdAt,
+      {required final List<Asset> assets,
+      required final List<CollectionBreadcrumb> breadcrumbs,
+      final List<Collection>? children,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.description,
+      required this.description,
       this.featuredAsset,
-      final List<ConfigurableOperation?>? filters,
-      this.id,
+      required final List<ConfigurableOperation> filters,
+      required this.id,
       this.languageCode,
-      this.name,
+      required this.name,
       this.parent,
-      this.parentId,
-      this.position,
-      this.productVariants,
-      this.slug,
-      final List<CollectionTranslation?>? translations,
-      this.updatedAt})
+      required this.parentId,
+      required this.position,
+      required this.productVariants,
+      required this.slug,
+      required final List<CollectionTranslation> translations,
+      required this.updatedAt})
       : _assets = assets,
         _breadcrumbs = breadcrumbs,
         _children = children,
@@ -400,29 +395,25 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   factory _$CollectionImpl.fromJson(Map<String, dynamic> json) =>
       _$$CollectionImplFromJson(json);
 
-  final List<Asset?>? _assets;
+  final List<Asset> _assets;
   @override
-  List<Asset?>? get assets {
-    final value = _assets;
-    if (value == null) return null;
+  List<Asset> get assets {
     if (_assets is EqualUnmodifiableListView) return _assets;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_assets);
   }
 
-  final List<CollectionBreadcrumb?>? _breadcrumbs;
+  final List<CollectionBreadcrumb> _breadcrumbs;
   @override
-  List<CollectionBreadcrumb?>? get breadcrumbs {
-    final value = _breadcrumbs;
-    if (value == null) return null;
+  List<CollectionBreadcrumb> get breadcrumbs {
     if (_breadcrumbs is EqualUnmodifiableListView) return _breadcrumbs;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_breadcrumbs);
   }
 
-  final List<Collection?>? _children;
+  final List<Collection>? _children;
   @override
-  List<Collection?>? get children {
+  List<Collection>? get children {
     final value = _children;
     if (value == null) return null;
     if (_children is EqualUnmodifiableListView) return _children;
@@ -431,7 +422,7 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   }
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -443,47 +434,43 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? description;
+  final String description;
   @override
   final Asset? featuredAsset;
-  final List<ConfigurableOperation?>? _filters;
+  final List<ConfigurableOperation> _filters;
   @override
-  List<ConfigurableOperation?>? get filters {
-    final value = _filters;
-    if (value == null) return null;
+  List<ConfigurableOperation> get filters {
     if (_filters is EqualUnmodifiableListView) return _filters;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_filters);
   }
 
   @override
-  final String? id;
+  final String id;
   @override
   final LanguageCode? languageCode;
   @override
-  final String? name;
+  final String name;
   @override
   final Collection? parent;
   @override
-  final String? parentId;
+  final String parentId;
   @override
-  final int? position;
+  final int position;
   @override
-  final ProductVariantList? productVariants;
+  final ProductVariantList productVariants;
   @override
-  final String? slug;
-  final List<CollectionTranslation?>? _translations;
+  final String slug;
+  final List<CollectionTranslation> _translations;
   @override
-  List<CollectionTranslation?>? get translations {
-    final value = _translations;
-    if (value == null) return null;
+  List<CollectionTranslation> get translations {
     if (_translations is EqualUnmodifiableListView) return _translations;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_translations);
   }
 
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -590,65 +577,65 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
 
 abstract class _Collection extends Collection {
   const factory _Collection(
-      {final List<Asset?>? assets,
-      final List<CollectionBreadcrumb?>? breadcrumbs,
-      final List<Collection?>? children,
-      final DateTime? createdAt,
+      {required final List<Asset> assets,
+      required final List<CollectionBreadcrumb> breadcrumbs,
+      final List<Collection>? children,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? description,
+      required final String description,
       final Asset? featuredAsset,
-      final List<ConfigurableOperation?>? filters,
-      final String? id,
+      required final List<ConfigurableOperation> filters,
+      required final String id,
       final LanguageCode? languageCode,
-      final String? name,
+      required final String name,
       final Collection? parent,
-      final String? parentId,
-      final int? position,
-      final ProductVariantList? productVariants,
-      final String? slug,
-      final List<CollectionTranslation?>? translations,
-      final DateTime? updatedAt}) = _$CollectionImpl;
+      required final String parentId,
+      required final int position,
+      required final ProductVariantList productVariants,
+      required final String slug,
+      required final List<CollectionTranslation> translations,
+      required final DateTime updatedAt}) = _$CollectionImpl;
   const _Collection._() : super._();
 
   factory _Collection.fromJson(Map<String, dynamic> json) =
       _$CollectionImpl.fromJson;
 
   @override
-  List<Asset?>? get assets;
+  List<Asset> get assets;
   @override
-  List<CollectionBreadcrumb?>? get breadcrumbs;
+  List<CollectionBreadcrumb> get breadcrumbs;
   @override
-  List<Collection?>? get children;
+  List<Collection>? get children;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get description;
+  String get description;
   @override
   Asset? get featuredAsset;
   @override
-  List<ConfigurableOperation?>? get filters;
+  List<ConfigurableOperation> get filters;
   @override
-  String? get id;
+  String get id;
   @override
   LanguageCode? get languageCode;
   @override
-  String? get name;
+  String get name;
   @override
   Collection? get parent;
   @override
-  String? get parentId;
+  String get parentId;
   @override
-  int? get position;
+  int get position;
   @override
-  ProductVariantList? get productVariants;
+  ProductVariantList get productVariants;
   @override
-  String? get slug;
+  String get slug;
   @override
-  List<CollectionTranslation?>? get translations;
+  List<CollectionTranslation> get translations;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$CollectionImplCopyWith<_$CollectionImpl> get copyWith =>

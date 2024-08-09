@@ -3,15 +3,11 @@ import 'package:flutter/foundation.dart';
 part 'update_customer_input.freezed.dart';
 part 'update_customer_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class UpdateCustomerInput with _$UpdateCustomerInput {
   const UpdateCustomerInput._();
 
-  const factory UpdateCustomerInput({
+  factory UpdateCustomerInput({
     Map<String, dynamic>? customFields,
     String? firstName,
     String? lastName,
@@ -19,5 +15,6 @@ class UpdateCustomerInput with _$UpdateCustomerInput {
     String? title,
   }) = _UpdateCustomerInput;
 
-  factory UpdateCustomerInput.fromJson(Map<String, dynamic> json) => _$UpdateCustomerInputFromJson(json);
+  factory UpdateCustomerInput.fromJson(Map<String, dynamic> json) =>
+      _$UpdateCustomerInputFromJson(json);
 }

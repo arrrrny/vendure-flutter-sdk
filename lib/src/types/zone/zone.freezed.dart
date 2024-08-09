@@ -20,12 +20,12 @@ Zone _$ZoneFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Zone {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  List<Region?>? get members => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  List<Region> get members => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,12 +38,12 @@ abstract class $ZoneCopyWith<$Res> {
       _$ZoneCopyWithImpl<$Res, Zone>;
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      List<Region?>? members,
-      String? name,
-      DateTime? updatedAt});
+      String id,
+      List<Region> members,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -59,38 +59,38 @@ class _$ZoneCopyWithImpl<$Res, $Val extends Zone>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? members = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? members = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      members: freezed == members
+              as String,
+      members: null == members
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<Region?>?,
-      name: freezed == name
+              as List<Region>,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -103,12 +103,12 @@ abstract class _$$ZoneImplCopyWith<$Res> implements $ZoneCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt,
+      {DateTime createdAt,
       Map<String, dynamic>? customFields,
-      String? id,
-      List<Region?>? members,
-      String? name,
-      DateTime? updatedAt});
+      String id,
+      List<Region> members,
+      String name,
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -121,38 +121,38 @@ class __$$ZoneImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? customFields = freezed,
-    Object? id = freezed,
-    Object? members = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
+    Object? id = null,
+    Object? members = null,
+    Object? name = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ZoneImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      members: freezed == members
+              as String,
+      members: null == members
           ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<Region?>?,
-      name: freezed == name
+              as List<Region>,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -161,12 +161,12 @@ class __$$ZoneImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
   const _$ZoneImpl(
-      {this.createdAt,
+      {required this.createdAt,
       final Map<String, dynamic>? customFields,
-      this.id,
-      final List<Region?>? members,
-      this.name,
-      this.updatedAt})
+      required this.id,
+      required final List<Region> members,
+      required this.name,
+      required this.updatedAt})
       : _customFields = customFields,
         _members = members,
         super._();
@@ -175,7 +175,7 @@ class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
       _$$ZoneImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -187,21 +187,19 @@ class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? id;
-  final List<Region?>? _members;
+  final String id;
+  final List<Region> _members;
   @override
-  List<Region?>? get members {
-    final value = _members;
-    if (value == null) return null;
+  List<Region> get members {
     if (_members is EqualUnmodifiableListView) return _members;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_members);
   }
 
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -264,28 +262,28 @@ class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
 
 abstract class _Zone extends Zone {
   const factory _Zone(
-      {final DateTime? createdAt,
+      {required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
-      final String? id,
-      final List<Region?>? members,
-      final String? name,
-      final DateTime? updatedAt}) = _$ZoneImpl;
+      required final String id,
+      required final List<Region> members,
+      required final String name,
+      required final DateTime updatedAt}) = _$ZoneImpl;
   const _Zone._() : super._();
 
   factory _Zone.fromJson(Map<String, dynamic> json) = _$ZoneImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
-  String? get id;
+  String get id;
   @override
-  List<Region?>? get members;
+  List<Region> get members;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ZoneImplCopyWith<_$ZoneImpl> get copyWith =>

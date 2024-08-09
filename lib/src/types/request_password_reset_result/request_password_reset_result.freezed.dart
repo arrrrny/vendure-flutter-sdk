@@ -35,23 +35,23 @@ RequestPasswordResetResult _$RequestPasswordResetResultFromJson(
 mixin _$RequestPasswordResetResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
+    required TResult Function(bool success) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
+    TResult? Function(bool success)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
+    TResult Function(bool success)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -105,7 +105,7 @@ abstract class _$$NativeAuthStrategyErrorImplCopyWith<$Res> {
           $Res Function(_$NativeAuthStrategyErrorImpl) then) =
       __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+  $Res call({ErrorCode errorCode, String message});
 }
 
 /// @nodoc
@@ -121,18 +121,18 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
+    Object? errorCode = null,
+    Object? message = null,
   }) {
     return _then(_$NativeAuthStrategyErrorImpl(
-      errorCode: freezed == errorCode
+      errorCode: null == errorCode
           ? _value.errorCode
           : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
+              as ErrorCode,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -142,7 +142,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
     with DiagnosticableTreeMixin {
   const _$NativeAuthStrategyErrorImpl(
-      {this.errorCode, this.message, final String? $type})
+      {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
         super._();
 
@@ -150,9 +150,9 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
       _$$NativeAuthStrategyErrorImplFromJson(json);
 
   @override
-  final ErrorCode? errorCode;
+  final ErrorCode errorCode;
   @override
-  final String? message;
+  final String message;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -196,9 +196,9 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
+    required TResult Function(bool success) success,
   }) {
     return nativeAuthStrategyError(errorCode, message);
   }
@@ -206,9 +206,9 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
+    TResult? Function(bool success)? success,
   }) {
     return nativeAuthStrategyError?.call(errorCode, message);
   }
@@ -216,9 +216,9 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
+    TResult Function(bool success)? success,
     required TResult orElse(),
   }) {
     if (nativeAuthStrategyError != null) {
@@ -269,15 +269,15 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
 
 abstract class NativeAuthStrategyError extends RequestPasswordResetResult {
   const factory NativeAuthStrategyError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$NativeAuthStrategyErrorImpl;
+      {required final ErrorCode errorCode,
+      required final String message}) = _$NativeAuthStrategyErrorImpl;
   const NativeAuthStrategyError._() : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) =
       _$NativeAuthStrategyErrorImpl.fromJson;
 
-  ErrorCode? get errorCode;
-  String? get message;
+  ErrorCode get errorCode;
+  String get message;
   @JsonKey(ignore: true)
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -289,7 +289,7 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({bool? success});
+  $Res call({bool success});
 }
 
 /// @nodoc
@@ -303,13 +303,13 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? success = freezed,
+    Object? success = null,
   }) {
     return _then(_$SuccessImpl(
-      success: freezed == success
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -317,7 +317,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
-  const _$SuccessImpl({this.success, final String? $type})
+  const _$SuccessImpl({required this.success, final String? $type})
       : $type = $type ?? 'success',
         super._();
 
@@ -325,7 +325,7 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
       _$$SuccessImplFromJson(json);
 
   @override
-  final bool? success;
+  final bool success;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -364,9 +364,9 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
+    required TResult Function(ErrorCode errorCode, String message)
         nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
+    required TResult Function(bool success) success,
   }) {
     return success(this.success);
   }
@@ -374,9 +374,9 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
+    TResult? Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
+    TResult? Function(bool success)? success,
   }) {
     return success?.call(this.success);
   }
@@ -384,9 +384,9 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
+    TResult Function(ErrorCode errorCode, String message)?
         nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
+    TResult Function(bool success)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -436,12 +436,12 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
 }
 
 abstract class Success extends RequestPasswordResetResult {
-  const factory Success({final bool? success}) = _$SuccessImpl;
+  const factory Success({required final bool success}) = _$SuccessImpl;
   const Success._() : super._();
 
   factory Success.fromJson(Map<String, dynamic> json) = _$SuccessImpl.fromJson;
 
-  bool? get success;
+  bool get success;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

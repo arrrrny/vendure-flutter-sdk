@@ -7,131 +7,100 @@ part of 'order.dart';
 // **************************************************************************
 
 _$OrderImpl _$$OrderImplFromJson(Map<String, dynamic> json) => _$OrderImpl(
-      active: json['active'] as bool?,
+      active: json['active'] as bool,
       billingAddress: json['billingAddress'] == null
           ? null
           : OrderAddress.fromJson(
               json['billingAddress'] as Map<String, dynamic>),
-      code: json['code'] as String?,
-      couponCodes: (json['couponCodes'] as List<dynamic>?)
-          ?.map((e) => e as String?)
+      code: json['code'] as String,
+      couponCodes: (json['couponCodes'] as List<dynamic>)
+          .map((e) => e as String)
           .toList(),
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      currencyCode:
-          $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
       customFields: json['customFields'] as Map<String, dynamic>?,
       customer: json['customer'] == null
           ? null
           : Customer.fromJson(json['customer'] as Map<String, dynamic>),
-      discounts: (json['discounts'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Discount.fromJson(e as Map<String, dynamic>))
+      discounts: (json['discounts'] as List<dynamic>)
+          .map((e) => Discount.fromJson(e as Map<String, dynamic>))
           .toList(),
       fulfillments: (json['fulfillments'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Fulfillment.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Fulfillment.fromJson(e as Map<String, dynamic>))
           .toList(),
-      history: json['history'] == null
-          ? null
-          : HistoryEntryList.fromJson(json['history'] as Map<String, dynamic>),
-      id: json['id'] as String?,
-      lines: (json['lines'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : OrderLine.fromJson(e as Map<String, dynamic>))
+      history:
+          HistoryEntryList.fromJson(json['history'] as Map<String, dynamic>),
+      id: json['id'] as String,
+      lines: (json['lines'] as List<dynamic>)
+          .map((e) => OrderLine.fromJson(e as Map<String, dynamic>))
           .toList(),
       orderPlacedAt: json['orderPlacedAt'] == null
           ? null
           : DateTime.parse(json['orderPlacedAt'] as String),
       payments: (json['payments'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Payment.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Payment.fromJson(e as Map<String, dynamic>))
           .toList(),
-      promotions: (json['promotions'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Promotion.fromJson(e as Map<String, dynamic>))
+      promotions: (json['promotions'] as List<dynamic>)
+          .map((e) => Promotion.fromJson(e as Map<String, dynamic>))
           .toList(),
-      shipping: (json['shipping'] as num?)?.toDouble(),
+      shipping: (json['shipping'] as num).toDouble(),
       shippingAddress: json['shippingAddress'] == null
           ? null
           : OrderAddress.fromJson(
               json['shippingAddress'] as Map<String, dynamic>),
-      shippingLines: (json['shippingLines'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ShippingLine.fromJson(e as Map<String, dynamic>))
+      shippingLines: (json['shippingLines'] as List<dynamic>)
+          .map((e) => ShippingLine.fromJson(e as Map<String, dynamic>))
           .toList(),
-      shippingWithTax: (json['shippingWithTax'] as num?)?.toDouble(),
-      state: json['state'] as String?,
-      subTotal: (json['subTotal'] as num?)?.toDouble(),
-      subTotalWithTax: (json['subTotalWithTax'] as num?)?.toDouble(),
-      surcharges: (json['surcharges'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : Surcharge.fromJson(e as Map<String, dynamic>))
+      shippingWithTax: (json['shippingWithTax'] as num).toDouble(),
+      state: json['state'] as String,
+      subTotal: (json['subTotal'] as num).toDouble(),
+      subTotalWithTax: (json['subTotalWithTax'] as num).toDouble(),
+      surcharges: (json['surcharges'] as List<dynamic>)
+          .map((e) => Surcharge.fromJson(e as Map<String, dynamic>))
           .toList(),
-      taxSummary: (json['taxSummary'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : OrderTaxSummary.fromJson(e as Map<String, dynamic>))
+      taxSummary: (json['taxSummary'] as List<dynamic>)
+          .map((e) => OrderTaxSummary.fromJson(e as Map<String, dynamic>))
           .toList(),
-      total: (json['total'] as num?)?.toDouble(),
-      totalQuantity: (json['totalQuantity'] as num?)?.toInt(),
-      totalWithTax: (json['totalWithTax'] as num?)?.toDouble(),
-      type: $enumDecodeNullable(_$OrderTypeEnumMap, json['type']),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
+      total: (json['total'] as num).toDouble(),
+      totalQuantity: (json['totalQuantity'] as num).toInt(),
+      totalWithTax: (json['totalWithTax'] as num).toDouble(),
+      type: $enumDecode(_$OrderTypeEnumMap, json['type']),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('active', instance.active);
-  writeNotNull('billingAddress', instance.billingAddress?.toJson());
-  writeNotNull('code', instance.code);
-  writeNotNull('couponCodes', instance.couponCodes);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('currencyCode', _$CurrencyCodeEnumMap[instance.currencyCode]);
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('customer', instance.customer?.toJson());
-  writeNotNull(
-      'discounts', instance.discounts?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'fulfillments', instance.fulfillments?.map((e) => e?.toJson()).toList());
-  writeNotNull('history', instance.history?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('lines', instance.lines?.map((e) => e?.toJson()).toList());
-  writeNotNull('orderPlacedAt', instance.orderPlacedAt?.toIso8601String());
-  writeNotNull('payments', instance.payments?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'promotions', instance.promotions?.map((e) => e?.toJson()).toList());
-  writeNotNull('shipping', instance.shipping);
-  writeNotNull('shippingAddress', instance.shippingAddress?.toJson());
-  writeNotNull('shippingLines',
-      instance.shippingLines?.map((e) => e?.toJson()).toList());
-  writeNotNull('shippingWithTax', instance.shippingWithTax);
-  writeNotNull('state', instance.state);
-  writeNotNull('subTotal', instance.subTotal);
-  writeNotNull('subTotalWithTax', instance.subTotalWithTax);
-  writeNotNull(
-      'surcharges', instance.surcharges?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'taxSummary', instance.taxSummary?.map((e) => e?.toJson()).toList());
-  writeNotNull('total', instance.total);
-  writeNotNull('totalQuantity', instance.totalQuantity);
-  writeNotNull('totalWithTax', instance.totalWithTax);
-  writeNotNull('type', _$OrderTypeEnumMap[instance.type]);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
+    <String, dynamic>{
+      'active': instance.active,
+      'billingAddress': instance.billingAddress,
+      'code': instance.code,
+      'couponCodes': instance.couponCodes,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      'customFields': instance.customFields,
+      'customer': instance.customer,
+      'discounts': instance.discounts,
+      'fulfillments': instance.fulfillments,
+      'history': instance.history,
+      'id': instance.id,
+      'lines': instance.lines,
+      'orderPlacedAt': instance.orderPlacedAt?.toIso8601String(),
+      'payments': instance.payments,
+      'promotions': instance.promotions,
+      'shipping': instance.shipping,
+      'shippingAddress': instance.shippingAddress,
+      'shippingLines': instance.shippingLines,
+      'shippingWithTax': instance.shippingWithTax,
+      'state': instance.state,
+      'subTotal': instance.subTotal,
+      'subTotalWithTax': instance.subTotalWithTax,
+      'surcharges': instance.surcharges,
+      'taxSummary': instance.taxSummary,
+      'total': instance.total,
+      'totalQuantity': instance.totalQuantity,
+      'totalWithTax': instance.totalWithTax,
+      'type': _$OrderTypeEnumMap[instance.type]!,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

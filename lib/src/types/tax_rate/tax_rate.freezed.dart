@@ -20,16 +20,16 @@ TaxRate _$TaxRateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaxRate {
-  TaxCategory? get category => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  TaxCategory get category => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
   CustomerGroup? get customerGroup => throw _privateConstructorUsedError;
-  bool? get enabled => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  double? get value => throw _privateConstructorUsedError;
-  Zone? get zone => throw _privateConstructorUsedError;
+  bool get enabled => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  double get value => throw _privateConstructorUsedError;
+  Zone get zone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,20 +42,20 @@ abstract class $TaxRateCopyWith<$Res> {
       _$TaxRateCopyWithImpl<$Res, TaxRate>;
   @useResult
   $Res call(
-      {TaxCategory? category,
-      DateTime? createdAt,
+      {TaxCategory category,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
       CustomerGroup? customerGroup,
-      bool? enabled,
-      String? id,
-      String? name,
-      DateTime? updatedAt,
-      double? value,
-      Zone? zone});
+      bool enabled,
+      String id,
+      String name,
+      DateTime updatedAt,
+      double value,
+      Zone zone});
 
-  $TaxCategoryCopyWith<$Res>? get category;
+  $TaxCategoryCopyWith<$Res> get category;
   $CustomerGroupCopyWith<$Res>? get customerGroup;
-  $ZoneCopyWith<$Res>? get zone;
+  $ZoneCopyWith<$Res> get zone;
 }
 
 /// @nodoc
@@ -71,26 +71,26 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = freezed,
-    Object? createdAt = freezed,
+    Object? category = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
     Object? customerGroup = freezed,
-    Object? enabled = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
-    Object? value = freezed,
-    Object? zone = freezed,
+    Object? enabled = null,
+    Object? id = null,
+    Object? name = null,
+    Object? updatedAt = null,
+    Object? value = null,
+    Object? zone = null,
   }) {
     return _then(_value.copyWith(
-      category: freezed == category
+      category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as TaxCategory?,
-      createdAt: freezed == createdAt
+              as TaxCategory,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
@@ -99,41 +99,37 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
           ? _value.customerGroup
           : customerGroup // ignore: cast_nullable_to_non_nullable
               as CustomerGroup?,
-      enabled: freezed == enabled
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      id: freezed == id
+              as bool,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      value: freezed == value
+              as DateTime,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as double?,
-      zone: freezed == zone
+              as double,
+      zone: null == zone
           ? _value.zone
           : zone // ignore: cast_nullable_to_non_nullable
-              as Zone?,
+              as Zone,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TaxCategoryCopyWith<$Res>? get category {
-    if (_value.category == null) {
-      return null;
-    }
-
-    return $TaxCategoryCopyWith<$Res>(_value.category!, (value) {
+  $TaxCategoryCopyWith<$Res> get category {
+    return $TaxCategoryCopyWith<$Res>(_value.category, (value) {
       return _then(_value.copyWith(category: value) as $Val);
     });
   }
@@ -152,12 +148,8 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
 
   @override
   @pragma('vm:prefer-inline')
-  $ZoneCopyWith<$Res>? get zone {
-    if (_value.zone == null) {
-      return null;
-    }
-
-    return $ZoneCopyWith<$Res>(_value.zone!, (value) {
+  $ZoneCopyWith<$Res> get zone {
+    return $ZoneCopyWith<$Res>(_value.zone, (value) {
       return _then(_value.copyWith(zone: value) as $Val);
     });
   }
@@ -171,23 +163,23 @@ abstract class _$$TaxRateImplCopyWith<$Res> implements $TaxRateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {TaxCategory? category,
-      DateTime? createdAt,
+      {TaxCategory category,
+      DateTime createdAt,
       Map<String, dynamic>? customFields,
       CustomerGroup? customerGroup,
-      bool? enabled,
-      String? id,
-      String? name,
-      DateTime? updatedAt,
-      double? value,
-      Zone? zone});
+      bool enabled,
+      String id,
+      String name,
+      DateTime updatedAt,
+      double value,
+      Zone zone});
 
   @override
-  $TaxCategoryCopyWith<$Res>? get category;
+  $TaxCategoryCopyWith<$Res> get category;
   @override
   $CustomerGroupCopyWith<$Res>? get customerGroup;
   @override
-  $ZoneCopyWith<$Res>? get zone;
+  $ZoneCopyWith<$Res> get zone;
 }
 
 /// @nodoc
@@ -201,26 +193,26 @@ class __$$TaxRateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = freezed,
-    Object? createdAt = freezed,
+    Object? category = null,
+    Object? createdAt = null,
     Object? customFields = freezed,
     Object? customerGroup = freezed,
-    Object? enabled = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
-    Object? value = freezed,
-    Object? zone = freezed,
+    Object? enabled = null,
+    Object? id = null,
+    Object? name = null,
+    Object? updatedAt = null,
+    Object? value = null,
+    Object? zone = null,
   }) {
     return _then(_$TaxRateImpl(
-      category: freezed == category
+      category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as TaxCategory?,
-      createdAt: freezed == createdAt
+              as TaxCategory,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       customFields: freezed == customFields
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
@@ -229,30 +221,30 @@ class __$$TaxRateImplCopyWithImpl<$Res>
           ? _value.customerGroup
           : customerGroup // ignore: cast_nullable_to_non_nullable
               as CustomerGroup?,
-      enabled: freezed == enabled
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      id: freezed == id
+              as bool,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
+              as String,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      value: freezed == value
+              as DateTime,
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as double?,
-      zone: freezed == zone
+              as double,
+      zone: null == zone
           ? _value.zone
           : zone // ignore: cast_nullable_to_non_nullable
-              as Zone?,
+              as Zone,
     ));
   }
 }
@@ -261,16 +253,16 @@ class __$$TaxRateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
   const _$TaxRateImpl(
-      {this.category,
-      this.createdAt,
+      {required this.category,
+      required this.createdAt,
       final Map<String, dynamic>? customFields,
       this.customerGroup,
-      this.enabled,
-      this.id,
-      this.name,
-      this.updatedAt,
-      this.value,
-      this.zone})
+      required this.enabled,
+      required this.id,
+      required this.name,
+      required this.updatedAt,
+      required this.value,
+      required this.zone})
       : _customFields = customFields,
         super._();
 
@@ -278,9 +270,9 @@ class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
       _$$TaxRateImplFromJson(json);
 
   @override
-  final TaxCategory? category;
+  final TaxCategory category;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
   @override
   Map<String, dynamic>? get customFields {
@@ -294,17 +286,17 @@ class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
   @override
   final CustomerGroup? customerGroup;
   @override
-  final bool? enabled;
+  final bool enabled;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? name;
+  final String name;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
   @override
-  final double? value;
+  final double value;
   @override
-  final Zone? zone;
+  final Zone zone;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -381,40 +373,40 @@ class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
 
 abstract class _TaxRate extends TaxRate {
   const factory _TaxRate(
-      {final TaxCategory? category,
-      final DateTime? createdAt,
+      {required final TaxCategory category,
+      required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
       final CustomerGroup? customerGroup,
-      final bool? enabled,
-      final String? id,
-      final String? name,
-      final DateTime? updatedAt,
-      final double? value,
-      final Zone? zone}) = _$TaxRateImpl;
+      required final bool enabled,
+      required final String id,
+      required final String name,
+      required final DateTime updatedAt,
+      required final double value,
+      required final Zone zone}) = _$TaxRateImpl;
   const _TaxRate._() : super._();
 
   factory _TaxRate.fromJson(Map<String, dynamic> json) = _$TaxRateImpl.fromJson;
 
   @override
-  TaxCategory? get category;
+  TaxCategory get category;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
   @override
   CustomerGroup? get customerGroup;
   @override
-  bool? get enabled;
+  bool get enabled;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get name;
+  String get name;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
-  double? get value;
+  double get value;
   @override
-  Zone? get zone;
+  Zone get zone;
   @override
   @JsonKey(ignore: true)
   _$$TaxRateImplCopyWith<_$TaxRateImpl> get copyWith =>

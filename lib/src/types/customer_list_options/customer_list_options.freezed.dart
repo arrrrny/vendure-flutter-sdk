@@ -23,18 +23,36 @@ mixin _$CustomerListOptions {
   /// Allows the results to be filtered
   CustomerFilterParameter? get filter => throw _privateConstructorUsedError;
 
+  /// Allows the results to be filtered
+  set filter(CustomerFilterParameter? value) =>
+      throw _privateConstructorUsedError;
+
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
 
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value) =>
+      throw _privateConstructorUsedError;
+
   /// Skips the first n results, for use in pagination
   int? get skip => throw _privateConstructorUsedError;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value) => throw _privateConstructorUsedError;
 
   /// Specifies which properties to sort the results by
   CustomerSortParameter? get sort => throw _privateConstructorUsedError;
 
+  /// Specifies which properties to sort the results by
+  set sort(CustomerSortParameter? value) => throw _privateConstructorUsedError;
+
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
+
+  /// Takes n results, for use in pagination
+  set take(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -194,7 +212,7 @@ class __$$CustomerListOptionsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomerListOptionsImpl extends _CustomerListOptions
     with DiagnosticableTreeMixin {
-  const _$CustomerListOptionsImpl(
+  _$CustomerListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
 
@@ -203,24 +221,24 @@ class _$CustomerListOptionsImpl extends _CustomerListOptions
 
   /// Allows the results to be filtered
   @override
-  final CustomerFilterParameter? filter;
+  CustomerFilterParameter? filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   @override
-  final LogicalOperator? filterOperator;
+  LogicalOperator? filterOperator;
 
   /// Skips the first n results, for use in pagination
   @override
-  final int? skip;
+  int? skip;
 
   /// Specifies which properties to sort the results by
   @override
-  final CustomerSortParameter? sort;
+  CustomerSortParameter? sort;
 
   /// Takes n results, for use in pagination
   @override
-  final int? take;
+  int? take;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -239,24 +257,6 @@ class _$CustomerListOptionsImpl extends _CustomerListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CustomerListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -273,13 +273,13 @@ class _$CustomerListOptionsImpl extends _CustomerListOptions
 }
 
 abstract class _CustomerListOptions extends CustomerListOptions {
-  const factory _CustomerListOptions(
-      {final CustomerFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final CustomerSortParameter? sort,
-      final int? take}) = _$CustomerListOptionsImpl;
-  const _CustomerListOptions._() : super._();
+  factory _CustomerListOptions(
+      {CustomerFilterParameter? filter,
+      LogicalOperator? filterOperator,
+      int? skip,
+      CustomerSortParameter? sort,
+      int? take}) = _$CustomerListOptionsImpl;
+  _CustomerListOptions._() : super._();
 
   factory _CustomerListOptions.fromJson(Map<String, dynamic> json) =
       _$CustomerListOptionsImpl.fromJson;
@@ -288,23 +288,39 @@ abstract class _CustomerListOptions extends CustomerListOptions {
 
   /// Allows the results to be filtered
   CustomerFilterParameter? get filter;
+
+  /// Allows the results to be filtered
+  set filter(CustomerFilterParameter? value);
   @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   LogicalOperator? get filterOperator;
+
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  set filterOperator(LogicalOperator? value);
   @override
 
   /// Skips the first n results, for use in pagination
   int? get skip;
+
+  /// Skips the first n results, for use in pagination
+  set skip(int? value);
   @override
 
   /// Specifies which properties to sort the results by
   CustomerSortParameter? get sort;
+
+  /// Specifies which properties to sort the results by
+  set sort(CustomerSortParameter? value);
   @override
 
   /// Takes n results, for use in pagination
   int? get take;
+
+  /// Takes n results, for use in pagination
+  set take(int? value);
   @override
   @JsonKey(ignore: true)
   _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>

@@ -20,10 +20,10 @@ AuthenticationMethod _$AuthenticationMethodFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AuthenticationMethod {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get strategy => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get strategy => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $AuthenticationMethodCopyWith<$Res> {
       _$AuthenticationMethodCopyWithImpl<$Res, AuthenticationMethod>;
   @useResult
   $Res call(
-      {DateTime? createdAt, String? id, String? strategy, DateTime? updatedAt});
+      {DateTime createdAt, String id, String strategy, DateTime updatedAt});
 }
 
 /// @nodoc
@@ -55,28 +55,28 @@ class _$AuthenticationMethodCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? strategy = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? strategy = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      strategy: freezed == strategy
+              as String,
+      strategy: null == strategy
           ? _value.strategy
           : strategy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -90,7 +90,7 @@ abstract class _$$AuthenticationMethodImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime? createdAt, String? id, String? strategy, DateTime? updatedAt});
+      {DateTime createdAt, String id, String strategy, DateTime updatedAt});
 }
 
 /// @nodoc
@@ -104,28 +104,28 @@ class __$$AuthenticationMethodImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? createdAt = freezed,
-    Object? id = freezed,
-    Object? strategy = freezed,
-    Object? updatedAt = freezed,
+    Object? createdAt = null,
+    Object? id = null,
+    Object? strategy = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$AuthenticationMethodImpl(
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      id: freezed == id
+              as DateTime,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      strategy: freezed == strategy
+              as String,
+      strategy: null == strategy
           ? _value.strategy
           : strategy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
+              as String,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -135,20 +135,23 @@ class __$$AuthenticationMethodImplCopyWithImpl<$Res>
 class _$AuthenticationMethodImpl extends _AuthenticationMethod
     with DiagnosticableTreeMixin {
   const _$AuthenticationMethodImpl(
-      {this.createdAt, this.id, this.strategy, this.updatedAt})
+      {required this.createdAt,
+      required this.id,
+      required this.strategy,
+      required this.updatedAt})
       : super._();
 
   factory _$AuthenticationMethodImpl.fromJson(Map<String, dynamic> json) =>
       _$$AuthenticationMethodImplFromJson(json);
 
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final String? id;
+  final String id;
   @override
-  final String? strategy;
+  final String strategy;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -203,23 +206,23 @@ class _$AuthenticationMethodImpl extends _AuthenticationMethod
 
 abstract class _AuthenticationMethod extends AuthenticationMethod {
   const factory _AuthenticationMethod(
-      {final DateTime? createdAt,
-      final String? id,
-      final String? strategy,
-      final DateTime? updatedAt}) = _$AuthenticationMethodImpl;
+      {required final DateTime createdAt,
+      required final String id,
+      required final String strategy,
+      required final DateTime updatedAt}) = _$AuthenticationMethodImpl;
   const _AuthenticationMethod._() : super._();
 
   factory _AuthenticationMethod.fromJson(Map<String, dynamic> json) =
       _$AuthenticationMethodImpl.fromJson;
 
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  String? get id;
+  String get id;
   @override
-  String? get strategy;
+  String get strategy;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$AuthenticationMethodImplCopyWith<_$AuthenticationMethodImpl>

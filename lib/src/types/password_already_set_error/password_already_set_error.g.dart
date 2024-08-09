@@ -9,24 +9,16 @@ part of 'password_already_set_error.dart';
 _$PasswordAlreadySetErrorImpl _$$PasswordAlreadySetErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$PasswordAlreadySetErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
     );
 
 Map<String, dynamic> _$$PasswordAlreadySetErrorImplToJson(
-    _$PasswordAlreadySetErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$PasswordAlreadySetErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

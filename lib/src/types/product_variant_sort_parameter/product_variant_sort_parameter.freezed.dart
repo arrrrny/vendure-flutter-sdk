@@ -22,14 +22,23 @@ ProductVariantSortParameter _$ProductVariantSortParameterFromJson(
 /// @nodoc
 mixin _$ProductVariantSortParameter {
   SortOrder? get createdAt => throw _privateConstructorUsedError;
+  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get id => throw _privateConstructorUsedError;
+  set id(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get name => throw _privateConstructorUsedError;
+  set name(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get price => throw _privateConstructorUsedError;
+  set price(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get priceWithTax => throw _privateConstructorUsedError;
+  set priceWithTax(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get productId => throw _privateConstructorUsedError;
+  set productId(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get sku => throw _privateConstructorUsedError;
+  set sku(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get stockLevel => throw _privateConstructorUsedError;
+  set stockLevel(SortOrder? value) => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
+  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -211,7 +220,7 @@ class __$$ProductVariantSortParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
     with DiagnosticableTreeMixin {
-  const _$ProductVariantSortParameterImpl(
+  _$ProductVariantSortParameterImpl(
       {this.createdAt,
       this.id,
       this.name,
@@ -228,23 +237,23 @@ class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
       _$$ProductVariantSortParameterImplFromJson(json);
 
   @override
-  final SortOrder? createdAt;
+  SortOrder? createdAt;
   @override
-  final SortOrder? id;
+  SortOrder? id;
   @override
-  final SortOrder? name;
+  SortOrder? name;
   @override
-  final SortOrder? price;
+  SortOrder? price;
   @override
-  final SortOrder? priceWithTax;
+  SortOrder? priceWithTax;
   @override
-  final SortOrder? productId;
+  SortOrder? productId;
   @override
-  final SortOrder? sku;
+  SortOrder? sku;
   @override
-  final SortOrder? stockLevel;
+  SortOrder? stockLevel;
   @override
-  final SortOrder? updatedAt;
+  SortOrder? updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -267,32 +276,6 @@ class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductVariantSortParameterImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.priceWithTax, priceWithTax) ||
-                other.priceWithTax == priceWithTax) &&
-            (identical(other.productId, productId) ||
-                other.productId == productId) &&
-            (identical(other.sku, sku) || other.sku == sku) &&
-            (identical(other.stockLevel, stockLevel) ||
-                other.stockLevel == stockLevel) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, createdAt, id, name, price,
-      priceWithTax, productId, sku, stockLevel, updatedAt);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -310,39 +293,48 @@ class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
 
 abstract class _ProductVariantSortParameter
     extends ProductVariantSortParameter {
-  const factory _ProductVariantSortParameter(
-      {final SortOrder? createdAt,
-      final SortOrder? id,
-      final SortOrder? name,
-      final SortOrder? price,
-      final SortOrder? priceWithTax,
-      final SortOrder? productId,
-      final SortOrder? sku,
-      final SortOrder? stockLevel,
-      final SortOrder? updatedAt}) = _$ProductVariantSortParameterImpl;
-  const _ProductVariantSortParameter._() : super._();
+  factory _ProductVariantSortParameter(
+      {SortOrder? createdAt,
+      SortOrder? id,
+      SortOrder? name,
+      SortOrder? price,
+      SortOrder? priceWithTax,
+      SortOrder? productId,
+      SortOrder? sku,
+      SortOrder? stockLevel,
+      SortOrder? updatedAt}) = _$ProductVariantSortParameterImpl;
+  _ProductVariantSortParameter._() : super._();
 
   factory _ProductVariantSortParameter.fromJson(Map<String, dynamic> json) =
       _$ProductVariantSortParameterImpl.fromJson;
 
   @override
   SortOrder? get createdAt;
+  set createdAt(SortOrder? value);
   @override
   SortOrder? get id;
+  set id(SortOrder? value);
   @override
   SortOrder? get name;
+  set name(SortOrder? value);
   @override
   SortOrder? get price;
+  set price(SortOrder? value);
   @override
   SortOrder? get priceWithTax;
+  set priceWithTax(SortOrder? value);
   @override
   SortOrder? get productId;
+  set productId(SortOrder? value);
   @override
   SortOrder? get sku;
+  set sku(SortOrder? value);
   @override
   SortOrder? get stockLevel;
+  set stockLevel(SortOrder? value);
   @override
   SortOrder? get updatedAt;
+  set updatedAt(SortOrder? value);
   @override
   @JsonKey(ignore: true)
   _$$ProductVariantSortParameterImplCopyWith<_$ProductVariantSortParameterImpl>

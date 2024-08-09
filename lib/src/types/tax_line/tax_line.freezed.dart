@@ -20,8 +20,8 @@ TaxLine _$TaxLineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaxLine {
-  String? get description => throw _privateConstructorUsedError;
-  double? get taxRate => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  double get taxRate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $TaxLineCopyWith<$Res> {
   factory $TaxLineCopyWith(TaxLine value, $Res Function(TaxLine) then) =
       _$TaxLineCopyWithImpl<$Res, TaxLine>;
   @useResult
-  $Res call({String? description, double? taxRate});
+  $Res call({String description, double taxRate});
 }
 
 /// @nodoc
@@ -49,18 +49,18 @@ class _$TaxLineCopyWithImpl<$Res, $Val extends TaxLine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? taxRate = freezed,
+    Object? description = null,
+    Object? taxRate = null,
   }) {
     return _then(_value.copyWith(
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxRate: freezed == taxRate
+              as String,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$TaxLineImplCopyWith<$Res> implements $TaxLineCopyWith<$Res> {
       __$$TaxLineImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? description, double? taxRate});
+  $Res call({String description, double taxRate});
 }
 
 /// @nodoc
@@ -86,18 +86,18 @@ class __$$TaxLineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? description = freezed,
-    Object? taxRate = freezed,
+    Object? description = null,
+    Object? taxRate = null,
   }) {
     return _then(_$TaxLineImpl(
-      description: freezed == description
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      taxRate: freezed == taxRate
+              as String,
+      taxRate: null == taxRate
           ? _value.taxRate
           : taxRate // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -105,15 +105,16 @@ class __$$TaxLineImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TaxLineImpl extends _TaxLine with DiagnosticableTreeMixin {
-  const _$TaxLineImpl({this.description, this.taxRate}) : super._();
+  const _$TaxLineImpl({required this.description, required this.taxRate})
+      : super._();
 
   factory _$TaxLineImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaxLineImplFromJson(json);
 
   @override
-  final String? description;
+  final String description;
   @override
-  final double? taxRate;
+  final double taxRate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -158,16 +159,17 @@ class _$TaxLineImpl extends _TaxLine with DiagnosticableTreeMixin {
 }
 
 abstract class _TaxLine extends TaxLine {
-  const factory _TaxLine({final String? description, final double? taxRate}) =
-      _$TaxLineImpl;
+  const factory _TaxLine(
+      {required final String description,
+      required final double taxRate}) = _$TaxLineImpl;
   const _TaxLine._() : super._();
 
   factory _TaxLine.fromJson(Map<String, dynamic> json) = _$TaxLineImpl.fromJson;
 
   @override
-  String? get description;
+  String get description;
   @override
-  double? get taxRate;
+  double get taxRate;
   @override
   @JsonKey(ignore: true)
   _$$TaxLineImplCopyWith<_$TaxLineImpl> get copyWith =>

@@ -20,8 +20,8 @@ FacetValueList _$FacetValueListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FacetValueList {
-  List<FacetValue?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<FacetValue> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $FacetValueListCopyWith<$Res> {
           FacetValueList value, $Res Function(FacetValueList) then) =
       _$FacetValueListCopyWithImpl<$Res, FacetValueList>;
   @useResult
-  $Res call({List<FacetValue?>? items, int? totalItems});
+  $Res call({List<FacetValue> items, int totalItems});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$FacetValueListCopyWithImpl<$Res, $Val extends FacetValueList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
-      totalItems: freezed == totalItems
+              as List<FacetValue>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$FacetValueListImplCopyWith<$Res>
       __$$FacetValueListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<FacetValue?>? items, int? totalItems});
+  $Res call({List<FacetValue> items, int totalItems});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$FacetValueListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$FacetValueListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<FacetValue?>?,
-      totalItems: freezed == totalItems
+              as List<FacetValue>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -109,25 +109,24 @@ class __$$FacetValueListImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FacetValueListImpl extends _FacetValueList
     with DiagnosticableTreeMixin {
-  const _$FacetValueListImpl({final List<FacetValue?>? items, this.totalItems})
+  const _$FacetValueListImpl(
+      {required final List<FacetValue> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$FacetValueListImpl.fromJson(Map<String, dynamic> json) =>
       _$$FacetValueListImplFromJson(json);
 
-  final List<FacetValue?>? _items;
+  final List<FacetValue> _items;
   @override
-  List<FacetValue?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<FacetValue> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -175,17 +174,17 @@ class _$FacetValueListImpl extends _FacetValueList
 
 abstract class _FacetValueList extends FacetValueList {
   const factory _FacetValueList(
-      {final List<FacetValue?>? items,
-      final int? totalItems}) = _$FacetValueListImpl;
+      {required final List<FacetValue> items,
+      required final int totalItems}) = _$FacetValueListImpl;
   const _FacetValueList._() : super._();
 
   factory _FacetValueList.fromJson(Map<String, dynamic> json) =
       _$FacetValueListImpl.fromJson;
 
   @override
-  List<FacetValue?>? get items;
+  List<FacetValue> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$FacetValueListImplCopyWith<_$FacetValueListImpl> get copyWith =>

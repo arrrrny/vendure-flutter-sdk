@@ -20,16 +20,16 @@ Payment _$PaymentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Payment {
-  double? get amount => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  double get amount => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
-  String? get method => throw _privateConstructorUsedError;
-  List<Refund?>? get refunds => throw _privateConstructorUsedError;
-  String? get state => throw _privateConstructorUsedError;
+  String get method => throw _privateConstructorUsedError;
+  List<Refund> get refunds => throw _privateConstructorUsedError;
+  String get state => throw _privateConstructorUsedError;
   String? get transactionId => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,16 +42,16 @@ abstract class $PaymentCopyWith<$Res> {
       _$PaymentCopyWithImpl<$Res, Payment>;
   @useResult
   $Res call(
-      {double? amount,
-      DateTime? createdAt,
+      {double amount,
+      DateTime createdAt,
       String? errorMessage,
-      String? id,
+      String id,
       Map<String, dynamic>? metadata,
-      String? method,
-      List<Refund?>? refunds,
-      String? state,
+      String method,
+      List<Refund> refunds,
+      String state,
       String? transactionId,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -67,58 +67,58 @@ class _$PaymentCopyWithImpl<$Res, $Val extends Payment>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = freezed,
-    Object? createdAt = freezed,
+    Object? amount = null,
+    Object? createdAt = null,
     Object? errorMessage = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? metadata = freezed,
-    Object? method = freezed,
-    Object? refunds = freezed,
-    Object? state = freezed,
+    Object? method = null,
+    Object? refunds = null,
+    Object? state = null,
     Object? transactionId = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      amount: freezed == amount
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      createdAt: freezed == createdAt
+              as double,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       metadata: freezed == metadata
           ? _value.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      method: freezed == method
+      method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      refunds: freezed == refunds
+              as String,
+      refunds: null == refunds
           ? _value.refunds
           : refunds // ignore: cast_nullable_to_non_nullable
-              as List<Refund?>?,
-      state: freezed == state
+              as List<Refund>,
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       transactionId: freezed == transactionId
           ? _value.transactionId
           : transactionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -131,16 +131,16 @@ abstract class _$$PaymentImplCopyWith<$Res> implements $PaymentCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {double? amount,
-      DateTime? createdAt,
+      {double amount,
+      DateTime createdAt,
       String? errorMessage,
-      String? id,
+      String id,
       Map<String, dynamic>? metadata,
-      String? method,
-      List<Refund?>? refunds,
-      String? state,
+      String method,
+      List<Refund> refunds,
+      String state,
       String? transactionId,
-      DateTime? updatedAt});
+      DateTime updatedAt});
 }
 
 /// @nodoc
@@ -154,58 +154,58 @@ class __$$PaymentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = freezed,
-    Object? createdAt = freezed,
+    Object? amount = null,
+    Object? createdAt = null,
     Object? errorMessage = freezed,
-    Object? id = freezed,
+    Object? id = null,
     Object? metadata = freezed,
-    Object? method = freezed,
-    Object? refunds = freezed,
-    Object? state = freezed,
+    Object? method = null,
+    Object? refunds = null,
+    Object? state = null,
     Object? transactionId = freezed,
-    Object? updatedAt = freezed,
+    Object? updatedAt = null,
   }) {
     return _then(_$PaymentImpl(
-      amount: freezed == amount
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
-      createdAt: freezed == createdAt
+              as double,
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       metadata: freezed == metadata
           ? _value._metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      method: freezed == method
+      method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      refunds: freezed == refunds
+              as String,
+      refunds: null == refunds
           ? _value._refunds
           : refunds // ignore: cast_nullable_to_non_nullable
-              as List<Refund?>?,
-      state: freezed == state
+              as List<Refund>,
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       transactionId: freezed == transactionId
           ? _value.transactionId
           : transactionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      updatedAt: freezed == updatedAt
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as DateTime,
     ));
   }
 }
@@ -214,16 +214,16 @@ class __$$PaymentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PaymentImpl extends _Payment with DiagnosticableTreeMixin {
   const _$PaymentImpl(
-      {this.amount,
-      this.createdAt,
+      {required this.amount,
+      required this.createdAt,
       this.errorMessage,
-      this.id,
+      required this.id,
       final Map<String, dynamic>? metadata,
-      this.method,
-      final List<Refund?>? refunds,
-      this.state,
+      required this.method,
+      required final List<Refund> refunds,
+      required this.state,
       this.transactionId,
-      this.updatedAt})
+      required this.updatedAt})
       : _metadata = metadata,
         _refunds = refunds,
         super._();
@@ -232,13 +232,13 @@ class _$PaymentImpl extends _Payment with DiagnosticableTreeMixin {
       _$$PaymentImplFromJson(json);
 
   @override
-  final double? amount;
+  final double amount;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
   final String? errorMessage;
   @override
-  final String? id;
+  final String id;
   final Map<String, dynamic>? _metadata;
   @override
   Map<String, dynamic>? get metadata {
@@ -250,23 +250,21 @@ class _$PaymentImpl extends _Payment with DiagnosticableTreeMixin {
   }
 
   @override
-  final String? method;
-  final List<Refund?>? _refunds;
+  final String method;
+  final List<Refund> _refunds;
   @override
-  List<Refund?>? get refunds {
-    final value = _refunds;
-    if (value == null) return null;
+  List<Refund> get refunds {
     if (_refunds is EqualUnmodifiableListView) return _refunds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_refunds);
   }
 
   @override
-  final String? state;
+  final String state;
   @override
   final String? transactionId;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -342,40 +340,40 @@ class _$PaymentImpl extends _Payment with DiagnosticableTreeMixin {
 
 abstract class _Payment extends Payment {
   const factory _Payment(
-      {final double? amount,
-      final DateTime? createdAt,
+      {required final double amount,
+      required final DateTime createdAt,
       final String? errorMessage,
-      final String? id,
+      required final String id,
       final Map<String, dynamic>? metadata,
-      final String? method,
-      final List<Refund?>? refunds,
-      final String? state,
+      required final String method,
+      required final List<Refund> refunds,
+      required final String state,
       final String? transactionId,
-      final DateTime? updatedAt}) = _$PaymentImpl;
+      required final DateTime updatedAt}) = _$PaymentImpl;
   const _Payment._() : super._();
 
   factory _Payment.fromJson(Map<String, dynamic> json) = _$PaymentImpl.fromJson;
 
   @override
-  double? get amount;
+  double get amount;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
   String? get errorMessage;
   @override
-  String? get id;
+  String get id;
   @override
   Map<String, dynamic>? get metadata;
   @override
-  String? get method;
+  String get method;
   @override
-  List<Refund?>? get refunds;
+  List<Refund> get refunds;
   @override
-  String? get state;
+  String get state;
   @override
   String? get transactionId;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$PaymentImplCopyWith<_$PaymentImpl> get copyWith =>

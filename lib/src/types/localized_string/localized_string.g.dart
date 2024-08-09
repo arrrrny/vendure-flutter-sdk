@@ -9,25 +9,16 @@ part of 'localized_string.dart';
 _$LocalizedStringImpl _$$LocalizedStringImplFromJson(
         Map<String, dynamic> json) =>
     _$LocalizedStringImpl(
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      value: json['value'] as String?,
+      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+      value: json['value'] as String,
     );
 
 Map<String, dynamic> _$$LocalizedStringImplToJson(
-    _$LocalizedStringImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('value', instance.value);
-  return val;
-}
+        _$LocalizedStringImpl instance) =>
+    <String, dynamic>{
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'value': instance.value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

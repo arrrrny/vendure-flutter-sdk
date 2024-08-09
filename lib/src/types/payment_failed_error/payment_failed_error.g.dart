@@ -9,26 +9,18 @@ part of 'payment_failed_error.dart';
 _$PaymentFailedErrorImpl _$$PaymentFailedErrorImplFromJson(
         Map<String, dynamic> json) =>
     _$PaymentFailedErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
-      paymentErrorMessage: json['paymentErrorMessage'] as String?,
+      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+      message: json['message'] as String,
+      paymentErrorMessage: json['paymentErrorMessage'] as String,
     );
 
 Map<String, dynamic> _$$PaymentFailedErrorImplToJson(
-    _$PaymentFailedErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  writeNotNull('paymentErrorMessage', instance.paymentErrorMessage);
-  return val;
-}
+        _$PaymentFailedErrorImpl instance) =>
+    <String, dynamic>{
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+      'paymentErrorMessage': instance.paymentErrorMessage,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

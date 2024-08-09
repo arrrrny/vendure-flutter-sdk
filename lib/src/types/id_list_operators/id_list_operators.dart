@@ -3,17 +3,14 @@ import 'package:flutter/foundation.dart';
 part 'id_list_operators.freezed.dart';
 part 'id_list_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@unfreezed
 class IdListOperators with _$IdListOperators {
   const IdListOperators._();
 
-  const factory IdListOperators({
+  factory IdListOperators({
     required String inList,
   }) = _IdListOperators;
 
-  factory IdListOperators.fromJson(Map<String, dynamic> json) => _$IdListOperatorsFromJson(json);
+  factory IdListOperators.fromJson(Map<String, dynamic> json) =>
+      _$IdListOperatorsFromJson(json);
 }

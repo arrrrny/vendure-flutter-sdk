@@ -1,34 +1,30 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:vendure/src/types/configurable_operation/configurable_operation.dart';
-import 'package:vendure/src/types/promotion_translation/promotion_translation.dart';
+import '../configurable_operation/configurable_operation.dart';
+import '../promotion_translation/promotion_translation.dart';
 
 part 'promotion.freezed.dart';
 part 'promotion.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
+@freezed
 class Promotion with _$Promotion {
   const Promotion._();
 
   const factory Promotion({
-    List<ConfigurableOperation?>? actions,
-    List<ConfigurableOperation?>? conditions,
+    required List<ConfigurableOperation> actions,
+    required List<ConfigurableOperation> conditions,
     String? couponCode,
-    DateTime? createdAt,
+    required DateTime createdAt,
     Map<String, dynamic>? customFields,
-    String? description,
-    bool? enabled,
+    required String description,
+    required bool enabled,
     DateTime? endsAt,
-    String? id,
-    String? name,
+    required String id,
+    required String name,
     int? perCustomerUsageLimit,
     DateTime? startsAt,
-    List<PromotionTranslation?>? translations,
-    DateTime? updatedAt,
+    required List<PromotionTranslation> translations,
+    required DateTime updatedAt,
     int? usageLimit,
   }) = _Promotion;
 

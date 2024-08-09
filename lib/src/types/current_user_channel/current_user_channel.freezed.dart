@@ -20,10 +20,10 @@ CurrentUserChannel _$CurrentUserChannelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CurrentUserChannel {
-  String? get code => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  List<Permission?>? get permissions => throw _privateConstructorUsedError;
-  String? get token => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  List<Permission> get permissions => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,10 +38,7 @@ abstract class $CurrentUserChannelCopyWith<$Res> {
       _$CurrentUserChannelCopyWithImpl<$Res, CurrentUserChannel>;
   @useResult
   $Res call(
-      {String? code,
-      String? id,
-      List<Permission?>? permissions,
-      String? token});
+      {String code, String id, List<Permission> permissions, String token});
 }
 
 /// @nodoc
@@ -57,28 +54,28 @@ class _$CurrentUserChannelCopyWithImpl<$Res, $Val extends CurrentUserChannel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? id = freezed,
-    Object? permissions = freezed,
-    Object? token = freezed,
+    Object? code = null,
+    Object? id = null,
+    Object? permissions = null,
+    Object? token = null,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      permissions: freezed == permissions
+              as String,
+      permissions: null == permissions
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      token: freezed == token
+              as List<Permission>,
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -92,10 +89,7 @@ abstract class _$$CurrentUserChannelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? code,
-      String? id,
-      List<Permission?>? permissions,
-      String? token});
+      {String code, String id, List<Permission> permissions, String token});
 }
 
 /// @nodoc
@@ -109,28 +103,28 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
-    Object? id = freezed,
-    Object? permissions = freezed,
-    Object? token = freezed,
+    Object? code = null,
+    Object? id = null,
+    Object? permissions = null,
+    Object? token = null,
   }) {
     return _then(_$CurrentUserChannelImpl(
-      code: freezed == code
+      code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
-              as String?,
-      id: freezed == id
+              as String,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      permissions: freezed == permissions
+              as String,
+      permissions: null == permissions
           ? _value._permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as List<Permission?>?,
-      token: freezed == token
+              as List<Permission>,
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -140,7 +134,10 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
 class _$CurrentUserChannelImpl extends _CurrentUserChannel
     with DiagnosticableTreeMixin {
   const _$CurrentUserChannelImpl(
-      {this.code, this.id, final List<Permission?>? permissions, this.token})
+      {required this.code,
+      required this.id,
+      required final List<Permission> permissions,
+      required this.token})
       : _permissions = permissions,
         super._();
 
@@ -148,21 +145,19 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
       _$$CurrentUserChannelImplFromJson(json);
 
   @override
-  final String? code;
+  final String code;
   @override
-  final String? id;
-  final List<Permission?>? _permissions;
+  final String id;
+  final List<Permission> _permissions;
   @override
-  List<Permission?>? get permissions {
-    final value = _permissions;
-    if (value == null) return null;
+  List<Permission> get permissions {
     if (_permissions is EqualUnmodifiableListView) return _permissions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_permissions);
   }
 
   @override
-  final String? token;
+  final String token;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -214,23 +209,23 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
 
 abstract class _CurrentUserChannel extends CurrentUserChannel {
   const factory _CurrentUserChannel(
-      {final String? code,
-      final String? id,
-      final List<Permission?>? permissions,
-      final String? token}) = _$CurrentUserChannelImpl;
+      {required final String code,
+      required final String id,
+      required final List<Permission> permissions,
+      required final String token}) = _$CurrentUserChannelImpl;
   const _CurrentUserChannel._() : super._();
 
   factory _CurrentUserChannel.fromJson(Map<String, dynamic> json) =
       _$CurrentUserChannelImpl.fromJson;
 
   @override
-  String? get code;
+  String get code;
   @override
-  String? get id;
+  String get id;
   @override
-  List<Permission?>? get permissions;
+  List<Permission> get permissions;
   @override
-  String? get token;
+  String get token;
   @override
   @JsonKey(ignore: true)
   _$$CurrentUserChannelImplCopyWith<_$CurrentUserChannelImpl> get copyWith =>
