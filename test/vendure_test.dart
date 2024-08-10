@@ -478,7 +478,7 @@ void main() {
 
     test('getCollectionById', () async {
       try {
-        var collection = await vendure.catalog.getCollectionById(id: 2);
+        var collection = await vendure.catalog.getCollectionById(id: '2');
         expect(collection, isA<Collection>());
       } catch (e) {
         fail('Error getting collection: $e');

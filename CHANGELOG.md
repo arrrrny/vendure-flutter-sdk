@@ -1,3 +1,6 @@
+## 0.8.4
+- changed getCollectionById tpe to String from int
+
 ## 0.8.3
 - changed getOrderByCode return type to Order
 

@@ -21,7 +21,7 @@ class CatalogOperations {
     );
   }
 
-  Future<Collection> getCollectionById({required int id}) async {
+  Future<Collection> getCollectionById({required String id}) async {
     var variables = {
       'id': id,
     };
