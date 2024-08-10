@@ -1,3 +1,6 @@
+## 0.8.1
+- Added setOrderShippingMethod example
+
 ## 0.8.0
 - Strong types are implemented for all methods
 

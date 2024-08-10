@@ -219,7 +219,8 @@ Future<void> getShippingMethods() async {
 }
 ```
 
-### Set Customer for Order
+
+### Set Shipping Method for Order
 
 ```dart
 Future<void> setCustomerForOrder() async {
@@ -231,6 +232,22 @@ Future<void> setCustomerForOrder() async {
         lastName: 'Doe',
       ),
     );
+    print('Customer set for order: ${result.toJson()}');
+  } catch (e) {
+    print('Error setting customer for order: $e');
+  }
+}
+```
+
+### Set Customer for Order
+
+```dart
+Future<void> setOrderShippingMethod({
+    required String shippingMethodId,
+    List<String>? additionalMethodIds }) async {
+  try {
+    var result = await vendure.order.setOrderShippingMethod(
+            shippingMethodId: shippingMethodId, additionalMethodIds: additionalMethodIds);;
     print('Customer set for order: ${result.toJson()}');
   } catch (e) {
     print('Error setting customer for order: $e');
