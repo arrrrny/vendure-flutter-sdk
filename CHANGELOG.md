@@ -1,3 +1,6 @@
+## 0.8.3
+- changed getOrderByCode return type to Order
+
 ## 0.8.2
 - updated http dependency
 

@@ -83,11 +83,11 @@ class OrderOperations {
     );
   }
 
-  Future<ActiveOrderResult> getOrderByCode({required String code}) async {
-    return CustomOperations(_client).query<ActiveOrderResult>(
+  Future<Order> getOrderByCode({required String code}) async {
+    return CustomOperations(_client).query<Order>(
       getOrderByCodeQuery,
       {'code': code},
-      ActiveOrderResult.fromJson,
+      Order.fromJson,
       expectedDataType: 'orderByCode',
     );
   }

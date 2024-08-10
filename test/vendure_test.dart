@@ -281,9 +281,7 @@ void main() {
     test('getOrderByCode', () async {
       try {
         var result = await vendure.order.getOrderByCode(code: testOrderCode);
-        expect(result, isA<ActiveOrderResult>());
-        Order order = Order.fromJson(result.toJson());
-        expect(order, isA<Order>());
+        expect(result, isA<Order>());
       } catch (e) {
         fail('Error getting order by code: $e');
       }
