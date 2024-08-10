@@ -7,11 +7,8 @@ mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
     ... on Order {
       ...Order
     }
-    ... on ErrorResult {
-      errorCode
-      message
-    }
     ... on InsufficientStockError {
+      __typename
       quantityAvailable
       order {
         ...Order
@@ -20,15 +17,18 @@ mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
       message
     }
     ... on NegativeQuantityError {
+      __typename
       errorCode
       message
     }
     ... on OrderLimitError {
+    __typename
       errorCode
       message
       maxItems
     }
     ... on OrderModificationError {
+    __typename
       errorCode
       message
     }

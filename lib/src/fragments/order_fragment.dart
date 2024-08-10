@@ -1,9 +1,7 @@
-import 'package:vendure/src/fragments/customer_fragment.dart';
 import 'package:vendure/src/fragments/catalog_fragment.dart';
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
-const String orderFragment = customerFragment +
-    promotionFragment +
+const String orderFragment = promotionFragment +
     paymentFragment +
     fulfillmentFragment +
     shippingLineFragment +
@@ -22,9 +20,7 @@ fragment Order on Order {
   active
   createdAt
   updatedAt
-  customer {
-    ...Customer
-  }
+
   shippingAddress {
     ...OrderAddress
   }
@@ -318,6 +314,8 @@ fragment Payment on Payment {
 const String refundFragment = r'''
 fragment Refund on Refund {
   __typename
+  createdAt
+  updatedAt
   id
   items
   shipping
@@ -330,6 +328,7 @@ fragment Refund on Refund {
   lines {
     orderLineId
     quantity
+    refundId
   }
   paymentId
   metadata

@@ -90,10 +90,6 @@ _$OrderImpl _$$OrderImplFromJson(Map json) => _$OrderImpl(
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
       ),
-      customer: json['customer'] == null
-          ? null
-          : Customer.fromJson(
-              Map<String, dynamic>.from(json['customer'] as Map)),
       discounts: (json['discounts'] as List<dynamic>)
           .map((e) => Discount.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
@@ -161,7 +157,6 @@ Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) {
   val['createdAt'] = instance.createdAt.toIso8601String();
   val['currencyCode'] = _$CurrencyCodeEnumMap[instance.currencyCode]!;
   writeNotNull('customFields', instance.customFields);
-  writeNotNull('customer', instance.customer?.toJson());
   val['discounts'] = instance.discounts.map((e) => e.toJson()).toList();
   writeNotNull(
       'fulfillments', instance.fulfillments?.map((e) => e.toJson()).toList());

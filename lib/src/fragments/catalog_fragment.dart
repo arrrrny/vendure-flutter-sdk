@@ -2,23 +2,25 @@ import 'package:vendure/src/fragments/shared_fragment.dart';
 
 const String productVariantFragment = productOptionFragment +
     facetValueFragment +
+    assetFragment +
     r'''
 fragment ProductVariant on ProductVariant {
   __typename
+  assets {
+    ...Asset
+  }
+  createdAt
+  currencyCode
   id
   product {
     id
   }
   productId
-  createdAt
   updatedAt
   languageCode
   sku
   name
   featuredAsset {
-    ...Asset
-  }
-  assets {
     ...Asset
   }
   price
@@ -30,6 +32,8 @@ fragment ProductVariant on ProductVariant {
     name
     isDefault
     customFields
+    createdAt
+    updatedAt
   }
   options {
     ...ProductOption
@@ -49,7 +53,7 @@ fragment ProductVariant on ProductVariant {
 
 ''';
 const String productFragment = productVariantFragment +
-    collectionFragment +
+    productOptionGroupFragment +
     r'''
 fragment Product on Product {
   __typename
@@ -83,14 +87,13 @@ fragment Product on Product {
     ...FacetValue
   }
   translations {
+    createdAt
+    updatedAt
     id
     languageCode
     name
     slug
     description
-  }
-  collections {
-    ...Collection
   }
   customFields
 }
@@ -110,6 +113,7 @@ fragment Collection on Collection {
   breadcrumbs {
     id
     name
+    slug
   }
   position
   description
@@ -137,6 +141,8 @@ fragment Collection on Collection {
     }
   }
   translations {
+    createdAt
+    updatedAt
     id
     languageCode
     name
@@ -174,8 +180,7 @@ fragment ProductOption on ProductOption {
 }
 
 ''';
-const String productOptionGroupFragment = productOptionFragment +
-    r'''
+const String productOptionGroupFragment = r'''
 fragment ProductOptionGroup on ProductOptionGroup {
   __typename
   id

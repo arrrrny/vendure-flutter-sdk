@@ -12,7 +12,7 @@ class CurrentUserChannel with _$CurrentUserChannel {
   const factory CurrentUserChannel({
     required String code,
     required String id,
-    required List<Permission> permissions,
+    // required List<Permission> permissions,
     required String token,
   }) = _CurrentUserChannel;
 

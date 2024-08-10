@@ -45,7 +45,6 @@ class SetOrderShippingMethodResult with _$SetOrderShippingMethodResult {
     required DateTime createdAt,
     required CurrencyCode currencyCode,
     Map<String, dynamic>? customFields,
-    Customer? customer,
     required List<Discount> discounts,
     List<Fulfillment>? fulfillments,
     required HistoryEntryList history,

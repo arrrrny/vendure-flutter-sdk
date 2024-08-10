@@ -41,7 +41,6 @@ mixin _$ActiveOrderResult {
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -78,7 +77,6 @@ mixin _$ActiveOrderResult {
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -115,7 +113,6 @@ mixin _$ActiveOrderResult {
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -286,7 +283,6 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -326,7 +322,6 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -366,7 +361,6 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -467,7 +461,6 @@ abstract class _$$OrderImplCopyWith<$Res> {
       DateTime createdAt,
       CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
-      Customer? customer,
       List<Discount> discounts,
       List<Fulfillment>? fulfillments,
       HistoryEntryList history,
@@ -492,7 +485,6 @@ abstract class _$$OrderImplCopyWith<$Res> {
       DateTime updatedAt});
 
   $OrderAddressCopyWith<$Res>? get billingAddress;
-  $CustomerCopyWith<$Res>? get customer;
   $HistoryEntryListCopyWith<$Res> get history;
   $OrderAddressCopyWith<$Res>? get shippingAddress;
 }
@@ -515,7 +507,6 @@ class __$$OrderImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? currencyCode = null,
     Object? customFields = freezed,
-    Object? customer = freezed,
     Object? discounts = null,
     Object? fulfillments = freezed,
     Object? history = null,
@@ -568,10 +559,6 @@ class __$$OrderImplCopyWithImpl<$Res>
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      customer: freezed == customer
-          ? _value.customer
-          : customer // ignore: cast_nullable_to_non_nullable
-              as Customer?,
       discounts: null == discounts
           ? _value._discounts
           : discounts // ignore: cast_nullable_to_non_nullable
@@ -677,18 +664,6 @@ class __$$OrderImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $CustomerCopyWith<$Res>? get customer {
-    if (_value.customer == null) {
-      return null;
-    }
-
-    return $CustomerCopyWith<$Res>(_value.customer!, (value) {
-      return _then(_value.copyWith(customer: value));
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res> get history {
     return $HistoryEntryListCopyWith<$Res>(_value.history, (value) {
       return _then(_value.copyWith(history: value));
@@ -719,7 +694,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
       required this.createdAt,
       required this.currencyCode,
       final Map<String, dynamic>? customFields,
-      this.customer,
       required final List<Discount> discounts,
       final List<Fulfillment>? fulfillments,
       required this.history,
@@ -794,8 +768,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
     return EqualUnmodifiableMapView(value);
   }
 
-  @override
-  final Customer? customer;
   final List<Discount> _discounts;
   @override
   List<Discount> get discounts {
@@ -926,7 +898,7 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ActiveOrderResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, customer: $customer, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
+    return 'ActiveOrderResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
   }
 
   @override
@@ -941,7 +913,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('currencyCode', currencyCode))
       ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('customer', customer))
       ..add(DiagnosticsProperty('discounts', discounts))
       ..add(DiagnosticsProperty('fulfillments', fulfillments))
       ..add(DiagnosticsProperty('history', history))
@@ -983,8 +954,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
                 other.currencyCode == currencyCode) &&
             const DeepCollectionEquality()
                 .equals(other._customFields, _customFields) &&
-            (identical(other.customer, customer) ||
-                other.customer == customer) &&
             const DeepCollectionEquality()
                 .equals(other._discounts, _discounts) &&
             const DeepCollectionEquality()
@@ -1035,7 +1004,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         createdAt,
         currencyCode,
         const DeepCollectionEquality().hash(_customFields),
-        customer,
         const DeepCollectionEquality().hash(_discounts),
         const DeepCollectionEquality().hash(_fulfillments),
         history,
@@ -1079,7 +1047,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -1112,7 +1079,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         createdAt,
         currencyCode,
         customFields,
-        customer,
         discounts,
         fulfillments,
         history,
@@ -1149,7 +1115,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -1182,7 +1147,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         createdAt,
         currencyCode,
         customFields,
-        customer,
         discounts,
         fulfillments,
         history,
@@ -1219,7 +1183,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
             DateTime createdAt,
             CurrencyCode currencyCode,
             Map<String, dynamic>? customFields,
-            Customer? customer,
             List<Discount> discounts,
             List<Fulfillment>? fulfillments,
             HistoryEntryList history,
@@ -1254,7 +1217,6 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
           createdAt,
           currencyCode,
           customFields,
-          customer,
           discounts,
           fulfillments,
           history,
@@ -1329,7 +1291,6 @@ abstract class Order extends ActiveOrderResult {
       required final DateTime createdAt,
       required final CurrencyCode currencyCode,
       final Map<String, dynamic>? customFields,
-      final Customer? customer,
       required final List<Discount> discounts,
       final List<Fulfillment>? fulfillments,
       required final HistoryEntryList history,
@@ -1368,7 +1329,6 @@ abstract class Order extends ActiveOrderResult {
   DateTime get createdAt;
   CurrencyCode get currencyCode;
   Map<String, dynamic>? get customFields;
-  Customer? get customer;
   List<Discount> get discounts;
   List<Fulfillment>? get fulfillments;
   HistoryEntryList get history;

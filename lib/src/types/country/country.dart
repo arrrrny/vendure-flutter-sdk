@@ -19,7 +19,7 @@ class Country with _$Country {
     required String id,
     required LanguageCode languageCode,
     required String name,
-    Region? parent,
+    // Region? parent,
     String? parentId,
     required List<RegionTranslation> translations,
     required String type,

@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import '../asset/asset.dart';
-import '../collection/collection.dart';
 import '../facet_value/facet_value.dart';
 import '../product_option_group/product_option_group.dart';
 import '../product_translation/product_translation.dart';
@@ -18,7 +17,7 @@ class Product with _$Product {
 
   const factory Product({
     required List<Asset> assets,
-    required List<Collection> collections,
+    // required List<Collection> collections,
     required DateTime createdAt,
     Map<String, dynamic>? customFields,
     required String description,
@@ -34,7 +33,7 @@ class Product with _$Product {
     required DateTime updatedAt,
 
     /// Returns a paginated, sortable, filterable list of ProductVariants
-    required ProductVariantList variantList,
+    // required ProductVariantList variantList,
 
     /// Returns all ProductVariants
     required List<ProductVariant> variants,

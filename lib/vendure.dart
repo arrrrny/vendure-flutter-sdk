@@ -10,7 +10,7 @@ import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 import 'package:http/http.dart';
 
-export '../src/input_types/exports.dart'; // Add this line
+export '../src/types/exports.dart'; // Add this line
 
 class Vendure {
   static Vendure? _instance;
@@ -50,11 +50,11 @@ class Vendure {
         _authClient = GraphQLClient(
           defaultPolicies: DefaultPolicies(
             query: Policies(
-              fetch: FetchPolicy.networkOnly,
+              fetch: FetchPolicy.noCache,
               cacheReread: CacheRereadPolicy.ignoreAll,
             ),
             mutate: Policies(
-              fetch: FetchPolicy.networkOnly,
+              fetch: FetchPolicy.noCache,
               cacheReread: CacheRereadPolicy.ignoreAll,
             ),
           ),
@@ -112,23 +112,46 @@ class Vendure {
     required String password,
     Duration sessionDuration = const Duration(days: 365),
   }) async {
-    fetchToken(params) async {
-      final authClient = GraphQLClient(
-        link: HttpLink(endpoint),
-        cache: GraphQLCache(),
-      );
-      final authOperations = AuthOperations(authClient);
-      return authOperations.getToken(
-        username: params['username'],
-        password: params['password'],
-      );
+    // Helper function to fetch and return token
+    Future<String?> fetchToken(Map<String, dynamic> params) async {
+      try {
+        final authClient = GraphQLClient(
+          link: HttpLink(endpoint),
+          defaultPolicies: DefaultPolicies(
+            query: Policies(
+              fetch: FetchPolicy.noCache,
+              cacheReread: CacheRereadPolicy.ignoreAll,
+            ),
+            mutate: Policies(
+              fetch: FetchPolicy.noCache,
+              cacheReread: CacheRereadPolicy.ignoreAll,
+            ),
+          ),
+          cache: GraphQLCache(),
+        );
+        final authOperations = AuthOperations(authClient);
+        final token = await authOperations.getToken(
+          username: params['username'],
+          password: params['password'],
+        );
+        return token;
+      } catch (e) {
+        return null;
+      }
     }
 
+    // Fetch the token
+    final token =
+        await fetchToken({'username': username, 'password': password});
+    if (token == null) {
+      throw Exception("Failed to fetch token");
+    }
+
+    // Initialize Vendure instance with the fetched token
     if (_instance != null) {
-      _instance!._token =
-          await fetchToken({'username': username, 'password': password});
+      _instance!._token = token;
     } else {
-      _instance = await initialize(
+      _instance = Vendure._internal(
         endpoint: endpoint,
         fetchToken: fetchToken,
         tokenParams: {
@@ -136,7 +159,13 @@ class Vendure {
           'password': password,
         },
         sessionDuration: sessionDuration,
+        token: token,
       );
+    }
+
+    // Ensure token is set
+    if (_instance!._token == null) {
+      throw Exception("Failed to set token in instance");
     }
 
     return _instance!;
@@ -148,22 +177,45 @@ class Vendure {
     required String jwt,
     Duration sessionDuration = const Duration(hours: 1),
   }) async {
-    fetchToken(params) async {
-      final authClient = GraphQLClient(
-        link: HttpLink(endpoint),
-        cache: GraphQLCache(),
-      );
-      final authOperations = AuthOperations(authClient);
-      return authOperations.getTokenFirebase(
-        uid: params['uid'],
-        jwt: params['jwt'],
-      );
+    // Helper function to fetch and return token
+    Future<String?> fetchToken(Map<String, dynamic> params) async {
+      try {
+        final authClient = GraphQLClient(
+          link: HttpLink(endpoint),
+          defaultPolicies: DefaultPolicies(
+            query: Policies(
+              fetch: FetchPolicy.noCache,
+              cacheReread: CacheRereadPolicy.ignoreAll,
+            ),
+            mutate: Policies(
+              fetch: FetchPolicy.noCache,
+              cacheReread: CacheRereadPolicy.ignoreAll,
+            ),
+          ),
+          cache: GraphQLCache(),
+        );
+        final authOperations = AuthOperations(authClient);
+        final token = await authOperations.getTokenFirebase(
+          uid: params['uid'],
+          jwt: params['jwt'],
+        );
+        return token;
+      } catch (e) {
+        return null;
+      }
     }
 
+    // Fetch the token
+    final token = await fetchToken({'uid': uid, 'jwt': jwt});
+    if (token == null) {
+      throw Exception("Failed to fetch token");
+    }
+
+    // Initialize Vendure instance with the fetched token
     if (_instance != null) {
-      _instance!._token = await fetchToken({'uid': uid, 'jwt': jwt});
+      _instance!._token = token;
     } else {
-      _instance = await initialize(
+      _instance = Vendure._internal(
         endpoint: endpoint,
         fetchToken: fetchToken,
         tokenParams: {
@@ -171,7 +223,13 @@ class Vendure {
           'jwt': jwt,
         },
         sessionDuration: sessionDuration,
+        token: token,
       );
+    }
+
+    // Ensure token is set
+    if (_instance!._token == null) {
+      throw Exception("Failed to set token in instance");
     }
 
     return _instance!;
@@ -183,15 +241,25 @@ class Vendure {
     required Map<String, dynamic> tokenParams,
     Duration sessionDuration = const Duration(days: 365),
   }) async {
+    final token = await fetchToken(tokenParams);
+    if (token == null) {
+      throw Exception("Failed to fetch token");
+    }
     if (_instance != null) {
-      _instance!._token = await fetchToken(tokenParams);
+      _instance!._token = token;
     } else {
-      _instance = await initialize(
+      _instance = Vendure._internal(
         endpoint: endpoint,
         fetchToken: fetchToken,
         tokenParams: tokenParams,
         sessionDuration: sessionDuration,
+        token: token,
       );
+    }
+
+    // Ensure token is set
+    if (_instance!._token == null) {
+      throw Exception("Failed to set token in instance");
     }
 
     return _instance!;
@@ -216,6 +284,7 @@ class Vendure {
             },
           ));
     }
+
     final link = Link.from([
       AuthLink(
         getToken: () async {

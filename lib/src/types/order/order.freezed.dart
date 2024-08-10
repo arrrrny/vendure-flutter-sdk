@@ -32,6 +32,7 @@ mixin _$Order {
   DateTime get createdAt => throw _privateConstructorUsedError;
   CurrencyCode get currencyCode => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
+  Customer? get customer => throw _privateConstructorUsedError;
   List<Discount> get discounts => throw _privateConstructorUsedError;
   List<Fulfillment>? get fulfillments => throw _privateConstructorUsedError;
   HistoryEntryList get history => throw _privateConstructorUsedError;
@@ -96,6 +97,7 @@ abstract class $OrderCopyWith<$Res> {
       DateTime createdAt,
       CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
+      Customer? customer,
       List<Discount> discounts,
       List<Fulfillment>? fulfillments,
       HistoryEntryList history,
@@ -120,6 +122,7 @@ abstract class $OrderCopyWith<$Res> {
       DateTime updatedAt});
 
   $OrderAddressCopyWith<$Res>? get billingAddress;
+  $CustomerCopyWith<$Res>? get customer;
   $HistoryEntryListCopyWith<$Res> get history;
   $OrderAddressCopyWith<$Res>? get shippingAddress;
 }
@@ -144,6 +147,7 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     Object? createdAt = null,
     Object? currencyCode = null,
     Object? customFields = freezed,
+    Object? customer = freezed,
     Object? discounts = null,
     Object? fulfillments = freezed,
     Object? history = null,
@@ -196,6 +200,10 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      customer: freezed == customer
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as Customer?,
       discounts: null == discounts
           ? _value.discounts
           : discounts // ignore: cast_nullable_to_non_nullable
@@ -301,6 +309,18 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
 
   @override
   @pragma('vm:prefer-inline')
+  $CustomerCopyWith<$Res>? get customer {
+    if (_value.customer == null) {
+      return null;
+    }
+
+    return $CustomerCopyWith<$Res>(_value.customer!, (value) {
+      return _then(_value.copyWith(customer: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res> get history {
     return $HistoryEntryListCopyWith<$Res>(_value.history, (value) {
       return _then(_value.copyWith(history: value) as $Val);
@@ -335,6 +355,7 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
       DateTime createdAt,
       CurrencyCode currencyCode,
       Map<String, dynamic>? customFields,
+      Customer? customer,
       List<Discount> discounts,
       List<Fulfillment>? fulfillments,
       HistoryEntryList history,
@@ -361,6 +382,8 @@ abstract class _$$OrderImplCopyWith<$Res> implements $OrderCopyWith<$Res> {
   @override
   $OrderAddressCopyWith<$Res>? get billingAddress;
   @override
+  $CustomerCopyWith<$Res>? get customer;
+  @override
   $HistoryEntryListCopyWith<$Res> get history;
   @override
   $OrderAddressCopyWith<$Res>? get shippingAddress;
@@ -384,6 +407,7 @@ class __$$OrderImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? currencyCode = null,
     Object? customFields = freezed,
+    Object? customer = freezed,
     Object? discounts = null,
     Object? fulfillments = freezed,
     Object? history = null,
@@ -436,6 +460,10 @@ class __$$OrderImplCopyWithImpl<$Res>
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      customer: freezed == customer
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as Customer?,
       discounts: null == discounts
           ? _value._discounts
           : discounts // ignore: cast_nullable_to_non_nullable
@@ -539,6 +567,7 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
       required this.createdAt,
       required this.currencyCode,
       final Map<String, dynamic>? customFields,
+      this.customer,
       required final List<Discount> discounts,
       final List<Fulfillment>? fulfillments,
       required this.history,
@@ -611,6 +640,8 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
     return EqualUnmodifiableMapView(value);
   }
 
+  @override
+  final Customer? customer;
   final List<Discount> _discounts;
   @override
   List<Discount> get discounts {
@@ -738,7 +769,7 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
+    return 'Order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, customer: $customer, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
   }
 
   @override
@@ -753,6 +784,7 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('currencyCode', currencyCode))
       ..add(DiagnosticsProperty('customFields', customFields))
+      ..add(DiagnosticsProperty('customer', customer))
       ..add(DiagnosticsProperty('discounts', discounts))
       ..add(DiagnosticsProperty('fulfillments', fulfillments))
       ..add(DiagnosticsProperty('history', history))
@@ -794,6 +826,8 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
                 other.currencyCode == currencyCode) &&
             const DeepCollectionEquality()
                 .equals(other._customFields, _customFields) &&
+            (identical(other.customer, customer) ||
+                other.customer == customer) &&
             const DeepCollectionEquality()
                 .equals(other._discounts, _discounts) &&
             const DeepCollectionEquality()
@@ -844,6 +878,7 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
         createdAt,
         currencyCode,
         const DeepCollectionEquality().hash(_customFields),
+        customer,
         const DeepCollectionEquality().hash(_discounts),
         const DeepCollectionEquality().hash(_fulfillments),
         history,
@@ -891,6 +926,7 @@ abstract class _Order extends Order {
       required final DateTime createdAt,
       required final CurrencyCode currencyCode,
       final Map<String, dynamic>? customFields,
+      final Customer? customer,
       required final List<Discount> discounts,
       final List<Fulfillment>? fulfillments,
       required final HistoryEntryList history,
@@ -937,6 +973,8 @@ abstract class _Order extends Order {
   CurrencyCode get currencyCode;
   @override
   Map<String, dynamic>? get customFields;
+  @override
+  Customer? get customer;
   @override
   List<Discount> get discounts;
   @override

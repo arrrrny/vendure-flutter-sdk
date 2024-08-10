@@ -18,8 +18,11 @@ class CustomOperations {
     );
     final client = await _client();
     final result = await client.mutate(options);
-    Map<String, dynamic> data = _handleErrors(result, expectedDataType);
 
+    Map<String, dynamic>? data = _handleErrors(result, expectedDataType);
+    if (data == null) {
+      return Future.value(null);
+    }
     data = VendureUtils.normalizeGraphQLData(data);
 
     return fromJson(data);
@@ -32,17 +35,17 @@ class CustomOperations {
       document: gql(query),
       variables: variables,
     );
-
     final client = await _client();
     final result = await client.query(options);
-
-    Map<String, dynamic> data = _handleErrors(result, expectedDataType);
-
+    Map<String, dynamic>? data = _handleErrors(result, expectedDataType);
+    if (data == null) {
+      return Future.value(null);
+    }
     data = VendureUtils.normalizeGraphQLData(data);
     return fromJson(data);
   }
 
-  Map<String, dynamic> _handleErrors(
+  Map<String, dynamic>? _handleErrors(
       QueryResult<Object?> result, String? expectedDataType) {
     if (result.hasException) {
       throw Exception(result.exception.toString());
@@ -52,9 +55,11 @@ class CustomOperations {
             result.data!.containsKey(expectedDataType)
         ? result.data![expectedDataType]
         : result.data;
-    if (data == null) {
-      throw Exception(
-          'No data returned or parsed from result ${result.toString()}');
+    if (data == null ||
+        expectedDataType != null &&
+            data[expectedDataType] != null &&
+            data[expectedDataType] == null) {
+      return null;
     }
     if (data['__typename'] == 'ErrorResult') {
       throw Exception(data['message']);

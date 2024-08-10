@@ -20,7 +20,6 @@ RefundLine _$RefundLineFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RefundLine {
-  OrderLine get orderLine => throw _privateConstructorUsedError;
   String get orderLineId => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
   String get refundId => throw _privateConstructorUsedError;
@@ -37,10 +36,7 @@ abstract class $RefundLineCopyWith<$Res> {
           RefundLine value, $Res Function(RefundLine) then) =
       _$RefundLineCopyWithImpl<$Res, RefundLine>;
   @useResult
-  $Res call(
-      {OrderLine orderLine, String orderLineId, int quantity, String refundId});
-
-  $OrderLineCopyWith<$Res> get orderLine;
+  $Res call({String orderLineId, int quantity, String refundId});
 }
 
 /// @nodoc
@@ -56,16 +52,11 @@ class _$RefundLineCopyWithImpl<$Res, $Val extends RefundLine>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? orderLine = null,
     Object? orderLineId = null,
     Object? quantity = null,
     Object? refundId = null,
   }) {
     return _then(_value.copyWith(
-      orderLine: null == orderLine
-          ? _value.orderLine
-          : orderLine // ignore: cast_nullable_to_non_nullable
-              as OrderLine,
       orderLineId: null == orderLineId
           ? _value.orderLineId
           : orderLineId // ignore: cast_nullable_to_non_nullable
@@ -80,14 +71,6 @@ class _$RefundLineCopyWithImpl<$Res, $Val extends RefundLine>
               as String,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $OrderLineCopyWith<$Res> get orderLine {
-    return $OrderLineCopyWith<$Res>(_value.orderLine, (value) {
-      return _then(_value.copyWith(orderLine: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -98,11 +81,7 @@ abstract class _$$RefundLineImplCopyWith<$Res>
       __$$RefundLineImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {OrderLine orderLine, String orderLineId, int quantity, String refundId});
-
-  @override
-  $OrderLineCopyWith<$Res> get orderLine;
+  $Res call({String orderLineId, int quantity, String refundId});
 }
 
 /// @nodoc
@@ -116,16 +95,11 @@ class __$$RefundLineImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? orderLine = null,
     Object? orderLineId = null,
     Object? quantity = null,
     Object? refundId = null,
   }) {
     return _then(_$RefundLineImpl(
-      orderLine: null == orderLine
-          ? _value.orderLine
-          : orderLine // ignore: cast_nullable_to_non_nullable
-              as OrderLine,
       orderLineId: null == orderLineId
           ? _value.orderLineId
           : orderLineId // ignore: cast_nullable_to_non_nullable
@@ -146,8 +120,7 @@ class __$$RefundLineImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
   const _$RefundLineImpl(
-      {required this.orderLine,
-      required this.orderLineId,
+      {required this.orderLineId,
       required this.quantity,
       required this.refundId})
       : super._();
@@ -155,8 +128,6 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
   factory _$RefundLineImpl.fromJson(Map<String, dynamic> json) =>
       _$$RefundLineImplFromJson(json);
 
-  @override
-  final OrderLine orderLine;
   @override
   final String orderLineId;
   @override
@@ -166,7 +137,7 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RefundLine(orderLine: $orderLine, orderLineId: $orderLineId, quantity: $quantity, refundId: $refundId)';
+    return 'RefundLine(orderLineId: $orderLineId, quantity: $quantity, refundId: $refundId)';
   }
 
   @override
@@ -174,7 +145,6 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RefundLine'))
-      ..add(DiagnosticsProperty('orderLine', orderLine))
       ..add(DiagnosticsProperty('orderLineId', orderLineId))
       ..add(DiagnosticsProperty('quantity', quantity))
       ..add(DiagnosticsProperty('refundId', refundId));
@@ -185,8 +155,6 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RefundLineImpl &&
-            (identical(other.orderLine, orderLine) ||
-                other.orderLine == orderLine) &&
             (identical(other.orderLineId, orderLineId) ||
                 other.orderLineId == orderLineId) &&
             (identical(other.quantity, quantity) ||
@@ -197,8 +165,7 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, orderLine, orderLineId, quantity, refundId);
+  int get hashCode => Object.hash(runtimeType, orderLineId, quantity, refundId);
 
   @JsonKey(ignore: true)
   @override
@@ -216,8 +183,7 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
 
 abstract class _RefundLine extends RefundLine {
   const factory _RefundLine(
-      {required final OrderLine orderLine,
-      required final String orderLineId,
+      {required final String orderLineId,
       required final int quantity,
       required final String refundId}) = _$RefundLineImpl;
   const _RefundLine._() : super._();
@@ -225,8 +191,6 @@ abstract class _RefundLine extends RefundLine {
   factory _RefundLine.fromJson(Map<String, dynamic> json) =
       _$RefundLineImpl.fromJson;
 
-  @override
-  OrderLine get orderLine;
   @override
   String get orderLineId;
   @override

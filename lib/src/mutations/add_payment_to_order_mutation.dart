@@ -33,6 +33,10 @@ mutation AddPaymentToOrder($input: PaymentInput!) {
       fromState
       toState
     }
+    ... on NoActiveOrderError {
+      errorCode
+      message
+    }
     ... on ErrorResult {
       errorCode
       message

@@ -21,8 +21,8 @@ CurrentUserChannel _$CurrentUserChannelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CurrentUserChannel {
   String get code => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  List<Permission> get permissions => throw _privateConstructorUsedError;
+  String get id =>
+      throw _privateConstructorUsedError; // required List<Permission> permissions,
   String get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,8 +37,7 @@ abstract class $CurrentUserChannelCopyWith<$Res> {
           CurrentUserChannel value, $Res Function(CurrentUserChannel) then) =
       _$CurrentUserChannelCopyWithImpl<$Res, CurrentUserChannel>;
   @useResult
-  $Res call(
-      {String code, String id, List<Permission> permissions, String token});
+  $Res call({String code, String id, String token});
 }
 
 /// @nodoc
@@ -56,7 +55,6 @@ class _$CurrentUserChannelCopyWithImpl<$Res, $Val extends CurrentUserChannel>
   $Res call({
     Object? code = null,
     Object? id = null,
-    Object? permissions = null,
     Object? token = null,
   }) {
     return _then(_value.copyWith(
@@ -68,10 +66,6 @@ class _$CurrentUserChannelCopyWithImpl<$Res, $Val extends CurrentUserChannel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      permissions: null == permissions
-          ? _value.permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<Permission>,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -88,8 +82,7 @@ abstract class _$$CurrentUserChannelImplCopyWith<$Res>
       __$$CurrentUserChannelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String code, String id, List<Permission> permissions, String token});
+  $Res call({String code, String id, String token});
 }
 
 /// @nodoc
@@ -105,7 +98,6 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
   $Res call({
     Object? code = null,
     Object? id = null,
-    Object? permissions = null,
     Object? token = null,
   }) {
     return _then(_$CurrentUserChannelImpl(
@@ -117,10 +109,6 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      permissions: null == permissions
-          ? _value._permissions
-          : permissions // ignore: cast_nullable_to_non_nullable
-              as List<Permission>,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -134,12 +122,8 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
 class _$CurrentUserChannelImpl extends _CurrentUserChannel
     with DiagnosticableTreeMixin {
   const _$CurrentUserChannelImpl(
-      {required this.code,
-      required this.id,
-      required final List<Permission> permissions,
-      required this.token})
-      : _permissions = permissions,
-        super._();
+      {required this.code, required this.id, required this.token})
+      : super._();
 
   factory _$CurrentUserChannelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CurrentUserChannelImplFromJson(json);
@@ -148,20 +132,13 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
   final String code;
   @override
   final String id;
-  final List<Permission> _permissions;
-  @override
-  List<Permission> get permissions {
-    if (_permissions is EqualUnmodifiableListView) return _permissions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_permissions);
-  }
-
+// required List<Permission> permissions,
   @override
   final String token;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CurrentUserChannel(code: $code, id: $id, permissions: $permissions, token: $token)';
+    return 'CurrentUserChannel(code: $code, id: $id, token: $token)';
   }
 
   @override
@@ -171,7 +148,6 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
       ..add(DiagnosticsProperty('type', 'CurrentUserChannel'))
       ..add(DiagnosticsProperty('code', code))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('permissions', permissions))
       ..add(DiagnosticsProperty('token', token));
   }
 
@@ -182,15 +158,12 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
             other is _$CurrentUserChannelImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality()
-                .equals(other._permissions, _permissions) &&
             (identical(other.token, token) || other.token == token));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, code, id,
-      const DeepCollectionEquality().hash(_permissions), token);
+  int get hashCode => Object.hash(runtimeType, code, id, token);
 
   @JsonKey(ignore: true)
   @override
@@ -211,7 +184,6 @@ abstract class _CurrentUserChannel extends CurrentUserChannel {
   const factory _CurrentUserChannel(
       {required final String code,
       required final String id,
-      required final List<Permission> permissions,
       required final String token}) = _$CurrentUserChannelImpl;
   const _CurrentUserChannel._() : super._();
 
@@ -222,9 +194,7 @@ abstract class _CurrentUserChannel extends CurrentUserChannel {
   String get code;
   @override
   String get id;
-  @override
-  List<Permission> get permissions;
-  @override
+  @override // required List<Permission> permissions,
   String get token;
   @override
   @JsonKey(ignore: true)

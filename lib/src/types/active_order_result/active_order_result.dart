@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../customer/customer.dart';
 import '../discount/discount.dart';
 import '../fulfillment/fulfillment.dart';
 import '../history_entry_list/history_entry_list.dart';
@@ -40,7 +39,6 @@ class ActiveOrderResult with _$ActiveOrderResult {
     required DateTime createdAt,
     required CurrencyCode currencyCode,
     Map<String, dynamic>? customFields,
-    Customer? customer,
     required List<Discount> discounts,
     List<Fulfillment>? fulfillments,
     required HistoryEntryList history,

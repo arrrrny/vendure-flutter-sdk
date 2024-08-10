@@ -1,21 +1,10 @@
-const String createCustomerAddressMutation = r'''
+import 'package:vendure/src/fragments/shared_fragment.dart';
+
+const String createCustomerAddressMutation = addressFragment +
+    r'''
 mutation CreateCustomerAddress($input: CreateAddressInput!) {
   createCustomerAddress(input: $input) {
-    ... on Address {
-      id
-      fullName
-      company
-      streetLine1
-      streetLine2
-      city
-      province
-      postalCode
-      country
-      phoneNumber
-      defaultShippingAddress
-      defaultBillingAddress
-      customFields
+    ...Address
     }
-  }
 }
 ''';

@@ -22,8 +22,7 @@ Collection _$CollectionFromJson(Map<String, dynamic> json) {
 mixin _$Collection {
   List<Asset> get assets => throw _privateConstructorUsedError;
   List<CollectionBreadcrumb> get breadcrumbs =>
-      throw _privateConstructorUsedError;
-  List<Collection>? get children => throw _privateConstructorUsedError;
+      throw _privateConstructorUsedError; // List<Collection>? children,
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -31,11 +30,10 @@ mixin _$Collection {
   List<ConfigurableOperation> get filters => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   LanguageCode? get languageCode => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  Collection? get parent => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError; // Collection? parent,
   String get parentId => throw _privateConstructorUsedError;
-  int get position => throw _privateConstructorUsedError;
-  ProductVariantList get productVariants => throw _privateConstructorUsedError;
+  int get position =>
+      throw _privateConstructorUsedError; // required ProductVariantList productVariants,
   String get slug => throw _privateConstructorUsedError;
   List<CollectionTranslation> get translations =>
       throw _privateConstructorUsedError;
@@ -56,7 +54,6 @@ abstract class $CollectionCopyWith<$Res> {
   $Res call(
       {List<Asset> assets,
       List<CollectionBreadcrumb> breadcrumbs,
-      List<Collection>? children,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
       String description,
@@ -65,17 +62,13 @@ abstract class $CollectionCopyWith<$Res> {
       String id,
       LanguageCode? languageCode,
       String name,
-      Collection? parent,
       String parentId,
       int position,
-      ProductVariantList productVariants,
       String slug,
       List<CollectionTranslation> translations,
       DateTime updatedAt});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $CollectionCopyWith<$Res>? get parent;
-  $ProductVariantListCopyWith<$Res> get productVariants;
 }
 
 /// @nodoc
@@ -93,7 +86,6 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
   $Res call({
     Object? assets = null,
     Object? breadcrumbs = null,
-    Object? children = freezed,
     Object? createdAt = null,
     Object? customFields = freezed,
     Object? description = null,
@@ -102,10 +94,8 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
     Object? id = null,
     Object? languageCode = freezed,
     Object? name = null,
-    Object? parent = freezed,
     Object? parentId = null,
     Object? position = null,
-    Object? productVariants = null,
     Object? slug = null,
     Object? translations = null,
     Object? updatedAt = null,
@@ -119,10 +109,6 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
           ? _value.breadcrumbs
           : breadcrumbs // ignore: cast_nullable_to_non_nullable
               as List<CollectionBreadcrumb>,
-      children: freezed == children
-          ? _value.children
-          : children // ignore: cast_nullable_to_non_nullable
-              as List<Collection>?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -155,10 +141,6 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      parent: freezed == parent
-          ? _value.parent
-          : parent // ignore: cast_nullable_to_non_nullable
-              as Collection?,
       parentId: null == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
@@ -167,10 +149,6 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
-      productVariants: null == productVariants
-          ? _value.productVariants
-          : productVariants // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList,
       slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
@@ -197,26 +175,6 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
       return _then(_value.copyWith(featuredAsset: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $CollectionCopyWith<$Res>? get parent {
-    if (_value.parent == null) {
-      return null;
-    }
-
-    return $CollectionCopyWith<$Res>(_value.parent!, (value) {
-      return _then(_value.copyWith(parent: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductVariantListCopyWith<$Res> get productVariants {
-    return $ProductVariantListCopyWith<$Res>(_value.productVariants, (value) {
-      return _then(_value.copyWith(productVariants: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -230,7 +188,6 @@ abstract class _$$CollectionImplCopyWith<$Res>
   $Res call(
       {List<Asset> assets,
       List<CollectionBreadcrumb> breadcrumbs,
-      List<Collection>? children,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
       String description,
@@ -239,20 +196,14 @@ abstract class _$$CollectionImplCopyWith<$Res>
       String id,
       LanguageCode? languageCode,
       String name,
-      Collection? parent,
       String parentId,
       int position,
-      ProductVariantList productVariants,
       String slug,
       List<CollectionTranslation> translations,
       DateTime updatedAt});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
-  @override
-  $CollectionCopyWith<$Res>? get parent;
-  @override
-  $ProductVariantListCopyWith<$Res> get productVariants;
 }
 
 /// @nodoc
@@ -268,7 +219,6 @@ class __$$CollectionImplCopyWithImpl<$Res>
   $Res call({
     Object? assets = null,
     Object? breadcrumbs = null,
-    Object? children = freezed,
     Object? createdAt = null,
     Object? customFields = freezed,
     Object? description = null,
@@ -277,10 +227,8 @@ class __$$CollectionImplCopyWithImpl<$Res>
     Object? id = null,
     Object? languageCode = freezed,
     Object? name = null,
-    Object? parent = freezed,
     Object? parentId = null,
     Object? position = null,
-    Object? productVariants = null,
     Object? slug = null,
     Object? translations = null,
     Object? updatedAt = null,
@@ -294,10 +242,6 @@ class __$$CollectionImplCopyWithImpl<$Res>
           ? _value._breadcrumbs
           : breadcrumbs // ignore: cast_nullable_to_non_nullable
               as List<CollectionBreadcrumb>,
-      children: freezed == children
-          ? _value._children
-          : children // ignore: cast_nullable_to_non_nullable
-              as List<Collection>?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -330,10 +274,6 @@ class __$$CollectionImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      parent: freezed == parent
-          ? _value.parent
-          : parent // ignore: cast_nullable_to_non_nullable
-              as Collection?,
       parentId: null == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
@@ -342,10 +282,6 @@ class __$$CollectionImplCopyWithImpl<$Res>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
-      productVariants: null == productVariants
-          ? _value.productVariants
-          : productVariants // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList,
       slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
@@ -368,7 +304,6 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   const _$CollectionImpl(
       {required final List<Asset> assets,
       required final List<CollectionBreadcrumb> breadcrumbs,
-      final List<Collection>? children,
       required this.createdAt,
       final Map<String, dynamic>? customFields,
       required this.description,
@@ -377,16 +312,13 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
       required this.id,
       this.languageCode,
       required this.name,
-      this.parent,
       required this.parentId,
       required this.position,
-      required this.productVariants,
       required this.slug,
       required final List<CollectionTranslation> translations,
       required this.updatedAt})
       : _assets = assets,
         _breadcrumbs = breadcrumbs,
-        _children = children,
         _customFields = customFields,
         _filters = filters,
         _translations = translations,
@@ -411,16 +343,7 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
     return EqualUnmodifiableListView(_breadcrumbs);
   }
 
-  final List<Collection>? _children;
-  @override
-  List<Collection>? get children {
-    final value = _children;
-    if (value == null) return null;
-    if (_children is EqualUnmodifiableListView) return _children;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+// List<Collection>? children,
   @override
   final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
@@ -451,14 +374,12 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   final LanguageCode? languageCode;
   @override
   final String name;
-  @override
-  final Collection? parent;
+// Collection? parent,
   @override
   final String parentId;
   @override
   final int position;
-  @override
-  final ProductVariantList productVariants;
+// required ProductVariantList productVariants,
   @override
   final String slug;
   final List<CollectionTranslation> _translations;
@@ -474,7 +395,7 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Collection(assets: $assets, breadcrumbs: $breadcrumbs, children: $children, createdAt: $createdAt, customFields: $customFields, description: $description, featuredAsset: $featuredAsset, filters: $filters, id: $id, languageCode: $languageCode, name: $name, parent: $parent, parentId: $parentId, position: $position, productVariants: $productVariants, slug: $slug, translations: $translations, updatedAt: $updatedAt)';
+    return 'Collection(assets: $assets, breadcrumbs: $breadcrumbs, createdAt: $createdAt, customFields: $customFields, description: $description, featuredAsset: $featuredAsset, filters: $filters, id: $id, languageCode: $languageCode, name: $name, parentId: $parentId, position: $position, slug: $slug, translations: $translations, updatedAt: $updatedAt)';
   }
 
   @override
@@ -484,7 +405,6 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('type', 'Collection'))
       ..add(DiagnosticsProperty('assets', assets))
       ..add(DiagnosticsProperty('breadcrumbs', breadcrumbs))
-      ..add(DiagnosticsProperty('children', children))
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('customFields', customFields))
       ..add(DiagnosticsProperty('description', description))
@@ -493,10 +413,8 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('languageCode', languageCode))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('parent', parent))
       ..add(DiagnosticsProperty('parentId', parentId))
       ..add(DiagnosticsProperty('position', position))
-      ..add(DiagnosticsProperty('productVariants', productVariants))
       ..add(DiagnosticsProperty('slug', slug))
       ..add(DiagnosticsProperty('translations', translations))
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
@@ -510,7 +428,6 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
             const DeepCollectionEquality().equals(other._assets, _assets) &&
             const DeepCollectionEquality()
                 .equals(other._breadcrumbs, _breadcrumbs) &&
-            const DeepCollectionEquality().equals(other._children, _children) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality()
@@ -524,13 +441,10 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
             (identical(other.languageCode, languageCode) ||
                 other.languageCode == languageCode) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.parent, parent) || other.parent == parent) &&
             (identical(other.parentId, parentId) ||
                 other.parentId == parentId) &&
             (identical(other.position, position) ||
                 other.position == position) &&
-            (identical(other.productVariants, productVariants) ||
-                other.productVariants == productVariants) &&
             (identical(other.slug, slug) || other.slug == slug) &&
             const DeepCollectionEquality()
                 .equals(other._translations, _translations) &&
@@ -544,7 +458,6 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
       runtimeType,
       const DeepCollectionEquality().hash(_assets),
       const DeepCollectionEquality().hash(_breadcrumbs),
-      const DeepCollectionEquality().hash(_children),
       createdAt,
       const DeepCollectionEquality().hash(_customFields),
       description,
@@ -553,10 +466,8 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
       id,
       languageCode,
       name,
-      parent,
       parentId,
       position,
-      productVariants,
       slug,
       const DeepCollectionEquality().hash(_translations),
       updatedAt);
@@ -579,7 +490,6 @@ abstract class _Collection extends Collection {
   const factory _Collection(
       {required final List<Asset> assets,
       required final List<CollectionBreadcrumb> breadcrumbs,
-      final List<Collection>? children,
       required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
       required final String description,
@@ -588,10 +498,8 @@ abstract class _Collection extends Collection {
       required final String id,
       final LanguageCode? languageCode,
       required final String name,
-      final Collection? parent,
       required final String parentId,
       required final int position,
-      required final ProductVariantList productVariants,
       required final String slug,
       required final List<CollectionTranslation> translations,
       required final DateTime updatedAt}) = _$CollectionImpl;
@@ -604,9 +512,7 @@ abstract class _Collection extends Collection {
   List<Asset> get assets;
   @override
   List<CollectionBreadcrumb> get breadcrumbs;
-  @override
-  List<Collection>? get children;
-  @override
+  @override // List<Collection>? children,
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
@@ -622,15 +528,11 @@ abstract class _Collection extends Collection {
   LanguageCode? get languageCode;
   @override
   String get name;
-  @override
-  Collection? get parent;
-  @override
+  @override // Collection? parent,
   String get parentId;
   @override
   int get position;
-  @override
-  ProductVariantList get productVariants;
-  @override
+  @override // required ProductVariantList productVariants,
   String get slug;
   @override
   List<CollectionTranslation> get translations;

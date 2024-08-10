@@ -10,9 +10,6 @@ _$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
       assets: (json['assets'] as List<dynamic>)
           .map((e) => Asset.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
-      collections: (json['collections'] as List<dynamic>)
-          .map((e) => Collection.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
       createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
@@ -39,8 +36,6 @@ _$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
               ProductTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
-      variantList: ProductVariantList.fromJson(
-          Map<String, dynamic>.from(json['variantList'] as Map)),
       variants: (json['variants'] as List<dynamic>)
           .map((e) =>
               ProductVariant.fromJson(Map<String, dynamic>.from(e as Map)))
@@ -50,7 +45,6 @@ _$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
 Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) {
   final val = <String, dynamic>{
     'assets': instance.assets.map((e) => e.toJson()).toList(),
-    'collections': instance.collections.map((e) => e.toJson()).toList(),
     'createdAt': instance.createdAt.toIso8601String(),
   };
 
@@ -72,7 +66,6 @@ Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) {
   val['slug'] = instance.slug;
   val['translations'] = instance.translations.map((e) => e.toJson()).toList();
   val['updatedAt'] = instance.updatedAt.toIso8601String();
-  val['variantList'] = instance.variantList.toJson();
   val['variants'] = instance.variants.map((e) => e.toJson()).toList();
   return val;
 }

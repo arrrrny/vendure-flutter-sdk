@@ -20,8 +20,8 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Product {
-  List<Asset> get assets => throw _privateConstructorUsedError;
-  List<Collection> get collections => throw _privateConstructorUsedError;
+  List<Asset> get assets =>
+      throw _privateConstructorUsedError; // required List<Collection> collections,
   DateTime get createdAt => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -39,8 +39,7 @@ mixin _$Product {
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
-  ProductVariantList get variantList => throw _privateConstructorUsedError;
-
+// required ProductVariantList variantList,
   /// Returns all ProductVariants
   List<ProductVariant> get variants => throw _privateConstructorUsedError;
 
@@ -56,7 +55,6 @@ abstract class $ProductCopyWith<$Res> {
   @useResult
   $Res call(
       {List<Asset> assets,
-      List<Collection> collections,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
       String description,
@@ -70,11 +68,9 @@ abstract class $ProductCopyWith<$Res> {
       String slug,
       List<ProductTranslation> translations,
       DateTime updatedAt,
-      ProductVariantList variantList,
       List<ProductVariant> variants});
 
   $AssetCopyWith<$Res>? get featuredAsset;
-  $ProductVariantListCopyWith<$Res> get variantList;
 }
 
 /// @nodoc
@@ -91,7 +87,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
   @override
   $Res call({
     Object? assets = null,
-    Object? collections = null,
     Object? createdAt = null,
     Object? customFields = freezed,
     Object? description = null,
@@ -105,7 +100,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? slug = null,
     Object? translations = null,
     Object? updatedAt = null,
-    Object? variantList = null,
     Object? variants = null,
   }) {
     return _then(_value.copyWith(
@@ -113,10 +107,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.assets
           : assets // ignore: cast_nullable_to_non_nullable
               as List<Asset>,
-      collections: null == collections
-          ? _value.collections
-          : collections // ignore: cast_nullable_to_non_nullable
-              as List<Collection>,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -169,10 +159,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      variantList: null == variantList
-          ? _value.variantList
-          : variantList // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList,
       variants: null == variants
           ? _value.variants
           : variants // ignore: cast_nullable_to_non_nullable
@@ -191,14 +177,6 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
       return _then(_value.copyWith(featuredAsset: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ProductVariantListCopyWith<$Res> get variantList {
-    return $ProductVariantListCopyWith<$Res>(_value.variantList, (value) {
-      return _then(_value.copyWith(variantList: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -210,7 +188,6 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
   @useResult
   $Res call(
       {List<Asset> assets,
-      List<Collection> collections,
       DateTime createdAt,
       Map<String, dynamic>? customFields,
       String description,
@@ -224,13 +201,10 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String slug,
       List<ProductTranslation> translations,
       DateTime updatedAt,
-      ProductVariantList variantList,
       List<ProductVariant> variants});
 
   @override
   $AssetCopyWith<$Res>? get featuredAsset;
-  @override
-  $ProductVariantListCopyWith<$Res> get variantList;
 }
 
 /// @nodoc
@@ -245,7 +219,6 @@ class __$$ProductImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? assets = null,
-    Object? collections = null,
     Object? createdAt = null,
     Object? customFields = freezed,
     Object? description = null,
@@ -259,7 +232,6 @@ class __$$ProductImplCopyWithImpl<$Res>
     Object? slug = null,
     Object? translations = null,
     Object? updatedAt = null,
-    Object? variantList = null,
     Object? variants = null,
   }) {
     return _then(_$ProductImpl(
@@ -267,10 +239,6 @@ class __$$ProductImplCopyWithImpl<$Res>
           ? _value._assets
           : assets // ignore: cast_nullable_to_non_nullable
               as List<Asset>,
-      collections: null == collections
-          ? _value._collections
-          : collections // ignore: cast_nullable_to_non_nullable
-              as List<Collection>,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -323,10 +291,6 @@ class __$$ProductImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      variantList: null == variantList
-          ? _value.variantList
-          : variantList // ignore: cast_nullable_to_non_nullable
-              as ProductVariantList,
       variants: null == variants
           ? _value._variants
           : variants // ignore: cast_nullable_to_non_nullable
@@ -340,7 +304,6 @@ class __$$ProductImplCopyWithImpl<$Res>
 class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   const _$ProductImpl(
       {required final List<Asset> assets,
-      required final List<Collection> collections,
       required this.createdAt,
       final Map<String, dynamic>? customFields,
       required this.description,
@@ -354,10 +317,8 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
       required this.slug,
       required final List<ProductTranslation> translations,
       required this.updatedAt,
-      required this.variantList,
       required final List<ProductVariant> variants})
       : _assets = assets,
-        _collections = collections,
         _customFields = customFields,
         _facetValues = facetValues,
         _optionGroups = optionGroups,
@@ -376,14 +337,7 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
     return EqualUnmodifiableListView(_assets);
   }
 
-  final List<Collection> _collections;
-  @override
-  List<Collection> get collections {
-    if (_collections is EqualUnmodifiableListView) return _collections;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_collections);
-  }
-
+// required List<Collection> collections,
   @override
   final DateTime createdAt;
   final Map<String, dynamic>? _customFields;
@@ -438,12 +392,12 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
-  @override
-  final ProductVariantList variantList;
-
+// required ProductVariantList variantList,
   /// Returns all ProductVariants
   final List<ProductVariant> _variants;
 
+  /// Returns a paginated, sortable, filterable list of ProductVariants
+// required ProductVariantList variantList,
   /// Returns all ProductVariants
   @override
   List<ProductVariant> get variants {
@@ -454,7 +408,7 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Product(assets: $assets, collections: $collections, createdAt: $createdAt, customFields: $customFields, description: $description, enabled: $enabled, facetValues: $facetValues, featuredAsset: $featuredAsset, id: $id, languageCode: $languageCode, name: $name, optionGroups: $optionGroups, slug: $slug, translations: $translations, updatedAt: $updatedAt, variantList: $variantList, variants: $variants)';
+    return 'Product(assets: $assets, createdAt: $createdAt, customFields: $customFields, description: $description, enabled: $enabled, facetValues: $facetValues, featuredAsset: $featuredAsset, id: $id, languageCode: $languageCode, name: $name, optionGroups: $optionGroups, slug: $slug, translations: $translations, updatedAt: $updatedAt, variants: $variants)';
   }
 
   @override
@@ -463,7 +417,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'Product'))
       ..add(DiagnosticsProperty('assets', assets))
-      ..add(DiagnosticsProperty('collections', collections))
       ..add(DiagnosticsProperty('createdAt', createdAt))
       ..add(DiagnosticsProperty('customFields', customFields))
       ..add(DiagnosticsProperty('description', description))
@@ -477,7 +430,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('slug', slug))
       ..add(DiagnosticsProperty('translations', translations))
       ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('variantList', variantList))
       ..add(DiagnosticsProperty('variants', variants));
   }
 
@@ -487,8 +439,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
         (other.runtimeType == runtimeType &&
             other is _$ProductImpl &&
             const DeepCollectionEquality().equals(other._assets, _assets) &&
-            const DeepCollectionEquality()
-                .equals(other._collections, _collections) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             const DeepCollectionEquality()
@@ -511,8 +461,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
                 .equals(other._translations, _translations) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
-            (identical(other.variantList, variantList) ||
-                other.variantList == variantList) &&
             const DeepCollectionEquality().equals(other._variants, _variants));
   }
 
@@ -521,7 +469,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_assets),
-      const DeepCollectionEquality().hash(_collections),
       createdAt,
       const DeepCollectionEquality().hash(_customFields),
       description,
@@ -535,7 +482,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
       slug,
       const DeepCollectionEquality().hash(_translations),
       updatedAt,
-      variantList,
       const DeepCollectionEquality().hash(_variants));
 
   @JsonKey(ignore: true)
@@ -555,7 +501,6 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
 abstract class _Product extends Product {
   const factory _Product(
       {required final List<Asset> assets,
-      required final List<Collection> collections,
       required final DateTime createdAt,
       final Map<String, dynamic>? customFields,
       required final String description,
@@ -569,7 +514,6 @@ abstract class _Product extends Product {
       required final String slug,
       required final List<ProductTranslation> translations,
       required final DateTime updatedAt,
-      required final ProductVariantList variantList,
       required final List<ProductVariant> variants}) = _$ProductImpl;
   const _Product._() : super._();
 
@@ -577,9 +521,7 @@ abstract class _Product extends Product {
 
   @override
   List<Asset> get assets;
-  @override
-  List<Collection> get collections;
-  @override
+  @override // required List<Collection> collections,
   DateTime get createdAt;
   @override
   Map<String, dynamic>? get customFields;
@@ -608,9 +550,7 @@ abstract class _Product extends Product {
   @override
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
-  ProductVariantList get variantList;
-  @override
-
+// required ProductVariantList variantList,
   /// Returns all ProductVariants
   List<ProductVariant> get variants;
   @override

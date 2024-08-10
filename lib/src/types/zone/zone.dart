@@ -13,7 +13,7 @@ class Zone with _$Zone {
     required DateTime createdAt,
     Map<String, dynamic>? customFields,
     required String id,
-    required List<Region> members,
+    // required List<Region> members,
     required String name,
     required DateTime updatedAt,
   }) = _Zone;

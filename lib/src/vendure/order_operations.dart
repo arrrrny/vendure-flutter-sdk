@@ -19,7 +19,9 @@ import 'package:vendure/src/queries/get_payment_methods_query.dart';
 import 'package:vendure/src/queries/get_shipping_methods_query.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
 
-import '../input_types/exports.dart';
+// import '../input_types/exports.dart';
+
+import '../types/exports.dart';
 
 class OrderOperations {
   final Future<GraphQLClient> Function() _client;
@@ -62,11 +64,11 @@ class OrderOperations {
     );
   }
 
-  Future<ActiveOrderResult> getActiveOrder() async {
-    return CustomOperations(_client).query<ActiveOrderResult>(
+  Future<Order?> getActiveOrder() async {
+    return CustomOperations(_client).query<Order?>(
       getActiveOrderQuery,
       {},
-      ActiveOrderResult.fromJson,
+      Order.fromJson,
       expectedDataType: 'activeOrder',
     );
   }

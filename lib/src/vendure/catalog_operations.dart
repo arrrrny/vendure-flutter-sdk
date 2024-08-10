@@ -4,8 +4,8 @@ import 'package:vendure/src/queries/get_product_by_id_query.dart';
 import 'package:vendure/src/queries/get_product_by_slug_query.dart';
 import 'package:vendure/src/queries/get_products_query.dart';
 import 'package:vendure/src/queries/search_catalog_query.dart';
+import 'package:vendure/src/types/exports.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
-import '../input_types/exports.dart';
 
 class CatalogOperations {
   final Future<GraphQLClient> Function() _client;

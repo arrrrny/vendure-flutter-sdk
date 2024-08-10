@@ -11,7 +11,6 @@ class RefundLine with _$RefundLine {
   const RefundLine._();
 
   const factory RefundLine({
-    required OrderLine orderLine,
     required String orderLineId,
     required int quantity,
     required String refundId,

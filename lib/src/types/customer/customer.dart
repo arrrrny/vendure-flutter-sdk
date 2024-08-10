@@ -12,18 +12,18 @@ class Customer with _$Customer {
   const Customer._();
 
   const factory Customer({
-    List<Address>? addresses,
-    required DateTime createdAt,
-    Map<String, dynamic>? customFields,
-    required String emailAddress,
-    required String firstName,
+    // List<Address>? addresses,
+    // required DateTime createdAt,
+    // Map<String, dynamic>? customFields,
+    // required String emailAddress,
+    // required String firstName,
     required String id,
-    required String lastName,
-    required OrderList orders,
-    String? phoneNumber,
-    String? title,
-    required DateTime updatedAt,
-    User? user,
+    // required String lastName,
+    // required OrderList orders,
+    // String? phoneNumber,
+    // String? title,
+    // required DateTime updatedAt,
+    // User? user,
   }) = _Customer;
 
   factory Customer.fromJson(Map<String, dynamic> json) =>

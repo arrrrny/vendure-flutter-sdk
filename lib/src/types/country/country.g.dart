@@ -16,9 +16,6 @@ _$CountryImpl _$$CountryImplFromJson(Map json) => _$CountryImpl(
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
-      parent: json['parent'] == null
-          ? null
-          : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
       parentId: json['parentId'] as String?,
       translations: (json['translations'] as List<dynamic>)
           .map((e) =>
@@ -45,7 +42,6 @@ Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) {
   val['id'] = instance.id;
   val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
   val['name'] = instance.name;
-  writeNotNull('parent', instance.parent?.toJson());
   writeNotNull('parentId', instance.parentId);
   val['translations'] = instance.translations.map((e) => e.toJson()).toList();
   val['type'] = instance.type;

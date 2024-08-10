@@ -1,26 +1,10 @@
-const String updateCustomerAddressMutation = r'''
+import '../fragments/shared_fragment.dart';
+
+const String updateCustomerAddressMutation = addressFragment +
+    r'''
 mutation UpdateCustomerAddress($input: UpdateAddressInput!) {
   updateCustomerAddress(input: $input) {
-    ... on Address {
-      createdAt
-      updatedAt
-      id
-      fullName
-      company
-      streetLine1
-      streetLine2
-      city
-      province
-      postalCode
-      countryCode
-      defaultShippingAddress
-      defaultBillingAddress
-      customFields
+    ...Address
     }
-    ... on ErrorResult {
-      errorCode
-      message
-    }
-  }
 }
 ''';

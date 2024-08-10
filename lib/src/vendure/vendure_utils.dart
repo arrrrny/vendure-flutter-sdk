@@ -1,6 +1,3 @@
-import 'dart:convert';
-// import 'dart:mirrors';
-
 class VendureUtils {
   static final List<String> _vendureTypeEnums = [
     'adjustmentType',
@@ -18,7 +15,9 @@ class VendureUtils {
     'type',
     'permissions',
     'availableCurrencyCodes',
-    'defaultCurrencyCode'
+    'defaultCurrencyCode',
+    'defaultLanguageCode',
+    'availableLanguageCodes'
   ];
   static Map<String, dynamic> normalizeGraphQLData(Map<String, dynamic> data) {
     Map<String, dynamic> normalizedData = {};

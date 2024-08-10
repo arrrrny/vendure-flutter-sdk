@@ -1,3 +1,6 @@
+## 0.8.0
+- Strong types are implemented for all methods
+
 ## 0.7.0
 - All shop-api methods are implemented
 

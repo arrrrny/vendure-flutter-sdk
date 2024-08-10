@@ -12,9 +12,6 @@ _$ZoneImpl _$$ZoneImplFromJson(Map json) => _$ZoneImpl(
         (k, e) => MapEntry(k as String, e),
       ),
       id: json['id'] as String,
-      members: (json['members'] as List<dynamic>)
-          .map((e) => Region.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
       name: json['name'] as String,
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
@@ -32,7 +29,6 @@ Map<String, dynamic> _$$ZoneImplToJson(_$ZoneImpl instance) {
 
   writeNotNull('customFields', instance.customFields);
   val['id'] = instance.id;
-  val['members'] = instance.members.map((e) => e.toJson()).toList();
   val['name'] = instance.name;
   val['updatedAt'] = instance.updatedAt.toIso8601String();
   return val;

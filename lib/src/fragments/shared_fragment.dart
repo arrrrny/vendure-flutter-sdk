@@ -23,24 +23,28 @@ fragment Address on Address {
 
 ''';
 
-const String countryFragment = regionFragment +
-    r'''
+const String countryFragment = r'''
 fragment Country on Country {
   __typename
   id
+  createdAt
+  updatedAt
   languageCode
   code
   type
   name
   enabled
   parent {
-    ...Region
+    id
+    code
   }
   parentId
   translations {
     id
     languageCode
     name
+    createdAt
+    updatedAt
   }
   customFields
 }
@@ -97,15 +101,24 @@ const String channelFragment = r'''
 fragment Channel on Channel {
   __typename
   id
+  createdAt
+  updatedAt
   code
   token
+  currencyCode
   defaultTaxZone {
     id
     name
+    createdAt
+    updatedAt
+    customFields
   }
   defaultShippingZone {
     id
     name
+    createdAt
+    updatedAt
+    customFields
   }
   defaultLanguageCode
   availableLanguageCodes
@@ -116,6 +129,8 @@ fragment Channel on Channel {
   pricesIncludeTax
   seller {
     id
+    createdAt
+    updatedAt
     name
     customFields
   }

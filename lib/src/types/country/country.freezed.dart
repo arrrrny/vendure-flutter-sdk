@@ -26,8 +26,7 @@ mixin _$Country {
   bool get enabled => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
   LanguageCode get languageCode => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  Region? get parent => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError; // Region? parent,
   String? get parentId => throw _privateConstructorUsedError;
   List<RegionTranslation> get translations =>
       throw _privateConstructorUsedError;
@@ -52,13 +51,10 @@ abstract class $CountryCopyWith<$Res> {
       String id,
       LanguageCode languageCode,
       String name,
-      Region? parent,
       String? parentId,
       List<RegionTranslation> translations,
       String type,
       DateTime updatedAt});
-
-  $RegionCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
@@ -81,7 +77,6 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
     Object? id = null,
     Object? languageCode = null,
     Object? name = null,
-    Object? parent = freezed,
     Object? parentId = freezed,
     Object? translations = null,
     Object? type = null,
@@ -116,10 +111,6 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      parent: freezed == parent
-          ? _value.parent
-          : parent // ignore: cast_nullable_to_non_nullable
-              as Region?,
       parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
@@ -138,18 +129,6 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
               as DateTime,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RegionCopyWith<$Res>? get parent {
-    if (_value.parent == null) {
-      return null;
-    }
-
-    return $RegionCopyWith<$Res>(_value.parent!, (value) {
-      return _then(_value.copyWith(parent: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -167,14 +146,10 @@ abstract class _$$CountryImplCopyWith<$Res> implements $CountryCopyWith<$Res> {
       String id,
       LanguageCode languageCode,
       String name,
-      Region? parent,
       String? parentId,
       List<RegionTranslation> translations,
       String type,
       DateTime updatedAt});
-
-  @override
-  $RegionCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
@@ -195,7 +170,6 @@ class __$$CountryImplCopyWithImpl<$Res>
     Object? id = null,
     Object? languageCode = null,
     Object? name = null,
-    Object? parent = freezed,
     Object? parentId = freezed,
     Object? translations = null,
     Object? type = null,
@@ -230,10 +204,6 @@ class __$$CountryImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      parent: freezed == parent
-          ? _value.parent
-          : parent // ignore: cast_nullable_to_non_nullable
-              as Region?,
       parentId: freezed == parentId
           ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
@@ -265,7 +235,6 @@ class _$CountryImpl extends _Country with DiagnosticableTreeMixin {
       required this.id,
       required this.languageCode,
       required this.name,
-      this.parent,
       this.parentId,
       required final List<RegionTranslation> translations,
       required this.type,
@@ -299,8 +268,7 @@ class _$CountryImpl extends _Country with DiagnosticableTreeMixin {
   final LanguageCode languageCode;
   @override
   final String name;
-  @override
-  final Region? parent;
+// Region? parent,
   @override
   final String? parentId;
   final List<RegionTranslation> _translations;
@@ -318,7 +286,7 @@ class _$CountryImpl extends _Country with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Country(code: $code, createdAt: $createdAt, customFields: $customFields, enabled: $enabled, id: $id, languageCode: $languageCode, name: $name, parent: $parent, parentId: $parentId, translations: $translations, type: $type, updatedAt: $updatedAt)';
+    return 'Country(code: $code, createdAt: $createdAt, customFields: $customFields, enabled: $enabled, id: $id, languageCode: $languageCode, name: $name, parentId: $parentId, translations: $translations, type: $type, updatedAt: $updatedAt)';
   }
 
   @override
@@ -333,7 +301,6 @@ class _$CountryImpl extends _Country with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('languageCode', languageCode))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('parent', parent))
       ..add(DiagnosticsProperty('parentId', parentId))
       ..add(DiagnosticsProperty('translations', translations))
       ..add(DiagnosticsProperty('type', type))
@@ -355,7 +322,6 @@ class _$CountryImpl extends _Country with DiagnosticableTreeMixin {
             (identical(other.languageCode, languageCode) ||
                 other.languageCode == languageCode) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.parent, parent) || other.parent == parent) &&
             (identical(other.parentId, parentId) ||
                 other.parentId == parentId) &&
             const DeepCollectionEquality()
@@ -376,7 +342,6 @@ class _$CountryImpl extends _Country with DiagnosticableTreeMixin {
       id,
       languageCode,
       name,
-      parent,
       parentId,
       const DeepCollectionEquality().hash(_translations),
       type,
@@ -405,7 +370,6 @@ abstract class _Country extends Country {
       required final String id,
       required final LanguageCode languageCode,
       required final String name,
-      final Region? parent,
       final String? parentId,
       required final List<RegionTranslation> translations,
       required final String type,
@@ -428,9 +392,7 @@ abstract class _Country extends Country {
   LanguageCode get languageCode;
   @override
   String get name;
-  @override
-  Region? get parent;
-  @override
+  @override // Region? parent,
   String? get parentId;
   @override
   List<RegionTranslation> get translations;
