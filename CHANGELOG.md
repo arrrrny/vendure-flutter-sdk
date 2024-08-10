@@ -1,3 +1,6 @@
+## 0.8.2
+- updated http dependency
+
 ## 0.8.1
 - Added setOrderShippingMethod example
 
