@@ -118,7 +118,6 @@ class CustomOperations {
     if (operationType == OperationType.mutation) {
       final response = await client.mutate(
           MutationOptions(document: gql(operation), variables: variables));
-      print(response);
       return _extractHeadersFromResponse(response, headers);
     } else if (operationType == OperationType.query) {
       final response = await client

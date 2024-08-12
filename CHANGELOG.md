@@ -1,3 +1,6 @@
+## 0.9.1
+- Renamed type to CollectionWithParentChildren for simplicity
+
 ## 0.9.0
 - Added `getCollectionsWithParentChildren` method
 

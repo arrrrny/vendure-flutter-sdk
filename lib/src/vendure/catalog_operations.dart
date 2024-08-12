@@ -77,8 +77,8 @@ class CatalogOperations {
     );
   }
 
-  Future<CollectionListWithParentChildrenCollections>
-      getCollectionsWithParentChildren({CollectionListOptions? options}) async {
+  Future<CollectionListWithParentChildren> getCollectionsWithParentChildren(
+      {CollectionListOptions? options}) async {
     var result = await CustomOperations(_client).query<flexible.CollectionList>(
       getCollectionsFlexibleQuery,
       {"options": options?.toJson()},
@@ -86,12 +86,12 @@ class CatalogOperations {
       expectedDataType: 'collections',
     );
 
-    List<CollectionWithParentChildCollection> collections = [];
+    List<CollectionWithParentChildren> collections = [];
     for (var collection in result.items!) {
-      collections.add(
-          CollectionWithParentChildCollection.fromJson(collection!.toJson()));
+      collections
+          .add(CollectionWithParentChildren.fromJson(collection!.toJson()));
     }
-    return CollectionListWithParentChildrenCollections(
+    return CollectionListWithParentChildren(
         items: collections, totalItems: result.totalItems!);
   }
 }

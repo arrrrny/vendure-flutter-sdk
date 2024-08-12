@@ -2,7 +2,7 @@ import 'package:vendure/src/types/collection/collection.dart';
 import 'package:vendure/src/types/collection_list/collection_list.dart';
 import 'package:vendure/vendure.dart';
 
-class CollectionWithParentChildCollection implements Collection {
+class CollectionWithParentChildren implements Collection {
   @override
   final String id;
   @override
@@ -38,7 +38,7 @@ class CollectionWithParentChildCollection implements Collection {
 
   late final List<Collection> children;
 
-  CollectionWithParentChildCollection(
+  CollectionWithParentChildren(
       {required this.id,
       required this.name,
       required this.slug,
@@ -80,9 +80,8 @@ class CollectionWithParentChildCollection implements Collection {
     };
   }
 
-  factory CollectionWithParentChildCollection.fromJson(
-      Map<String, dynamic> json) {
-    return CollectionWithParentChildCollection(
+  factory CollectionWithParentChildren.fromJson(Map<String, dynamic> json) {
+    return CollectionWithParentChildren(
       id: json['id'],
       name: json['name'],
       slug: json['slug'],
@@ -110,7 +109,7 @@ class CollectionWithParentChildCollection implements Collection {
               json['children'].map((x) => Collection.fromJson(x)))
           : [],
       parent: json['parent'] != null
-          ? CollectionWithParentChildCollection.fromJson(json['parent'])
+          ? CollectionWithParentChildren.fromJson(json['parent'])
           : null,
     );
   }
@@ -120,22 +119,21 @@ class CollectionWithParentChildCollection implements Collection {
   $CollectionCopyWith<Collection> get copyWith => throw UnimplementedError();
 }
 
-class CollectionListWithParentChildrenCollections implements CollectionList {
+class CollectionListWithParentChildren implements CollectionList {
   @override
-  final List<CollectionWithParentChildCollection> items;
+  final List<CollectionWithParentChildren> items;
   @override
   final int totalItems;
 
-  CollectionListWithParentChildrenCollections({
+  CollectionListWithParentChildren({
     required this.items,
     required this.totalItems,
   });
 
-  factory CollectionListWithParentChildrenCollections.fromJson(
-      Map<String, dynamic> json) {
-    return CollectionListWithParentChildrenCollections(
-      items: List<CollectionWithParentChildCollection>.from(json['items']
-          .map((x) => CollectionWithParentChildCollection.fromJson(x))),
+  factory CollectionListWithParentChildren.fromJson(Map<String, dynamic> json) {
+    return CollectionListWithParentChildren(
+      items: List<CollectionWithParentChildren>.from(
+          json['items'].map((x) => CollectionWithParentChildren.fromJson(x))),
       totalItems: json['totalItems'],
     );
   }

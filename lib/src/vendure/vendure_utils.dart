@@ -58,7 +58,7 @@ class VendureUtils {
     return camelCase[0].toLowerCase() + camelCase.substring(1);
   }
 
-  static T populateMissingFields<T>(
+  static T c<T>(
       Map<String, dynamic> jsonMap, T Function(Map<String, dynamic>) fromJson) {
     // Create a mutable copy of the JSON map
     Map<String, dynamic> mutableJsonMap = _deepCopy(jsonMap);
@@ -67,7 +67,7 @@ class VendureUtils {
     mutableJsonMap = _populateFieldsRecursively(mutableJsonMap);
 
     // Print the modified JSON map to debug
-    print('Modified JSON map: $mutableJsonMap');
+    // print('Modified JSON map: $mutableJsonMap');
 
     // Call the fromJson method with the modified JSON map
     return fromJson(mutableJsonMap);
@@ -88,8 +88,8 @@ class VendureUtils {
           return item;
         }).toList();
       } else if (value == null) {
-        print(
-            'Key with null value: $key'); // Add this log to identify null values
+        // print(
+        //     'Key with null value: $key'); // Add this log to identify null values
         jsonMap[key] = _getDefaultValue(key);
       }
     });
