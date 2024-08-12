@@ -4,9 +4,9 @@ import 'package:vendure/vendure.dart';
 
 void main() {
   late Vendure vendure;
-  String uid = '1AA2950GR6PtiOUOGVp2oqFkmhz1';
+  String uid = 'ML6z1FGEoAMc0fRUwNnFc4e6aty2';
   String jwt =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjMwNDkxNTgsInVzZXJfaWQiOiIxQUEyOTUwR1I2UHRpT1VPR1ZwMm9xRmttaHoxIiwic3ViIjoiMUFBMjk1MEdSNlB0aU9VT0dWcDJvcUZrbWh6MSIsImlhdCI6MTcyMzI5MjEzNywiZXhwIjoxNzIzMjk1NzM3LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.hJ3fYqwvbYWzNpJA6bPXz1B47mB8q_2GDpmkbhFfaIpCumeMsbn0G35kfvrZkBy7OdLduqbEanv3j741UzIzxARNsNaVC4zZxpEs5gRvQhJ1vowNDAA2ThLN8gmUaccq_1kuLgZf6ZG6rhEFjhJq1S7Q_p2vsIk3mjQn9bhYcuI2iT8zm8eKQ4P6rVVSQGk8Fx5LS31fiLbNbh__pUI9CW6zVQQBX2L3Fi9uN-0WQjtS2xm6BWspzE4QtS4hO1nC-rS2UEJZR8SzLwMCEZfLxvxBeuE0kZAZ6kMr5frIHtaLpRv0XxoBupWwHMOkfyrj7HaDIwVvMTW3ONdvWLdZDw';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzQ0ODgxNSwiZXhwIjoxNzIzNDUyNDE1LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.fLR2-k91Vt4JOdXhY37X4xpl0lxg-nXpfDrjXxnWgn8XK2uh6lYXK7-7bDkm0sa9ncZtPGwXncG-TmRs0YJBMbqzUhkOTiw7TrywRiiRP99-ltmgS6Bqz1-120rtCVYxFoPGbvAj_9mQA06-FUO5uLzG7EC2YJ1NM8WqqhvIUunCp3pFrDNTg0OcbOIALnfy8zVYmKlQkBTFVyR-dRPBUxnDBnMZx3uaqzkxaXjPo6M52sNOTBQR94kXOssU0UsqksrZtOtdgrsi2R0iNfWDHLgzgZFM7oOiMCHnv8gdwmgOcpKOiNm_sgw2zrJsGt52RK3XEPq2OrUDQsxW1dEHwA';
   String endpoint = 'http://localhost:3000/shop-api';
   String testOrderCode = 'testOrderCode';
   String testOrderLineId = '246';
@@ -470,6 +470,26 @@ void main() {
           expect(collection, isA<Collection>());
           // print(collection.name);
           // print(collection.id);
+        }
+      } catch (e) {
+        fail('Error getting collections: $e');
+      }
+    });
+
+    test('getSubCollections', () async {
+      try {
+        CollectionListOptions options = CollectionListOptions(
+          filter: CollectionFilterParameter(
+            parentId: IdOperators(eq: '5'),
+          ),
+        );
+        var collectionList =
+            await vendure.catalog.getCollections(options: options);
+        expect(collectionList, isA<CollectionList>());
+        for (var collection in collectionList.items) {
+          expect(collection, isA<Collection>());
+          print(collection.name);
+          print(collection.id);
         }
       } catch (e) {
         fail('Error getting collections: $e');

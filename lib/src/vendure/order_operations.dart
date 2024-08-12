@@ -32,13 +32,9 @@ class OrderOperations {
     required productVariantId,
     required int quantity,
   }) async {
-    var variables = {
-      'productVariantId': productVariantId,
-      'quantity': quantity,
-    };
     return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
       addItemToOrderMutation,
-      variables,
+      {'productVariantId': productVariantId, 'quantity': quantity},
       UpdateOrderItemsResult.fromJson,
       expectedDataType: 'addItemToOrder',
     );
@@ -131,12 +127,9 @@ class OrderOperations {
 
   Future<RemoveOrderItemsResult> removeOrderLine(
       {required String orderLineId}) async {
-    var variables = {
-      'orderLineId': orderLineId,
-    };
     return CustomOperations(_client).mutate<RemoveOrderItemsResult>(
       removeOrderLineMutation,
-      variables,
+      {'orderLineId': orderLineId},
       RemoveOrderItemsResult.fromJson,
       expectedDataType: 'removeOrderLine',
     );
@@ -155,13 +148,9 @@ class OrderOperations {
     required String orderLineId,
     required int quantity,
   }) async {
-    var variables = {
-      'orderLineId': orderLineId,
-      'quantity': quantity,
-    };
     return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
       adjustOrderLineMutation,
-      variables,
+      {'orderLineId': orderLineId, 'quantity': quantity},
       UpdateOrderItemsResult.fromJson,
       expectedDataType: 'adjustOrderLine',
     );
@@ -170,12 +159,9 @@ class OrderOperations {
   Future<ApplyCouponCodeResult> applyCouponCode({
     required String couponCode,
   }) async {
-    var variables = {
-      'couponCode': couponCode,
-    };
     return CustomOperations(_client).mutate<ApplyCouponCodeResult>(
       applyCouponCodeMutation,
-      variables,
+      {'couponCode': couponCode},
       ApplyCouponCodeResult.fromJson,
       expectedDataType: 'applyCouponCode',
     );
@@ -193,12 +179,9 @@ class OrderOperations {
   Future<TransitionOrderToStateResult> transitionOrderToState({
     required String state,
   }) async {
-    var variables = {
-      'state': state,
-    };
     return CustomOperations(_client).mutate<TransitionOrderToStateResult>(
       transitionOrderToStateMutation,
-      variables,
+      {'state': state},
       TransitionOrderToStateResult.fromJson,
       expectedDataType: 'transitionOrderToState',
     );
@@ -222,12 +205,9 @@ class OrderOperations {
     List<String> methodIds = [];
     methodIds.add(shippingMethodId);
     methodIds.addAll(additionalMethodIds);
-    var variables = {
-      'shippingMethodId': methodIds,
-    };
     return CustomOperations(_client).mutate<SetOrderShippingMethodResult>(
       setOrderShippingMethodMutation,
-      variables,
+      {'shippingMethodId': methodIds},
       SetOrderShippingMethodResult.fromJson,
       expectedDataType: 'setOrderShippingMethod',
     );

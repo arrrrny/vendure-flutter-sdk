@@ -1,3 +1,6 @@
+## 0.8.5
+- fixed the bug options not passing on getCollections
+
 ## 0.8.4
 - changed getCollectionById tpe to String from int
 

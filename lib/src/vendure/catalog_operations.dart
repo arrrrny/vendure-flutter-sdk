@@ -15,31 +15,25 @@ class CatalogOperations {
   Future<CollectionList> getCollections({CollectionListOptions? options}) {
     return CustomOperations(_client).query<CollectionList>(
       getCollectionsQuery,
-      options?.toJson() ?? {},
+      {"options": options?.toJson()},
       CollectionList.fromJson,
       expectedDataType: 'collections',
     );
   }
 
   Future<Collection> getCollectionById({required String id}) async {
-    var variables = {
-      'id': id,
-    };
     return CustomOperations(_client).query<Collection>(
       getCollectionByIdQuery,
-      variables,
+      {'id': id},
       Collection.fromJson,
       expectedDataType: 'collection',
     );
   }
 
   Future<Collection> getCollectionBySlug({required String slug}) async {
-    var variables = {
-      'slug': slug,
-    };
     return CustomOperations(_client).query<Collection>(
       getCollectionBySlugQuery,
-      variables,
+      {'slug': slug},
       Collection.fromJson,
       expectedDataType: 'collection',
     );
@@ -48,31 +42,25 @@ class CatalogOperations {
   Future<ProductList> getProducts({ProductListOptions? options}) {
     return CustomOperations(_client).query<ProductList>(
       getProductsQuery,
-      options?.toJson() ?? {},
+      {"options": options?.toJson()},
       ProductList.fromJson,
       expectedDataType: 'products',
     );
   }
 
   Future<Product> getProductById({required int id}) async {
-    var variables = {
-      'id': id,
-    };
     return CustomOperations(_client).query<Product>(
       getProductByIdQuery,
-      variables,
+      {'id': id},
       Product.fromJson,
       expectedDataType: 'product',
     );
   }
 
   Future<Product> getProductBySlug({required String slug}) async {
-    var variables = {
-      'slug': slug,
-    };
     return CustomOperations(_client).query<Product>(
       getProductBySlugQuery,
-      variables,
+      {'slug': slug},
       Product.fromJson,
       expectedDataType: 'product',
     );

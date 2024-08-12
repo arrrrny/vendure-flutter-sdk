@@ -23,7 +23,7 @@ class SystemOperations {
   Future<FacetList> getFacets({FacetListOptions? options}) {
     return CustomOperations(_client).query<FacetList>(
       getFacetsQuery,
-      options?.toJson() ?? {},
+      {"options": options?.toJson()},
       FacetList.fromJson,
       expectedDataType: 'facets',
     );

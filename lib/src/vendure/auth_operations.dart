@@ -24,25 +24,22 @@ class AuthOperations {
 
   Future<AuthenticationResult> authenticate(
       {required String username, required String password}) async {
-    var variables = {
-      'username': username,
-      'password': password,
-    };
-
     return AuthBaseOperations(_client).mutate<AuthenticationResult>(
-        authenticateMutation, variables, AuthenticationResult.fromJson,
-        expectedDataType: 'authenticate');
+      authenticateMutation,
+      {'username': username, 'password': password},
+      AuthenticationResult.fromJson,
+      expectedDataType: 'authenticate',
+    );
   }
 
   Future<AuthenticationResult> authenticateFirebase(
       {required String uid, required String jwt}) async {
-    var variables = {
-      'uid': uid,
-      'jwt': jwt,
-    };
     return AuthBaseOperations(_client).mutate<AuthenticationResult>(
-        firebaseAuthMutation, variables, AuthenticationResult.fromJson,
-        expectedDataType: 'authenticate');
+      firebaseAuthMutation,
+      {'uid': uid, 'jwt': jwt},
+      AuthenticationResult.fromJson,
+      expectedDataType: 'authenticate',
+    );
   }
 
   Future<String?> getToken({
@@ -50,13 +47,13 @@ class AuthOperations {
     required String password,
     String tokenName = 'vendure-auth-token',
   }) async {
-    var variables = {
-      'username': username,
-      'password': password,
-    };
-    var headersResponse = await AuthBaseOperations(_client)
-        .extractResponseHeaders(OperationType.mutation, authenticateMutation,
-            variables, [tokenName]);
+    var headersResponse =
+        await AuthBaseOperations(_client).extractResponseHeaders(
+      OperationType.mutation,
+      authenticateMutation,
+      {'username': username, 'password': password},
+      [tokenName],
+    );
     return headersResponse?[tokenName];
   }
 
@@ -65,13 +62,13 @@ class AuthOperations {
     required String jwt,
     String tokenName = 'vendure-auth-token',
   }) async {
-    var variables = {
-      'uid': uid,
-      'jwt': jwt,
-    };
-    var headersResponse = await AuthBaseOperations(_client)
-        .extractResponseHeaders(OperationType.mutation, firebaseAuthMutation,
-            variables, [tokenName]);
+    var headersResponse =
+        await AuthBaseOperations(_client).extractResponseHeaders(
+      OperationType.mutation,
+      firebaseAuthMutation,
+      {'uid': uid, 'jwt': jwt},
+      [tokenName],
+    );
     return headersResponse?[tokenName];
   }
 
@@ -96,15 +93,14 @@ class AuthOperations {
     required String password,
     bool? rememberMe,
   }) async {
-    var variables = {
-      'username': username,
-      'password': password,
-      'rememberMe': rememberMe,
-    };
     var result =
         await AuthBaseOperations(_client).mutate<NativeAuthenticationResult>(
       loginMutation,
-      variables,
+      {
+        'username': username,
+        'password': password,
+        'rememberMe': rememberMe,
+      },
       NativeAuthenticationResult.fromJson,
       expectedDataType: 'authenticate',
     );
@@ -148,10 +144,7 @@ class AuthOperations {
       {required String token, String? password}) {
     return AuthBaseOperations(_client).mutate<VerifyCustomerAccountResult>(
       verifyCustomerAccountMutation,
-      {
-        'token': token,
-        'password': password,
-      },
+      {'token': token, 'password': password},
       VerifyCustomerAccountResult.fromJson,
       expectedDataType: 'verifyCustomerAccount',
     );
@@ -161,10 +154,7 @@ class AuthOperations {
       {required String currentPassword, required String newPassword}) {
     return AuthBaseOperations(_client).mutate<UpdateCustomerPasswordResult>(
       updateCustomerPasswordMutation,
-      {
-        'currentPassword': currentPassword,
-        'newPassword': newPassword,
-      },
+      {'currentPassword': currentPassword, 'newPassword': newPassword},
       UpdateCustomerPasswordResult.fromJson,
       expectedDataType: 'updateCustomerPassword',
     );
@@ -176,10 +166,7 @@ class AuthOperations {
     return AuthBaseOperations(_client)
         .mutate<RequestUpdateCustomerEmailAddressResult>(
       requestUpdateCustomerEmailAddressMutation,
-      {
-        'password': password,
-        'newEmailAddress': newEmailAddress,
-      },
+      {'password': password, 'newEmailAddress': newEmailAddress},
       RequestUpdateCustomerEmailAddressResult.fromJson,
       expectedDataType: 'requestUpdateCustomerEmailAddress',
     );
@@ -189,9 +176,7 @@ class AuthOperations {
       {required String token}) {
     return AuthBaseOperations(_client).mutate<UpdateCustomerEmailAddressResult>(
       updateCustomerEmailAddressMutation,
-      {
-        'token': token,
-      },
+      {'token': token},
       UpdateCustomerEmailAddressResult.fromJson,
       expectedDataType: 'updateCustomerEmailAddress',
     );
@@ -201,9 +186,7 @@ class AuthOperations {
       {required String emailAddress}) {
     return AuthBaseOperations(_client).mutate<RequestPasswordResetResult>(
       requestPasswordResetMutation,
-      {
-        'emailAddress': emailAddress,
-      },
+      {'emailAddress': emailAddress},
       RequestPasswordResetResult.fromJson,
       expectedDataType: 'requestPasswordReset',
     );
@@ -213,10 +196,7 @@ class AuthOperations {
       {required String token, required String password}) {
     return AuthBaseOperations(_client).mutate<ResetPasswordResult>(
       resetPasswordMutation,
-      {
-        'token': token,
-        'password': password,
-      },
+      {'token': token, 'password': password},
       ResetPasswordResult.fromJson,
       expectedDataType: 'resetPassword',
     );
