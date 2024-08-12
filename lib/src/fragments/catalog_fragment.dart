@@ -100,60 +100,6 @@ fragment Product on Product {
 
 ''';
 
-const String collectionFragment = assetFragment +
-    r'''
-fragment Collection on Collection {
-  __typename
-  id
-  createdAt
-  updatedAt
-  languageCode
-  name
-  slug
-  breadcrumbs {
-    id
-    name
-    slug
-  }
-  position
-  description
-  featuredAsset {
-    ...Asset
-  }
-  assets {
-    ...Asset
-  }
-  parent {
-    id
-    name
-  }
-  parentId
-  children {
-    id
-    name
-    slug
-  }
-  filters {
-    code
-    args{
-      name
-      value
-    }
-  }
-  translations {
-    createdAt
-    updatedAt
-    id
-    languageCode
-    name
-    slug
-    description
-  }
-  customFields
-}
-
-''';
-
 const String productOptionFragment = r'''
 fragment ProductOption on ProductOption {
   __typename
@@ -350,3 +296,200 @@ const String searchResultFragment = r'''
         inStock
     }
     ''';
+
+const String collectionFragment = assetFragment +
+    r'''
+fragment Collection on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+  parent {
+    id
+    name
+  }
+  parentId
+  children {
+    id
+    name
+    slug
+  }
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+  customFields
+}
+
+''';
+
+const String childCollectionFragment = r'''
+fragment ChildCollection on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+  parentId
+  parent{
+    ...Collection
+  }
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+  customFields
+}
+''';
+
+const String parentCollectionFragment = collectionFragment +
+    r'''
+fragment ParentCollection on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  children{
+    ...Collection
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+  customFields
+}
+''';
+
+const String flexibleCollectionFragment = parentCollectionFragment +
+    childCollectionFragment +
+    r'''
+fragment FlexibleCollection on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+  parent {
+    ...ParentCollection
+  }
+  parentId
+  children {
+    ...ChildCollection
+  }
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+  customFields
+}
+''';

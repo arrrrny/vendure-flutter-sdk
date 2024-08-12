@@ -381,6 +381,32 @@ Future<void> getCollectionBySlug(String slug) async {
 }
 ```
 
+### Get Collection With Parent and Children
+
+```dart
+Future<void> getCollectionsWithParentChildren(String slug) async {
+  try {
+    CollectionListOptions options = CollectionListOptions(
+          filter: CollectionFilterParameter(
+            parentId: IdOperators(eq: '5'),
+          ),
+        );
+
+    var result = await vendure.catalog
+        .getCollectionsWithParentChildren(options: options);
+    for (var collection in result.items) {
+      expect(collection, isA<CollectionWithParentChildCollection>());
+      if (collection.children.isNotEmpty) {
+        print(collection.children.first.slug);
+      }
+    }
+
+  } catch (e) {
+    print('Error getting collection: $e');
+  }
+}
+```
+
 ### Get Products
 
 ```dart

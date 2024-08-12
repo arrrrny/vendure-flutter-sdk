@@ -2,14 +2,14 @@ import 'package:vendure/src/fragments/catalog_fragment.dart';
 
 const String getCollectionsQuery = collectionFragment +
     r'''
-query GetCollections($options: CollectionListOptions) {
-  collections(options:$options) {
-    items{
-        ...Collection
+    query GetCollections($options: CollectionListOptions) {
+      collections(options:$options) {
+        items{
+            ...Collection
+        }
+        totalItems
+      }
     }
-    totalItems
-  }
-}
 ''';
 
 const String getCollectionByIdQuery = collectionFragment +
@@ -29,3 +29,15 @@ const String getCollectionBySlugQuery = collectionFragment +
       }
     }
     ''';
+
+const String getCollectionsFlexibleQuery = flexibleCollectionFragment +
+    r'''
+    query GetCollections($options: CollectionListOptions) {
+      collections(options:$options) {
+        items{
+            ...FlexibleCollection
+        }
+        totalItems
+      }
+    }
+''';

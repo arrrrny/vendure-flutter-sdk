@@ -6,13 +6,15 @@ import 'package:vendure/src/queries/get_products_query.dart';
 import 'package:vendure/src/queries/search_catalog_query.dart';
 import 'package:vendure/src/types/exports.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
+import 'package:vendure/src/input_types/exports.dart' as flexible;
 
 class CatalogOperations {
   final Future<GraphQLClient> Function() _client;
 
   CatalogOperations(this._client);
 
-  Future<CollectionList> getCollections({CollectionListOptions? options}) {
+  Future<CollectionList> getCollections(
+      {CollectionListOptions? options}) async {
     return CustomOperations(_client).query<CollectionList>(
       getCollectionsQuery,
       {"options": options?.toJson()},
@@ -39,7 +41,7 @@ class CatalogOperations {
     );
   }
 
-  Future<ProductList> getProducts({ProductListOptions? options}) {
+  Future<ProductList> getProducts({ProductListOptions? options}) async {
     return CustomOperations(_client).query<ProductList>(
       getProductsQuery,
       {"options": options?.toJson()},
@@ -73,5 +75,23 @@ class CatalogOperations {
       SearchResponse.fromJson,
       expectedDataType: 'search',
     );
+  }
+
+  Future<CollectionListWithParentChildrenCollections>
+      getCollectionsWithParentChildren({CollectionListOptions? options}) async {
+    var result = await CustomOperations(_client).query<flexible.CollectionList>(
+      getCollectionsFlexibleQuery,
+      {"options": options?.toJson()},
+      flexible.CollectionList.fromJson,
+      expectedDataType: 'collections',
+    );
+
+    List<CollectionWithParentChildCollection> collections = [];
+    for (var collection in result.items!) {
+      collections.add(
+          CollectionWithParentChildCollection.fromJson(collection!.toJson()));
+    }
+    return CollectionListWithParentChildrenCollections(
+        items: collections, totalItems: result.totalItems!);
   }
 }

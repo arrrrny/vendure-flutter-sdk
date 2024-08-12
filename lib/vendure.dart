@@ -12,6 +12,8 @@ import 'package:http/http.dart';
 
 export '../src/types/exports.dart'; // Add this line
 
+import '../src/input_types/exports.dart' as flexible;
+
 class Vendure {
   static Vendure? _instance;
 

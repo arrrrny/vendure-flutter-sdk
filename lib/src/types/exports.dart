@@ -317,3 +317,5 @@ export './verification_token_invalid_error/verification_token_invalid_error.dart
 export './verify_customer_account_result/verify_customer_account_result.dart'
     show VerifyCustomerAccountResult;
 export './zone/zone.dart' show Zone;
+
+export '../custom_types/collection_with_parent_child_collection.dart';

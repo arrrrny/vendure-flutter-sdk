@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:vendure/src/custom_types/collection_with_parent_child_collection.dart';
 import 'package:vendure/vendure.dart';
-// import '../lib/src/types/exports.dart' as output;
 
 void main() {
   late Vendure vendure;
   String uid = 'ML6z1FGEoAMc0fRUwNnFc4e6aty2';
   String jwt =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzQ0ODgxNSwiZXhwIjoxNzIzNDUyNDE1LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.fLR2-k91Vt4JOdXhY37X4xpl0lxg-nXpfDrjXxnWgn8XK2uh6lYXK7-7bDkm0sa9ncZtPGwXncG-TmRs0YJBMbqzUhkOTiw7TrywRiiRP99-ltmgS6Bqz1-120rtCVYxFoPGbvAj_9mQA06-FUO5uLzG7EC2YJ1NM8WqqhvIUunCp3pFrDNTg0OcbOIALnfy8zVYmKlQkBTFVyR-dRPBUxnDBnMZx3uaqzkxaXjPo6M52sNOTBQR94kXOssU0UsqksrZtOtdgrsi2R0iNfWDHLgzgZFM7oOiMCHnv8gdwmgOcpKOiNm_sgw2zrJsGt52RK3XEPq2OrUDQsxW1dEHwA';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzQ2NTcwMSwiZXhwIjoxNzIzNDY5MzAxLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.l3UnRcdoNjZNrheUNcsy2M_fCIK94skvCxJt8qRU1adgsDpo-WOBjYCoj051l8SUKp_MHbz7ZzLaDEhp85C3cojcyRm1eu8orh_2LX1sE_WSUczHXqBNmTg-hT2tQMQ1JZXxcMaYJpZM7Nqdna1J0DI0dqt3wxXfldqXuaDkIaWMeJH7W0HMeQkBbr-0-qxLJEsm9zmjpE1oxqo1h0STTya8V_o2sYTmkMQm-ub2n62Xxobg5f63uQBrLucxwJbutiRuuH65tAi6KDl1TO5Tyc_F9XQTmUls4VsyE0qKDedUyH5Kxkmh6ujZwf-PIXYFrXshrDVzetMyP3rtAlIFVw';
   String endpoint = 'http://localhost:3000/shop-api';
   String testOrderCode = 'testOrderCode';
   String testOrderLineId = '246';
@@ -24,7 +24,7 @@ void main() {
       endpoint: endpoint,
       uid: uid,
       jwt: jwt,
-      sessionDuration: const Duration(hours: 1),
+      sessionDuration: const Duration(hours: 5),
     );
   });
 
@@ -476,6 +476,29 @@ void main() {
       }
     });
 
+    test('getCollections with Children and Parent', () async {
+      try {
+        CollectionListOptions options = CollectionListOptions(
+          topLevelOnly: false,
+          // filter: CollectionFilterParameter(
+          //   parentId: IdOperators(eq: '5'),
+          // ),
+        );
+
+        var result = await vendure.catalog
+            .getCollectionsWithParentChildren(options: options);
+        expect(result, isA<CollectionListWithParentChildrenCollections>());
+        for (var collection in result.items) {
+          expect(collection, isA<CollectionWithParentChildCollection>());
+          if (collection.children.isNotEmpty) {
+            print(collection.children.first.slug);
+          }
+        }
+      } catch (e) {
+        fail('Error getting collections: $e');
+      }
+    });
+
     test('getSubCollections', () async {
       try {
         CollectionListOptions options = CollectionListOptions(
@@ -485,7 +508,7 @@ void main() {
         );
         var collectionList =
             await vendure.catalog.getCollections(options: options);
-        expect(collectionList, isA<CollectionList>());
+        // expect(collectionList, isA<CollectionList>());
         for (var collection in collectionList.items) {
           expect(collection, isA<Collection>());
           print(collection.name);

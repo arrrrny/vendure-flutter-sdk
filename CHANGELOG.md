@@ -1,3 +1,6 @@
+## 0.9.0
+- Added `getCollectionsWithParentChildren` method
+
 ## 0.8.5
 - fixed the bug options not passing on getCollections
 
