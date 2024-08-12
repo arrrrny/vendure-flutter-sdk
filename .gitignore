@@ -30,4 +30,4 @@ build/
 schema.graphql
 
 # FVM Version Cache
-.fvm/
+.fvm*
