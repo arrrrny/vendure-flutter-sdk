@@ -5,7 +5,7 @@ void main() {
   late Vendure vendure;
   String uid = 'ML6z1FGEoAMc0fRUwNnFc4e6aty2';
   String jwt =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzQ2OTAwMSwiZXhwIjoxNzIzNDcyNjAxLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.lxOBnn4uJSKnUNaU9iHnkhSpm42V-fwfmqCd2aWhnERql769YcR2MD61S00Zp3SoW7IGUJZPeBR67ZcuMdQXAQ1V7xah_0BWtT3TonMYEEjoy41ZpiM57Mtoi0K0pxpGJx5Ung4C7L5ajpLegI6RT8_Rh8ATqXBN5j0AYiA0XI1UQqMWHFmOEX6PE_kyiCENkx2mW8DrE0sJroGkgKQhXt0-Aj8v_lS8B0O7zXJ1Mvtgj442yLzuJVJFoajbYRNAMKM_AHul4MsByA6rdyPZvnI4g0WMkIb-Ltua4s-UNlCspqaKbesnPq759r_ubaMCn2H0gBjYpiWQ963UW1Pv6w';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzU2MzcwOSwiZXhwIjoxNzIzNTY3MzA5LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.oRLrqEfL8EK8UJBBlRxvAKqE893wnSKfd8_XSfalFoxOPOJij_YPuSYqqb5syGqE5je01dB1i4svD6JgkK-LixW574p5SYW3VccqQjNf220WTLkKYKMOjnWTdKDk8GahE7BhTgK9vANdq1EgnZkFfMmWzBK6qqw8Cv-YdnKJkQvNxIUpesI6cvjJzfzahsZ1xfRaO_lupVuMZZJNcPPN_lLi3QQPiPwd3W7S3p5QP9ti6K_IFImrKsoxuFZCh4mxCdWCd4sD9sGvZEZm52xVPlJ2MbeghyMtDRcnIpv2gwXdsDvebB7VQqo2g71qXukby1MnQbzJEdEl5gDUYje9eA';
   String endpoint = 'http://localhost:3000/shop-api';
   String testOrderCode = 'testOrderCode';
   String testOrderLineId = '246';
@@ -31,7 +31,7 @@ void main() {
     test('addItemToOrder', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: "79", quantity: 1);
+            .addItemToOrder(productVariantId: "87", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -81,7 +81,7 @@ void main() {
     test('addItemToOrder 2', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: "77", quantity: 1);
+            .addItemToOrder(productVariantId: "87", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -93,7 +93,7 @@ void main() {
     test('addItemToOrder 3', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: "80", quantity: 1);
+            .addItemToOrder(productVariantId: "88", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -116,7 +116,7 @@ void main() {
     test('addItemToOrder 4', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: "77", quantity: 1);
+            .addItemToOrder(productVariantId: "87", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -299,162 +299,198 @@ void main() {
     });
   });
 
-  // group('Guest checkout', () {
-  //   test('guestCheckout', () async {
-  //     try {
-  //       var result = await vendure.order
-  //           .addItemToOrder(productVariantId: 77, quantity: 1);
-  //       expect(result, isA<UpdateOrderItemsResult>());
-  //       Order order = Order.fromJson(result.toJson());
-  //       var activeOrder = await vendure.order.getActiveOrder();
-  //       expect(activeOrder, isA<Order>());
-  //       testOrderCode = order.code;
-  //       testOrderLineId = order.lines.first.id;
+  group('Guest checkout', () {
+    test('guestCheckout', () async {
+      try {
+        var result = await vendure.order
+            .addItemToOrder(productVariantId: "87", quantity: 1);
+        expect(result, isA<UpdateOrderItemsResult>());
+        print("passed 1");
 
-  //       var customerResult = await vendure.order.setCustomerForOrder(
-  //           input: CreateCustomerInput(
-  //         emailAddress: 'abc@def.com',
-  //         firstName: 'Alice',
-  //         lastName: 'Bob',
-  //       ));
-  //       expect(customerResult, isA<SetCustomerForOrderResult>());
-  //       order = Order.fromJson(customerResult.toJson());
+        Order order = Order.fromJson(result.toJson());
+        var activeOrder = await vendure.order.getActiveOrder();
+        expect(activeOrder, isA<Order>());
+        print("passed 2");
 
-  //       result = await vendure.order.adjustOrderLine(
-  //         orderLineId: testOrderLineId,
-  //         quantity: 8,
-  //       );
-  //       expect(result, isA<UpdateOrderItemsResult>());
-  //       order = Order.fromJson(result.toJson());
-  //       expect(order, isA<Order>());
+        var transitionResult =
+            await vendure.order.transitionOrderToState(state: 'Cancelled');
+        expect(transitionResult, isA<TransitionOrderToStateResult>());
+        Order cancelledOrder = Order.fromJson(transitionResult.toJson());
+        expect(cancelledOrder.state, 'Cancelled');
+        print("passed 3");
 
-  //       var removedLines = await vendure.order.removeAllOrderLines();
-  //       expect(removedLines, isA<RemoveOrderItemsResult>());
-  //       order = Order.fromJson(removedLines.toJson());
-  //       expect(order, isA<Order>());
+        result = await vendure.order
+            .addItemToOrder(productVariantId: "87", quantity: 1);
+        order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
+        testOrderCode = order.code;
+        testOrderLineId = order.lines.first.id;
+        print("passed 4");
 
-  //       result = await vendure.order
-  //           .addItemToOrder(productVariantId: 77, quantity: 1);
+        var customerResult = await vendure.order.setCustomerForOrder(
+            input: CreateCustomerInput(
+          emailAddress: 'abcd@def.com',
+          firstName: 'Alice',
+          lastName: 'Bob',
+        ));
 
-  //       expect(result, isA<UpdateOrderItemsResult>());
-  //       order = Order.fromJson(result.toJson());
-  //       expect(order, isA<Order>());
+        expect(customerResult, isA<SetCustomerForOrderResult>());
+        order = Order.fromJson(customerResult.toJson());
+        print("passed 5");
 
-  //       testOrderCode = order.code;
-  //       testOrderLineId = order.lines.first.id;
+        result = await vendure.order.adjustOrderLine(
+          orderLineId: testOrderLineId,
+          quantity: 8,
+        );
+        expect(result, isA<UpdateOrderItemsResult>());
+        order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
+        print("passed 6");
 
-  //       var removedALine =
-  //           await vendure.order.removeOrderLine(orderLineId: testOrderLineId);
-  //       expect(removedALine, isA<RemoveOrderItemsResult>());
-  //       order = Order.fromJson(removedALine.toJson());
-  //       expect(order, isA<Order>());
+        var removedLines = await vendure.order.removeAllOrderLines();
+        expect(removedLines, isA<RemoveOrderItemsResult>());
+        order = Order.fromJson(removedLines.toJson());
+        expect(order, isA<Order>());
+        print("passed 7");
 
-  //       result = await vendure.order
-  //           .addItemToOrder(productVariantId: 77, quantity: 1);
-  //       order = Order.fromJson(removedALine.toJson());
-  //       expect(order, isA<Order>());
+        result = await vendure.order
+            .addItemToOrder(productVariantId: "87", quantity: 1);
 
-  //       var activeOrderResult = await vendure.order.setOrderBillingAddress(
-  //           input: CreateAddressInput(
-  //         fullName: 'Abraham Lincoln',
-  //         streetLine1: '1600 Pennsylvania Avenue NW',
-  //         city: 'Washington',
-  //         postalCode: '20500',
-  //         countryCode: 'US',
-  //       ));
-  //       expect(activeOrderResult, isA<ActiveOrderResult>());
-  //       order = Order.fromJson(activeOrderResult.toJson());
-  //       expect(order, isA<Order>());
-  //       activeOrderResult = await vendure.order.setOrderShippingAddress(
-  //           input: CreateAddressInput(
-  //         fullName: 'Abraham Lincoln',
-  //         streetLine1: '1600 Pennsylvania Avenue NW',
-  //         city: 'Washington',
-  //         postalCode: '20500',
-  //         countryCode: 'US',
-  //       ));
-  //       expect(activeOrderResult, isA<ActiveOrderResult>());
-  //       order = Order.fromJson(activeOrderResult.toJson());
-  //       expect(order, isA<Order>());
-  //       var nextOrderStates = await vendure.order.getNextOrderStates();
-  //       expect(nextOrderStates, isA<List<String>>());
+        expect(result, isA<UpdateOrderItemsResult>());
+        order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
+        print("passed 8");
 
-  //       var paymentMethodsResult = await vendure.order.getPaymentMethods();
-  //       expect(paymentMethodsResult, isA<List<PaymentMethodQuote>>());
-  //       paymentMethodCode = paymentMethodsResult.first.code;
+        testOrderCode = order.code;
+        testOrderLineId = order.lines.first.id;
 
-  //       var applyCouponResult =
-  //           await vendure.order.applyCouponCode(couponCode: 'abc123');
-  //       expect(applyCouponResult, isA<ApplyCouponCodeResult>());
-  //       expect(CouponCodeInvalidError.fromJson(applyCouponResult.toJson()),
-  //           isA<CouponCodeInvalidError>());
-  //       applyCouponResult =
-  //           await vendure.order.applyCouponCode(couponCode: 'abc');
-  //       order = Order.fromJson(applyCouponResult.toJson());
-  //       expect(order, isA<Order>());
+        var removedALine =
+            await vendure.order.removeOrderLine(orderLineId: testOrderLineId);
+        expect(removedALine, isA<RemoveOrderItemsResult>());
+        order = Order.fromJson(removedALine.toJson());
+        expect(order, isA<Order>());
+        print("passed 9");
 
-  //       order = await vendure.order.removeCouponCode(couponCode: 'accbc');
-  //       expect(order, isA<Order>());
+        result = await vendure.order
+            .addItemToOrder(productVariantId: "87", quantity: 1);
+        order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
+        print("passed 10");
 
-  //       var transitionResult = await vendure.order
-  //           .transitionOrderToState(state: 'ArrangingPayment');
-  //       expect(transitionResult, isA<TransitionOrderToStateResult>());
-  //       expect(OrderStateTransitionError.fromJson(transitionResult.toJson()),
-  //           isA<OrderStateTransitionError>());
+        var activeOrderResult = await vendure.order.setOrderBillingAddress(
+            input: CreateAddressInput(
+          fullName: 'Abraham Lincoln',
+          streetLine1: '1600 Pennsylvania Avenue NW',
+          city: 'Washington',
+          postalCode: '20500',
+          countryCode: 'US',
+        ));
+        expect(activeOrderResult, isA<ActiveOrderResult>());
+        order = Order.fromJson(activeOrderResult.toJson());
+        expect(order, isA<Order>());
+        print("passed 11");
 
-  //       var shippingMethods = await vendure.order.getShippingMethods();
-  //       expect(shippingMethods, isA<List<ShippingMethodQuote>>());
-  //       shippingMethodId = shippingMethods.first.id;
+        activeOrderResult = await vendure.order.setOrderShippingAddress(
+            input: CreateAddressInput(
+          fullName: 'Abraham Lincoln',
+          streetLine1: '1600 Pennsylvania Avenue NW',
+          city: 'Washington',
+          postalCode: '20500',
+          countryCode: 'US',
+        ));
+        expect(activeOrderResult, isA<ActiveOrderResult>());
+        order = Order.fromJson(activeOrderResult.toJson());
+        expect(order, isA<Order>());
+        print("passed 12");
 
-  //       var shippingMethodResult = await vendure.order.setOrderShippingMethod(
-  //           shippingMethodId: shippingMethodId, additionalMethodIds: []);
-  //       expect(shippingMethodResult, isA<SetOrderShippingMethodResult>());
+        var nextOrderStates = await vendure.order.getNextOrderStates();
+        expect(nextOrderStates, isA<List<String>>());
+        print("passed 13");
 
-  //       transitionResult = await vendure.order
-  //           .transitionOrderToState(state: 'ArrangingPayment');
-  //       expect(transitionResult, isA<TransitionOrderToStateResult>());
+        var paymentMethodsResult = await vendure.order.getPaymentMethods();
+        expect(paymentMethodsResult, isA<List<PaymentMethodQuote>>());
+        print("passed 14");
 
-  //       order = Order.fromJson(transitionResult.toJson());
-  //       expect(order, isA<Order>());
+        paymentMethodCode = paymentMethodsResult.first.code;
 
-  //       var customFieldsResult = await vendure.order.setOrderCustomFields(
-  //         input: UpdateOrderInput(
-  //           customFields: {
-  //             'giftMessage': 'Happy Birthday!',
-  //           },
-  //         ),
-  //       );
-  //       expect(customFieldsResult, isA<ActiveOrderResult>());
-  //       order = Order.fromJson(customFieldsResult.toJson());
-  //       expect(order, isA<Order>());
+        var applyCouponResult =
+            await vendure.order.applyCouponCode(couponCode: 'abc123');
+        expect(applyCouponResult, isA<ApplyCouponCodeResult>());
+        expect(CouponCodeInvalidError.fromJson(applyCouponResult.toJson()),
+            isA<CouponCodeInvalidError>());
+        print("passed 15");
 
-  //       var paymentResult = await vendure.order.addPaymentToOrder(
-  //         input: PaymentInput(
-  //           method: paymentMethodCode,
-  //           metadata: {'stripeCheckoutSessionId': 'xyz'},
-  //         ),
-  //       );
-  //       expect(paymentResult, isA<AddPaymentToOrderResult>());
-  //       order = Order.fromJson(result.toJson());
-  //       expect(order, isA<Order>());
-  //       testOrderCode = order.code;
+        applyCouponResult =
+            await vendure.order.applyCouponCode(couponCode: 'abc');
+        order = Order.fromJson(applyCouponResult.toJson());
+        expect(order, isA<Order>());
+        print("passed 16");
 
-  //       activeOrderResult =
-  //           await vendure.order.getOrderByCode(code: testOrderCode);
-  //       expect(activeOrderResult, isA<ActiveOrderResult>());
-  //       order = Order.fromJson(result.toJson());
-  //       expect(order, isA<Order>());
+        order = await vendure.order.removeCouponCode(couponCode: 'accbc');
+        expect(order, isA<Order>());
+        print("passed 17");
 
-  //       transitionResult =
-  //           await vendure.order.transitionOrderToState(state: 'Cancelled');
-  //       expect(transitionResult, isA<TransitionOrderToStateResult>());
-  //       order = Order.fromJson(transitionResult.toJson());
-  //       expect(order, isA<Order>());
-  //     } catch (e) {
-  //       fail('Error adding item to cart: $e');
-  //     }
-  //   });
-  // });
+        transitionResult = await vendure.order
+            .transitionOrderToState(state: 'ArrangingPayment');
+        expect(transitionResult, isA<TransitionOrderToStateResult>());
+        expect(OrderStateTransitionError.fromJson(transitionResult.toJson()),
+            isA<OrderStateTransitionError>());
+        print("passed 18");
+
+        var shippingMethods = await vendure.order.getShippingMethods();
+        expect(shippingMethods, isA<List<ShippingMethodQuote>>());
+        shippingMethodId = shippingMethods.first.id;
+        print("passed 19");
+
+        var shippingMethodResult = await vendure.order.setOrderShippingMethod(
+            shippingMethodId: shippingMethodId, additionalMethodIds: []);
+        expect(shippingMethodResult, isA<SetOrderShippingMethodResult>());
+        print("passed 20");
+
+        transitionResult = await vendure.order
+            .transitionOrderToState(state: 'ArrangingPayment');
+        expect(transitionResult, isA<TransitionOrderToStateResult>());
+        order = Order.fromJson(transitionResult.toJson());
+        expect(order, isA<Order>());
+        print("passed 21");
+
+        var customFieldsResult = await vendure.order.setOrderCustomFields(
+          input: UpdateOrderInput(
+            customFields: {
+              'giftMessage': 'Happy Birthday!',
+            },
+          ),
+        );
+        expect(customFieldsResult, isA<ActiveOrderResult>());
+        order = Order.fromJson(customFieldsResult.toJson());
+        expect(order, isA<Order>());
+        print("passed 22");
+
+        var paymentResult = await vendure.order.addPaymentToOrder(
+          input: PaymentInput(
+            method: paymentMethodCode,
+            metadata: {'stripeCheckoutSessionId': 'xyz'},
+          ),
+        );
+        expect(paymentResult, isA<AddPaymentToOrderResult>());
+        order = Order.fromJson(paymentResult.toJson());
+        expect(order, isA<Order>());
+        expect(order.state, 'PaymentAuthorized');
+        print("passed 23");
+
+        var paidOrder = await vendure.order.getOrderByCode(code: order.code);
+        expect(paidOrder, isA<Order>());
+        expect(paidOrder.state, 'PaymentAuthorized');
+        print("passed 24");
+
+        activeOrder = await vendure.order.getActiveOrder();
+        expect(activeOrder, isNull);
+        print("passed 25");
+      } catch (e) {
+        fail('Error on guest checkout: $e');
+      }
+    });
+  });
 
   group('Vendure Catalog', () {
     test('getCollections', () async {
@@ -639,6 +675,7 @@ void main() {
     });
   });
 
+//only run below test with an authenticated user with a customer attached
   group('Vendure Customer', () {
     test('getActiveCustomer', () async {
       try {
