@@ -50,7 +50,7 @@ class CatalogOperations {
     );
   }
 
-  Future<Product> getProductById({required int id}) async {
+  Future<Product> getProductById({required String id}) async {
     return CustomOperations(_client).query<Product>(
       getProductByIdQuery,
       {'id': id},

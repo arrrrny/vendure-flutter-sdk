@@ -29,7 +29,7 @@ class SystemOperations {
     );
   }
 
-  Future<Facet> getFacet({required int id}) {
+  Future<Facet> getFacet({required String id}) {
     return CustomOperations(_client).query<Facet>(
       getFacetQuery,
       {'id': id},

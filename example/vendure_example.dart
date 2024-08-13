@@ -9,7 +9,7 @@ void main() async {
   );
 
   try {
-    await vendure.order.addItemToOrder(productVariantId: 86, quantity: 1);
+    await vendure.order.addItemToOrder(productVariantId: "86", quantity: 1);
     // Add assertions based on your expected result
   } catch (e) {
     print('Error adding item to cart: $e');

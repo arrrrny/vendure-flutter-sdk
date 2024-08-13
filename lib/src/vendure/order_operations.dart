@@ -29,7 +29,7 @@ class OrderOperations {
   OrderOperations(this._client);
 
   Future<UpdateOrderItemsResult> addItemToOrder({
-    required productVariantId,
+    required String productVariantId,
     required int quantity,
   }) async {
     return CustomOperations(_client).mutate<UpdateOrderItemsResult>(

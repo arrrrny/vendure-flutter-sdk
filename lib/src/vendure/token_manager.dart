@@ -27,9 +27,9 @@ class TokenManager {
         _expiryDate == null ||
         _expiryDate!.isBefore(DateTime.now())) {
       if (_fetchToken != null && _params != null) {
-        print('fetching token');
+        // print('fetching token');
         _token = await _fetchToken(_params);
-        print(_token);
+        // print(_token);
 
         _expiryDate = DateTime.now().add(_sessionDuration);
       } else {

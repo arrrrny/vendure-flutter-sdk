@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vendure/src/custom_types/collection_with_parent_children.dart';
 import 'package:vendure/vendure.dart';
 
 void main() {
@@ -32,7 +31,7 @@ void main() {
     test('addItemToOrder', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: 79, quantity: 1);
+            .addItemToOrder(productVariantId: "79", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -82,7 +81,7 @@ void main() {
     test('addItemToOrder 2', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: 77, quantity: 1);
+            .addItemToOrder(productVariantId: "77", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -94,7 +93,7 @@ void main() {
     test('addItemToOrder 3', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: 80, quantity: 1);
+            .addItemToOrder(productVariantId: "80", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -117,7 +116,7 @@ void main() {
     test('addItemToOrder 4', () async {
       try {
         var result = await vendure.order
-            .addItemToOrder(productVariantId: 77, quantity: 1);
+            .addItemToOrder(productVariantId: "77", quantity: 1);
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -557,7 +556,7 @@ void main() {
 
     test('getProductById', () async {
       try {
-        var product = await vendure.catalog.getProductById(id: 47);
+        var product = await vendure.catalog.getProductById(id: "47");
         expect(product, isA<Product>());
         // print(product.name);
         // print(product.slug);
@@ -630,7 +629,7 @@ void main() {
 
     test('getFacet', () async {
       try {
-        var facet = await vendure.system.getFacet(id: 1);
+        var facet = await vendure.system.getFacet(id: '1');
         expect(facet, isA<Facet>());
         // print(facet.name);
         // print(facet.id);
