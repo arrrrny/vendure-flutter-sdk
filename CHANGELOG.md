@@ -1,3 +1,6 @@
+## 1.0.1
+- Updated productId and productVariantId int types to String
+
 ## 0.9.1
 - Renamed type to CollectionWithParentChildren for simplicity
 
