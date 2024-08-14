@@ -66,9 +66,7 @@ fragment Order on Order {
     taxBase
     taxTotal
   }
-  customFields{
-   giftMessage
-  }
+
 }
 
 ''';
@@ -83,7 +81,6 @@ fragment FulfillmentLine on FulfillmentLine {
     state
     method
     trackingCode
-    customFields
   }
 }
 
@@ -101,7 +98,7 @@ fragment Fulfillment on Fulfillment {
   state
   method
   trackingCode
-  customFields
+
 }
 
 ''';
@@ -154,7 +151,7 @@ fragment Promotion on Promotion {
     name
     description
   }
-  customFields
+
 }
 
 ''';
@@ -207,7 +204,7 @@ fragment OrderLine on OrderLine {
     code
     state
   }
-  customFields
+
 }
 
 ''';
@@ -286,7 +283,7 @@ fragment ShippingMethod on ShippingMethod {
     createdAt
     updatedAt
   }
-  customFields
+
 }
 
 ''';
@@ -307,6 +304,7 @@ fragment Payment on Payment {
   refunds{
     ...Refund
   }
+
 }
 
 ''';
@@ -349,7 +347,7 @@ fragment OrderAddress on OrderAddress {
   country
   countryCode
   phoneNumber
-  customFields
+
 }
 
 ''';

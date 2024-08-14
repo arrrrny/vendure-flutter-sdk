@@ -193,6 +193,8 @@ mixin _$ApplyCouponCodeResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this ApplyCouponCodeResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -213,6 +215,9 @@ class _$ApplyCouponCodeResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -235,6 +240,8 @@ class __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>
       $Res Function(_$CouponCodeExpiredErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -312,11 +319,13 @@ class _$CouponCodeExpiredErrorImpl extends CouponCodeExpiredError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, couponCode, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CouponCodeExpiredErrorImplCopyWith<_$CouponCodeExpiredErrorImpl>
@@ -524,7 +533,10 @@ abstract class CouponCodeExpiredError extends ApplyCouponCodeResult {
   String get couponCode;
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CouponCodeExpiredErrorImplCopyWith<_$CouponCodeExpiredErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -549,6 +561,8 @@ class __$$CouponCodeInvalidErrorImplCopyWithImpl<$Res>
       $Res Function(_$CouponCodeInvalidErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -626,11 +640,13 @@ class _$CouponCodeInvalidErrorImpl extends CouponCodeInvalidError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, couponCode, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CouponCodeInvalidErrorImplCopyWith<_$CouponCodeInvalidErrorImpl>
@@ -838,7 +854,10 @@ abstract class CouponCodeInvalidError extends ApplyCouponCodeResult {
   String get couponCode;
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CouponCodeInvalidErrorImplCopyWith<_$CouponCodeInvalidErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -862,6 +881,8 @@ class __$$CouponCodeLimitErrorImplCopyWithImpl<$Res>
       $Res Function(_$CouponCodeLimitErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -949,12 +970,14 @@ class _$CouponCodeLimitErrorImpl extends CouponCodeLimitError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, couponCode, errorCode, limit, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CouponCodeLimitErrorImplCopyWith<_$CouponCodeLimitErrorImpl>
@@ -1165,7 +1188,10 @@ abstract class CouponCodeLimitError extends ApplyCouponCodeResult {
   ErrorCode get errorCode;
   int get limit;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CouponCodeLimitErrorImplCopyWith<_$CouponCodeLimitErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1220,6 +1246,8 @@ class __$$OrderImplCopyWithImpl<$Res>
       _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1373,6 +1401,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get billingAddress {
@@ -1385,6 +1415,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res> get history {
@@ -1393,6 +1425,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get shippingAddress {
@@ -1716,7 +1750,7 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1751,7 +1785,9 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
@@ -2124,7 +2160,10 @@ abstract class Order extends ApplyCouponCodeResult {
   double get totalWithTax;
   OrderType get type;
   DateTime get updatedAt;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ApplyCouponCodeResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

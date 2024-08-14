@@ -201,6 +201,8 @@ mixin _$SetCustomerForOrderResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this SetCustomerForOrderResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -221,6 +223,9 @@ class _$SetCustomerForOrderResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -241,6 +246,8 @@ class __$$AlreadyLoggedInErrorImplCopyWithImpl<$Res>
       $Res Function(_$AlreadyLoggedInErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -305,11 +312,13 @@ class _$AlreadyLoggedInErrorImpl extends AlreadyLoggedInError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AlreadyLoggedInErrorImplCopyWith<_$AlreadyLoggedInErrorImpl>
@@ -522,7 +531,10 @@ abstract class AlreadyLoggedInError extends SetCustomerForOrderResult {
 
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AlreadyLoggedInErrorImplCopyWith<_$AlreadyLoggedInErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -547,6 +559,8 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
       $Res Function(_$EmailAddressConflictErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -611,11 +625,13 @@ class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>
@@ -827,7 +843,10 @@ abstract class EmailAddressConflictError extends SetCustomerForOrderResult {
 
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -850,6 +869,8 @@ class __$$GuestCheckoutErrorImplCopyWithImpl<$Res>
       $Res Function(_$GuestCheckoutErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -927,11 +948,13 @@ class _$GuestCheckoutErrorImpl extends GuestCheckoutError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorDetail, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GuestCheckoutErrorImplCopyWith<_$GuestCheckoutErrorImpl> get copyWith =>
@@ -1145,7 +1168,10 @@ abstract class GuestCheckoutError extends SetCustomerForOrderResult {
   ErrorCode get errorCode;
   String get errorDetail;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GuestCheckoutErrorImplCopyWith<_$GuestCheckoutErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1168,6 +1194,8 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
       $Res Function(_$NoActiveOrderErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1232,11 +1260,13 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoActiveOrderErrorImplCopyWith<_$NoActiveOrderErrorImpl> get copyWith =>
@@ -1448,7 +1478,10 @@ abstract class NoActiveOrderError extends SetCustomerForOrderResult {
 
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoActiveOrderErrorImplCopyWith<_$NoActiveOrderErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1505,6 +1538,8 @@ class __$$OrderImplCopyWithImpl<$Res>
       _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1663,6 +1698,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get billingAddress {
@@ -1675,6 +1712,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerCopyWith<$Res>? get customer {
@@ -1687,6 +1726,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res> get history {
@@ -1695,6 +1736,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get shippingAddress {
@@ -2024,7 +2067,7 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -2060,7 +2103,9 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
@@ -2444,7 +2489,10 @@ abstract class Order extends SetCustomerForOrderResult {
   double get totalWithTax;
   OrderType get type;
   DateTime get updatedAt;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SetCustomerForOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

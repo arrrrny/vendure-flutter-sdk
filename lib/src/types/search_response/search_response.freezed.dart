@@ -25,8 +25,12 @@ mixin _$SearchResponse {
   List<SearchResult> get items => throw _privateConstructorUsedError;
   int get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchResponseCopyWith<SearchResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$SearchResponseCopyWithImpl<$Res, $Val extends SearchResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,6 +112,8 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
       _$SearchResponseImpl _value, $Res Function(_$SearchResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -209,7 +217,7 @@ class _$SearchResponseImpl extends _SearchResponse
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -218,7 +226,9 @@ class _$SearchResponseImpl extends _SearchResponse
       const DeepCollectionEquality().hash(_items),
       totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchResponseImplCopyWith<_$SearchResponseImpl> get copyWith =>
@@ -252,8 +262,11 @@ abstract class _SearchResponse extends SearchResponse {
   List<SearchResult> get items;
   @override
   int get totalItems;
+
+  /// Create a copy of SearchResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchResponseImplCopyWith<_$SearchResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

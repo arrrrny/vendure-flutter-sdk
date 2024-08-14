@@ -20,15 +20,25 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Customer {
-// List<Address>? addresses,
-// required DateTime createdAt,
-// Map<String, dynamic>? customFields,
-// required String emailAddress,
-// required String firstName,
+  List<Address>? get addresses => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
+  String get emailAddress => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  OrderList? get orders => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
 
+  /// Serializes this Customer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomerCopyWith<Customer> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -38,7 +48,22 @@ abstract class $CustomerCopyWith<$Res> {
   factory $CustomerCopyWith(Customer value, $Res Function(Customer) then) =
       _$CustomerCopyWithImpl<$Res, Customer>;
   @useResult
-  $Res call({String id});
+  $Res call(
+      {List<Address>? addresses,
+      DateTime createdAt,
+      Map<String, dynamic>? customFields,
+      String emailAddress,
+      String firstName,
+      String id,
+      String lastName,
+      OrderList? orders,
+      String? phoneNumber,
+      String? title,
+      DateTime updatedAt,
+      User? user});
+
+  $OrderListCopyWith<$Res>? get orders;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -51,17 +76,102 @@ class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? addresses = freezed,
+    Object? createdAt = null,
+    Object? customFields = freezed,
+    Object? emailAddress = null,
+    Object? firstName = null,
     Object? id = null,
+    Object? lastName = null,
+    Object? orders = freezed,
+    Object? phoneNumber = freezed,
+    Object? title = freezed,
+    Object? updatedAt = null,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
+      addresses: freezed == addresses
+          ? _value.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as List<Address>?,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      customFields: freezed == customFields
+          ? _value.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      emailAddress: null == emailAddress
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      orders: freezed == orders
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as OrderList?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
+  }
+
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OrderListCopyWith<$Res>? get orders {
+    if (_value.orders == null) {
+      return null;
+    }
+
+    return $OrderListCopyWith<$Res>(_value.orders!, (value) {
+      return _then(_value.copyWith(orders: value) as $Val);
+    });
+  }
+
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -73,7 +183,24 @@ abstract class _$$CustomerImplCopyWith<$Res>
       __$$CustomerImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id});
+  $Res call(
+      {List<Address>? addresses,
+      DateTime createdAt,
+      Map<String, dynamic>? customFields,
+      String emailAddress,
+      String firstName,
+      String id,
+      String lastName,
+      OrderList? orders,
+      String? phoneNumber,
+      String? title,
+      DateTime updatedAt,
+      User? user});
+
+  @override
+  $OrderListCopyWith<$Res>? get orders;
+  @override
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -84,16 +211,73 @@ class __$$CustomerImplCopyWithImpl<$Res>
       _$CustomerImpl _value, $Res Function(_$CustomerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? addresses = freezed,
+    Object? createdAt = null,
+    Object? customFields = freezed,
+    Object? emailAddress = null,
+    Object? firstName = null,
     Object? id = null,
+    Object? lastName = null,
+    Object? orders = freezed,
+    Object? phoneNumber = freezed,
+    Object? title = freezed,
+    Object? updatedAt = null,
+    Object? user = freezed,
   }) {
     return _then(_$CustomerImpl(
+      addresses: freezed == addresses
+          ? _value._addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as List<Address>?,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      customFields: freezed == customFields
+          ? _value._customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      emailAddress: null == emailAddress
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      orders: freezed == orders
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as OrderList?,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -101,22 +285,70 @@ class __$$CustomerImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CustomerImpl extends _Customer with DiagnosticableTreeMixin {
-  const _$CustomerImpl({required this.id}) : super._();
+  const _$CustomerImpl(
+      {final List<Address>? addresses,
+      required this.createdAt,
+      final Map<String, dynamic>? customFields,
+      required this.emailAddress,
+      required this.firstName,
+      required this.id,
+      required this.lastName,
+      this.orders,
+      this.phoneNumber,
+      this.title,
+      required this.updatedAt,
+      this.user})
+      : _addresses = addresses,
+        _customFields = customFields,
+        super._();
 
   factory _$CustomerImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomerImplFromJson(json);
 
-// List<Address>? addresses,
-// required DateTime createdAt,
-// Map<String, dynamic>? customFields,
-// required String emailAddress,
-// required String firstName,
+  final List<Address>? _addresses;
+  @override
+  List<Address>? get addresses {
+    final value = _addresses;
+    if (value == null) return null;
+    if (_addresses is EqualUnmodifiableListView) return _addresses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final DateTime createdAt;
+  final Map<String, dynamic>? _customFields;
+  @override
+  Map<String, dynamic>? get customFields {
+    final value = _customFields;
+    if (value == null) return null;
+    if (_customFields is EqualUnmodifiableMapView) return _customFields;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  final String emailAddress;
+  @override
+  final String firstName;
   @override
   final String id;
+  @override
+  final String lastName;
+  @override
+  final OrderList? orders;
+  @override
+  final String? phoneNumber;
+  @override
+  final String? title;
+  @override
+  final DateTime updatedAt;
+  @override
+  final User? user;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Customer(id: $id)';
+    return 'Customer(addresses: $addresses, createdAt: $createdAt, customFields: $customFields, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, orders: $orders, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt, user: $user)';
   }
 
   @override
@@ -124,7 +356,18 @@ class _$CustomerImpl extends _Customer with DiagnosticableTreeMixin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Customer'))
-      ..add(DiagnosticsProperty('id', id));
+      ..add(DiagnosticsProperty('addresses', addresses))
+      ..add(DiagnosticsProperty('createdAt', createdAt))
+      ..add(DiagnosticsProperty('customFields', customFields))
+      ..add(DiagnosticsProperty('emailAddress', emailAddress))
+      ..add(DiagnosticsProperty('firstName', firstName))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('lastName', lastName))
+      ..add(DiagnosticsProperty('orders', orders))
+      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
+      ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('updatedAt', updatedAt))
+      ..add(DiagnosticsProperty('user', user));
   }
 
   @override
@@ -132,14 +375,48 @@ class _$CustomerImpl extends _Customer with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomerImpl &&
-            (identical(other.id, id) || other.id == id));
+            const DeepCollectionEquality()
+                .equals(other._addresses, _addresses) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            const DeepCollectionEquality()
+                .equals(other._customFields, _customFields) &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.orders, orders) || other.orders == orders) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.user, user) || other.user == user));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_addresses),
+      createdAt,
+      const DeepCollectionEquality().hash(_customFields),
+      emailAddress,
+      firstName,
+      id,
+      lastName,
+      orders,
+      phoneNumber,
+      title,
+      updatedAt,
+      user);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CustomerImplCopyWith<_$CustomerImpl> get copyWith =>
@@ -154,20 +431,53 @@ class _$CustomerImpl extends _Customer with DiagnosticableTreeMixin {
 }
 
 abstract class _Customer extends Customer {
-  const factory _Customer({required final String id}) = _$CustomerImpl;
+  const factory _Customer(
+      {final List<Address>? addresses,
+      required final DateTime createdAt,
+      final Map<String, dynamic>? customFields,
+      required final String emailAddress,
+      required final String firstName,
+      required final String id,
+      required final String lastName,
+      final OrderList? orders,
+      final String? phoneNumber,
+      final String? title,
+      required final DateTime updatedAt,
+      final User? user}) = _$CustomerImpl;
   const _Customer._() : super._();
 
   factory _Customer.fromJson(Map<String, dynamic> json) =
       _$CustomerImpl.fromJson;
 
-  @override // List<Address>? addresses,
-// required DateTime createdAt,
-// Map<String, dynamic>? customFields,
-// required String emailAddress,
-// required String firstName,
+  @override
+  List<Address>? get addresses;
+  @override
+  DateTime get createdAt;
+  @override
+  Map<String, dynamic>? get customFields;
+  @override
+  String get emailAddress;
+  @override
+  String get firstName;
+  @override
   String get id;
   @override
-  @JsonKey(ignore: true)
+  String get lastName;
+  @override
+  OrderList? get orders;
+  @override
+  String? get phoneNumber;
+  @override
+  String? get title;
+  @override
+  DateTime get updatedAt;
+  @override
+  User? get user;
+
+  /// Create a copy of Customer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CustomerImplCopyWith<_$CustomerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

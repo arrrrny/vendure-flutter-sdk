@@ -37,6 +37,10 @@ void main() async {
       username: 'your-username',
       password: 'your-password',
       sessionDuration: const Duration(days: 1),
+      customFieldsConfig: {
+          'User': ['os'],
+          'Order': ['giftMessage']
+        }, 
     );
 
     // Initialize with Firebase Auth
@@ -45,25 +49,34 @@ void main() async {
       uid: '8o6CuL3vvceCwjnSxtCTp08vEMr2',
       jwt: 'your-jwt-token',
       sessionDuration: const Duration(hours: 1),
+      customFieldsConfig: {
+          'User': ['os'],
+          'Order': ['giftMessage']
+        },       
     );
 
     // Initialize with Token
     vendure = await Vendure.initialize(
         endpoint: 'http://localhost:3000/shop-api',
-        token: '9a3d1222ed018701fdd8a7484a7299977507787f5bb22bec898e67939ee453169f8');
+        token: '9a3d1222ed018701fdd8a7484a7299977507787f5bb22bec898e67939ee453169f8',
+    );
 
     // Initialize with Custom Auth
     vendure = await Vendure.initializeWithCustomAuth(
-        endpoint: 'http://localhost:3000/shop-api',
-        fetchToken: (params) async {
-          // Implement your custom token fetching logic here
-          return 'custom-token';
-        },
-        tokenParams: {
-          'customParam1': 'value1',
-          'customParam2': 'value2',
-        },
-        sessionDuration: const Duration(days: 1),
+      endpoint: 'http://localhost:3000/shop-api',
+      fetchToken: (params) async {
+        // Implement your custom token fetching logic here
+        return 'custom-token';
+      },
+      tokenParams: {
+        'customParam1': 'value1',
+        'customParam2': 'value2',
+      },
+      sessionDuration: const Duration(days: 1),
+      customFieldsConfig: {
+          'User': ['os'],
+          'Order': ['giftMessage']
+        }, 
     );
 
     // Use the vendure instance for various operations

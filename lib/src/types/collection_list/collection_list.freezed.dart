@@ -23,8 +23,12 @@ mixin _$CollectionList {
   List<Collection> get items => throw _privateConstructorUsedError;
   int get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionListCopyWith<CollectionList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$CollectionListCopyWithImpl<$Res, $Val extends CollectionList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$CollectionListImplCopyWithImpl<$Res>
       _$CollectionListImpl _value, $Res Function(_$CollectionListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,12 +160,14 @@ class _$CollectionListImpl extends _CollectionList
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionListImplCopyWith<_$CollectionListImpl> get copyWith =>
@@ -185,8 +195,11 @@ abstract class _CollectionList extends CollectionList {
   List<Collection> get items;
   @override
   int get totalItems;
+
+  /// Create a copy of CollectionList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionListImplCopyWith<_$CollectionListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

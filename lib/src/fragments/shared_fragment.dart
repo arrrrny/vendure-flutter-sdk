@@ -18,7 +18,7 @@ fragment Address on Address {
   phoneNumber
   defaultShippingAddress
   defaultBillingAddress
-  customFields
+
 }
 
 ''';
@@ -46,7 +46,7 @@ fragment Country on Country {
     createdAt
     updatedAt
   }
-  customFields
+
 }
 
 ''';
@@ -77,22 +77,22 @@ fragment Region on Region {
 
 ''';
 
-const String userFragment = roleFragment +
-    r'''
+const String userFragment = r'''
 fragment User on User {
   __typename
   id
+  createdAt
+  updatedAt
   identifier
   verified
-  roles{
-    ...Role
-  }
   lastLogin
-  authenticationMethods{
+  authenticationMethods {
+    createdAt
+    updatedAt
     id
     strategy
   }
-  customFields
+
 }
 
 ''';
@@ -134,7 +134,7 @@ fragment Channel on Channel {
     name
     customFields
   }
-  customFields
+
 }
 
 ''';
@@ -150,6 +150,7 @@ fragment Role on Role {
   channels {
     ...Channel
   }
+
 }
 
 ''';
@@ -178,10 +179,11 @@ fragment Asset on Asset {
     createdAt
     updatedAt
   }
-  customFields
+
 }
 
 ''';
+
 const String facetValueFragment = r'''
 fragment FacetValue on FacetValue {
   __typename
@@ -204,7 +206,7 @@ fragment FacetValue on FacetValue {
     createdAt
     updatedAt
   }
-  customFields
+
 }
 
 ''';
@@ -231,7 +233,7 @@ fragment TaxRate on TaxRate {
     id
     name
   }
-  customFields
+
 }
 
 ''';
@@ -262,7 +264,7 @@ const String facetFragment = facetValueFragment +
         createdAt
         updatedAt
       }
-      customFields
-    }
+
+}
 
 ''';

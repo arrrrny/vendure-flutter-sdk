@@ -203,6 +203,8 @@ mixin _$UpdateOrderItemsResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this UpdateOrderItemsResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -223,6 +225,9 @@ class _$UpdateOrderItemsResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -249,6 +254,8 @@ class __$$InsufficientStockErrorImplCopyWithImpl<$Res>
       $Res Function(_$InsufficientStockErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -336,12 +343,14 @@ class _$InsufficientStockErrorImpl extends InsufficientStockError
                 other.quantityAvailable == quantityAvailable));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message,
       const DeepCollectionEquality().hash(order), quantityAvailable);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InsufficientStockErrorImplCopyWith<_$InsufficientStockErrorImpl>
@@ -562,7 +571,10 @@ abstract class InsufficientStockError extends UpdateOrderItemsResult {
   String get message;
   Order get order;
   int get quantityAvailable;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InsufficientStockErrorImplCopyWith<_$InsufficientStockErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -586,6 +598,8 @@ class __$$NegativeQuantityErrorImplCopyWithImpl<$Res>
       $Res Function(_$NegativeQuantityErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -650,11 +664,13 @@ class _$NegativeQuantityErrorImpl extends NegativeQuantityError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NegativeQuantityErrorImplCopyWith<_$NegativeQuantityErrorImpl>
@@ -868,7 +884,10 @@ abstract class NegativeQuantityError extends UpdateOrderItemsResult {
 
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NegativeQuantityErrorImplCopyWith<_$NegativeQuantityErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -923,6 +942,8 @@ class __$$OrderImplCopyWithImpl<$Res>
       _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1076,6 +1097,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get billingAddress {
@@ -1088,6 +1111,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res> get history {
@@ -1096,6 +1121,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get shippingAddress {
@@ -1419,7 +1446,7 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1454,7 +1481,9 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
@@ -1835,7 +1864,10 @@ abstract class Order extends UpdateOrderItemsResult {
   double get totalWithTax;
   OrderType get type;
   DateTime get updatedAt;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1857,6 +1889,8 @@ class __$$OrderLimitErrorImplCopyWithImpl<$Res>
       _$OrderLimitErrorImpl _value, $Res Function(_$OrderLimitErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1934,11 +1968,13 @@ class _$OrderLimitErrorImpl extends OrderLimitError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, maxItems, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderLimitErrorImplCopyWith<_$OrderLimitErrorImpl> get copyWith =>
@@ -2154,7 +2190,10 @@ abstract class OrderLimitError extends UpdateOrderItemsResult {
   ErrorCode get errorCode;
   int get maxItems;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderLimitErrorImplCopyWith<_$OrderLimitErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2179,6 +2218,8 @@ class __$$OrderModificationErrorImplCopyWithImpl<$Res>
       $Res Function(_$OrderModificationErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2243,11 +2284,13 @@ class _$OrderModificationErrorImpl extends OrderModificationError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderModificationErrorImplCopyWith<_$OrderModificationErrorImpl>
@@ -2461,7 +2504,10 @@ abstract class OrderModificationError extends UpdateOrderItemsResult {
 
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateOrderItemsResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderModificationErrorImplCopyWith<_$OrderModificationErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

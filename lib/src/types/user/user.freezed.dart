@@ -27,12 +27,16 @@ mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get identifier => throw _privateConstructorUsedError;
   DateTime? get lastLogin => throw _privateConstructorUsedError;
-  List<Role> get roles => throw _privateConstructorUsedError;
+  List<Role>? get roles => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
   bool get verified => throw _privateConstructorUsedError;
 
+  /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -48,7 +52,7 @@ abstract class $UserCopyWith<$Res> {
       String id,
       String identifier,
       DateTime? lastLogin,
-      List<Role> roles,
+      List<Role>? roles,
       DateTime updatedAt,
       bool verified});
 
@@ -65,6 +69,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,7 +80,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? id = null,
     Object? identifier = null,
     Object? lastLogin = freezed,
-    Object? roles = null,
+    Object? roles = freezed,
     Object? updatedAt = null,
     Object? verified = null,
   }) {
@@ -103,10 +109,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      roles: null == roles
+      roles: freezed == roles
           ? _value.roles
           : roles // ignore: cast_nullable_to_non_nullable
-              as List<Role>,
+              as List<Role>?,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -118,6 +124,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     ) as $Val);
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCustomFieldsCopyWith<$Res>? get customFields {
@@ -145,7 +153,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String id,
       String identifier,
       DateTime? lastLogin,
-      List<Role> roles,
+      List<Role>? roles,
       DateTime updatedAt,
       bool verified});
 
@@ -160,6 +168,8 @@ class __$$UserImplCopyWithImpl<$Res>
   __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -169,7 +179,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? id = null,
     Object? identifier = null,
     Object? lastLogin = freezed,
-    Object? roles = null,
+    Object? roles = freezed,
     Object? updatedAt = null,
     Object? verified = null,
   }) {
@@ -198,10 +208,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      roles: null == roles
+      roles: freezed == roles
           ? _value._roles
           : roles // ignore: cast_nullable_to_non_nullable
-              as List<Role>,
+              as List<Role>?,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -224,7 +234,7 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
       required this.id,
       required this.identifier,
       this.lastLogin,
-      required final List<Role> roles,
+      final List<Role>? roles,
       required this.updatedAt,
       required this.verified})
       : _authenticationMethods = authenticationMethods,
@@ -253,12 +263,14 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
   final String identifier;
   @override
   final DateTime? lastLogin;
-  final List<Role> _roles;
+  final List<Role>? _roles;
   @override
-  List<Role> get roles {
+  List<Role>? get roles {
+    final value = _roles;
+    if (value == null) return null;
     if (_roles is EqualUnmodifiableListView) return _roles;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_roles);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -310,7 +322,7 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
                 other.verified == verified));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -324,7 +336,9 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
       updatedAt,
       verified);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -346,7 +360,7 @@ abstract class _User extends User {
       required final String id,
       required final String identifier,
       final DateTime? lastLogin,
-      required final List<Role> roles,
+      final List<Role>? roles,
       required final DateTime updatedAt,
       required final bool verified}) = _$UserImpl;
   const _User._() : super._();
@@ -366,13 +380,16 @@ abstract class _User extends User {
   @override
   DateTime? get lastLogin;
   @override
-  List<Role> get roles;
+  List<Role>? get roles;
   @override
   DateTime get updatedAt;
   @override
   bool get verified;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

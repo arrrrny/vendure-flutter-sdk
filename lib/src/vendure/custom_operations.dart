@@ -4,14 +4,16 @@ import 'package:vendure/src/vendure/vendure_utils.dart';
 
 class CustomOperations {
   final Future<GraphQLClient> Function() _client;
-
-  CustomOperations(this._client);
-
-  // final GraphQLClient _client;
+  final Map<String, List<String>>? customFieldsConfig;
+  CustomOperations(this._client, {this.customFieldsConfig});
 
   Future<T> mutate<T>(String mutation, Map<String, dynamic> variables,
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
+    if (customFieldsConfig != null) {
+      mutation =
+          VendureUtils.sanitizeGraphQLQuery(mutation, customFieldsConfig!);
+    }
     final options = MutationOptions(
       document: gql(mutation),
       variables: variables,
@@ -31,6 +33,9 @@ class CustomOperations {
   Future<T> query<T>(String query, Map<String, dynamic> variables,
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
+    if (customFieldsConfig != null) {
+      query = VendureUtils.sanitizeGraphQLQuery(query, customFieldsConfig!);
+    }
     final options = QueryOptions(
       document: gql(query),
       variables: variables,
@@ -70,6 +75,9 @@ class CustomOperations {
   Future<List<T>> queryList<T>(String query, Map<String, dynamic> variables,
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
+    if (customFieldsConfig != null) {
+      query = VendureUtils.sanitizeGraphQLQuery(query, customFieldsConfig!);
+    }
     final options = QueryOptions(
       document: gql(query),
       variables: variables,

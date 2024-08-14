@@ -170,6 +170,8 @@ mixin _$TransitionOrderToStateResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this TransitionOrderToStateResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -192,6 +194,9 @@ class _$TransitionOrderToStateResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -244,6 +249,8 @@ class __$$OrderImplCopyWithImpl<$Res>
       _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -397,6 +404,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get billingAddress {
@@ -409,6 +418,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res> get history {
@@ -417,6 +428,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get shippingAddress {
@@ -740,7 +753,7 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -775,7 +788,9 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
@@ -1129,7 +1144,10 @@ abstract class Order extends TransitionOrderToStateResult {
   double get totalWithTax;
   OrderType get type;
   DateTime get updatedAt;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1159,6 +1177,8 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
       $Res Function(_$OrderStateTransitionErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1257,12 +1277,14 @@ class _$OrderStateTransitionErrorImpl extends OrderStateTransitionError
                 other.transitionError == transitionError));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, errorCode, fromState, message, toState, transitionError);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>
@@ -1458,7 +1480,10 @@ abstract class OrderStateTransitionError extends TransitionOrderToStateResult {
   String get message;
   String get toState;
   String get transitionError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransitionOrderToStateResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

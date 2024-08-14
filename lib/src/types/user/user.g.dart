@@ -21,8 +21,8 @@ _$UserImpl _$$UserImplFromJson(Map json) => _$UserImpl(
       lastLogin: json['lastLogin'] == null
           ? null
           : DateTime.parse(json['lastLogin'] as String),
-      roles: (json['roles'] as List<dynamic>)
-          .map((e) => Role.fromJson(Map<String, dynamic>.from(e as Map)))
+      roles: (json['roles'] as List<dynamic>?)
+          ?.map((e) => Role.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       verified: json['verified'] as bool,
@@ -45,7 +45,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
   val['id'] = instance.id;
   val['identifier'] = instance.identifier;
   writeNotNull('lastLogin', instance.lastLogin?.toIso8601String());
-  val['roles'] = instance.roles.map((e) => e.toJson()).toList();
+  writeNotNull('roles', instance.roles?.map((e) => e.toJson()).toList());
   val['updatedAt'] = instance.updatedAt.toIso8601String();
   val['verified'] = instance.verified;
   return val;

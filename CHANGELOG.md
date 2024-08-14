@@ -1,3 +1,6 @@
+## 1.1.0
+- Added support for customfields. define customfieldsConfig on initialize
+
 ## 1.0.1
 - Updated productId and productVariantId int types to String
 
