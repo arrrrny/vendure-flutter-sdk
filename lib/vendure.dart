@@ -12,8 +12,6 @@ import 'package:http/http.dart';
 
 export '../src/types/exports.dart'; // Add this line
 
-import '../src/input_types/exports.dart' as flexible;
-
 class Vendure {
   static Vendure? _instance;
 
@@ -25,6 +23,7 @@ class Vendure {
   late final CatalogOperations catalog;
   late final SystemOperations system;
   final TokenManager? _tokenManager;
+  final Map<String, List<String>>? _customFieldsConfig;
   final String _endpoint;
   final DefaultPolicies? _policies;
   String? _token;
@@ -38,6 +37,7 @@ class Vendure {
     Duration sessionDuration = const Duration(days: 365),
     String? token,
     bool? useVendureGuestSession = false,
+    Map<String, List<String>>? customFieldsConfig,
   })  : _tokenManager = fetchToken != null && tokenParams != null
             ? TokenManager(
                 fetchToken: fetchToken,
@@ -62,13 +62,29 @@ class Vendure {
           ),
           link: HttpLink(endpoint),
           cache: GraphQLCache(),
-        ) {
+        ),
+        _customFieldsConfig = customFieldsConfig {
     auth = AuthOperations(_authClient);
-    order = OrderOperations(_getClient);
-    custom = CustomOperations(_getClient);
-    customer = CustomerOperations(_getClient);
-    catalog = CatalogOperations(_getClient);
-    system = SystemOperations(_getClient);
+    order = OrderOperations(
+      _getClient,
+      customFieldsConfig: _customFieldsConfig,
+    );
+    custom = CustomOperations(
+      _getClient,
+      customFieldsConfig: _customFieldsConfig,
+    );
+    customer = CustomerOperations(
+      _getClient,
+      customFieldsConfig: _customFieldsConfig,
+    );
+    catalog = CatalogOperations(
+      _getClient,
+      customFieldsConfig: _customFieldsConfig,
+    );
+    system = SystemOperations(
+      _getClient,
+      customFieldsConfig: _customFieldsConfig,
+    );
   }
 
   static Future<Vendure> initialize({
@@ -79,6 +95,7 @@ class Vendure {
     Duration sessionDuration = const Duration(days: 365),
     String? token,
     bool? useVendureGuestSession,
+    Map<String, List<String>>? customFieldsConfig,
   }) async {
     _instance = Vendure._internal(
       endpoint: endpoint,
@@ -88,6 +105,7 @@ class Vendure {
       sessionDuration: sessionDuration,
       token: token,
       useVendureGuestSession: useVendureGuestSession,
+      customFieldsConfig: customFieldsConfig,
     );
 
     // Perform a connection check
@@ -113,6 +131,7 @@ class Vendure {
     required String username,
     required String password,
     Duration sessionDuration = const Duration(days: 365),
+    Map<String, List<String>>? customFieldsConfig,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -162,6 +181,7 @@ class Vendure {
         },
         sessionDuration: sessionDuration,
         token: token,
+        customFieldsConfig: customFieldsConfig,
       );
     }
 
@@ -178,6 +198,7 @@ class Vendure {
     required String uid,
     required String jwt,
     Duration sessionDuration = const Duration(hours: 1),
+    Map<String, List<String>>? customFieldsConfig,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -226,6 +247,7 @@ class Vendure {
         },
         sessionDuration: sessionDuration,
         token: token,
+        customFieldsConfig: customFieldsConfig,
       );
     }
 
@@ -242,6 +264,7 @@ class Vendure {
     required TokenFetcher fetchToken,
     required Map<String, dynamic> tokenParams,
     Duration sessionDuration = const Duration(days: 365),
+    Map<String, List<String>>? customFieldsConfig,
   }) async {
     final token = await fetchToken(tokenParams);
     if (token == null) {
@@ -256,6 +279,7 @@ class Vendure {
         tokenParams: tokenParams,
         sessionDuration: sessionDuration,
         token: token,
+        customFieldsConfig: customFieldsConfig,
       );
     }
 

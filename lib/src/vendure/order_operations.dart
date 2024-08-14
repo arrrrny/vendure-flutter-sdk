@@ -25,8 +25,8 @@ import '../types/exports.dart';
 
 class OrderOperations {
   final Future<GraphQLClient> Function() _client;
-
-  OrderOperations(this._client);
+  final Map<String, List<String>>? customFieldsConfig;
+  OrderOperations(this._client, {this.customFieldsConfig});
 
   Future<UpdateOrderItemsResult> addItemToOrder({
     required String productVariantId,

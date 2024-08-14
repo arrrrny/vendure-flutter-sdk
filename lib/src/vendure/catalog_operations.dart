@@ -10,8 +10,8 @@ import 'package:vendure/src/input_types/exports.dart' as flexible;
 
 class CatalogOperations {
   final Future<GraphQLClient> Function() _client;
-
-  CatalogOperations(this._client);
+  final Map<String, List<String>>? customFieldsConfig;
+  CatalogOperations(this._client, {this.customFieldsConfig});
 
   Future<CollectionList> getCollections(
       {CollectionListOptions? options}) async {

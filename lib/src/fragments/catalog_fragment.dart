@@ -3,6 +3,7 @@ import 'package:vendure/src/fragments/shared_fragment.dart';
 const String productVariantFragment = productOptionFragment +
     facetValueFragment +
     assetFragment +
+    taxCategoryFragment +
     r'''
 fragment ProductVariant on ProductVariant {
   __typename
@@ -28,12 +29,7 @@ fragment ProductVariant on ProductVariant {
   priceWithTax
   stockLevel
   taxCategory {
-    id
-    name
-    isDefault
-    customFields
-    createdAt
-    updatedAt
+    ...TaxCategory
   }
   options {
     ...ProductOption
@@ -48,10 +44,11 @@ fragment ProductVariant on ProductVariant {
     name
     updatedAt
   }
-  customFields
+
 }
 
 ''';
+
 const String productFragment = productVariantFragment +
     productOptionGroupFragment +
     r'''
@@ -95,7 +92,7 @@ fragment Product on Product {
     slug
     description
   }
-  customFields
+
 }
 
 ''';
@@ -122,10 +119,11 @@ fragment ProductOption on ProductOption {
     createdAt
     updatedAt
   }
-  customFields
+
 }
 
 ''';
+
 const String productOptionGroupFragment = r'''
 fragment ProductOptionGroup on ProductOptionGroup {
   __typename
@@ -145,7 +143,7 @@ fragment ProductOptionGroup on ProductOptionGroup {
     createdAt
     updatedAt
   }
-  customFields
+
 }
 
 ''';
@@ -192,7 +190,7 @@ fragment OrderLineProductVariant on ProductVariant {
     id
     name
     isDefault
-    customFields
+
   }
 
   translations {
@@ -202,13 +200,23 @@ fragment OrderLineProductVariant on ProductVariant {
     name
     updatedAt
   }
-  customFields
+
+}
+
+''';
+
+const String orderLineCustomFieldsFragment = r'''
+fragment OrderLineCustomFields on OrderLine {
+  customFields{
+    __typename
+  }
 }
 
 ''';
 
 const String productVariantSubselection = facetValueFragment +
     productOptionGroupFragment +
+    taxCategoryFragment +
     r'''
 
 fragment ProductVariantSubselection on ProductVariant {
@@ -227,10 +235,7 @@ fragment ProductVariantSubselection on ProductVariant {
   priceWithTax
   stockLevel
   taxCategory {
-    id
-    name
-    isDefault
-    customFields
+   ...TaxCategory
   }
   facetValues {
     ...FacetValue
@@ -240,8 +245,23 @@ fragment ProductVariantSubselection on ProductVariant {
     languageCode
     name
   }
-  customFields
-  }
+
+}
+''';
+
+const String taxCategoryFragment = r'''
+fragment TaxCategory on TaxCategory {
+  __typename
+  id
+  createdAt
+  updatedAt
+  name
+  enabled
+  value
+  isDefault
+
+}
+
 ''';
 const String searchResultFragment = r'''
     fragment SearchResult on SearchResult{
@@ -346,7 +366,7 @@ fragment Collection on Collection {
     slug
     description
   }
-  customFields
+
 }
 
 ''';
@@ -393,7 +413,7 @@ fragment ChildCollection on Collection {
     slug
     description
   }
-  customFields
+
 }
 ''';
 
@@ -439,7 +459,7 @@ fragment ParentCollection on Collection {
     slug
     description
   }
-  customFields
+
 }
 ''';
 
@@ -490,6 +510,6 @@ fragment FlexibleCollection on Collection {
     slug
     description
   }
-  customFields
+
 }
 ''';

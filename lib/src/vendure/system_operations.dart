@@ -8,8 +8,8 @@ import '../types/exports.dart';
 
 class SystemOperations {
   final Future<GraphQLClient> Function() _client;
-
-  SystemOperations(this._client);
+  final Map<String, List<String>>? customFieldsConfig;
+  SystemOperations(this._client, {this.customFieldsConfig});
 
   Future<List<Country>> getAvailableCountries() {
     return CustomOperations(_client).queryList<Country>(

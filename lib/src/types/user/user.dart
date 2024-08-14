@@ -18,7 +18,7 @@ class User with _$User {
     required String id,
     required String identifier,
     DateTime? lastLogin,
-    required List<Role> roles,
+    List<Role>? roles,
     required DateTime updatedAt,
     required bool verified,
   }) = _User;

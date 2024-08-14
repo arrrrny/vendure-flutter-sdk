@@ -5,7 +5,7 @@ void main() {
   late Vendure vendure;
   String uid = 'ML6z1FGEoAMc0fRUwNnFc4e6aty2';
   String jwt =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNlMzcxNzMwZWY4NmViYTI5YTUyMTJkOWI5NmYzNjc1NTA0ZjYyYmMiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzU2MzcwOSwiZXhwIjoxNzIzNTY3MzA5LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.oRLrqEfL8EK8UJBBlRxvAKqE893wnSKfd8_XSfalFoxOPOJij_YPuSYqqb5syGqE5je01dB1i4svD6JgkK-LixW574p5SYW3VccqQjNf220WTLkKYKMOjnWTdKDk8GahE7BhTgK9vANdq1EgnZkFfMmWzBK6qqw8Cv-YdnKJkQvNxIUpesI6cvjJzfzahsZ1xfRaO_lupVuMZZJNcPPN_lLi3QQPiPwd3W7S3p5QP9ti6K_IFImrKsoxuFZCh4mxCdWCd4sD9sGvZEZm52xVPlJ2MbeghyMtDRcnIpv2gwXdsDvebB7VQqo2g71qXukby1MnQbzJEdEl5gDUYje9eA';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ0MjY5YTE3MzBlNTA3MTllNmIxNjA2ZTQyYzNhYjMyYjEyODA0NDkiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzYxNDE1MCwiZXhwIjoxNzIzNjE3NzUwLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.TgOy3dhzJK9VlyEI4RbgDHwPocRLllFa7hKwVIhicLKQHIgmQhX1-mwy_cUFOA-PSHhadFlyrZ_QPoUkQpnWEQiYZIffBS-udLYAr4NctEUhG8OXc7hGQvSHmELdUcRKwoxEwX-r191TFwEeJ5zaI5YR-x--Ac1PAcpa0Z37czL2OqouZlx-grd3ibSsOsx62KHdMht5guK_uw2cVCW5qwwFm23PlqSxkvSISPJ5OKw7l0nbf1zoLqJvj6Bm9NhmHzR2bZrfaYTxc-UG88pWl6lS2L4y5l6vbG1imBI3nva2VWCDYB7LroFabYYrcRMJ50cso8V5KcDlfCDGaFGtwg';
   String endpoint = 'http://localhost:3000/shop-api';
   String testOrderCode = 'testOrderCode';
   String testOrderLineId = '246';
@@ -20,14 +20,52 @@ void main() {
     // );
 
     vendure = await Vendure.initializeWithFirebaseAuth(
-      endpoint: endpoint,
-      uid: uid,
-      jwt: jwt,
-      sessionDuration: const Duration(hours: 5),
-    );
+        endpoint: endpoint,
+        uid: uid,
+        jwt: jwt,
+        sessionDuration: const Duration(hours: 5),
+        customFieldsConfig: {
+          'User': ['os'],
+          'Order': ['giftMessage']
+        });
   });
 
   group('Vendure Order', () {
+    test('addItemToOrder', () async {
+      try {
+        var result = await vendure.order
+            .addItemToOrder(productVariantId: "87", quantity: 1);
+        expect(result, isA<UpdateOrderItemsResult>());
+        Order order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
+
+        testOrderCode = order.code;
+        testOrderLineId = order.lines.first.id;
+      } catch (e) {
+        fail('Error adding item to cart: $e');
+      }
+    });
+
+    test('getOrderByCode', () async {
+      try {
+        var result = await vendure.order.getOrderByCode(code: testOrderCode);
+        expect(result, isA<Order>());
+      } catch (e) {
+        fail('Error getting order by code: $e');
+      }
+    });
+
+    test('transitionOrderToState', () async {
+      try {
+        var result =
+            await vendure.order.transitionOrderToState(state: 'Cancelled');
+        expect(result, isA<TransitionOrderToStateResult>());
+        Order order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
+      } catch (e) {
+        fail('Error getting next order states: $e');
+      }
+    });
     test('addItemToOrder', () async {
       try {
         var result = await vendure.order
@@ -276,27 +314,6 @@ void main() {
         fail('Error adding payment to order: $e');
       }
     });
-
-    test('getOrderByCode', () async {
-      try {
-        var result = await vendure.order.getOrderByCode(code: testOrderCode);
-        expect(result, isA<Order>());
-      } catch (e) {
-        fail('Error getting order by code: $e');
-      }
-    });
-
-    test('transitionOrderToState', () async {
-      try {
-        var result =
-            await vendure.order.transitionOrderToState(state: 'Cancelled');
-        expect(result, isA<TransitionOrderToStateResult>());
-        Order order = Order.fromJson(result.toJson());
-        expect(order, isA<Order>());
-      } catch (e) {
-        fail('Error getting next order states: $e');
-      }
-    });
   });
 
   group('Guest checkout', () {
@@ -538,7 +555,7 @@ void main() {
       try {
         CollectionListOptions options = CollectionListOptions(
           filter: CollectionFilterParameter(
-            parentId: IdOperators(eq: '5'),
+            parentId: IdOperators(eq: '2'),
           ),
         );
         var collectionList =

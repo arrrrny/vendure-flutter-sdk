@@ -170,4 +170,199 @@ class VendureUtils {
     checkMap(jsonMap, null);
     return result;
   }
+
+  static String replaceCustomFieldsFragment(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    customFieldsConfig.forEach((typeName, customFields) {
+      String fragmentName = '${typeName.capitalize()}CustomFields';
+      String generatedFragment =
+          generateFragmentWithTypename(typeName, customFields);
+
+      // Replace the placeholder fragment in the query template
+      queryTemplate = queryTemplate.replaceAll(
+          'fragment $fragmentName on $typeName {\n  __typename\n}',
+          generatedFragment);
+    });
+
+    return queryTemplate;
+  }
+
+  static String generateFragmentWithTypename(
+      String typeName, List<String> customFields) {
+    StringBuffer fragmentBuffer = StringBuffer();
+
+    // Start the fragment and customFields block
+    fragmentBuffer.writeln(
+        'fragment ${typeName.capitalize()}CustomFields on ${typeName.capitalize()} {');
+    fragmentBuffer.writeln('  customFields {');
+    fragmentBuffer.writeln('    __typename');
+
+    // Add each custom field
+    for (var field in customFields) {
+      fragmentBuffer.writeln('    $field');
+    }
+
+    // Close the customFields block and the fragment
+    fragmentBuffer.writeln('  }');
+    fragmentBuffer.writeln('}');
+
+    return fragmentBuffer.toString();
+  }
+
+  static String generateQueryWithCustomFields(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    // Step 1: Remove fragment spreads and definitions for types not in the config
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isEmpty) {
+        // Remove fragment spreads like `...AddressCustomFields`
+        queryTemplate = queryTemplate.replaceAll(
+            RegExp(r'\.\.\.' + typeName.capitalize() + r'CustomFields\s*',
+                multiLine: true),
+            '');
+
+        // Remove the fragment definition like `fragment AddressCustomFields on Address {...}`
+        queryTemplate = queryTemplate.replaceAll(
+            RegExp(
+                r'fragment\s+' +
+                    typeName.capitalize() +
+                    r'CustomFields\s+on\s+' +
+                    typeName.capitalize() +
+                    r'\s*\{[^}]*\}',
+                multiLine: true),
+            '');
+      }
+    });
+
+    // Step 2: Replace or add fragments for types with custom fields
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isNotEmpty) {
+        String generatedFragment =
+            generateFragmentWithTypename(typeName, customFields);
+
+        // Replace the placeholder fragment with the generated fragment
+        queryTemplate = queryTemplate.replaceAllMapped(
+            RegExp(
+                r'fragment\s+' +
+                    typeName.capitalize() +
+                    r'CustomFields\s+on\s+' +
+                    typeName.capitalize() +
+                    r'\s*\{[^}]*\}',
+                multiLine: true),
+            (match) => generatedFragment);
+      }
+    });
+
+    // Step 3: Clean up extra newlines and whitespace
+    queryTemplate = queryTemplate
+        .replaceAll(RegExp(r'\n\s*\n', multiLine: true), '\n')
+        .trim();
+
+    return queryTemplate;
+  }
+
+  static String cleanUpCustomFields(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    // Step 1: Remove all fragment definitions and spreads by default
+    queryTemplate = queryTemplate.replaceAll(
+        RegExp(r'fragment\s+\w+CustomFields\s+on\s+\w+\s*\{[^}]*\}',
+            multiLine: true),
+        '');
+
+    queryTemplate = queryTemplate.replaceAll(
+        RegExp(r'\.\.\.\w+CustomFields\s*', multiLine: true), '');
+
+    // Step 2: Re-add only those custom field fragments and spreads that are defined in the config
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isNotEmpty) {
+        String generatedFragment =
+            generateFragmentWithTypename(typeName, customFields);
+
+        // Append the generated fragment to the end of the query
+        queryTemplate += '\n\n' + generatedFragment;
+
+        // Add the spread back into the query by matching the specific type
+        queryTemplate = queryTemplate.replaceAllMapped(
+            RegExp(r'(\b' + typeName + r'\b)(\s*\{)', multiLine: true),
+            (match) =>
+                match.group(1)! +
+                match.group(2)! +
+                '\n  ...' +
+                typeName.capitalize() +
+                'CustomFields');
+      }
+    });
+
+    // Step 3: Clean up any leftover blank lines or stray characters
+    queryTemplate = queryTemplate
+        .replaceAll(RegExp(r'\n\s*\n', multiLine: true), '\n')
+        .trim();
+
+    return queryTemplate;
+  }
+
+  static String sanitizeGraphQLQuery(
+      String query, Map<String, List<String>> customFieldsConfig) {
+    // Prepare a single regex to match all relevant fragments
+    final entityNames = customFieldsConfig.keys.join('|');
+    final regex = RegExp(
+        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\s*{([\s\S]*?)\n}',
+        multiLine: true);
+
+    // Use a StringBuffer for efficient string building
+    final buffer = StringBuffer();
+    var lastIndex = 0;
+
+    for (final match in regex.allMatches(query)) {
+      final fragmentName = match.group(1)!;
+      final entityName = match.group(2)!;
+      final fragmentContent = match.group(3)!;
+
+      buffer.write(query.substring(lastIndex, match.start));
+
+      if (customFieldsConfig[entityName]!.isNotEmpty &&
+          !fragmentContent.contains('customFields {')) {
+        final customFieldsFragment = '''
+  customFields {
+    ${customFieldsConfig[entityName]!.join('\n    ')}
+  }''';
+        buffer.write(
+            'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment\n}');
+      } else {
+        buffer.write(match.group(0));
+      }
+
+      lastIndex = match.end;
+    }
+
+    buffer.write(query.substring(lastIndex));
+    return buffer.toString();
+  }
+
+  static String sanitizeGraphQLQuery2(
+      String query, Map<String, List<String>> customFieldsConfig) {
+    customFieldsConfig.forEach((entity, fields) {
+      if (query.contains('fragment $entity')) {
+        final customFieldsFragment = StringBuffer('customFields {\n');
+        for (final field in fields) {
+          customFieldsFragment.writeln('  $field');
+        }
+        customFieldsFragment.writeln('}');
+
+        // Regex to find the end of the entity fragment and append the custom fields
+        final regex = RegExp(r'fragment\s+$entity\s+on\s+\w+\s+{([\s\S]*?)\n}');
+        query = query.replaceAllMapped(regex, (match) {
+          final fragmentContent = match.group(1);
+          return 'fragment $entity on ${match.group(0)}\n$fragmentContent${customFieldsFragment.toString()}\n}';
+        });
+      }
+    });
+
+    return query;
+  }
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return isNotEmpty ? '${this[0].toUpperCase()}${substring(1)}' : '';
+  }
 }

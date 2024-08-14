@@ -12,11 +12,14 @@ import '../types/exports.dart';
 
 class CustomerOperations {
   final Future<GraphQLClient> Function() _client;
-
-  CustomerOperations(this._client);
+  final Map<String, List<String>>? customFieldsConfig;
+  CustomerOperations(this._client, {this.customFieldsConfig});
 
   Future<Customer?> getActiveCustomer() {
-    return CustomOperations(_client).query<Customer?>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Customer?>(
       getActiveCustomerQuery,
       {},
       Customer.fromJson,
@@ -25,7 +28,10 @@ class CustomerOperations {
   }
 
   Future<CurrentUser?> getCurrentUser() {
-    return CustomOperations(_client).query<CurrentUser?>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<CurrentUser?>(
       getCurrentUserQuery,
       {},
       CurrentUser.fromJson,
@@ -34,7 +40,10 @@ class CustomerOperations {
   }
 
   Future<Channel> getActiveChannel() {
-    return CustomOperations(_client).query<Channel>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Channel>(
       getActiveChannelQuery,
       {},
       Channel.fromJson,
@@ -43,7 +52,10 @@ class CustomerOperations {
   }
 
   Future<Customer> updateCustomer({required UpdateCustomerInput input}) {
-    return CustomOperations(_client).mutate<Customer>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<Customer>(
       updateCustomerMutation,
       {'input': input.toJson()},
       Customer.fromJson,
@@ -52,7 +64,10 @@ class CustomerOperations {
   }
 
   Future<Address> createCustomerAddress({required CreateAddressInput input}) {
-    return CustomOperations(_client).mutate<Address>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<Address>(
       createCustomerAddressMutation,
       {'input': input.toJson()},
       Address.fromJson,
@@ -61,7 +76,10 @@ class CustomerOperations {
   }
 
   Future<Address> updateCustomerAddress({required UpdateAddressInput input}) {
-    return CustomOperations(_client).mutate<Address>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<Address>(
       updateCustomerAddressMutation,
       {'input': input.toJson()},
       Address.fromJson,
@@ -70,7 +88,10 @@ class CustomerOperations {
   }
 
   Future<Success> deleteCustomerAddress({required String id}) {
-    return CustomOperations(_client).mutate<Success>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<Success>(
       deleteCustomerAddressMutation,
       {'id': id},
       Success.fromJson,

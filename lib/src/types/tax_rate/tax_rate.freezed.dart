@@ -31,8 +31,12 @@ mixin _$TaxRate {
   double get value => throw _privateConstructorUsedError;
   Zone get zone => throw _privateConstructorUsedError;
 
+  /// Serializes this TaxRate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TaxRateCopyWith<TaxRate> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -68,6 +72,8 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,6 +132,8 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
     ) as $Val);
   }
 
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TaxCategoryCopyWith<$Res> get category {
@@ -134,6 +142,8 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
     });
   }
 
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerGroupCopyWith<$Res>? get customerGroup {
@@ -146,6 +156,8 @@ class _$TaxRateCopyWithImpl<$Res, $Val extends TaxRate>
     });
   }
 
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ZoneCopyWith<$Res> get zone {
@@ -190,6 +202,8 @@ class __$$TaxRateImplCopyWithImpl<$Res>
       _$TaxRateImpl _value, $Res Function(_$TaxRateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -342,7 +356,7 @@ class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
             (identical(other.zone, zone) || other.zone == zone));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -357,7 +371,9 @@ class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
       value,
       zone);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TaxRateImplCopyWith<_$TaxRateImpl> get copyWith =>
@@ -407,8 +423,11 @@ abstract class _TaxRate extends TaxRate {
   double get value;
   @override
   Zone get zone;
+
+  /// Create a copy of TaxRate
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TaxRateImplCopyWith<_$TaxRateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
