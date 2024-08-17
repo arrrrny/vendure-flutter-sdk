@@ -23,8 +23,12 @@ mixin _$FacetValueList {
   List<FacetValue> get items => throw _privateConstructorUsedError;
   int get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetValueList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetValueList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetValueListCopyWith<FacetValueList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$FacetValueListCopyWithImpl<$Res, $Val extends FacetValueList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetValueList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$FacetValueListImplCopyWithImpl<$Res>
       _$FacetValueListImpl _value, $Res Function(_$FacetValueListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetValueList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,12 +160,14 @@ class _$FacetValueListImpl extends _FacetValueList
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetValueList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetValueListImplCopyWith<_$FacetValueListImpl> get copyWith =>
@@ -185,8 +195,11 @@ abstract class _FacetValueList extends FacetValueList {
   List<FacetValue> get items;
   @override
   int get totalItems;
+
+  /// Create a copy of FacetValueList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetValueListImplCopyWith<_$FacetValueListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

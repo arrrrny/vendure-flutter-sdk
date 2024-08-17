@@ -30,9 +30,14 @@ mixin _$FacetValue {
   List<FacetValueTranslation> get translations =>
       throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
+  Facet? get facet => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetValue to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetValueCopyWith<FacetValue> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,7 +57,10 @@ abstract class $FacetValueCopyWith<$Res> {
       LanguageCode languageCode,
       String name,
       List<FacetValueTranslation> translations,
-      DateTime updatedAt});
+      DateTime updatedAt,
+      Facet? facet});
+
+  $FacetCopyWith<$Res>? get facet;
 }
 
 /// @nodoc
@@ -65,6 +73,8 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -77,6 +87,7 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
     Object? name = null,
     Object? translations = null,
     Object? updatedAt = null,
+    Object? facet = freezed,
   }) {
     return _then(_value.copyWith(
       code: null == code
@@ -115,7 +126,25 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      facet: freezed == facet
+          ? _value.facet
+          : facet // ignore: cast_nullable_to_non_nullable
+              as Facet?,
     ) as $Val);
+  }
+
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FacetCopyWith<$Res>? get facet {
+    if (_value.facet == null) {
+      return null;
+    }
+
+    return $FacetCopyWith<$Res>(_value.facet!, (value) {
+      return _then(_value.copyWith(facet: value) as $Val);
+    });
   }
 }
 
@@ -136,7 +165,11 @@ abstract class _$$FacetValueImplCopyWith<$Res>
       LanguageCode languageCode,
       String name,
       List<FacetValueTranslation> translations,
-      DateTime updatedAt});
+      DateTime updatedAt,
+      Facet? facet});
+
+  @override
+  $FacetCopyWith<$Res>? get facet;
 }
 
 /// @nodoc
@@ -147,6 +180,8 @@ class __$$FacetValueImplCopyWithImpl<$Res>
       _$FacetValueImpl _value, $Res Function(_$FacetValueImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -159,6 +194,7 @@ class __$$FacetValueImplCopyWithImpl<$Res>
     Object? name = null,
     Object? translations = null,
     Object? updatedAt = null,
+    Object? facet = freezed,
   }) {
     return _then(_$FacetValueImpl(
       code: null == code
@@ -197,6 +233,10 @@ class __$$FacetValueImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      facet: freezed == facet
+          ? _value.facet
+          : facet // ignore: cast_nullable_to_non_nullable
+              as Facet?,
     ));
   }
 }
@@ -213,7 +253,8 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       required this.languageCode,
       required this.name,
       required final List<FacetValueTranslation> translations,
-      required this.updatedAt})
+      required this.updatedAt,
+      this.facet})
       : _customFields = customFields,
         _translations = translations,
         super._();
@@ -253,10 +294,12 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
 
   @override
   final DateTime updatedAt;
+  @override
+  final Facet? facet;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FacetValue(code: $code, createdAt: $createdAt, customFields: $customFields, facetId: $facetId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt)';
+    return 'FacetValue(code: $code, createdAt: $createdAt, customFields: $customFields, facetId: $facetId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt, facet: $facet)';
   }
 
   @override
@@ -272,7 +315,8 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('languageCode', languageCode))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
+      ..add(DiagnosticsProperty('updatedAt', updatedAt))
+      ..add(DiagnosticsProperty('facet', facet));
   }
 
   @override
@@ -293,10 +337,11 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
             const DeepCollectionEquality()
                 .equals(other._translations, _translations) &&
             (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.updatedAt == updatedAt) &&
+            (identical(other.facet, facet) || other.facet == facet));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -308,9 +353,12 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       languageCode,
       name,
       const DeepCollectionEquality().hash(_translations),
-      updatedAt);
+      updatedAt,
+      facet);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetValueImplCopyWith<_$FacetValueImpl> get copyWith =>
@@ -334,7 +382,8 @@ abstract class _FacetValue extends FacetValue {
       required final LanguageCode languageCode,
       required final String name,
       required final List<FacetValueTranslation> translations,
-      required final DateTime updatedAt}) = _$FacetValueImpl;
+      required final DateTime updatedAt,
+      final Facet? facet}) = _$FacetValueImpl;
   const _FacetValue._() : super._();
 
   factory _FacetValue.fromJson(Map<String, dynamic> json) =
@@ -359,7 +408,12 @@ abstract class _FacetValue extends FacetValue {
   @override
   DateTime get updatedAt;
   @override
-  @JsonKey(ignore: true)
+  Facet? get facet;
+
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetValueImplCopyWith<_$FacetValueImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

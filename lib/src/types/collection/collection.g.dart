@@ -14,6 +14,9 @@ _$CollectionImpl _$$CollectionImplFromJson(Map json) => _$CollectionImpl(
           .map((e) => CollectionBreadcrumb.fromJson(
               Map<String, dynamic>.from(e as Map)))
           .toList(),
+      children: (json['children'] as List<dynamic>?)
+          ?.map((e) => Collection.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
       createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
@@ -31,8 +34,16 @@ _$CollectionImpl _$$CollectionImplFromJson(Map json) => _$CollectionImpl(
       languageCode:
           $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
-      parentId: json['parentId'] as String,
+      parent: json['parent'] == null
+          ? null
+          : Collection.fromJson(
+              Map<String, dynamic>.from(json['parent'] as Map)),
+      parentId: json['parentId'] as String?,
       position: (json['position'] as num).toInt(),
+      productVariants: json['productVariants'] == null
+          ? null
+          : ProductVariantList.fromJson(
+              Map<String, dynamic>.from(json['productVariants'] as Map)),
       slug: json['slug'] as String,
       translations: (json['translations'] as List<dynamic>)
           .map((e) => CollectionTranslation.fromJson(
@@ -45,7 +56,6 @@ Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) {
   final val = <String, dynamic>{
     'assets': instance.assets.map((e) => e.toJson()).toList(),
     'breadcrumbs': instance.breadcrumbs.map((e) => e.toJson()).toList(),
-    'createdAt': instance.createdAt.toIso8601String(),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -54,6 +64,8 @@ Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) {
     }
   }
 
+  writeNotNull('children', instance.children?.map((e) => e.toJson()).toList());
+  val['createdAt'] = instance.createdAt.toIso8601String();
   writeNotNull('customFields', instance.customFields);
   val['description'] = instance.description;
   writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
@@ -61,8 +73,10 @@ Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) {
   val['id'] = instance.id;
   writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
   val['name'] = instance.name;
-  val['parentId'] = instance.parentId;
+  writeNotNull('parent', instance.parent?.toJson());
+  writeNotNull('parentId', instance.parentId);
   val['position'] = instance.position;
+  writeNotNull('productVariants', instance.productVariants?.toJson());
   val['slug'] = instance.slug;
   val['translations'] = instance.translations.map((e) => e.toJson()).toList();
   val['updatedAt'] = instance.updatedAt.toIso8601String();

@@ -1,3 +1,10 @@
+## 1.2.0
+- Added `getCollectionsWithParentChildren` method
+- Added `getCollectionWithChildren` method
+- Added `getCollectionWithParent` method
+- Added `getCollectionWithParentChildren` method
+- Updated FacetValue to includ Facet
+
 ## 1.1.0
 - Added support for customfields. define customfieldsConfig on initialize
 

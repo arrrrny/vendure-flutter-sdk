@@ -21,6 +21,9 @@ _$FacetValueImpl _$$FacetValueImplFromJson(Map json) => _$FacetValueImpl(
               Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
+      facet: json['facet'] == null
+          ? null
+          : Facet.fromJson(Map<String, dynamic>.from(json['facet'] as Map)),
     );
 
 Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) {
@@ -42,6 +45,7 @@ Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) {
   val['name'] = instance.name;
   val['translations'] = instance.translations.map((e) => e.toJson()).toList();
   val['updatedAt'] = instance.updatedAt.toIso8601String();
+  writeNotNull('facet', instance.facet?.toJson());
   return val;
 }
 

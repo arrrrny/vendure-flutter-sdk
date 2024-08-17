@@ -394,25 +394,77 @@ Future<void> getCollectionBySlug(String slug) async {
 }
 ```
 
-### Get Collection With Parent and Children
+### Get Collections With Parent and Children
 
 ```dart
-Future<void> getCollectionsWithParentChildren(String slug) async {
+Future<void> getCollectionsWithParentChildren() async {
   try {
-    CollectionListOptions options = CollectionListOptions(
+        CollectionListOptions options = CollectionListOptions(
+          topLevelOnly: false,
           filter: CollectionFilterParameter(
-            parentId: IdOperators(eq: '5'),
+            parentId: IdOperators(eq: '2'),
           ),
         );
 
-    var result = await vendure.catalog
-        .getCollectionsWithParentChildren(options: options);
+        var result = await vendure.catalog
+            .getCollectionListWithParentChildren(options: options);
     for (var collection in result.items) {
-      expect(collection, isA<CollectionWithParentChildCollection>());
+        print('Collection: ${result.toJson()}');
       if (collection.children.isNotEmpty) {
         print(collection.children.first.slug);
       }
     }
+
+  } catch (e) {
+    print('Error getting collection: $e');
+  }
+}
+```
+
+### Get Collection With Parent and Children
+
+```dart
+Future<void> getCollectionWithParentChildren(String id) async {
+  try {
+    
+    var result = await vendure.catalog
+            .getCollectionWithParentChildren(id:id);
+    for (var collection in result.items) {
+        print('Collection: ${result.toJson()}');
+      if (collection.children.isNotEmpty) {
+        print(collection.children.first.slug);
+      }
+    }
+
+  } catch (e) {
+    print('Error getting collection: $e');
+  }
+}
+```
+
+### Get Collection With Parent
+
+```dart
+Future<void> getCollectionWithParent(String id) async {
+  try {
+    
+    var result = await vendure.catalog
+            .getCollectionWithParent(id:id);
+
+  } catch (e) {
+    print('Error getting collection: $e');
+  }
+}
+```
+
+### Get Collection With Children
+
+```dart
+Future<void> getCollectionWithChildren(String id) async {
+  try {
+    
+    var result = await vendure.catalog
+            .getCollectionWithChildren(id:id);
 
   } catch (e) {
     print('Error getting collection: $e');
