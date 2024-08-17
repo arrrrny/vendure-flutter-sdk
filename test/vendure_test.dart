@@ -5,7 +5,7 @@ void main() {
   late Vendure vendure;
   String uid = 'ML6z1FGEoAMc0fRUwNnFc4e6aty2';
   String jwt =
-      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ0MjY5YTE3MzBlNTA3MTllNmIxNjA2ZTQyYzNhYjMyYjEyODA0NDkiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzYxNDE1MCwiZXhwIjoxNzIzNjE3NzUwLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.TgOy3dhzJK9VlyEI4RbgDHwPocRLllFa7hKwVIhicLKQHIgmQhX1-mwy_cUFOA-PSHhadFlyrZ_QPoUkQpnWEQiYZIffBS-udLYAr4NctEUhG8OXc7hGQvSHmELdUcRKwoxEwX-r191TFwEeJ5zaI5YR-x--Ac1PAcpa0Z37czL2OqouZlx-grd3ibSsOsx62KHdMht5guK_uw2cVCW5qwwFm23PlqSxkvSISPJ5OKw7l0nbf1zoLqJvj6Bm9NhmHzR2bZrfaYTxc-UG88pWl6lS2L4y5l6vbG1imBI3nva2VWCDYB7LroFabYYrcRMJ50cso8V5KcDlfCDGaFGtwg';
+      'eyJhbGciOiJSUzI1NiIsImtpZCI6ImQ0MjY5YTE3MzBlNTA3MTllNmIxNjA2ZTQyYzNhYjMyYjEyODA0NDkiLCJ0eXAiOiJKV1QifQ.eyJwcm92aWRlcl9pZCI6ImFub255bW91cyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS96aWt6YWt6aWt6YWt3dGYiLCJhdWQiOiJ6aWt6YWt6aWt6YWt3dGYiLCJhdXRoX3RpbWUiOjE3MjM0Mzg5MTMsInVzZXJfaWQiOiJNTDZ6MUZHRW9BTWMwZlJVd05uRmM0ZTZhdHkyIiwic3ViIjoiTUw2ejFGR0VvQU1jMGZSVXdObkZjNGU2YXR5MiIsImlhdCI6MTcyMzg5MjYxOSwiZXhwIjoxNzIzODk2MjE5LCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7fSwic2lnbl9pbl9wcm92aWRlciI6ImFub255bW91cyJ9fQ.ksVr9oPhqqWJGS67eyTApTp9yucSOMqdDk8ruhckoUS-9mUqgq0fsvBA-J3Kc0fqEC5-3FF-NBL6QUg3XJkJUIZhthjRbHx3sdetLp8mHTUxrGWdY1OcTHy7ISdW2SCDM8KY6syQdmO57dtRRcvmtLMO9atXP7rfC23fS4z5UUlRcxVu-6w72GasxY0i7KwOzV3WKTvODtEZGhVdcud_lXuFxUREzvC6pJD-g78RtFD7B-aNilnN64psZWWwOK8ZPn5khaar6QD7gcrj7--P8yRS-3HG7PhJ_aS8p4SsC3TnxZGobDxBOKuDq_IZYU7JxJ_O2xZlf3C3nxVIZucdtg';
   String endpoint = 'http://localhost:3000/shop-api';
   String testOrderCode = 'testOrderCode';
   String testOrderLineId = '246';
@@ -223,6 +223,8 @@ void main() {
         var result = await vendure.order.setOrderShippingMethod(
             shippingMethodId: shippingMethodId, additionalMethodIds: []);
         expect(result, isA<SetOrderShippingMethodResult>());
+        Order order = Order.fromJson(result.toJson());
+        expect(order, isA<Order>());
       } catch (e) {
         fail('Error setting order shipping method: $e');
       }
@@ -262,9 +264,6 @@ void main() {
       try {
         var result = await vendure.order.removeCouponCode(couponCode: 'accbc');
         expect(result, isA<Order>());
-
-        Order order = Order.fromJson(result.toJson());
-        expect(order, isA<Order>());
       } catch (e) {
         fail('Error removing coupon code: $e');
       }
@@ -520,8 +519,6 @@ void main() {
         expect(collectionList, isA<CollectionList>());
         for (var collection in collectionList.items) {
           expect(collection, isA<Collection>());
-          // print(collection.name);
-          // print(collection.id);
         }
       } catch (e) {
         fail('Error getting collections: $e');
@@ -532,18 +529,17 @@ void main() {
       try {
         CollectionListOptions options = CollectionListOptions(
           topLevelOnly: false,
-          // filter: CollectionFilterParameter(
-          //   parentId: IdOperators(eq: '5'),
-          // ),
+          filter: CollectionFilterParameter(
+            parentId: IdOperators(eq: '1'),
+          ),
         );
 
         var result = await vendure.catalog
-            .getCollectionsWithParentChildren(options: options);
-        expect(result, isA<CollectionListWithParentChildren>());
-        for (var collection in result.items) {
-          expect(collection, isA<CollectionWithParentChildren>());
-          if (collection.children.isNotEmpty) {
-            print(collection.children.first.slug);
+            .getCollectionListWithParentChildren(options: options);
+        expect(result, isA<CollectionList>());
+        if (result.items.isNotEmpty) {
+          for (var collection in result.items) {
+            expect(collection, isA<Collection>());
           }
         }
       } catch (e) {
@@ -560,11 +556,9 @@ void main() {
         );
         var collectionList =
             await vendure.catalog.getCollections(options: options);
-        // expect(collectionList, isA<CollectionList>());
+        expect(collectionList, isA<CollectionList>());
         for (var collection in collectionList.items) {
           expect(collection, isA<Collection>());
-          // print(collection.name);
-          // print(collection.id);
         }
       } catch (e) {
         fail('Error getting collections: $e');
@@ -575,6 +569,41 @@ void main() {
       try {
         var collection = await vendure.catalog.getCollectionById(id: '2');
         expect(collection, isA<Collection>());
+      } catch (e) {
+        fail('Error getting collection: $e');
+      }
+    });
+
+    test('getCollectionWithParentChildren', () async {
+      try {
+        var collection =
+            await vendure.catalog.getCollectionWithParentChildren(id: '5');
+        expect(collection, isA<Collection>());
+        expect(collection.parent, isA<Collection>());
+        expect(collection.children, isA<List<Collection>>());
+        expect(collection, isA<Collection>());
+      } catch (e) {
+        fail('Error getting collection: $e');
+      }
+    });
+
+    test('getCollectionWithParent', () async {
+      try {
+        var collection = await vendure.catalog.getCollectionWithParent(id: '7');
+
+        expect(collection, isA<Collection>());
+        expect(collection.parent, isA<Collection>());
+      } catch (e) {
+        fail('Error getting collection: $e');
+      }
+    });
+
+    test('getCollectionWithChildren', () async {
+      try {
+        var collection =
+            await vendure.catalog.getCollectionWithChildren(id: '5');
+        expect(collection, isA<Collection>());
+        expect(collection.children, isA<List<Collection>>());
       } catch (e) {
         fail('Error getting collection: $e');
       }
@@ -599,8 +628,6 @@ void main() {
         expect(products, isA<ProductList>());
         for (var product in products.items) {
           expect(product, isA<Product>());
-          // print(product.name);
-          // print(product.id);
         }
       } catch (e) {
         fail('Error getting products: $e');
@@ -611,9 +638,6 @@ void main() {
       try {
         var product = await vendure.catalog.getProductById(id: "47");
         expect(product, isA<Product>());
-        // print(product.name);
-        // print(product.slug);
-        // print(product.id);
       } catch (e) {
         fail('Error getting product: $e');
       }
@@ -623,9 +647,6 @@ void main() {
       try {
         var product = await vendure.catalog.getProductBySlug(slug: 'laptop');
         expect(product, isA<Product>());
-        // print(product.name);
-        // print(product.slug);
-        // print(product.id);
       } catch (e) {
         fail('Error getting product: $e');
       }
@@ -641,11 +662,6 @@ void main() {
         expect(searchResponse, isA<SearchResponse>());
         for (var searchResult in searchResponse.items) {
           expect(searchResult, isA<SearchResult>());
-          // print(searchResult.productName);
-
-          // print(searchResult.price.toJson());
-          // print(searchResult.productId);
-          // print(product.id);
         }
       } catch (e) {
         fail('Error searching catalog: $e');
@@ -670,11 +686,9 @@ void main() {
         );
         var facets = await vendure.system.getFacets(options: options);
         expect(facets, isA<FacetList>());
-        // for (var facet in facets.items) {
-        //   expect(facet, isA<Facet>());
-        //   print(facet.name);
-        //   print(facet.id);
-        // }
+        for (var facet in facets.items) {
+          expect(facet, isA<Facet>());
+        }
       } catch (e) {
         fail('Error getting facets: $e');
       }
@@ -684,8 +698,6 @@ void main() {
       try {
         var facet = await vendure.system.getFacet(id: '1');
         expect(facet, isA<Facet>());
-        // print(facet.name);
-        // print(facet.id);
       } catch (e) {
         fail('Error getting facet: $e');
       }

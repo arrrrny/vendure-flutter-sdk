@@ -23,8 +23,12 @@ mixin _$FacetValueResult {
   int get count => throw _privateConstructorUsedError;
   FacetValue get facetValue => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetValueResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetValueResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetValueResultCopyWith<FacetValueResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$FacetValueResultCopyWithImpl<$Res, $Val extends FacetValueResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetValueResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -68,6 +74,8 @@ class _$FacetValueResultCopyWithImpl<$Res, $Val extends FacetValueResult>
     ) as $Val);
   }
 
+  /// Create a copy of FacetValueResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FacetValueCopyWith<$Res> get facetValue {
@@ -99,6 +107,8 @@ class __$$FacetValueResultImplCopyWithImpl<$Res>
       $Res Function(_$FacetValueResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetValueResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -157,11 +167,13 @@ class _$FacetValueResultImpl extends _FacetValueResult
                 other.facetValue == facetValue));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, count, facetValue);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetValueResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetValueResultImplCopyWith<_$FacetValueResultImpl> get copyWith =>
@@ -189,8 +201,11 @@ abstract class _FacetValueResult extends FacetValueResult {
   int get count;
   @override
   FacetValue get facetValue;
+
+  /// Create a copy of FacetValueResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetValueResultImplCopyWith<_$FacetValueResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

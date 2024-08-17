@@ -256,8 +256,6 @@ fragment TaxCategory on TaxCategory {
   createdAt
   updatedAt
   name
-  enabled
-  value
   isDefault
 
 }
@@ -340,16 +338,9 @@ fragment Collection on Collection {
   assets {
     ...Asset
   }
-  parent {
-    id
-    name
-  }
+  
   parentId
-  children {
-    id
-    name
-    slug
-  }
+  
   filters {
     code
     args{
@@ -512,4 +503,207 @@ fragment FlexibleCollection on Collection {
   }
 
 }
+''';
+
+const String collectionWithoutParentIdFragment = assetFragment +
+    r'''
+fragment CollectionWithoutParentId on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+  
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+
+}
+
+''';
+
+const String collectionWithParentChildrenFragment =
+    collectionWithoutParentIdFragment +
+        r'''
+fragment CollectionWithParentChildren on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+
+  parent{
+    ...CollectionWithoutParentId
+  }
+
+  children{
+    ...CollectionWithoutParentId
+  }
+  
+  parentId
+  
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+
+}
+
+''';
+
+const String collectionWithChildrenFragment =
+    collectionWithoutParentIdFragment +
+        r'''
+fragment CollectionWithChildren on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+
+  children{
+    ...CollectionWithoutParentId
+  }
+  
+  parentId
+  
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+
+}
+
+''';
+
+const String collectionWithParentFragment = collectionWithoutParentIdFragment +
+    r'''
+fragment CollectionWithParent on Collection {
+  __typename
+  id
+  createdAt
+  updatedAt
+  languageCode
+  name
+  slug
+  breadcrumbs {
+    id
+    name
+    slug
+  }
+  position
+  description
+  featuredAsset {
+    ...Asset
+  }
+  assets {
+    ...Asset
+  }
+
+  parent{
+    ...CollectionWithoutParentId
+  }
+  parentId
+  
+  filters {
+    code
+    args{
+      name
+      value
+    }
+  }
+  translations {
+    createdAt
+    updatedAt
+    id
+    languageCode
+    name
+    slug
+    description
+  }
+
+}
+
 ''';

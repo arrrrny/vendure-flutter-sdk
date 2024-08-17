@@ -41,3 +41,44 @@ const String getCollectionsFlexibleQuery = flexibleCollectionFragment +
       }
     }
 ''';
+
+const String getCollectionListWithParentChildrenQuery =
+    collectionWithParentChildrenFragment +
+        r'''
+    query GetCollections($options: CollectionListOptions) {
+      collections(options:$options) {
+        items{
+            ...CollectionWithParentChildren
+        }
+        totalItems
+      }
+    }
+''';
+
+const String getCollectionWithParentChildrenQuery =
+    collectionWithParentChildrenFragment +
+        r'''
+    query GetCollectionById($id: ID!) {
+      collection(id: $id) {
+        ...CollectionWithParentChildren
+      }
+    }
+    ''';
+
+const String getCollectionWithChildrenQuery = collectionWithChildrenFragment +
+    r'''
+    query GetCollectionById($id: ID!) {
+      collection(id: $id) {
+        ...CollectionWithChildren
+      }
+    }
+    ''';
+
+const String getCollectionWithParentQuery = collectionWithParentFragment +
+    r'''
+    query GetCollectionById($id: ID!) {
+      collection(id: $id) {
+        ...CollectionWithParent
+      }
+    }
+    ''';

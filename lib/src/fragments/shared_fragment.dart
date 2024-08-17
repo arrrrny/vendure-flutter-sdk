@@ -192,9 +192,12 @@ fragment FacetValue on FacetValue {
   updatedAt
   languageCode
   facet{
-   id
-   code
-   name
+    id
+    createdAt
+    updatedAt
+    languageCode
+    code
+    name
   }
   facetId
   name

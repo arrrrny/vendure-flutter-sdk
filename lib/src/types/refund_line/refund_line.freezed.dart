@@ -24,8 +24,12 @@ mixin _$RefundLine {
   int get quantity => throw _privateConstructorUsedError;
   String get refundId => throw _privateConstructorUsedError;
 
+  /// Serializes this RefundLine to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RefundLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RefundLineCopyWith<RefundLine> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$RefundLineCopyWithImpl<$Res, $Val extends RefundLine>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RefundLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$RefundLineImplCopyWithImpl<$Res>
       _$RefundLineImpl _value, $Res Function(_$RefundLineImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RefundLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,11 +171,13 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
                 other.refundId == refundId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, orderLineId, quantity, refundId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RefundLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RefundLineImplCopyWith<_$RefundLineImpl> get copyWith =>
@@ -197,8 +207,11 @@ abstract class _RefundLine extends RefundLine {
   int get quantity;
   @override
   String get refundId;
+
+  /// Create a copy of RefundLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RefundLineImplCopyWith<_$RefundLineImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

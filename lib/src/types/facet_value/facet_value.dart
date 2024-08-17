@@ -21,6 +21,7 @@ class FacetValue with _$FacetValue {
     required String name,
     required List<FacetValueTranslation> translations,
     required DateTime updatedAt,
+    Facet? facet,
   }) = _FacetValue;
 
   factory FacetValue.fromJson(Map<String, dynamic> json) =>

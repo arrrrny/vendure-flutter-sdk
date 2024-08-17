@@ -6,7 +6,6 @@ import 'package:vendure/src/queries/get_products_query.dart';
 import 'package:vendure/src/queries/search_catalog_query.dart';
 import 'package:vendure/src/types/exports.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
-import 'package:vendure/src/input_types/exports.dart' as flexible;
 
 class CatalogOperations {
   final Future<GraphQLClient> Function() _client;
@@ -77,21 +76,41 @@ class CatalogOperations {
     );
   }
 
-  Future<CollectionListWithParentChildren> getCollectionsWithParentChildren(
+  Future<Collection> getCollectionWithParentChildren(
+      {required String id}) async {
+    return CustomOperations(_client).query<Collection>(
+      getCollectionWithParentChildrenQuery,
+      {'id': id},
+      Collection.fromJson,
+      expectedDataType: 'collection',
+    );
+  }
+
+  Future<Collection> getCollectionWithParent({required String id}) async {
+    return CustomOperations(_client).query<Collection>(
+      getCollectionWithParentQuery,
+      {'id': id},
+      Collection.fromJson,
+      expectedDataType: 'collection',
+    );
+  }
+
+  Future<Collection> getCollectionWithChildren({required String id}) async {
+    return CustomOperations(_client).query<Collection>(
+      getCollectionWithChildrenQuery,
+      {'id': id},
+      Collection.fromJson,
+      expectedDataType: 'collection',
+    );
+  }
+
+  Future<CollectionList> getCollectionListWithParentChildren(
       {CollectionListOptions? options}) async {
-    var result = await CustomOperations(_client).query<flexible.CollectionList>(
-      getCollectionsFlexibleQuery,
+    return CustomOperations(_client).query<CollectionList>(
+      getCollectionListWithParentChildrenQuery,
       {"options": options?.toJson()},
-      flexible.CollectionList.fromJson,
+      CollectionList.fromJson,
       expectedDataType: 'collections',
     );
-
-    List<CollectionWithParentChildren> collections = [];
-    for (var collection in result.items!) {
-      collections
-          .add(CollectionWithParentChildren.fromJson(collection!.toJson()));
-    }
-    return CollectionListWithParentChildren(
-        items: collections, totalItems: result.totalItems!);
   }
 }

@@ -15,15 +15,17 @@ _$FacetImpl _$$FacetImplFromJson(Map json) => _$FacetImpl(
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
-      translations: (json['translations'] as List<dynamic>)
-          .map((e) =>
+      translations: (json['translations'] as List<dynamic>?)
+          ?.map((e) =>
               FacetTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
-      valueList: FacetValueList.fromJson(
-          Map<String, dynamic>.from(json['valueList'] as Map)),
-      values: (json['values'] as List<dynamic>)
-          .map((e) => FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
+      valueList: json['valueList'] == null
+          ? null
+          : FacetValueList.fromJson(
+              Map<String, dynamic>.from(json['valueList'] as Map)),
+      values: (json['values'] as List<dynamic>?)
+          ?.map((e) => FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 
@@ -43,10 +45,11 @@ Map<String, dynamic> _$$FacetImplToJson(_$FacetImpl instance) {
   val['id'] = instance.id;
   val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
   val['name'] = instance.name;
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
+  writeNotNull(
+      'translations', instance.translations?.map((e) => e.toJson()).toList());
   val['updatedAt'] = instance.updatedAt.toIso8601String();
-  val['valueList'] = instance.valueList.toJson();
-  val['values'] = instance.values.map((e) => e.toJson()).toList();
+  writeNotNull('valueList', instance.valueList?.toJson());
+  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
   return val;
 }
 

@@ -19,12 +19,12 @@ class Facet with _$Facet {
     required String id,
     required LanguageCode languageCode,
     required String name,
-    required List<FacetTranslation> translations,
+    List<FacetTranslation>? translations,
     required DateTime updatedAt,
 
     /// Returns a paginated, sortable, filterable list of the Facet's values. Added in v2.1.0.
-    required FacetValueList valueList,
-    required List<FacetValue> values,
+    FacetValueList? valueList,
+    List<FacetValue>? values,
   }) = _Facet;
 
   factory Facet.fromJson(Map<String, dynamic> json) => _$FacetFromJson(json);
