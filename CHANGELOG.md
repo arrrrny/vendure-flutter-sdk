@@ -1,3 +1,6 @@
+## 1.2.1
+- Removed CollectionWithParentChildren entity
+
 ## 1.2.0
 - Added `getCollectionsWithParentChildren` method
 - Added `getCollectionWithChildren` method
