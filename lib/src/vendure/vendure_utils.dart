@@ -49,6 +49,9 @@ class VendureUtils {
   }
 
   static String _convertEnumToDartFormat(String enumValue) {
+    if (enumValue == 'TRY') {
+      return 'try_';
+    }
     // Convert to camelCase
     String camelCase = enumValue.split('_').map((word) {
       return word[0] + word.substring(1).toLowerCase();

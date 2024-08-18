@@ -1,3 +1,6 @@
+## 1.2.2
+- fixed Turkish Lira TRY conversion issue
+
 ## 1.2.1
 - Removed CollectionWithParentChildren entity
 
