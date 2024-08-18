@@ -31,3 +31,4 @@ schema.graphql
 
 # FVM Version Cache
 .fvm*
+.vscode*
