@@ -205,15 +205,6 @@ fragment OrderLineProductVariant on ProductVariant {
 
 ''';
 
-const String orderLineCustomFieldsFragment = r'''
-fragment OrderLineCustomFields on OrderLine {
-  customFields{
-    __typename
-  }
-}
-
-''';
-
 const String productVariantSubselection = facetValueFragment +
     productOptionGroupFragment +
     taxCategoryFragment +

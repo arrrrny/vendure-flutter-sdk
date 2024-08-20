@@ -1,3 +1,6 @@
+## 1.2.3
+- fixed Customer customFields parsing issue
+
 ## 1.2.2
 - fixed Turkish Lira TRY conversion issue
 

@@ -111,14 +111,12 @@ fragment Channel on Channel {
     name
     createdAt
     updatedAt
-    customFields
   }
   defaultShippingZone {
     id
     name
     createdAt
     updatedAt
-    customFields
   }
   defaultLanguageCode
   availableLanguageCodes
@@ -132,7 +130,6 @@ fragment Channel on Channel {
     createdAt
     updatedAt
     name
-    customFields
   }
 
 }
@@ -225,12 +222,10 @@ fragment TaxRate on TaxRate {
     id
     name
     isDefault
-    customFields
   }
   zone {
     id
     name
-    customFields
   }
   customerGroup {
     id

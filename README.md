@@ -20,7 +20,7 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  vendure: ^0.8.1
+  vendure: ^1.2.3
  ```
 
 ## Usage
