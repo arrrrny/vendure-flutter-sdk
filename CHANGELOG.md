@@ -1,3 +1,6 @@
+## 1.2.4
+- fixed ActiveCustomer error on active order removeAllItems
+
 ## 1.2.3
 - fixed Customer customFields parsing issue
 

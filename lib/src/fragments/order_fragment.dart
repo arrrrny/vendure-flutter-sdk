@@ -199,11 +199,6 @@ fragment OrderLine on OrderLine {
   fulfillmentLines {
     ...FulfillmentLine
   }
-  order{
-    id
-    code
-    state
-  }
 
 }
 
@@ -330,6 +325,7 @@ fragment Refund on Refund {
   }
   paymentId
   metadata
+
 }
 
 ''';
@@ -365,6 +361,7 @@ fragment Surcharge on Surcharge {
     price
     priceWithTax
     taxRate
+    
 }
 
 ''';
