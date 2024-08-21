@@ -15,7 +15,7 @@ import 'package:vendure/src/vendure/auth_base_operations.dart';
 import 'package:vendure/src/vendure/operation_type_enum.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
-import '../input_types/exports.dart';
+import '../types/exports.dart';
 
 class AuthOperations {
   final GraphQLClient _client;

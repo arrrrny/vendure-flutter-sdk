@@ -1,3 +1,6 @@
+## 1.2.5
+- fixed internal type import
+
 ## 1.2.4
 - fixed ActiveCustomer error on active order removeAllItems
 
