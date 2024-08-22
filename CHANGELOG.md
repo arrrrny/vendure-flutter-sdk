@@ -1,3 +1,6 @@
+## 1.2.6
+- fixed customfields config not passing to order and system operations
+
 ## 1.2.5
 - fixed internal type import
 

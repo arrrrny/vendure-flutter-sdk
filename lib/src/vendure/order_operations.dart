@@ -32,7 +32,10 @@ class OrderOperations {
     required String productVariantId,
     required int quantity,
   }) async {
-    return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<UpdateOrderItemsResult>(
       addItemToOrderMutation,
       {'productVariantId': productVariantId, 'quantity': quantity},
       UpdateOrderItemsResult.fromJson,
@@ -42,7 +45,10 @@ class OrderOperations {
 
   Future<ActiveOrderResult> setOrderShippingAddress(
       {required CreateAddressInput input}) async {
-    return CustomOperations(_client).mutate<ActiveOrderResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<ActiveOrderResult>(
       setOrderShippingAddressMutation,
       {'input': input.toJson()},
       ActiveOrderResult.fromJson,
@@ -52,7 +58,10 @@ class OrderOperations {
 
   Future<ActiveOrderResult> setOrderBillingAddress(
       {required CreateAddressInput input}) async {
-    return CustomOperations(_client).mutate<ActiveOrderResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<ActiveOrderResult>(
       setOrderBillingAddressMutation,
       {'input': input.toJson()},
       ActiveOrderResult.fromJson,
@@ -61,7 +70,10 @@ class OrderOperations {
   }
 
   Future<Order?> getActiveOrder() async {
-    return CustomOperations(_client).query<Order?>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Order?>(
       getActiveOrderQuery,
       {},
       Order.fromJson,
@@ -71,7 +83,10 @@ class OrderOperations {
 
   Future<AddPaymentToOrderResult> addPaymentToOrder(
       {required PaymentInput input}) async {
-    return CustomOperations(_client).mutate<AddPaymentToOrderResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<AddPaymentToOrderResult>(
       addPaymentToOrderMutation,
       {'input': input.toJson()},
       AddPaymentToOrderResult.fromJson,
@@ -80,7 +95,10 @@ class OrderOperations {
   }
 
   Future<Order> getOrderByCode({required String code}) async {
-    return CustomOperations(_client).query<Order>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Order>(
       getOrderByCodeQuery,
       {'code': code},
       Order.fromJson,
@@ -89,7 +107,10 @@ class OrderOperations {
   }
 
   Future<List<PaymentMethodQuote>> getPaymentMethods() async {
-    return CustomOperations(_client).queryList<PaymentMethodQuote>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).queryList<PaymentMethodQuote>(
       getPaymentMethodsQuery,
       {},
       PaymentMethodQuote.fromJson,
@@ -98,7 +119,10 @@ class OrderOperations {
   }
 
   Future<List<ShippingMethodQuote>> getShippingMethods() async {
-    return CustomOperations(_client).queryList<ShippingMethodQuote>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).queryList<ShippingMethodQuote>(
       getShippingMethodsQuery,
       {},
       ShippingMethodQuote.fromJson,
@@ -108,7 +132,10 @@ class OrderOperations {
 
   Future<SetCustomerForOrderResult> setCustomerForOrder(
       {required CreateCustomerInput input}) async {
-    return CustomOperations(_client).mutate<SetCustomerForOrderResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<SetCustomerForOrderResult>(
       setCustomerForOrderMutation,
       {'input': input.toJson()},
       SetCustomerForOrderResult.fromJson,
@@ -117,7 +144,10 @@ class OrderOperations {
   }
 
   Future<List<String>> getNextOrderStates() async {
-    return CustomOperations(_client).queryList<String>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).queryList<String>(
       getNextOrderStatesQuery,
       {},
       (data) => (data['nextOrderStates'] as String),
@@ -127,7 +157,10 @@ class OrderOperations {
 
   Future<RemoveOrderItemsResult> removeOrderLine(
       {required String orderLineId}) async {
-    return CustomOperations(_client).mutate<RemoveOrderItemsResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<RemoveOrderItemsResult>(
       removeOrderLineMutation,
       {'orderLineId': orderLineId},
       RemoveOrderItemsResult.fromJson,
@@ -136,7 +169,10 @@ class OrderOperations {
   }
 
   Future<RemoveOrderItemsResult> removeAllOrderLines() async {
-    return CustomOperations(_client).mutate<RemoveOrderItemsResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<RemoveOrderItemsResult>(
       removeAllOrderLinesMutation,
       {},
       RemoveOrderItemsResult.fromJson,
@@ -148,7 +184,10 @@ class OrderOperations {
     required String orderLineId,
     required int quantity,
   }) async {
-    return CustomOperations(_client).mutate<UpdateOrderItemsResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<UpdateOrderItemsResult>(
       adjustOrderLineMutation,
       {'orderLineId': orderLineId, 'quantity': quantity},
       UpdateOrderItemsResult.fromJson,
@@ -159,7 +198,10 @@ class OrderOperations {
   Future<ApplyCouponCodeResult> applyCouponCode({
     required String couponCode,
   }) async {
-    return CustomOperations(_client).mutate<ApplyCouponCodeResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<ApplyCouponCodeResult>(
       applyCouponCodeMutation,
       {'couponCode': couponCode},
       ApplyCouponCodeResult.fromJson,
@@ -168,7 +210,10 @@ class OrderOperations {
   }
 
   Future<Order> removeCouponCode({required String couponCode}) async {
-    return CustomOperations(_client).mutate<Order>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<Order>(
       removeCouponCodeMutation,
       {'couponCode': couponCode},
       Order.fromJson,
@@ -179,7 +224,10 @@ class OrderOperations {
   Future<TransitionOrderToStateResult> transitionOrderToState({
     required String state,
   }) async {
-    return CustomOperations(_client).mutate<TransitionOrderToStateResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<TransitionOrderToStateResult>(
       transitionOrderToStateMutation,
       {'state': state},
       TransitionOrderToStateResult.fromJson,
@@ -190,7 +238,10 @@ class OrderOperations {
   Future<ActiveOrderResult> setOrderCustomFields({
     required UpdateOrderInput input,
   }) async {
-    return CustomOperations(_client).mutate<ActiveOrderResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<ActiveOrderResult>(
       setOrderCustomFieldsMutation,
       {'input': input.toJson()},
       ActiveOrderResult.fromJson,
@@ -205,7 +256,10 @@ class OrderOperations {
     List<String> methodIds = [];
     methodIds.add(shippingMethodId);
     methodIds.addAll(additionalMethodIds);
-    return CustomOperations(_client).mutate<SetOrderShippingMethodResult>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).mutate<SetOrderShippingMethodResult>(
       setOrderShippingMethodMutation,
       {'shippingMethodId': methodIds},
       SetOrderShippingMethodResult.fromJson,

@@ -12,7 +12,10 @@ class SystemOperations {
   SystemOperations(this._client, {this.customFieldsConfig});
 
   Future<List<Country>> getAvailableCountries() {
-    return CustomOperations(_client).queryList<Country>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).queryList<Country>(
       getAvailableCountriesQuery,
       {},
       Country.fromJson,
@@ -21,7 +24,10 @@ class SystemOperations {
   }
 
   Future<FacetList> getFacets({FacetListOptions? options}) {
-    return CustomOperations(_client).query<FacetList>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<FacetList>(
       getFacetsQuery,
       {"options": options?.toJson()},
       FacetList.fromJson,
@@ -30,7 +36,10 @@ class SystemOperations {
   }
 
   Future<Facet> getFacet({required String id}) {
-    return CustomOperations(_client).query<Facet>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Facet>(
       getFacetQuery,
       {'id': id},
       Facet.fromJson,

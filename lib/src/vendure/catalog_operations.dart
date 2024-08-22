@@ -14,7 +14,10 @@ class CatalogOperations {
 
   Future<CollectionList> getCollections(
       {CollectionListOptions? options}) async {
-    return CustomOperations(_client).query<CollectionList>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<CollectionList>(
       getCollectionsQuery,
       {"options": options?.toJson()},
       CollectionList.fromJson,
@@ -23,7 +26,10 @@ class CatalogOperations {
   }
 
   Future<Collection> getCollectionById({required String id}) async {
-    return CustomOperations(_client).query<Collection>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Collection>(
       getCollectionByIdQuery,
       {'id': id},
       Collection.fromJson,
@@ -32,7 +38,10 @@ class CatalogOperations {
   }
 
   Future<Collection> getCollectionBySlug({required String slug}) async {
-    return CustomOperations(_client).query<Collection>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Collection>(
       getCollectionBySlugQuery,
       {'slug': slug},
       Collection.fromJson,
@@ -41,7 +50,10 @@ class CatalogOperations {
   }
 
   Future<ProductList> getProducts({ProductListOptions? options}) async {
-    return CustomOperations(_client).query<ProductList>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<ProductList>(
       getProductsQuery,
       {"options": options?.toJson()},
       ProductList.fromJson,
@@ -50,7 +62,10 @@ class CatalogOperations {
   }
 
   Future<Product> getProductById({required String id}) async {
-    return CustomOperations(_client).query<Product>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Product>(
       getProductByIdQuery,
       {'id': id},
       Product.fromJson,
@@ -59,7 +74,10 @@ class CatalogOperations {
   }
 
   Future<Product> getProductBySlug({required String slug}) async {
-    return CustomOperations(_client).query<Product>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Product>(
       getProductBySlugQuery,
       {'slug': slug},
       Product.fromJson,
@@ -68,7 +86,10 @@ class CatalogOperations {
   }
 
   Future<SearchResponse> searchCatalog({required SearchInput input}) async {
-    return CustomOperations(_client).query<SearchResponse>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<SearchResponse>(
       searchCatalogQuery,
       {'input': input.toJson()},
       SearchResponse.fromJson,
@@ -78,7 +99,10 @@ class CatalogOperations {
 
   Future<Collection> getCollectionWithParentChildren(
       {required String id}) async {
-    return CustomOperations(_client).query<Collection>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Collection>(
       getCollectionWithParentChildrenQuery,
       {'id': id},
       Collection.fromJson,
@@ -87,7 +111,10 @@ class CatalogOperations {
   }
 
   Future<Collection> getCollectionWithParent({required String id}) async {
-    return CustomOperations(_client).query<Collection>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Collection>(
       getCollectionWithParentQuery,
       {'id': id},
       Collection.fromJson,
@@ -96,7 +123,10 @@ class CatalogOperations {
   }
 
   Future<Collection> getCollectionWithChildren({required String id}) async {
-    return CustomOperations(_client).query<Collection>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<Collection>(
       getCollectionWithChildrenQuery,
       {'id': id},
       Collection.fromJson,
@@ -106,7 +136,10 @@ class CatalogOperations {
 
   Future<CollectionList> getCollectionListWithParentChildren(
       {CollectionListOptions? options}) async {
-    return CustomOperations(_client).query<CollectionList>(
+    return CustomOperations(
+      _client,
+      customFieldsConfig: customFieldsConfig,
+    ).query<CollectionList>(
       getCollectionListWithParentChildrenQuery,
       {"options": options?.toJson()},
       CollectionList.fromJson,
