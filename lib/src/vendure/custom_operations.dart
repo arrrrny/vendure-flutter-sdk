@@ -72,7 +72,6 @@ class CustomOperations {
     }
 
     data = VendureUtils.normalizeGraphQLData(data);
-    print(data);
     return fromJson(data);
   }
 
@@ -125,10 +124,8 @@ class CustomOperations {
     T Function(Map<String, dynamic>) fromJson, {
     String? expectedDataType,
   }) async {
-    print('xxx');
     var data = await _executeGraphQLOperation(
         query, variables, false, expectedDataType);
-    print(data);
     return data == null ? Future.value(null) : _processData(data, fromJson);
   }
 
