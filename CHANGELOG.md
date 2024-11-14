@@ -1,3 +1,9 @@
+## 1.4.0
+- refactored custom operations code
+
+## 1.3.0
+- changed fromJson data type to dynamic
+
 ## 1.2.6
 - fixed customfields config not passing to order and system operations
 

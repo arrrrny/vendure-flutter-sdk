@@ -5,135 +5,95 @@ import 'package:vendure/src/vendure/vendure_utils.dart';
 class CustomOperations {
   final Future<GraphQLClient> Function() _client;
   final Map<String, List<String>>? customFieldsConfig;
+
   CustomOperations(this._client, {this.customFieldsConfig});
 
-  Future<T> mutate<T>(String mutation, Map<String, dynamic> variables,
-      T Function(Map<String, dynamic>) fromJson,
-      {String? expectedDataType}) async {
+  String _prepareOperation(String operation) {
     if (customFieldsConfig != null) {
-      mutation =
-          VendureUtils.sanitizeGraphQLQuery(mutation, customFieldsConfig!);
+      return VendureUtils.sanitizeGraphQLQuery(operation, customFieldsConfig!);
     }
-    final options = MutationOptions(
-      document: gql(mutation),
-      variables: variables,
-    );
-    final client = await _client();
-    final result = await client.mutate(options);
-
-    Map<String, dynamic>? data = _handleErrors(result, expectedDataType);
-    if (data == null) {
-      return Future.value(null);
-    }
-    data = VendureUtils.normalizeGraphQLData(data);
-
-    return fromJson(data);
+    return operation;
   }
 
-  Future<T> query<T>(String query, Map<String, dynamic> variables,
-      T Function(Map<String, dynamic>) fromJson,
-      {String? expectedDataType}) async {
-    if (customFieldsConfig != null) {
-      query = VendureUtils.sanitizeGraphQLQuery(query, customFieldsConfig!);
-    }
-    final options = QueryOptions(
-      document: gql(query),
-      variables: variables,
-    );
+  Future<dynamic> _executeGraphQLOperation<T>(
+    String operation,
+    Map<String, dynamic> variables,
+    bool isMutation,
+    String? expectedDataType,
+  ) async {
+    final processedOperation = _prepareOperation(operation);
     final client = await _client();
-    final result = await client.query(options);
-    Map<String, dynamic>? data = _handleErrors(result, expectedDataType);
-    if (data == null) {
-      return Future.value(null);
-    }
-    data = VendureUtils.normalizeGraphQLData(data);
-    return fromJson(data);
+    final options = isMutation
+        ? MutationOptions(
+            document: gql(processedOperation), variables: variables)
+        : QueryOptions(document: gql(processedOperation), variables: variables);
+
+    final result = isMutation
+        ? await client.mutate(options as MutationOptions)
+        : await client.query(options as QueryOptions);
+
+    return _handleErrors(result, expectedDataType);
   }
 
-  Map<String, dynamic>? _handleErrors(
-      QueryResult<Object?> result, String? expectedDataType) {
+  dynamic _handleErrors(QueryResult<Object?> result, String? expectedDataType) {
     if (result.hasException) {
       throw Exception(result.exception.toString());
     }
-    Map<String, dynamic>? data = expectedDataType != null &&
-            result.data != null &&
-            result.data!.containsKey(expectedDataType)
-        ? result.data![expectedDataType]
-        : result.data;
-    if (data == null ||
-        expectedDataType != null &&
-            data[expectedDataType] != null &&
-            data[expectedDataType] == null) {
+
+    dynamic data = result.data;
+    if (data == null) {
       return null;
     }
-    if (data['__typename'] == 'ErrorResult') {
-      throw Exception(data['message']);
-    }
-    return data;
-  }
 
-  Future<List<T>> queryList<T>(String query, Map<String, dynamic> variables,
-      T Function(Map<String, dynamic>) fromJson,
-      {String? expectedDataType}) async {
-    if (customFieldsConfig != null) {
-      query = VendureUtils.sanitizeGraphQLQuery(query, customFieldsConfig!);
-    }
-    final options = QueryOptions(
-      document: gql(query),
-      variables: variables,
-    );
-    final client = await _client();
-    final result = await client.query(options);
-
-    if (result.hasException) {
-      throw Exception(result.exception.toString());
-    }
-
-    var data = expectedDataType != null &&
-            result.data != null &&
-            result.data!.containsKey(expectedDataType)
-        ? result.data![expectedDataType]
-        : result.data;
-    if (expectedDataType!.contains('.')) {
-      final parts = expectedDataType.split('.');
-      for (var part in parts) {
-        data = data[part];
-      }
+    data = _extractExpectedData(data, expectedDataType);
+    if (data == null) {
+      return null;
     }
 
     if (data is Map && data['__typename'] == 'ErrorResult') {
       throw Exception(data['message']);
     }
 
-    if (data is! List) {
-      throw Exception('data must be a list in queryList');
-    }
-    if (data.isNotEmpty && data.first is T) {
-      return List<T>.from(data);
-    }
-    return data
-        .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
-        .toList();
+    return data;
   }
 
-  Future<Map<String, dynamic>> extractResponseHeaders(
-      OperationType operationType,
-      String operation,
-      Map<String, dynamic> variables,
-      List<String> headers) async {
-    final client = await _client();
-
-    if (operationType == OperationType.mutation) {
-      final response = await client.mutate(
-          MutationOptions(document: gql(operation), variables: variables));
-      return _extractHeadersFromResponse(response, headers);
-    } else if (operationType == OperationType.query) {
-      final response = await client
-          .query(QueryOptions(document: gql(operation), variables: variables));
-      return _extractHeadersFromResponse(response, headers);
+  T _processData<T>(
+    dynamic data,
+    T Function(Map<String, dynamic>) fromJson,
+  ) {
+    if (data is List) {
+      if (T is List) {
+        return data
+            .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+            .toList() as T;
+      }
+      throw Exception(
+          'Return type T must be a List when the response data is a List');
     }
-    throw Exception(
-        'Error $operationType $operation $variables extracting headers $headers');
+
+    data = VendureUtils.normalizeGraphQLData(data);
+    print(data);
+    return fromJson(data);
+  }
+
+  dynamic _extractExpectedData(dynamic data, String? expectedDataType) {
+    if (expectedDataType == null || data == null) {
+      return data;
+    }
+
+    if (expectedDataType.contains('.')) {
+      var currentData = data;
+      final parts = expectedDataType.split('.');
+      for (var part in parts) {
+        currentData = currentData[part];
+        if (currentData == null) {
+          return null;
+        }
+      }
+      return currentData;
+    }
+
+    return data[expectedDataType];
   }
 
   Map<String, dynamic> _extractHeadersFromResponse(
@@ -146,5 +106,66 @@ class CustomOperations {
       }
     });
     return result;
+  }
+
+  Future<T> mutate<T>(
+    String mutation,
+    Map<String, dynamic> variables,
+    T Function(Map<String, dynamic>) fromJson, {
+    String? expectedDataType,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        mutation, variables, true, expectedDataType);
+    return data == null ? Future.value(null) : _processData(data, fromJson);
+  }
+
+  Future<T> query<T>(
+    String query,
+    Map<String, dynamic> variables,
+    T Function(Map<String, dynamic>) fromJson, {
+    String? expectedDataType,
+  }) async {
+    print('xxx');
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType);
+    print(data);
+    return data == null ? Future.value(null) : _processData(data, fromJson);
+  }
+
+  Future<List<T>> queryList<T>(
+    String query,
+    Map<String, dynamic> variables,
+    T Function(Map<String, dynamic>) fromJson, {
+    String? expectedDataType,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType);
+
+    if (data == null) {
+      return [];
+    }
+
+    if (data is! List) {
+      throw Exception('Data must be a list in queryList');
+    }
+
+    if (data.isNotEmpty && data.first is T) {
+      return List<T>.from(data);
+    }
+
+    return data
+        .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+        .toList();
+  }
+
+  Future<Map<String, dynamic>> extractResponseHeaders(
+    OperationType operationType,
+    String operation,
+    Map<String, dynamic> variables,
+    List<String> headers,
+  ) async {
+    final result = await _executeGraphQLOperation(
+        operation, variables, operationType == OperationType.mutation, null);
+    return _extractHeadersFromResponse(result, headers);
   }
 }
