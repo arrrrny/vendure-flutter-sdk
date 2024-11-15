@@ -993,6 +993,24 @@ Future<void> customQueryList() async {
 }
 ```
 
+### Custom Mutation List
+
+```dart
+  Future<List<ZikZakResponse>> postZikZaks(
+      {required List<ZikZak> zikZaks, required String userId}) async {
+    final input = zikZaks
+        .map((zikZak) => ZikZakToMutationMapper.toMutationInput(zikZak, userId))
+        .toList();
+    print(input.map((i) => i.toJson()).toList());
+    return _vendure.custom.mutateList<ZikZakResponse>(
+      postZikZaksMutation,
+      {'input': input.map((i) => i.toJson()).toList()},
+      ZikZakResponse.fromJson,
+      expectedDataType: 'postZikZaks',
+    );
+  }
+```
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/arrrrny/vendure-flutter-sdk).

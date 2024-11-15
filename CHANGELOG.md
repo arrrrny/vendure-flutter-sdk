@@ -1,3 +1,6 @@
+## 1.5.0
+- added mutateList for mutations that return a List
+
 ## 1.4.0
 - refactored custom operations code
 
