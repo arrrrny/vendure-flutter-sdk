@@ -40,7 +40,7 @@ void main() async {
       customFieldsConfig: {
           'User': ['os'],
           'Order': ['giftMessage']
-        }, 
+        },
     );
 
     // Initialize with Firebase Auth
@@ -52,7 +52,9 @@ void main() async {
       customFieldsConfig: {
           'User': ['os'],
           'Order': ['giftMessage']
-        },       
+        },
+      languageCode: 'TR',
+      channelToken: 'your-channel-token'
     );
 
     // Initialize with Token
@@ -76,7 +78,7 @@ void main() async {
       customFieldsConfig: {
           'User': ['os'],
           'Order': ['giftMessage']
-        }, 
+        },
     );
 
     // Use the vendure instance for various operations
@@ -426,7 +428,7 @@ Future<void> getCollectionsWithParentChildren() async {
 ```dart
 Future<void> getCollectionWithParentChildren(String id) async {
   try {
-    
+
     var result = await vendure.catalog
             .getCollectionWithParentChildren(id:id);
     for (var collection in result.items) {
@@ -447,7 +449,7 @@ Future<void> getCollectionWithParentChildren(String id) async {
 ```dart
 Future<void> getCollectionWithParent(String id) async {
   try {
-    
+
     var result = await vendure.catalog
             .getCollectionWithParent(id:id);
 
@@ -462,7 +464,7 @@ Future<void> getCollectionWithParent(String id) async {
 ```dart
 Future<void> getCollectionWithChildren(String id) async {
   try {
-    
+
     var result = await vendure.catalog
             .getCollectionWithChildren(id:id);
 

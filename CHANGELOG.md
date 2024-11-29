@@ -1,3 +1,7 @@
+## 1.6.0
+- added support for vendure-token header to pass the channel
+- added languageCode support for translations
+
 ## 1.5.0
 - added mutateList for mutations that return a List
 

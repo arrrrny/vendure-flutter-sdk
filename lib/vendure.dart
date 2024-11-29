@@ -8,7 +8,7 @@ import 'package:vendure/src/vendure/customer_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
 import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 
 export '../src/types/exports.dart'; // Add this line
 
@@ -28,7 +28,12 @@ class Vendure {
   final DefaultPolicies? _policies;
   String? _token;
   final bool _useVendureGuestSession;
+  final String? _languageCode;
+  final String? _channelToken;
   String? get token => _token;
+  String? get channelToken => _channelToken;
+  String? get languageCode => _languageCode;
+
   Vendure._internal({
     required String endpoint,
     TokenFetcher? fetchToken,
@@ -38,6 +43,8 @@ class Vendure {
     String? token,
     bool? useVendureGuestSession = false,
     Map<String, List<String>>? customFieldsConfig,
+    String? languageCode,
+    String? channelToken,
   })  : _tokenManager = fetchToken != null && tokenParams != null
             ? TokenManager(
                 fetchToken: fetchToken,
@@ -49,6 +56,8 @@ class Vendure {
         _endpoint = endpoint,
         _policies = policies,
         _token = token,
+        _languageCode = languageCode,
+        _channelToken = channelToken,
         _authClient = GraphQLClient(
           defaultPolicies: DefaultPolicies(
             query: Policies(
@@ -96,6 +105,8 @@ class Vendure {
     String? token,
     bool? useVendureGuestSession,
     Map<String, List<String>>? customFieldsConfig,
+    String? languageCode,
+    String? channelToken,
   }) async {
     _instance = Vendure._internal(
       endpoint: endpoint,
@@ -106,6 +117,8 @@ class Vendure {
       token: token,
       useVendureGuestSession: useVendureGuestSession,
       customFieldsConfig: customFieldsConfig,
+      languageCode: languageCode,
+      channelToken: channelToken,
     );
 
     // Perform a connection check
@@ -199,6 +212,8 @@ class Vendure {
     required String jwt,
     Duration sessionDuration = const Duration(hours: 1),
     Map<String, List<String>>? customFieldsConfig,
+    String? languageCode,
+    String? channelToken,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -245,6 +260,8 @@ class Vendure {
           'uid': uid,
           'jwt': jwt,
         },
+        languageCode: languageCode,
+        channelToken: channelToken,
         sessionDuration: sessionDuration,
         token: token,
         customFieldsConfig: customFieldsConfig,
@@ -265,6 +282,8 @@ class Vendure {
     required Map<String, dynamic> tokenParams,
     Duration sessionDuration = const Duration(days: 365),
     Map<String, List<String>>? customFieldsConfig,
+    String? languageCode,
+    String? channelToken,
   }) async {
     final token = await fetchToken(tokenParams);
     if (token == null) {
@@ -280,6 +299,8 @@ class Vendure {
         sessionDuration: sessionDuration,
         token: token,
         customFieldsConfig: customFieldsConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
       );
     }
 
@@ -300,30 +321,42 @@ class Vendure {
   }
 
   Future<GraphQLClient> _getClient() async {
-    HttpLink httpLink = HttpLink(_endpoint);
-    if (_useVendureGuestSession) {
-      httpLink = HttpLink(_endpoint,
-          httpClient: TokenInterceptorClient(
-            Client(),
-            (token) {
-              _token = token;
-            },
-          ));
+    // Construct endpoint with language code if available
+    Uri endpointUri = Uri.parse(_endpoint);
+    if (_languageCode != null) {
+      // Add or update query parameters
+      final newQueryParameters =
+          Map<String, String>.from(endpointUri.queryParameters);
+      newQueryParameters['languageCode'] = _languageCode;
+      endpointUri = endpointUri.replace(queryParameters: newQueryParameters);
     }
 
-    final link = Link.from([
-      AuthLink(
-        getToken: () async {
-          if (_token != null) {
-            return 'Bearer $_token';
-          } else if (_tokenManager != null) {
-            return 'Bearer ${await _tokenManager.getValidToken()}';
-          }
-          return null;
-        },
-      ),
-      httpLink,
-    ]);
+    final httpLink = HttpLink(endpointUri.toString());
+
+    // Create the authentication link for Authorization header
+    final authLink = AuthLink(
+      // 'Authorization' is the default headerKey
+      getToken: () async {
+        if (_token != null) {
+          return 'Bearer $_token';
+        } else if (_tokenManager != null) {
+          return 'Bearer ${await _tokenManager.getValidToken()}';
+        }
+        return null;
+      },
+    );
+
+    // Create another AuthLink for the vendure-token header
+    Link link;
+    if (_channelToken != null) {
+      final vendureTokenLink = AuthLink(
+        headerKey: 'vendure-token',
+        getToken: () async => _channelToken,
+      );
+      link = authLink.concat(vendureTokenLink).concat(httpLink);
+    } else {
+      link = authLink.concat(httpLink);
+    }
 
     return GraphQLClient(
       cache: GraphQLCache(),
@@ -343,14 +376,14 @@ class Vendure {
   }
 }
 
-class TokenInterceptorClient extends BaseClient {
-  final Client _inner;
+class TokenInterceptorClient extends http.BaseClient {
+  final http.Client _inner;
   final void Function(String token) onTokenReceived;
 
   TokenInterceptorClient(this._inner, this.onTokenReceived);
 
   @override
-  Future<StreamedResponse> send(BaseRequest request) async {
+  Future<http.StreamedResponse> send(http.BaseRequest request) async {
     final response = await _inner.send(request);
 
     if (response.headers.containsKey('vendure-auth-token')) {
