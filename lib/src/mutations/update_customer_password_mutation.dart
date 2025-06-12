@@ -11,13 +11,13 @@ mutation UpdateCustomerPassword($currentPassword: String!, $newPassword: String!
       authenticationError
     }
 
-    on PasswordValidationError {
+    ... on PasswordValidationError {
       errorCode
       message
       validationErrorMessage
     }
 
-    on NativeAuthStrategyError {
+    ... on NativeAuthStrategyError {
       errorCode
       message
     }

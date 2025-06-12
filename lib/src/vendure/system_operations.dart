@@ -1,5 +1,5 @@
 import 'package:graphql/client.dart';
-import 'package:vendure/src/queries/get_avaliable_countries_query.dart';
+import 'package:vendure/src/queries/get_available_countries_query.dart';
 import 'package:vendure/src/queries/get_facet_query.dart';
 import 'package:vendure/src/queries/get_facets_query.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';

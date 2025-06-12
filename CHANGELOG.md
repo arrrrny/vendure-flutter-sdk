@@ -1,3 +1,11 @@
+## 1.7.0
+- fixed native authentication implementation
+- improved GraphQL client configuration with better caching policies
+- added default headers for HTTP requests
+- enhanced guest session handling
+- fixed typo in available countries query filename
+- added comprehensive test suites for user journeys
+
 ## 1.6.0
 - added support for vendure-token header to pass the channel
 - added languageCode support for translations

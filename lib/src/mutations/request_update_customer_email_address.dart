@@ -5,7 +5,7 @@ mutation RequestUpdateCustomerEmailAddress($password: String!, $newEmailAddress:
       success
     }
 
-    ... InvalidCredentialsError{
+    ... on InvalidCredentialsError{
         errorCode
         message
         authenticationError

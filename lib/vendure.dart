@@ -69,7 +69,13 @@ class Vendure {
               cacheReread: CacheRereadPolicy.ignoreAll,
             ),
           ),
-          link: HttpLink(endpoint),
+          link: HttpLink(
+            endpoint,
+            defaultHeaders: {
+              'Content-Type': 'application/json',
+            },
+            httpClient: http.Client(),
+          ),
           cache: GraphQLCache(),
         ),
         _customFieldsConfig = customFieldsConfig {
@@ -337,6 +343,10 @@ class Vendure {
     final authLink = AuthLink(
       // 'Authorization' is the default headerKey
       getToken: () async {
+        // Skip authentication if using guest session
+        if (_useVendureGuestSession) {
+          return null;
+        }
         if (_token != null) {
           return 'Bearer $_token';
         } else if (_tokenManager != null) {
@@ -361,7 +371,17 @@ class Vendure {
     return GraphQLClient(
       cache: GraphQLCache(),
       link: link,
-      defaultPolicies: _policies ?? DefaultPolicies(),
+      defaultPolicies: _policies ??
+          DefaultPolicies(
+            query: Policies(
+              fetch: FetchPolicy.noCache,
+              cacheReread: CacheRereadPolicy.ignoreAll,
+            ),
+            mutate: Policies(
+              fetch: FetchPolicy.noCache,
+              cacheReread: CacheRereadPolicy.ignoreAll,
+            ),
+          ),
     );
   }
 
