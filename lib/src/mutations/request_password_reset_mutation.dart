@@ -1,6 +1,6 @@
 const String requestPasswordResetMutation = r'''
-mutation RequestPasswordReset($email: String!) {
-  requestPasswordReset(email: $email) {
+mutation RequestPasswordReset($emailAddress: String!) {
+  requestPasswordReset(emailAddress: $emailAddress) {
     ... on Success {
       success
     }

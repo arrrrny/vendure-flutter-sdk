@@ -1,6 +1,6 @@
 const String refreshCustomerVerificationMutation = r'''
-mutation RefreshCustomerVerification($emailAddres: String!) {
-  refreshCustomerVerification(emailAddres: $input) {
+mutation RefreshCustomerVerification($emailAddress: String!) {
+  refreshCustomerVerification(emailAddress: $emailAddress) {
     ... on Success {
       success
     }

@@ -18,6 +18,7 @@ mutation RegisterCustomerAccount($input: RegisterCustomerInput!) {
     ... on NativeAuthStrategyError {
       errorCode
       message
+    }
   }
 }
 ''';

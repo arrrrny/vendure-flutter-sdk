@@ -102,7 +102,7 @@ class AuthOperations {
         'rememberMe': rememberMe,
       },
       NativeAuthenticationResult.fromJson,
-      expectedDataType: 'authenticate',
+      expectedDataType: 'login',
     );
 
     return result;
