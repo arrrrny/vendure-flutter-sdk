@@ -290,6 +290,8 @@ class Vendure {
     Map<String, List<String>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
+    bool useVendureGuestSession = false,
+
   }) async {
     final token = await fetchToken(tokenParams);
     if (token == null) {
@@ -307,6 +309,8 @@ class Vendure {
         customFieldsConfig: customFieldsConfig,
         languageCode: languageCode,
         channelToken: channelToken,
+        useVendureGuestSession: useVendureGuestSession,
+
       );
     }
 
