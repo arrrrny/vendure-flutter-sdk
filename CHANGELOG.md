@@ -1,3 +1,8 @@
+## 1.7.1
+- fixed enum value conversion in _convertEnumToDartFormat method
+- improved handling of camelCase enum values (e.g., 'staticVal' now correctly preserved instead of being converted to 'staticval')
+- method now properly handles both SCREAMING_SNAKE_CASE and camelCase enum formats
+
 ## 1.7.0
 - fixed native authentication implementation
 - improved GraphQL client configuration with better caching policies

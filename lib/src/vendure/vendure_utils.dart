@@ -52,13 +52,20 @@ class VendureUtils {
     if (enumValue == 'TRY') {
       return 'try_';
     }
-    // Convert to camelCase
-    String camelCase = enumValue.split('_').map((word) {
-      return word[0] + word.substring(1).toLowerCase();
-    }).join();
 
-    // Ensure the first character is lowercase
-    return camelCase[0].toLowerCase() + camelCase.substring(1);
+    // If the enum value contains underscores, it's in SCREAMING_SNAKE_CASE
+    if (enumValue.contains('_')) {
+      // Convert to camelCase
+      String camelCase = enumValue.split('_').map((word) {
+        return word[0] + word.substring(1).toLowerCase();
+      }).join();
+
+      // Ensure the first character is lowercase
+      return camelCase[0].toLowerCase() + camelCase.substring(1);
+    } else {
+      // Already in camelCase or similar format, just ensure first character is lowercase
+      return enumValue[0].toLowerCase() + enumValue.substring(1);
+    }
   }
 
   static T c<T>(
