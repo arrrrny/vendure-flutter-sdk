@@ -1,3 +1,7 @@
+## 1.7.2
+- added `timeout` option to Vendure initialization methods
+- increased default GraphQL client timeout to 10 seconds (was 5 seconds)
+
 ## 1.7.1
 - fixed enum value conversion in _convertEnumToDartFormat method
 - improved handling of camelCase enum values (e.g., 'staticVal' now correctly preserved instead of being converted to 'staticval')

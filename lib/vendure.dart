@@ -33,6 +33,7 @@ class Vendure {
   String? get token => _token;
   String? get channelToken => _channelToken;
   String? get languageCode => _languageCode;
+  final Duration? _timeout;
 
   Vendure._internal({
     required String endpoint,
@@ -45,6 +46,7 @@ class Vendure {
     Map<String, List<String>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
+    Duration? timeout,
   })  : _tokenManager = fetchToken != null && tokenParams != null
             ? TokenManager(
                 fetchToken: fetchToken,
@@ -52,6 +54,7 @@ class Vendure {
                 sessionDuration: sessionDuration,
               )
             : null,
+        _timeout = timeout,
         _useVendureGuestSession = useVendureGuestSession ?? false,
         _endpoint = endpoint,
         _policies = policies,
@@ -113,6 +116,7 @@ class Vendure {
     Map<String, List<String>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
+    Duration? timeout,
   }) async {
     _instance = Vendure._internal(
       endpoint: endpoint,
@@ -125,6 +129,7 @@ class Vendure {
       customFieldsConfig: customFieldsConfig,
       languageCode: languageCode,
       channelToken: channelToken,
+      timeout: timeout,
     );
 
     // Perform a connection check
@@ -150,6 +155,7 @@ class Vendure {
     required String username,
     required String password,
     Duration sessionDuration = const Duration(days: 365),
+    Duration? timeout,
     Map<String, List<String>>? customFieldsConfig,
   }) async {
     // Helper function to fetch and return token
@@ -201,6 +207,7 @@ class Vendure {
         sessionDuration: sessionDuration,
         token: token,
         customFieldsConfig: customFieldsConfig,
+        timeout: timeout,
       );
     }
 
@@ -220,6 +227,7 @@ class Vendure {
     Map<String, List<String>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
+    Duration? timeout,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -271,6 +279,7 @@ class Vendure {
         sessionDuration: sessionDuration,
         token: token,
         customFieldsConfig: customFieldsConfig,
+        timeout: timeout,
       );
     }
 
@@ -290,6 +299,7 @@ class Vendure {
     Map<String, List<String>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
+    Duration? timeout,
   }) async {
     final token = await fetchToken(tokenParams);
     if (token == null) {
@@ -307,6 +317,7 @@ class Vendure {
         customFieldsConfig: customFieldsConfig,
         languageCode: languageCode,
         channelToken: channelToken,
+        timeout: timeout,
       );
     }
 
@@ -382,6 +393,7 @@ class Vendure {
               cacheReread: CacheRereadPolicy.ignoreAll,
             ),
           ),
+      queryRequestTimeout: _timeout ?? const Duration(seconds: 10),
     );
   }
 
