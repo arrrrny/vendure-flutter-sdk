@@ -1,3 +1,6 @@
+## 1.8.0
+- Added static `setAuthToken` method to update the authentication token on the initialized Vendure instance.
+
 ## 1.7.2
 - added `timeout` option to Vendure initialization methods
 - increased default GraphQL client timeout to 10 seconds (was 5 seconds)

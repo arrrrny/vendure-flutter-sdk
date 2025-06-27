@@ -83,6 +83,9 @@ void main() async {
 
     // Use the vendure instance for various operations
     Vendure vendure = Vendure.instance;
+
+    // Update the authentication token at runtime (e.g., after refresh)
+    Vendure.setAuthToken('your-new-token');
 }
 ```
 
@@ -92,15 +95,15 @@ Firebase updates tokens every hour. You should listen and update Vendure client 
 
 ```dart
 Future<void> initializaRepository() async {
-    FirebaseAuth.instance.idTokenChanges().listen((event) async {
-      if (event == null) return;
-      String? idToken = await event.getIdToken();
-      if (idToken == null) {
-        throw Exception('idToken is null');
-      }
-      await Vendure.initializeWithFirebaseAuth(
-          endpoint: 'http://localhost:3000/shop-api', uid: event.uid, jwt: idToken);
-    });
+  FirebaseAuth.instance.idTokenChanges().listen((event) async {
+    if (event == null) return;
+    String? idToken = await event.getIdToken();
+    if (idToken == null) {
+      throw Exception('idToken is null');
+    }
+    // Instead of reinitializing, just update the token:
+    Vendure.setAuthToken(idToken);
+  });
 }
 ```
 

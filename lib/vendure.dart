@@ -397,6 +397,15 @@ class Vendure {
     );
   }
 
+  /// Updates the authentication token on the initialized Vendure instance.
+  static void setAuthToken(String token) {
+    if (_instance == null) {
+      throw Exception(
+          'Vendure has not been initialized. Call Vendure.initialize() first.');
+    }
+    _instance!._token = token;
+  }
+
   Future<QueryResult> query(QueryOptions options) async {
     final client = await _getClient();
     return client.query(options);
