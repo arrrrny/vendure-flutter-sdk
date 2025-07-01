@@ -19,15 +19,38 @@ class VendureUtils {
     'defaultLanguageCode',
     'availableLanguageCodes'
   ];
-  static dynamic normalizeGraphQLData(dynamic data) {
+  static dynamic normalizeGraphQLData(dynamic data, {String? parentKey}) {
     if (data is Map<String, dynamic>) {
       final normalizedData = <String, dynamic>{};
       data.forEach((key, value) {
-        normalizedData[key] = normalizeGraphQLData(value);
+        if (_vendureTypeEnums.contains(key)) {
+          if (value is List) {
+            normalizedData[key] = value
+                .map((item) => _convertEnumToDartFormat(item.toString()))
+                .toList();
+          } else if (value != null) {
+            normalizedData[key] = _convertEnumToDartFormat(value.toString());
+          } else {
+            normalizedData[key] = value;
+          }
+        } else if (key == '__typename') {
+          normalizedData['runtimeType'] =
+              value.toString()[0].toLowerCase() + value.toString().substring(1);
+        } else {
+          normalizedData[key] = normalizeGraphQLData(value, parentKey: key);
+        }
       });
       return normalizedData;
     } else if (data is List) {
-      return data.map((item) => normalizeGraphQLData(item)).toList();
+      // If parentKey is an enum type, normalize all items as enums
+      if (parentKey != null && _vendureTypeEnums.contains(parentKey)) {
+        return data
+            .map((item) => _convertEnumToDartFormat(item.toString()))
+            .toList();
+      }
+      return data
+          .map((item) => normalizeGraphQLData(item, parentKey: parentKey))
+          .toList();
     } else {
       // Primitive (bool, int, double, String, etc)
       return data;
