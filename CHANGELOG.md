@@ -1,3 +1,7 @@
+## 2.1.1
+- Added refresh token via Vendure instance: `Vendure.instance.refreshToken(params)` now available for direct use.
+- Makes token refresh accessible from the singleton instance for all auth flows.
+
 ## 2.1.0
 - Added refresh token support via `TokenManager` and `Vendure.refreshToken`.
 - You can now refresh authentication tokens dynamically for long-lived sessions or custom auth flows.
