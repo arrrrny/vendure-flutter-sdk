@@ -16,7 +16,6 @@ class AuthBaseOperations {
         variables: variables,
       );
       final result = await _client.mutate(options);
-      print('DEBUG: RESULT message: ${result}');
 
       if (result.hasException) {
         throw Exception(result.exception.toString());
