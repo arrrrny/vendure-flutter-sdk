@@ -26,6 +26,8 @@ class AuthBaseOperations {
           : result.data;
 
       if (data is Map && data['__typename'] == 'ErrorResult') {
+        print('DEBUG: ErrorResult data: $data');
+        print('DEBUG: ErrorResult message: ${data['message']}');
         final message = data['message']?.toString().toLowerCase() ?? '';
         if (message.contains('invalid') ||
             message.contains('unauthorized') ||
@@ -66,6 +68,8 @@ class AuthBaseOperations {
           : result.data;
 
       if (data is Map && data['__typename'] == 'ErrorResult') {
+        print('DEBUG: ErrorResult data: $data');
+        print('DEBUG: ErrorResult message: ${data['message']}');
         final message = data['message']?.toString().toLowerCase() ?? '';
         if (message.contains('invalid') ||
             message.contains('unauthorized') ||
