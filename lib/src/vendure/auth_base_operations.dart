@@ -25,13 +25,17 @@ class AuthBaseOperations {
           ? result.data![expectedDataType]
           : result.data;
 
-      if (data != null && data['__typename'] == 'ErrorResult') {
+      if (data is Map && data['__typename'] == 'ErrorResult') {
         throw Exception(data['message']);
       }
       data = VendureUtils.normalizeGraphQLData(data!);
-      return fromJson(data as Map<String, dynamic>);
+      if (data is Map) {
+        return fromJson(Map<String, dynamic>.from(data));
+      } else {
+        throw Exception(
+            'Expected Map<String, dynamic> but got ${data.runtimeType}');
+      }
     } catch (e) {
-      print('Error: $e');
       rethrow;
     }
   }
@@ -53,13 +57,17 @@ class AuthBaseOperations {
           ? result.data![expectedDataType]
           : result.data;
 
-      if (data != null && data['__typename'] == 'ErrorResult') {
+      if (data is Map && data['__typename'] == 'ErrorResult') {
         throw Exception(data['message']);
       }
       data = VendureUtils.normalizeGraphQLData(data!);
-      return fromJson(data as Map<String, dynamic>);
+      if (data is Map) {
+        return fromJson(Map<String, dynamic>.from(data));
+      } else {
+        throw Exception(
+            'Expected Map<String, dynamic> but got ${data.runtimeType}');
+      }
     } catch (e) {
-      print('Error: $e');
       rethrow;
     }
   }
@@ -82,7 +90,6 @@ class AuthBaseOperations {
       throw Exception(
           'Error $operationType $operation $variables extracting headers $headers');
     } catch (e) {
-      print('Error: $e');
       rethrow;
     }
   }
@@ -90,12 +97,15 @@ class AuthBaseOperations {
   Map<String, dynamic>? _extractHeadersFromResponse(
       QueryResult<Object?> response, List<String> headers) {
     final context = response.context.entry<HttpLinkResponseContext>()?.headers;
-    Map<String, dynamic>? result = {};
-    context?.forEach((key, value) {
-      if (headers.contains(key)) {
-        result[key] = value;
-      }
-    });
+    Map<String, dynamic> result = {};
+    if (context != null) {
+      Map<String, dynamic> safeContext = Map<String, dynamic>.from(context);
+      safeContext.forEach((key, value) {
+        if (headers.contains(key)) {
+          result[key] = value;
+        }
+      });
+    }
     return result;
   }
 }
