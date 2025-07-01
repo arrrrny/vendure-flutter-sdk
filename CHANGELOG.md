@@ -1,3 +1,8 @@
+## 2.1.0
+- Added refresh token support via `TokenManager` and `Vendure.refreshToken`.
+- You can now refresh authentication tokens dynamically for long-lived sessions or custom auth flows.
+- See `Vendure.refreshToken` and `TokenManager` for usage.
+
 ## 2.0.0
 ### ⚠️ Breaking Change
 - `CustomOperations` API: The `fromJson` parameter is now optional for `mutate`, `query`, `queryList`, and `mutateList` methods.

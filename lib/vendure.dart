@@ -406,6 +406,16 @@ class Vendure {
     _instance!._token = token;
   }
 
+  /// Fetch a new Vendure session token using the instance's TokenManager fetcher and params.
+  /// Throws if no TokenManager is configured.
+  Future<void> refreshToken(Map<String, dynamic> params) async {
+    if (_tokenManager == null) {
+      throw Exception(
+          'No TokenManager configured for this Vendure instance. This method is only available if you initialized Vendure with a TokenFetcher.');
+    }
+    return await _tokenManager.refreshToken(params);
+  }
+
   Future<QueryResult> query(QueryOptions options) async {
     final client = await _getClient();
     return client.query(options);

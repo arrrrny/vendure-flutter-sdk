@@ -7,6 +7,20 @@ class TokenManager {
   final Map<String, dynamic>? _params;
   final Duration _sessionDuration;
 
+  /// Directly call the configured TokenFetcher with custom params.
+  /// Throws if no TokenFetcher is configured.
+  Future<void> refreshToken(Map<String, dynamic> params) async {
+    try {
+      if (_fetchToken == null) {
+        throw Exception('No TokenFetcher configured.');
+      }
+      String? token = await _fetchToken(params);
+      setToken(token!);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   TokenManager({
     TokenFetcher? fetchToken,
     Map<String, dynamic>? params,
@@ -27,10 +41,7 @@ class TokenManager {
         _expiryDate == null ||
         _expiryDate!.isBefore(DateTime.now())) {
       if (_fetchToken != null && _params != null) {
-        // print('fetching token');
         _token = await _fetchToken(_params);
-        // print(_token);
-
         _expiryDate = DateTime.now().add(_sessionDuration);
       } else {
         return null;
