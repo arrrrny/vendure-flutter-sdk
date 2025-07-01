@@ -16,6 +16,7 @@ class AuthBaseOperations {
         variables: variables,
       );
       final result = await _client.mutate(options);
+      print('DEBUG: RESULT message: ${result}');
 
       if (result.hasException) {
         throw Exception(result.exception.toString());
@@ -25,10 +26,16 @@ class AuthBaseOperations {
           ? result.data![expectedDataType]
           : result.data;
 
-      if (data is Map && data['__typename'] == 'ErrorResult') {
-        print('DEBUG: ErrorResult data: $data');
-        print('DEBUG: ErrorResult message: ${data['message']}');
-        final message = data['message']?.toString().toLowerCase() ?? '';
+      if (data is Map &&
+          data['__typename'] != null &&
+          data['__typename'].toString().toLowerCase().contains('error')) {
+        final rawMessage = data['message'];
+        final message =
+            rawMessage == null ? '' : rawMessage.toString().toLowerCase();
+        if (message.isEmpty) {
+          throw Exception(
+              'Invalid credentials: No error message returned from server');
+        }
         if (message.contains('invalid') ||
             message.contains('unauthorized') ||
             message.contains('credentials') ||
@@ -67,10 +74,16 @@ class AuthBaseOperations {
           ? result.data![expectedDataType]
           : result.data;
 
-      if (data is Map && data['__typename'] == 'ErrorResult') {
-        print('DEBUG: ErrorResult data: $data');
-        print('DEBUG: ErrorResult message: ${data['message']}');
-        final message = data['message']?.toString().toLowerCase() ?? '';
+      if (data is Map &&
+          data['__typename'] != null &&
+          data['__typename'].toString().toLowerCase().contains('error')) {
+        final rawMessage = data['message'];
+        final message =
+            rawMessage == null ? '' : rawMessage.toString().toLowerCase();
+        if (message.isEmpty) {
+          throw Exception(
+              'Invalid credentials: No error message returned from server');
+        }
         if (message.contains('invalid') ||
             message.contains('unauthorized') ||
             message.contains('credentials') ||
