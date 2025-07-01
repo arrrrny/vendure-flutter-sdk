@@ -1,3 +1,10 @@
+## 2.0.0
+### ⚠️ Breaking Change
+- `CustomOperations` API: The `fromJson` parameter is now optional for `mutate`, `query`, `queryList`, and `mutateList` methods.
+- If `fromJson` is not provided, the raw normalized data is returned (cast to the expected type).
+- This change breaks previous usage where `fromJson` was required.
+- Update your code to handle the new method signatures and return types.
+
 ## 1.8.0
 - Added static `setAuthToken` method to update the authentication token on the initialized Vendure instance.
 

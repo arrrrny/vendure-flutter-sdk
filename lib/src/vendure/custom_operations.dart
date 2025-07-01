@@ -91,88 +91,92 @@ class CustomOperations {
 
   Future<T> mutate<T>(
     String mutation,
-    Map<String, dynamic> variables,
-    T Function(Map<String, dynamic>) fromJson, {
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
   }) async {
     var data = await _executeGraphQLOperation(
         mutation, variables, true, expectedDataType);
 
     if (data == null) {
-      return Future.value(null);
+      throw Exception('No data returned from mutate');
     }
 
     data = VendureUtils.normalizeGraphQLData(data);
-    return fromJson(data);
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data as Future<T>;
   }
 
   Future<T> query<T>(
     String query,
-    Map<String, dynamic> variables,
-    T Function(Map<String, dynamic>) fromJson, {
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
   }) async {
     var data = await _executeGraphQLOperation(
         query, variables, false, expectedDataType);
 
     if (data == null) {
-      return Future.value(null);
+      throw Exception('No data returned from query');
     }
 
     data = VendureUtils.normalizeGraphQLData(data);
-    return fromJson(data);
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data as Future<T>;
   }
 
   Future<List<T>> queryList<T>(
     String query,
-    Map<String, dynamic> variables,
-    T Function(Map<String, dynamic>) fromJson, {
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
   }) async {
     var data = await _executeGraphQLOperation(
         query, variables, false, expectedDataType);
 
     if (data == null) {
-      return [];
+      throw Exception('No data returned from queryList');
     }
 
     if (data is! List) {
       throw Exception('Data must be a list in queryList');
     }
 
-    if (data.isNotEmpty && data.first is T) {
-      return List<T>.from(data);
+    if (fromJson != null) {
+      return data
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .toList();
     }
-
-    return data
-        .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
-        .toList();
+    return List<T>.from(data);
   }
 
   Future<List<T>> mutateList<T>(
     String mutation,
-    Map<String, dynamic> variables,
-    T Function(Map<String, dynamic>) fromJson, {
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
   }) async {
     var data = await _executeGraphQLOperation(
-        mutation, variables, false, expectedDataType);
+        mutation, variables, true, expectedDataType);
 
     if (data == null) {
-      return [];
+      throw Exception('No data returned from mutateList');
     }
 
     if (data is! List) {
-      throw Exception('Data must be a list in queryList');
+      throw Exception('Data must be a list in mutateList');
     }
 
-    if (data.isNotEmpty && data.first is T) {
-      return List<T>.from(data);
+    if (fromJson != null) {
+      return data
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .toList();
     }
-
-    return data
-        .map((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
-        .toList();
+    return List<T>.from(data);
   }
 
   Future<Map<String, dynamic>> extractResponseHeaders(
