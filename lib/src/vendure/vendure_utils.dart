@@ -97,12 +97,16 @@ class VendureUtils {
           if (item is Map<String, dynamic>) {
             return _populateFieldsRecursively(Map<String, dynamic>.from(item));
           }
+          // Handle primitives (bool, int, double, String, etc)
           return item;
         }).toList();
       } else if (value == null) {
         // print(
         //     'Key with null value: $key'); // Add this log to identify null values
         jsonMap[key] = _getDefaultValue(key);
+      } else {
+        // Handle primitives (bool, int, double, String, etc)
+        jsonMap[key] = value;
       }
     });
 
@@ -113,15 +117,15 @@ class VendureUtils {
   static Map<String, dynamic> _deepCopy(Map<String, dynamic> original) {
     Map<String, dynamic> copy = {};
     original.forEach((key, value) {
-      if (value is Map) {
-        copy[key] = _deepCopy(value as Map<String,
-            dynamic>); // Explicitly cast value to Map<String, dynamic>
+      if (value is Map<String, dynamic>) {
+        copy[key] = _deepCopy(value);
       } else if (value is List) {
         copy[key] = value
-            .map((item) =>
-                item is Map ? _deepCopy(item as Map<String, dynamic>) : item)
-            .toList(); // Explicitly cast item to Map<String, dynamic>
+            .map(
+                (item) => item is Map<String, dynamic> ? _deepCopy(item) : item)
+            .toList();
       } else {
+        // Handle primitives (bool, int, double, String, etc)
         copy[key] = value;
       }
     });
