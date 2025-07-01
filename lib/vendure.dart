@@ -413,7 +413,7 @@ class Vendure {
       throw Exception(
           'No TokenManager configured for this Vendure instance. This method is only available if you initialized Vendure with a TokenFetcher.');
     }
-    return await _tokenManager.refreshToken(params);
+    return _tokenManager.refreshToken(params);
   }
 
   static Future<void> refreshToken(Map<String, dynamic> params) async {
