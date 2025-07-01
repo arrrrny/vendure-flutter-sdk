@@ -26,7 +26,15 @@ class AuthBaseOperations {
           : result.data;
 
       if (data is Map && data['__typename'] == 'ErrorResult') {
-        throw Exception(data['message']);
+        final message = data['message']?.toString().toLowerCase() ?? '';
+        if (message.contains('invalid') ||
+            message.contains('unauthorized') ||
+            message.contains('credentials') ||
+            message.contains('authentication')) {
+          throw Exception('Invalid credentials: $message');
+        } else {
+          throw Exception(message);
+        }
       }
       data = VendureUtils.normalizeGraphQLData(data!);
       if (data is Map) {
@@ -58,7 +66,15 @@ class AuthBaseOperations {
           : result.data;
 
       if (data is Map && data['__typename'] == 'ErrorResult') {
-        throw Exception(data['message']);
+        final message = data['message']?.toString().toLowerCase() ?? '';
+        if (message.contains('invalid') ||
+            message.contains('unauthorized') ||
+            message.contains('credentials') ||
+            message.contains('authentication')) {
+          throw Exception('Invalid credentials: $message');
+        } else {
+          throw Exception(message);
+        }
       }
       data = VendureUtils.normalizeGraphQLData(data!);
       if (data is Map) {
