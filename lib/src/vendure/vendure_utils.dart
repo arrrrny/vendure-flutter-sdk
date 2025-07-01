@@ -29,11 +29,12 @@ class VendureUtils {
         normalizedData[key] = value.map((item) {
           if (item is Map<String, dynamic>) {
             return normalizeGraphQLData(item);
-          }
-          if (_vendureTypeEnums.contains(key)) {
+          } else if (_vendureTypeEnums.contains(key)) {
             return _convertEnumToDartFormat(item.toString());
+          } else {
+            // Handle primitives (bool, int, double, String, etc)
+            return item;
           }
-          return item;
         }).toList();
       } else if (key == '__typename') {
         normalizedData['runtimeType'] =
@@ -41,6 +42,7 @@ class VendureUtils {
       } else if (_vendureTypeEnums.contains(key)) {
         normalizedData[key] = _convertEnumToDartFormat(value.toString());
       } else {
+        // Handle primitives (bool, int, double, String, etc)
         normalizedData[key] = value;
       }
     });
