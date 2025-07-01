@@ -1,3 +1,9 @@
+## 2.3.0
+- Updated `graphql` package to latest compatible version.
+- Fixed async/generic bug in `mutate` for bool and map return types.
+- Improved type safety and error handling for all custom operations.
+- All previous bugfixes and enum normalization improvements included.
+
 ## 2.2.0
 - Improved error handling for all Vendure error types (e.g. InvalidCredentialsError, ErrorResult, etc.) so authentication failures always throw a standardized, testable message.
 - Defensive null checks for error messages to prevent type errors.

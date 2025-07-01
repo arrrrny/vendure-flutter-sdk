@@ -108,7 +108,7 @@ class CustomOperations {
     if (fromJson != null) {
       return fromJson(data);
     }
-    return data as Future<T>;
+    return data;
   }
 
   Future<T> query<T>(
@@ -129,7 +129,7 @@ class CustomOperations {
     if (fromJson != null) {
       return fromJson(data);
     }
-    return data as Future<T>;
+    return data;
   }
 
   Future<List<T>> queryList<T>(
