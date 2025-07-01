@@ -38,7 +38,7 @@ class OrderOperations {
     ).mutate<UpdateOrderItemsResult>(
       addItemToOrderMutation,
       {'productVariantId': productVariantId, 'quantity': quantity},
-      UpdateOrderItemsResult.fromJson,
+      fromJson: UpdateOrderItemsResult.fromJson,
       expectedDataType: 'addItemToOrder',
     );
   }
@@ -51,7 +51,7 @@ class OrderOperations {
     ).mutate<ActiveOrderResult>(
       setOrderShippingAddressMutation,
       {'input': input.toJson()},
-      ActiveOrderResult.fromJson,
+      fromJson: ActiveOrderResult.fromJson,
       expectedDataType: 'setOrderShippingAddress',
     );
   }
@@ -64,7 +64,7 @@ class OrderOperations {
     ).mutate<ActiveOrderResult>(
       setOrderBillingAddressMutation,
       {'input': input.toJson()},
-      ActiveOrderResult.fromJson,
+      fromJson: ActiveOrderResult.fromJson,
       expectedDataType: 'setOrderBillingAddress',
     );
   }
@@ -76,7 +76,7 @@ class OrderOperations {
     ).query<Order?>(
       getActiveOrderQuery,
       {},
-      Order.fromJson,
+      fromJson: Order.fromJson,
       expectedDataType: 'activeOrder',
     );
   }
@@ -89,7 +89,7 @@ class OrderOperations {
     ).mutate<AddPaymentToOrderResult>(
       addPaymentToOrderMutation,
       {'input': input.toJson()},
-      AddPaymentToOrderResult.fromJson,
+      fromJson: AddPaymentToOrderResult.fromJson,
       expectedDataType: 'addPaymentToOrder',
     );
   }
@@ -101,7 +101,7 @@ class OrderOperations {
     ).query<Order>(
       getOrderByCodeQuery,
       {'code': code},
-      Order.fromJson,
+      fromJson: Order.fromJson,
       expectedDataType: 'orderByCode',
     );
   }
@@ -113,7 +113,7 @@ class OrderOperations {
     ).queryList<PaymentMethodQuote>(
       getPaymentMethodsQuery,
       {},
-      PaymentMethodQuote.fromJson,
+      fromJson: PaymentMethodQuote.fromJson,
       expectedDataType: 'eligiblePaymentMethods',
     );
   }
@@ -125,7 +125,7 @@ class OrderOperations {
     ).queryList<ShippingMethodQuote>(
       getShippingMethodsQuery,
       {},
-      ShippingMethodQuote.fromJson,
+      fromJson: ShippingMethodQuote.fromJson,
       expectedDataType: 'eligibleShippingMethods',
     );
   }
@@ -138,7 +138,7 @@ class OrderOperations {
     ).mutate<SetCustomerForOrderResult>(
       setCustomerForOrderMutation,
       {'input': input.toJson()},
-      SetCustomerForOrderResult.fromJson,
+      fromJson: SetCustomerForOrderResult.fromJson,
       expectedDataType: 'setCustomerForOrder',
     );
   }
@@ -150,7 +150,6 @@ class OrderOperations {
     ).queryList<String>(
       getNextOrderStatesQuery,
       {},
-      (data) => (data['nextOrderStates'] as String),
       expectedDataType: 'nextOrderStates',
     );
   }
@@ -163,7 +162,7 @@ class OrderOperations {
     ).mutate<RemoveOrderItemsResult>(
       removeOrderLineMutation,
       {'orderLineId': orderLineId},
-      RemoveOrderItemsResult.fromJson,
+      fromJson: RemoveOrderItemsResult.fromJson,
       expectedDataType: 'removeOrderLine',
     );
   }
@@ -175,7 +174,7 @@ class OrderOperations {
     ).mutate<RemoveOrderItemsResult>(
       removeAllOrderLinesMutation,
       {},
-      RemoveOrderItemsResult.fromJson,
+      fromJson: RemoveOrderItemsResult.fromJson,
       expectedDataType: 'removeAllOrderLines',
     );
   }
@@ -190,7 +189,7 @@ class OrderOperations {
     ).mutate<UpdateOrderItemsResult>(
       adjustOrderLineMutation,
       {'orderLineId': orderLineId, 'quantity': quantity},
-      UpdateOrderItemsResult.fromJson,
+      fromJson: UpdateOrderItemsResult.fromJson,
       expectedDataType: 'adjustOrderLine',
     );
   }
@@ -204,7 +203,7 @@ class OrderOperations {
     ).mutate<ApplyCouponCodeResult>(
       applyCouponCodeMutation,
       {'couponCode': couponCode},
-      ApplyCouponCodeResult.fromJson,
+      fromJson: ApplyCouponCodeResult.fromJson,
       expectedDataType: 'applyCouponCode',
     );
   }
@@ -216,7 +215,7 @@ class OrderOperations {
     ).mutate<Order>(
       removeCouponCodeMutation,
       {'couponCode': couponCode},
-      Order.fromJson,
+      fromJson: Order.fromJson,
       expectedDataType: 'removeCouponCode',
     );
   }
@@ -230,7 +229,7 @@ class OrderOperations {
     ).mutate<TransitionOrderToStateResult>(
       transitionOrderToStateMutation,
       {'state': state},
-      TransitionOrderToStateResult.fromJson,
+      fromJson: TransitionOrderToStateResult.fromJson,
       expectedDataType: 'transitionOrderToState',
     );
   }
@@ -244,7 +243,7 @@ class OrderOperations {
     ).mutate<ActiveOrderResult>(
       setOrderCustomFieldsMutation,
       {'input': input.toJson()},
-      ActiveOrderResult.fromJson,
+      fromJson: ActiveOrderResult.fromJson,
       expectedDataType: 'setOrderCustomFields',
     );
   }
@@ -262,7 +261,7 @@ class OrderOperations {
     ).mutate<SetOrderShippingMethodResult>(
       setOrderShippingMethodMutation,
       {'shippingMethodId': methodIds},
-      SetOrderShippingMethodResult.fromJson,
+      fromJson: SetOrderShippingMethodResult.fromJson,
       expectedDataType: 'setOrderShippingMethod',
     );
   }

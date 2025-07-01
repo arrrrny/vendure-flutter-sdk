@@ -22,7 +22,7 @@ class CustomerOperations {
     ).query<Customer?>(
       getActiveCustomerQuery,
       {},
-      Customer.fromJson,
+      fromJson: Customer.fromJson,
       expectedDataType: 'activeCustomer',
     );
   }
@@ -34,7 +34,7 @@ class CustomerOperations {
     ).query<CurrentUser?>(
       getCurrentUserQuery,
       {},
-      CurrentUser.fromJson,
+      fromJson: CurrentUser.fromJson,
       expectedDataType: 'me',
     );
   }
@@ -46,7 +46,7 @@ class CustomerOperations {
     ).query<Channel>(
       getActiveChannelQuery,
       {},
-      Channel.fromJson,
+      fromJson: Channel.fromJson,
       expectedDataType: 'activeChannel',
     );
   }
@@ -58,7 +58,7 @@ class CustomerOperations {
     ).mutate<Customer>(
       updateCustomerMutation,
       {'input': input.toJson()},
-      Customer.fromJson,
+      fromJson: Customer.fromJson,
       expectedDataType: 'updateCustomer',
     );
   }
@@ -70,7 +70,7 @@ class CustomerOperations {
     ).mutate<Address>(
       createCustomerAddressMutation,
       {'input': input.toJson()},
-      Address.fromJson,
+      fromJson: Address.fromJson,
       expectedDataType: 'createCustomerAddress',
     );
   }
@@ -82,7 +82,7 @@ class CustomerOperations {
     ).mutate<Address>(
       updateCustomerAddressMutation,
       {'input': input.toJson()},
-      Address.fromJson,
+      fromJson: Address.fromJson,
       expectedDataType: 'updateCustomerAddress',
     );
   }
@@ -94,7 +94,7 @@ class CustomerOperations {
     ).mutate<Success>(
       deleteCustomerAddressMutation,
       {'id': id},
-      Success.fromJson,
+      fromJson: Success.fromJson,
       expectedDataType: 'deleteCustomerAddress',
     );
   }

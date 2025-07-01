@@ -18,7 +18,7 @@ class SystemOperations {
     ).queryList<Country>(
       getAvailableCountriesQuery,
       {},
-      Country.fromJson,
+      fromJson: Country.fromJson,
       expectedDataType: 'availableCountries',
     );
   }
@@ -30,7 +30,7 @@ class SystemOperations {
     ).query<FacetList>(
       getFacetsQuery,
       {"options": options?.toJson()},
-      FacetList.fromJson,
+      fromJson: FacetList.fromJson,
       expectedDataType: 'facets',
     );
   }
@@ -42,7 +42,7 @@ class SystemOperations {
     ).query<Facet>(
       getFacetQuery,
       {'id': id},
-      Facet.fromJson,
+      fromJson: Facet.fromJson,
       expectedDataType: 'facet',
     );
   }

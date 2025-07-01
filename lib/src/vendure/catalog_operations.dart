@@ -20,7 +20,7 @@ class CatalogOperations {
     ).query<CollectionList>(
       getCollectionsQuery,
       {"options": options?.toJson()},
-      CollectionList.fromJson,
+      fromJson: CollectionList.fromJson,
       expectedDataType: 'collections',
     );
   }
@@ -32,7 +32,7 @@ class CatalogOperations {
     ).query<Collection>(
       getCollectionByIdQuery,
       {'id': id},
-      Collection.fromJson,
+      fromJson: Collection.fromJson,
       expectedDataType: 'collection',
     );
   }
@@ -44,7 +44,7 @@ class CatalogOperations {
     ).query<Collection>(
       getCollectionBySlugQuery,
       {'slug': slug},
-      Collection.fromJson,
+      fromJson: Collection.fromJson,
       expectedDataType: 'collection',
     );
   }
@@ -56,7 +56,7 @@ class CatalogOperations {
     ).query<ProductList>(
       getProductsQuery,
       {"options": options?.toJson()},
-      ProductList.fromJson,
+      fromJson: ProductList.fromJson,
       expectedDataType: 'products',
     );
   }
@@ -68,7 +68,7 @@ class CatalogOperations {
     ).query<Product>(
       getProductByIdQuery,
       {'id': id},
-      Product.fromJson,
+      fromJson: Product.fromJson,
       expectedDataType: 'product',
     );
   }
@@ -80,7 +80,7 @@ class CatalogOperations {
     ).query<Product>(
       getProductBySlugQuery,
       {'slug': slug},
-      Product.fromJson,
+      fromJson: Product.fromJson,
       expectedDataType: 'product',
     );
   }
@@ -92,7 +92,7 @@ class CatalogOperations {
     ).query<SearchResponse>(
       searchCatalogQuery,
       {'input': input.toJson()},
-      SearchResponse.fromJson,
+      fromJson: SearchResponse.fromJson,
       expectedDataType: 'search',
     );
   }
@@ -105,7 +105,7 @@ class CatalogOperations {
     ).query<Collection>(
       getCollectionWithParentChildrenQuery,
       {'id': id},
-      Collection.fromJson,
+      fromJson: Collection.fromJson,
       expectedDataType: 'collection',
     );
   }
@@ -117,7 +117,7 @@ class CatalogOperations {
     ).query<Collection>(
       getCollectionWithParentQuery,
       {'id': id},
-      Collection.fromJson,
+      fromJson: Collection.fromJson,
       expectedDataType: 'collection',
     );
   }
@@ -129,7 +129,7 @@ class CatalogOperations {
     ).query<Collection>(
       getCollectionWithChildrenQuery,
       {'id': id},
-      Collection.fromJson,
+      fromJson: Collection.fromJson,
       expectedDataType: 'collection',
     );
   }
@@ -142,7 +142,7 @@ class CatalogOperations {
     ).query<CollectionList>(
       getCollectionListWithParentChildrenQuery,
       {"options": options?.toJson()},
-      CollectionList.fromJson,
+      fromJson: CollectionList.fromJson,
       expectedDataType: 'collections',
     );
   }
