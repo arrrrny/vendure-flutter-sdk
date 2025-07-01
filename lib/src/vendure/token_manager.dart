@@ -15,7 +15,11 @@ class TokenManager {
         throw Exception('No TokenFetcher configured.');
       }
       String? token = await _fetchToken(params);
-      setToken(token!);
+      if (token == null) {
+        throw Exception(
+            'TokenFetcher returned null. Failed to refresh token. Params: $params');
+      }
+      setToken(token);
     } catch (e) {
       rethrow;
     }
