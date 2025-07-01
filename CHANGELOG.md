@@ -1,3 +1,11 @@
+## 2.2.0
+- Improved error handling for all Vendure error types (e.g. InvalidCredentialsError, ErrorResult, etc.) so authentication failures always throw a standardized, testable message.
+- Defensive null checks for error messages to prevent type errors.
+- Enum normalization restored: all enum values for keys in `_vendureTypeEnums` are now converted to Dart/camelCase style recursively.
+- Type safety enforced for all map responses.
+- Internal logging and debug improvements for error diagnosis.
+- See `normalizeGraphQLData` and authentication methods for details.
+
 ## 2.1.1
 - Added refresh token via Vendure instance: `Vendure.instance.refreshToken(params)` now available for direct use.
 - Makes token refresh accessible from the singleton instance for all auth flows.
