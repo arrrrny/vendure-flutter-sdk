@@ -19,35 +19,19 @@ class VendureUtils {
     'defaultLanguageCode',
     'availableLanguageCodes'
   ];
-  static Map<String, dynamic> normalizeGraphQLData(Map<String, dynamic> data) {
-    Map<String, dynamic> normalizedData = {};
-
-    data.forEach((key, value) {
-      if (value is Map<String, dynamic>) {
+  static dynamic normalizeGraphQLData(dynamic data) {
+    if (data is Map<String, dynamic>) {
+      final normalizedData = <String, dynamic>{};
+      data.forEach((key, value) {
         normalizedData[key] = normalizeGraphQLData(value);
-      } else if (value is List) {
-        normalizedData[key] = value.map((item) {
-          if (item is Map<String, dynamic>) {
-            return normalizeGraphQLData(item);
-          } else if (_vendureTypeEnums.contains(key)) {
-            return _convertEnumToDartFormat(item.toString());
-          } else {
-            // Handle primitives (bool, int, double, String, etc)
-            return item;
-          }
-        }).toList();
-      } else if (key == '__typename') {
-        normalizedData['runtimeType'] =
-            value.toString()[0].toLowerCase() + value.toString().substring(1);
-      } else if (_vendureTypeEnums.contains(key)) {
-        normalizedData[key] = _convertEnumToDartFormat(value.toString());
-      } else {
-        // Handle primitives (bool, int, double, String, etc)
-        normalizedData[key] = value;
-      }
-    });
-
-    return normalizedData;
+      });
+      return normalizedData;
+    } else if (data is List) {
+      return data.map((item) => normalizeGraphQLData(item)).toList();
+    } else {
+      // Primitive (bool, int, double, String, etc)
+      return data;
+    }
   }
 
   static String _convertEnumToDartFormat(String enumValue) {
