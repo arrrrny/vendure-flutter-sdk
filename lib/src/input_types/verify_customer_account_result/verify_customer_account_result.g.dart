@@ -18,21 +18,14 @@ _$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('channels', instance.channels?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('identifier', instance.identifier);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
+    <String, dynamic>{
+      if (instance.channels?.map((e) => e?.toJson()).toList() case final value?)
+        'channels': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.identifier case final value?) 'identifier': value,
+      'runtimeType': instance.$type,
+    };
 
 _$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(Map json) =>
     _$MissingPasswordErrorImpl(
@@ -42,20 +35,13 @@ _$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$MissingPasswordErrorImplToJson(
-    _$MissingPasswordErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$MissingPasswordErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -101,20 +87,13 @@ _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
-    _$NativeAuthStrategyErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$NativeAuthStrategyErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 _$PasswordAlreadySetErrorImpl _$$PasswordAlreadySetErrorImplFromJson(
         Map json) =>
@@ -125,20 +104,13 @@ _$PasswordAlreadySetErrorImpl _$$PasswordAlreadySetErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$PasswordAlreadySetErrorImplToJson(
-    _$PasswordAlreadySetErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$PasswordAlreadySetErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
         Map json) =>
@@ -150,21 +122,15 @@ _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$PasswordValidationErrorImplToJson(
-    _$PasswordValidationErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  writeNotNull('validationErrorMessage', instance.validationErrorMessage);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$PasswordValidationErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      if (instance.validationErrorMessage case final value?)
+        'validationErrorMessage': value,
+      'runtimeType': instance.$type,
+    };
 
 _$VerificationTokenExpiredErrorImpl
     _$$VerificationTokenExpiredErrorImplFromJson(Map json) =>
@@ -175,20 +141,13 @@ _$VerificationTokenExpiredErrorImpl
         );
 
 Map<String, dynamic> _$$VerificationTokenExpiredErrorImplToJson(
-    _$VerificationTokenExpiredErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$VerificationTokenExpiredErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 _$VerificationTokenInvalidErrorImpl
     _$$VerificationTokenInvalidErrorImplFromJson(Map json) =>
@@ -199,17 +158,10 @@ _$VerificationTokenInvalidErrorImpl
         );
 
 Map<String, dynamic> _$$VerificationTokenInvalidErrorImplToJson(
-    _$VerificationTokenInvalidErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$VerificationTokenInvalidErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };

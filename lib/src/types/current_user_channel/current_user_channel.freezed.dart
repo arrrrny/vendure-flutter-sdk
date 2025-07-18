@@ -25,8 +25,12 @@ mixin _$CurrentUserChannel {
       throw _privateConstructorUsedError; // required List<Permission> permissions,
   String get token => throw _privateConstructorUsedError;
 
+  /// Serializes this CurrentUserChannel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CurrentUserChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CurrentUserChannelCopyWith<CurrentUserChannel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$CurrentUserChannelCopyWithImpl<$Res, $Val extends CurrentUserChannel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CurrentUserChannel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
       $Res Function(_$CurrentUserChannelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CurrentUserChannel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -161,11 +169,13 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
             (identical(other.token, token) || other.token == token));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, code, id, token);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CurrentUserChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CurrentUserChannelImplCopyWith<_$CurrentUserChannelImpl> get copyWith =>
@@ -193,11 +203,14 @@ abstract class _CurrentUserChannel extends CurrentUserChannel {
   @override
   String get code;
   @override
-  String get id;
-  @override // required List<Permission> permissions,
-  String get token;
+  String get id; // required List<Permission> permissions,
   @override
-  @JsonKey(ignore: true)
+  String get token;
+
+  /// Create a copy of CurrentUserChannel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CurrentUserChannelImplCopyWith<_$CurrentUserChannelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

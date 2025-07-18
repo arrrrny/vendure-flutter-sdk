@@ -25,8 +25,12 @@ mixin _$ConfigurableOperationDefinition {
   String get code => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
+  /// Serializes this ConfigurableOperationDefinition to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ConfigurableOperationDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConfigurableOperationDefinitionCopyWith<ConfigurableOperationDefinition>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -53,6 +57,8 @@ class _$ConfigurableOperationDefinitionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConfigurableOperationDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class __$$ConfigurableOperationDefinitionImplCopyWithImpl<$Res>
       $Res Function(_$ConfigurableOperationDefinitionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConfigurableOperationDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -177,12 +185,14 @@ class _$ConfigurableOperationDefinitionImpl
                 other.description == description));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_args), code, description);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConfigurableOperationDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigurableOperationDefinitionImplCopyWith<
@@ -216,8 +226,11 @@ abstract class _ConfigurableOperationDefinition
   String get code;
   @override
   String get description;
+
+  /// Create a copy of ConfigurableOperationDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConfigurableOperationDefinitionImplCopyWith<
           _$ConfigurableOperationDefinitionImpl>
       get copyWith => throw _privateConstructorUsedError;

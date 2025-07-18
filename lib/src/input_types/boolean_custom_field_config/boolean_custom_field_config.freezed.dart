@@ -33,8 +33,12 @@ mixin _$BooleanCustomFieldConfig {
   String? get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
+  /// Serializes this BooleanCustomFieldConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BooleanCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BooleanCustomFieldConfigCopyWith<BooleanCustomFieldConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$BooleanCustomFieldConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BooleanCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -160,6 +166,8 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$BooleanCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BooleanCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -340,7 +348,7 @@ class _$BooleanCustomFieldConfigImpl extends _BooleanCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -355,7 +363,9 @@ class _$BooleanCustomFieldConfigImpl extends _BooleanCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BooleanCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BooleanCustomFieldConfigImplCopyWith<_$BooleanCustomFieldConfigImpl>
@@ -407,8 +417,11 @@ abstract class _BooleanCustomFieldConfig extends BooleanCustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of BooleanCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BooleanCustomFieldConfigImplCopyWith<_$BooleanCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

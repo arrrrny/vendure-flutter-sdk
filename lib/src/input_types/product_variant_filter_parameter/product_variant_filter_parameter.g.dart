@@ -64,27 +64,24 @@ _$ProductVariantFilterParameterImpl
         );
 
 Map<String, dynamic> _$$ProductVariantFilterParameterImplToJson(
-    _$ProductVariantFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('currencyCode', instance.currencyCode?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('languageCode', instance.languageCode?.toJson());
-  writeNotNull('name', instance.name?.toJson());
-  writeNotNull('price', instance.price?.toJson());
-  writeNotNull('priceWithTax', instance.priceWithTax?.toJson());
-  writeNotNull('productId', instance.productId?.toJson());
-  writeNotNull('sku', instance.sku?.toJson());
-  writeNotNull('stockLevel', instance.stockLevel?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$ProductVariantFilterParameterImpl instance) =>
+    <String, dynamic>{
+      if (instance.and?.map((e) => e.toJson()).toList() case final value?)
+        '_and': value,
+      if (instance.or?.map((e) => e.toJson()).toList() case final value?)
+        '_or': value,
+      if (instance.createdAt?.toJson() case final value?) 'createdAt': value,
+      if (instance.currencyCode?.toJson() case final value?)
+        'currencyCode': value,
+      if (instance.id?.toJson() case final value?) 'id': value,
+      if (instance.languageCode?.toJson() case final value?)
+        'languageCode': value,
+      if (instance.name?.toJson() case final value?) 'name': value,
+      if (instance.price?.toJson() case final value?) 'price': value,
+      if (instance.priceWithTax?.toJson() case final value?)
+        'priceWithTax': value,
+      if (instance.productId?.toJson() case final value?) 'productId': value,
+      if (instance.sku?.toJson() case final value?) 'sku': value,
+      if (instance.stockLevel?.toJson() case final value?) 'stockLevel': value,
+      if (instance.updatedAt?.toJson() case final value?) 'updatedAt': value,
+    };

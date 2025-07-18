@@ -42,8 +42,12 @@ mixin _$Collection {
       throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this Collection to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionCopyWith<Collection> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -89,6 +93,8 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -187,6 +193,8 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
     ) as $Val);
   }
 
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get featuredAsset {
@@ -199,6 +207,8 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
     });
   }
 
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CollectionCopyWith<$Res>? get parent {
@@ -211,6 +221,8 @@ class _$CollectionCopyWithImpl<$Res, $Val extends Collection>
     });
   }
 
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductVariantListCopyWith<$Res>? get productVariants {
@@ -268,6 +280,8 @@ class __$$CollectionImplCopyWithImpl<$Res>
       _$CollectionImpl _value, $Res Function(_$CollectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -551,7 +565,7 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -574,7 +588,9 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(_translations),
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionImplCopyWith<_$CollectionImpl> get copyWith =>
@@ -649,8 +665,11 @@ abstract class _Collection extends Collection {
   List<CollectionTranslation?>? get translations;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of Collection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionImplCopyWith<_$CollectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

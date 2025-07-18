@@ -11,16 +11,8 @@ _$ConfigArgImpl _$$ConfigArgImplFromJson(Map json) => _$ConfigArgImpl(
       value: json['value'] as String?,
     );
 
-Map<String, dynamic> _$$ConfigArgImplToJson(_$ConfigArgImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', instance.name);
-  writeNotNull('value', instance.value);
-  return val;
-}
+Map<String, dynamic> _$$ConfigArgImplToJson(_$ConfigArgImpl instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.value case final value?) 'value': value,
+    };

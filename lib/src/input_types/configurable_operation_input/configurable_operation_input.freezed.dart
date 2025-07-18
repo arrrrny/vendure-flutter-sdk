@@ -24,8 +24,12 @@ mixin _$ConfigurableOperationInput {
   List<ConfigArgInput> get arguments => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
 
+  /// Serializes this ConfigurableOperationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ConfigurableOperationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConfigurableOperationInputCopyWith<ConfigurableOperationInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$ConfigurableOperationInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConfigurableOperationInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$ConfigurableOperationInputImplCopyWithImpl<$Res>
       $Res Function(_$ConfigurableOperationInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConfigurableOperationInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -159,12 +167,14 @@ class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput
             (identical(other.code, code) || other.code == code));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_arguments), code);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConfigurableOperationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigurableOperationInputImplCopyWith<_$ConfigurableOperationInputImpl>
@@ -192,8 +202,11 @@ abstract class _ConfigurableOperationInput extends ConfigurableOperationInput {
   List<ConfigArgInput> get arguments;
   @override
   String get code;
+
+  /// Create a copy of ConfigurableOperationInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConfigurableOperationInputImplCopyWith<_$ConfigurableOperationInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

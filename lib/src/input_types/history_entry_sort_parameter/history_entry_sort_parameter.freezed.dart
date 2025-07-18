@@ -25,8 +25,12 @@ mixin _$HistoryEntrySortParameter {
   SortOrder? get id => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this HistoryEntrySortParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HistoryEntrySortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HistoryEntrySortParameterCopyWith<HistoryEntrySortParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$HistoryEntrySortParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HistoryEntrySortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$HistoryEntrySortParameterImplCopyWithImpl<$Res>
       $Res Function(_$HistoryEntrySortParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryEntrySortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -166,11 +174,13 @@ class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, createdAt, id, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryEntrySortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HistoryEntrySortParameterImplCopyWith<_$HistoryEntrySortParameterImpl>
@@ -201,8 +211,11 @@ abstract class _HistoryEntrySortParameter extends HistoryEntrySortParameter {
   SortOrder? get id;
   @override
   SortOrder? get updatedAt;
+
+  /// Create a copy of HistoryEntrySortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HistoryEntrySortParameterImplCopyWith<_$HistoryEntrySortParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -11,16 +11,8 @@ _$CoordinateImpl _$$CoordinateImplFromJson(Map json) => _$CoordinateImpl(
       y: (json['y'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$CoordinateImplToJson(_$CoordinateImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('x', instance.x);
-  writeNotNull('y', instance.y);
-  return val;
-}
+Map<String, dynamic> _$$CoordinateImplToJson(_$CoordinateImpl instance) =>
+    <String, dynamic>{
+      if (instance.x case final value?) 'x': value,
+      if (instance.y case final value?) 'y': value,
+    };

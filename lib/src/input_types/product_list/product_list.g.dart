@@ -15,16 +15,9 @@ _$ProductListImpl _$$ProductListImplFromJson(Map json) => _$ProductListImpl(
       totalItems: (json['totalItems'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$ProductListImplToJson(_$ProductListImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('items', instance.items?.map((e) => e?.toJson()).toList());
-  writeNotNull('totalItems', instance.totalItems);
-  return val;
-}
+Map<String, dynamic> _$$ProductListImplToJson(_$ProductListImpl instance) =>
+    <String, dynamic>{
+      if (instance.items?.map((e) => e?.toJson()).toList() case final value?)
+        'items': value,
+      if (instance.totalItems case final value?) 'totalItems': value,
+    };

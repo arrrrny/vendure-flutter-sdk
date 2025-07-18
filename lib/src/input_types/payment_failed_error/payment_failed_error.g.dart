@@ -14,20 +14,14 @@ _$PaymentFailedErrorImpl _$$PaymentFailedErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$PaymentFailedErrorImplToJson(
-    _$PaymentFailedErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  writeNotNull('paymentErrorMessage', instance.paymentErrorMessage);
-  return val;
-}
+        _$PaymentFailedErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      if (instance.paymentErrorMessage case final value?)
+        'paymentErrorMessage': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

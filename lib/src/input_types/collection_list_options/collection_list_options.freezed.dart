@@ -38,8 +38,12 @@ mixin _$CollectionListOptions {
   int? get take => throw _privateConstructorUsedError;
   bool? get topLevelOnly => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionListOptionsCopyWith<CollectionListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -73,6 +77,8 @@ class _$CollectionListOptionsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -111,6 +117,8 @@ class _$CollectionListOptionsCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CollectionFilterParameterCopyWith<$Res>? get filter {
@@ -123,6 +131,8 @@ class _$CollectionListOptionsCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CollectionSortParameterCopyWith<$Res>? get sort {
@@ -168,6 +178,8 @@ class __$$CollectionListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$CollectionListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -279,12 +291,14 @@ class _$CollectionListOptionsImpl extends _CollectionListOptions
                 other.topLevelOnly == topLevelOnly));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, filter, filterOperator, skip, sort, take, topLevelOnly);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionListOptionsImplCopyWith<_$CollectionListOptionsImpl>
@@ -312,31 +326,33 @@ abstract class _CollectionListOptions extends CollectionListOptions {
   factory _CollectionListOptions.fromJson(Map<String, dynamic> json) =
       _$CollectionListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
-  CollectionFilterParameter? get filter;
   @override
+  CollectionFilterParameter? get filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
-  LogicalOperator? get filterOperator;
   @override
+  LogicalOperator? get filterOperator;
 
   /// Skips the first n results, for use in pagination
-  int? get skip;
   @override
+  int? get skip;
 
   /// Specifies which properties to sort the results by
-  CollectionSortParameter? get sort;
   @override
+  CollectionSortParameter? get sort;
 
   /// Takes n results, for use in pagination
+  @override
   int? get take;
   @override
   bool? get topLevelOnly;
+
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionListOptionsImplCopyWith<_$CollectionListOptionsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

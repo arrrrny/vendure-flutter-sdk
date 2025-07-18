@@ -31,8 +31,12 @@ mixin _$UserCustomFields {
   String? get phoneModel => throw _privateConstructorUsedError;
   String? get town => throw _privateConstructorUsedError;
 
+  /// Serializes this UserCustomFields to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserCustomFields
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCustomFieldsCopyWith<UserCustomFields> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -66,6 +70,8 @@ class _$UserCustomFieldsCopyWithImpl<$Res, $Val extends UserCustomFields>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserCustomFields
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,6 +160,8 @@ class __$$UserCustomFieldsImplCopyWithImpl<$Res>
       $Res Function(_$UserCustomFieldsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserCustomFields
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -299,12 +307,14 @@ class _$UserCustomFieldsImpl extends _UserCustomFields
             (identical(other.town, town) || other.town == town));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, city, deviceToken, email,
       fullName, neighborhood, os, osVersion, phoneBrand, phoneModel, town);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserCustomFields
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserCustomFieldsImplCopyWith<_$UserCustomFieldsImpl> get copyWith =>
@@ -356,8 +366,11 @@ abstract class _UserCustomFields extends UserCustomFields {
   String? get phoneModel;
   @override
   String? get town;
+
+  /// Create a copy of UserCustomFields
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserCustomFieldsImplCopyWith<_$UserCustomFieldsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

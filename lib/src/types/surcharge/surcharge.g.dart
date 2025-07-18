@@ -20,24 +20,15 @@ _$SurchargeImpl _$$SurchargeImplFromJson(Map json) => _$SurchargeImpl(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$SurchargeImplToJson(_$SurchargeImpl instance) {
-  final val = <String, dynamic>{
-    'createdAt': instance.createdAt.toIso8601String(),
-    'description': instance.description,
-    'id': instance.id,
-    'price': instance.price,
-    'priceWithTax': instance.priceWithTax,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('sku', instance.sku);
-  val['taxLines'] = instance.taxLines.map((e) => e.toJson()).toList();
-  val['taxRate'] = instance.taxRate;
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$$SurchargeImplToJson(_$SurchargeImpl instance) =>
+    <String, dynamic>{
+      'createdAt': instance.createdAt.toIso8601String(),
+      'description': instance.description,
+      'id': instance.id,
+      'price': instance.price,
+      'priceWithTax': instance.priceWithTax,
+      if (instance.sku case final value?) 'sku': value,
+      'taxLines': instance.taxLines.map((e) => e.toJson()).toList(),
+      'taxRate': instance.taxRate,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };

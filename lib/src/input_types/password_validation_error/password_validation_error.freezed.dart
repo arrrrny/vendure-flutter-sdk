@@ -25,8 +25,12 @@ mixin _$PasswordValidationError {
   String? get message => throw _privateConstructorUsedError;
   String? get validationErrorMessage => throw _privateConstructorUsedError;
 
+  /// Serializes this PasswordValidationError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PasswordValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PasswordValidationErrorCopyWith<PasswordValidationError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$PasswordValidationErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PasswordValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,6 +105,8 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
       $Res Function(_$PasswordValidationErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PasswordValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -169,12 +177,14 @@ class _$PasswordValidationErrorImpl extends _PasswordValidationError
                 other.validationErrorMessage == validationErrorMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, validationErrorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PasswordValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
@@ -205,8 +215,11 @@ abstract class _PasswordValidationError extends PasswordValidationError {
   String? get message;
   @override
   String? get validationErrorMessage;
+
+  /// Create a copy of PasswordValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

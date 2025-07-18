@@ -39,8 +39,12 @@ mixin _$Promotion {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   int? get usageLimit => throw _privateConstructorUsedError;
 
+  /// Serializes this Promotion to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Promotion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PromotionCopyWith<Promotion> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -78,6 +82,8 @@ class _$PromotionCopyWithImpl<$Res, $Val extends Promotion>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Promotion
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -196,6 +202,8 @@ class __$$PromotionImplCopyWithImpl<$Res>
       _$PromotionImpl _value, $Res Function(_$PromotionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Promotion
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -430,7 +438,7 @@ class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
                 other.usageLimit == usageLimit));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -450,7 +458,9 @@ class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
       updatedAt,
       usageLimit);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Promotion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PromotionImplCopyWith<_$PromotionImpl> get copyWith =>
@@ -516,8 +526,11 @@ abstract class _Promotion extends Promotion {
   DateTime? get updatedAt;
   @override
   int? get usageLimit;
+
+  /// Create a copy of Promotion
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PromotionImplCopyWith<_$PromotionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

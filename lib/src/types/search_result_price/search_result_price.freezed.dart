@@ -67,6 +67,8 @@ mixin _$SearchResultPrice {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this SearchResultPrice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -86,6 +88,9 @@ class _$SearchResultPriceCopyWithImpl<$Res, $Val extends SearchResultPrice>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -105,6 +110,8 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
       _$PriceRangeImpl _value, $Res Function(_$PriceRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -166,11 +173,13 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
             (identical(other.min, min) || other.min == min));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, max, min);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PriceRangeImplCopyWith<_$PriceRangeImpl> get copyWith =>
@@ -257,7 +266,10 @@ abstract class PriceRange extends SearchResultPrice {
 
   double get max;
   double get min;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PriceRangeImplCopyWith<_$PriceRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -279,6 +291,8 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
       _$SinglePriceImpl _value, $Res Function(_$SinglePriceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -330,11 +344,13 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SinglePriceImplCopyWith<_$SinglePriceImpl> get copyWith =>
@@ -418,7 +434,10 @@ abstract class SinglePrice extends SearchResultPrice {
       _$SinglePriceImpl.fromJson;
 
   double get value;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchResultPrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SinglePriceImplCopyWith<_$SinglePriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

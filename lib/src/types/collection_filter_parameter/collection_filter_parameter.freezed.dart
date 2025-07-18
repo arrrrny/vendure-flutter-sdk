@@ -52,8 +52,12 @@ mixin _$CollectionFilterParameter {
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
   set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionFilterParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionFilterParameterCopyWith<CollectionFilterParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -99,6 +103,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,6 +168,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get createdAt {
@@ -174,6 +182,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get description {
@@ -186,6 +196,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get id {
@@ -198,6 +210,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get languageCode {
@@ -210,6 +224,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get name {
@@ -222,6 +238,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get parentId {
@@ -234,6 +252,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get position {
@@ -246,6 +266,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get slug {
@@ -258,6 +280,8 @@ class _$CollectionFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get updatedAt {
@@ -323,6 +347,8 @@ class __$$CollectionFilterParameterImplCopyWithImpl<$Res>
       $Res Function(_$CollectionFilterParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -456,7 +482,9 @@ class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionFilterParameterImplCopyWith<_$CollectionFilterParameterImpl>
@@ -526,8 +554,11 @@ abstract class _CollectionFilterParameter extends CollectionFilterParameter {
   @override
   DateOperators? get updatedAt;
   set updatedAt(DateOperators? value);
+
+  /// Create a copy of CollectionFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionFilterParameterImplCopyWith<_$CollectionFilterParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

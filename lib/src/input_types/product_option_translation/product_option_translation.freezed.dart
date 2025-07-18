@@ -27,8 +27,12 @@ mixin _$ProductOptionTranslation {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductOptionTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductOptionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductOptionTranslationCopyWith<ProductOptionTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$ProductOptionTranslationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductOptionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$ProductOptionTranslationImplCopyWithImpl<$Res>
       $Res Function(_$ProductOptionTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductOptionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,12 +215,14 @@ class _$ProductOptionTranslationImpl extends _ProductOptionTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, createdAt, id, languageCode, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductOptionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductOptionTranslationImplCopyWith<_$ProductOptionTranslationImpl>
@@ -249,8 +259,11 @@ abstract class _ProductOptionTranslation extends ProductOptionTranslation {
   String? get name;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of ProductOptionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductOptionTranslationImplCopyWith<_$ProductOptionTranslationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

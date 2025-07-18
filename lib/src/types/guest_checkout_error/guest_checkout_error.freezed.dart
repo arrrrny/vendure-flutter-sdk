@@ -24,8 +24,12 @@ mixin _$GuestCheckoutError {
   String get errorDetail => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
 
+  /// Serializes this GuestCheckoutError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GuestCheckoutError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GuestCheckoutErrorCopyWith<GuestCheckoutError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$GuestCheckoutErrorCopyWithImpl<$Res, $Val extends GuestCheckoutError>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GuestCheckoutError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$GuestCheckoutErrorImplCopyWithImpl<$Res>
       $Res Function(_$GuestCheckoutErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GuestCheckoutError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,11 +171,13 @@ class _$GuestCheckoutErrorImpl extends _GuestCheckoutError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, errorDetail, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GuestCheckoutError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GuestCheckoutErrorImplCopyWith<_$GuestCheckoutErrorImpl> get copyWith =>
@@ -198,8 +208,11 @@ abstract class _GuestCheckoutError extends GuestCheckoutError {
   String get errorDetail;
   @override
   String get message;
+
+  /// Create a copy of GuestCheckoutError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GuestCheckoutErrorImplCopyWith<_$GuestCheckoutErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

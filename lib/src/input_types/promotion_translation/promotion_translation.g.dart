@@ -22,23 +22,18 @@ _$PromotionTranslationImpl _$$PromotionTranslationImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$PromotionTranslationImplToJson(
-    _$PromotionTranslationImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('description', instance.description);
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+        _$PromotionTranslationImpl instance) =>
+    <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.id case final value?) 'id': value,
+      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
+        'languageCode': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

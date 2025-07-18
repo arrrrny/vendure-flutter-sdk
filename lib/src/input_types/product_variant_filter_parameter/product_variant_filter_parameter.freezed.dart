@@ -39,8 +39,12 @@ mixin _$ProductVariantFilterParameter {
   StringOperators? get stockLevel => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductVariantFilterParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductVariantFilterParameterCopyWith<ProductVariantFilterParameter>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -92,6 +96,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -165,6 +171,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get createdAt {
@@ -177,6 +185,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get currencyCode {
@@ -189,6 +199,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get id {
@@ -201,6 +213,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get languageCode {
@@ -213,6 +227,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get name {
@@ -225,6 +241,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get price {
@@ -237,6 +255,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get priceWithTax {
@@ -249,6 +269,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get productId {
@@ -261,6 +283,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get sku {
@@ -273,6 +297,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get stockLevel {
@@ -285,6 +311,8 @@ class _$ProductVariantFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get updatedAt {
@@ -356,6 +384,8 @@ class __$$ProductVariantFilterParameterImplCopyWithImpl<$Res>
       $Res Function(_$ProductVariantFilterParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -553,7 +583,7 @@ class _$ProductVariantFilterParameterImpl extends _ProductVariantFilterParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -571,7 +601,9 @@ class _$ProductVariantFilterParameterImpl extends _ProductVariantFilterParameter
       stockLevel,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductVariantFilterParameterImplCopyWith<
@@ -636,8 +668,11 @@ abstract class _ProductVariantFilterParameter
   StringOperators? get stockLevel;
   @override
   DateOperators? get updatedAt;
+
+  /// Create a copy of ProductVariantFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductVariantFilterParameterImplCopyWith<
           _$ProductVariantFilterParameterImpl>
       get copyWith => throw _privateConstructorUsedError;

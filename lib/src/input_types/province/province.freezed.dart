@@ -34,8 +34,12 @@ mixin _$Province {
   String? get type => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this Province to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Province
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProvinceCopyWith<Province> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$ProvinceCopyWithImpl<$Res, $Val extends Province>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Province
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,6 +146,8 @@ class _$ProvinceCopyWithImpl<$Res, $Val extends Province>
     ) as $Val);
   }
 
+  /// Create a copy of Province
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RegionCopyWith<$Res>? get parent {
@@ -187,6 +195,8 @@ class __$$ProvinceImplCopyWithImpl<$Res>
       _$ProvinceImpl _value, $Res Function(_$ProvinceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Province
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -369,7 +379,7 @@ class _$ProvinceImpl extends _Province with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -386,7 +396,9 @@ class _$ProvinceImpl extends _Province with DiagnosticableTreeMixin {
       type,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Province
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProvinceImplCopyWith<_$ProvinceImpl> get copyWith =>
@@ -443,8 +455,11 @@ abstract class _Province extends Province {
   String? get type;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of Province
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProvinceImplCopyWith<_$ProvinceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

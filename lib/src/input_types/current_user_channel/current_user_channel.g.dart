@@ -17,22 +17,15 @@ _$CurrentUserChannelImpl _$$CurrentUserChannelImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$CurrentUserChannelImplToJson(
-    _$CurrentUserChannelImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('id', instance.id);
-  writeNotNull('permissions',
-      instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('token', instance.token);
-  return val;
-}
+        _$CurrentUserChannelImpl instance) =>
+    <String, dynamic>{
+      if (instance.code case final value?) 'code': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList()
+          case final value?)
+        'permissions': value,
+      if (instance.token case final value?) 'token': value,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

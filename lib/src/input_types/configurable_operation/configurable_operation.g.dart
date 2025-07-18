@@ -17,16 +17,9 @@ _$ConfigurableOperationImpl _$$ConfigurableOperationImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ConfigurableOperationImplToJson(
-    _$ConfigurableOperationImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('args', instance.args?.map((e) => e?.toJson()).toList());
-  writeNotNull('code', instance.code);
-  return val;
-}
+        _$ConfigurableOperationImpl instance) =>
+    <String, dynamic>{
+      if (instance.args?.map((e) => e?.toJson()).toList() case final value?)
+        'args': value,
+      if (instance.code case final value?) 'code': value,
+    };

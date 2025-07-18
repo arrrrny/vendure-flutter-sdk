@@ -25,26 +25,17 @@ _$RegionImpl _$$RegionImplFromJson(Map json) => _$RegionImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$RegionImplToJson(_$RegionImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'createdAt': instance.createdAt.toIso8601String(),
-    'updatedAt': instance.updatedAt.toIso8601String(),
-    'languageCode': instance.languageCode,
-    'code': instance.code,
-    'type': instance.type,
-    'name': instance.name,
-    'enabled': instance.enabled,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('parent', instance.parent?.toJson());
-  writeNotNull('parentId', instance.parentId);
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  return val;
-}
+Map<String, dynamic> _$$RegionImplToJson(_$RegionImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'languageCode': instance.languageCode,
+      'code': instance.code,
+      'type': instance.type,
+      'name': instance.name,
+      'enabled': instance.enabled,
+      if (instance.parent?.toJson() case final value?) 'parent': value,
+      if (instance.parentId case final value?) 'parentId': value,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+    };

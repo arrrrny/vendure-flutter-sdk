@@ -26,8 +26,12 @@ mixin _$SearchResultSortParameter {
   SortOrder? get price => throw _privateConstructorUsedError;
   set price(SortOrder? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchResultSortParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchResultSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchResultSortParameterCopyWith<SearchResultSortParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$SearchResultSortParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchResultSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$SearchResultSortParameterImplCopyWithImpl<$Res>
       $Res Function(_$SearchResultSortParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchResultSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,7 +148,9 @@ class _$SearchResultSortParameterImpl extends _SearchResultSortParameter
       ..add(DiagnosticsProperty('price', price));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchResultSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchResultSortParameterImplCopyWith<_$SearchResultSortParameterImpl>
@@ -169,8 +179,11 @@ abstract class _SearchResultSortParameter extends SearchResultSortParameter {
   @override
   SortOrder? get price;
   set price(SortOrder? value);
+
+  /// Create a copy of SearchResultSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchResultSortParameterImplCopyWith<_$SearchResultSortParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

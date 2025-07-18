@@ -42,8 +42,12 @@ mixin _$SearchResult {
   String get sku => throw _privateConstructorUsedError;
   String get slug => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchResultCopyWith<SearchResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -89,6 +93,8 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,6 +188,8 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
     ) as $Val);
   }
 
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchResultPriceCopyWith<$Res> get price {
@@ -190,6 +198,8 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
     });
   }
 
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchResultPriceCopyWith<$Res> get priceWithTax {
@@ -198,6 +208,8 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
     });
   }
 
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchResultAssetCopyWith<$Res>? get productAsset {
@@ -210,6 +222,8 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
     });
   }
 
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchResultAssetCopyWith<$Res>? get productVariantAsset {
@@ -269,6 +283,8 @@ class __$$SearchResultImplCopyWithImpl<$Res>
       _$SearchResultImpl _value, $Res Function(_$SearchResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -514,7 +530,7 @@ class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
             (identical(other.slug, slug) || other.slug == slug));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -536,7 +552,9 @@ class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
       sku,
       slug);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchResultImplCopyWith<_$SearchResultImpl> get copyWith =>
@@ -574,9 +592,8 @@ abstract class _SearchResult extends SearchResult {
   factory _SearchResult.fromJson(Map<String, dynamic> json) =
       _$SearchResultImpl.fromJson;
 
-  @override
-
   /// An array of ids of the Collections in which this result appears
+  @override
   List<String> get collectionIds;
   @override
   CurrencyCode get currencyCode;
@@ -604,16 +621,19 @@ abstract class _SearchResult extends SearchResult {
   String get productVariantId;
   @override
   String get productVariantName;
-  @override
 
   /// A relevance score for the result. Differs between database implementations
+  @override
   double get score;
   @override
   String get sku;
   @override
   String get slug;
+
+  /// Create a copy of SearchResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchResultImplCopyWith<_$SearchResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -36,27 +36,24 @@ _$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ProductOptionGroupImplToJson(
-    _$ProductOptionGroupImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull('options', instance.options?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+        _$ProductOptionGroupImpl instance) =>
+    <String, dynamic>{
+      if (instance.code case final value?) 'code': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.id case final value?) 'id': value,
+      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
+        'languageCode': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.options?.map((e) => e?.toJson()).toList() case final value?)
+        'options': value,
+      if (instance.translations?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'translations': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

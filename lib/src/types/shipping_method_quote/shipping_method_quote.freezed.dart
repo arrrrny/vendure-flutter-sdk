@@ -31,8 +31,12 @@ mixin _$ShippingMethodQuote {
   double get price => throw _privateConstructorUsedError;
   double get priceWithTax => throw _privateConstructorUsedError;
 
+  /// Serializes this ShippingMethodQuote to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ShippingMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ShippingMethodQuoteCopyWith<ShippingMethodQuote> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,6 +68,8 @@ class _$ShippingMethodQuoteCopyWithImpl<$Res, $Val extends ShippingMethodQuote>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ShippingMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,6 +146,8 @@ class __$$ShippingMethodQuoteImplCopyWithImpl<$Res>
       $Res Function(_$ShippingMethodQuoteImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ShippingMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,7 +292,7 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
                 other.priceWithTax == priceWithTax));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -297,7 +305,9 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
       price,
       priceWithTax);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ShippingMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ShippingMethodQuoteImplCopyWith<_$ShippingMethodQuoteImpl> get copyWith =>
@@ -335,9 +345,9 @@ abstract class _ShippingMethodQuote extends ShippingMethodQuote {
   String get description;
   @override
   String get id;
-  @override
 
   /// Any optional metadata returned by the ShippingCalculator in the ShippingCalculationResult
+  @override
   Map<String, dynamic>? get metadata;
   @override
   String get name;
@@ -345,8 +355,11 @@ abstract class _ShippingMethodQuote extends ShippingMethodQuote {
   double get price;
   @override
   double get priceWithTax;
+
+  /// Create a copy of ShippingMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ShippingMethodQuoteImplCopyWith<_$ShippingMethodQuoteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

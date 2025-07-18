@@ -20,25 +20,22 @@ _$CollectionSortParameterImpl _$$CollectionSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$CollectionSortParameterImplToJson(
-    _$CollectionSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('description', _$SortOrderEnumMap[instance.description]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
-  writeNotNull('parentId', _$SortOrderEnumMap[instance.parentId]);
-  writeNotNull('position', _$SortOrderEnumMap[instance.position]);
-  writeNotNull('slug', _$SortOrderEnumMap[instance.slug]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$CollectionSortParameterImpl instance) =>
+    <String, dynamic>{
+      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
+        'createdAt': value,
+      if (_$SortOrderEnumMap[instance.description] case final value?)
+        'description': value,
+      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
+      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
+      if (_$SortOrderEnumMap[instance.parentId] case final value?)
+        'parentId': value,
+      if (_$SortOrderEnumMap[instance.position] case final value?)
+        'position': value,
+      if (_$SortOrderEnumMap[instance.slug] case final value?) 'slug': value,
+      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
+        'updatedAt': value,
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

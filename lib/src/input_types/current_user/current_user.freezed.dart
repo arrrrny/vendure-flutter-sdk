@@ -24,8 +24,12 @@ mixin _$CurrentUser {
   String? get id => throw _privateConstructorUsedError;
   String? get identifier => throw _privateConstructorUsedError;
 
+  /// Serializes this CurrentUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CurrentUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CurrentUserCopyWith<CurrentUser> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$CurrentUserCopyWithImpl<$Res, $Val extends CurrentUser>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CurrentUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,6 +100,8 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
       _$CurrentUserImpl _value, $Res Function(_$CurrentUserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CurrentUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -170,12 +178,14 @@ class _$CurrentUserImpl extends _CurrentUser with DiagnosticableTreeMixin {
                 other.identifier == identifier));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_channels), id, identifier);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CurrentUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
@@ -205,8 +215,11 @@ abstract class _CurrentUser extends CurrentUser {
   String? get id;
   @override
   String? get identifier;
+
+  /// Create a copy of CurrentUser
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

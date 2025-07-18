@@ -26,8 +26,12 @@ mixin _$FulfillmentLine {
   String? get orderLineId => throw _privateConstructorUsedError;
   int? get quantity => throw _privateConstructorUsedError;
 
+  /// Serializes this FulfillmentLine to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FulfillmentLineCopyWith<FulfillmentLine> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$FulfillmentLineCopyWithImpl<$Res, $Val extends FulfillmentLine>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class _$FulfillmentLineCopyWithImpl<$Res, $Val extends FulfillmentLine>
     ) as $Val);
   }
 
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FulfillmentCopyWith<$Res>? get fulfillment {
@@ -104,6 +112,8 @@ class _$FulfillmentLineCopyWithImpl<$Res, $Val extends FulfillmentLine>
     });
   }
 
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderLineCopyWith<$Res>? get orderLine {
@@ -146,6 +156,8 @@ class __$$FulfillmentLineImplCopyWithImpl<$Res>
       _$FulfillmentLineImpl _value, $Res Function(_$FulfillmentLineImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -240,12 +252,14 @@ class _$FulfillmentLineImpl extends _FulfillmentLine
                 other.quantity == quantity));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, fulfillment, fulfillmentId,
       orderLine, orderLineId, quantity);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FulfillmentLineImplCopyWith<_$FulfillmentLineImpl> get copyWith =>
@@ -282,8 +296,11 @@ abstract class _FulfillmentLine extends FulfillmentLine {
   String? get orderLineId;
   @override
   int? get quantity;
+
+  /// Create a copy of FulfillmentLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FulfillmentLineImplCopyWith<_$FulfillmentLineImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

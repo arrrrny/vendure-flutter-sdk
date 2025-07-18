@@ -23,22 +23,14 @@ _$ShippingMethodQuoteImpl _$$ShippingMethodQuoteImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ShippingMethodQuoteImplToJson(
-    _$ShippingMethodQuoteImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('description', instance.description);
-  writeNotNull('id', instance.id);
-  writeNotNull('metadata', instance.metadata);
-  writeNotNull('name', instance.name);
-  writeNotNull('price', instance.price);
-  writeNotNull('priceWithTax', instance.priceWithTax);
-  return val;
-}
+        _$ShippingMethodQuoteImpl instance) =>
+    <String, dynamic>{
+      if (instance.code case final value?) 'code': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.price case final value?) 'price': value,
+      if (instance.priceWithTax case final value?) 'priceWithTax': value,
+    };

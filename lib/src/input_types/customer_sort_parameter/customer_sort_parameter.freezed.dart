@@ -30,8 +30,12 @@ mixin _$CustomerSortParameter {
   SortOrder? get title => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this CustomerSortParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CustomerSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomerSortParameterCopyWith<CustomerSortParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,6 +68,8 @@ class _$CustomerSortParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CustomerSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,6 +148,8 @@ class __$$CustomerSortParameterImplCopyWithImpl<$Res>
       $Res Function(_$CustomerSortParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomerSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -267,12 +275,14 @@ class _$CustomerSortParameterImpl extends _CustomerSortParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, createdAt, emailAddress,
       firstName, id, lastName, phoneNumber, title, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomerSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CustomerSortParameterImplCopyWith<_$CustomerSortParameterImpl>
@@ -318,8 +328,11 @@ abstract class _CustomerSortParameter extends CustomerSortParameter {
   SortOrder? get title;
   @override
   SortOrder? get updatedAt;
+
+  /// Create a copy of CustomerSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CustomerSortParameterImplCopyWith<_$CustomerSortParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

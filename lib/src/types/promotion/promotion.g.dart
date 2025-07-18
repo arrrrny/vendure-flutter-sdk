@@ -39,30 +39,23 @@ _$PromotionImpl _$$PromotionImplFromJson(Map json) => _$PromotionImpl(
       usageLimit: (json['usageLimit'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$PromotionImplToJson(_$PromotionImpl instance) {
-  final val = <String, dynamic>{
-    'actions': instance.actions.map((e) => e.toJson()).toList(),
-    'conditions': instance.conditions.map((e) => e.toJson()).toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('couponCode', instance.couponCode);
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  writeNotNull('customFields', instance.customFields);
-  val['description'] = instance.description;
-  val['enabled'] = instance.enabled;
-  writeNotNull('endsAt', instance.endsAt?.toIso8601String());
-  val['id'] = instance.id;
-  val['name'] = instance.name;
-  writeNotNull('perCustomerUsageLimit', instance.perCustomerUsageLimit);
-  writeNotNull('startsAt', instance.startsAt?.toIso8601String());
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  writeNotNull('usageLimit', instance.usageLimit);
-  return val;
-}
+Map<String, dynamic> _$$PromotionImplToJson(_$PromotionImpl instance) =>
+    <String, dynamic>{
+      'actions': instance.actions.map((e) => e.toJson()).toList(),
+      'conditions': instance.conditions.map((e) => e.toJson()).toList(),
+      if (instance.couponCode case final value?) 'couponCode': value,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'description': instance.description,
+      'enabled': instance.enabled,
+      if (instance.endsAt?.toIso8601String() case final value?) 'endsAt': value,
+      'id': instance.id,
+      'name': instance.name,
+      if (instance.perCustomerUsageLimit case final value?)
+        'perCustomerUsageLimit': value,
+      if (instance.startsAt?.toIso8601String() case final value?)
+        'startsAt': value,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      if (instance.usageLimit case final value?) 'usageLimit': value,
+    };

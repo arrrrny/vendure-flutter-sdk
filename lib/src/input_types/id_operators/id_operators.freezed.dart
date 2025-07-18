@@ -27,8 +27,12 @@ mixin _$IdOperators {
   String? get notEq => throw _privateConstructorUsedError;
   List<String>? get notIn => throw _privateConstructorUsedError;
 
+  /// Serializes this IdOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IdOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IdOperatorsCopyWith<IdOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$IdOperatorsCopyWithImpl<$Res, $Val extends IdOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IdOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -115,6 +121,8 @@ class __$$IdOperatorsImplCopyWithImpl<$Res>
       _$IdOperatorsImpl _value, $Res Function(_$IdOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IdOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -221,7 +229,7 @@ class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
             const DeepCollectionEquality().equals(other._notIn, _notIn));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -231,7 +239,9 @@ class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
       notEq,
       const DeepCollectionEquality().hash(_notIn));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IdOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IdOperatorsImplCopyWith<_$IdOperatorsImpl> get copyWith =>
@@ -268,8 +278,11 @@ abstract class _IdOperators extends IdOperators {
   String? get notEq;
   @override
   List<String>? get notIn;
+
+  /// Create a copy of IdOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IdOperatorsImplCopyWith<_$IdOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

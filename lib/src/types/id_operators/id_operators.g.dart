@@ -15,19 +15,11 @@ _$IdOperatorsImpl _$$IdOperatorsImplFromJson(Map json) => _$IdOperatorsImpl(
           (json['notIn'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$IdOperatorsImplToJson(_$IdOperatorsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('eq', instance.eq);
-  writeNotNull('in', instance.in_);
-  writeNotNull('isNull', instance.isNull);
-  writeNotNull('notEq', instance.notEq);
-  writeNotNull('notIn', instance.notIn);
-  return val;
-}
+Map<String, dynamic> _$$IdOperatorsImplToJson(_$IdOperatorsImpl instance) =>
+    <String, dynamic>{
+      if (instance.eq case final value?) 'eq': value,
+      if (instance.in_ case final value?) 'in': value,
+      if (instance.isNull case final value?) 'isNull': value,
+      if (instance.notEq case final value?) 'notEq': value,
+      if (instance.notIn case final value?) 'notIn': value,
+    };

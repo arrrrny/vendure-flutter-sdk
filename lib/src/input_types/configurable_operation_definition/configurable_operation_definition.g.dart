@@ -20,17 +20,10 @@ _$ConfigurableOperationDefinitionImpl
         );
 
 Map<String, dynamic> _$$ConfigurableOperationDefinitionImplToJson(
-    _$ConfigurableOperationDefinitionImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('args', instance.args?.map((e) => e?.toJson()).toList());
-  writeNotNull('code', instance.code);
-  writeNotNull('description', instance.description);
-  return val;
-}
+        _$ConfigurableOperationDefinitionImpl instance) =>
+    <String, dynamic>{
+      if (instance.args?.map((e) => e?.toJson()).toList() case final value?)
+        'args': value,
+      if (instance.code case final value?) 'code': value,
+      if (instance.description case final value?) 'description': value,
+    };

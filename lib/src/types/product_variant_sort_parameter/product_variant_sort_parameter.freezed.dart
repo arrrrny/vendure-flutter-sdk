@@ -40,8 +40,12 @@ mixin _$ProductVariantSortParameter {
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
   set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductVariantSortParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductVariantSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductVariantSortParameterCopyWith<ProductVariantSortParameter>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -77,6 +81,8 @@ class _$ProductVariantSortParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductVariantSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,6 +168,8 @@ class __$$ProductVariantSortParameterImplCopyWithImpl<$Res>
       $Res Function(_$ProductVariantSortParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductVariantSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -276,7 +284,9 @@ class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductVariantSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductVariantSortParameterImplCopyWith<_$ProductVariantSortParameterImpl>
@@ -335,8 +345,11 @@ abstract class _ProductVariantSortParameter
   @override
   SortOrder? get updatedAt;
   set updatedAt(SortOrder? value);
+
+  /// Create a copy of ProductVariantSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductVariantSortParameterImplCopyWith<_$ProductVariantSortParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

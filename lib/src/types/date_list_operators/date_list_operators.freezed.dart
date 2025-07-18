@@ -23,8 +23,12 @@ mixin _$DateListOperators {
   DateTime get inList => throw _privateConstructorUsedError;
   set inList(DateTime value) => throw _privateConstructorUsedError;
 
+  /// Serializes this DateListOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DateListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DateListOperatorsCopyWith<DateListOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$DateListOperatorsCopyWithImpl<$Res, $Val extends DateListOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DateListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$DateListOperatorsImplCopyWithImpl<$Res>
       $Res Function(_$DateListOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DateListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,7 +128,9 @@ class _$DateListOperatorsImpl extends _DateListOperators
       ..add(DiagnosticsProperty('inList', inList));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DateListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DateListOperatorsImplCopyWith<_$DateListOperatorsImpl> get copyWith =>
@@ -146,8 +156,11 @@ abstract class _DateListOperators extends DateListOperators {
   @override
   DateTime get inList;
   set inList(DateTime value);
+
+  /// Create a copy of DateListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DateListOperatorsImplCopyWith<_$DateListOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

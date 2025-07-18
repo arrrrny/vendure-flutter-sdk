@@ -53,8 +53,12 @@ mixin _$OrderListOptions {
   /// Takes n results, for use in pagination
   set take(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderListOptionsCopyWith<OrderListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -86,6 +90,8 @@ class _$OrderListOptionsCopyWithImpl<$Res, $Val extends OrderListOptions>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class _$OrderListOptionsCopyWithImpl<$Res, $Val extends OrderListOptions>
     ) as $Val);
   }
 
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderFilterParameterCopyWith<$Res>? get filter {
@@ -131,6 +139,8 @@ class _$OrderListOptionsCopyWithImpl<$Res, $Val extends OrderListOptions>
     });
   }
 
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderSortParameterCopyWith<$Res>? get sort {
@@ -173,6 +183,8 @@ class __$$OrderListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$OrderListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -256,7 +268,9 @@ class _$OrderListOptionsImpl extends _OrderListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderListOptionsImplCopyWith<_$OrderListOptionsImpl> get copyWith =>
@@ -283,45 +297,47 @@ abstract class _OrderListOptions extends OrderListOptions {
   factory _OrderListOptions.fromJson(Map<String, dynamic> json) =
       _$OrderListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
+  @override
   OrderFilterParameter? get filter;
 
   /// Allows the results to be filtered
   set filter(OrderFilterParameter? value);
-  @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
+  @override
   LogicalOperator? get filterOperator;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   set filterOperator(LogicalOperator? value);
-  @override
 
   /// Skips the first n results, for use in pagination
+  @override
   int? get skip;
 
   /// Skips the first n results, for use in pagination
   set skip(int? value);
-  @override
 
   /// Specifies which properties to sort the results by
+  @override
   OrderSortParameter? get sort;
 
   /// Specifies which properties to sort the results by
   set sort(OrderSortParameter? value);
-  @override
 
   /// Takes n results, for use in pagination
+  @override
   int? get take;
 
   /// Takes n results, for use in pagination
   set take(int? value);
+
+  /// Create a copy of OrderListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderListOptionsImplCopyWith<_$OrderListOptionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

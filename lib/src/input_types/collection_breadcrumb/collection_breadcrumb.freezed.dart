@@ -24,8 +24,12 @@ mixin _$CollectionBreadcrumb {
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionBreadcrumb to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionBreadcrumb
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionBreadcrumbCopyWith<CollectionBreadcrumb> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$CollectionBreadcrumbCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionBreadcrumb
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$CollectionBreadcrumbImplCopyWithImpl<$Res>
       $Res Function(_$CollectionBreadcrumbImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionBreadcrumb
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -158,11 +166,13 @@ class _$CollectionBreadcrumbImpl extends _CollectionBreadcrumb
             (identical(other.slug, slug) || other.slug == slug));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, slug);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionBreadcrumb
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionBreadcrumbImplCopyWith<_$CollectionBreadcrumbImpl>
@@ -194,8 +204,11 @@ abstract class _CollectionBreadcrumb extends CollectionBreadcrumb {
   String? get name;
   @override
   String? get slug;
+
+  /// Create a copy of CollectionBreadcrumb
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionBreadcrumbImplCopyWith<_$CollectionBreadcrumbImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

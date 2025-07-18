@@ -56,8 +56,12 @@ mixin _$HistoryEntryListOptions {
   /// Takes n results, for use in pagination
   set take(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this HistoryEntryListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HistoryEntryListOptionsCopyWith<HistoryEntryListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -90,6 +94,8 @@ class _$HistoryEntryListOptionsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,6 +129,8 @@ class _$HistoryEntryListOptionsCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryFilterParameterCopyWith<$Res>? get filter {
@@ -135,6 +143,8 @@ class _$HistoryEntryListOptionsCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntrySortParameterCopyWith<$Res>? get sort {
@@ -180,6 +190,8 @@ class __$$HistoryEntryListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$HistoryEntryListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -263,7 +275,9 @@ class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HistoryEntryListOptionsImplCopyWith<_$HistoryEntryListOptionsImpl>
@@ -290,45 +304,47 @@ abstract class _HistoryEntryListOptions extends HistoryEntryListOptions {
   factory _HistoryEntryListOptions.fromJson(Map<String, dynamic> json) =
       _$HistoryEntryListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
+  @override
   HistoryEntryFilterParameter? get filter;
 
   /// Allows the results to be filtered
   set filter(HistoryEntryFilterParameter? value);
-  @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
+  @override
   LogicalOperator? get filterOperator;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   set filterOperator(LogicalOperator? value);
-  @override
 
   /// Skips the first n results, for use in pagination
+  @override
   int? get skip;
 
   /// Skips the first n results, for use in pagination
   set skip(int? value);
-  @override
 
   /// Specifies which properties to sort the results by
+  @override
   HistoryEntrySortParameter? get sort;
 
   /// Specifies which properties to sort the results by
   set sort(HistoryEntrySortParameter? value);
-  @override
 
   /// Takes n results, for use in pagination
+  @override
   int? get take;
 
   /// Takes n results, for use in pagination
   set take(int? value);
+
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HistoryEntryListOptionsImplCopyWith<_$HistoryEntryListOptionsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

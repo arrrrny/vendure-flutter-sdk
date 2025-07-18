@@ -22,8 +22,12 @@ SinglePrice _$SinglePriceFromJson(Map<String, dynamic> json) {
 mixin _$SinglePrice {
   double get value => throw _privateConstructorUsedError;
 
+  /// Serializes this SinglePrice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SinglePrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SinglePriceCopyWith<SinglePrice> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$SinglePriceCopyWithImpl<$Res, $Val extends SinglePrice>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SinglePrice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +86,8 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
       _$SinglePriceImpl _value, $Res Function(_$SinglePriceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SinglePrice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,11 +134,13 @@ class _$SinglePriceImpl extends _SinglePrice with DiagnosticableTreeMixin {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SinglePrice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SinglePriceImplCopyWith<_$SinglePriceImpl> get copyWith =>
@@ -153,8 +163,11 @@ abstract class _SinglePrice extends SinglePrice {
 
   @override
   double get value;
+
+  /// Create a copy of SinglePrice
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SinglePriceImplCopyWith<_$SinglePriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

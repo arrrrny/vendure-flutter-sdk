@@ -19,19 +19,11 @@ _$RefundLineImpl _$$RefundLineImplFromJson(Map json) => _$RefundLineImpl(
       refundId: json['refundId'] as String?,
     );
 
-Map<String, dynamic> _$$RefundLineImplToJson(_$RefundLineImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('orderLine', instance.orderLine?.toJson());
-  writeNotNull('orderLineId', instance.orderLineId);
-  writeNotNull('quantity', instance.quantity);
-  writeNotNull('refund', instance.refund?.toJson());
-  writeNotNull('refundId', instance.refundId);
-  return val;
-}
+Map<String, dynamic> _$$RefundLineImplToJson(_$RefundLineImpl instance) =>
+    <String, dynamic>{
+      if (instance.orderLine?.toJson() case final value?) 'orderLine': value,
+      if (instance.orderLineId case final value?) 'orderLineId': value,
+      if (instance.quantity case final value?) 'quantity': value,
+      if (instance.refund?.toJson() case final value?) 'refund': value,
+      if (instance.refundId case final value?) 'refundId': value,
+    };

@@ -23,8 +23,12 @@ mixin _$NoActiveOrderError {
   ErrorCode? get errorCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this NoActiveOrderError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NoActiveOrderError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NoActiveOrderErrorCopyWith<NoActiveOrderError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$NoActiveOrderErrorCopyWithImpl<$Res, $Val extends NoActiveOrderError>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NoActiveOrderError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
       $Res Function(_$NoActiveOrderErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NoActiveOrderError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$NoActiveOrderErrorImpl extends _NoActiveOrderError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NoActiveOrderError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoActiveOrderErrorImplCopyWith<_$NoActiveOrderErrorImpl> get copyWith =>
@@ -175,8 +185,11 @@ abstract class _NoActiveOrderError extends NoActiveOrderError {
   ErrorCode? get errorCode;
   @override
   String? get message;
+
+  /// Create a copy of NoActiveOrderError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoActiveOrderErrorImplCopyWith<_$NoActiveOrderErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

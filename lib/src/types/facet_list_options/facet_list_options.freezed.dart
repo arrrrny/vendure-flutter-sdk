@@ -53,8 +53,12 @@ mixin _$FacetListOptions {
   /// Takes n results, for use in pagination
   set take(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetListOptionsCopyWith<FacetListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -86,6 +90,8 @@ class _$FacetListOptionsCopyWithImpl<$Res, $Val extends FacetListOptions>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class _$FacetListOptionsCopyWithImpl<$Res, $Val extends FacetListOptions>
     ) as $Val);
   }
 
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FacetFilterParameterCopyWith<$Res>? get filter {
@@ -131,6 +139,8 @@ class _$FacetListOptionsCopyWithImpl<$Res, $Val extends FacetListOptions>
     });
   }
 
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FacetSortParameterCopyWith<$Res>? get sort {
@@ -173,6 +183,8 @@ class __$$FacetListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$FacetListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -256,7 +268,9 @@ class _$FacetListOptionsImpl extends _FacetListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetListOptionsImplCopyWith<_$FacetListOptionsImpl> get copyWith =>
@@ -283,45 +297,47 @@ abstract class _FacetListOptions extends FacetListOptions {
   factory _FacetListOptions.fromJson(Map<String, dynamic> json) =
       _$FacetListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
+  @override
   FacetFilterParameter? get filter;
 
   /// Allows the results to be filtered
   set filter(FacetFilterParameter? value);
-  @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
+  @override
   LogicalOperator? get filterOperator;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   set filterOperator(LogicalOperator? value);
-  @override
 
   /// Skips the first n results, for use in pagination
+  @override
   int? get skip;
 
   /// Skips the first n results, for use in pagination
   set skip(int? value);
-  @override
 
   /// Specifies which properties to sort the results by
+  @override
   FacetSortParameter? get sort;
 
   /// Specifies which properties to sort the results by
   set sort(FacetSortParameter? value);
-  @override
 
   /// Takes n results, for use in pagination
+  @override
   int? get take;
 
   /// Takes n results, for use in pagination
   set take(int? value);
+
+  /// Create a copy of FacetListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetListOptionsImplCopyWith<_$FacetListOptionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

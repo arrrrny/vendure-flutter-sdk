@@ -27,8 +27,12 @@ mixin _$FacetValueTranslation {
   String get name => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetValueTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetValueTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetValueTranslationCopyWith<FacetValueTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$FacetValueTranslationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetValueTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,6 +124,8 @@ class __$$FacetValueTranslationImplCopyWithImpl<$Res>
       $Res Function(_$FacetValueTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetValueTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -210,12 +218,14 @@ class _$FacetValueTranslationImpl extends _FacetValueTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, createdAt, id, languageCode, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetValueTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetValueTranslationImplCopyWith<_$FacetValueTranslationImpl>
@@ -252,8 +262,11 @@ abstract class _FacetValueTranslation extends FacetValueTranslation {
   String get name;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of FacetValueTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetValueTranslationImplCopyWith<_$FacetValueTranslationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

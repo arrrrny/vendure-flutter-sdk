@@ -28,30 +28,21 @@ _$ProvinceImpl _$$ProvinceImplFromJson(Map json) => _$ProvinceImpl(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProvinceImplToJson(_$ProvinceImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code,
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['enabled'] = instance.enabled;
-  val['id'] = instance.id;
-  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
-  val['name'] = instance.name;
-  writeNotNull('parent', instance.parent?.toJson());
-  writeNotNull('parentId', instance.parentId);
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['type'] = instance.type;
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$$ProvinceImplToJson(_$ProvinceImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'enabled': instance.enabled,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      if (instance.parent?.toJson() case final value?) 'parent': value,
+      if (instance.parentId case final value?) 'parentId': value,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'type': instance.type,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

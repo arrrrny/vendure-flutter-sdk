@@ -25,25 +25,17 @@ _$TaxRateImpl _$$TaxRateImplFromJson(Map json) => _$TaxRateImpl(
       zone: Zone.fromJson(Map<String, dynamic>.from(json['zone'] as Map)),
     );
 
-Map<String, dynamic> _$$TaxRateImplToJson(_$TaxRateImpl instance) {
-  final val = <String, dynamic>{
-    'category': instance.category.toJson(),
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('customerGroup', instance.customerGroup?.toJson());
-  val['enabled'] = instance.enabled;
-  val['id'] = instance.id;
-  val['name'] = instance.name;
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  val['value'] = instance.value;
-  val['zone'] = instance.zone.toJson();
-  return val;
-}
+Map<String, dynamic> _$$TaxRateImplToJson(_$TaxRateImpl instance) =>
+    <String, dynamic>{
+      'category': instance.category.toJson(),
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.customerGroup?.toJson() case final value?)
+        'customerGroup': value,
+      'enabled': instance.enabled,
+      'id': instance.id,
+      'name': instance.name,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'value': instance.value,
+      'zone': instance.zone.toJson(),
+    };

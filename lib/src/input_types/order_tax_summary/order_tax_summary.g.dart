@@ -15,18 +15,10 @@ _$OrderTaxSummaryImpl _$$OrderTaxSummaryImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$OrderTaxSummaryImplToJson(
-    _$OrderTaxSummaryImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  writeNotNull('taxBase', instance.taxBase);
-  writeNotNull('taxRate', instance.taxRate);
-  writeNotNull('taxTotal', instance.taxTotal);
-  return val;
-}
+        _$OrderTaxSummaryImpl instance) =>
+    <String, dynamic>{
+      if (instance.description case final value?) 'description': value,
+      if (instance.taxBase case final value?) 'taxBase': value,
+      if (instance.taxRate case final value?) 'taxRate': value,
+      if (instance.taxTotal case final value?) 'taxTotal': value,
+    };

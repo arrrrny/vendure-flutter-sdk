@@ -27,8 +27,12 @@ mixin _$TaxCategory {
   String get name => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this TaxCategory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TaxCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TaxCategoryCopyWith<TaxCategory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$TaxCategoryCopyWithImpl<$Res, $Val extends TaxCategory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TaxCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -122,6 +128,8 @@ class __$$TaxCategoryImplCopyWithImpl<$Res>
       _$TaxCategoryImpl _value, $Res Function(_$TaxCategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TaxCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -233,7 +241,7 @@ class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -244,7 +252,9 @@ class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
       name,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TaxCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TaxCategoryImplCopyWith<_$TaxCategoryImpl> get copyWith =>
@@ -283,8 +293,11 @@ abstract class _TaxCategory extends TaxCategory {
   String get name;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of TaxCategory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TaxCategoryImplCopyWith<_$TaxCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

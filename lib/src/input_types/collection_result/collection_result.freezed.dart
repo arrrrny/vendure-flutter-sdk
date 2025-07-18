@@ -23,8 +23,12 @@ mixin _$CollectionResult {
   Collection? get collection => throw _privateConstructorUsedError;
   int? get count => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionResultCopyWith<CollectionResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$CollectionResultCopyWithImpl<$Res, $Val extends CollectionResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -68,6 +74,8 @@ class _$CollectionResultCopyWithImpl<$Res, $Val extends CollectionResult>
     ) as $Val);
   }
 
+  /// Create a copy of CollectionResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CollectionCopyWith<$Res>? get collection {
@@ -103,6 +111,8 @@ class __$$CollectionResultImplCopyWithImpl<$Res>
       $Res Function(_$CollectionResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -160,11 +170,13 @@ class _$CollectionResultImpl extends _CollectionResult
             (identical(other.count, count) || other.count == count));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, collection, count);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionResultImplCopyWith<_$CollectionResultImpl> get copyWith =>
@@ -192,8 +204,11 @@ abstract class _CollectionResult extends CollectionResult {
   Collection? get collection;
   @override
   int? get count;
+
+  /// Create a copy of CollectionResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionResultImplCopyWith<_$CollectionResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

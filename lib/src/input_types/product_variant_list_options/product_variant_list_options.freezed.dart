@@ -38,8 +38,12 @@ mixin _$ProductVariantListOptions {
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductVariantListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductVariantListOptionsCopyWith<ProductVariantListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$ProductVariantListOptionsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -105,6 +111,8 @@ class _$ProductVariantListOptionsCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductVariantFilterParameterCopyWith<$Res>? get filter {
@@ -118,6 +126,8 @@ class _$ProductVariantListOptionsCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductVariantSortParameterCopyWith<$Res>? get sort {
@@ -163,6 +173,8 @@ class __$$ProductVariantListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$ProductVariantListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -259,12 +271,14 @@ class _$ProductVariantListOptionsImpl extends _ProductVariantListOptions
             (identical(other.take, take) || other.take == take));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductVariantListOptionsImplCopyWith<_$ProductVariantListOptionsImpl>
@@ -291,29 +305,31 @@ abstract class _ProductVariantListOptions extends ProductVariantListOptions {
   factory _ProductVariantListOptions.fromJson(Map<String, dynamic> json) =
       _$ProductVariantListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
-  ProductVariantFilterParameter? get filter;
   @override
+  ProductVariantFilterParameter? get filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
-  LogicalOperator? get filterOperator;
   @override
+  LogicalOperator? get filterOperator;
 
   /// Skips the first n results, for use in pagination
-  int? get skip;
   @override
+  int? get skip;
 
   /// Specifies which properties to sort the results by
-  ProductVariantSortParameter? get sort;
   @override
+  ProductVariantSortParameter? get sort;
 
   /// Takes n results, for use in pagination
-  int? get take;
   @override
-  @JsonKey(ignore: true)
+  int? get take;
+
+  /// Create a copy of ProductVariantListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductVariantListOptionsImplCopyWith<_$ProductVariantListOptionsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

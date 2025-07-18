@@ -44,8 +44,12 @@ mixin _$Product {
   /// Returns all ProductVariants
   List<ProductVariant?>? get variants => throw _privateConstructorUsedError;
 
+  /// Serializes this Product to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -87,6 +91,8 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,6 +186,8 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     ) as $Val);
   }
 
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get featuredAsset {
@@ -192,6 +200,8 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     });
   }
 
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductVariantListCopyWith<$Res>? get variantList {
@@ -245,6 +255,8 @@ class __$$ProductImplCopyWithImpl<$Res>
       _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -532,7 +544,7 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
             const DeepCollectionEquality().equals(other._variants, _variants));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -554,7 +566,9 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
       variantList,
       const DeepCollectionEquality().hash(_variants));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
@@ -621,16 +635,19 @@ abstract class _Product extends Product {
   List<ProductTranslation?>? get translations;
   @override
   DateTime? get updatedAt;
-  @override
 
   /// Returns a paginated, sortable, filterable list of ProductVariants
-  ProductVariantList? get variantList;
   @override
+  ProductVariantList? get variantList;
 
   /// Returns all ProductVariants
-  List<ProductVariant?>? get variants;
   @override
-  @JsonKey(ignore: true)
+  List<ProductVariant?>? get variants;
+
+  /// Create a copy of Product
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

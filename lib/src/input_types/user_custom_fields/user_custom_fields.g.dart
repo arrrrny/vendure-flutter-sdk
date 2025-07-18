@@ -21,24 +21,16 @@ _$UserCustomFieldsImpl _$$UserCustomFieldsImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$UserCustomFieldsImplToJson(
-    _$UserCustomFieldsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('city', instance.city);
-  writeNotNull('deviceToken', instance.deviceToken);
-  writeNotNull('email', instance.email);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('neighborhood', instance.neighborhood);
-  writeNotNull('os', instance.os);
-  writeNotNull('osVersion', instance.osVersion);
-  writeNotNull('phoneBrand', instance.phoneBrand);
-  writeNotNull('phoneModel', instance.phoneModel);
-  writeNotNull('town', instance.town);
-  return val;
-}
+        _$UserCustomFieldsImpl instance) =>
+    <String, dynamic>{
+      if (instance.city case final value?) 'city': value,
+      if (instance.deviceToken case final value?) 'deviceToken': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.fullName case final value?) 'fullName': value,
+      if (instance.neighborhood case final value?) 'neighborhood': value,
+      if (instance.os case final value?) 'os': value,
+      if (instance.osVersion case final value?) 'osVersion': value,
+      if (instance.phoneBrand case final value?) 'phoneBrand': value,
+      if (instance.phoneModel case final value?) 'phoneModel': value,
+      if (instance.town case final value?) 'town': value,
+    };

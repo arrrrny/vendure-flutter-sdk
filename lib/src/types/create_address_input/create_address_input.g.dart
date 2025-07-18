@@ -25,26 +25,20 @@ _$CreateAddressInputImpl _$$CreateAddressInputImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$CreateAddressInputImplToJson(
-    _$CreateAddressInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('city', instance.city);
-  writeNotNull('company', instance.company);
-  val['countryCode'] = instance.countryCode;
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('defaultBillingAddress', instance.defaultBillingAddress);
-  writeNotNull('defaultShippingAddress', instance.defaultShippingAddress);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('postalCode', instance.postalCode);
-  writeNotNull('province', instance.province);
-  val['streetLine1'] = instance.streetLine1;
-  writeNotNull('streetLine2', instance.streetLine2);
-  return val;
-}
+        _$CreateAddressInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.city case final value?) 'city': value,
+      if (instance.company case final value?) 'company': value,
+      'countryCode': instance.countryCode,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.defaultBillingAddress case final value?)
+        'defaultBillingAddress': value,
+      if (instance.defaultShippingAddress case final value?)
+        'defaultShippingAddress': value,
+      if (instance.fullName case final value?) 'fullName': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.postalCode case final value?) 'postalCode': value,
+      if (instance.province case final value?) 'province': value,
+      'streetLine1': instance.streetLine1,
+      if (instance.streetLine2 case final value?) 'streetLine2': value,
+    };

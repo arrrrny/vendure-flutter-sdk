@@ -13,19 +13,11 @@ _$DeletionResponseImpl _$$DeletionResponseImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$DeletionResponseImplToJson(
-    _$DeletionResponseImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('message', instance.message);
-  val['result'] = _$DeletionResultEnumMap[instance.result]!;
-  return val;
-}
+        _$DeletionResponseImpl instance) =>
+    <String, dynamic>{
+      if (instance.message case final value?) 'message': value,
+      'result': _$DeletionResultEnumMap[instance.result]!,
+    };
 
 const _$DeletionResultEnumMap = {
   DeletionResult.deleted: 'deleted',

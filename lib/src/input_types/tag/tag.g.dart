@@ -17,18 +17,11 @@ _$TagImpl _$$TagImplFromJson(Map json) => _$TagImpl(
       value: json['value'] as String?,
     );
 
-Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('id', instance.id);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  writeNotNull('value', instance.value);
-  return val;
-}
+Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      if (instance.value case final value?) 'value': value,
+    };

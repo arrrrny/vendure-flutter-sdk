@@ -32,8 +32,12 @@ mixin _$OrderAddress {
   String? get streetLine1 => throw _privateConstructorUsedError;
   String? get streetLine2 => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderAddress to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderAddressCopyWith<OrderAddress> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -68,6 +72,8 @@ class _$OrderAddressCopyWithImpl<$Res, $Val extends OrderAddress>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderAddress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -162,6 +168,8 @@ class __$$OrderAddressImplCopyWithImpl<$Res>
       _$OrderAddressImpl _value, $Res Function(_$OrderAddressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderAddress
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -327,7 +335,7 @@ class _$OrderAddressImpl extends _OrderAddress with DiagnosticableTreeMixin {
                 other.streetLine2 == streetLine2));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -343,7 +351,9 @@ class _$OrderAddressImpl extends _OrderAddress with DiagnosticableTreeMixin {
       streetLine1,
       streetLine2);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderAddress
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderAddressImplCopyWith<_$OrderAddressImpl> get copyWith =>
@@ -397,8 +407,11 @@ abstract class _OrderAddress extends OrderAddress {
   String? get streetLine1;
   @override
   String? get streetLine2;
+
+  /// Create a copy of OrderAddress
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderAddressImplCopyWith<_$OrderAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

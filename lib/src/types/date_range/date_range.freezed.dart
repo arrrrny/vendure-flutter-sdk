@@ -25,8 +25,12 @@ mixin _$DateRange {
   DateTime get start => throw _privateConstructorUsedError;
   set start(DateTime value) => throw _privateConstructorUsedError;
 
+  /// Serializes this DateRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DateRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DateRangeCopyWith<DateRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$DateRangeCopyWithImpl<$Res, $Val extends DateRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DateRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +93,8 @@ class __$$DateRangeImplCopyWithImpl<$Res>
       _$DateRangeImpl _value, $Res Function(_$DateRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DateRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -133,7 +141,9 @@ class _$DateRangeImpl extends _DateRange with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('start', start));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DateRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DateRangeImplCopyWith<_$DateRangeImpl> get copyWith =>
@@ -161,8 +171,11 @@ abstract class _DateRange extends DateRange {
   @override
   DateTime get start;
   set start(DateTime value);
+
+  /// Create a copy of DateRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DateRangeImplCopyWith<_$DateRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

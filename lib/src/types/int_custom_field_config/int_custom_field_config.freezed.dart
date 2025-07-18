@@ -35,8 +35,12 @@ mixin _$IntCustomFieldConfig {
   String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
+  /// Serializes this IntCustomFieldConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IntCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IntCustomFieldConfigCopyWith<IntCustomFieldConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,6 +78,8 @@ class _$IntCustomFieldConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IntCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,6 +186,8 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$IntCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IntCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -390,7 +398,7 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -408,7 +416,9 @@ class _$IntCustomFieldConfigImpl extends _IntCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IntCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IntCustomFieldConfigImplCopyWith<_$IntCustomFieldConfigImpl>
@@ -470,8 +480,11 @@ abstract class _IntCustomFieldConfig extends IntCustomFieldConfig {
   String get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of IntCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IntCustomFieldConfigImplCopyWith<_$IntCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

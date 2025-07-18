@@ -15,21 +15,14 @@ _$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$CouponCodeLimitErrorImplToJson(
-    _$CouponCodeLimitErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('couponCode', instance.couponCode);
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('limit', instance.limit);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$CouponCodeLimitErrorImpl instance) =>
+    <String, dynamic>{
+      if (instance.couponCode case final value?) 'couponCode': value,
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.limit case final value?) 'limit': value,
+      if (instance.message case final value?) 'message': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

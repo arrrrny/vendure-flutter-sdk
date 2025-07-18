@@ -14,19 +14,11 @@ _$SearchResultSortParameterImpl _$$SearchResultSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$SearchResultSortParameterImplToJson(
-    _$SearchResultSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
-  writeNotNull('price', _$SortOrderEnumMap[instance.price]);
-  return val;
-}
+        _$SearchResultSortParameterImpl instance) =>
+    <String, dynamic>{
+      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
+      if (_$SortOrderEnumMap[instance.price] case final value?) 'price': value,
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

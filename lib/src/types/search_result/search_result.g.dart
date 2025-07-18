@@ -39,35 +39,28 @@ _$SearchResultImpl _$$SearchResultImplFromJson(Map json) => _$SearchResultImpl(
       slug: json['slug'] as String,
     );
 
-Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) {
-  final val = <String, dynamic>{
-    'collectionIds': instance.collectionIds,
-    'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
-    'description': instance.description,
-    'facetIds': instance.facetIds,
-    'facetValueIds': instance.facetValueIds,
-    'inStock': instance.inStock,
-    'price': instance.price.toJson(),
-    'priceWithTax': instance.priceWithTax.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('productAsset', instance.productAsset?.toJson());
-  val['productId'] = instance.productId;
-  val['productName'] = instance.productName;
-  writeNotNull('productVariantAsset', instance.productVariantAsset?.toJson());
-  val['productVariantId'] = instance.productVariantId;
-  val['productVariantName'] = instance.productVariantName;
-  val['score'] = instance.score;
-  val['sku'] = instance.sku;
-  val['slug'] = instance.slug;
-  return val;
-}
+Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) =>
+    <String, dynamic>{
+      'collectionIds': instance.collectionIds,
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      'description': instance.description,
+      'facetIds': instance.facetIds,
+      'facetValueIds': instance.facetValueIds,
+      'inStock': instance.inStock,
+      'price': instance.price.toJson(),
+      'priceWithTax': instance.priceWithTax.toJson(),
+      if (instance.productAsset?.toJson() case final value?)
+        'productAsset': value,
+      'productId': instance.productId,
+      'productName': instance.productName,
+      if (instance.productVariantAsset?.toJson() case final value?)
+        'productVariantAsset': value,
+      'productVariantId': instance.productVariantId,
+      'productVariantName': instance.productVariantName,
+      'score': instance.score,
+      'sku': instance.sku,
+      'slug': instance.slug,
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

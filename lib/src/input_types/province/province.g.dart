@@ -34,30 +34,26 @@ _$ProvinceImpl _$$ProvinceImplFromJson(Map json) => _$ProvinceImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProvinceImplToJson(_$ProvinceImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('enabled', instance.enabled);
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull('parent', instance.parent?.toJson());
-  writeNotNull('parentId', instance.parentId);
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('type', instance.type);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$ProvinceImplToJson(_$ProvinceImpl instance) =>
+    <String, dynamic>{
+      if (instance.code case final value?) 'code': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.enabled case final value?) 'enabled': value,
+      if (instance.id case final value?) 'id': value,
+      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
+        'languageCode': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.parent?.toJson() case final value?) 'parent': value,
+      if (instance.parentId case final value?) 'parentId': value,
+      if (instance.translations?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'translations': value,
+      if (instance.type case final value?) 'type': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

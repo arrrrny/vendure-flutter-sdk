@@ -13,19 +13,12 @@ _$OrderModificationErrorImpl _$$OrderModificationErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$OrderModificationErrorImplToJson(
-    _$OrderModificationErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$OrderModificationErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

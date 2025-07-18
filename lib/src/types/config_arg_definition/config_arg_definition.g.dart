@@ -23,22 +23,14 @@ _$ConfigArgDefinitionImpl _$$ConfigArgDefinitionImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ConfigArgDefinitionImplToJson(
-    _$ConfigArgDefinitionImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('defaultValue', instance.defaultValue);
-  writeNotNull('description', instance.description);
-  writeNotNull('label', instance.label);
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  val['required'] = instance.required_;
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  return val;
-}
+        _$ConfigArgDefinitionImpl instance) =>
+    <String, dynamic>{
+      if (instance.defaultValue case final value?) 'defaultValue': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.label case final value?) 'label': value,
+      'list': instance.list,
+      'name': instance.name,
+      'required': instance.required_,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+    };

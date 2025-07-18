@@ -28,27 +28,18 @@ _$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ProductOptionGroupImplToJson(
-    _$ProductOptionGroupImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code,
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['id'] = instance.id;
-  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
-  val['name'] = instance.name;
-  val['options'] = instance.options.map((e) => e.toJson()).toList();
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+        _$ProductOptionGroupImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'options': instance.options.map((e) => e.toJson()).toList(),
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

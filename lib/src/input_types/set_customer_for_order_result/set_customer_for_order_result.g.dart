@@ -14,20 +14,13 @@ _$AlreadyLoggedInErrorImpl _$$AlreadyLoggedInErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$AlreadyLoggedInErrorImplToJson(
-    _$AlreadyLoggedInErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$AlreadyLoggedInErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -73,20 +66,13 @@ _$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$EmailAddressConflictErrorImplToJson(
-    _$EmailAddressConflictErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$EmailAddressConflictErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 _$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(Map json) =>
     _$GuestCheckoutErrorImpl(
@@ -97,21 +83,14 @@ _$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$GuestCheckoutErrorImplToJson(
-    _$GuestCheckoutErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('errorDetail', instance.errorDetail);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$GuestCheckoutErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.errorDetail case final value?) 'errorDetail': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 _$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(Map json) =>
     _$NoActiveOrderErrorImpl(
@@ -121,20 +100,13 @@ _$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$NoActiveOrderErrorImplToJson(
-    _$NoActiveOrderErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$NoActiveOrderErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 _$OrderImpl _$$OrderImplFromJson(Map json) => _$OrderImpl(
       active: json['active'] as bool?,
@@ -225,54 +197,60 @@ _$OrderImpl _$$OrderImplFromJson(Map json) => _$OrderImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('active', instance.active);
-  writeNotNull('billingAddress', instance.billingAddress?.toJson());
-  writeNotNull('code', instance.code);
-  writeNotNull('couponCodes', instance.couponCodes);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('currencyCode', _$CurrencyCodeEnumMap[instance.currencyCode]);
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('customer', instance.customer?.toJson());
-  writeNotNull(
-      'discounts', instance.discounts?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'fulfillments', instance.fulfillments?.map((e) => e?.toJson()).toList());
-  writeNotNull('history', instance.history?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('lines', instance.lines?.map((e) => e?.toJson()).toList());
-  writeNotNull('orderPlacedAt', instance.orderPlacedAt?.toIso8601String());
-  writeNotNull('payments', instance.payments?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'promotions', instance.promotions?.map((e) => e?.toJson()).toList());
-  writeNotNull('shipping', instance.shipping);
-  writeNotNull('shippingAddress', instance.shippingAddress?.toJson());
-  writeNotNull('shippingLines',
-      instance.shippingLines?.map((e) => e?.toJson()).toList());
-  writeNotNull('shippingWithTax', instance.shippingWithTax);
-  writeNotNull('state', instance.state);
-  writeNotNull('subTotal', instance.subTotal);
-  writeNotNull('subTotalWithTax', instance.subTotalWithTax);
-  writeNotNull(
-      'surcharges', instance.surcharges?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'taxSummary', instance.taxSummary?.map((e) => e?.toJson()).toList());
-  writeNotNull('total', instance.total);
-  writeNotNull('totalQuantity', instance.totalQuantity);
-  writeNotNull('totalWithTax', instance.totalWithTax);
-  writeNotNull('type', _$OrderTypeEnumMap[instance.type]);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
+    <String, dynamic>{
+      if (instance.active case final value?) 'active': value,
+      if (instance.billingAddress?.toJson() case final value?)
+        'billingAddress': value,
+      if (instance.code case final value?) 'code': value,
+      if (instance.couponCodes case final value?) 'couponCodes': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (_$CurrencyCodeEnumMap[instance.currencyCode] case final value?)
+        'currencyCode': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.customer?.toJson() case final value?) 'customer': value,
+      if (instance.discounts?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'discounts': value,
+      if (instance.fulfillments?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'fulfillments': value,
+      if (instance.history?.toJson() case final value?) 'history': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.lines?.map((e) => e?.toJson()).toList() case final value?)
+        'lines': value,
+      if (instance.orderPlacedAt?.toIso8601String() case final value?)
+        'orderPlacedAt': value,
+      if (instance.payments?.map((e) => e?.toJson()).toList() case final value?)
+        'payments': value,
+      if (instance.promotions?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'promotions': value,
+      if (instance.shipping case final value?) 'shipping': value,
+      if (instance.shippingAddress?.toJson() case final value?)
+        'shippingAddress': value,
+      if (instance.shippingLines?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'shippingLines': value,
+      if (instance.shippingWithTax case final value?) 'shippingWithTax': value,
+      if (instance.state case final value?) 'state': value,
+      if (instance.subTotal case final value?) 'subTotal': value,
+      if (instance.subTotalWithTax case final value?) 'subTotalWithTax': value,
+      if (instance.surcharges?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'surcharges': value,
+      if (instance.taxSummary?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'taxSummary': value,
+      if (instance.total case final value?) 'total': value,
+      if (instance.totalQuantity case final value?) 'totalQuantity': value,
+      if (instance.totalWithTax case final value?) 'totalWithTax': value,
+      if (_$OrderTypeEnumMap[instance.type] case final value?) 'type': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      'runtimeType': instance.$type,
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

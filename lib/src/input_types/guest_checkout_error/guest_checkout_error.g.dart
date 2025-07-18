@@ -14,20 +14,13 @@ _$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$GuestCheckoutErrorImplToJson(
-    _$GuestCheckoutErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('errorDetail', instance.errorDetail);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$GuestCheckoutErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.errorDetail case final value?) 'errorDetail': value,
+      if (instance.message case final value?) 'message': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

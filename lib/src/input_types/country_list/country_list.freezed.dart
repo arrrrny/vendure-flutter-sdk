@@ -23,8 +23,12 @@ mixin _$CountryList {
   List<Country?>? get items => throw _privateConstructorUsedError;
   int? get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this CountryList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CountryList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CountryListCopyWith<CountryList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$CountryListCopyWithImpl<$Res, $Val extends CountryList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CountryList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$CountryListImplCopyWithImpl<$Res>
       _$CountryListImpl _value, $Res Function(_$CountryListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CountryList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,12 +160,14 @@ class _$CountryListImpl extends _CountryList with DiagnosticableTreeMixin {
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CountryList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CountryListImplCopyWith<_$CountryListImpl> get copyWith =>
@@ -183,8 +193,11 @@ abstract class _CountryList extends CountryList {
   List<Country?>? get items;
   @override
   int? get totalItems;
+
+  /// Create a copy of CountryList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CountryListImplCopyWith<_$CountryListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

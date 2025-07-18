@@ -27,20 +27,15 @@ _$SearchResponseImpl _$$SearchResponseImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$SearchResponseImplToJson(
-    _$SearchResponseImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'collections', instance.collections?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'facetValues', instance.facetValues?.map((e) => e?.toJson()).toList());
-  writeNotNull('items', instance.items?.map((e) => e?.toJson()).toList());
-  writeNotNull('totalItems', instance.totalItems);
-  return val;
-}
+        _$SearchResponseImpl instance) =>
+    <String, dynamic>{
+      if (instance.collections?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'collections': value,
+      if (instance.facetValues?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'facetValues': value,
+      if (instance.items?.map((e) => e?.toJson()).toList() case final value?)
+        'items': value,
+      if (instance.totalItems case final value?) 'totalItems': value,
+    };

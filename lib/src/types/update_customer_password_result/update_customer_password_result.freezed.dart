@@ -105,6 +105,8 @@ mixin _$UpdateCustomerPasswordResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this UpdateCustomerPasswordResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -127,6 +129,9 @@ class _$UpdateCustomerPasswordResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -149,6 +154,8 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
       $Res Function(_$InvalidCredentialsErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -226,12 +233,14 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, authenticationError, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
@@ -352,7 +361,10 @@ abstract class InvalidCredentialsError extends UpdateCustomerPasswordResult {
   String get authenticationError;
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -377,6 +389,8 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
       $Res Function(_$NativeAuthStrategyErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -441,11 +455,13 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
@@ -563,7 +579,10 @@ abstract class NativeAuthStrategyError extends UpdateCustomerPasswordResult {
 
   ErrorCode get errorCode;
   String get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -589,6 +608,8 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
       $Res Function(_$PasswordValidationErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -667,12 +688,14 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
                 other.validationErrorMessage == validationErrorMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, validationErrorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
@@ -795,7 +818,10 @@ abstract class PasswordValidationError extends UpdateCustomerPasswordResult {
   ErrorCode get errorCode;
   String get message;
   String get validationErrorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -817,6 +843,8 @@ class __$$SuccessImplCopyWithImpl<$Res>
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -868,11 +896,13 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
             (identical(other.success, success) || other.success == success));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, success);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -985,7 +1015,10 @@ abstract class Success extends UpdateCustomerPasswordResult {
   factory Success.fromJson(Map<String, dynamic> json) = _$SuccessImpl.fromJson;
 
   bool get success;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateCustomerPasswordResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

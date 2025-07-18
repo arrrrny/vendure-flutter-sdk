@@ -15,20 +15,14 @@ _$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$PasswordValidationErrorImplToJson(
-    _$PasswordValidationErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  writeNotNull('validationErrorMessage', instance.validationErrorMessage);
-  return val;
-}
+        _$PasswordValidationErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      if (instance.validationErrorMessage case final value?)
+        'validationErrorMessage': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

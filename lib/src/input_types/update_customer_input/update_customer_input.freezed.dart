@@ -26,8 +26,12 @@ mixin _$UpdateCustomerInput {
   String? get phoneNumber => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
 
+  /// Serializes this UpdateCustomerInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UpdateCustomerInputCopyWith<UpdateCustomerInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$UpdateCustomerInputCopyWithImpl<$Res, $Val extends UpdateCustomerInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,6 +120,8 @@ class __$$UpdateCustomerInputImplCopyWithImpl<$Res>
       $Res Function(_$UpdateCustomerInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -216,7 +224,7 @@ class _$UpdateCustomerInputImpl extends _UpdateCustomerInput
             (identical(other.title, title) || other.title == title));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -226,7 +234,9 @@ class _$UpdateCustomerInputImpl extends _UpdateCustomerInput
       phoneNumber,
       title);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCustomerInputImplCopyWith<_$UpdateCustomerInputImpl> get copyWith =>
@@ -263,8 +273,11 @@ abstract class _UpdateCustomerInput extends UpdateCustomerInput {
   String? get phoneNumber;
   @override
   String? get title;
+
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCustomerInputImplCopyWith<_$UpdateCustomerInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

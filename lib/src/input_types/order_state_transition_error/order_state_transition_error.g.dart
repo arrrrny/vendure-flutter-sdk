@@ -17,22 +17,15 @@ _$OrderStateTransitionErrorImpl _$$OrderStateTransitionErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$OrderStateTransitionErrorImplToJson(
-    _$OrderStateTransitionErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('fromState', instance.fromState);
-  writeNotNull('message', instance.message);
-  writeNotNull('toState', instance.toState);
-  writeNotNull('transitionError', instance.transitionError);
-  return val;
-}
+        _$OrderStateTransitionErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.fromState case final value?) 'fromState': value,
+      if (instance.message case final value?) 'message': value,
+      if (instance.toState case final value?) 'toState': value,
+      if (instance.transitionError case final value?) 'transitionError': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

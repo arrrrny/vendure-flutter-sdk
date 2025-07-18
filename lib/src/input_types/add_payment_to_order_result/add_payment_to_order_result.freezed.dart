@@ -240,6 +240,8 @@ mixin _$AddPaymentToOrderResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this AddPaymentToOrderResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -260,6 +262,9 @@ class _$AddPaymentToOrderResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -285,6 +290,8 @@ class __$$IneligiblePaymentMethodErrorImplCopyWithImpl<$Res>
       $Res Function(_$IneligiblePaymentMethodErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -365,12 +372,14 @@ class _$IneligiblePaymentMethodErrorImpl extends IneligiblePaymentMethodError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, eligibilityCheckerMessage, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IneligiblePaymentMethodErrorImplCopyWith<
@@ -623,7 +632,10 @@ abstract class IneligiblePaymentMethodError extends AddPaymentToOrderResult {
   String? get eligibilityCheckerMessage;
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IneligiblePaymentMethodErrorImplCopyWith<
           _$IneligiblePaymentMethodErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -647,6 +659,8 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
       $Res Function(_$NoActiveOrderErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -711,11 +725,13 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NoActiveOrderErrorImplCopyWith<_$NoActiveOrderErrorImpl> get copyWith =>
@@ -962,7 +978,10 @@ abstract class NoActiveOrderError extends AddPaymentToOrderResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NoActiveOrderErrorImplCopyWith<_$NoActiveOrderErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1019,6 +1038,8 @@ class __$$OrderImplCopyWithImpl<$Res>
       _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1177,6 +1198,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get billingAddress {
@@ -1189,6 +1212,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerCopyWith<$Res>? get customer {
@@ -1201,6 +1226,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res>? get history {
@@ -1213,6 +1240,8 @@ class __$$OrderImplCopyWithImpl<$Res>
     });
   }
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get shippingAddress {
@@ -1556,7 +1585,7 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1592,7 +1621,9 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
@@ -2011,7 +2042,10 @@ abstract class Order extends AddPaymentToOrderResult {
   double? get totalWithTax;
   OrderType? get type;
   DateTime? get updatedAt;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2036,6 +2070,8 @@ class __$$OrderPaymentStateErrorImplCopyWithImpl<$Res>
       $Res Function(_$OrderPaymentStateErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2100,11 +2136,13 @@ class _$OrderPaymentStateErrorImpl extends OrderPaymentStateError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderPaymentStateErrorImplCopyWith<_$OrderPaymentStateErrorImpl>
@@ -2351,7 +2389,10 @@ abstract class OrderPaymentStateError extends AddPaymentToOrderResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderPaymentStateErrorImplCopyWith<_$OrderPaymentStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2381,6 +2422,8 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
       $Res Function(_$OrderStateTransitionErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2479,12 +2522,14 @@ class _$OrderStateTransitionErrorImpl extends OrderStateTransitionError
                 other.transitionError == transitionError));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, errorCode, fromState, message, toState, transitionError);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>
@@ -2740,7 +2785,10 @@ abstract class OrderStateTransitionError extends AddPaymentToOrderResult {
   String? get message;
   String? get toState;
   String? get transitionError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2764,6 +2812,8 @@ class __$$PaymentDeclinedErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentDeclinedErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2841,12 +2891,14 @@ class _$PaymentDeclinedErrorImpl extends PaymentDeclinedError
                 other.paymentErrorMessage == paymentErrorMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, paymentErrorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentDeclinedErrorImplCopyWith<_$PaymentDeclinedErrorImpl>
@@ -3096,7 +3148,10 @@ abstract class PaymentDeclinedError extends AddPaymentToOrderResult {
   ErrorCode? get errorCode;
   String? get message;
   String? get paymentErrorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentDeclinedErrorImplCopyWith<_$PaymentDeclinedErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3120,6 +3175,8 @@ class __$$PaymentFailedErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentFailedErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3197,12 +3254,14 @@ class _$PaymentFailedErrorImpl extends PaymentFailedError
                 other.paymentErrorMessage == paymentErrorMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, paymentErrorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentFailedErrorImplCopyWith<_$PaymentFailedErrorImpl> get copyWith =>
@@ -3451,7 +3510,10 @@ abstract class PaymentFailedError extends AddPaymentToOrderResult {
   ErrorCode? get errorCode;
   String? get message;
   String? get paymentErrorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddPaymentToOrderResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentFailedErrorImplCopyWith<_$PaymentFailedErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

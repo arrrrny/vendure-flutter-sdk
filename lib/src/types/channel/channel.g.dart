@@ -42,43 +42,37 @@ _$ChannelImpl _$$ChannelImplFromJson(Map json) => _$ChannelImpl(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ChannelImplToJson(_$ChannelImpl instance) {
-  final val = <String, dynamic>{
-    'availableCurrencyCodes': instance.availableCurrencyCodes
-        .map((e) => _$CurrencyCodeEnumMap[e]!)
-        .toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'availableLanguageCodes',
-      instance.availableLanguageCodes
-          ?.map((e) => _$LanguageCodeEnumMap[e]!)
-          .toList());
-  val['code'] = instance.code;
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  val['currencyCode'] = _$CurrencyCodeEnumMap[instance.currencyCode]!;
-  writeNotNull('customFields', instance.customFields);
-  val['defaultCurrencyCode'] =
-      _$CurrencyCodeEnumMap[instance.defaultCurrencyCode]!;
-  val['defaultLanguageCode'] =
-      _$LanguageCodeEnumMap[instance.defaultLanguageCode]!;
-  writeNotNull('defaultShippingZone', instance.defaultShippingZone?.toJson());
-  writeNotNull('defaultTaxZone', instance.defaultTaxZone?.toJson());
-  val['id'] = instance.id;
-  writeNotNull('outOfStockThreshold', instance.outOfStockThreshold);
-  val['pricesIncludeTax'] = instance.pricesIncludeTax;
-  writeNotNull('seller', instance.seller?.toJson());
-  val['token'] = instance.token;
-  writeNotNull('trackInventory', instance.trackInventory);
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$$ChannelImplToJson(_$ChannelImpl instance) =>
+    <String, dynamic>{
+      'availableCurrencyCodes': instance.availableCurrencyCodes
+          .map((e) => _$CurrencyCodeEnumMap[e]!)
+          .toList(),
+      if (instance.availableLanguageCodes
+              ?.map((e) => _$LanguageCodeEnumMap[e]!)
+              .toList()
+          case final value?)
+        'availableLanguageCodes': value,
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      if (instance.customFields case final value?) 'customFields': value,
+      'defaultCurrencyCode':
+          _$CurrencyCodeEnumMap[instance.defaultCurrencyCode]!,
+      'defaultLanguageCode':
+          _$LanguageCodeEnumMap[instance.defaultLanguageCode]!,
+      if (instance.defaultShippingZone?.toJson() case final value?)
+        'defaultShippingZone': value,
+      if (instance.defaultTaxZone?.toJson() case final value?)
+        'defaultTaxZone': value,
+      'id': instance.id,
+      if (instance.outOfStockThreshold case final value?)
+        'outOfStockThreshold': value,
+      'pricesIncludeTax': instance.pricesIncludeTax,
+      if (instance.seller?.toJson() case final value?) 'seller': value,
+      'token': instance.token,
+      if (instance.trackInventory case final value?) 'trackInventory': value,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

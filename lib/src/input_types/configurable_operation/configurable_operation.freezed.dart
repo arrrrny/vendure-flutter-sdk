@@ -24,8 +24,12 @@ mixin _$ConfigurableOperation {
   List<ConfigArg?>? get args => throw _privateConstructorUsedError;
   String? get code => throw _privateConstructorUsedError;
 
+  /// Serializes this ConfigurableOperation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ConfigurableOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConfigurableOperationCopyWith<ConfigurableOperation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$ConfigurableOperationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConfigurableOperation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -90,6 +96,8 @@ class __$$ConfigurableOperationImplCopyWithImpl<$Res>
       $Res Function(_$ConfigurableOperationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConfigurableOperation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,12 +164,14 @@ class _$ConfigurableOperationImpl extends _ConfigurableOperation
             (identical(other.code, code) || other.code == code));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_args), code);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConfigurableOperation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigurableOperationImplCopyWith<_$ConfigurableOperationImpl>
@@ -189,8 +199,11 @@ abstract class _ConfigurableOperation extends ConfigurableOperation {
   List<ConfigArg?>? get args;
   @override
   String? get code;
+
+  /// Create a copy of ConfigurableOperation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConfigurableOperationImplCopyWith<_$ConfigurableOperationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

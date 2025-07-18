@@ -41,8 +41,12 @@ mixin _$OrderFilterParameter {
   StringOperators? get type => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderFilterParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderFilterParameterCopyWith<OrderFilterParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -102,6 +106,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -200,6 +206,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BooleanOperatorsCopyWith<$Res>? get active {
@@ -212,6 +220,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get code {
@@ -224,6 +234,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get createdAt {
@@ -236,6 +248,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get currencyCode {
@@ -248,6 +262,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get id {
@@ -260,6 +276,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get orderPlacedAt {
@@ -272,6 +290,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get shipping {
@@ -284,6 +304,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get shippingWithTax {
@@ -296,6 +318,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get state {
@@ -308,6 +332,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get subTotal {
@@ -320,6 +346,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get subTotalWithTax {
@@ -332,6 +360,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get total {
@@ -344,6 +374,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get totalQuantity {
@@ -356,6 +388,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberOperatorsCopyWith<$Res>? get totalWithTax {
@@ -368,6 +402,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get type {
@@ -380,6 +416,8 @@ class _$OrderFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get updatedAt {
@@ -463,6 +501,8 @@ class __$$OrderFilterParameterImplCopyWithImpl<$Res>
       $Res Function(_$OrderFilterParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -712,7 +752,7 @@ class _$OrderFilterParameterImpl extends _OrderFilterParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -735,7 +775,9 @@ class _$OrderFilterParameterImpl extends _OrderFilterParameter
       type,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderFilterParameterImplCopyWith<_$OrderFilterParameterImpl>
@@ -814,8 +856,11 @@ abstract class _OrderFilterParameter extends OrderFilterParameter {
   StringOperators? get type;
   @override
   DateOperators? get updatedAt;
+
+  /// Create a copy of OrderFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderFilterParameterImplCopyWith<_$OrderFilterParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

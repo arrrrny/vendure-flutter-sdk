@@ -22,8 +22,12 @@ StringListOperators _$StringListOperatorsFromJson(Map<String, dynamic> json) {
 mixin _$StringListOperators {
   String get inList => throw _privateConstructorUsedError;
 
+  /// Serializes this StringListOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StringListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StringListOperatorsCopyWith<StringListOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$StringListOperatorsCopyWithImpl<$Res, $Val extends StringListOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StringListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +86,8 @@ class __$$StringListOperatorsImplCopyWithImpl<$Res>
       $Res Function(_$StringListOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StringListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,11 +135,13 @@ class _$StringListOperatorsImpl extends _StringListOperators
             (identical(other.inList, inList) || other.inList == inList));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, inList);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StringListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StringListOperatorsImplCopyWith<_$StringListOperatorsImpl> get copyWith =>
@@ -156,8 +166,11 @@ abstract class _StringListOperators extends StringListOperators {
 
   @override
   String get inList;
+
+  /// Create a copy of StringListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StringListOperatorsImplCopyWith<_$StringListOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

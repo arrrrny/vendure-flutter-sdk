@@ -23,8 +23,12 @@ mixin _$ShippingMethodList {
   List<ShippingMethod?>? get items => throw _privateConstructorUsedError;
   int? get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this ShippingMethodList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ShippingMethodList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ShippingMethodListCopyWith<ShippingMethodList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$ShippingMethodListCopyWithImpl<$Res, $Val extends ShippingMethodList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ShippingMethodList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$ShippingMethodListImplCopyWithImpl<$Res>
       $Res Function(_$ShippingMethodListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ShippingMethodList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,12 +162,14 @@ class _$ShippingMethodListImpl extends _ShippingMethodList
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ShippingMethodList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ShippingMethodListImplCopyWith<_$ShippingMethodListImpl> get copyWith =>
@@ -187,8 +197,11 @@ abstract class _ShippingMethodList extends ShippingMethodList {
   List<ShippingMethod?>? get items;
   @override
   int? get totalItems;
+
+  /// Create a copy of ShippingMethodList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ShippingMethodListImplCopyWith<_$ShippingMethodListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -21,21 +21,13 @@ _$NumberOperatorsImpl _$$NumberOperatorsImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$NumberOperatorsImplToJson(
-    _$NumberOperatorsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('between', instance.between?.toJson());
-  writeNotNull('eq', instance.eq);
-  writeNotNull('gt', instance.gt);
-  writeNotNull('gte', instance.gte);
-  writeNotNull('isNull', instance.isNull);
-  writeNotNull('lt', instance.lt);
-  writeNotNull('lte', instance.lte);
-  return val;
-}
+        _$NumberOperatorsImpl instance) =>
+    <String, dynamic>{
+      if (instance.between?.toJson() case final value?) 'between': value,
+      if (instance.eq case final value?) 'eq': value,
+      if (instance.gt case final value?) 'gt': value,
+      if (instance.gte case final value?) 'gte': value,
+      if (instance.isNull case final value?) 'isNull': value,
+      if (instance.lt case final value?) 'lt': value,
+      if (instance.lte case final value?) 'lte': value,
+    };

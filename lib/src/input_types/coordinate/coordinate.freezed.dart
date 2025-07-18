@@ -23,8 +23,12 @@ mixin _$Coordinate {
   double? get x => throw _privateConstructorUsedError;
   double? get y => throw _privateConstructorUsedError;
 
+  /// Serializes this Coordinate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Coordinate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CoordinateCopyWith<Coordinate> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$CoordinateCopyWithImpl<$Res, $Val extends Coordinate>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Coordinate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$CoordinateImplCopyWithImpl<$Res>
       _$CoordinateImpl _value, $Res Function(_$CoordinateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Coordinate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,11 +149,13 @@ class _$CoordinateImpl extends _Coordinate with DiagnosticableTreeMixin {
             (identical(other.y, y) || other.y == y));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, x, y);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Coordinate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CoordinateImplCopyWith<_$CoordinateImpl> get copyWith =>
@@ -171,8 +181,11 @@ abstract class _Coordinate extends Coordinate {
   double? get x;
   @override
   double? get y;
+
+  /// Create a copy of Coordinate
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CoordinateImplCopyWith<_$CoordinateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

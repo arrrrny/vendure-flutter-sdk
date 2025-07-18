@@ -31,8 +31,12 @@ mixin _$DateOperators {
   bool? get isNull => throw _privateConstructorUsedError;
   set isNull(bool? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this DateOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DateOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DateOperatorsCopyWith<DateOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$DateOperatorsCopyWithImpl<$Res, $Val extends DateOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DateOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -96,6 +102,8 @@ class _$DateOperatorsCopyWithImpl<$Res, $Val extends DateOperators>
     ) as $Val);
   }
 
+  /// Create a copy of DateOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateRangeCopyWith<$Res>? get between {
@@ -136,6 +144,8 @@ class __$$DateOperatorsImplCopyWithImpl<$Res>
       _$DateOperatorsImpl _value, $Res Function(_$DateOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DateOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -208,7 +218,9 @@ class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('isNull', isNull));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DateOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DateOperatorsImplCopyWith<_$DateOperatorsImpl> get copyWith =>
@@ -249,8 +261,11 @@ abstract class _DateOperators extends DateOperators {
   @override
   bool? get isNull;
   set isNull(bool? value);
+
+  /// Create a copy of DateOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DateOperatorsImplCopyWith<_$DateOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -82,32 +82,32 @@ _$OrderFilterParameterImpl _$$OrderFilterParameterImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$OrderFilterParameterImplToJson(
-    _$OrderFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('active', instance.active?.toJson());
-  writeNotNull('code', instance.code?.toJson());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('currencyCode', instance.currencyCode?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('orderPlacedAt', instance.orderPlacedAt?.toJson());
-  writeNotNull('shipping', instance.shipping?.toJson());
-  writeNotNull('shippingWithTax', instance.shippingWithTax?.toJson());
-  writeNotNull('state', instance.state?.toJson());
-  writeNotNull('subTotal', instance.subTotal?.toJson());
-  writeNotNull('subTotalWithTax', instance.subTotalWithTax?.toJson());
-  writeNotNull('total', instance.total?.toJson());
-  writeNotNull('totalQuantity', instance.totalQuantity?.toJson());
-  writeNotNull('totalWithTax', instance.totalWithTax?.toJson());
-  writeNotNull('type', instance.type?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$OrderFilterParameterImpl instance) =>
+    <String, dynamic>{
+      if (instance.and?.map((e) => e.toJson()).toList() case final value?)
+        '_and': value,
+      if (instance.or?.map((e) => e.toJson()).toList() case final value?)
+        '_or': value,
+      if (instance.active?.toJson() case final value?) 'active': value,
+      if (instance.code?.toJson() case final value?) 'code': value,
+      if (instance.createdAt?.toJson() case final value?) 'createdAt': value,
+      if (instance.currencyCode?.toJson() case final value?)
+        'currencyCode': value,
+      if (instance.id?.toJson() case final value?) 'id': value,
+      if (instance.orderPlacedAt?.toJson() case final value?)
+        'orderPlacedAt': value,
+      if (instance.shipping?.toJson() case final value?) 'shipping': value,
+      if (instance.shippingWithTax?.toJson() case final value?)
+        'shippingWithTax': value,
+      if (instance.state?.toJson() case final value?) 'state': value,
+      if (instance.subTotal?.toJson() case final value?) 'subTotal': value,
+      if (instance.subTotalWithTax?.toJson() case final value?)
+        'subTotalWithTax': value,
+      if (instance.total?.toJson() case final value?) 'total': value,
+      if (instance.totalQuantity?.toJson() case final value?)
+        'totalQuantity': value,
+      if (instance.totalWithTax?.toJson() case final value?)
+        'totalWithTax': value,
+      if (instance.type?.toJson() case final value?) 'type': value,
+      if (instance.updatedAt?.toJson() case final value?) 'updatedAt': value,
+    };

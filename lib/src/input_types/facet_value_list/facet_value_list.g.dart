@@ -17,16 +17,9 @@ _$FacetValueListImpl _$$FacetValueListImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$FacetValueListImplToJson(
-    _$FacetValueListImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('items', instance.items?.map((e) => e?.toJson()).toList());
-  writeNotNull('totalItems', instance.totalItems);
-  return val;
-}
+        _$FacetValueListImpl instance) =>
+    <String, dynamic>{
+      if (instance.items?.map((e) => e?.toJson()).toList() case final value?)
+        'items': value,
+      if (instance.totalItems case final value?) 'totalItems': value,
+    };

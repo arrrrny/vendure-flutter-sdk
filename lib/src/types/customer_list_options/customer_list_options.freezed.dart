@@ -54,8 +54,12 @@ mixin _$CustomerListOptions {
   /// Takes n results, for use in pagination
   set take(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CustomerListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomerListOptionsCopyWith<CustomerListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -87,6 +91,8 @@ class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,6 +126,8 @@ class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
     ) as $Val);
   }
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerFilterParameterCopyWith<$Res>? get filter {
@@ -132,6 +140,8 @@ class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
     });
   }
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerSortParameterCopyWith<$Res>? get sort {
@@ -174,6 +184,8 @@ class __$$CustomerListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$CustomerListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -257,7 +269,9 @@ class _$CustomerListOptionsImpl extends _CustomerListOptions
       ..add(DiagnosticsProperty('take', take));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>
@@ -284,45 +298,47 @@ abstract class _CustomerListOptions extends CustomerListOptions {
   factory _CustomerListOptions.fromJson(Map<String, dynamic> json) =
       _$CustomerListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
+  @override
   CustomerFilterParameter? get filter;
 
   /// Allows the results to be filtered
   set filter(CustomerFilterParameter? value);
-  @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
+  @override
   LogicalOperator? get filterOperator;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   set filterOperator(LogicalOperator? value);
-  @override
 
   /// Skips the first n results, for use in pagination
+  @override
   int? get skip;
 
   /// Skips the first n results, for use in pagination
   set skip(int? value);
-  @override
 
   /// Specifies which properties to sort the results by
+  @override
   CustomerSortParameter? get sort;
 
   /// Specifies which properties to sort the results by
   set sort(CustomerSortParameter? value);
-  @override
 
   /// Takes n results, for use in pagination
+  @override
   int? get take;
 
   /// Takes n results, for use in pagination
   set take(int? value);
+
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

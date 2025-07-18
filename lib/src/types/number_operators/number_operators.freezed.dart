@@ -35,8 +35,12 @@ mixin _$NumberOperators {
   double? get lte => throw _privateConstructorUsedError;
   set lte(double? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this NumberOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NumberOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NumberOperatorsCopyWith<NumberOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$NumberOperatorsCopyWithImpl<$Res, $Val extends NumberOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NumberOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -112,6 +118,8 @@ class _$NumberOperatorsCopyWithImpl<$Res, $Val extends NumberOperators>
     ) as $Val);
   }
 
+  /// Create a copy of NumberOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NumberRangeCopyWith<$Res>? get between {
@@ -154,6 +162,8 @@ class __$$NumberOperatorsImplCopyWithImpl<$Res>
       _$NumberOperatorsImpl _value, $Res Function(_$NumberOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NumberOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -249,7 +259,9 @@ class _$NumberOperatorsImpl extends _NumberOperators
       ..add(DiagnosticsProperty('lte', lte));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NumberOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NumberOperatorsImplCopyWith<_$NumberOperatorsImpl> get copyWith =>
@@ -299,8 +311,11 @@ abstract class _NumberOperators extends NumberOperators {
   @override
   double? get lte;
   set lte(double? value);
+
+  /// Create a copy of NumberOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NumberOperatorsImplCopyWith<_$NumberOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

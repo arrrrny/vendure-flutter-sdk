@@ -25,8 +25,12 @@ mixin _$NumberRange {
   double get start => throw _privateConstructorUsedError;
   set start(double value) => throw _privateConstructorUsedError;
 
+  /// Serializes this NumberRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NumberRangeCopyWith<NumberRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$NumberRangeCopyWithImpl<$Res, $Val extends NumberRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,6 +94,8 @@ class __$$NumberRangeImplCopyWithImpl<$Res>
       _$NumberRangeImpl _value, $Res Function(_$NumberRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,7 +142,9 @@ class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('start', start));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NumberRangeImplCopyWith<_$NumberRangeImpl> get copyWith =>
@@ -162,8 +172,11 @@ abstract class _NumberRange extends NumberRange {
   @override
   double get start;
   set start(double value);
+
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NumberRangeImplCopyWith<_$NumberRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

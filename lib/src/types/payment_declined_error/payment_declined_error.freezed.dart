@@ -24,8 +24,12 @@ mixin _$PaymentDeclinedError {
   String get message => throw _privateConstructorUsedError;
   String get paymentErrorMessage => throw _privateConstructorUsedError;
 
+  /// Serializes this PaymentDeclinedError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentDeclinedError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaymentDeclinedErrorCopyWith<PaymentDeclinedError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$PaymentDeclinedErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PaymentDeclinedError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$PaymentDeclinedErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentDeclinedErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentDeclinedError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -164,12 +172,14 @@ class _$PaymentDeclinedErrorImpl extends _PaymentDeclinedError
                 other.paymentErrorMessage == paymentErrorMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, paymentErrorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentDeclinedError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentDeclinedErrorImplCopyWith<_$PaymentDeclinedErrorImpl>
@@ -201,8 +211,11 @@ abstract class _PaymentDeclinedError extends PaymentDeclinedError {
   String get message;
   @override
   String get paymentErrorMessage;
+
+  /// Create a copy of PaymentDeclinedError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentDeclinedErrorImplCopyWith<_$PaymentDeclinedErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

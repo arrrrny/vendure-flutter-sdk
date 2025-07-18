@@ -24,8 +24,12 @@ mixin _$EmailAddressConflictError {
   ErrorCode? get errorCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this EmailAddressConflictError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EmailAddressConflictError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmailAddressConflictErrorCopyWith<EmailAddressConflictError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$EmailAddressConflictErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmailAddressConflictError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,6 +97,8 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
       $Res Function(_$EmailAddressConflictErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmailAddressConflictError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,11 +157,13 @@ class _$EmailAddressConflictErrorImpl extends _EmailAddressConflictError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmailAddressConflictError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>
@@ -181,8 +191,11 @@ abstract class _EmailAddressConflictError extends EmailAddressConflictError {
   ErrorCode? get errorCode;
   @override
   String? get message;
+
+  /// Create a copy of EmailAddressConflictError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

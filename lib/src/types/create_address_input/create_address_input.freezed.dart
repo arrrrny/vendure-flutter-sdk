@@ -46,8 +46,12 @@ mixin _$CreateAddressInput {
   String? get streetLine2 => throw _privateConstructorUsedError;
   set streetLine2(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CreateAddressInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CreateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CreateAddressInputCopyWith<CreateAddressInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -83,6 +87,8 @@ class _$CreateAddressInputCopyWithImpl<$Res, $Val extends CreateAddressInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CreateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -183,6 +189,8 @@ class __$$CreateAddressInputImplCopyWithImpl<$Res>
       $Res Function(_$CreateAddressInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CreateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -324,7 +332,9 @@ class _$CreateAddressInputImpl extends _CreateAddressInput
       ..add(DiagnosticsProperty('streetLine2', streetLine2));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CreateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateAddressInputImplCopyWith<_$CreateAddressInputImpl> get copyWith =>
@@ -394,8 +404,11 @@ abstract class _CreateAddressInput extends CreateAddressInput {
   @override
   String? get streetLine2;
   set streetLine2(String? value);
+
+  /// Create a copy of CreateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateAddressInputImplCopyWith<_$CreateAddressInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

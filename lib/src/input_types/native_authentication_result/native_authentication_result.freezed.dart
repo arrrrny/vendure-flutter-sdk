@@ -105,6 +105,8 @@ mixin _$NativeAuthenticationResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this NativeAuthenticationResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -126,6 +128,9 @@ class _$NativeAuthenticationResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -146,6 +151,8 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
       _$CurrentUserImpl _value, $Res Function(_$CurrentUserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -230,12 +237,14 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
                 other.identifier == identifier));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_channels), id, identifier);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
@@ -354,7 +363,10 @@ abstract class CurrentUser extends NativeAuthenticationResult {
   List<CurrentUserChannel?>? get channels;
   String? get id;
   String? get identifier;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -380,6 +392,8 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
       $Res Function(_$InvalidCredentialsErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -457,12 +471,14 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, authenticationError, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
@@ -583,7 +599,10 @@ abstract class InvalidCredentialsError extends NativeAuthenticationResult {
   String? get authenticationError;
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -608,6 +627,8 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
       $Res Function(_$NativeAuthStrategyErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -672,11 +693,13 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
@@ -794,7 +817,10 @@ abstract class NativeAuthStrategyError extends NativeAuthenticationResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -817,6 +843,8 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
       $Res Function(_$NotVerifiedErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -881,11 +909,13 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotVerifiedErrorImplCopyWith<_$NotVerifiedErrorImpl> get copyWith =>
@@ -1003,7 +1033,10 @@ abstract class NotVerifiedError extends NativeAuthenticationResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NativeAuthenticationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotVerifiedErrorImplCopyWith<_$NotVerifiedErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

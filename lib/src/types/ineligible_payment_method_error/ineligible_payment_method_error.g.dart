@@ -15,20 +15,13 @@ _$IneligiblePaymentMethodErrorImpl _$$IneligiblePaymentMethodErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$IneligiblePaymentMethodErrorImplToJson(
-    _$IneligiblePaymentMethodErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('eligibilityCheckerMessage', instance.eligibilityCheckerMessage);
-  val['errorCode'] = _$ErrorCodeEnumMap[instance.errorCode]!;
-  val['message'] = instance.message;
-  return val;
-}
+        _$IneligiblePaymentMethodErrorImpl instance) =>
+    <String, dynamic>{
+      if (instance.eligibilityCheckerMessage case final value?)
+        'eligibilityCheckerMessage': value,
+      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+      'message': instance.message,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

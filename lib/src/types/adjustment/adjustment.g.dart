@@ -16,23 +16,14 @@ _$AdjustmentImpl _$$AdjustmentImplFromJson(Map json) => _$AdjustmentImpl(
       type: $enumDecode(_$AdjustmentTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$$AdjustmentImplToJson(_$AdjustmentImpl instance) {
-  final val = <String, dynamic>{
-    'adjustmentSource': instance.adjustmentSource,
-    'amount': instance.amount,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('data', instance.data);
-  val['description'] = instance.description;
-  val['type'] = _$AdjustmentTypeEnumMap[instance.type]!;
-  return val;
-}
+Map<String, dynamic> _$$AdjustmentImplToJson(_$AdjustmentImpl instance) =>
+    <String, dynamic>{
+      'adjustmentSource': instance.adjustmentSource,
+      'amount': instance.amount,
+      if (instance.data case final value?) 'data': value,
+      'description': instance.description,
+      'type': _$AdjustmentTypeEnumMap[instance.type]!,
+    };
 
 const _$AdjustmentTypeEnumMap = {
   AdjustmentType.distributedOrderPromotion: 'distributedOrderPromotion',

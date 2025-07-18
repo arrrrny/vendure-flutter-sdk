@@ -16,16 +16,8 @@ _$CollectionResultImpl _$$CollectionResultImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$CollectionResultImplToJson(
-    _$CollectionResultImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('collection', instance.collection?.toJson());
-  writeNotNull('count', instance.count);
-  return val;
-}
+        _$CollectionResultImpl instance) =>
+    <String, dynamic>{
+      if (instance.collection?.toJson() case final value?) 'collection': value,
+      if (instance.count case final value?) 'count': value,
+    };

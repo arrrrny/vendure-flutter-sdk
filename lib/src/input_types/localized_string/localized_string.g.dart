@@ -14,19 +14,12 @@ _$LocalizedStringImpl _$$LocalizedStringImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$LocalizedStringImplToJson(
-    _$LocalizedStringImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('value', instance.value);
-  return val;
-}
+        _$LocalizedStringImpl instance) =>
+    <String, dynamic>{
+      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
+        'languageCode': value,
+      if (instance.value case final value?) 'value': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

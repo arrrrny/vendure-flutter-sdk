@@ -11,16 +11,8 @@ _$TaxLineImpl _$$TaxLineImplFromJson(Map json) => _$TaxLineImpl(
       taxRate: (json['taxRate'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$TaxLineImplToJson(_$TaxLineImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('description', instance.description);
-  writeNotNull('taxRate', instance.taxRate);
-  return val;
-}
+Map<String, dynamic> _$$TaxLineImplToJson(_$TaxLineImpl instance) =>
+    <String, dynamic>{
+      if (instance.description case final value?) 'description': value,
+      if (instance.taxRate case final value?) 'taxRate': value,
+    };

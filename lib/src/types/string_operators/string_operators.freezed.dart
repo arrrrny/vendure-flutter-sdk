@@ -39,8 +39,12 @@ mixin _$StringOperators {
   String? get regex => throw _privateConstructorUsedError;
   set regex(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this StringOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StringOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StringOperatorsCopyWith<StringOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$StringOperatorsCopyWithImpl<$Res, $Val extends StringOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StringOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -148,6 +154,8 @@ class __$$StringOperatorsImplCopyWithImpl<$Res>
       _$StringOperatorsImpl _value, $Res Function(_$StringOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StringOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -253,7 +261,9 @@ class _$StringOperatorsImpl extends _StringOperators
       ..add(DiagnosticsProperty('regex', regex));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StringOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StringOperatorsImplCopyWith<_$StringOperatorsImpl> get copyWith =>
@@ -309,8 +319,11 @@ abstract class _StringOperators extends StringOperators {
   @override
   String? get regex;
   set regex(String? value);
+
+  /// Create a copy of StringOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StringOperatorsImplCopyWith<_$StringOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

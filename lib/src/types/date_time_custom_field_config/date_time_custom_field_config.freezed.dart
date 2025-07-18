@@ -36,8 +36,12 @@ mixin _$DateTimeCustomFieldConfig {
   String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
+  /// Serializes this DateTimeCustomFieldConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DateTimeCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DateTimeCustomFieldConfigCopyWith<DateTimeCustomFieldConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -75,6 +79,8 @@ class _$DateTimeCustomFieldConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DateTimeCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -184,6 +190,8 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$DateTimeCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DateTimeCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -394,7 +402,7 @@ class _$DateTimeCustomFieldConfigImpl extends _DateTimeCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -412,7 +420,9 @@ class _$DateTimeCustomFieldConfigImpl extends _DateTimeCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DateTimeCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DateTimeCustomFieldConfigImplCopyWith<_$DateTimeCustomFieldConfigImpl>
@@ -473,8 +483,11 @@ abstract class _DateTimeCustomFieldConfig extends DateTimeCustomFieldConfig {
   String get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of DateTimeCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DateTimeCustomFieldConfigImplCopyWith<_$DateTimeCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -23,8 +23,12 @@ mixin _$IdListOperators {
   String get inList => throw _privateConstructorUsedError;
   set inList(String value) => throw _privateConstructorUsedError;
 
+  /// Serializes this IdListOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of IdListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IdListOperatorsCopyWith<IdListOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$IdListOperatorsCopyWithImpl<$Res, $Val extends IdListOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IdListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$IdListOperatorsImplCopyWithImpl<$Res>
       _$IdListOperatorsImpl _value, $Res Function(_$IdListOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IdListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,7 +128,9 @@ class _$IdListOperatorsImpl extends _IdListOperators
       ..add(DiagnosticsProperty('inList', inList));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IdListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IdListOperatorsImplCopyWith<_$IdListOperatorsImpl> get copyWith =>
@@ -145,8 +155,11 @@ abstract class _IdListOperators extends IdListOperators {
   @override
   String get inList;
   set inList(String value);
+
+  /// Create a copy of IdListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IdListOperatorsImplCopyWith<_$IdListOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

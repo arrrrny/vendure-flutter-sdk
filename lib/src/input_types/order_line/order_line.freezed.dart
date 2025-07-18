@@ -94,8 +94,12 @@ mixin _$OrderLine {
       throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderLine to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderLineCopyWith<OrderLine> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -150,6 +154,8 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -299,6 +305,8 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
     ) as $Val);
   }
 
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get featuredAsset {
@@ -311,6 +319,8 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
     });
   }
 
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderCopyWith<$Res>? get order {
@@ -323,6 +333,8 @@ class _$OrderLineCopyWithImpl<$Res, $Val extends OrderLine>
     });
   }
 
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductVariantCopyWith<$Res>? get productVariant {
@@ -390,6 +402,8 @@ class __$$OrderLineImplCopyWithImpl<$Res>
       _$OrderLineImpl _value, $Res Function(_$OrderLineImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -821,7 +835,7 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -855,7 +869,9 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderLineImplCopyWith<_$OrderLineImpl> get copyWith =>
@@ -908,15 +924,14 @@ abstract class _OrderLine extends OrderLine {
   DateTime? get createdAt;
   @override
   Map<String, dynamic>? get customFields;
-  @override
 
   /// The price of the line including discounts, excluding tax
-  double? get discountedLinePrice;
   @override
+  double? get discountedLinePrice;
 
   /// The price of the line including discounts and tax
-  double? get discountedLinePriceWithTax;
   @override
+  double? get discountedLinePriceWithTax;
 
   /// The price of a single unit including discounts, excluding tax.
   ///
@@ -924,10 +939,11 @@ abstract class _OrderLine extends OrderLine {
   /// actual taxable unit price (see `proratedUnitPrice`), but is generally the
   /// correct price to display to customers to avoid confusion
   /// about the internal handling of distributed Order-level discounts.
-  double? get discountedUnitPrice;
   @override
+  double? get discountedUnitPrice;
 
   /// The price of a single unit including discounts and tax
+  @override
   double? get discountedUnitPriceWithTax;
   @override
   List<Discount?>? get discounts;
@@ -937,74 +953,77 @@ abstract class _OrderLine extends OrderLine {
   List<FulfillmentLine?>? get fulfillmentLines;
   @override
   String? get id;
-  @override
 
   /// The total price of the line excluding tax and discounts.
-  double? get linePrice;
   @override
+  double? get linePrice;
 
   /// The total price of the line including tax but excluding discounts.
-  double? get linePriceWithTax;
   @override
+  double? get linePriceWithTax;
 
   /// The total tax on this line
+  @override
   double? get lineTax;
   @override
   Order? get order;
-  @override
 
   /// The quantity at the time the Order was placed
+  @override
   int? get orderPlacedQuantity;
   @override
   ProductVariant? get productVariant;
-  @override
 
   /// The actual line price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderLine, and is used in tax
   /// and refund calculations.
-  double? get proratedLinePrice;
   @override
+  double? get proratedLinePrice;
 
   /// The proratedLinePrice including tax
-  double? get proratedLinePriceWithTax;
   @override
+  double? get proratedLinePriceWithTax;
 
   /// The actual unit price, taking into account both item discounts _and_ prorated (proportionally-distributed)
   /// Order-level discounts. This value is the true economic value of the OrderItem, and is used in tax
   /// and refund calculations.
-  double? get proratedUnitPrice;
   @override
+  double? get proratedUnitPrice;
 
   /// The proratedUnitPrice including tax
-  double? get proratedUnitPriceWithTax;
   @override
+  double? get proratedUnitPriceWithTax;
 
   /// The quantity of items purchased
+  @override
   int? get quantity;
   @override
   List<TaxLine?>? get taxLines;
   @override
   double? get taxRate;
-  @override
 
   /// The price of a single unit, excluding tax and discounts
-  double? get unitPrice;
   @override
+  double? get unitPrice;
 
   /// Non-zero if the unitPrice has changed since it was initially added to Order
-  double? get unitPriceChangeSinceAdded;
   @override
+  double? get unitPriceChangeSinceAdded;
 
   /// The price of a single unit, including tax but excluding discounts
-  double? get unitPriceWithTax;
   @override
+  double? get unitPriceWithTax;
 
   /// Non-zero if the unitPriceWithTax has changed since it was initially added to Order
+  @override
   double? get unitPriceWithTaxChangeSinceAdded;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of OrderLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderLineImplCopyWith<_$OrderLineImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

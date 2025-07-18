@@ -25,8 +25,12 @@ mixin _$BooleanOperators {
   bool? get isNull => throw _privateConstructorUsedError;
   set isNull(bool? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this BooleanOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BooleanOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BooleanOperatorsCopyWith<BooleanOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$BooleanOperatorsCopyWithImpl<$Res, $Val extends BooleanOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BooleanOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,6 +94,8 @@ class __$$BooleanOperatorsImplCopyWithImpl<$Res>
       $Res Function(_$BooleanOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BooleanOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,7 +143,9 @@ class _$BooleanOperatorsImpl extends _BooleanOperators
       ..add(DiagnosticsProperty('isNull', isNull));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BooleanOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BooleanOperatorsImplCopyWith<_$BooleanOperatorsImpl> get copyWith =>
@@ -163,8 +173,11 @@ abstract class _BooleanOperators extends BooleanOperators {
   @override
   bool? get isNull;
   set isNull(bool? value);
+
+  /// Create a copy of BooleanOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BooleanOperatorsImplCopyWith<_$BooleanOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

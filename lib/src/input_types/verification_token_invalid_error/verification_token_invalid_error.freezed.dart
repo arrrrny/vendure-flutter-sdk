@@ -24,8 +24,12 @@ mixin _$VerificationTokenInvalidError {
   ErrorCode? get errorCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this VerificationTokenInvalidError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerificationTokenInvalidError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $VerificationTokenInvalidErrorCopyWith<VerificationTokenInvalidError>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$VerificationTokenInvalidErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of VerificationTokenInvalidError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>
       $Res Function(_$VerificationTokenInvalidErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerificationTokenInvalidError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,11 +160,13 @@ class _$VerificationTokenInvalidErrorImpl extends _VerificationTokenInvalidError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerificationTokenInvalidError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VerificationTokenInvalidErrorImplCopyWith<
@@ -186,8 +196,11 @@ abstract class _VerificationTokenInvalidError
   ErrorCode? get errorCode;
   @override
   String? get message;
+
+  /// Create a copy of VerificationTokenInvalidError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VerificationTokenInvalidErrorImplCopyWith<
           _$VerificationTokenInvalidErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

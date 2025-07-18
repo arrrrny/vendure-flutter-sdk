@@ -45,36 +45,28 @@ _$ProductVariantImpl _$$ProductVariantImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ProductVariantImplToJson(
-    _$ProductVariantImpl instance) {
-  final val = <String, dynamic>{
-    'assets': instance.assets.map((e) => e.toJson()).toList(),
-    'createdAt': instance.createdAt.toIso8601String(),
-    'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['facetValues'] = instance.facetValues.map((e) => e.toJson()).toList();
-  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
-  val['id'] = instance.id;
-  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
-  val['name'] = instance.name;
-  val['options'] = instance.options.map((e) => e.toJson()).toList();
-  val['price'] = instance.price;
-  val['priceWithTax'] = instance.priceWithTax;
-  val['productId'] = instance.productId;
-  val['sku'] = instance.sku;
-  val['stockLevel'] = instance.stockLevel;
-  val['taxCategory'] = instance.taxCategory.toJson();
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+        _$ProductVariantImpl instance) =>
+    <String, dynamic>{
+      'assets': instance.assets.map((e) => e.toJson()).toList(),
+      'createdAt': instance.createdAt.toIso8601String(),
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      if (instance.customFields case final value?) 'customFields': value,
+      'facetValues': instance.facetValues.map((e) => e.toJson()).toList(),
+      if (instance.featuredAsset?.toJson() case final value?)
+        'featuredAsset': value,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'options': instance.options.map((e) => e.toJson()).toList(),
+      'price': instance.price,
+      'priceWithTax': instance.priceWithTax,
+      'productId': instance.productId,
+      'sku': instance.sku,
+      'stockLevel': instance.stockLevel,
+      'taxCategory': instance.taxCategory.toJson(),
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

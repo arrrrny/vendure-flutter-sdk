@@ -23,8 +23,12 @@ mixin _$MissingPasswordError {
   ErrorCode get errorCode => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
 
+  /// Serializes this MissingPasswordError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MissingPasswordError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MissingPasswordErrorCopyWith<MissingPasswordError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$MissingPasswordErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MissingPasswordError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +93,8 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
       $Res Function(_$MissingPasswordErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MissingPasswordError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,11 +154,13 @@ class _$MissingPasswordErrorImpl extends _MissingPasswordError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MissingPasswordError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MissingPasswordErrorImplCopyWith<_$MissingPasswordErrorImpl>
@@ -179,8 +189,11 @@ abstract class _MissingPasswordError extends MissingPasswordError {
   ErrorCode get errorCode;
   @override
   String get message;
+
+  /// Create a copy of MissingPasswordError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MissingPasswordErrorImplCopyWith<_$MissingPasswordErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

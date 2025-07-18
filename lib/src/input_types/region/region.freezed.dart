@@ -33,8 +33,12 @@ mixin _$Region {
   List<RegionTranslation> get translations =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this Region to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Region
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RegionCopyWith<Region> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -69,6 +73,8 @@ class _$RegionCopyWithImpl<$Res, $Val extends Region>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Region
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,6 +138,8 @@ class _$RegionCopyWithImpl<$Res, $Val extends Region>
     ) as $Val);
   }
 
+  /// Create a copy of Region
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RegionCopyWith<$Res>? get parent {
@@ -177,6 +185,8 @@ class __$$RegionImplCopyWithImpl<$Res>
       _$RegionImpl _value, $Res Function(_$RegionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Region
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -336,7 +346,7 @@ class _$RegionImpl extends _Region with DiagnosticableTreeMixin {
                 .equals(other._translations, _translations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -352,7 +362,9 @@ class _$RegionImpl extends _Region with DiagnosticableTreeMixin {
       parentId,
       const DeepCollectionEquality().hash(_translations));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Region
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RegionImplCopyWith<_$RegionImpl> get copyWith =>
@@ -405,8 +417,11 @@ abstract class _Region extends Region {
   String? get parentId;
   @override
   List<RegionTranslation> get translations;
+
+  /// Create a copy of Region
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RegionImplCopyWith<_$RegionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

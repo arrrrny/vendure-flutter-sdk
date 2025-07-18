@@ -23,8 +23,12 @@ mixin _$LocalizedString {
   LanguageCode get languageCode => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
+  /// Serializes this LocalizedString to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LocalizedString
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LocalizedStringCopyWith<LocalizedString> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$LocalizedStringCopyWithImpl<$Res, $Val extends LocalizedString>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LocalizedString
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$LocalizedStringImplCopyWithImpl<$Res>
       _$LocalizedStringImpl _value, $Res Function(_$LocalizedStringImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LocalizedString
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -144,11 +152,13 @@ class _$LocalizedStringImpl extends _LocalizedString
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, languageCode, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LocalizedString
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LocalizedStringImplCopyWith<_$LocalizedStringImpl> get copyWith =>
@@ -176,8 +186,11 @@ abstract class _LocalizedString extends LocalizedString {
   LanguageCode get languageCode;
   @override
   String get value;
+
+  /// Create a copy of LocalizedString
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LocalizedStringImplCopyWith<_$LocalizedStringImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

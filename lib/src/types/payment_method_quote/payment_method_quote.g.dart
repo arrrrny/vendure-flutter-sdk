@@ -20,22 +20,14 @@ _$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$PaymentMethodQuoteImplToJson(
-    _$PaymentMethodQuoteImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['description'] = instance.description;
-  writeNotNull('eligibilityMessage', instance.eligibilityMessage);
-  val['id'] = instance.id;
-  val['isEligible'] = instance.isEligible;
-  val['name'] = instance.name;
-  return val;
-}
+        _$PaymentMethodQuoteImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      if (instance.customFields case final value?) 'customFields': value,
+      'description': instance.description,
+      if (instance.eligibilityMessage case final value?)
+        'eligibilityMessage': value,
+      'id': instance.id,
+      'isEligible': instance.isEligible,
+      'name': instance.name,
+    };

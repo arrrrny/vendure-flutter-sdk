@@ -23,8 +23,12 @@ SearchReindexResponse _$SearchReindexResponseFromJson(
 mixin _$SearchReindexResponse {
   bool get success => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchReindexResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchReindexResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchReindexResponseCopyWith<SearchReindexResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$SearchReindexResponseCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchReindexResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -84,6 +90,8 @@ class __$$SearchReindexResponseImplCopyWithImpl<$Res>
       $Res Function(_$SearchReindexResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchReindexResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,11 +139,13 @@ class _$SearchReindexResponseImpl extends _SearchReindexResponse
             (identical(other.success, success) || other.success == success));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, success);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchReindexResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchReindexResponseImplCopyWith<_$SearchReindexResponseImpl>
@@ -160,8 +170,11 @@ abstract class _SearchReindexResponse extends SearchReindexResponse {
 
   @override
   bool get success;
+
+  /// Create a copy of SearchReindexResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchReindexResponseImplCopyWith<_$SearchReindexResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

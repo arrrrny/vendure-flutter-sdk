@@ -15,20 +15,13 @@ _$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
-    _$NativeAuthStrategyErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$NativeAuthStrategyErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -70,16 +63,8 @@ _$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SuccessImplToJson(_$SuccessImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('success', instance.success);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$SuccessImplToJson(_$SuccessImpl instance) =>
+    <String, dynamic>{
+      if (instance.success case final value?) 'success': value,
+      'runtimeType': instance.$type,
+    };

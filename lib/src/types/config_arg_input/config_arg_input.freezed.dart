@@ -29,8 +29,12 @@ mixin _$ConfigArgInput {
   /// A JSON stringified representation of the actual value
   set value(String value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ConfigArgInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ConfigArgInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConfigArgInputCopyWith<ConfigArgInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$ConfigArgInputCopyWithImpl<$Res, $Val extends ConfigArgInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConfigArgInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$ConfigArgInputImplCopyWithImpl<$Res>
       _$ConfigArgInputImpl _value, $Res Function(_$ConfigArgInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConfigArgInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,7 +149,9 @@ class _$ConfigArgInputImpl extends _ConfigArgInput
       ..add(DiagnosticsProperty('value', value));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConfigArgInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigArgInputImplCopyWith<_$ConfigArgInputImpl> get copyWith =>
@@ -167,15 +177,18 @@ abstract class _ConfigArgInput extends ConfigArgInput {
   @override
   String get name;
   set name(String value);
-  @override
 
   /// A JSON stringified representation of the actual value
+  @override
   String get value;
 
   /// A JSON stringified representation of the actual value
   set value(String value);
+
+  /// Create a copy of ConfigArgInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConfigArgInputImplCopyWith<_$ConfigArgInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

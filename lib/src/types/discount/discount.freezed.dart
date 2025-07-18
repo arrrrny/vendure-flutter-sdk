@@ -26,8 +26,12 @@ mixin _$Discount {
   String get description => throw _privateConstructorUsedError;
   AdjustmentType get type => throw _privateConstructorUsedError;
 
+  /// Serializes this Discount to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Discount
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DiscountCopyWith<Discount> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +59,8 @@ class _$DiscountCopyWithImpl<$Res, $Val extends Discount>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Discount
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,6 +119,8 @@ class __$$DiscountImplCopyWithImpl<$Res>
       _$DiscountImpl _value, $Res Function(_$DiscountImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Discount
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -204,12 +212,14 @@ class _$DiscountImpl extends _Discount with DiagnosticableTreeMixin {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, adjustmentSource, amount, amountWithTax, description, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Discount
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DiscountImplCopyWith<_$DiscountImpl> get copyWith =>
@@ -245,8 +255,11 @@ abstract class _Discount extends Discount {
   String get description;
   @override
   AdjustmentType get type;
+
+  /// Create a copy of Discount
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DiscountImplCopyWith<_$DiscountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

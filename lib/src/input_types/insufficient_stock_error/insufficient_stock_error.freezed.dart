@@ -26,8 +26,12 @@ mixin _$InsufficientStockError {
   Order? get order => throw _privateConstructorUsedError;
   int? get quantityAvailable => throw _privateConstructorUsedError;
 
+  /// Serializes this InsufficientStockError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of InsufficientStockError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InsufficientStockErrorCopyWith<InsufficientStockError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$InsufficientStockErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InsufficientStockError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class _$InsufficientStockErrorCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of InsufficientStockError
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderCopyWith<$Res>? get order {
@@ -128,6 +136,8 @@ class __$$InsufficientStockErrorImplCopyWithImpl<$Res>
       $Res Function(_$InsufficientStockErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InsufficientStockError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -206,12 +216,14 @@ class _$InsufficientStockErrorImpl extends _InsufficientStockError
                 other.quantityAvailable == quantityAvailable));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, order, quantityAvailable);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InsufficientStockError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InsufficientStockErrorImplCopyWith<_$InsufficientStockErrorImpl>
@@ -245,8 +257,11 @@ abstract class _InsufficientStockError extends InsufficientStockError {
   Order? get order;
   @override
   int? get quantityAvailable;
+
+  /// Create a copy of InsufficientStockError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InsufficientStockErrorImplCopyWith<_$InsufficientStockErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

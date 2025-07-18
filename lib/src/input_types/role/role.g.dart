@@ -26,25 +26,21 @@ _$RoleImpl _$$RoleImplFromJson(Map json) => _$RoleImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$RoleImplToJson(_$RoleImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('channels', instance.channels?.map((e) => e?.toJson()).toList());
-  writeNotNull('code', instance.code);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('description', instance.description);
-  writeNotNull('id', instance.id);
-  writeNotNull('permissions',
-      instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$RoleImplToJson(_$RoleImpl instance) =>
+    <String, dynamic>{
+      if (instance.channels?.map((e) => e?.toJson()).toList() case final value?)
+        'channels': value,
+      if (instance.code case final value?) 'code': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList()
+          case final value?)
+        'permissions': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

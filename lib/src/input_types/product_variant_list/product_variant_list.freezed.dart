@@ -23,8 +23,12 @@ mixin _$ProductVariantList {
   List<ProductVariant?>? get items => throw _privateConstructorUsedError;
   int? get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductVariantList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductVariantList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductVariantListCopyWith<ProductVariantList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$ProductVariantListCopyWithImpl<$Res, $Val extends ProductVariantList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductVariantList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$ProductVariantListImplCopyWithImpl<$Res>
       $Res Function(_$ProductVariantListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductVariantList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,12 +162,14 @@ class _$ProductVariantListImpl extends _ProductVariantList
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductVariantList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductVariantListImplCopyWith<_$ProductVariantListImpl> get copyWith =>
@@ -187,8 +197,11 @@ abstract class _ProductVariantList extends ProductVariantList {
   List<ProductVariant?>? get items;
   @override
   int? get totalItems;
+
+  /// Create a copy of ProductVariantList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductVariantListImplCopyWith<_$ProductVariantListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

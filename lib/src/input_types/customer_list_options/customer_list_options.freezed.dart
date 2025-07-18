@@ -36,8 +36,12 @@ mixin _$CustomerListOptions {
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
 
+  /// Serializes this CustomerListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomerListOptionsCopyWith<CustomerListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -102,6 +108,8 @@ class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
     ) as $Val);
   }
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerFilterParameterCopyWith<$Res>? get filter {
@@ -114,6 +122,8 @@ class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
     });
   }
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerSortParameterCopyWith<$Res>? get sort {
@@ -156,6 +166,8 @@ class __$$CustomerListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$CustomerListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -252,12 +264,14 @@ class _$CustomerListOptionsImpl extends _CustomerListOptions
             (identical(other.take, take) || other.take == take));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>
@@ -284,29 +298,31 @@ abstract class _CustomerListOptions extends CustomerListOptions {
   factory _CustomerListOptions.fromJson(Map<String, dynamic> json) =
       _$CustomerListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
-  CustomerFilterParameter? get filter;
   @override
+  CustomerFilterParameter? get filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
-  LogicalOperator? get filterOperator;
   @override
+  LogicalOperator? get filterOperator;
 
   /// Skips the first n results, for use in pagination
-  int? get skip;
   @override
+  int? get skip;
 
   /// Specifies which properties to sort the results by
-  CustomerSortParameter? get sort;
   @override
+  CustomerSortParameter? get sort;
 
   /// Takes n results, for use in pagination
-  int? get take;
   @override
-  @JsonKey(ignore: true)
+  int? get take;
+
+  /// Create a copy of CustomerListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

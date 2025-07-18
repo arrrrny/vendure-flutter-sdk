@@ -35,8 +35,12 @@ mixin _$Asset {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   int? get width => throw _privateConstructorUsedError;
 
+  /// Serializes this Asset to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -74,6 +78,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,6 +158,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     ) as $Val);
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CoordinateCopyWith<$Res>? get focalPoint {
@@ -200,6 +208,8 @@ class __$$AssetImplCopyWithImpl<$Res>
       _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -402,7 +412,7 @@ class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
             (identical(other.width, width) || other.width == width));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -421,7 +431,9 @@ class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
       updatedAt,
       width);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
@@ -483,8 +495,11 @@ abstract class _Asset extends Asset {
   DateTime? get updatedAt;
   @override
   int? get width;
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

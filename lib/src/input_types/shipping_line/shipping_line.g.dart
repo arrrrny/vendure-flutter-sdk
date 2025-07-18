@@ -24,22 +24,17 @@ _$ShippingLineImpl _$$ShippingLineImplFromJson(Map json) => _$ShippingLineImpl(
               Map<String, dynamic>.from(json['shippingMethod'] as Map)),
     );
 
-Map<String, dynamic> _$$ShippingLineImplToJson(_$ShippingLineImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('discountedPrice', instance.discountedPrice);
-  writeNotNull('discountedPriceWithTax', instance.discountedPriceWithTax);
-  writeNotNull(
-      'discounts', instance.discounts?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('price', instance.price);
-  writeNotNull('priceWithTax', instance.priceWithTax);
-  writeNotNull('shippingMethod', instance.shippingMethod?.toJson());
-  return val;
-}
+Map<String, dynamic> _$$ShippingLineImplToJson(_$ShippingLineImpl instance) =>
+    <String, dynamic>{
+      if (instance.discountedPrice case final value?) 'discountedPrice': value,
+      if (instance.discountedPriceWithTax case final value?)
+        'discountedPriceWithTax': value,
+      if (instance.discounts?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'discounts': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.price case final value?) 'price': value,
+      if (instance.priceWithTax case final value?) 'priceWithTax': value,
+      if (instance.shippingMethod?.toJson() case final value?)
+        'shippingMethod': value,
+    };

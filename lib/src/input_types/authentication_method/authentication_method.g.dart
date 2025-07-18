@@ -19,18 +19,12 @@ _$AuthenticationMethodImpl _$$AuthenticationMethodImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$AuthenticationMethodImplToJson(
-    _$AuthenticationMethodImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('id', instance.id);
-  writeNotNull('strategy', instance.strategy);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+        _$AuthenticationMethodImpl instance) =>
+    <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.strategy case final value?) 'strategy': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

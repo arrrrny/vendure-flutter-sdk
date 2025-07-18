@@ -28,8 +28,12 @@ mixin _$ProductTranslation {
   String get slug => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductTranslationCopyWith<ProductTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$ProductTranslationCopyWithImpl<$Res, $Val extends ProductTranslation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +136,8 @@ class __$$ProductTranslationImplCopyWithImpl<$Res>
       $Res Function(_$ProductTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -243,12 +251,14 @@ class _$ProductTranslationImpl extends _ProductTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, createdAt, description, id,
       languageCode, name, slug, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductTranslationImplCopyWith<_$ProductTranslationImpl> get copyWith =>
@@ -291,8 +301,11 @@ abstract class _ProductTranslation extends ProductTranslation {
   String get slug;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of ProductTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductTranslationImplCopyWith<_$ProductTranslationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

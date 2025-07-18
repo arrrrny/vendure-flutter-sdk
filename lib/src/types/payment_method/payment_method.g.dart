@@ -30,25 +30,17 @@ _$PaymentMethodImpl _$$PaymentMethodImplFromJson(Map json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$PaymentMethodImplToJson(_$PaymentMethodImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('checker', instance.checker?.toJson());
-  val['code'] = instance.code;
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  writeNotNull('customFields', instance.customFields);
-  val['description'] = instance.description;
-  val['enabled'] = instance.enabled;
-  val['handler'] = instance.handler.toJson();
-  val['id'] = instance.id;
-  val['name'] = instance.name;
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$$PaymentMethodImplToJson(_$PaymentMethodImpl instance) =>
+    <String, dynamic>{
+      if (instance.checker?.toJson() case final value?) 'checker': value,
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'description': instance.description,
+      'enabled': instance.enabled,
+      'handler': instance.handler.toJson(),
+      'id': instance.id,
+      'name': instance.name,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };

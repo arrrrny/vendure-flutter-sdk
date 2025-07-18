@@ -495,8 +495,13 @@ mixin _$CustomFieldConfig {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this CustomFieldConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomFieldConfigCopyWith<CustomFieldConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -530,6 +535,8 @@ class _$CustomFieldConfigCopyWithImpl<$Res, $Val extends CustomFieldConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -621,6 +628,8 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$BooleanCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -807,7 +816,7 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -822,7 +831,9 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BooleanCustomFieldConfigImplCopyWith<_$BooleanCustomFieldConfigImpl>
@@ -1342,8 +1353,11 @@ abstract class BooleanCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BooleanCustomFieldConfigImplCopyWith<_$BooleanCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1383,6 +1397,8 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$DateTimeCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1599,7 +1615,7 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1617,7 +1633,9 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DateTimeCustomFieldConfigImplCopyWith<_$DateTimeCustomFieldConfigImpl>
@@ -2143,8 +2161,11 @@ abstract class DateTimeCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DateTimeCustomFieldConfigImplCopyWith<_$DateTimeCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2183,6 +2204,8 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$FloatCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2399,7 +2422,7 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2417,7 +2440,9 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FloatCustomFieldConfigImplCopyWith<_$FloatCustomFieldConfigImpl>
@@ -2943,8 +2968,11 @@ abstract class FloatCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FloatCustomFieldConfigImplCopyWith<_$FloatCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2981,6 +3009,8 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$IntCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3197,7 +3227,7 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3215,7 +3245,9 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IntCustomFieldConfigImplCopyWith<_$IntCustomFieldConfigImpl>
@@ -3742,8 +3774,11 @@ abstract class IntCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IntCustomFieldConfigImplCopyWith<_$IntCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3782,6 +3817,8 @@ class __$$LocaleStringCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$LocaleStringCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3989,7 +4026,7 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -4006,7 +4043,9 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LocaleStringCustomFieldConfigImplCopyWith<
@@ -4553,8 +4592,11 @@ abstract class LocaleStringCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LocaleStringCustomFieldConfigImplCopyWith<
           _$LocaleStringCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -4592,6 +4634,8 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$LocaleTextCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4779,7 +4823,7 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -4794,7 +4838,9 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LocaleTextCustomFieldConfigImplCopyWith<_$LocaleTextCustomFieldConfigImpl>
@@ -5314,8 +5360,11 @@ abstract class LocaleTextCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LocaleTextCustomFieldConfigImplCopyWith<_$LocaleTextCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5354,6 +5403,8 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$RelationCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5570,7 +5621,7 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -5587,7 +5638,9 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RelationCustomFieldConfigImplCopyWith<_$RelationCustomFieldConfigImpl>
@@ -6133,8 +6186,11 @@ abstract class RelationCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RelationCustomFieldConfigImplCopyWith<_$RelationCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -6173,6 +6229,8 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$StringCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6398,7 +6456,7 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -6416,7 +6474,9 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StringCustomFieldConfigImplCopyWith<_$StringCustomFieldConfigImpl>
@@ -6978,8 +7038,11 @@ abstract class StringCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StringCustomFieldConfigImplCopyWith<_$StringCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -7014,6 +7077,8 @@ class __$$TextCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$TextCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7200,7 +7265,7 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -7215,7 +7280,9 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TextCustomFieldConfigImplCopyWith<_$TextCustomFieldConfigImpl>
@@ -7735,8 +7802,11 @@ abstract class TextCustomFieldConfig extends CustomFieldConfig {
   String? get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of CustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TextCustomFieldConfigImplCopyWith<_$TextCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

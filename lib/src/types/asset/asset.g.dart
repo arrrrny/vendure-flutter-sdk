@@ -30,32 +30,23 @@ _$AssetImpl _$$AssetImplFromJson(Map json) => _$AssetImpl(
       width: (json['width'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) {
-  final val = <String, dynamic>{
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['fileSize'] = instance.fileSize;
-  writeNotNull('focalPoint', instance.focalPoint?.toJson());
-  val['height'] = instance.height;
-  val['id'] = instance.id;
-  val['mimeType'] = instance.mimeType;
-  val['name'] = instance.name;
-  val['preview'] = instance.preview;
-  val['source'] = instance.source;
-  val['tags'] = instance.tags.map((e) => e.toJson()).toList();
-  val['type'] = _$AssetTypeEnumMap[instance.type]!;
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  val['width'] = instance.width;
-  return val;
-}
+Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
+    <String, dynamic>{
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'fileSize': instance.fileSize,
+      if (instance.focalPoint?.toJson() case final value?) 'focalPoint': value,
+      'height': instance.height,
+      'id': instance.id,
+      'mimeType': instance.mimeType,
+      'name': instance.name,
+      'preview': instance.preview,
+      'source': instance.source,
+      'tags': instance.tags.map((e) => e.toJson()).toList(),
+      'type': _$AssetTypeEnumMap[instance.type]!,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'width': instance.width,
+    };
 
 const _$AssetTypeEnumMap = {
   AssetType.binary: 'binary',

@@ -36,8 +36,12 @@ mixin _$FloatCustomFieldConfig {
   String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
+  /// Serializes this FloatCustomFieldConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FloatCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FloatCustomFieldConfigCopyWith<FloatCustomFieldConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -75,6 +79,8 @@ class _$FloatCustomFieldConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FloatCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -184,6 +190,8 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$FloatCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FloatCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -394,7 +402,7 @@ class _$FloatCustomFieldConfigImpl extends _FloatCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -412,7 +420,9 @@ class _$FloatCustomFieldConfigImpl extends _FloatCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FloatCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FloatCustomFieldConfigImplCopyWith<_$FloatCustomFieldConfigImpl>
@@ -473,8 +483,11 @@ abstract class _FloatCustomFieldConfig extends FloatCustomFieldConfig {
   String get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of FloatCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FloatCustomFieldConfigImplCopyWith<_$FloatCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

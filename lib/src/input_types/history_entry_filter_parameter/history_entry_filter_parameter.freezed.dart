@@ -32,8 +32,12 @@ mixin _$HistoryEntryFilterParameter {
   StringOperators? get type => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this HistoryEntryFilterParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HistoryEntryFilterParameterCopyWith<HistoryEntryFilterParameter>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -71,6 +75,8 @@ class _$HistoryEntryFilterParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -109,6 +115,8 @@ class _$HistoryEntryFilterParameterCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get createdAt {
@@ -121,6 +129,8 @@ class _$HistoryEntryFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get id {
@@ -133,6 +143,8 @@ class _$HistoryEntryFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get type {
@@ -145,6 +157,8 @@ class _$HistoryEntryFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get updatedAt {
@@ -195,6 +209,8 @@ class __$$HistoryEntryFilterParameterImplCopyWithImpl<$Res>
       $Res Function(_$HistoryEntryFilterParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -317,7 +333,7 @@ class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -328,7 +344,9 @@ class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
       type,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HistoryEntryFilterParameterImplCopyWith<_$HistoryEntryFilterParameterImpl>
@@ -371,8 +389,11 @@ abstract class _HistoryEntryFilterParameter
   StringOperators? get type;
   @override
   DateOperators? get updatedAt;
+
+  /// Create a copy of HistoryEntryFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HistoryEntryFilterParameterImplCopyWith<_$HistoryEntryFilterParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

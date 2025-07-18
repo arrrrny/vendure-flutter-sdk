@@ -30,27 +30,19 @@ _$CustomerImpl _$$CustomerImplFromJson(Map json) => _$CustomerImpl(
           : User.fromJson(Map<String, dynamic>.from(json['user'] as Map)),
     );
 
-Map<String, dynamic> _$$CustomerImplToJson(_$CustomerImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'addresses', instance.addresses?.map((e) => e.toJson()).toList());
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  writeNotNull('customFields', instance.customFields);
-  val['emailAddress'] = instance.emailAddress;
-  val['firstName'] = instance.firstName;
-  val['id'] = instance.id;
-  val['lastName'] = instance.lastName;
-  writeNotNull('orders', instance.orders?.toJson());
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('title', instance.title);
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  writeNotNull('user', instance.user?.toJson());
-  return val;
-}
+Map<String, dynamic> _$$CustomerImplToJson(_$CustomerImpl instance) =>
+    <String, dynamic>{
+      if (instance.addresses?.map((e) => e.toJson()).toList() case final value?)
+        'addresses': value,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'emailAddress': instance.emailAddress,
+      'firstName': instance.firstName,
+      'id': instance.id,
+      'lastName': instance.lastName,
+      if (instance.orders?.toJson() case final value?) 'orders': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.title case final value?) 'title': value,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      if (instance.user?.toJson() case final value?) 'user': value,
+    };

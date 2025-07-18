@@ -14,17 +14,9 @@ _$CollectionBreadcrumbImpl _$$CollectionBreadcrumbImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$CollectionBreadcrumbImplToJson(
-    _$CollectionBreadcrumbImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('name', instance.name);
-  writeNotNull('slug', instance.slug);
-  return val;
-}
+        _$CollectionBreadcrumbImpl instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.slug case final value?) 'slug': value,
+    };

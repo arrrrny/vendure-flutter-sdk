@@ -47,23 +47,18 @@ _$FacetValueFilterParameterImpl _$$FacetValueFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$FacetValueFilterParameterImplToJson(
-    _$FacetValueFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('code', instance.code?.toJson());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('facetId', instance.facetId?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('languageCode', instance.languageCode?.toJson());
-  writeNotNull('name', instance.name?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$FacetValueFilterParameterImpl instance) =>
+    <String, dynamic>{
+      if (instance.and?.map((e) => e.toJson()).toList() case final value?)
+        '_and': value,
+      if (instance.or?.map((e) => e.toJson()).toList() case final value?)
+        '_or': value,
+      if (instance.code?.toJson() case final value?) 'code': value,
+      if (instance.createdAt?.toJson() case final value?) 'createdAt': value,
+      if (instance.facetId?.toJson() case final value?) 'facetId': value,
+      if (instance.id?.toJson() case final value?) 'id': value,
+      if (instance.languageCode?.toJson() case final value?)
+        'languageCode': value,
+      if (instance.name?.toJson() case final value?) 'name': value,
+      if (instance.updatedAt?.toJson() case final value?) 'updatedAt': value,
+    };

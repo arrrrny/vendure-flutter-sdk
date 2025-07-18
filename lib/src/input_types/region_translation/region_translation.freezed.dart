@@ -26,8 +26,12 @@ mixin _$RegionTranslation {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this RegionTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RegionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RegionTranslationCopyWith<RegionTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$RegionTranslationCopyWithImpl<$Res, $Val extends RegionTranslation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RegionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,6 +120,8 @@ class __$$RegionTranslationImplCopyWithImpl<$Res>
       $Res Function(_$RegionTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RegionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -202,12 +210,14 @@ class _$RegionTranslationImpl extends _RegionTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, createdAt, id, languageCode, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RegionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RegionTranslationImplCopyWith<_$RegionTranslationImpl> get copyWith =>
@@ -244,8 +254,11 @@ abstract class _RegionTranslation extends RegionTranslation {
   String? get name;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of RegionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RegionTranslationImplCopyWith<_$RegionTranslationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

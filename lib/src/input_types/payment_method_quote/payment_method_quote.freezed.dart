@@ -28,8 +28,12 @@ mixin _$PaymentMethodQuote {
   bool? get isEligible => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
+  /// Serializes this PaymentMethodQuote to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaymentMethodQuoteCopyWith<PaymentMethodQuote> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$PaymentMethodQuoteCopyWithImpl<$Res, $Val extends PaymentMethodQuote>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PaymentMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +136,8 @@ class __$$PaymentMethodQuoteImplCopyWithImpl<$Res>
       $Res Function(_$PaymentMethodQuoteImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -252,7 +260,7 @@ class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -264,7 +272,9 @@ class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
       isEligible,
       name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentMethodQuoteImplCopyWith<_$PaymentMethodQuoteImpl> get copyWith =>
@@ -307,8 +317,11 @@ abstract class _PaymentMethodQuote extends PaymentMethodQuote {
   bool? get isEligible;
   @override
   String? get name;
+
+  /// Create a copy of PaymentMethodQuote
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentMethodQuoteImplCopyWith<_$PaymentMethodQuoteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

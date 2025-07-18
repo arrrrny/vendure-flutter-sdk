@@ -29,24 +29,19 @@ _$PaymentImpl _$$PaymentImplFromJson(Map json) => _$PaymentImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$PaymentImplToJson(_$PaymentImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('amount', instance.amount);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('errorMessage', instance.errorMessage);
-  writeNotNull('id', instance.id);
-  writeNotNull('metadata', instance.metadata);
-  writeNotNull('method', instance.method);
-  writeNotNull('refunds', instance.refunds?.map((e) => e?.toJson()).toList());
-  writeNotNull('state', instance.state);
-  writeNotNull('transactionId', instance.transactionId);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$PaymentImplToJson(_$PaymentImpl instance) =>
+    <String, dynamic>{
+      if (instance.amount case final value?) 'amount': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.errorMessage case final value?) 'errorMessage': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.method case final value?) 'method': value,
+      if (instance.refunds?.map((e) => e?.toJson()).toList() case final value?)
+        'refunds': value,
+      if (instance.state case final value?) 'state': value,
+      if (instance.transactionId case final value?) 'transactionId': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

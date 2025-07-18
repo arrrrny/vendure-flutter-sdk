@@ -23,8 +23,12 @@ mixin _$AuthenticationInput {
   NativeAuthInput? get native => throw _privateConstructorUsedError;
   set native(NativeAuthInput? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AuthenticationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AuthenticationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AuthenticationInputCopyWith<AuthenticationInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$AuthenticationInputCopyWithImpl<$Res, $Val extends AuthenticationInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AuthenticationInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -63,6 +69,8 @@ class _$AuthenticationInputCopyWithImpl<$Res, $Val extends AuthenticationInput>
     ) as $Val);
   }
 
+  /// Create a copy of AuthenticationInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NativeAuthInputCopyWith<$Res>? get native {
@@ -98,6 +106,8 @@ class __$$AuthenticationInputImplCopyWithImpl<$Res>
       $Res Function(_$AuthenticationInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AuthenticationInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,7 +147,9 @@ class _$AuthenticationInputImpl extends _AuthenticationInput
       ..add(DiagnosticsProperty('native', native));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AuthenticationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AuthenticationInputImplCopyWith<_$AuthenticationInputImpl> get copyWith =>
@@ -163,8 +175,11 @@ abstract class _AuthenticationInput extends AuthenticationInput {
   @override
   NativeAuthInput? get native;
   set native(NativeAuthInput? value);
+
+  /// Create a copy of AuthenticationInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AuthenticationInputImplCopyWith<_$AuthenticationInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

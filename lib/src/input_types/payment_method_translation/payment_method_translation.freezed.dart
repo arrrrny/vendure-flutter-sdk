@@ -28,8 +28,12 @@ mixin _$PaymentMethodTranslation {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this PaymentMethodTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentMethodTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaymentMethodTranslationCopyWith<PaymentMethodTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$PaymentMethodTranslationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PaymentMethodTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +133,8 @@ class __$$PaymentMethodTranslationImplCopyWithImpl<$Res>
       $Res Function(_$PaymentMethodTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentMethodTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -230,12 +238,14 @@ class _$PaymentMethodTranslationImpl extends _PaymentMethodTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, createdAt, description, id, languageCode, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentMethodTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentMethodTranslationImplCopyWith<_$PaymentMethodTranslationImpl>
@@ -275,8 +285,11 @@ abstract class _PaymentMethodTranslation extends PaymentMethodTranslation {
   String? get name;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of PaymentMethodTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentMethodTranslationImplCopyWith<_$PaymentMethodTranslationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

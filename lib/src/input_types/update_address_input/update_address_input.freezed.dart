@@ -34,8 +34,12 @@ mixin _$UpdateAddressInput {
   String? get streetLine1 => throw _privateConstructorUsedError;
   String? get streetLine2 => throw _privateConstructorUsedError;
 
+  /// Serializes this UpdateAddressInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UpdateAddressInputCopyWith<UpdateAddressInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$UpdateAddressInputCopyWithImpl<$Res, $Val extends UpdateAddressInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UpdateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,6 +184,8 @@ class __$$UpdateAddressInputImplCopyWithImpl<$Res>
       $Res Function(_$UpdateAddressInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -367,7 +375,7 @@ class _$UpdateAddressInputImpl extends _UpdateAddressInput
                 other.streetLine2 == streetLine2));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -385,7 +393,9 @@ class _$UpdateAddressInputImpl extends _UpdateAddressInput
       streetLine1,
       streetLine2);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateAddressInputImplCopyWith<_$UpdateAddressInputImpl> get copyWith =>
@@ -446,8 +456,11 @@ abstract class _UpdateAddressInput extends UpdateAddressInput {
   String? get streetLine1;
   @override
   String? get streetLine2;
+
+  /// Create a copy of UpdateAddressInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateAddressInputImplCopyWith<_$UpdateAddressInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

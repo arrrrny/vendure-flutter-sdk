@@ -11,16 +11,8 @@ _$PriceRangeImpl _$$PriceRangeImplFromJson(Map json) => _$PriceRangeImpl(
       min: (json['min'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  return val;
-}
+Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) =>
+    <String, dynamic>{
+      if (instance.max case final value?) 'max': value,
+      if (instance.min case final value?) 'min': value,
+    };

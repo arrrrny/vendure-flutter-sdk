@@ -27,8 +27,12 @@ mixin _$CustomerGroup {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this CustomerGroup to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CustomerGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomerGroupCopyWith<CustomerGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$CustomerGroupCopyWithImpl<$Res, $Val extends CustomerGroup>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CustomerGroup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class _$CustomerGroupCopyWithImpl<$Res, $Val extends CustomerGroup>
     ) as $Val);
   }
 
+  /// Create a copy of CustomerGroup
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerListCopyWith<$Res>? get customers {
@@ -139,6 +147,8 @@ class __$$CustomerGroupImplCopyWithImpl<$Res>
       _$CustomerGroupImpl _value, $Res Function(_$CustomerGroupImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomerGroup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -250,7 +260,7 @@ class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -261,7 +271,9 @@ class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
       name,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomerGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CustomerGroupImplCopyWith<_$CustomerGroupImpl> get copyWith =>
@@ -300,8 +312,11 @@ abstract class _CustomerGroup extends CustomerGroup {
   String? get name;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of CustomerGroup
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CustomerGroupImplCopyWith<_$CustomerGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

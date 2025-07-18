@@ -22,8 +22,12 @@ NumberListOperators _$NumberListOperatorsFromJson(Map<String, dynamic> json) {
 mixin _$NumberListOperators {
   double get inList => throw _privateConstructorUsedError;
 
+  /// Serializes this NumberListOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NumberListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NumberListOperatorsCopyWith<NumberListOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$NumberListOperatorsCopyWithImpl<$Res, $Val extends NumberListOperators>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NumberListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +86,8 @@ class __$$NumberListOperatorsImplCopyWithImpl<$Res>
       $Res Function(_$NumberListOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NumberListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,11 +135,13 @@ class _$NumberListOperatorsImpl extends _NumberListOperators
             (identical(other.inList, inList) || other.inList == inList));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, inList);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NumberListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NumberListOperatorsImplCopyWith<_$NumberListOperatorsImpl> get copyWith =>
@@ -156,8 +166,11 @@ abstract class _NumberListOperators extends NumberListOperators {
 
   @override
   double get inList;
+
+  /// Create a copy of NumberListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NumberListOperatorsImplCopyWith<_$NumberListOperatorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

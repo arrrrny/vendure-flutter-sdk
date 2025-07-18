@@ -26,8 +26,12 @@ mixin _$FacetValueFilterInput {
   List<String>? get or => throw _privateConstructorUsedError;
   set or(List<String>? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetValueFilterInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetValueFilterInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetValueFilterInputCopyWith<FacetValueFilterInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$FacetValueFilterInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetValueFilterInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$FacetValueFilterInputImplCopyWithImpl<$Res>
       $Res Function(_$FacetValueFilterInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetValueFilterInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,7 +147,9 @@ class _$FacetValueFilterInputImpl extends _FacetValueFilterInput
       ..add(DiagnosticsProperty('or', or));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetValueFilterInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetValueFilterInputImplCopyWith<_$FacetValueFilterInputImpl>
@@ -168,8 +178,11 @@ abstract class _FacetValueFilterInput extends FacetValueFilterInput {
   @override
   List<String>? get or;
   set or(List<String>? value);
+
+  /// Create a copy of FacetValueFilterInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetValueFilterInputImplCopyWith<_$FacetValueFilterInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

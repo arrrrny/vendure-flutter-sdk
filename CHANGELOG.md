@@ -1,3 +1,11 @@
+## 2.4.0
+- **Enhanced Language Code Support**: Improved dynamic language code handling with proper URI parsing instead of string concatenation.
+- **Dynamic Channel Token Management**: Added `setChannelToken()` and `getChannelToken()` methods for runtime channel switching.
+- **Better URI Handling**: Fixed URI construction to properly handle existing query parameters and language codes in endpoints.
+- **New Static Methods**: Added `setLanguageCode()`, `getLanguageCode()`, `setChannelToken()`, and `getChannelToken()` for dynamic configuration.
+- **Preserved Original Endpoints**: When no language code is set, the original endpoint URL is preserved as-is without modification.
+- **Multi-tenant Support**: Enhanced support for multi-channel applications with dynamic channel token switching.
+
 ## 2.3.0
 - Updated `graphql` package to latest compatible version.
 - Fixed async/generic bug in `mutate` for bool and map return types.

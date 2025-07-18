@@ -19,20 +19,12 @@ _$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$CreateCustomerInputImplToJson(
-    _$CreateCustomerInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['emailAddress'] = instance.emailAddress;
-  val['firstName'] = instance.firstName;
-  val['lastName'] = instance.lastName;
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('title', instance.title);
-  return val;
-}
+        _$CreateCustomerInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.customFields case final value?) 'customFields': value,
+      'emailAddress': instance.emailAddress,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.title case final value?) 'title': value,
+    };

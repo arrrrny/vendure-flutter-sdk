@@ -26,28 +26,19 @@ _$FacetValueImpl _$$FacetValueImplFromJson(Map json) => _$FacetValueImpl(
           : Facet.fromJson(Map<String, dynamic>.from(json['facet'] as Map)),
     );
 
-Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code,
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['facetId'] = instance.facetId;
-  val['id'] = instance.id;
-  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
-  val['name'] = instance.name;
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  writeNotNull('facet', instance.facet?.toJson());
-  return val;
-}
+Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'facetId': instance.facetId,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      if (instance.facet?.toJson() case final value?) 'facet': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

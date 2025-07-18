@@ -16,16 +16,8 @@ _$FacetValueResultImpl _$$FacetValueResultImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$FacetValueResultImplToJson(
-    _$FacetValueResultImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('count', instance.count);
-  writeNotNull('facetValue', instance.facetValue?.toJson());
-  return val;
-}
+        _$FacetValueResultImpl instance) =>
+    <String, dynamic>{
+      if (instance.count case final value?) 'count': value,
+      if (instance.facetValue?.toJson() case final value?) 'facetValue': value,
+    };

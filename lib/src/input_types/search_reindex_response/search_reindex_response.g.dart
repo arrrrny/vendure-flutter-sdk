@@ -12,15 +12,7 @@ _$SearchReindexResponseImpl _$$SearchReindexResponseImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$SearchReindexResponseImplToJson(
-    _$SearchReindexResponseImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('success', instance.success);
-  return val;
-}
+        _$SearchReindexResponseImpl instance) =>
+    <String, dynamic>{
+      if (instance.success case final value?) 'success': value,
+    };

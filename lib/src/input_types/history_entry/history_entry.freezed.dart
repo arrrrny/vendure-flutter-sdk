@@ -26,8 +26,12 @@ mixin _$HistoryEntry {
   HistoryEntryType? get type => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this HistoryEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HistoryEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HistoryEntryCopyWith<HistoryEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$HistoryEntryCopyWithImpl<$Res, $Val extends HistoryEntry>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HistoryEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,6 +120,8 @@ class __$$HistoryEntryImplCopyWithImpl<$Res>
       _$HistoryEntryImpl _value, $Res Function(_$HistoryEntryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryEntry
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -213,12 +221,14 @@ class _$HistoryEntryImpl extends _HistoryEntry with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, createdAt,
       const DeepCollectionEquality().hash(_data), id, type, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HistoryEntryImplCopyWith<_$HistoryEntryImpl> get copyWith =>
@@ -254,8 +264,11 @@ abstract class _HistoryEntry extends HistoryEntry {
   HistoryEntryType? get type;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of HistoryEntry
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HistoryEntryImplCopyWith<_$HistoryEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

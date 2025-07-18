@@ -17,17 +17,9 @@ _$SearchResultAssetImpl _$$SearchResultAssetImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$SearchResultAssetImplToJson(
-    _$SearchResultAssetImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('focalPoint', instance.focalPoint?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('preview', instance.preview);
-  return val;
-}
+        _$SearchResultAssetImpl instance) =>
+    <String, dynamic>{
+      if (instance.focalPoint?.toJson() case final value?) 'focalPoint': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.preview case final value?) 'preview': value,
+    };

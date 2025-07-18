@@ -23,8 +23,12 @@ mixin _$PriceRange {
   double? get max => throw _privateConstructorUsedError;
   double? get min => throw _privateConstructorUsedError;
 
+  /// Serializes this PriceRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PriceRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PriceRangeCopyWith<PriceRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$PriceRangeCopyWithImpl<$Res, $Val extends PriceRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PriceRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
       _$PriceRangeImpl _value, $Res Function(_$PriceRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PriceRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,11 +149,13 @@ class _$PriceRangeImpl extends _PriceRange with DiagnosticableTreeMixin {
             (identical(other.min, min) || other.min == min));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, max, min);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PriceRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PriceRangeImplCopyWith<_$PriceRangeImpl> get copyWith =>
@@ -171,8 +181,11 @@ abstract class _PriceRange extends PriceRange {
   double? get max;
   @override
   double? get min;
+
+  /// Create a copy of PriceRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PriceRangeImplCopyWith<_$PriceRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

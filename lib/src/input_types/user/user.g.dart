@@ -36,24 +36,22 @@ _$UserImpl _$$UserImplFromJson(Map json) => _$UserImpl(
       verified: json['verified'] as bool?,
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('authenticationMethods',
-      instance.authenticationMethods?.map((e) => e?.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('identifier', instance.identifier);
-  writeNotNull('lastLogin', instance.lastLogin?.toIso8601String());
-  writeNotNull('roles', instance.roles?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  writeNotNull('verified', instance.verified);
-  return val;
-}
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
+      if (instance.authenticationMethods?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'authenticationMethods': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields?.toJson() case final value?)
+        'customFields': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.identifier case final value?) 'identifier': value,
+      if (instance.lastLogin?.toIso8601String() case final value?)
+        'lastLogin': value,
+      if (instance.roles?.map((e) => e?.toJson()).toList() case final value?)
+        'roles': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      if (instance.verified case final value?) 'verified': value,
+    };

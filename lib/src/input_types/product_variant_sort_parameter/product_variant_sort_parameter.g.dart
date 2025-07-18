@@ -22,26 +22,23 @@ _$ProductVariantSortParameterImpl _$$ProductVariantSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$ProductVariantSortParameterImplToJson(
-    _$ProductVariantSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
-  writeNotNull('price', _$SortOrderEnumMap[instance.price]);
-  writeNotNull('priceWithTax', _$SortOrderEnumMap[instance.priceWithTax]);
-  writeNotNull('productId', _$SortOrderEnumMap[instance.productId]);
-  writeNotNull('sku', _$SortOrderEnumMap[instance.sku]);
-  writeNotNull('stockLevel', _$SortOrderEnumMap[instance.stockLevel]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$ProductVariantSortParameterImpl instance) =>
+    <String, dynamic>{
+      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
+        'createdAt': value,
+      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
+      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
+      if (_$SortOrderEnumMap[instance.price] case final value?) 'price': value,
+      if (_$SortOrderEnumMap[instance.priceWithTax] case final value?)
+        'priceWithTax': value,
+      if (_$SortOrderEnumMap[instance.productId] case final value?)
+        'productId': value,
+      if (_$SortOrderEnumMap[instance.sku] case final value?) 'sku': value,
+      if (_$SortOrderEnumMap[instance.stockLevel] case final value?)
+        'stockLevel': value,
+      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
+        'updatedAt': value,
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

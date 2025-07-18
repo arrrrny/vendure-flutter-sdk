@@ -24,8 +24,12 @@ mixin _$OrderLimitError {
   int? get maxItems => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderLimitError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderLimitError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderLimitErrorCopyWith<OrderLimitError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$OrderLimitErrorCopyWithImpl<$Res, $Val extends OrderLimitError>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderLimitError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$OrderLimitErrorImplCopyWithImpl<$Res>
       _$OrderLimitErrorImpl _value, $Res Function(_$OrderLimitErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderLimitError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -160,11 +168,13 @@ class _$OrderLimitErrorImpl extends _OrderLimitError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, maxItems, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderLimitError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderLimitErrorImplCopyWith<_$OrderLimitErrorImpl> get copyWith =>
@@ -195,8 +205,11 @@ abstract class _OrderLimitError extends OrderLimitError {
   int? get maxItems;
   @override
   String? get message;
+
+  /// Create a copy of OrderLimitError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderLimitErrorImplCopyWith<_$OrderLimitErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -30,30 +30,21 @@ _$ShippingMethodImpl _$$ShippingMethodImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$ShippingMethodImplToJson(
-    _$ShippingMethodImpl instance) {
-  final val = <String, dynamic>{
-    'calculator': instance.calculator.toJson(),
-    'checker': instance.checker.toJson(),
-    'code': instance.code,
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['description'] = instance.description;
-  val['fulfillmentHandlerCode'] = instance.fulfillmentHandlerCode;
-  val['id'] = instance.id;
-  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
-  val['name'] = instance.name;
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+        _$ShippingMethodImpl instance) =>
+    <String, dynamic>{
+      'calculator': instance.calculator.toJson(),
+      'checker': instance.checker.toJson(),
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'description': instance.description,
+      'fulfillmentHandlerCode': instance.fulfillmentHandlerCode,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

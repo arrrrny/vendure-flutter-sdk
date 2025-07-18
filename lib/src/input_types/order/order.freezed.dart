@@ -79,8 +79,12 @@ mixin _$Order {
   OrderType? get type => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this Order to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderCopyWith<Order> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -137,6 +141,8 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -295,6 +301,8 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     ) as $Val);
   }
 
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get billingAddress {
@@ -307,6 +315,8 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     });
   }
 
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CustomerCopyWith<$Res>? get customer {
@@ -319,6 +329,8 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     });
   }
 
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryListCopyWith<$Res>? get history {
@@ -331,6 +343,8 @@ class _$OrderCopyWithImpl<$Res, $Val extends Order>
     });
   }
 
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OrderAddressCopyWith<$Res>? get shippingAddress {
@@ -401,6 +415,8 @@ class __$$OrderImplCopyWithImpl<$Res>
       _$OrderImpl _value, $Res Function(_$OrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -885,7 +901,7 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -921,7 +937,9 @@ class _$OrderImpl extends _Order with DiagnosticableTreeMixin {
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
@@ -971,19 +989,18 @@ abstract class _Order extends Order {
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$OrderImpl.fromJson;
 
-  @override
-
   /// An order is active as long as the payment process has not been completed
+  @override
   bool? get active;
   @override
   OrderAddress? get billingAddress;
-  @override
 
   /// A unique code for the Order
-  String? get code;
   @override
+  String? get code;
 
   /// An array of all coupon codes applied to the Order
+  @override
   List<String?>? get couponCodes;
   @override
   DateTime? get createdAt;
@@ -1003,16 +1020,16 @@ abstract class _Order extends Order {
   String? get id;
   @override
   List<OrderLine?>? get lines;
-  @override
 
   /// The date & time that the Order was placed, i.e. the Customer
   /// completed the checkout and the Order is no longer "active"
+  @override
   DateTime? get orderPlacedAt;
   @override
   List<Payment?>? get payments;
-  @override
 
   /// Promotions applied to the order. Only gets populated after the payment process has completed.
+  @override
   List<Promotion?>? get promotions;
   @override
   double? get shipping;
@@ -1024,44 +1041,47 @@ abstract class _Order extends Order {
   double? get shippingWithTax;
   @override
   String? get state;
-  @override
 
   /// The subTotal is the total of all OrderLines in the Order. This figure also includes any Order-level
   /// discounts which have been prorated (proportionally distributed) amongst the items of each OrderLine.
   /// To get a total of all OrderLines which does not account for prorated discounts, use the
   /// sum of `OrderLine.discountedLinePrice` values.
-  double? get subTotal;
   @override
+  double? get subTotal;
 
   /// Same as subTotal, but inclusive of tax
-  double? get subTotalWithTax;
   @override
+  double? get subTotalWithTax;
 
   /// Surcharges are arbitrary modifications to the Order total which are neither
   /// ProductVariants nor discounts resulting from applied Promotions. For example,
   /// one-off discounts based on customer interaction, or surcharges based on payment
   /// methods.
-  List<Surcharge?>? get surcharges;
   @override
+  List<Surcharge?>? get surcharges;
 
   /// A summary of the taxes being applied to this Order
-  List<OrderTaxSummary?>? get taxSummary;
   @override
+  List<OrderTaxSummary?>? get taxSummary;
 
   /// Equal to subTotal plus shipping
+  @override
   double? get total;
   @override
   int? get totalQuantity;
-  @override
 
   /// The final payable amount. Equal to subTotalWithTax plus shippingWithTax
+  @override
   double? get totalWithTax;
   @override
   OrderType? get type;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of Order
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderImplCopyWith<_$OrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

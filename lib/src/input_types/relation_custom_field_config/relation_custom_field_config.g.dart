@@ -38,31 +38,28 @@ _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$RelationCustomFieldConfigImplToJson(
-    _$RelationCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e?.toJson()).toList());
-  writeNotNull('entity', instance.entity);
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('list', instance.list);
-  writeNotNull('name', instance.name);
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull('requiresPermission',
-      instance.requiresPermission?.map((e) => _$PermissionEnumMap[e]).toList());
-  writeNotNull('scalarFields', instance.scalarFields);
-  writeNotNull('type', instance.type);
-  writeNotNull('ui', instance.ui);
-  return val;
-}
+        _$RelationCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.entity case final value?) 'entity': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e?.toJson()).toList() case final value?)
+        'label': value,
+      if (instance.list case final value?) 'list': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e])
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      if (instance.scalarFields case final value?) 'scalarFields': value,
+      if (instance.type case final value?) 'type': value,
+      if (instance.ui case final value?) 'ui': value,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

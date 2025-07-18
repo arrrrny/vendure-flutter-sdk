@@ -27,8 +27,12 @@ mixin _$OrderStateTransitionError {
   String get toState => throw _privateConstructorUsedError;
   String get transitionError => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderStateTransitionError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderStateTransitionError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderStateTransitionErrorCopyWith<OrderStateTransitionError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$OrderStateTransitionErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderStateTransitionError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
       $Res Function(_$OrderStateTransitionErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderStateTransitionError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -211,12 +219,14 @@ class _$OrderStateTransitionErrorImpl extends _OrderStateTransitionError
                 other.transitionError == transitionError));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, errorCode, fromState, message, toState, transitionError);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderStateTransitionError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>
@@ -253,8 +263,11 @@ abstract class _OrderStateTransitionError extends OrderStateTransitionError {
   String get toState;
   @override
   String get transitionError;
+
+  /// Create a copy of OrderStateTransitionError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderStateTransitionErrorImplCopyWith<_$OrderStateTransitionErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

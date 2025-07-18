@@ -33,33 +33,27 @@ _$BooleanCustomFieldConfigImpl _$$BooleanCustomFieldConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$BooleanCustomFieldConfigImplToJson(
-    _$BooleanCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$BooleanCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',
@@ -187,36 +181,30 @@ _$DateTimeCustomFieldConfigImpl _$$DateTimeCustomFieldConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$DateTimeCustomFieldConfigImplToJson(
-    _$DateTimeCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  writeNotNull('step', instance.step);
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$DateTimeCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      if (instance.max case final value?) 'max': value,
+      if (instance.min case final value?) 'min': value,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      if (instance.step case final value?) 'step': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(Map json) =>
     _$FloatCustomFieldConfigImpl(
@@ -247,36 +235,30 @@ _$FloatCustomFieldConfigImpl _$$FloatCustomFieldConfigImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$FloatCustomFieldConfigImplToJson(
-    _$FloatCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  writeNotNull('step', instance.step);
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$FloatCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      if (instance.max case final value?) 'max': value,
+      if (instance.min case final value?) 'min': value,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      if (instance.step case final value?) 'step': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(Map json) =>
     _$IntCustomFieldConfigImpl(
@@ -307,36 +289,30 @@ _$IntCustomFieldConfigImpl _$$IntCustomFieldConfigImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$IntCustomFieldConfigImplToJson(
-    _$IntCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  writeNotNull('step', instance.step);
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$IntCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      if (instance.max case final value?) 'max': value,
+      if (instance.min case final value?) 'min': value,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      if (instance.step case final value?) 'step': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$LocaleStringCustomFieldConfigImpl
     _$$LocaleStringCustomFieldConfigImplFromJson(Map json) =>
@@ -367,35 +343,29 @@ _$LocaleStringCustomFieldConfigImpl
         );
 
 Map<String, dynamic> _$$LocaleStringCustomFieldConfigImplToJson(
-    _$LocaleStringCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  writeNotNull('length', instance.length);
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('pattern', instance.pattern);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$LocaleStringCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      if (instance.length case final value?) 'length': value,
+      'list': instance.list,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.pattern case final value?) 'pattern': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
         Map json) =>
@@ -424,33 +394,27 @@ _$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$LocaleTextCustomFieldConfigImplToJson(
-    _$LocaleTextCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$LocaleTextCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
         Map json) =>
@@ -483,35 +447,29 @@ _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$RelationCustomFieldConfigImplToJson(
-    _$RelationCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  val['entity'] = instance.entity;
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  val['scalarFields'] = instance.scalarFields;
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$RelationCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      'entity': instance.entity,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      'scalarFields': instance.scalarFields,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
         Map json) =>
@@ -546,36 +504,31 @@ _$StringCustomFieldConfigImpl _$$StringCustomFieldConfigImplFromJson(
     );
 
 Map<String, dynamic> _$$StringCustomFieldConfigImplToJson(
-    _$StringCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  writeNotNull('length', instance.length);
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('options', instance.options?.map((e) => e.toJson()).toList());
-  writeNotNull('pattern', instance.pattern);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$StringCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      if (instance.length case final value?) 'length': value,
+      'list': instance.list,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.options?.map((e) => e.toJson()).toList() case final value?)
+        'options': value,
+      if (instance.pattern case final value?) 'pattern': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };
 
 _$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(Map json) =>
     _$TextCustomFieldConfigImpl(
@@ -603,30 +556,24 @@ _$TextCustomFieldConfigImpl _$$TextCustomFieldConfigImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$TextCustomFieldConfigImplToJson(
-    _$TextCustomFieldConfigImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'description', instance.description?.map((e) => e.toJson()).toList());
-  writeNotNull('internal', instance.internal);
-  writeNotNull('label', instance.label?.map((e) => e.toJson()).toList());
-  val['list'] = instance.list;
-  val['name'] = instance.name;
-  writeNotNull('nullable', instance.nullable);
-  writeNotNull('readonly', instance.readonly);
-  writeNotNull(
-      'requiresPermission',
-      instance.requiresPermission
-          ?.map((e) => _$PermissionEnumMap[e]!)
-          .toList());
-  val['type'] = instance.type;
-  writeNotNull('ui', instance.ui);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$TextCustomFieldConfigImpl instance) =>
+    <String, dynamic>{
+      if (instance.description?.map((e) => e.toJson()).toList()
+          case final value?)
+        'description': value,
+      if (instance.internal case final value?) 'internal': value,
+      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
+        'label': value,
+      'list': instance.list,
+      'name': instance.name,
+      if (instance.nullable case final value?) 'nullable': value,
+      if (instance.readonly case final value?) 'readonly': value,
+      if (instance.requiresPermission
+              ?.map((e) => _$PermissionEnumMap[e]!)
+              .toList()
+          case final value?)
+        'requiresPermission': value,
+      'type': instance.type,
+      if (instance.ui case final value?) 'ui': value,
+      'runtimeType': instance.$type,
+    };

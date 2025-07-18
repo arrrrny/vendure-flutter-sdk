@@ -51,24 +51,20 @@ _$CustomerFilterParameterImpl _$$CustomerFilterParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$CustomerFilterParameterImplToJson(
-    _$CustomerFilterParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('_and', instance.and?.map((e) => e.toJson()).toList());
-  writeNotNull('_or', instance.or?.map((e) => e.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toJson());
-  writeNotNull('emailAddress', instance.emailAddress?.toJson());
-  writeNotNull('firstName', instance.firstName?.toJson());
-  writeNotNull('id', instance.id?.toJson());
-  writeNotNull('lastName', instance.lastName?.toJson());
-  writeNotNull('phoneNumber', instance.phoneNumber?.toJson());
-  writeNotNull('title', instance.title?.toJson());
-  writeNotNull('updatedAt', instance.updatedAt?.toJson());
-  return val;
-}
+        _$CustomerFilterParameterImpl instance) =>
+    <String, dynamic>{
+      if (instance.and?.map((e) => e.toJson()).toList() case final value?)
+        '_and': value,
+      if (instance.or?.map((e) => e.toJson()).toList() case final value?)
+        '_or': value,
+      if (instance.createdAt?.toJson() case final value?) 'createdAt': value,
+      if (instance.emailAddress?.toJson() case final value?)
+        'emailAddress': value,
+      if (instance.firstName?.toJson() case final value?) 'firstName': value,
+      if (instance.id?.toJson() case final value?) 'id': value,
+      if (instance.lastName?.toJson() case final value?) 'lastName': value,
+      if (instance.phoneNumber?.toJson() case final value?)
+        'phoneNumber': value,
+      if (instance.title?.toJson() case final value?) 'title': value,
+      if (instance.updatedAt?.toJson() case final value?) 'updatedAt': value,
+    };

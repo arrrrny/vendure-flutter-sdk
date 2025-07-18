@@ -23,8 +23,12 @@ mixin _$StringFieldOption {
   List<LocalizedString>? get label => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
+  /// Serializes this StringFieldOption to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StringFieldOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StringFieldOptionCopyWith<StringFieldOption> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$StringFieldOptionCopyWithImpl<$Res, $Val extends StringFieldOption>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StringFieldOption
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$StringFieldOptionImplCopyWithImpl<$Res>
       $Res Function(_$StringFieldOptionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StringFieldOption
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,12 +161,14 @@ class _$StringFieldOptionImpl extends _StringFieldOption
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_label), value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StringFieldOption
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StringFieldOptionImplCopyWith<_$StringFieldOptionImpl> get copyWith =>
@@ -186,8 +196,11 @@ abstract class _StringFieldOption extends StringFieldOption {
   List<LocalizedString>? get label;
   @override
   String get value;
+
+  /// Create a copy of StringFieldOption
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StringFieldOptionImplCopyWith<_$StringFieldOptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

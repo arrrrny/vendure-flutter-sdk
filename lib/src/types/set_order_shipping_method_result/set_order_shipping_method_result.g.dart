@@ -137,49 +137,45 @@ _$OrderImpl _$$OrderImplFromJson(Map json) => _$OrderImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) {
-  final val = <String, dynamic>{
-    'active': instance.active,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('billingAddress', instance.billingAddress?.toJson());
-  val['code'] = instance.code;
-  val['couponCodes'] = instance.couponCodes;
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  val['currencyCode'] = _$CurrencyCodeEnumMap[instance.currencyCode]!;
-  writeNotNull('customFields', instance.customFields);
-  val['discounts'] = instance.discounts.map((e) => e.toJson()).toList();
-  writeNotNull(
-      'fulfillments', instance.fulfillments?.map((e) => e.toJson()).toList());
-  val['history'] = instance.history.toJson();
-  val['id'] = instance.id;
-  val['lines'] = instance.lines.map((e) => e.toJson()).toList();
-  writeNotNull('orderPlacedAt', instance.orderPlacedAt?.toIso8601String());
-  writeNotNull('payments', instance.payments?.map((e) => e.toJson()).toList());
-  val['promotions'] = instance.promotions.map((e) => e.toJson()).toList();
-  val['shipping'] = instance.shipping;
-  writeNotNull('shippingAddress', instance.shippingAddress?.toJson());
-  val['shippingLines'] = instance.shippingLines.map((e) => e.toJson()).toList();
-  val['shippingWithTax'] = instance.shippingWithTax;
-  val['state'] = instance.state;
-  val['subTotal'] = instance.subTotal;
-  val['subTotalWithTax'] = instance.subTotalWithTax;
-  val['surcharges'] = instance.surcharges.map((e) => e.toJson()).toList();
-  val['taxSummary'] = instance.taxSummary.map((e) => e.toJson()).toList();
-  val['total'] = instance.total;
-  val['totalQuantity'] = instance.totalQuantity;
-  val['totalWithTax'] = instance.totalWithTax;
-  val['type'] = _$OrderTypeEnumMap[instance.type]!;
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
+    <String, dynamic>{
+      'active': instance.active,
+      if (instance.billingAddress?.toJson() case final value?)
+        'billingAddress': value,
+      'code': instance.code,
+      'couponCodes': instance.couponCodes,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+      if (instance.customFields case final value?) 'customFields': value,
+      'discounts': instance.discounts.map((e) => e.toJson()).toList(),
+      if (instance.fulfillments?.map((e) => e.toJson()).toList()
+          case final value?)
+        'fulfillments': value,
+      'history': instance.history.toJson(),
+      'id': instance.id,
+      'lines': instance.lines.map((e) => e.toJson()).toList(),
+      if (instance.orderPlacedAt?.toIso8601String() case final value?)
+        'orderPlacedAt': value,
+      if (instance.payments?.map((e) => e.toJson()).toList() case final value?)
+        'payments': value,
+      'promotions': instance.promotions.map((e) => e.toJson()).toList(),
+      'shipping': instance.shipping,
+      if (instance.shippingAddress?.toJson() case final value?)
+        'shippingAddress': value,
+      'shippingLines': instance.shippingLines.map((e) => e.toJson()).toList(),
+      'shippingWithTax': instance.shippingWithTax,
+      'state': instance.state,
+      'subTotal': instance.subTotal,
+      'subTotalWithTax': instance.subTotalWithTax,
+      'surcharges': instance.surcharges.map((e) => e.toJson()).toList(),
+      'taxSummary': instance.taxSummary.map((e) => e.toJson()).toList(),
+      'total': instance.total,
+      'totalQuantity': instance.totalQuantity,
+      'totalWithTax': instance.totalWithTax,
+      'type': _$OrderTypeEnumMap[instance.type]!,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'runtimeType': instance.$type,
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

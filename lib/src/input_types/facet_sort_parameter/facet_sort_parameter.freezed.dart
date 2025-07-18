@@ -26,8 +26,12 @@ mixin _$FacetSortParameter {
   SortOrder? get name => throw _privateConstructorUsedError;
   SortOrder? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetSortParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetSortParameterCopyWith<FacetSortParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$FacetSortParameterCopyWithImpl<$Res, $Val extends FacetSortParameter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,6 +120,8 @@ class __$$FacetSortParameterImplCopyWithImpl<$Res>
       $Res Function(_$FacetSortParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -201,12 +209,14 @@ class _$FacetSortParameterImpl extends _FacetSortParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, code, createdAt, id, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetSortParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetSortParameterImplCopyWith<_$FacetSortParameterImpl> get copyWith =>
@@ -243,8 +253,11 @@ abstract class _FacetSortParameter extends FacetSortParameter {
   SortOrder? get name;
   @override
   SortOrder? get updatedAt;
+
+  /// Create a copy of FacetSortParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetSortParameterImplCopyWith<_$FacetSortParameterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

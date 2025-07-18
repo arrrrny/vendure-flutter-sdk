@@ -49,8 +49,12 @@ mixin _$ProductFilterParameter {
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
   set updatedAt(DateOperators? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductFilterParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductFilterParameterCopyWith<ProductFilterParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -94,6 +98,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,6 +158,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get createdAt {
@@ -164,6 +172,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get description {
@@ -176,6 +186,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BooleanOperatorsCopyWith<$Res>? get enabled {
@@ -188,6 +200,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get id {
@@ -200,6 +214,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get languageCode {
@@ -212,6 +228,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get name {
@@ -224,6 +242,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get slug {
@@ -236,6 +256,8 @@ class _$ProductFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get updatedAt {
@@ -298,6 +320,8 @@ class __$$ProductFilterParameterImplCopyWithImpl<$Res>
       $Res Function(_$ProductFilterParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -422,7 +446,9 @@ class _$ProductFilterParameterImpl extends _ProductFilterParameter
       ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductFilterParameterImplCopyWith<_$ProductFilterParameterImpl>
@@ -488,8 +514,11 @@ abstract class _ProductFilterParameter extends ProductFilterParameter {
   @override
   DateOperators? get updatedAt;
   set updatedAt(DateOperators? value);
+
+  /// Create a copy of ProductFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductFilterParameterImplCopyWith<_$ProductFilterParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

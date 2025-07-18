@@ -17,17 +17,10 @@ _$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       identifier: json['identifier'] as String?,
     );
 
-Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('channels', instance.channels?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('identifier', instance.identifier);
-  return val;
-}
+Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
+    <String, dynamic>{
+      if (instance.channels?.map((e) => e?.toJson()).toList() case final value?)
+        'channels': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.identifier case final value?) 'identifier': value,
+    };

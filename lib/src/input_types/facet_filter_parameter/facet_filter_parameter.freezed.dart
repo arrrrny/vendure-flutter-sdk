@@ -31,8 +31,12 @@ mixin _$FacetFilterParameter {
   StringOperators? get name => throw _privateConstructorUsedError;
   DateOperators? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetFilterParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetFilterParameterCopyWith<FacetFilterParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,6 +126,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get code {
@@ -132,6 +140,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get createdAt {
@@ -144,6 +154,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $IdOperatorsCopyWith<$Res>? get id {
@@ -156,6 +168,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get languageCode {
@@ -168,6 +182,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StringOperatorsCopyWith<$Res>? get name {
@@ -180,6 +196,8 @@ class _$FacetFilterParameterCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DateOperatorsCopyWith<$Res>? get updatedAt {
@@ -233,6 +251,8 @@ class __$$FacetFilterParameterImplCopyWithImpl<$Res>
       $Res Function(_$FacetFilterParameterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -375,7 +395,7 @@ class _$FacetFilterParameterImpl extends _FacetFilterParameter
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -388,7 +408,9 @@ class _$FacetFilterParameterImpl extends _FacetFilterParameter
       name,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetFilterParameterImplCopyWith<_$FacetFilterParameterImpl>
@@ -437,8 +459,11 @@ abstract class _FacetFilterParameter extends FacetFilterParameter {
   StringOperators? get name;
   @override
   DateOperators? get updatedAt;
+
+  /// Create a copy of FacetFilterParameter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetFilterParameterImplCopyWith<_$FacetFilterParameterImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

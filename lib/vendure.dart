@@ -28,8 +28,8 @@ class Vendure {
   final DefaultPolicies? _policies;
   String? _token;
   final bool _useVendureGuestSession;
-  final String? _languageCode;
-  final String? _channelToken;
+  String? _languageCode;
+  String? _channelToken;
   String? get token => _token;
   String? get channelToken => _channelToken;
   String? get languageCode => _languageCode;
@@ -338,17 +338,19 @@ class Vendure {
   }
 
   Future<GraphQLClient> _getClient() async {
-    // Construct endpoint with language code if available
-    Uri endpointUri = Uri.parse(_endpoint);
+    // Construct endpoint with language code if available, using proper URI parsing
+    String endpointUrl;
     if (_languageCode != null) {
-      // Add or update query parameters
-      final newQueryParameters =
-          Map<String, String>.from(endpointUri.queryParameters);
-      newQueryParameters['languageCode'] = _languageCode;
-      endpointUri = endpointUri.replace(queryParameters: newQueryParameters);
+      final uri = Uri.parse(_endpoint);
+      final queryParameters = Map<String, String>.from(uri.queryParameters);
+      queryParameters['languageCode'] = _languageCode!;
+      endpointUrl = uri.replace(queryParameters: queryParameters).toString();
+    } else {
+      // If no language code is set, use the original endpoint as-is
+      endpointUrl = _endpoint;
     }
 
-    final httpLink = HttpLink(endpointUri.toString());
+    final httpLink = HttpLink(endpointUrl);
 
     // Create the authentication link for Authorization header
     final authLink = AuthLink(
@@ -404,6 +406,46 @@ class Vendure {
           'Vendure has not been initialized. Call Vendure.initialize() first.');
     }
     _instance!._token = token;
+  }
+
+  /// Updates the language code on the initialized Vendure instance.
+  /// This affects all subsequent GraphQL requests by adding the languageCode as a query parameter.
+  /// Pass null to remove the language code from requests.
+  static void setLanguageCode(String? languageCode) {
+    if (_instance == null) {
+      throw Exception(
+          'Vendure has not been initialized. Call Vendure.initialize() first.');
+    }
+    _instance!._languageCode = languageCode;
+  }
+
+  /// Gets the current language code from the initialized Vendure instance.
+  static String? getLanguageCode() {
+    if (_instance == null) {
+      throw Exception(
+          'Vendure has not been initialized. Call Vendure.initialize() first.');
+    }
+    return _instance!._languageCode;
+  }
+
+  /// Gets the current channel token from the initialized Vendure instance.
+  static String? getChannelToken() {
+    if (_instance == null) {
+      throw Exception(
+          'Vendure has not been initialized. Call Vendure.initialize() first.');
+    }
+    return _instance!._channelToken;
+  }
+
+  /// Updates the channel token on the initialized Vendure instance.
+  /// This affects all subsequent GraphQL requests by adding the vendure-token header.
+  /// Pass null to remove the channel token from requests.
+  static void setChannelToken(String? channelToken) {
+    if (_instance == null) {
+      throw Exception(
+          'Vendure has not been initialized. Call Vendure.initialize() first.');
+    }
+    _instance!._channelToken = channelToken;
   }
 
   /// Fetch a new Vendure session token using the instance's TokenManager fetcher and params.

@@ -31,8 +31,12 @@ mixin _$SearchInput {
   int? get take => throw _privateConstructorUsedError;
   String? get term => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchInputCopyWith<SearchInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -67,6 +71,8 @@ class _$SearchInputCopyWithImpl<$Res, $Val extends SearchInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,6 +126,8 @@ class _$SearchInputCopyWithImpl<$Res, $Val extends SearchInput>
     ) as $Val);
   }
 
+  /// Create a copy of SearchInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SearchResultSortParameterCopyWith<$Res>? get sort {
@@ -164,6 +172,8 @@ class __$$SearchInputImplCopyWithImpl<$Res>
       _$SearchInputImpl _value, $Res Function(_$SearchInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -306,7 +316,7 @@ class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
             (identical(other.term, term) || other.term == term));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -320,7 +330,9 @@ class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
       take,
       term);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchInputImplCopyWith<_$SearchInputImpl> get copyWith =>
@@ -368,8 +380,11 @@ abstract class _SearchInput extends SearchInput {
   int? get take;
   @override
   String? get term;
+
+  /// Create a copy of SearchInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchInputImplCopyWith<_$SearchInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

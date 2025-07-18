@@ -26,23 +26,18 @@ _$SurchargeImpl _$$SurchargeImplFromJson(Map json) => _$SurchargeImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$SurchargeImplToJson(_$SurchargeImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('description', instance.description);
-  writeNotNull('id', instance.id);
-  writeNotNull('price', instance.price);
-  writeNotNull('priceWithTax', instance.priceWithTax);
-  writeNotNull('sku', instance.sku);
-  writeNotNull('taxLines', instance.taxLines?.map((e) => e?.toJson()).toList());
-  writeNotNull('taxRate', instance.taxRate);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$SurchargeImplToJson(_$SurchargeImpl instance) =>
+    <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.price case final value?) 'price': value,
+      if (instance.priceWithTax case final value?) 'priceWithTax': value,
+      if (instance.sku case final value?) 'sku': value,
+      if (instance.taxLines?.map((e) => e?.toJson()).toList() case final value?)
+        'taxLines': value,
+      if (instance.taxRate case final value?) 'taxRate': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

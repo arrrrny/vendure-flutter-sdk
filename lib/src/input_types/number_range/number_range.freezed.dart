@@ -23,8 +23,12 @@ mixin _$NumberRange {
   double get end => throw _privateConstructorUsedError;
   double get start => throw _privateConstructorUsedError;
 
+  /// Serializes this NumberRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NumberRangeCopyWith<NumberRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$NumberRangeCopyWithImpl<$Res, $Val extends NumberRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$NumberRangeImplCopyWithImpl<$Res>
       _$NumberRangeImpl _value, $Res Function(_$NumberRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,11 +149,13 @@ class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
             (identical(other.start, start) || other.start == start));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, end, start);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NumberRangeImplCopyWith<_$NumberRangeImpl> get copyWith =>
@@ -172,8 +182,11 @@ abstract class _NumberRange extends NumberRange {
   double get end;
   @override
   double get start;
+
+  /// Create a copy of NumberRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NumberRangeImplCopyWith<_$NumberRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

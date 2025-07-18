@@ -58,8 +58,12 @@ mixin _$CollectionListOptions {
   bool? get topLevelOnly => throw _privateConstructorUsedError;
   set topLevelOnly(bool? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionListOptionsCopyWith<CollectionListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -93,6 +97,8 @@ class _$CollectionListOptionsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -131,6 +137,8 @@ class _$CollectionListOptionsCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CollectionFilterParameterCopyWith<$Res>? get filter {
@@ -143,6 +151,8 @@ class _$CollectionListOptionsCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CollectionSortParameterCopyWith<$Res>? get sort {
@@ -188,6 +198,8 @@ class __$$CollectionListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$CollectionListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -284,7 +296,9 @@ class _$CollectionListOptionsImpl extends _CollectionListOptions
       ..add(DiagnosticsProperty('topLevelOnly', topLevelOnly));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionListOptionsImplCopyWith<_$CollectionListOptionsImpl>
@@ -312,39 +326,38 @@ abstract class _CollectionListOptions extends CollectionListOptions {
   factory _CollectionListOptions.fromJson(Map<String, dynamic> json) =
       _$CollectionListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
+  @override
   CollectionFilterParameter? get filter;
 
   /// Allows the results to be filtered
   set filter(CollectionFilterParameter? value);
-  @override
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
+  @override
   LogicalOperator? get filterOperator;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
   set filterOperator(LogicalOperator? value);
-  @override
 
   /// Skips the first n results, for use in pagination
+  @override
   int? get skip;
 
   /// Skips the first n results, for use in pagination
   set skip(int? value);
-  @override
 
   /// Specifies which properties to sort the results by
+  @override
   CollectionSortParameter? get sort;
 
   /// Specifies which properties to sort the results by
   set sort(CollectionSortParameter? value);
-  @override
 
   /// Takes n results, for use in pagination
+  @override
   int? get take;
 
   /// Takes n results, for use in pagination
@@ -352,8 +365,11 @@ abstract class _CollectionListOptions extends CollectionListOptions {
   @override
   bool? get topLevelOnly;
   set topLevelOnly(bool? value);
+
+  /// Create a copy of CollectionListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionListOptionsImplCopyWith<_$CollectionListOptionsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

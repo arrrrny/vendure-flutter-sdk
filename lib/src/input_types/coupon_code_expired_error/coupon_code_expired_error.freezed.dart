@@ -25,8 +25,12 @@ mixin _$CouponCodeExpiredError {
   ErrorCode? get errorCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this CouponCodeExpiredError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CouponCodeExpiredError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CouponCodeExpiredErrorCopyWith<CouponCodeExpiredError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$CouponCodeExpiredErrorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CouponCodeExpiredError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,6 +103,8 @@ class __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>
       $Res Function(_$CouponCodeExpiredErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CouponCodeExpiredError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -166,11 +174,13 @@ class _$CouponCodeExpiredErrorImpl extends _CouponCodeExpiredError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, couponCode, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CouponCodeExpiredError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CouponCodeExpiredErrorImplCopyWith<_$CouponCodeExpiredErrorImpl>
@@ -201,8 +211,11 @@ abstract class _CouponCodeExpiredError extends CouponCodeExpiredError {
   ErrorCode? get errorCode;
   @override
   String? get message;
+
+  /// Create a copy of CouponCodeExpiredError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CouponCodeExpiredErrorImplCopyWith<_$CouponCodeExpiredErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

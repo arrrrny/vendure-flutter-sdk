@@ -23,8 +23,12 @@ mixin _$DeletionResponse {
   String? get message => throw _privateConstructorUsedError;
   DeletionResult? get result => throw _privateConstructorUsedError;
 
+  /// Serializes this DeletionResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DeletionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DeletionResponseCopyWith<DeletionResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$DeletionResponseCopyWithImpl<$Res, $Val extends DeletionResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DeletionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$DeletionResponseImplCopyWithImpl<$Res>
       $Res Function(_$DeletionResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DeletionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,11 +150,13 @@ class _$DeletionResponseImpl extends _DeletionResponse
             (identical(other.result, result) || other.result == result));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, message, result);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DeletionResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeletionResponseImplCopyWith<_$DeletionResponseImpl> get copyWith =>
@@ -174,8 +184,11 @@ abstract class _DeletionResponse extends DeletionResponse {
   String? get message;
   @override
   DeletionResult? get result;
+
+  /// Create a copy of DeletionResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeletionResponseImplCopyWith<_$DeletionResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

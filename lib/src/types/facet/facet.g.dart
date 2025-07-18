@@ -29,29 +29,22 @@ _$FacetImpl _$$FacetImplFromJson(Map json) => _$FacetImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$FacetImplToJson(_$FacetImpl instance) {
-  final val = <String, dynamic>{
-    'code': instance.code,
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['id'] = instance.id;
-  val['languageCode'] = _$LanguageCodeEnumMap[instance.languageCode]!;
-  val['name'] = instance.name;
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e.toJson()).toList());
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  writeNotNull('valueList', instance.valueList?.toJson());
-  writeNotNull('values', instance.values?.map((e) => e.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$$FacetImplToJson(_$FacetImpl instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'id': instance.id,
+      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+      'name': instance.name,
+      if (instance.translations?.map((e) => e.toJson()).toList()
+          case final value?)
+        'translations': value,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      if (instance.valueList?.toJson() case final value?) 'valueList': value,
+      if (instance.values?.map((e) => e.toJson()).toList() case final value?)
+        'values': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

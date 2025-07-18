@@ -23,8 +23,12 @@ mixin _$CustomerList {
   List<Customer?>? get items => throw _privateConstructorUsedError;
   int? get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this CustomerList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CustomerList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CustomerListCopyWith<CustomerList> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$CustomerListCopyWithImpl<$Res, $Val extends CustomerList>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CustomerList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$CustomerListImplCopyWithImpl<$Res>
       _$CustomerListImpl _value, $Res Function(_$CustomerListImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CustomerList
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,12 +160,14 @@ class _$CustomerListImpl extends _CustomerList with DiagnosticableTreeMixin {
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CustomerList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CustomerListImplCopyWith<_$CustomerListImpl> get copyWith =>
@@ -184,8 +194,11 @@ abstract class _CustomerList extends CustomerList {
   List<Customer?>? get items;
   @override
   int? get totalItems;
+
+  /// Create a copy of CustomerList
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CustomerListImplCopyWith<_$CustomerListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

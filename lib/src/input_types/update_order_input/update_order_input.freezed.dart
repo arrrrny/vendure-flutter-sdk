@@ -22,8 +22,12 @@ UpdateOrderInput _$UpdateOrderInputFromJson(Map<String, dynamic> json) {
 mixin _$UpdateOrderInput {
   Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
 
+  /// Serializes this UpdateOrderInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateOrderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UpdateOrderInputCopyWith<UpdateOrderInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -47,6 +51,8 @@ class _$UpdateOrderInputCopyWithImpl<$Res, $Val extends UpdateOrderInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UpdateOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -80,6 +86,8 @@ class __$$UpdateOrderInputImplCopyWithImpl<$Res>
       $Res Function(_$UpdateOrderInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,12 +145,14 @@ class _$UpdateOrderInputImpl extends _UpdateOrderInput
                 .equals(other._customFields, _customFields));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_customFields));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateOrderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateOrderInputImplCopyWith<_$UpdateOrderInputImpl> get copyWith =>
@@ -167,8 +177,11 @@ abstract class _UpdateOrderInput extends UpdateOrderInput {
 
   @override
   Map<String, dynamic>? get customFields;
+
+  /// Create a copy of UpdateOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateOrderInputImplCopyWith<_$UpdateOrderInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

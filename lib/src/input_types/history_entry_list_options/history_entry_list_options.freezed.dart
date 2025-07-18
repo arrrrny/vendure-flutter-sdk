@@ -37,8 +37,12 @@ mixin _$HistoryEntryListOptions {
   /// Takes n results, for use in pagination
   int? get take => throw _privateConstructorUsedError;
 
+  /// Serializes this HistoryEntryListOptions to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HistoryEntryListOptionsCopyWith<HistoryEntryListOptions> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -71,6 +75,8 @@ class _$HistoryEntryListOptionsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,6 +110,8 @@ class _$HistoryEntryListOptionsCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntryFilterParameterCopyWith<$Res>? get filter {
@@ -116,6 +124,8 @@ class _$HistoryEntryListOptionsCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $HistoryEntrySortParameterCopyWith<$Res>? get sort {
@@ -161,6 +171,8 @@ class __$$HistoryEntryListOptionsImplCopyWithImpl<$Res>
       $Res Function(_$HistoryEntryListOptionsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -257,12 +269,14 @@ class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
             (identical(other.take, take) || other.take == take));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HistoryEntryListOptionsImplCopyWith<_$HistoryEntryListOptionsImpl>
@@ -289,29 +303,31 @@ abstract class _HistoryEntryListOptions extends HistoryEntryListOptions {
   factory _HistoryEntryListOptions.fromJson(Map<String, dynamic> json) =
       _$HistoryEntryListOptionsImpl.fromJson;
 
-  @override
-
   /// Allows the results to be filtered
-  HistoryEntryFilterParameter? get filter;
   @override
+  HistoryEntryFilterParameter? get filter;
 
   /// Specifies whether multiple top-level "filter" fields should be combined with a
   /// logical AND or OR operation. Defaults to AND.
-  LogicalOperator? get filterOperator;
   @override
+  LogicalOperator? get filterOperator;
 
   /// Skips the first n results, for use in pagination
-  int? get skip;
   @override
+  int? get skip;
 
   /// Specifies which properties to sort the results by
-  HistoryEntrySortParameter? get sort;
   @override
+  HistoryEntrySortParameter? get sort;
 
   /// Takes n results, for use in pagination
-  int? get take;
   @override
-  @JsonKey(ignore: true)
+  int? get take;
+
+  /// Create a copy of HistoryEntryListOptions
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HistoryEntryListOptionsImplCopyWith<_$HistoryEntryListOptionsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -24,8 +24,12 @@ mixin _$SearchResultAsset {
   String get id => throw _privateConstructorUsedError;
   String get preview => throw _privateConstructorUsedError;
 
+  /// Serializes this SearchResultAsset to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SearchResultAsset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SearchResultAssetCopyWith<SearchResultAsset> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$SearchResultAssetCopyWithImpl<$Res, $Val extends SearchResultAsset>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SearchResultAsset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,6 +80,8 @@ class _$SearchResultAssetCopyWithImpl<$Res, $Val extends SearchResultAsset>
     ) as $Val);
   }
 
+  /// Create a copy of SearchResultAsset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CoordinateCopyWith<$Res>? get focalPoint {
@@ -109,6 +117,8 @@ class __$$SearchResultAssetImplCopyWithImpl<$Res>
       $Res Function(_$SearchResultAssetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SearchResultAsset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -177,11 +187,13 @@ class _$SearchResultAssetImpl extends _SearchResultAsset
             (identical(other.preview, preview) || other.preview == preview));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, focalPoint, id, preview);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SearchResultAsset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchResultAssetImplCopyWith<_$SearchResultAssetImpl> get copyWith =>
@@ -212,8 +224,11 @@ abstract class _SearchResultAsset extends SearchResultAsset {
   String get id;
   @override
   String get preview;
+
+  /// Create a copy of SearchResultAsset
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SearchResultAssetImplCopyWith<_$SearchResultAssetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -25,8 +25,12 @@ mixin _$AuthenticationMethod {
   String? get strategy => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this AuthenticationMethod to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AuthenticationMethod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AuthenticationMethodCopyWith<AuthenticationMethod> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$AuthenticationMethodCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AuthenticationMethod
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -101,6 +107,8 @@ class __$$AuthenticationMethodImplCopyWithImpl<$Res>
       $Res Function(_$AuthenticationMethodImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AuthenticationMethod
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,12 +188,14 @@ class _$AuthenticationMethodImpl extends _AuthenticationMethod
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, createdAt, id, strategy, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AuthenticationMethod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AuthenticationMethodImplCopyWith<_$AuthenticationMethodImpl>
@@ -220,8 +230,11 @@ abstract class _AuthenticationMethod extends AuthenticationMethod {
   String? get strategy;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of AuthenticationMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AuthenticationMethodImplCopyWith<_$AuthenticationMethodImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

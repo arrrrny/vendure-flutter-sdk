@@ -32,8 +32,12 @@ mixin _$FacetValue {
       throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this FacetValue to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FacetValueCopyWith<FacetValue> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -69,6 +73,8 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +133,8 @@ class _$FacetValueCopyWithImpl<$Res, $Val extends FacetValue>
     ) as $Val);
   }
 
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FacetCopyWith<$Res>? get facet {
@@ -172,6 +180,8 @@ class __$$FacetValueImplCopyWithImpl<$Res>
       _$FacetValueImpl _value, $Res Function(_$FacetValueImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -333,7 +343,7 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -348,7 +358,9 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(_translations),
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FacetValueImplCopyWith<_$FacetValueImpl> get copyWith =>
@@ -399,8 +411,11 @@ abstract class _FacetValue extends FacetValue {
   List<FacetValueTranslation?>? get translations;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of FacetValue
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FacetValueImplCopyWith<_$FacetValueImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

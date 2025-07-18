@@ -22,19 +22,12 @@ _$FulfillmentLineImpl _$$FulfillmentLineImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$FulfillmentLineImplToJson(
-    _$FulfillmentLineImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('fulfillment', instance.fulfillment?.toJson());
-  writeNotNull('fulfillmentId', instance.fulfillmentId);
-  writeNotNull('orderLine', instance.orderLine?.toJson());
-  writeNotNull('orderLineId', instance.orderLineId);
-  writeNotNull('quantity', instance.quantity);
-  return val;
-}
+        _$FulfillmentLineImpl instance) =>
+    <String, dynamic>{
+      if (instance.fulfillment?.toJson() case final value?)
+        'fulfillment': value,
+      if (instance.fulfillmentId case final value?) 'fulfillmentId': value,
+      if (instance.orderLine?.toJson() case final value?) 'orderLine': value,
+      if (instance.orderLineId case final value?) 'orderLineId': value,
+      if (instance.quantity case final value?) 'quantity': value,
+    };

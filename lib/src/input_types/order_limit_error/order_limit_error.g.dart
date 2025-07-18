@@ -14,20 +14,13 @@ _$OrderLimitErrorImpl _$$OrderLimitErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$OrderLimitErrorImplToJson(
-    _$OrderLimitErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('maxItems', instance.maxItems);
-  writeNotNull('message', instance.message);
-  return val;
-}
+        _$OrderLimitErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.maxItems case final value?) 'maxItems': value,
+      if (instance.message case final value?) 'message': value,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

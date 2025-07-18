@@ -32,8 +32,12 @@ mixin _$OrderTaxSummary {
   /// The total tax being applied to the Order at this taxRate
   double get taxTotal => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderTaxSummary to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderTaxSummary
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderTaxSummaryCopyWith<OrderTaxSummary> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$OrderTaxSummaryCopyWithImpl<$Res, $Val extends OrderTaxSummary>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderTaxSummary
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -107,6 +113,8 @@ class __$$OrderTaxSummaryImplCopyWithImpl<$Res>
       _$OrderTaxSummaryImpl _value, $Res Function(_$OrderTaxSummaryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderTaxSummary
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -195,12 +203,14 @@ class _$OrderTaxSummaryImpl extends _OrderTaxSummary
                 other.taxTotal == taxTotal));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, description, taxBase, taxRate, taxTotal);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderTaxSummary
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderTaxSummaryImplCopyWith<_$OrderTaxSummaryImpl> get copyWith =>
@@ -226,24 +236,26 @@ abstract class _OrderTaxSummary extends OrderTaxSummary {
   factory _OrderTaxSummary.fromJson(Map<String, dynamic> json) =
       _$OrderTaxSummaryImpl.fromJson;
 
-  @override
-
   /// A description of this tax
-  String get description;
   @override
+  String get description;
 
   /// The total net price of OrderLines to which this taxRate applies
-  double get taxBase;
   @override
+  double get taxBase;
 
   /// The taxRate as a percentage
-  double get taxRate;
   @override
+  double get taxRate;
 
   /// The total tax being applied to the Order at this taxRate
-  double get taxTotal;
   @override
-  @JsonKey(ignore: true)
+  double get taxTotal;
+
+  /// Create a copy of OrderTaxSummary
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderTaxSummaryImplCopyWith<_$OrderTaxSummaryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

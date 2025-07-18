@@ -24,24 +24,17 @@ _$SearchInputImpl _$$SearchInputImplFromJson(Map json) => _$SearchInputImpl(
       term: json['term'] as String?,
     );
 
-Map<String, dynamic> _$$SearchInputImplToJson(_$SearchInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('collectionId', instance.collectionId);
-  writeNotNull('collectionSlug', instance.collectionSlug);
-  writeNotNull('facetValueFilters',
-      instance.facetValueFilters?.map((e) => e.toJson()).toList());
-  writeNotNull('groupByProduct', instance.groupByProduct);
-  writeNotNull('inStock', instance.inStock);
-  writeNotNull('skip', instance.skip);
-  writeNotNull('sort', instance.sort?.toJson());
-  writeNotNull('take', instance.take);
-  writeNotNull('term', instance.term);
-  return val;
-}
+Map<String, dynamic> _$$SearchInputImplToJson(_$SearchInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.collectionId case final value?) 'collectionId': value,
+      if (instance.collectionSlug case final value?) 'collectionSlug': value,
+      if (instance.facetValueFilters?.map((e) => e.toJson()).toList()
+          case final value?)
+        'facetValueFilters': value,
+      if (instance.groupByProduct case final value?) 'groupByProduct': value,
+      if (instance.inStock case final value?) 'inStock': value,
+      if (instance.skip case final value?) 'skip': value,
+      if (instance.sort?.toJson() case final value?) 'sort': value,
+      if (instance.take case final value?) 'take': value,
+      if (instance.term case final value?) 'term': value,
+    };

@@ -12,36 +12,20 @@ _$PriceRangeImpl _$$PriceRangeImplFromJson(Map json) => _$PriceRangeImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('max', instance.max);
-  writeNotNull('min', instance.min);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$PriceRangeImplToJson(_$PriceRangeImpl instance) =>
+    <String, dynamic>{
+      if (instance.max case final value?) 'max': value,
+      if (instance.min case final value?) 'min': value,
+      'runtimeType': instance.$type,
+    };
 
 _$SinglePriceImpl _$$SinglePriceImplFromJson(Map json) => _$SinglePriceImpl(
       value: (json['value'] as num?)?.toDouble(),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$SinglePriceImplToJson(_$SinglePriceImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('value', instance.value);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$SinglePriceImplToJson(_$SinglePriceImpl instance) =>
+    <String, dynamic>{
+      if (instance.value case final value?) 'value': value,
+      'runtimeType': instance.$type,
+    };

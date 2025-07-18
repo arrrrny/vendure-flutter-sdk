@@ -28,8 +28,12 @@ mixin _$ShippingLine {
   double get priceWithTax => throw _privateConstructorUsedError;
   ShippingMethod get shippingMethod => throw _privateConstructorUsedError;
 
+  /// Serializes this ShippingLine to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ShippingLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ShippingLineCopyWith<ShippingLine> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +66,8 @@ class _$ShippingLineCopyWithImpl<$Res, $Val extends ShippingLine>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ShippingLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -105,6 +111,8 @@ class _$ShippingLineCopyWithImpl<$Res, $Val extends ShippingLine>
     ) as $Val);
   }
 
+  /// Create a copy of ShippingLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ShippingMethodCopyWith<$Res> get shippingMethod {
@@ -143,6 +151,8 @@ class __$$ShippingLineImplCopyWithImpl<$Res>
       _$ShippingLineImpl _value, $Res Function(_$ShippingLineImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ShippingLine
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -264,7 +274,7 @@ class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
                 other.shippingMethod == shippingMethod));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -276,7 +286,9 @@ class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
       priceWithTax,
       shippingMethod);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ShippingLine
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ShippingLineImplCopyWith<_$ShippingLineImpl> get copyWith =>
@@ -318,8 +330,11 @@ abstract class _ShippingLine extends ShippingLine {
   double get priceWithTax;
   @override
   ShippingMethod get shippingMethod;
+
+  /// Create a copy of ShippingLine
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ShippingLineImplCopyWith<_$ShippingLineImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

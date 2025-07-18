@@ -29,8 +29,12 @@ mixin _$CollectionTranslation {
   String? get slug => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this CollectionTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CollectionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CollectionTranslationCopyWith<CollectionTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +66,8 @@ class _$CollectionTranslationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CollectionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -134,6 +140,8 @@ class __$$CollectionTranslationImplCopyWithImpl<$Res>
       $Res Function(_$CollectionTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CollectionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -247,12 +255,14 @@ class _$CollectionTranslationImpl extends _CollectionTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, createdAt, description, id,
       languageCode, name, slug, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CollectionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CollectionTranslationImplCopyWith<_$CollectionTranslationImpl>
@@ -295,8 +305,11 @@ abstract class _CollectionTranslation extends CollectionTranslation {
   String? get slug;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of CollectionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CollectionTranslationImplCopyWith<_$CollectionTranslationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

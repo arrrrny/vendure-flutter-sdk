@@ -32,8 +32,12 @@ mixin _$UpdateCustomerInput {
   String? get title => throw _privateConstructorUsedError;
   set title(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this UpdateCustomerInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UpdateCustomerInputCopyWith<UpdateCustomerInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -62,6 +66,8 @@ class _$UpdateCustomerInputCopyWithImpl<$Res, $Val extends UpdateCustomerInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,6 +126,8 @@ class __$$UpdateCustomerInputImplCopyWithImpl<$Res>
       $Res Function(_$UpdateCustomerInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -197,7 +205,9 @@ class _$UpdateCustomerInputImpl extends _UpdateCustomerInput
       ..add(DiagnosticsProperty('title', title));
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCustomerInputImplCopyWith<_$UpdateCustomerInputImpl> get copyWith =>
@@ -239,8 +249,11 @@ abstract class _UpdateCustomerInput extends UpdateCustomerInput {
   @override
   String? get title;
   set title(String? value);
+
+  /// Create a copy of UpdateCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCustomerInputImplCopyWith<_$UpdateCustomerInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

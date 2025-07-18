@@ -31,8 +31,12 @@ mixin _$ProductOptionGroup {
       throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductOptionGroup to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductOptionGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductOptionGroupCopyWith<ProductOptionGroup> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -65,6 +69,8 @@ class _$ProductOptionGroupCopyWithImpl<$Res, $Val extends ProductOptionGroup>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductOptionGroup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -147,6 +153,8 @@ class __$$ProductOptionGroupImplCopyWithImpl<$Res>
       $Res Function(_$ProductOptionGroupImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductOptionGroup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -304,7 +312,7 @@ class _$ProductOptionGroupImpl extends _ProductOptionGroup
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -318,7 +326,9 @@ class _$ProductOptionGroupImpl extends _ProductOptionGroup
       const DeepCollectionEquality().hash(_translations),
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductOptionGroup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductOptionGroupImplCopyWith<_$ProductOptionGroupImpl> get copyWith =>
@@ -367,8 +377,11 @@ abstract class _ProductOptionGroup extends ProductOptionGroup {
   List<ProductOptionGroupTranslation> get translations;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of ProductOptionGroup
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductOptionGroupImplCopyWith<_$ProductOptionGroupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

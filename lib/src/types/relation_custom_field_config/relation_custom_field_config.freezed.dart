@@ -35,8 +35,12 @@ mixin _$RelationCustomFieldConfig {
   String get type => throw _privateConstructorUsedError;
   Map<String, dynamic>? get ui => throw _privateConstructorUsedError;
 
+  /// Serializes this RelationCustomFieldConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RelationCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RelationCustomFieldConfigCopyWith<RelationCustomFieldConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -73,6 +77,8 @@ class _$RelationCustomFieldConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RelationCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -176,6 +182,8 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
       $Res Function(_$RelationCustomFieldConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RelationCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -384,7 +392,7 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
             const DeepCollectionEquality().equals(other._ui, _ui));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -401,7 +409,9 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
       type,
       const DeepCollectionEquality().hash(_ui));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RelationCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RelationCustomFieldConfigImplCopyWith<_$RelationCustomFieldConfigImpl>
@@ -459,8 +469,11 @@ abstract class _RelationCustomFieldConfig extends RelationCustomFieldConfig {
   String get type;
   @override
   Map<String, dynamic>? get ui;
+
+  /// Create a copy of RelationCustomFieldConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RelationCustomFieldConfigImplCopyWith<_$RelationCustomFieldConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

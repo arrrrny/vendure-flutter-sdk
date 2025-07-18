@@ -23,8 +23,12 @@ mixin _$NativeAuthInput {
   String get password => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
 
+  /// Serializes this NativeAuthInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NativeAuthInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NativeAuthInputCopyWith<NativeAuthInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$NativeAuthInputCopyWithImpl<$Res, $Val extends NativeAuthInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NativeAuthInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$NativeAuthInputImplCopyWithImpl<$Res>
       _$NativeAuthInputImpl _value, $Res Function(_$NativeAuthInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NativeAuthInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,11 +153,13 @@ class _$NativeAuthInputImpl extends _NativeAuthInput
                 other.username == username));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, password, username);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NativeAuthInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NativeAuthInputImplCopyWith<_$NativeAuthInputImpl> get copyWith =>
@@ -177,8 +187,11 @@ abstract class _NativeAuthInput extends NativeAuthInput {
   String get password;
   @override
   String get username;
+
+  /// Create a copy of NativeAuthInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NativeAuthInputImplCopyWith<_$NativeAuthInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

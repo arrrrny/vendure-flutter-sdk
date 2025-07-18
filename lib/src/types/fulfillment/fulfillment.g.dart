@@ -26,24 +26,15 @@ _$FulfillmentImpl _$$FulfillmentImplFromJson(Map json) => _$FulfillmentImpl(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$FulfillmentImplToJson(_$FulfillmentImpl instance) {
-  final val = <String, dynamic>{
-    'createdAt': instance.createdAt.toIso8601String(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('customFields', instance.customFields);
-  val['id'] = instance.id;
-  val['lines'] = instance.lines.map((e) => e.toJson()).toList();
-  val['method'] = instance.method;
-  val['state'] = instance.state;
-  val['summary'] = instance.summary.map((e) => e.toJson()).toList();
-  writeNotNull('trackingCode', instance.trackingCode);
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$$FulfillmentImplToJson(_$FulfillmentImpl instance) =>
+    <String, dynamic>{
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'id': instance.id,
+      'lines': instance.lines.map((e) => e.toJson()).toList(),
+      'method': instance.method,
+      'state': instance.state,
+      'summary': instance.summary.map((e) => e.toJson()).toList(),
+      if (instance.trackingCode case final value?) 'trackingCode': value,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };

@@ -27,8 +27,12 @@ mixin _$PromotionTranslation {
   String get name => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this PromotionTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PromotionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PromotionTranslationCopyWith<PromotionTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$PromotionTranslationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PromotionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -123,6 +129,8 @@ class __$$PromotionTranslationImplCopyWithImpl<$Res>
       $Res Function(_$PromotionTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PromotionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -226,12 +234,14 @@ class _$PromotionTranslationImpl extends _PromotionTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, createdAt, description, id, languageCode, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PromotionTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PromotionTranslationImplCopyWith<_$PromotionTranslationImpl>
@@ -272,8 +282,11 @@ abstract class _PromotionTranslation extends PromotionTranslation {
   String get name;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of PromotionTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PromotionTranslationImplCopyWith<_$PromotionTranslationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

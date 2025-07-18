@@ -17,16 +17,9 @@ _$StringFieldOptionImpl _$$StringFieldOptionImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$StringFieldOptionImplToJson(
-    _$StringFieldOptionImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('label', instance.label?.map((e) => e?.toJson()).toList());
-  writeNotNull('value', instance.value);
-  return val;
-}
+        _$StringFieldOptionImpl instance) =>
+    <String, dynamic>{
+      if (instance.label?.map((e) => e?.toJson()).toList() case final value?)
+        'label': value,
+      if (instance.value case final value?) 'value': value,
+    };

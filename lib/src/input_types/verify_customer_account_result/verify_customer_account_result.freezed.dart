@@ -147,6 +147,8 @@ mixin _$VerifyCustomerAccountResult {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this VerifyCustomerAccountResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -169,6 +171,9 @@ class _$VerifyCustomerAccountResultCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -189,6 +194,8 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
       _$CurrentUserImpl _value, $Res Function(_$CurrentUserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -273,12 +280,14 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
                 other.identifier == identifier));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_channels), id, identifier);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
@@ -433,7 +442,10 @@ abstract class CurrentUser extends VerifyCustomerAccountResult {
   List<CurrentUserChannel?>? get channels;
   String? get id;
   String? get identifier;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CurrentUserImplCopyWith<_$CurrentUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -456,6 +468,8 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
       $Res Function(_$MissingPasswordErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -520,11 +534,13 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MissingPasswordErrorImplCopyWith<_$MissingPasswordErrorImpl>
@@ -679,7 +695,10 @@ abstract class MissingPasswordError extends VerifyCustomerAccountResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MissingPasswordErrorImplCopyWith<_$MissingPasswordErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -704,6 +723,8 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
       $Res Function(_$NativeAuthStrategyErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -768,11 +789,13 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
@@ -926,7 +949,10 @@ abstract class NativeAuthStrategyError extends VerifyCustomerAccountResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -951,6 +977,8 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
       $Res Function(_$PasswordAlreadySetErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1015,11 +1043,13 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PasswordAlreadySetErrorImplCopyWith<_$PasswordAlreadySetErrorImpl>
@@ -1173,7 +1203,10 @@ abstract class PasswordAlreadySetError extends VerifyCustomerAccountResult {
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PasswordAlreadySetErrorImplCopyWith<_$PasswordAlreadySetErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1199,6 +1232,8 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
       $Res Function(_$PasswordValidationErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1277,12 +1312,14 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
                 other.validationErrorMessage == validationErrorMessage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, errorCode, message, validationErrorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
@@ -1440,7 +1477,10 @@ abstract class PasswordValidationError extends VerifyCustomerAccountResult {
   ErrorCode? get errorCode;
   String? get message;
   String? get validationErrorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PasswordValidationErrorImplCopyWith<_$PasswordValidationErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1465,6 +1505,8 @@ class __$$VerificationTokenExpiredErrorImplCopyWithImpl<$Res>
       $Res Function(_$VerificationTokenExpiredErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1530,11 +1572,13 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VerificationTokenExpiredErrorImplCopyWith<
@@ -1690,7 +1734,10 @@ abstract class VerificationTokenExpiredError
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VerificationTokenExpiredErrorImplCopyWith<
           _$VerificationTokenExpiredErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1716,6 +1763,8 @@ class __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>
       $Res Function(_$VerificationTokenInvalidErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1781,11 +1830,13 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$VerificationTokenInvalidErrorImplCopyWith<
@@ -1941,7 +1992,10 @@ abstract class VerificationTokenInvalidError
 
   ErrorCode? get errorCode;
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of VerifyCustomerAccountResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VerificationTokenInvalidErrorImplCopyWith<
           _$VerificationTokenInvalidErrorImpl>
       get copyWith => throw _privateConstructorUsedError;

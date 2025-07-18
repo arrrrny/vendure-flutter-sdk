@@ -34,8 +34,12 @@ mixin _$ShippingMethod {
       throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ShippingMethod to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ShippingMethodCopyWith<ShippingMethod> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -74,6 +78,8 @@ class _$ShippingMethodCopyWithImpl<$Res, $Val extends ShippingMethod>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,6 +148,8 @@ class _$ShippingMethodCopyWithImpl<$Res, $Val extends ShippingMethod>
     ) as $Val);
   }
 
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConfigurableOperationCopyWith<$Res> get calculator {
@@ -150,6 +158,8 @@ class _$ShippingMethodCopyWithImpl<$Res, $Val extends ShippingMethod>
     });
   }
 
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConfigurableOperationCopyWith<$Res> get checker {
@@ -195,6 +205,8 @@ class __$$ShippingMethodImplCopyWithImpl<$Res>
       _$ShippingMethodImpl _value, $Res Function(_$ShippingMethodImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -379,7 +391,7 @@ class _$ShippingMethodImpl extends _ShippingMethod
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -396,7 +408,9 @@ class _$ShippingMethodImpl extends _ShippingMethod
       const DeepCollectionEquality().hash(_translations),
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ShippingMethodImplCopyWith<_$ShippingMethodImpl> get copyWith =>
@@ -454,8 +468,11 @@ abstract class _ShippingMethod extends ShippingMethod {
   List<ShippingMethodTranslation> get translations;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of ShippingMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ShippingMethodImplCopyWith<_$ShippingMethodImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

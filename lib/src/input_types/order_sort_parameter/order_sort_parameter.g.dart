@@ -29,30 +29,31 @@ _$OrderSortParameterImpl _$$OrderSortParameterImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$OrderSortParameterImplToJson(
-    _$OrderSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', _$SortOrderEnumMap[instance.code]);
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('orderPlacedAt', _$SortOrderEnumMap[instance.orderPlacedAt]);
-  writeNotNull('shipping', _$SortOrderEnumMap[instance.shipping]);
-  writeNotNull('shippingWithTax', _$SortOrderEnumMap[instance.shippingWithTax]);
-  writeNotNull('state', _$SortOrderEnumMap[instance.state]);
-  writeNotNull('subTotal', _$SortOrderEnumMap[instance.subTotal]);
-  writeNotNull('subTotalWithTax', _$SortOrderEnumMap[instance.subTotalWithTax]);
-  writeNotNull('total', _$SortOrderEnumMap[instance.total]);
-  writeNotNull('totalQuantity', _$SortOrderEnumMap[instance.totalQuantity]);
-  writeNotNull('totalWithTax', _$SortOrderEnumMap[instance.totalWithTax]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$OrderSortParameterImpl instance) =>
+    <String, dynamic>{
+      if (_$SortOrderEnumMap[instance.code] case final value?) 'code': value,
+      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
+        'createdAt': value,
+      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
+      if (_$SortOrderEnumMap[instance.orderPlacedAt] case final value?)
+        'orderPlacedAt': value,
+      if (_$SortOrderEnumMap[instance.shipping] case final value?)
+        'shipping': value,
+      if (_$SortOrderEnumMap[instance.shippingWithTax] case final value?)
+        'shippingWithTax': value,
+      if (_$SortOrderEnumMap[instance.state] case final value?) 'state': value,
+      if (_$SortOrderEnumMap[instance.subTotal] case final value?)
+        'subTotal': value,
+      if (_$SortOrderEnumMap[instance.subTotalWithTax] case final value?)
+        'subTotalWithTax': value,
+      if (_$SortOrderEnumMap[instance.total] case final value?) 'total': value,
+      if (_$SortOrderEnumMap[instance.totalQuantity] case final value?)
+        'totalQuantity': value,
+      if (_$SortOrderEnumMap[instance.totalWithTax] case final value?)
+        'totalWithTax': value,
+      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
+        'updatedAt': value,
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

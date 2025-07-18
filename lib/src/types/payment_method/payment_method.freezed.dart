@@ -33,8 +33,12 @@ mixin _$PaymentMethod {
       throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this PaymentMethod to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PaymentMethodCopyWith<PaymentMethod> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -72,6 +76,8 @@ class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,6 +141,8 @@ class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
     ) as $Val);
   }
 
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConfigurableOperationCopyWith<$Res>? get checker {
@@ -147,6 +155,8 @@ class _$PaymentMethodCopyWithImpl<$Res, $Val extends PaymentMethod>
     });
   }
 
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConfigurableOperationCopyWith<$Res> get handler {
@@ -191,6 +201,8 @@ class __$$PaymentMethodImplCopyWithImpl<$Res>
       _$PaymentMethodImpl _value, $Res Function(_$PaymentMethodImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -360,7 +372,7 @@ class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -376,7 +388,9 @@ class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(_translations),
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentMethodImplCopyWith<_$PaymentMethodImpl> get copyWith =>
@@ -430,8 +444,11 @@ abstract class _PaymentMethod extends PaymentMethod {
   List<PaymentMethodTranslation> get translations;
   @override
   DateTime get updatedAt;
+
+  /// Create a copy of PaymentMethod
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentMethodImplCopyWith<_$PaymentMethodImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

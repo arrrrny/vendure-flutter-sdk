@@ -69,47 +69,56 @@ _$OrderLineImpl _$$OrderLineImplFromJson(Map json) => _$OrderLineImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$OrderLineImplToJson(_$OrderLineImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('discountedLinePrice', instance.discountedLinePrice);
-  writeNotNull(
-      'discountedLinePriceWithTax', instance.discountedLinePriceWithTax);
-  writeNotNull('discountedUnitPrice', instance.discountedUnitPrice);
-  writeNotNull(
-      'discountedUnitPriceWithTax', instance.discountedUnitPriceWithTax);
-  writeNotNull(
-      'discounts', instance.discounts?.map((e) => e?.toJson()).toList());
-  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
-  writeNotNull('fulfillmentLines',
-      instance.fulfillmentLines?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('linePrice', instance.linePrice);
-  writeNotNull('linePriceWithTax', instance.linePriceWithTax);
-  writeNotNull('lineTax', instance.lineTax);
-  writeNotNull('order', instance.order?.toJson());
-  writeNotNull('orderPlacedQuantity', instance.orderPlacedQuantity);
-  writeNotNull('productVariant', instance.productVariant?.toJson());
-  writeNotNull('proratedLinePrice', instance.proratedLinePrice);
-  writeNotNull('proratedLinePriceWithTax', instance.proratedLinePriceWithTax);
-  writeNotNull('proratedUnitPrice', instance.proratedUnitPrice);
-  writeNotNull('proratedUnitPriceWithTax', instance.proratedUnitPriceWithTax);
-  writeNotNull('quantity', instance.quantity);
-  writeNotNull('taxLines', instance.taxLines?.map((e) => e?.toJson()).toList());
-  writeNotNull('taxRate', instance.taxRate);
-  writeNotNull('unitPrice', instance.unitPrice);
-  writeNotNull('unitPriceChangeSinceAdded', instance.unitPriceChangeSinceAdded);
-  writeNotNull('unitPriceWithTax', instance.unitPriceWithTax);
-  writeNotNull('unitPriceWithTaxChangeSinceAdded',
-      instance.unitPriceWithTaxChangeSinceAdded);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$OrderLineImplToJson(_$OrderLineImpl instance) =>
+    <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.discountedLinePrice case final value?)
+        'discountedLinePrice': value,
+      if (instance.discountedLinePriceWithTax case final value?)
+        'discountedLinePriceWithTax': value,
+      if (instance.discountedUnitPrice case final value?)
+        'discountedUnitPrice': value,
+      if (instance.discountedUnitPriceWithTax case final value?)
+        'discountedUnitPriceWithTax': value,
+      if (instance.discounts?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'discounts': value,
+      if (instance.featuredAsset?.toJson() case final value?)
+        'featuredAsset': value,
+      if (instance.fulfillmentLines?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'fulfillmentLines': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.linePrice case final value?) 'linePrice': value,
+      if (instance.linePriceWithTax case final value?)
+        'linePriceWithTax': value,
+      if (instance.lineTax case final value?) 'lineTax': value,
+      if (instance.order?.toJson() case final value?) 'order': value,
+      if (instance.orderPlacedQuantity case final value?)
+        'orderPlacedQuantity': value,
+      if (instance.productVariant?.toJson() case final value?)
+        'productVariant': value,
+      if (instance.proratedLinePrice case final value?)
+        'proratedLinePrice': value,
+      if (instance.proratedLinePriceWithTax case final value?)
+        'proratedLinePriceWithTax': value,
+      if (instance.proratedUnitPrice case final value?)
+        'proratedUnitPrice': value,
+      if (instance.proratedUnitPriceWithTax case final value?)
+        'proratedUnitPriceWithTax': value,
+      if (instance.quantity case final value?) 'quantity': value,
+      if (instance.taxLines?.map((e) => e?.toJson()).toList() case final value?)
+        'taxLines': value,
+      if (instance.taxRate case final value?) 'taxRate': value,
+      if (instance.unitPrice case final value?) 'unitPrice': value,
+      if (instance.unitPriceChangeSinceAdded case final value?)
+        'unitPriceChangeSinceAdded': value,
+      if (instance.unitPriceWithTax case final value?)
+        'unitPriceWithTax': value,
+      if (instance.unitPriceWithTaxChangeSinceAdded case final value?)
+        'unitPriceWithTaxChangeSinceAdded': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

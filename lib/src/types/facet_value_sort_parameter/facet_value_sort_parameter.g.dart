@@ -18,23 +18,18 @@ _$FacetValueSortParameterImpl _$$FacetValueSortParameterImplFromJson(
     );
 
 Map<String, dynamic> _$$FacetValueSortParameterImplToJson(
-    _$FacetValueSortParameterImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', _$SortOrderEnumMap[instance.code]);
-  writeNotNull('createdAt', _$SortOrderEnumMap[instance.createdAt]);
-  writeNotNull('facetId', _$SortOrderEnumMap[instance.facetId]);
-  writeNotNull('id', _$SortOrderEnumMap[instance.id]);
-  writeNotNull('name', _$SortOrderEnumMap[instance.name]);
-  writeNotNull('updatedAt', _$SortOrderEnumMap[instance.updatedAt]);
-  return val;
-}
+        _$FacetValueSortParameterImpl instance) =>
+    <String, dynamic>{
+      if (_$SortOrderEnumMap[instance.code] case final value?) 'code': value,
+      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
+        'createdAt': value,
+      if (_$SortOrderEnumMap[instance.facetId] case final value?)
+        'facetId': value,
+      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
+      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
+      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
+        'updatedAt': value,
+    };
 
 const _$SortOrderEnumMap = {
   SortOrder.asc: 'asc',

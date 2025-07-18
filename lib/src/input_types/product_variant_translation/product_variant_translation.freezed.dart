@@ -27,8 +27,12 @@ mixin _$ProductVariantTranslation {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductVariantTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductVariantTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductVariantTranslationCopyWith<ProductVariantTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$ProductVariantTranslationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductVariantTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$ProductVariantTranslationImplCopyWithImpl<$Res>
       $Res Function(_$ProductVariantTranslationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductVariantTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,12 +215,14 @@ class _$ProductVariantTranslationImpl extends _ProductVariantTranslation
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, createdAt, id, languageCode, name, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductVariantTranslation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductVariantTranslationImplCopyWith<_$ProductVariantTranslationImpl>
@@ -249,8 +259,11 @@ abstract class _ProductVariantTranslation extends ProductVariantTranslation {
   String? get name;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of ProductVariantTranslation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductVariantTranslationImplCopyWith<_$ProductVariantTranslationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

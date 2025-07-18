@@ -13,16 +13,8 @@ _$FacetValueFilterInputImpl _$$FacetValueFilterInputImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$FacetValueFilterInputImplToJson(
-    _$FacetValueFilterInputImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('and', instance.and);
-  writeNotNull('or', instance.or);
-  return val;
-}
+        _$FacetValueFilterInputImpl instance) =>
+    <String, dynamic>{
+      if (instance.and case final value?) 'and': value,
+      if (instance.or case final value?) 'or': value,
+    };

@@ -20,22 +20,17 @@ _$HistoryEntryImpl _$$HistoryEntryImplFromJson(Map json) => _$HistoryEntryImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$HistoryEntryImplToJson(_$HistoryEntryImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('data', instance.data);
-  writeNotNull('id', instance.id);
-  writeNotNull('type', _$HistoryEntryTypeEnumMap[instance.type]);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$HistoryEntryImplToJson(_$HistoryEntryImpl instance) =>
+    <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.data case final value?) 'data': value,
+      if (instance.id case final value?) 'id': value,
+      if (_$HistoryEntryTypeEnumMap[instance.type] case final value?)
+        'type': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };
 
 const _$HistoryEntryTypeEnumMap = {
   HistoryEntryType.customerAddedToGroup: 'customerAddedToGroup',

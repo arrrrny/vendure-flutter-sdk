@@ -22,8 +22,12 @@ BooleanListOperators _$BooleanListOperatorsFromJson(Map<String, dynamic> json) {
 mixin _$BooleanListOperators {
   bool get inList => throw _privateConstructorUsedError;
 
+  /// Serializes this BooleanListOperators to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BooleanListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BooleanListOperatorsCopyWith<BooleanListOperators> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$BooleanListOperatorsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BooleanListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +87,8 @@ class __$$BooleanListOperatorsImplCopyWithImpl<$Res>
       $Res Function(_$BooleanListOperatorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BooleanListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,11 +136,13 @@ class _$BooleanListOperatorsImpl extends _BooleanListOperators
             (identical(other.inList, inList) || other.inList == inList));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, inList);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BooleanListOperators
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BooleanListOperatorsImplCopyWith<_$BooleanListOperatorsImpl>
@@ -158,8 +168,11 @@ abstract class _BooleanListOperators extends BooleanListOperators {
 
   @override
   bool get inList;
+
+  /// Create a copy of BooleanListOperators
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BooleanListOperatorsImplCopyWith<_$BooleanListOperatorsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

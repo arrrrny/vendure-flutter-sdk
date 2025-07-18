@@ -65,38 +65,41 @@ _$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('assets', instance.assets?.map((e) => e?.toJson()).toList());
-  writeNotNull(
-      'collections', instance.collections?.map((e) => e?.toJson()).toList());
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('description', instance.description);
-  writeNotNull('enabled', instance.enabled);
-  writeNotNull(
-      'facetValues', instance.facetValues?.map((e) => e?.toJson()).toList());
-  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
-  writeNotNull('id', instance.id);
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  writeNotNull('name', instance.name);
-  writeNotNull(
-      'optionGroups', instance.optionGroups?.map((e) => e?.toJson()).toList());
-  writeNotNull('slug', instance.slug);
-  writeNotNull(
-      'translations', instance.translations?.map((e) => e?.toJson()).toList());
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  writeNotNull('variantList', instance.variantList?.toJson());
-  writeNotNull('variants', instance.variants?.map((e) => e?.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
+    <String, dynamic>{
+      if (instance.assets?.map((e) => e?.toJson()).toList() case final value?)
+        'assets': value,
+      if (instance.collections?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'collections': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.enabled case final value?) 'enabled': value,
+      if (instance.facetValues?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'facetValues': value,
+      if (instance.featuredAsset?.toJson() case final value?)
+        'featuredAsset': value,
+      if (instance.id case final value?) 'id': value,
+      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
+        'languageCode': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.optionGroups?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'optionGroups': value,
+      if (instance.slug case final value?) 'slug': value,
+      if (instance.translations?.map((e) => e?.toJson()).toList()
+          case final value?)
+        'translations': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      if (instance.variantList?.toJson() case final value?)
+        'variantList': value,
+      if (instance.variants?.map((e) => e?.toJson()).toList() case final value?)
+        'variants': value,
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

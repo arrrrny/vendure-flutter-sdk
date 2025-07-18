@@ -32,29 +32,25 @@ _$AddressImpl _$$AddressImplFromJson(Map json) => _$AddressImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('city', instance.city);
-  writeNotNull('company', instance.company);
-  writeNotNull('country', instance.country?.toJson());
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('defaultBillingAddress', instance.defaultBillingAddress);
-  writeNotNull('defaultShippingAddress', instance.defaultShippingAddress);
-  writeNotNull('fullName', instance.fullName);
-  writeNotNull('id', instance.id);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('postalCode', instance.postalCode);
-  writeNotNull('province', instance.province);
-  writeNotNull('streetLine1', instance.streetLine1);
-  writeNotNull('streetLine2', instance.streetLine2);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
+    <String, dynamic>{
+      if (instance.city case final value?) 'city': value,
+      if (instance.company case final value?) 'company': value,
+      if (instance.country?.toJson() case final value?) 'country': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.defaultBillingAddress case final value?)
+        'defaultBillingAddress': value,
+      if (instance.defaultShippingAddress case final value?)
+        'defaultShippingAddress': value,
+      if (instance.fullName case final value?) 'fullName': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.postalCode case final value?) 'postalCode': value,
+      if (instance.province case final value?) 'province': value,
+      if (instance.streetLine1 case final value?) 'streetLine1': value,
+      if (instance.streetLine2 case final value?) 'streetLine2': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

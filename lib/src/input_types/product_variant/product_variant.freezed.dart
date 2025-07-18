@@ -42,8 +42,12 @@ mixin _$ProductVariant {
       throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductVariant to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductVariantCopyWith<ProductVariant> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -92,6 +96,8 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -200,6 +206,8 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
     ) as $Val);
   }
 
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get featuredAsset {
@@ -212,6 +220,8 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
     });
   }
 
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductCopyWith<$Res>? get product {
@@ -224,6 +234,8 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
     });
   }
 
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TaxCategoryCopyWith<$Res>? get taxCategory {
@@ -236,6 +248,8 @@ class _$ProductVariantCopyWithImpl<$Res, $Val extends ProductVariant>
     });
   }
 
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TaxRateCopyWith<$Res>? get taxRateApplied {
@@ -297,6 +311,8 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
       _$ProductVariantImpl _value, $Res Function(_$ProductVariantImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -594,7 +610,7 @@ class _$ProductVariantImpl extends _ProductVariant
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -620,7 +636,9 @@ class _$ProductVariantImpl extends _ProductVariant
         updatedAt
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>
@@ -702,8 +720,11 @@ abstract class _ProductVariant extends ProductVariant {
   List<ProductVariantTranslation?>? get translations;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of ProductVariant
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductVariantImplCopyWith<_$ProductVariantImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

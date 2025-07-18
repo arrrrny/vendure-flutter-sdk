@@ -36,31 +36,26 @@ _$AssetImpl _$$AssetImplFromJson(Map json) => _$AssetImpl(
       width: (json['width'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('customFields', instance.customFields);
-  writeNotNull('fileSize', instance.fileSize);
-  writeNotNull('focalPoint', instance.focalPoint?.toJson());
-  writeNotNull('height', instance.height);
-  writeNotNull('id', instance.id);
-  writeNotNull('mimeType', instance.mimeType);
-  writeNotNull('name', instance.name);
-  writeNotNull('preview', instance.preview);
-  writeNotNull('source', instance.source);
-  writeNotNull('tags', instance.tags?.map((e) => e?.toJson()).toList());
-  writeNotNull('type', _$AssetTypeEnumMap[instance.type]);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  writeNotNull('width', instance.width);
-  return val;
-}
+Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
+    <String, dynamic>{
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.customFields case final value?) 'customFields': value,
+      if (instance.fileSize case final value?) 'fileSize': value,
+      if (instance.focalPoint?.toJson() case final value?) 'focalPoint': value,
+      if (instance.height case final value?) 'height': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.mimeType case final value?) 'mimeType': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.preview case final value?) 'preview': value,
+      if (instance.source case final value?) 'source': value,
+      if (instance.tags?.map((e) => e?.toJson()).toList() case final value?)
+        'tags': value,
+      if (_$AssetTypeEnumMap[instance.type] case final value?) 'type': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+      if (instance.width case final value?) 'width': value,
+    };
 
 const _$AssetTypeEnumMap = {
   AssetType.binary: 'binary',

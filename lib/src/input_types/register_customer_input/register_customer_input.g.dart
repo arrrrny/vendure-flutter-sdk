@@ -17,21 +17,12 @@ _$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$RegisterCustomerInputImplToJson(
-    _$RegisterCustomerInputImpl instance) {
-  final val = <String, dynamic>{
-    'emailAddress': instance.emailAddress,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('firstName', instance.firstName);
-  writeNotNull('lastName', instance.lastName);
-  writeNotNull('password', instance.password);
-  writeNotNull('phoneNumber', instance.phoneNumber);
-  writeNotNull('title', instance.title);
-  return val;
-}
+        _$RegisterCustomerInputImpl instance) =>
+    <String, dynamic>{
+      'emailAddress': instance.emailAddress,
+      if (instance.firstName case final value?) 'firstName': value,
+      if (instance.lastName case final value?) 'lastName': value,
+      if (instance.password case final value?) 'password': value,
+      if (instance.phoneNumber case final value?) 'phoneNumber': value,
+      if (instance.title case final value?) 'title': value,
+    };

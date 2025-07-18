@@ -44,8 +44,12 @@ mixin _$Channel {
   bool? get trackInventory => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this Channel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ChannelCopyWith<Channel> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -88,6 +92,8 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,6 +187,8 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
     ) as $Val);
   }
 
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ZoneCopyWith<$Res>? get defaultShippingZone {
@@ -193,6 +201,8 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
     });
   }
 
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ZoneCopyWith<$Res>? get defaultTaxZone {
@@ -205,6 +215,8 @@ class _$ChannelCopyWithImpl<$Res, $Val extends Channel>
     });
   }
 
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SellerCopyWith<$Res>? get seller {
@@ -260,6 +272,8 @@ class __$$ChannelImplCopyWithImpl<$Res>
       _$ChannelImpl _value, $Res Function(_$ChannelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -516,7 +530,7 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -538,7 +552,9 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
       trackInventory,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith =>
@@ -597,9 +613,9 @@ abstract class _Channel extends Channel {
   Zone? get defaultTaxZone;
   @override
   String? get id;
-  @override
 
   /// Not yet used - will be implemented in a future release.
+  @override
   int? get outOfStockThreshold;
   @override
   bool? get pricesIncludeTax;
@@ -607,14 +623,17 @@ abstract class _Channel extends Channel {
   Seller? get seller;
   @override
   String? get token;
-  @override
 
   /// Not yet used - will be implemented in a future release.
+  @override
   bool? get trackInventory;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of Channel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChannelImplCopyWith<_$ChannelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -45,34 +45,32 @@ _$SearchResultImpl _$$SearchResultImplFromJson(Map json) => _$SearchResultImpl(
       slug: json['slug'] as String?,
     );
 
-Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('collectionIds', instance.collectionIds);
-  writeNotNull('currencyCode', _$CurrencyCodeEnumMap[instance.currencyCode]);
-  writeNotNull('description', instance.description);
-  writeNotNull('facetIds', instance.facetIds);
-  writeNotNull('facetValueIds', instance.facetValueIds);
-  writeNotNull('inStock', instance.inStock);
-  writeNotNull('price', instance.price?.toJson());
-  writeNotNull('priceWithTax', instance.priceWithTax?.toJson());
-  writeNotNull('productAsset', instance.productAsset?.toJson());
-  writeNotNull('productId', instance.productId);
-  writeNotNull('productName', instance.productName);
-  writeNotNull('productVariantAsset', instance.productVariantAsset?.toJson());
-  writeNotNull('productVariantId', instance.productVariantId);
-  writeNotNull('productVariantName', instance.productVariantName);
-  writeNotNull('score', instance.score);
-  writeNotNull('sku', instance.sku);
-  writeNotNull('slug', instance.slug);
-  return val;
-}
+Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) =>
+    <String, dynamic>{
+      if (instance.collectionIds case final value?) 'collectionIds': value,
+      if (_$CurrencyCodeEnumMap[instance.currencyCode] case final value?)
+        'currencyCode': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.facetIds case final value?) 'facetIds': value,
+      if (instance.facetValueIds case final value?) 'facetValueIds': value,
+      if (instance.inStock case final value?) 'inStock': value,
+      if (instance.price?.toJson() case final value?) 'price': value,
+      if (instance.priceWithTax?.toJson() case final value?)
+        'priceWithTax': value,
+      if (instance.productAsset?.toJson() case final value?)
+        'productAsset': value,
+      if (instance.productId case final value?) 'productId': value,
+      if (instance.productName case final value?) 'productName': value,
+      if (instance.productVariantAsset?.toJson() case final value?)
+        'productVariantAsset': value,
+      if (instance.productVariantId case final value?)
+        'productVariantId': value,
+      if (instance.productVariantName case final value?)
+        'productVariantName': value,
+      if (instance.score case final value?) 'score': value,
+      if (instance.sku case final value?) 'sku': value,
+      if (instance.slug case final value?) 'slug': value,
+    };
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

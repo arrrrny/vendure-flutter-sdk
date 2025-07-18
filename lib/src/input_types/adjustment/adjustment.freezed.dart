@@ -26,8 +26,12 @@ mixin _$Adjustment {
   String? get description => throw _privateConstructorUsedError;
   AdjustmentType? get type => throw _privateConstructorUsedError;
 
+  /// Serializes this Adjustment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Adjustment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AdjustmentCopyWith<Adjustment> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +60,8 @@ class _$AdjustmentCopyWithImpl<$Res, $Val extends Adjustment>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Adjustment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,6 +120,8 @@ class __$$AdjustmentImplCopyWithImpl<$Res>
       _$AdjustmentImpl _value, $Res Function(_$AdjustmentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Adjustment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -213,12 +221,14 @@ class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, adjustmentSource, amount,
       const DeepCollectionEquality().hash(_data), description, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Adjustment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AdjustmentImplCopyWith<_$AdjustmentImpl> get copyWith =>
@@ -254,8 +264,11 @@ abstract class _Adjustment extends Adjustment {
   String? get description;
   @override
   AdjustmentType? get type;
+
+  /// Create a copy of Adjustment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AdjustmentImplCopyWith<_$AdjustmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

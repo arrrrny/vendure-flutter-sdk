@@ -18,21 +18,14 @@ _$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('channels', instance.channels?.map((e) => e?.toJson()).toList());
-  writeNotNull('id', instance.id);
-  writeNotNull('identifier', instance.identifier);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
+    <String, dynamic>{
+      if (instance.channels?.map((e) => e?.toJson()).toList() case final value?)
+        'channels': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.identifier case final value?) 'identifier': value,
+      'runtimeType': instance.$type,
+    };
 
 _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
         Map json) =>
@@ -44,21 +37,15 @@ _$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
     );
 
 Map<String, dynamic> _$$InvalidCredentialsErrorImplToJson(
-    _$InvalidCredentialsErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('authenticationError', instance.authenticationError);
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$InvalidCredentialsErrorImpl instance) =>
+    <String, dynamic>{
+      if (instance.authenticationError case final value?)
+        'authenticationError': value,
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -103,17 +90,10 @@ _$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$NotVerifiedErrorImplToJson(
-    _$NotVerifiedErrorImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('errorCode', _$ErrorCodeEnumMap[instance.errorCode]);
-  writeNotNull('message', instance.message);
-  val['runtimeType'] = instance.$type;
-  return val;
-}
+        _$NotVerifiedErrorImpl instance) =>
+    <String, dynamic>{
+      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
+        'errorCode': value,
+      if (instance.message case final value?) 'message': value,
+      'runtimeType': instance.$type,
+    };

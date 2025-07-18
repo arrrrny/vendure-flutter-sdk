@@ -20,22 +20,14 @@ _$StringOperatorsImpl _$$StringOperatorsImplFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$$StringOperatorsImplToJson(
-    _$StringOperatorsImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('contains', instance.contains);
-  writeNotNull('eq', instance.eq);
-  writeNotNull('in', instance.in_);
-  writeNotNull('isNull', instance.isNull);
-  writeNotNull('notContains', instance.notContains);
-  writeNotNull('notEq', instance.notEq);
-  writeNotNull('notIn', instance.notIn);
-  writeNotNull('regex', instance.regex);
-  return val;
-}
+        _$StringOperatorsImpl instance) =>
+    <String, dynamic>{
+      if (instance.contains case final value?) 'contains': value,
+      if (instance.eq case final value?) 'eq': value,
+      if (instance.in_ case final value?) 'in': value,
+      if (instance.isNull case final value?) 'isNull': value,
+      if (instance.notContains case final value?) 'notContains': value,
+      if (instance.notEq case final value?) 'notEq': value,
+      if (instance.notIn case final value?) 'notIn': value,
+      if (instance.regex case final value?) 'regex': value,
+    };

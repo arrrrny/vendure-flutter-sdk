@@ -33,28 +33,23 @@ _$RefundImpl _$$RefundImplFromJson(Map json) => _$RefundImpl(
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$RefundImplToJson(_$RefundImpl instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('adjustment', instance.adjustment);
-  writeNotNull('createdAt', instance.createdAt?.toIso8601String());
-  writeNotNull('id', instance.id);
-  writeNotNull('items', instance.items);
-  writeNotNull('lines', instance.lines?.map((e) => e?.toJson()).toList());
-  writeNotNull('metadata', instance.metadata);
-  writeNotNull('method', instance.method);
-  writeNotNull('paymentId', instance.paymentId);
-  writeNotNull('reason', instance.reason);
-  writeNotNull('shipping', instance.shipping);
-  writeNotNull('state', instance.state);
-  writeNotNull('total', instance.total);
-  writeNotNull('transactionId', instance.transactionId);
-  writeNotNull('updatedAt', instance.updatedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$$RefundImplToJson(_$RefundImpl instance) =>
+    <String, dynamic>{
+      if (instance.adjustment case final value?) 'adjustment': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'createdAt': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.items case final value?) 'items': value,
+      if (instance.lines?.map((e) => e?.toJson()).toList() case final value?)
+        'lines': value,
+      if (instance.metadata case final value?) 'metadata': value,
+      if (instance.method case final value?) 'method': value,
+      if (instance.paymentId case final value?) 'paymentId': value,
+      if (instance.reason case final value?) 'reason': value,
+      if (instance.shipping case final value?) 'shipping': value,
+      if (instance.state case final value?) 'state': value,
+      if (instance.total case final value?) 'total': value,
+      if (instance.transactionId case final value?) 'transactionId': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updatedAt': value,
+    };

@@ -27,8 +27,12 @@ mixin _$Zone {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this Zone to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Zone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZoneCopyWith<Zone> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -56,6 +60,8 @@ class _$ZoneCopyWithImpl<$Res, $Val extends Zone>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Zone
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,6 +124,8 @@ class __$$ZoneImplCopyWithImpl<$Res>
   __$$ZoneImplCopyWithImpl(_$ZoneImpl _value, $Res Function(_$ZoneImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Zone
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -237,7 +245,7 @@ class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -248,7 +256,9 @@ class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
       name,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Zone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZoneImplCopyWith<_$ZoneImpl> get copyWith =>
@@ -286,8 +296,11 @@ abstract class _Zone extends Zone {
   String? get name;
   @override
   DateTime? get updatedAt;
+
+  /// Create a copy of Zone
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZoneImplCopyWith<_$ZoneImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

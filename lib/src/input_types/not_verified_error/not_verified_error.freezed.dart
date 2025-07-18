@@ -23,8 +23,12 @@ mixin _$NotVerifiedError {
   ErrorCode? get errorCode => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
 
+  /// Serializes this NotVerifiedError to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NotVerifiedError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NotVerifiedErrorCopyWith<NotVerifiedError> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$NotVerifiedErrorCopyWithImpl<$Res, $Val extends NotVerifiedError>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NotVerifiedError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -86,6 +92,8 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
       $Res Function(_$NotVerifiedErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NotVerifiedError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,11 +151,13 @@ class _$NotVerifiedErrorImpl extends _NotVerifiedError
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, errorCode, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NotVerifiedError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NotVerifiedErrorImplCopyWith<_$NotVerifiedErrorImpl> get copyWith =>
@@ -175,8 +185,11 @@ abstract class _NotVerifiedError extends NotVerifiedError {
   ErrorCode? get errorCode;
   @override
   String? get message;
+
+  /// Create a copy of NotVerifiedError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NotVerifiedErrorImplCopyWith<_$NotVerifiedErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -52,36 +52,31 @@ _$CollectionImpl _$$CollectionImplFromJson(Map json) => _$CollectionImpl(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) {
-  final val = <String, dynamic>{
-    'assets': instance.assets.map((e) => e.toJson()).toList(),
-    'breadcrumbs': instance.breadcrumbs.map((e) => e.toJson()).toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('children', instance.children?.map((e) => e.toJson()).toList());
-  val['createdAt'] = instance.createdAt.toIso8601String();
-  writeNotNull('customFields', instance.customFields);
-  val['description'] = instance.description;
-  writeNotNull('featuredAsset', instance.featuredAsset?.toJson());
-  val['filters'] = instance.filters.map((e) => e.toJson()).toList();
-  val['id'] = instance.id;
-  writeNotNull('languageCode', _$LanguageCodeEnumMap[instance.languageCode]);
-  val['name'] = instance.name;
-  writeNotNull('parent', instance.parent?.toJson());
-  writeNotNull('parentId', instance.parentId);
-  val['position'] = instance.position;
-  writeNotNull('productVariants', instance.productVariants?.toJson());
-  val['slug'] = instance.slug;
-  val['translations'] = instance.translations.map((e) => e.toJson()).toList();
-  val['updatedAt'] = instance.updatedAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) =>
+    <String, dynamic>{
+      'assets': instance.assets.map((e) => e.toJson()).toList(),
+      'breadcrumbs': instance.breadcrumbs.map((e) => e.toJson()).toList(),
+      if (instance.children?.map((e) => e.toJson()).toList() case final value?)
+        'children': value,
+      'createdAt': instance.createdAt.toIso8601String(),
+      if (instance.customFields case final value?) 'customFields': value,
+      'description': instance.description,
+      if (instance.featuredAsset?.toJson() case final value?)
+        'featuredAsset': value,
+      'filters': instance.filters.map((e) => e.toJson()).toList(),
+      'id': instance.id,
+      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
+        'languageCode': value,
+      'name': instance.name,
+      if (instance.parent?.toJson() case final value?) 'parent': value,
+      if (instance.parentId case final value?) 'parentId': value,
+      'position': instance.position,
+      if (instance.productVariants?.toJson() case final value?)
+        'productVariants': value,
+      'slug': instance.slug,
+      'translations': instance.translations.map((e) => e.toJson()).toList(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+    };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',
