@@ -1,14 +1,17 @@
 library vendure;
 
 import 'package:graphql/client.dart';
+import 'package:http/http.dart' as http;
 import 'package:vendure/src/vendure/auth_operations.dart';
 import 'package:vendure/src/vendure/catalog_operations.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
 import 'package:vendure/src/vendure/customer_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
+import 'package:vendure/src/vendure/schema_utils/vendure_schema_utils.dart';
 import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
-import 'package:http/http.dart' as http;
+
+import 'src/vendure/vendure_utils.dart';
 
 export '../src/types/exports.dart'; // Add this line
 
@@ -132,21 +135,9 @@ class Vendure {
       timeout: timeout,
     );
 
-    // Perform a connection check
+    // Perform a connection check and finalize initialization
     final vendure = _instance!;
-    try {
-      final result = await vendure.query(QueryOptions(
-        document: gql('query { __typename }'),
-      ));
-      if (result.hasException) {
-        throw Exception(
-            'Failed to connect to Vendure: ${result.exception.toString()}');
-      }
-    } catch (e) {
-      _instance = null;
-      throw Exception('Failed to initialize Vendure: $e');
-    }
-
+    await _finalizeInitialization(vendure, checkConnection: true);
     return vendure;
   }
 
@@ -211,11 +202,8 @@ class Vendure {
       );
     }
 
-    // Ensure token is set
-    if (_instance!._token == null) {
-      throw Exception("Failed to set token in instance");
-    }
-
+    // Finalize initialization (token check, enum loading)
+    await _finalizeInitialization(_instance!);
     return _instance!;
   }
 
@@ -284,10 +272,8 @@ class Vendure {
     }
 
     // Ensure token is set
-    if (_instance!._token == null) {
-      throw Exception("Failed to set token in instance");
-    }
-
+    // Finalize initialization (token check, enum loading)
+    await _finalizeInitialization(_instance!);
     return _instance!;
   }
 
@@ -321,11 +307,8 @@ class Vendure {
       );
     }
 
-    // Ensure token is set
-    if (_instance!._token == null) {
-      throw Exception("Failed to set token in instance");
-    }
-
+    // Finalize initialization (token check, enum loading)
+    await _finalizeInitialization(_instance!);
     return _instance!;
   }
 
@@ -469,6 +452,77 @@ class Vendure {
   Future<QueryResult> query(QueryOptions options) async {
     final client = await _getClient();
     return client.query(options);
+  }
+
+  /// Detects all ENUM types in the Vendure GraphQL schema using introspection.
+  /// Returns a list of enum type names and their possible values.
+  Future<List<Map<String, dynamic>>> detectEnums() async {
+    const introspectionQuery = r'''
+      query IntrospectionQuery {
+        __schema {
+          types {
+            kind
+            name
+            enumValues {
+              name
+              description
+            }
+          }
+        }
+      }
+    ''';
+
+    final result = await query(QueryOptions(
+      document: gql(introspectionQuery),
+    ));
+    if (result.hasException) {
+      throw Exception('Failed to introspect schema: ${result.exception}');
+    }
+
+    final types = result.data?['__schema']?['types'] ?? [];
+    final enums = types.where((type) => type['kind'] == 'ENUM').map((type) {
+      return {
+        'name': type['name'],
+        'values': type['enumValues']
+                ?.map((v) => {
+                      'name': v['name'],
+                      'description': v['description'],
+                    })
+                ?.toList() ??
+            [],
+      };
+    }).toList();
+
+    return List<Map<String, dynamic>>.from(enums);
+  }
+
+  /// Centralized post-initialization logic for Vendure instance.
+  static Future<void> _finalizeInitialization(Vendure instance,
+      {bool checkConnection = false}) async {
+    _instance = instance;
+    if (!_instance!._useVendureGuestSession && _instance!._token == null) {
+      throw Exception("Failed to set token in instance");
+    }
+    if (checkConnection) {
+      try {
+        final result = await _instance!.query(QueryOptions(
+          document: gql('query { __typename }'),
+        ));
+        if (result.hasException) {
+          throw Exception(
+              'Failed to connect to Vendure: ${result.exception.toString()}');
+        }
+      } catch (e) {
+        _instance = null;
+        throw Exception('Failed to initialize Vendure: $e');
+      }
+    }
+    // Automatically load enum type names and field-to-enumType map for normalization
+    final client = await _instance!._getClient();
+    await VendureUtils.loadEnumTypeNames(
+      () => VendureSchemaUtils.detectEnums(client),
+      detectFields: () => VendureSchemaUtils.detectEnumFields(client),
+    );
   }
 
   Future<QueryResult> mutate(MutationOptions options) async {

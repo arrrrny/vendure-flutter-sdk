@@ -1,61 +1,83 @@
 class VendureUtils {
-  static final List<String> _vendureTypeEnums = [
-    'adjustmentType',
-    'assetType',
-    'currencyCode',
-    'deletionResult',
-    'errorCode',
-    'globalFlag',
-    'historyEntryType',
-    'languageCode',
-    'logicalOperator',
-    'orderType',
-    'permission',
-    'sortOrder',
-    'type',
-    'permissions',
-    'availableCurrencyCodes',
-    'defaultCurrencyCode',
-    'defaultLanguageCode',
-    'availableLanguageCodes'
-  ];
+  // Dynamic enum type names, values, and field-to-enumType mapping
+  static List<String> _vendureTypeEnums = [];
+  static Map<String, List<String>> _enumTypeValues = {};
+  static Map<String, String> _fieldToEnumType = {};
+
+  /// Call this once after Vendure initialization to populate enum type names and field mapping.
+  static Future<void> loadEnumTypeNames(
+      Future<List<Map<String, dynamic>>> Function() detectEnums,
+      {Future<List<Map<String, dynamic>>> Function()? detectFields}) async {
+    final enums = await detectEnums();
+    _vendureTypeEnums = enums.map((e) => e['name'] as String).toList();
+    _enumTypeValues = {
+      for (var e in enums)
+        if (e['name'] != null && e['values'] != null)
+          e['name'] as String: List<String>.from(
+            (e['values'] as List).map((v) => v['name'] as String),
+          )
+    };
+
+    // Step 2: Detect field-to-enumType map if provided
+    if (detectFields != null) {
+      final fields = await detectFields();
+      // fields: [{typeName, fieldName, fieldType}]
+      _fieldToEnumType = {};
+      for (var f in fields) {
+        final fieldType = f['fieldType'] as String?;
+        if (fieldType != null && _vendureTypeEnums.contains(fieldType)) {
+          _fieldToEnumType[f['fieldName'] as String] = fieldType;
+        }
+      }
+    }
+  }
+
   static dynamic normalizeGraphQLData(dynamic data, {String? parentKey}) {
     if (data is Map<String, dynamic>) {
       final normalizedData = <String, dynamic>{};
-      data.forEach((key, value) {
-        if (_vendureTypeEnums.contains(key)) {
-          if (value is List) {
-            normalizedData[key] = value
-                .map((item) => _convertEnumToDartFormat(item.toString()))
-                .toList();
-          } else if (value != null) {
-            normalizedData[key] = _convertEnumToDartFormat(value.toString());
-          } else {
-            normalizedData[key] = value;
-          }
-        } else if (key == '__typename') {
+      for (final entry in data.entries) {
+        final key = entry.key;
+        final value = entry.value;
+        if (key == '__typename') {
           normalizedData['runtimeType'] =
               value.toString()[0].toLowerCase() + value.toString().substring(1);
-        } else {
-          normalizedData[key] = normalizeGraphQLData(value, parentKey: key);
+          continue;
         }
-      });
+        final enumType = _fieldToEnumType[key];
+        if (enumType != null && _enumTypeValues.containsKey(enumType)) {
+          if (value is List) {
+            normalizedData[key] = value
+                .map((item) =>
+                    _enumTypeValues[enumType]!.contains(item.toString())
+                        ? _convertEnumToDartFormat(item.toString())
+                        : item)
+                .toList();
+            continue;
+          } else if (value != null &&
+              _enumTypeValues[enumType]!.contains(value.toString())) {
+            normalizedData[key] = _convertEnumToDartFormat(value.toString());
+            continue;
+          }
+        }
+        normalizedData[key] = normalizeGraphQLData(value, parentKey: key);
+      }
       return normalizedData;
-    } else if (data is List) {
-      // If parentKey is an enum type, normalize all items as enums
-      if (parentKey != null && _vendureTypeEnums.contains(parentKey)) {
+    }
+    if (data is List) {
+      final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
+      if (enumType != null && _enumTypeValues.containsKey(enumType)) {
         return data
-            .map((item) => _convertEnumToDartFormat(item.toString()))
+            .map((item) => _enumTypeValues[enumType]!.contains(item.toString())
+                ? _convertEnumToDartFormat(item.toString())
+                : item)
             .toList();
       }
-      return data
-          .map((item) => normalizeGraphQLData(item, parentKey: parentKey))
-          .toList();
-    } else {
-      // Primitive (bool, int, double, String, etc)
-      return data;
+      return data.map((item) => normalizeGraphQLData(item)).toList();
     }
+    return data;
   }
+
+  // Introspection logic moved to VendureSchemaUtils.
 
   static String _convertEnumToDartFormat(String enumValue) {
     if (enumValue == 'TRY') {
@@ -64,16 +86,17 @@ class VendureUtils {
 
     // If the enum value contains underscores, it's in SCREAMING_SNAKE_CASE
     if (enumValue.contains('_')) {
-      // Convert to camelCase
-      String camelCase = enumValue.split('_').map((word) {
-        return word[0] + word.substring(1).toLowerCase();
-      }).join();
-
-      // Ensure the first character is lowercase
-      return camelCase[0].toLowerCase() + camelCase.substring(1);
+      // Convert to camelCase: all lower except first word, capitalize subsequent words
+      final parts = enumValue.toLowerCase().split('_');
+      final camelCase = parts.first +
+          parts
+              .skip(1)
+              .map((w) => w[0].toUpperCase() + w.substring(1))
+              .join('');
+      return camelCase;
     } else {
-      // Already in camelCase or similar format, just ensure first character is lowercase
-      return enumValue[0].toLowerCase() + enumValue.substring(1);
+      // All uppercase or mixed, just lowercase everything
+      return enumValue.toLowerCase();
     }
   }
 
@@ -84,9 +107,6 @@ class VendureUtils {
 
     // Populate missing fields recursively
     mutableJsonMap = _populateFieldsRecursively(mutableJsonMap);
-
-    // Print the modified JSON map to debug
-    // print('Modified JSON map: $mutableJsonMap');
 
     // Call the fromJson method with the modified JSON map
     return fromJson(mutableJsonMap);
@@ -108,8 +128,6 @@ class VendureUtils {
           return item;
         }).toList();
       } else if (value == null) {
-        // print(
-        //     'Key with null value: $key'); // Add this log to identify null values
         jsonMap[key] = _getDefaultValue(key);
       } else {
         // Handle primitives (bool, int, double, String, etc)
@@ -156,14 +174,11 @@ class VendureUtils {
 
     // Determine the appropriate default value
     if (key.contains('Date') || key.contains('date')) {
-      print(
-          'Providing default value for DateTime key: $key'); // Add this log to check default DateTime values
       return defaultValues['DateTime'];
     }
     var defaultValue =
         defaultValues['String']; // Default to String if type is unknown
-    print(
-        'Providing default value for key: $key, value: $defaultValue'); // Add this log to check default values for other types
+
     return defaultValue;
   }
 

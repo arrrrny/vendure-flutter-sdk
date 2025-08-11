@@ -1,3 +1,10 @@
+## 2.5.0
+- **Robust Enum Normalization**: Refactored normalization to use dynamic schema introspection for all enum fields and values. Now supports automatic camelCase conversion for all enums, regardless of field name.
+- **Field-to-Enum Mapping**: Added automatic mapping of GraphQL fields to their enum types using introspection, ensuring all enum fields are normalized.
+- **SDK Cleanup**: Removed all debug prints, centralized normalization logic, and improved recursion for speed and maintainability.
+- **DRY & Fast**: Refactored normalization to avoid duplicate logic and unnecessary recursion, making it production-grade and easy to extend.
+- **No Breaking Changes**: All existing APIs remain compatible, but normalization is now more reliable and future-proof.
+
 ## 2.4.0
 - **Enhanced Language Code Support**: Improved dynamic language code handling with proper URI parsing instead of string concatenation.
 - **Dynamic Channel Token Management**: Added `setChannelToken()` and `getChannelToken()` methods for runtime channel switching.

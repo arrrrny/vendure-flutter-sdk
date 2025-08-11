@@ -102,7 +102,7 @@ class CustomOperations {
       throw Exception('No data returned from mutate');
     }
 
-    if (data is Map<String, dynamic>) {
+    if (data is Map<String, dynamic> || data is List) {
       data = VendureUtils.normalizeGraphQLData(data);
     }
     if (fromJson != null) {
@@ -123,7 +123,7 @@ class CustomOperations {
     if (data == null) {
       throw Exception('No data returned from query');
     }
-    if (data is Map<String, dynamic>) {
+    if (data is Map<String, dynamic> || data is List) {
       data = VendureUtils.normalizeGraphQLData(data);
     }
     if (fromJson != null) {

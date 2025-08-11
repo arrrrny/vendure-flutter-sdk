@@ -33,3 +33,4 @@ schema.graphql
 .fvm*
 .vscode*
 /test/*conversation*
+/test/search*
