@@ -2,9 +2,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:vendure/vendure.dart';
 
 void main() {
-  String endpoint = 'http://localhost:3001/shop-api';
+  String endpoint = 'http://localhost:3000/shop-api';
   String testUsername = 'a@a.com';
   String testPassword = '123456';
+  String verificationToken =
+      'MjAyNS0xMS0wOFQwNTo0NDo1Ny4yMzBa_DQD8F63X6JG5G9ZM';
+  String testEmail = 'a@a.com';
 
   group('Vendure Native Auth - Connection Test', () {
     test('Check basic connection to Vendure server', () async {
@@ -31,6 +34,28 @@ void main() {
         endpoint: endpoint,
         useVendureGuestSession: true,
       );
+    });
+
+    test('Verify customer account', () async {
+      try {
+        var result =
+            await vendure.auth.verifyCustomerAccount(token: verificationToken);
+        expect(result, isA<AuthenticationResult>());
+        print('✅ Verify customer account successful: ${result.toJson()}');
+      } catch (e) {
+        fail('❌ Authenticate method failed: $e');
+      }
+    });
+
+    test('Refresh verification', () async {
+      try {
+        var result = await vendure.auth
+            .refreshCustomerVerification(emailAddress: testEmail);
+        expect(result, isA<RefreshCustomerVerificationResult>());
+        print('✅ Refresh successful: ${result.toJson()}');
+      } catch (e) {
+        fail('❌ Refresh  failed: $e');
+      }
     });
 
     test('Test authenticate method with valid credentials', () async {
