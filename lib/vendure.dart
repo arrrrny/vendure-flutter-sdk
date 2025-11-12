@@ -2,6 +2,7 @@ library vendure;
 
 import 'package:graphql/client.dart';
 import 'package:http/http.dart' as http;
+import 'package:vendure/src/vendure/app_check_provider.dart';
 import 'package:vendure/src/vendure/auth_operations.dart';
 import 'package:vendure/src/vendure/catalog_operations.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
@@ -37,6 +38,7 @@ class Vendure {
   String? get channelToken => _channelToken;
   String? get languageCode => _languageCode;
   final Duration? _timeout;
+  final AppCheckConfig? _appCheckConfig;
 
   Vendure._internal({
     required String endpoint,
@@ -50,6 +52,7 @@ class Vendure {
     String? languageCode,
     String? channelToken,
     Duration? timeout,
+    AppCheckConfig? appCheckConfig,
   })  : _tokenManager = fetchToken != null && tokenParams != null
             ? TokenManager(
                 fetchToken: fetchToken,
@@ -58,6 +61,7 @@ class Vendure {
               )
             : null,
         _timeout = timeout,
+        _appCheckConfig = appCheckConfig,
         _useVendureGuestSession = useVendureGuestSession ?? false,
         _endpoint = endpoint,
         _policies = policies,
@@ -120,6 +124,7 @@ class Vendure {
     String? languageCode,
     String? channelToken,
     Duration? timeout,
+    AppCheckConfig? appCheckConfig,
   }) async {
     _instance = Vendure._internal(
       endpoint: endpoint,
@@ -133,6 +138,7 @@ class Vendure {
       languageCode: languageCode,
       channelToken: channelToken,
       timeout: timeout,
+      appCheckConfig: appCheckConfig,
     );
 
     // Perform a connection check and finalize initialization
@@ -148,6 +154,7 @@ class Vendure {
     Duration sessionDuration = const Duration(days: 365),
     Duration? timeout,
     Map<String, List<String>>? customFieldsConfig,
+    AppCheckConfig? appCheckConfig,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -199,6 +206,7 @@ class Vendure {
         token: token,
         customFieldsConfig: customFieldsConfig,
         timeout: timeout,
+        appCheckConfig: appCheckConfig,
       );
     }
 
@@ -216,6 +224,7 @@ class Vendure {
     String? languageCode,
     String? channelToken,
     Duration? timeout,
+    AppCheckConfig? appCheckConfig,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -268,6 +277,7 @@ class Vendure {
         token: token,
         customFieldsConfig: customFieldsConfig,
         timeout: timeout,
+        appCheckConfig: appCheckConfig,
       );
     }
 
@@ -354,7 +364,40 @@ class Vendure {
 
     // Create another AuthLink for the vendure-token header
     Link link;
-    if (_channelToken != null) {
+
+    // Add App Check token link if configured
+    if (_appCheckConfig != null) {
+      final appCheckLink = AuthLink(
+        headerKey: _appCheckConfig!.headerName,
+        getToken: () async {
+          try {
+            final token = await _appCheckConfig!.tokenProvider();
+            if (token == null && _appCheckConfig!.required) {
+              throw Exception('App Check token is required but not available');
+            }
+            return token;
+          } catch (e) {
+            if (_appCheckConfig!.required) {
+              rethrow;
+            }
+            return null;
+          }
+        },
+      );
+
+      if (_channelToken != null) {
+        final vendureTokenLink = AuthLink(
+          headerKey: 'vendure-token',
+          getToken: () async => _channelToken,
+        );
+        link = authLink
+            .concat(appCheckLink)
+            .concat(vendureTokenLink)
+            .concat(httpLink);
+      } else {
+        link = authLink.concat(appCheckLink).concat(httpLink);
+      }
+    } else if (_channelToken != null) {
       final vendureTokenLink = AuthLink(
         headerKey: 'vendure-token',
         getToken: () async => _channelToken,
@@ -363,7 +406,6 @@ class Vendure {
     } else {
       link = authLink.concat(httpLink);
     }
-
     return GraphQLClient(
       cache: GraphQLCache(),
       link: link,

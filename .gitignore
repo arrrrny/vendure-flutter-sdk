@@ -34,3 +34,5 @@ schema.graphql
 .vscode*
 /test/*conversation*
 /test/search*
+
+.claude

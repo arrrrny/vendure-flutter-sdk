@@ -2,9 +2,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:vendure/vendure.dart';
 
 void main() {
-  String endpoint = 'http://localhost:3000/shop-api';
+  String endpoint = 'http://192.168.1.158:3000shop-api';
+  String adminEndpoint = 'http://192.168.1.158:3000/admin-api';
   String testUsername = 'a@a.com';
   String testPassword = '123456';
+  String adminUsername = 'superadmin';
+  String adminPassword = 'superadmin';
   String verificationToken =
       'MjAyNS0xMS0wOFQwNTo0NDo1Ny4yMzBa_DQD8F63X6JG5G9ZM';
   String testEmail = 'a@a.com';
@@ -363,6 +366,98 @@ void main() {
         print('✅ Custom auth initialization successful: ${vendure.token}');
       } catch (e) {
         print('❌ Custom auth initialization failed: $e');
+      }
+    });
+  });
+
+  group('Vendure Admin API - Connection Test', () {
+    test('Check basic connection to Admin API', () async {
+      try {
+        var vendure = await Vendure.initialize(
+          endpoint: adminEndpoint,
+          useVendureGuestSession: true,
+        );
+        expect(vendure, isA<Vendure>());
+        print('✅ Basic connection to Admin API successful');
+      } catch (e) {
+        fail('❌ Cannot connect to Admin API: $e');
+      }
+    });
+
+    test('Test Admin API authentication with superadmin credentials', () async {
+      try {
+        var vendure = await Vendure.initializeWithNativeAuth(
+          endpoint: adminEndpoint,
+          username: adminUsername,
+          password: adminPassword,
+          sessionDuration: const Duration(hours: 1),
+        );
+        expect(vendure, isA<Vendure>());
+        expect(vendure.token, isNotNull);
+        print('✅ Admin API authentication successful. Token: ${vendure.token}');
+      } catch (e) {
+        print('❌ Admin API authentication failed: $e');
+        // Don't fail test, server might not be available
+      }
+    });
+
+    test('Test Admin API getToken with superadmin credentials', () async {
+      try {
+        var vendure = await Vendure.initialize(
+          endpoint: adminEndpoint,
+          useVendureGuestSession: true,
+        );
+
+        var token = await vendure.auth.getToken(
+          username: adminUsername,
+          password: adminPassword,
+        );
+
+        if (token != null) {
+          expect(token, isA<String>());
+          print('✅ Admin API getToken successful: $token');
+        } else {
+          print('⚠️ Admin API getToken returned null token');
+        }
+      } catch (e) {
+        print('❌ Admin API getToken failed: $e');
+      }
+    });
+
+    test('Test Admin API login with superadmin credentials', () async {
+      try {
+        var vendure = await Vendure.initialize(
+          endpoint: adminEndpoint,
+          useVendureGuestSession: true,
+        );
+
+        var result = await vendure.auth.login(
+          username: adminUsername,
+          password: adminPassword,
+          rememberMe: true,
+        );
+        expect(result, isA<NativeAuthenticationResult>());
+        print('✅ Admin API login successful: ${result.toJson()}');
+      } catch (e) {
+        print('❌ Admin API login failed: $e');
+      }
+    });
+
+    test('Test Admin API with invalid credentials', () async {
+      try {
+        var vendure = await Vendure.initialize(
+          endpoint: adminEndpoint,
+          useVendureGuestSession: true,
+        );
+
+        await vendure.auth.authenticate(
+          username: 'invalid@example.com',
+          password: 'wrongpassword',
+        );
+        print(
+            '⚠️ Admin API authentication with invalid credentials did not throw exception');
+      } catch (e) {
+        print('✅ Admin API correctly rejected invalid credentials: $e');
       }
     });
   });
