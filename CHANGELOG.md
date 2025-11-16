@@ -1,3 +1,9 @@
+## 2.7.0
+- **BREAKING CHANGE**: Removed default 10-second timeout for GraphQL queries
+- **Immediate Failure Detection**: Connection failures now fail immediately instead of waiting for timeout
+- **Optional Timeout**: The `timeout` parameter is now truly optional - only applies if explicitly set
+- **Improved User Experience**: Apps can now detect unreachable backends instantly and proceed with fallback behavior
+
 ## 2.5.0
 - **Robust Enum Normalization**: Refactored normalization to use dynamic schema introspection for all enum fields and values. Now supports automatic camelCase conversion for all enums, regardless of field name.
 - **Field-to-Enum Mapping**: Added automatic mapping of GraphQL fields to their enum types using introspection, ensuring all enum fields are normalized.
