@@ -420,7 +420,7 @@ class Vendure {
               cacheReread: CacheRereadPolicy.ignoreAll,
             ),
           ),
-      queryRequestTimeout: _timeout ?? const Duration(seconds: 10),
+      queryRequestTimeout: _timeout,
     );
   }
 
