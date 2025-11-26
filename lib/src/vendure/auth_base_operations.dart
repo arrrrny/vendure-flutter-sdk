@@ -11,9 +11,12 @@ class AuthBaseOperations {
       T Function(Map<String, dynamic>) fromJson,
       {String? expectedDataType}) async {
     try {
+      // Normalize variables for mutation (convert enums to CAPITAL_SNAKE_CASE)
+      final normalizedVariables = VendureUtils.normalizeMutationData(variables);
+
       final options = MutationOptions(
         document: gql(mutation),
-        variables: variables,
+        variables: normalizedVariables,
       );
       final result = await _client.mutate(options);
 
@@ -105,14 +108,19 @@ class AuthBaseOperations {
   }
 
   Future<Map<String, dynamic>?> extractResponseHeaders(
-      OperationType operationType,
-      String operation,
-      Map<String, dynamic> variables,
-      List<String> headers) async {
+    OperationType operationType,
+    String operation,
+    Map<String, dynamic> variables,
+    List<String> headers, {
+    bool convertEnums = true,
+  }) async {
     try {
       if (operationType == OperationType.mutation) {
-        final response = await _client.mutate(
-            MutationOptions(document: gql(operation), variables: variables));
+        final normalizedVariables = VendureUtils.normalizeMutationData(
+            variables,
+            convertEnums: convertEnums);
+        final response = await _client.mutate(MutationOptions(
+            document: gql(operation), variables: normalizedVariables));
         return _extractHeadersFromResponse(response, headers);
       } else if (operationType == OperationType.query) {
         final response = await _client.query(

@@ -13,6 +13,7 @@ import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
 import 'src/vendure/vendure_utils.dart';
+export 'src/vendure/vendure_utils.dart';
 
 export '../src/types/exports.dart'; // Add this line
 

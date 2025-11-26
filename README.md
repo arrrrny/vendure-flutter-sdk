@@ -13,6 +13,8 @@ A Flutter SDK for interacting with the Vendure e-commerce framework's GraphQL AP
 - Manage customers
 - Access catalog and system information
 - Extendable to support custom GraphQL operations
+- Global enum conversion toggles: `VendureUtils.convertQueryEnums` and `VendureUtils.convertMutationEnums` (both default to `true`). Use `VendureUtils.setConvertEnums({bool? queryEnums, bool? mutationEnums})` to change them globally.
+- Convenience re-export: The utilities are available via a short import (`package:vendure/vendure_utils.dart`) and are also exported from `package:vendure/vendure.dart` for easy access to `VendureUtils`.
 
 ## Installation
 
@@ -20,8 +22,20 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  vendure: ^1.2.3
- ```
+  vendure: ^2.8.0
+```
+
+Note: Starting with v2.8.0 the SDK exposes global flags to control enum conversion:
+- Toggle query/response enum normalization with `VendureUtils.setConvertEnums(queryEnums: true|false)`.
+- Toggle mutation input enum normalization with `VendureUtils.setConvertEnums(mutationEnums: true|false)`.
+
+You can import the helper utilities using the short path:
+
+```dart
+import 'package:vendure/vendure_utils.dart';
+// or import the main library:
+import 'package:vendure/vendure.dart';
+```
 
 ## Usage
 

@@ -1,3 +1,13 @@
+## 2.8.0
+- Added global enum conversion toggles: `VendureUtils.convertQueryEnums` and `VendureUtils.convertMutationEnums` (both default to `true`).
+- Added `VendureUtils.setConvertEnums({bool? queryEnums, bool? mutationEnums})` helper to change conversion flags globally.
+- `normalizeGraphQLData` and `normalizeMutationData` now respect global flags and also accept a per-call `convertEnums` override.
+- Fixed mutation normalization to only convert actual enum fields using schema introspection (no heuristic conversions).
+- Added per-call `convertEnums` parameter to `CustomOperations` mutation methods for fine-grained control.
+- Exported `VendureUtils` from the package entrypoint so the global flags and helper are accessible to package consumers.
+- Bumped package version to `2.8.0` in `pubspec.yaml`.
+- Internal: improved safety around enum conversions and added tests for enum normalization behavior.
+
 ## 2.7.0
 - **BREAKING CHANGE**: Removed default 10-second timeout for GraphQL queries
 - **Immediate Failure Detection**: Connection failures now fail immediately instead of waiting for timeout
@@ -143,7 +153,7 @@
 ## 0.6.6
 - Updated README
 ## 0.6.3
-- Added `setOrderBillingAddress` method
+- Added `setOrderShippingAddress` method
 - Added `getActiveOrder` method
 - Added `addPaymentToOrder` method
 - Added `getOrderByCode` method

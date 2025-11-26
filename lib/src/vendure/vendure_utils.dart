@@ -4,6 +4,20 @@ class VendureUtils {
   static Map<String, List<String>> _enumTypeValues = {};
   static Map<String, String> _fieldToEnumType = {};
 
+  // Global toggles for enum conversion.
+  // - convertQueryEnums controls enum conversion when normalizing query/response data.
+  // - convertMutationEnums controls enum conversion when normalizing mutation input data.
+  // These can be toggled globally via `setConvertEnums(...)`.
+  static bool convertQueryEnums = true;
+  static bool convertMutationEnums = true;
+
+  /// Short helper to toggle global conversion flags.
+  /// Pass null for any parameter to leave it unchanged.
+  static void setConvertEnums({bool? queryEnums, bool? mutationEnums}) {
+    if (queryEnums != null) convertQueryEnums = queryEnums;
+    if (mutationEnums != null) convertMutationEnums = mutationEnums;
+  }
+
   /// Call this once after Vendure initialization to populate enum type names and field mapping.
   static Future<void> loadEnumTypeNames(
       Future<List<Map<String, dynamic>>> Function() detectEnums,
@@ -32,7 +46,11 @@ class VendureUtils {
     }
   }
 
-  static dynamic normalizeGraphQLData(dynamic data, {String? parentKey}) {
+  static dynamic normalizeGraphQLData(dynamic data,
+      {String? parentKey, bool? convertEnums}) {
+    // Use provided flag or fall back to global convertQueryEnums
+    convertEnums = convertEnums ?? convertQueryEnums;
+
     if (data is Map<String, dynamic>) {
       final normalizedData = <String, dynamic>{};
       for (final entry in data.entries) {
@@ -44,7 +62,9 @@ class VendureUtils {
           continue;
         }
         final enumType = _fieldToEnumType[key];
-        if (enumType != null && _enumTypeValues.containsKey(enumType)) {
+        if (convertEnums &&
+            enumType != null &&
+            _enumTypeValues.containsKey(enumType)) {
           if (value is List) {
             normalizedData[key] = value
                 .map((item) =>
@@ -59,22 +79,104 @@ class VendureUtils {
             continue;
           }
         }
-        normalizedData[key] = normalizeGraphQLData(value, parentKey: key);
+        normalizedData[key] = normalizeGraphQLData(value,
+            parentKey: key, convertEnums: convertEnums);
       }
       return normalizedData;
     }
     if (data is List) {
       final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
-      if (enumType != null && _enumTypeValues.containsKey(enumType)) {
+      if (convertEnums &&
+          enumType != null &&
+          _enumTypeValues.containsKey(enumType)) {
         return data
             .map((item) => _enumTypeValues[enumType]!.contains(item.toString())
                 ? _convertEnumToDartFormat(item.toString())
                 : item)
             .toList();
       }
-      return data.map((item) => normalizeGraphQLData(item)).toList();
+      return data
+          .map((item) => normalizeGraphQLData(item, convertEnums: convertEnums))
+          .toList();
     }
     return data;
+  }
+
+  /// Normalizes mutation data by converting Dart enum formats to GraphQL format (CAPITAL_SNAKE_CASE).
+  /// Uses the same field-to-enum mapping loaded by loadEnumTypeNames() to safely identify enum fields.
+  /// Pass `convertEnums: false` to disable enum conversion (useful when you have mixed data).
+  static dynamic normalizeMutationData(dynamic data,
+      {String? parentKey, bool? convertEnums}) {
+    // Use provided flag or fall back to global convertMutationEnums
+    convertEnums = convertEnums ?? convertMutationEnums;
+    if (data is Map<String, dynamic>) {
+      final normalizedData = <String, dynamic>{};
+      for (final entry in data.entries) {
+        final key = entry.key;
+        final value = entry.value;
+        // Check if this field is mapped to an enum type and conversion is enabled
+        final enumType = _fieldToEnumType[key];
+        if (convertEnums &&
+            enumType != null &&
+            _enumTypeValues.containsKey(enumType)) {
+          if (value is List) {
+            // Handle list of enum values
+            normalizedData[key] = value
+                .map((item) =>
+                    item is String ? _convertEnumToGraphQLFormat(item) : item)
+                .toList();
+            continue;
+          } else if (value is String) {
+            // Handle single enum value
+            normalizedData[key] = _convertEnumToGraphQLFormat(value);
+            continue;
+          }
+        }
+        normalizedData[key] = normalizeMutationData(value,
+            parentKey: key, convertEnums: convertEnums);
+      }
+      return normalizedData;
+    }
+    if (data is List) {
+      final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
+      if (convertEnums &&
+          enumType != null &&
+          _enumTypeValues.containsKey(enumType)) {
+        return data
+            .map((item) =>
+                item is String ? _convertEnumToGraphQLFormat(item) : item)
+            .toList();
+      }
+      return data
+          .map(
+              (item) => normalizeMutationData(item, convertEnums: convertEnums))
+          .toList();
+    }
+    return data;
+  }
+
+  /// Converts a Dart enum format (camelCase) to GraphQL format (CAPITAL_SNAKE_CASE).
+  static String _convertEnumToGraphQLFormat(String enumValue) {
+    // Handle special case: try_ becomes TRY
+    if (enumValue == 'try_') {
+      return 'TRY';
+    }
+
+    // If it's already in SCREAMING_SNAKE_CASE, return as-is
+    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase()) {
+      return enumValue;
+    }
+
+    // Convert camelCase to SCREAMING_SNAKE_CASE
+    // Insert underscore before uppercase letters, then convert to uppercase
+    final snakeCase = enumValue
+        .replaceAllMapped(
+          RegExp(r'([a-z0-9])([A-Z])'),
+          (match) => '${match.group(1)}_${match.group(2)}',
+        )
+        .toUpperCase();
+
+    return snakeCase;
   }
 
   // Introspection logic moved to VendureSchemaUtils.

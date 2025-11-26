@@ -53,6 +53,7 @@ class AuthOperations {
       authenticateMutation,
       {'username': username, 'password': password},
       [tokenName],
+      convertEnums: false,
     );
     return headersResponse?[tokenName];
   }
@@ -68,6 +69,7 @@ class AuthOperations {
       firebaseAuthMutation,
       {'uid': uid, 'jwt': jwt},
       [tokenName],
+      convertEnums: false,
     );
     return headersResponse?[tokenName];
   }

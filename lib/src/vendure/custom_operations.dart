@@ -19,14 +19,23 @@ class CustomOperations {
     String operation,
     Map<String, dynamic> variables,
     bool isMutation,
-    String? expectedDataType,
-  ) async {
+    String? expectedDataType, {
+    bool convertEnums = true,
+  }) async {
     final processedOperation = _prepareOperation(operation);
     final client = await _client();
+
+    // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE) if enabled
+    final normalizedVariables = isMutation
+        ? VendureUtils.normalizeMutationData(variables,
+            convertEnums: convertEnums)
+        : variables;
+
     final options = isMutation
         ? MutationOptions(
-            document: gql(processedOperation), variables: variables)
-        : QueryOptions(document: gql(processedOperation), variables: variables);
+            document: gql(processedOperation), variables: normalizedVariables)
+        : QueryOptions(
+            document: gql(processedOperation), variables: normalizedVariables);
 
     final result = isMutation
         ? await client.mutate(options as MutationOptions)
@@ -94,9 +103,11 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
+    bool convertEnums = true,
   }) async {
     var data = await _executeGraphQLOperation(
-        mutation, variables, true, expectedDataType);
+        mutation, variables, true, expectedDataType,
+        convertEnums: convertEnums);
 
     if (data == null) {
       throw Exception('No data returned from mutate');
@@ -162,9 +173,11 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
+    bool convertEnums = true,
   }) async {
     var data = await _executeGraphQLOperation(
-        mutation, variables, true, expectedDataType);
+        mutation, variables, true, expectedDataType,
+        convertEnums: convertEnums);
 
     if (data == null) {
       throw Exception('No data returned from mutateList');
@@ -186,10 +199,12 @@ class CustomOperations {
     OperationType operationType,
     String operation,
     Map<String, dynamic> variables,
-    List<String> headers,
-  ) async {
+    List<String> headers, {
+    bool convertEnums = true,
+  }) async {
     final result = await _executeGraphQLOperation(
-        operation, variables, operationType == OperationType.mutation, null);
+        operation, variables, operationType == OperationType.mutation, null,
+        convertEnums: convertEnums);
     return _extractHeadersFromResponse(result, headers);
   }
 }
