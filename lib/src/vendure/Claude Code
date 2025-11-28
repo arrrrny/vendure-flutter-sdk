@@ -1,0 +1,2086 @@
+## User (checkpoint)
+
+2 things are missing with the receng convertenumbs change read changelog
+I am sending the input as this:
+      {
+        'input': {
+          'countryCode': countryCode,
+          'website': searchPattern.website,
+          'pageType': searchPattern.pageType.name,
+          'urlPattern': searchPattern.urlPattern,
+          'patternType': searchPattern.patternType.name,
+          'spaceEncoding': searchPattern.spaceEncoding.name,
+          'parameterMappings': searchPattern.parameterMappings,
+          'relevanceScore': searchPattern.relevanceScore,
+          // 'successRate': searchPattern.successRate, // TODO: Add to backend schema
+          // 'usageCount': searchPattern.usageCount, // TODO: Add to backend schema
+          'maxQueryLength': searchPattern.maxQueryLength,
+          'isTemplate': searchPattern.isTemplate,
+          'isParsedOnClient': searchPattern.isParsedOnClient,
+          'generateDoubleQuery': searchPattern.generateDoubleQuery,
+          // 'productTypeId': searchPattern.productTypeId,
+          // // 'productType': searchPattern.productType, // TODO: Add to backend schema
+          'queryFormat': searchPattern.queryFormat,
+          'additionalParams': searchPattern.additionalParams,
+          'metadata': searchPattern.metadata,
+          'skuRegex': searchPattern.skuRegex,
+          'slugRegex': searchPattern.slugRegex,
+          'filterParameters': searchPattern.filterParameters
+              ?.map((key, value) => MapEntry(key, value.toJson())),
+          'combinedFilterParameters': searchPattern.combinedFilterParameters
+              ?.map((key, value) => MapEntry(key, value.toJson())),
+          // 'departments': searchPattern.departments, // TODO: Add to backend schema
+        },
+      },
+      expectedDataType: 'createSearchPattern',
+      convertEnums: true,
+    );
+    
+    and it does not convert the input enum. 
+    
+    second issue is queryList and query is missing convertEnums
+
+## Assistant
+
+I'll read the changelog to understand the recent enum conversion changes, then investigate the two issues you've mentioned.
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/CHANGELOG.md**
+Status: Completed
+
+```
+## 2.8.0
+- Added global enum conversion toggles: `VendureUtils.convertQueryEnums` and `VendureUtils.convertMutationEnums` (both default to `true`).
+- Added `VendureUtils.setConvertEnums({bool? queryEnums, bool? mutationEnums})` helper to change conversion flags globally.
+- `normalizeGraphQLData` and `normalizeMutationData` now respect global flags and also accept a per-call `convertEnums` override.
+- Fixed mutation normalization to only convert actual enum fields using schema introspection (no heuristic conversions).
+- Added per-call `convertEnums` parameter to `CustomOperations` mutation methods for fine-grained control.
+- Exported `VendureUtils` from the package entrypoint so the global flags and helper are accessible to package consumers.
+- Bumped package version to `2.8.0` in `pubspec.yaml`.
+- Internal: improved safety around enum conversions and added tests for enum normalization behavior.
+
+## 2.7.0
+- **BREAKING CHANGE**: Removed default 10-second timeout for GraphQL queries
+- **Immediate Failure Detection**: Connection failures now fail immediately instead of waiting for timeout
+- **Optional Timeout**: The `timeout` parameter is now truly optional - only applies if explicitly set
+- **Improved User Experience**: Apps can now detect unreachable backends instantly and proceed with fallback behavior
+
+## 2.5.0
+- **Robust Enum Normalization**: Refactored normalization to use dynamic schema introspection for all enum fields and values. Now supports automatic camelCase conversion for all enums, regardless of field name.
+- **Field-to-Enum Mapping**: Added automatic mapping of GraphQL fields to their enum types using introspection, ensuring all enum fields are normalized.
+- **SDK Cleanup**: Removed all debug prints, centralized normalization logic, and improved recursion for speed and maintainability.
+- **DRY & Fast**: Refactored normalization to avoid duplicate logic and unnecessary recursion, making it production-grade and easy to extend.
+- **No Breaking Changes**: All existing APIs remain compatible, but normalization is now more reliable and future-proof.
+
+## 2.4.0
+- **Enhanced Language Code Support**: Improved dynamic language code handling with proper URI parsing instead of string concatenation.
+- **Dynamic Channel Token Management**: Added `setChannelToken()` and `getChannelToken()` methods for runtime channel switching.
+- **Better URI Handling**: Fixed URI construction to properly handle existing query parameters and language codes in endpoints.
+- **New Static Methods**: Added `setLanguageCode()`, `getLanguageCode()`, `setChannelToken()`, and `getChannelToken()` for dynamic configuration.
+- **Preserved Original Endpoints**: When no language code is set, the original endpoint URL is preserved as-is without modification.
+- **Multi-tenant Support**: Enhanced support for multi-channel applications with dynamic channel token switching.
+
+## 2.3.0
+- Updated `graphql` package to latest compatible version.
+- Fixed async/generic bug in `mutate` for bool and map return types.
+- Improved type safety and error handling for all custom operations.
+- All previous bugfixes and enum normalization improvements included.
+
+## 2.2.0
+- Improved error handling for all Vendure error types (e.g. InvalidCredentialsError, ErrorResult, etc.) so authentication failures always throw a standardized, testable message.
+- Defensive null checks for error messages to prevent type errors.
+- Enum normalization restored: all enum values for keys in `_vendureTypeEnums` are now converted to Dart/camelCase style recursively.
+- Type safety enforced for all map responses.
+- Internal logging and debug improvements for error diagnosis.
+- See `normalizeGraphQLData` and authentication methods for details.
+
+## 2.1.1
+- Added refresh token via Vendure instance: `Vendure.instance.refreshToken(params)` now available for direct use.
+- Makes token refresh accessible from the singleton instance for all auth flows.
+
+## 2.1.0
+- Added refresh token support via `TokenManager` and `Vendure.refreshToken`.
+- You can now refresh authentication tokens dynamically for long-lived sessions or custom auth flows.
+- See `Vendure.refreshToken` and `TokenManager` for usage.
+
+## 2.0.0
+### ⚠️ Breaking Change
+- `CustomOperations` API: The `fromJson` parameter is now optional for `mutate`, `query`, `queryList`, and `mutateList` methods.
+- If `fromJson` is not provided, the raw normalized data is returned (cast to the expected type).
+- This change breaks previous usage where `fromJson` was required.
+- Update your code to handle the new method signatures and return types.
+
+## 1.8.0
+- Added static `setAuthToken` method to update the authentication token on the initialized Vendure instance.
+
+## 1.7.2
+- added `timeout` option to Vendure initialization methods
+- increased default GraphQL client timeout to 10 seconds (was 5 seconds)
+
+## 1.7.1
+- fixed enum value conversion in _convertEnumToDartFormat method
+- improved handling of camelCase enum values (e.g., 'staticVal' now correctly preserved instead of being converted to 'staticval')
+- method now properly handles both SCREAMING_SNAKE_CASE and camelCase enum formats
+
+## 1.7.0
+- fixed native authentication implementation
+- improved GraphQL client configuration with better caching policies
+- added default headers for HTTP requests
+- enhanced guest session handling
+- fixed typo in available countries query filename
+- added comprehensive test suites for user journeys
+
+## 1.6.0
+- added support for vendure-token header to pass the channel
+- added languageCode support for translations
+
+## 1.5.0
+- added mutateList for mutations that return a List
+
+## 1.4.0
+- refactored custom operations code
+
+## 1.3.0
+- changed fromJson data type to dynamic
+
+## 1.2.6
+- fixed customfields config not passing to order and system operations
+
+## 1.2.5
+- fixed internal type import
+
+## 1.2.4
+- fixed ActiveCustomer error on active order removeAllItems
+
+## 1.2.3
+- fixed Customer customFields parsing issue
+
+## 1.2.2
+- fixed Turkish Lira TRY conversion issue
+
+## 1.2.1
+- Removed CollectionWithParentChildren entity
+
+## 1.2.0
+- Added `getCollectionsWithParentChildren` method
+- Added `getCollectionWithChildren` method
+- Added `getCollectionWithParent` method
+- Added `getCollectionWithParentChildren` method
+- Updated FacetValue to includ Facet
+
+## 1.1.0
+- Added support for customfields. define customfieldsConfig on initialize
+
+## 1.0.1
+- Updated productId and productVariantId int types to String
+
+## 0.9.1
+- Renamed type to CollectionWithParentChildren for simplicity
+
+## 0.9.0
+- Added `getCollectionsWithParentChildren` method
+
+## 0.8.5
+- fixed the bug options not passing on getCollections
+
+## 0.8.4
+- changed getCollectionById tpe to String from int
+
+## 0.8.3
+- changed getOrderByCode return type to Order
+
+## 0.8.2
+- updated http dependency
+
+## 0.8.1
+- Added setOrderShippingMethod example
+
+## 0.8.0
+- Strong types are implemented for all methods
+
+## 0.7.0
+- All shop-api methods are implemented
+
+## 0.6.6
+- Updated README
+## 0.6.3
+- Added `setOrderShippingAddress` method
+- Added `getActiveOrder` method
+- Added `addPaymentToOrder` method
+- Added `getOrderByCode` method
+- Added `getPaymentMethods` method
+- Added `getShippingMethods` method
+- Added `setCustomerForOrder` method
+
+## 0.5.1
+- Added setOrderShippingAddress and updated README example
+
+## 0.5.0
+
+- Exported types
+
+## 0.4.2
+- Updated Readme explaining how to manage firebase token changes
+
+## 0.4.1
+
+- Update the instance credentials without reinitizialize
+
+## 0.4.0
+
+- Made it singleton with predefined initialization methods NativeAuth,FirebaseAuth,Token and Custom Auth
+
+## 0.3.1
+
+- fixed http dependency
+
+## 0.3.0
+
+- Added automated opinionated session refresh management
+
+## 0.2.0
+
+- Added extractResponseHeaders method to extract response headers.
+
+## 0.1.0
+
+- Initial version.
+```
+
+**Tool Call: grep "convertEnums"**
+Status: Completed
+
+Found 5 files limit: 100, offset: 0
+lib/src/vendure/custom_operations.dart
+lib/src/vendure/vendure_utils.dart
+lib/src/vendure/auth_base_operations.dart
+CHANGELOG.md
+lib/src/vendure/auth_operations.dart
+
+## Assistant
+
+Now let me examine the custom operations file to see the current implementation:
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/custom_operations.dart**
+Status: Completed
+
+```
+import 'package:graphql/client.dart';
+import 'package:vendure/src/vendure/operation_type_enum.dart';
+import 'package:vendure/src/vendure/vendure_utils.dart';
+
+class CustomOperations {
+  final Future<GraphQLClient> Function() _client;
+  final Map<String, List<String>>? customFieldsConfig;
+
+  CustomOperations(this._client, {this.customFieldsConfig});
+
+  String _prepareOperation(String operation) {
+    if (customFieldsConfig != null) {
+      return VendureUtils.sanitizeGraphQLQuery(operation, customFieldsConfig!);
+    }
+    return operation;
+  }
+
+  Future<T> _executeGraphQLOperation<T>(
+    String operation,
+    Map<String, dynamic> variables,
+    bool isMutation,
+    String? expectedDataType, {
+    bool convertEnums = true,
+  }) async {
+    final processedOperation = _prepareOperation(operation);
+    final client = await _client();
+
+    // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE) if enabled
+    final normalizedVariables = isMutation
+        ? VendureUtils.normalizeMutationData(variables,
+            convertEnums: convertEnums)
+        : variables;
+
+    final options = isMutation
+        ? MutationOptions(
+            document: gql(processedOperation), variables: normalizedVariables)
+        : QueryOptions(
+            document: gql(processedOperation), variables: normalizedVariables);
+
+    final result = isMutation
+        ? await client.mutate(options as MutationOptions)
+        : await client.query(options as QueryOptions);
+
+    return _handleErrors(result, expectedDataType);
+  }
+
+  dynamic _handleErrors(QueryResult<Object?> result, String? expectedDataType) {
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+
+    dynamic data = result.data;
+    if (data == null) {
+      return null;
+    }
+
+    data = _extractExpectedData(data, expectedDataType);
+    if (data == null) {
+      return null;
+    }
+
+    if (data is Map && data['__typename'] == 'ErrorResult') {
+      throw Exception(data['message']);
+    }
+
+    return data;
+  }
+
+  dynamic _extractExpectedData(dynamic data, String? expectedDataType) {
+    if (expectedDataType == null || data == null) {
+      return data;
+    }
+
+    if (expectedDataType.contains('.')) {
+      var currentData = data;
+      final parts = expectedDataType.split('.');
+      for (var part in parts) {
+        currentData = currentData[part];
+        if (currentData == null) {
+          return null;
+        }
+      }
+      return currentData;
+    }
+
+    return data[expectedDataType];
+  }
+
+  Map<String, dynamic> _extractHeadersFromResponse(
+      QueryResult<Object?> response, List<String> headers) {
+    final context = response.context.entry<HttpLinkResponseContext>()?.headers;
+    Map<String, dynamic>? result = {};
+    context?.forEach((key, value) {
+      if (headers.contains(key)) {
+        result[key] = value;
+      }
+    });
+    return result;
+  }
+
+  Future<T> mutate<T>(
+    String mutation,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        mutation, variables, true, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from mutate');
+    }
+
+    if (data is Map<String, dynamic> || data is List) {
+      data = VendureUtils.normalizeGraphQLData(data);
+    }
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data;
+  }
+
+  Future<T> query<T>(
+    String query,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType);
+
+    if (data == null) {
+      throw Exception('No data returned from query');
+    }
+    if (data is Map<String, dynamic> || data is List) {
+      data = VendureUtils.normalizeGraphQLData(data);
+    }
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data;
+  }
+
+  Future<List<T>> queryList<T>(
+    String query,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType);
+
+    if (data == null) {
+      throw Exception('No data returned from queryList');
+    }
+
+    if (data is! List) {
+      throw Exception('Data must be a list in queryList');
+    }
+
+    if (fromJson != null) {
+      return data
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .toList();
+    }
+    return List<T>.from(data);
+  }
+
+  Future<List<T>> mutateList<T>(
+    String mutation,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        mutation, variables, true, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from mutateList');
+    }
+
+    if (data is! List) {
+      throw Exception('Data must be a list in mutateList');
+    }
+
+    if (fromJson != null) {
+      return data
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .toList();
+    }
+    return List<T>.from(data);
+  }
+
+  Future<Map<String, dynamic>> extractResponseHeaders(
+    OperationType operationType,
+    String operation,
+    Map<String, dynamic> variables,
+    List<String> headers, {
+    bool convertEnums = true,
+  }) async {
+    final result = await _executeGraphQLOperation(
+        operation, variables, operationType == OperationType.mutation, null,
+        convertEnums: convertEnums);
+    return _extractHeadersFromResponse(result, headers);
+  }
+}
+```
+
+## Assistant
+
+Now let me check the VendureUtils to understand how normalizeMutationData works:
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart**
+Status: Completed
+
+```
+class VendureUtils {
+  // Dynamic enum type names, values, and field-to-enumType mapping
+  static List<String> _vendureTypeEnums = [];
+  static Map<String, List<String>> _enumTypeValues = {};
+  static Map<String, String> _fieldToEnumType = {};
+
+  // Global toggles for enum conversion.
+  // - convertQueryEnums controls enum conversion when normalizing query/response data.
+  // - convertMutationEnums controls enum conversion when normalizing mutation input data.
+  // These can be toggled globally via `setConvertEnums(...)`.
+  static bool convertQueryEnums = true;
+  static bool convertMutationEnums = true;
+
+  /// Short helper to toggle global conversion flags.
+  /// Pass null for any parameter to leave it unchanged.
+  static void setConvertEnums({bool? queryEnums, bool? mutationEnums}) {
+    if (queryEnums != null) convertQueryEnums = queryEnums;
+    if (mutationEnums != null) convertMutationEnums = mutationEnums;
+  }
+
+  /// Call this once after Vendure initialization to populate enum type names and field mapping.
+  static Future<void> loadEnumTypeNames(
+      Future<List<Map<String, dynamic>>> Function() detectEnums,
+      {Future<List<Map<String, dynamic>>> Function()? detectFields}) async {
+    final enums = await detectEnums();
+    _vendureTypeEnums = enums.map((e) => e['name'] as String).toList();
+    _enumTypeValues = {
+      for (var e in enums)
+        if (e['name'] != null && e['values'] != null)
+          e['name'] as String: List<String>.from(
+            (e['values'] as List).map((v) => v['name'] as String),
+          )
+    };
+
+    // Step 2: Detect field-to-enumType map if provided
+    if (detectFields != null) {
+      final fields = await detectFields();
+      // fields: [{typeName, fieldName, fieldType}]
+      _fieldToEnumType = {};
+      for (var f in fields) {
+        final fieldType = f['fieldType'] as String?;
+        if (fieldType != null && _vendureTypeEnums.contains(fieldType)) {
+          _fieldToEnumType[f['fieldName'] as String] = fieldType;
+        }
+      }
+    }
+  }
+
+  static dynamic normalizeGraphQLData(dynamic data,
+      {String? parentKey, bool? convertEnums}) {
+    // Use provided flag or fall back to global convertQueryEnums
+    convertEnums = convertEnums ?? convertQueryEnums;
+
+    if (data is Map<String, dynamic>) {
+      final normalizedData = <String, dynamic>{};
+      for (final entry in data.entries) {
+        final key = entry.key;
+        final value = entry.value;
+        if (key == '__typename') {
+          normalizedData['runtimeType'] =
+              value.toString()[0].toLowerCase() + value.toString().substring(1);
+          continue;
+        }
+        final enumType = _fieldToEnumType[key];
+        if (convertEnums &&
+            enumType != null &&
+            _enumTypeValues.containsKey(enumType)) {
+          if (value is List) {
+            normalizedData[key] = value
+                .map((item) =>
+                    _enumTypeValues[enumType]!.contains(item.toString())
+                        ? _convertEnumToDartFormat(item.toString())
+                        : item)
+                .toList();
+            continue;
+          } else if (value != null &&
+              _enumTypeValues[enumType]!.contains(value.toString())) {
+            normalizedData[key] = _convertEnumToDartFormat(value.toString());
+            continue;
+          }
+        }
+        normalizedData[key] = normalizeGraphQLData(value,
+            parentKey: key, convertEnums: convertEnums);
+      }
+      return normalizedData;
+    }
+    if (data is List) {
+      final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
+      if (convertEnums &&
+          enumType != null &&
+          _enumTypeValues.containsKey(enumType)) {
+        return data
+            .map((item) => _enumTypeValues[enumType]!.contains(item.toString())
+                ? _convertEnumToDartFormat(item.toString())
+                : item)
+            .toList();
+      }
+      return data
+          .map((item) => normalizeGraphQLData(item, convertEnums: convertEnums))
+          .toList();
+    }
+    return data;
+  }
+
+  /// Normalizes mutation data by converting Dart enum formats to GraphQL format (CAPITAL_SNAKE_CASE).
+  /// Uses the same field-to-enum mapping loaded by loadEnumTypeNames() to safely identify enum fields.
+  /// Pass `convertEnums: false` to disable enum conversion (useful when you have mixed data).
+  static dynamic normalizeMutationData(dynamic data,
+      {String? parentKey, bool? convertEnums}) {
+    // Use provided flag or fall back to global convertMutationEnums
+    convertEnums = convertEnums ?? convertMutationEnums;
+    if (data is Map<String, dynamic>) {
+      final normalizedData = <String, dynamic>{};
+      for (final entry in data.entries) {
+        final key = entry.key;
+        final value = entry.value;
+        // Check if this field is mapped to an enum type and conversion is enabled
+        final enumType = _fieldToEnumType[key];
+        if (convertEnums &&
+            enumType != null &&
+            _enumTypeValues.containsKey(enumType)) {
+          if (value is List) {
+            // Handle list of enum values
+            normalizedData[key] = value
+                .map((item) =>
+                    item is String ? _convertEnumToGraphQLFormat(item) : item)
+                .toList();
+            continue;
+          } else if (value is String) {
+            // Handle single enum value
+            normalizedData[key] = _convertEnumToGraphQLFormat(value);
+            continue;
+          }
+        }
+        normalizedData[key] = normalizeMutationData(value,
+            parentKey: key, convertEnums: convertEnums);
+      }
+      return normalizedData;
+    }
+    if (data is List) {
+      final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
+      if (convertEnums &&
+          enumType != null &&
+          _enumTypeValues.containsKey(enumType)) {
+        return data
+            .map((item) =>
+                item is String ? _convertEnumToGraphQLFormat(item) : item)
+            .toList();
+      }
+      return data
+          .map(
+              (item) => normalizeMutationData(item, convertEnums: convertEnums))
+          .toList();
+    }
+    return data;
+  }
+
+  /// Converts a Dart enum format (camelCase) to GraphQL format (CAPITAL_SNAKE_CASE).
+  static String _convertEnumToGraphQLFormat(String enumValue) {
+    // Handle special case: try_ becomes TRY
+    if (enumValue == 'try_') {
+      return 'TRY';
+    }
+
+    // If it's already in SCREAMING_SNAKE_CASE, return as-is
+    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase()) {
+      return enumValue;
+    }
+
+    // Convert camelCase to SCREAMING_SNAKE_CASE
+    // Insert underscore before uppercase letters, then convert to uppercase
+    final snakeCase = enumValue
+        .replaceAllMapped(
+          RegExp(r'([a-z0-9])([A-Z])'),
+          (match) => '${match.group(1)}_${match.group(2)}',
+        )
+        .toUpperCase();
+
+    return snakeCase;
+  }
+
+  // Introspection logic moved to VendureSchemaUtils.
+
+  static String _convertEnumToDartFormat(String enumValue) {
+    if (enumValue == 'TRY') {
+      return 'try_';
+    }
+
+    // If the enum value contains underscores, it's in SCREAMING_SNAKE_CASE
+    if (enumValue.contains('_')) {
+      // Convert to camelCase: all lower except first word, capitalize subsequent words
+      final parts = enumValue.toLowerCase().split('_');
+      final camelCase = parts.first +
+          parts
+              .skip(1)
+              .map((w) => w[0].toUpperCase() + w.substring(1))
+              .join('');
+      return camelCase;
+    } else {
+      // All uppercase or mixed, just lowercase everything
+      return enumValue.toLowerCase();
+    }
+  }
+
+  static T c<T>(
+      Map<String, dynamic> jsonMap, T Function(Map<String, dynamic>) fromJson) {
+    // Create a mutable copy of the JSON map
+    Map<String, dynamic> mutableJsonMap = _deepCopy(jsonMap);
+
+    // Populate missing fields recursively
+    mutableJsonMap = _populateFieldsRecursively(mutableJsonMap);
+
+    // Call the fromJson method with the modified JSON map
+    return fromJson(mutableJsonMap);
+  }
+
+// Helper method to recursively populate fields
+  static Map<String, dynamic> _populateFieldsRecursively(
+      Map<String, dynamic> jsonMap) {
+    jsonMap.forEach((key, value) {
+      if (value is Map<String, dynamic>) {
+        jsonMap[key] =
+            _populateFieldsRecursively(Map<String, dynamic>.from(value));
+      } else if (value is List) {
+        jsonMap[key] = value.map((item) {
+          if (item is Map<String, dynamic>) {
+            return _populateFieldsRecursively(Map<String, dynamic>.from(item));
+          }
+          // Handle primitives (bool, int, double, String, etc)
+          return item;
+        }).toList();
+      } else if (value == null) {
+        jsonMap[key] = _getDefaultValue(key);
+      } else {
+        // Handle primitives (bool, int, double, String, etc)
+        jsonMap[key] = value;
+      }
+    });
+
+    return jsonMap;
+  }
+
+// Helper method to create a deep copy of a map
+  static Map<String, dynamic> _deepCopy(Map<String, dynamic> original) {
+    Map<String, dynamic> copy = {};
+    original.forEach((key, value) {
+      if (value is Map<String, dynamic>) {
+        copy[key] = _deepCopy(value);
+      } else if (value is List) {
+        copy[key] = value
+            .map(
+                (item) => item is Map<String, dynamic> ? _deepCopy(item) : item)
+            .toList();
+      } else {
+        // Handle primitives (bool, int, double, String, etc)
+        copy[key] = value;
+      }
+    });
+    return copy;
+  }
+
+// Helper method to get default values for types
+  static dynamic _getDefaultValue(String key) {
+    // Default empty values for commonly used types
+    Map<String, dynamic> defaultValues = {
+      'String': '',
+      'bool': false,
+      'int': 0,
+      'double': 0.0,
+      'List': [],
+      'Map': {},
+      'DateTime': DateTime.now().toIso8601String(),
+      'Date': DateTime.now().toIso8601String(),
+      'date': DateTime.now().toIso8601String(),
+    };
+
+    // Determine the appropriate default value
+    if (key.contains('Date') || key.contains('date')) {
+      return defaultValues['DateTime'];
+    }
+    var defaultValue =
+        defaultValues['String']; // Default to String if type is unknown
+
+    return defaultValue;
+  }
+
+  List<String> getMissingFields(Map<String, dynamic> jsonMap) {
+    final result = <String>[];
+
+    void checkMap(Map<String, dynamic> map, String? parentPath) {
+      map.forEach((key, value) {
+        final fullPath = parentPath != null ? '$parentPath.$key' : key;
+        if (value == null) {
+          result.add(fullPath);
+        } else if (value is Map<String, dynamic>) {
+          checkMap(value, fullPath);
+        } else if (value is List<dynamic>) {
+          for (int i = 0; i < value.length; i++) {
+            final itemPath = '$fullPath[$i]';
+            if (value[i] is Map<String, dynamic>) {
+              checkMap(value[i] as Map<String, dynamic>, itemPath);
+            } else {
+              result.add(itemPath);
+            }
+          }
+        }
+      });
+    }
+
+    checkMap(jsonMap, null);
+    return result;
+  }
+
+  static String replaceCustomFieldsFragment(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    customFieldsConfig.forEach((typeName, customFields) {
+      String fragmentName = '${typeName.capitalize()}CustomFields';
+      String generatedFragment =
+          generateFragmentWithTypename(typeName, customFields);
+
+      // Replace the placeholder fragment in the query template
+      queryTemplate = queryTemplate.replaceAll(
+          'fragment $fragmentName on $typeName {\n  __typename\n}',
+          generatedFragment);
+    });
+
+    return queryTemplate;
+  }
+
+  static String generateFragmentWithTypename(
+      String typeName, List<String> customFields) {
+    StringBuffer fragmentBuffer = StringBuffer();
+
+    // Start the fragment and customFields block
+    fragmentBuffer.writeln(
+        'fragment ${typeName.capitalize()}CustomFields on ${typeName.capitalize()} {');
+    fragmentBuffer.writeln('  customFields {');
+    fragmentBuffer.writeln('    __typename');
+
+    // Add each custom field
+    for (var field in customFields) {
+      fragmentBuffer.writeln('    $field');
+    }
+
+    // Close the customFields block and the fragment
+    fragmentBuffer.writeln('  }');
+    fragmentBuffer.writeln('}');
+
+    return fragmentBuffer.toString();
+  }
+
+  static String generateQueryWithCustomFields(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    // Step 1: Remove fragment spreads and definitions for types not in the config
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isEmpty) {
+        // Remove fragment spreads like `...AddressCustomFields`
+        queryTemplate = queryTemplate.replaceAll(
+            RegExp(r'\.\.\.' + typeName.capitalize() + r'CustomFields\s*',
+                multiLine: true),
+            '');
+
+        // Remove the fragment definition like `fragment AddressCustomFields on Address {...}`
+        queryTemplate = queryTemplate.replaceAll(
+            RegExp(
+                r'fragment\s+' +
+                    typeName.capitalize() +
+                    r'CustomFields\s+on\s+' +
+                    typeName.capitalize() +
+                    r'\s*\{[^}]*\}',
+                multiLine: true),
+            '');
+      }
+    });
+
+    // Step 2: Replace or add fragments for types with custom fields
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isNotEmpty) {
+        String generatedFragment =
+            generateFragmentWithTypename(typeName, customFields);
+
+        // Replace the placeholder fragment with the generated fragment
+        queryTemplate = queryTemplate.replaceAllMapped(
+            RegExp(
+                r'fragment\s+' +
+                    typeName.capitalize() +
+                    r'CustomFields\s+on\s+' +
+                    typeName.capitalize() +
+                    r'\s*\{[^}]*\}',
+                multiLine: true),
+            (match) => generatedFragment);
+      }
+    });
+
+    // Step 3: Clean up extra newlines and whitespace
+    queryTemplate = queryTemplate
+        .replaceAll(RegExp(r'\n\s*\n', multiLine: true), '\n')
+        .trim();
+
+    return queryTemplate;
+  }
+
+  static String cleanUpCustomFields(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    // Step 1: Remove all fragment definitions and spreads by default
+    queryTemplate = queryTemplate.replaceAll(
+        RegExp(r'fragment\s+\w+CustomFields\s+on\s+\w+\s*\{[^}]*\}',
+            multiLine: true),
+        '');
+
+    queryTemplate = queryTemplate.replaceAll(
+        RegExp(r'\.\.\.\w+CustomFields\s*', multiLine: true), '');
+
+    // Step 2: Re-add only those custom field fragments and spreads that are defined in the config
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isNotEmpty) {
+        String generatedFragment =
+            generateFragmentWithTypename(typeName, customFields);
+
+        // Append the generated fragment to the end of the query
+        queryTemplate += '\n\n' + generatedFragment;
+
+        // Add the spread back into the query by matching the specific type
+        queryTemplate = queryTemplate.replaceAllMapped(
+            RegExp(r'(\b' + typeName + r'\b)(\s*\{)', multiLine: true),
+            (match) =>
+                match.group(1)! +
+                match.group(2)! +
+                '\n  ...' +
+                typeName.capitalize() +
+                'CustomFields');
+      }
+    });
+
+    // Step 3: Clean up any leftover blank lines or stray characters
+    queryTemplate = queryTemplate
+        .replaceAll(RegExp(r'\n\s*\n', multiLine: true), '\n')
+        .trim();
+
+    return queryTemplate;
+  }
+
+  static String sanitizeGraphQLQuery(
+      String query, Map<String, List<String>> customFieldsConfig) {
+    // Prepare a single regex to match all relevant fragments
+    final entityNames = customFieldsConfig.keys.join('|');
+    final regex = RegExp(
+        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\s*{([\s\S]*?)\n}',
+        multiLine: true);
+
+    // Use a StringBuffer for efficient string building
+    final buffer = StringBuffer();
+    var lastIndex = 0;
+
+    for (final match in regex.allMatches(query)) {
+      final fragmentName = match.group(1)!;
+      final entityName = match.group(2)!;
+      final fragmentContent = match.group(3)!;
+
+      buffer.write(query.substring(lastIndex, match.start));
+
+      if (customFieldsConfig[entityName]!.isNotEmpty &&
+          !fragmentContent.contains('customFields {')) {
+        final customFieldsFragment = '''
+  customFields {
+    ${customFieldsConfig[entityName]!.join('\n    ')}
+  }''';
+        buffer.write(
+            'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment\n}');
+      } else {
+        buffer.write(match.group(0));
+      }
+
+      lastIndex = match.end;
+    }
+
+    buffer.write(query.substring(lastIndex));
+    return buffer.toString();
+  }
+
+  static String sanitizeGraphQLQuery2(
+      String query, Map<String, List<String>> customFieldsConfig) {
+    customFieldsConfig.forEach((entity, fields) {
+      if (query.contains('fragment $entity')) {
+        final customFieldsFragment = StringBuffer('customFields {\n');
+        for (final field in fields) {
+          customFieldsFragment.writeln('  $field');
+        }
+        customFieldsFragment.writeln('}');
+
+        // Regex to find the end of the entity fragment and append the custom fields
+        final regex = RegExp(r'fragment\s+$entity\s+on\s+\w+\s+{([\s\S]*?)\n}');
+        query = query.replaceAllMapped(regex, (match) {
+          final fragmentContent = match.group(1);
+          return 'fragment $entity on ${match.group(0)}\n$fragmentContent${customFieldsFragment.toString()}\n}';
+        });
+      }
+    });
+
+    return query;
+  }
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return isNotEmpty ? '${this[0].toUpperCase()}${substring(1)}' : '';
+  }
+}
+```
+
+## Assistant
+
+I can see the two issues you mentioned:Now I understand the issues:
+
+1. **`query` and `queryList` methods are missing the `convertEnums` parameter** - The `mutate` and `mutateList` methods have it, but `query` and `queryList` don't.
+
+2. **The input enums are not being converted** - When you pass `{'input': {...}}` to a mutation, the `normalizeMutationData` function needs to recursively process the nested `input` object, but it's not detecting the enum fields inside it because it's looking at the `input` key itself (which is not an enum), not the fields inside the `input` object.
+
+Let me fix both issues:
+
+**Tool Call: Edit `/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/custom_operations.dart`**
+Status: Completed
+
+Diff: /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/custom_operations.dart
+```
+  Future<T> query<T>(
+    String query,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from query');
+    }
+    if (data is Map<String, dynamic> || data is List) {
+      data = VendureUtils.normalizeGraphQLData(data, convertEnums: convertEnums);
+    }
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data;
+  }
+```
+
+
+**Tool Call: Edit `/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/custom_operations.dart`**
+Status: Completed
+
+Diff: /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/custom_operations.dart
+```
+import 'package:graphql/client.dart';
+import 'package:vendure/src/vendure/operation_type_enum.dart';
+import 'package:vendure/src/vendure/vendure_utils.dart';
+
+class CustomOperations {
+  final Future<GraphQLClient> Function() _client;
+  final Map<String, List<String>>? customFieldsConfig;
+
+  CustomOperations(this._client, {this.customFieldsConfig});
+
+  String _prepareOperation(String operation) {
+    if (customFieldsConfig != null) {
+      return VendureUtils.sanitizeGraphQLQuery(operation, customFieldsConfig!);
+    }
+    return operation;
+  }
+
+  Future<T> _executeGraphQLOperation<T>(
+    String operation,
+    Map<String, dynamic> variables,
+    bool isMutation,
+    String? expectedDataType, {
+    bool convertEnums = true,
+  }) async {
+    final processedOperation = _prepareOperation(operation);
+    final client = await _client();
+
+    // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE) if enabled
+    final normalizedVariables = isMutation
+        ? VendureUtils.normalizeMutationData(variables,
+            convertEnums: convertEnums)
+        : variables;
+
+    final options = isMutation
+        ? MutationOptions(
+            document: gql(processedOperation), variables: normalizedVariables)
+        : QueryOptions(
+            document: gql(processedOperation), variables: normalizedVariables);
+
+    final result = isMutation
+        ? await client.mutate(options as MutationOptions)
+        : await client.query(options as QueryOptions);
+
+    return _handleErrors(result, expectedDataType);
+  }
+
+  dynamic _handleErrors(QueryResult<Object?> result, String? expectedDataType) {
+    if (result.hasException) {
+      throw Exception(result.exception.toString());
+    }
+
+    dynamic data = result.data;
+    if (data == null) {
+      return null;
+    }
+
+    data = _extractExpectedData(data, expectedDataType);
+    if (data == null) {
+      return null;
+    }
+
+    if (data is Map && data['__typename'] == 'ErrorResult') {
+      throw Exception(data['message']);
+    }
+
+    return data;
+  }
+
+  dynamic _extractExpectedData(dynamic data, String? expectedDataType) {
+    if (expectedDataType == null || data == null) {
+      return data;
+    }
+
+    if (expectedDataType.contains('.')) {
+      var currentData = data;
+      final parts = expectedDataType.split('.');
+      for (var part in parts) {
+        currentData = currentData[part];
+        if (currentData == null) {
+          return null;
+        }
+      }
+      return currentData;
+    }
+
+    return data[expectedDataType];
+  }
+
+  Map<String, dynamic> _extractHeadersFromResponse(
+      QueryResult<Object?> response, List<String> headers) {
+    final context = response.context.entry<HttpLinkResponseContext>()?.headers;
+    Map<String, dynamic>? result = {};
+    context?.forEach((key, value) {
+      if (headers.contains(key)) {
+        result[key] = value;
+      }
+    });
+    return result;
+  }
+
+  Future<T> mutate<T>(
+    String mutation,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        mutation, variables, true, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from mutate');
+    }
+
+    if (data is Map<String, dynamic> || data is List) {
+      data = VendureUtils.normalizeGraphQLData(data);
+    }
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data;
+  }
+
+  Future<T> query<T>(
+    String query,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from query');
+    }
+    if (data is Map<String, dynamic> || data is List) {
+      data = VendureUtils.normalizeGraphQLData(data, convertEnums: convertEnums);
+    }
+    if (fromJson != null) {
+      return fromJson(data);
+    }
+    return data;
+  }
+
+  Future<List<T>> queryList<T>(
+    String query,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        query, variables, false, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from queryList');
+    }
+
+    if (data is! List) {
+      throw Exception('Data must be a list in queryList');
+    }
+
+    if (fromJson != null) {
+      return data
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item, convertEnums: convertEnums)))
+          .toList();
+    }
+    return List<T>.from(data);
+  }
+
+  Future<List<T>> mutateList<T>(
+    String mutation,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+  }) async {
+    var data = await _executeGraphQLOperation(
+        mutation, variables, true, expectedDataType,
+        convertEnums: convertEnums);
+
+    if (data == null) {
+      throw Exception('No data returned from mutateList');
+    }
+
+    if (data is! List) {
+      throw Exception('Data must be a list in mutateList');
+    }
+
+    if (fromJson != null) {
+      return data
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .toList();
+    }
+    return List<T>.from(data);
+  }
+
+  Future<Map<String, dynamic>> extractResponseHeaders(
+    OperationType operationType,
+    String operation,
+    Map<String, dynamic> variables,
+    List<String> headers, {
+    bool convertEnums = true,
+  }) async {
+    final result = await _executeGraphQLOperation(
+        operation, variables, operationType == OperationType.mutation, null,
+        convertEnums: convertEnums);
+    return _extractHeadersFromResponse(result, headers);
+  }
+}
+
+```
+
+
+## Assistant
+
+Now for the second issue - the problem is that when you have nested data like `{'input': {'pageType': 'searchResults'}}`, the `normalizeMutationData` function checks if `'input'` is an enum field (which it's not), so it recursively processes the value but doesn't know that `'pageType'` inside `input` is an enum field because it loses the context.
+
+Looking at the code in `vendure_utils.dart:normalizeMutationData`, I see that it does recurse with `parentKey: key`, but the issue is that `_fieldToEnumType` maps field names to enum types. When you have `{'input': {'pageType': ...}}`, it checks `_fieldToEnumType['input']` (not an enum), then recursively calls with `parentKey: 'input'` on the nested object, but when processing `pageType`, it should check `_fieldToEnumType['pageType']`, which should work.
+
+Let me check if there's an issue with how the recursion works:
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart (107 - 156)**
+Status: Completed
+
+```
+  /// Uses the same field-to-enum mapping loaded by loadEnumTypeNames() to safely identify enum fields.
+  /// Pass `convertEnums: false` to disable enum conversion (useful when you have mixed data).
+  static dynamic normalizeMutationData(dynamic data,
+      {String? parentKey, bool? convertEnums}) {
+    // Use provided flag or fall back to global convertMutationEnums
+    convertEnums = convertEnums ?? convertMutationEnums;
+    if (data is Map<String, dynamic>) {
+      final normalizedData = <String, dynamic>{};
+      for (final entry in data.entries) {
+        final key = entry.key;
+        final value = entry.value;
+        // Check if this field is mapped to an enum type and conversion is enabled
+        final enumType = _fieldToEnumType[key];
+        if (convertEnums &&
+            enumType != null &&
+            _enumTypeValues.containsKey(enumType)) {
+          if (value is List) {
+            // Handle list of enum values
+            normalizedData[key] = value
+                .map((item) =>
+                    item is String ? _convertEnumToGraphQLFormat(item) : item)
+                .toList();
+            continue;
+          } else if (value is String) {
+            // Handle single enum value
+            normalizedData[key] = _convertEnumToGraphQLFormat(value);
+            continue;
+          }
+        }
+        normalizedData[key] = normalizeMutationData(value,
+            parentKey: key, convertEnums: convertEnums);
+      }
+      return normalizedData;
+    }
+    if (data is List) {
+      final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
+      if (convertEnums &&
+          enumType != null &&
+          _enumTypeValues.containsKey(enumType)) {
+        return data
+            .map((item) =>
+                item is String ? _convertEnumToGraphQLFormat(item) : item)
+            .toList();
+      }
+      return data
+          .map(
+              (item) => normalizeMutationData(item, convertEnums: convertEnums))
+          .toList();
+    }
+    return data;
+
+
+<file-read-info>Read lines 106-51. </file-read-info>
+```
+
+## Assistant
+
+I see the issue now! Looking at the code on line 134:
+
+```dart
+normalizedData[key] = normalizeMutationData(value,
+    parentKey: key, convertEnums: convertEnums);
+```
+
+When recursing into a nested object, it passes `parentKey: key`, but this `parentKey` is only used when processing Lists (line 139). When recursing into a Map, the `parentKey` is ignored and not used at all. This means the recursive call doesn't maintain any context about the parent.
+
+However, looking more closely at the logic, I think the actual implementation should work correctly because:
+- When you have `{'input': {'pageType': 'searchResults'}}`, it first processes the outer map
+- For key `'input'`, it checks `_fieldToEnumType['input']` (not found), so it recurses
+- In the recursive call, it processes `{'pageType': 'searchResults'}`
+- For key `'pageType'`, it checks `_fieldToEnumType['pageType']` (should be found if loaded correctly)
+- If found, it should convert the value
+
+The issue might be that `_fieldToEnumType` doesn't have `'pageType'` mapped. Let me check how the field mapping is loaded:
+
+**Tool Call: grep -A 10 -B 2 "loadEnumTypeNames"**
+Status: Completed
+
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-563-    // Automatically load enum type names and field-to-enumType map for normalization
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-564-    final client = await _instance!._getClient();
+lib/vendure.dart:565:    await VendureUtils.loadEnumTypeNames(
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-566-      () => VendureSchemaUtils.detectEnums(client),
+lib/vendure.dart-567-      detectFields: () => VendureSchemaUtils.detectEnumFields(client),
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-568-    );
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-569-  }
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-570-
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-571-  Future<QueryResult> mutate(MutationOptions options) async {
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-572-    final client = await _getClient();
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-573-    return client.mutate(options);
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-574-  }
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/vendure.dart-575-}
+--
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-20-
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-21-  /// Call this once after Vendure initialization to populate enum type names and field mapping.
+lib/src/vendure/vendure_utils.dart:22:  static Future<void> loadEnumTypeNames(
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-23-      Future<List<Map<String, dynamic>>> Function() detectEnums,
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-24-      {Future<List<Map<String, dynamic>>> Function()? detectFields}) async {
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-25-    final enums = await detectEnums();
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-26-    _vendureTypeEnums = enums.map((e) => e['name'] as String).toList();
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-27-    _enumTypeValues = {
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-28-      for (var e in enums)
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-29-        if (e['name'] != null && e['values'] != null)
+lib/src/vendure/vendure_utils.dart-30-          e['name'] as String: List<String>.from(
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-31-            (e['values'] as List).map((v) => v['name'] as String),
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-32-          )
+--
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-104-
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-105-  /// Normalizes mutation data by converting Dart enum formats to GraphQL format (CAPITAL_SNAKE_CASE).
+lib/src/vendure/vendure_utils.dart:106:  /// Uses the same field-to-enum mapping loaded by loadEnumTypeNames() to safely identify enum fields.
+lib/src/vendure/vendure_utils.dart-107-  / Pass `convertEnums: false` to disable enum conversion (useful when you have mixed data).
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-108-  static dynamic normalizeMutationData(dynamic data,
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-109-      {String? parentKey, bool? convertEnums}) {
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-110-    // Use provided flag or fall back to global convertMutationEnums
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-111-    convertEnums = convertEnums ?? convertMutationEnums;
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-112-    if (data is Map<String, dynamic>) {
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-113-      final normalizedData = <String, dynamic>{};
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-114-      for (final entry in data.entries) {
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-115-        final key = entry.key;
+/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart-116-        final value = entry.value;
+
+[Showing results with pagination = limit: 100, offset: 0]
+
+## Assistant
+
+Let me check the detectEnumFields function:
+
+**Tool Call: grep "detectEnumFields"**
+Status: Completed
+
+Found 2 files limit: 100, offset: 0
+lib/vendure.dart
+lib/src/vendure/schema_utils/vendure_schema_utils.dart
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart**
+Status: Completed
+
+```
+import 'package:graphql/client.dart';
+
+/// Utility class for Vendure GraphQL schema introspection.
+/// Provides methods to detect enums and map fields to enum types.
+class VendureSchemaUtils {
+  /// Introspection query to detect all enum types and their values.
+  static const String detectEnumsQuery = r'''
+    query IntrospectionQuery {
+      __schema {
+        types {
+          kind
+          name
+          enumValues {
+            name
+            description
+          }
+        }
+      }
+    }
+  ''';
+
+  /// Introspection query to detect all fields whose type is an enum.
+  static const String detectEnumFieldsQuery = r'''
+    query EnumFieldsIntrospection {
+      __schema {
+        types {
+          kind
+          name
+          fields {
+            name
+            type {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  ''';
+
+  /// Detects all ENUM types in the Vendure GraphQL schema using introspection.
+  /// Returns a list of enum type maps: [{name, values: [{name, description}]}]
+  static Future<List<Map<String, dynamic>>> detectEnums(
+      GraphQLClient client) async {
+    final result = await client.query(QueryOptions(
+      document: gql(detectEnumsQuery),
+    ));
+
+    if (result.hasException) {
+      throw Exception('Failed to introspect schema: ${result.exception}');
+    }
+
+    final types = result.data?['__schema']?['types'] ?? [];
+    final enums = types.where((type) => type['kind'] == 'ENUM').map((type) {
+      return {
+        'name': type['name'],
+        'values': type['enumValues']
+                ?.map((v) => {
+                      'name': v['name'],
+                      'description': v['description'],
+                    })
+                ?.toList() ??
+            [],
+      };
+    }).toList();
+
+    return List<Map<String, dynamic>>.from(enums);
+  }
+
+  /// Returns a list of maps: [{typeName, fieldName, fieldType}]
+  /// Each map represents a field whose type is an ENUM.
+  static Future<List<Map<String, dynamic>>> detectEnumFields(
+      GraphQLClient client) async {
+    final result =
+        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    if (result.hasException) {
+      throw Exception('Failed to introspect fields: ${result.exception}');
+    }
+    final types = result.data?['__schema']?['types'] ?? [];
+    final List<Map<String, dynamic>> fieldEnumList = [];
+    for (final type in types) {
+      if (type['kind'] == 'OBJECT' && type['fields'] != null) {
+        for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+    }
+    return fieldEnumList;
+  }
+}
+```
+
+## Assistant
+
+Now I understand the issue! The `detectEnumFields` function detects fields at the top level of each GraphQL type (like `CreateSearchPatternInput`), but it doesn't detect fields that are nested inside an `input` parameter.
+
+The problem is:
+1. The introspection finds fields like `pageType` on the `CreateSearchPatternInput` type
+2. But when you call the mutation, you wrap it in `{'input': {pageType: ...}}`
+3. The field mapping has `pageType → PageTypeEnum` 
+4. But when processing the variables, it first sees `input` (not an enum), then recurses and sees `pageType`
+
+Actually, wait - this should work! Let me re-read the code. When it recurses on the `input` value, it should process all the fields inside and check them against `_fieldToEnumType`. The issue might be that the introspection only detects fields on INPUT_OBJECT types, not just OBJECT types.
+
+Let me check if INPUT_OBJECT types are being introspected:
+
+**Tool Call: Edit `/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart`**
+Status: Completed
+
+Diff: /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart
+```
+  /// Returns a list of maps: [{typeName, fieldName, fieldType}]
+  /// Each map represents a field whose type is an ENUM.
+  static Future<List<Map<String, dynamic>>> detectEnumFields(
+      GraphQLClient client) async {
+    final result =
+        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    if (result.hasException) {
+      throw Exception('Failed to introspect fields: ${result.exception}');
+    }
+    final types = result.data?['__schema']?['types'] ?? [];
+    final List<Map<String, dynamic>> fieldEnumList = [];
+    for (final type in types) {
+      // Include both OBJECT and INPUT_OBJECT types
+      if ((type['kind'] == 'OBJECT' || type['kind'] == 'INPUT_OBJECT') && 
+          type['fields'] != null) {
+        for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+    }
+    return fieldEnumList;
+  }
+```
+
+
+## Assistant
+
+Wait, there's an issue with INPUT_OBJECT types in GraphQL introspection. INPUT_OBJECT types use `inputFields` instead of `fields`. Let me fix that:
+
+**Tool Call: Edit `/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart`**
+Status: Completed
+
+Diff: /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart
+```
+import 'package:graphql/client.dart';
+
+/// Utility class for Vendure GraphQL schema introspection.
+/// Provides methods to detect enums and map fields to enum types.
+class VendureSchemaUtils {
+  /// Introspection query to detect all enum types and their values.
+  static const String detectEnumsQuery = r'''
+    query IntrospectionQuery {
+      __schema {
+        types {
+          kind
+          name
+          enumValues {
+            name
+            description
+          }
+        }
+      }
+    }
+  ''';
+
+  /// Introspection query to detect all fields whose type is an enum.
+  static const String detectEnumFieldsQuery = r'''
+    query EnumFieldsIntrospection {
+      __schema {
+        types {
+          kind
+          name
+          fields {
+            name
+            type {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
+          inputFields {
+            name
+            type {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  ''';
+
+  /// Detects all ENUM types in the Vendure GraphQL schema using introspection.
+  /// Returns a list of enum type maps: [{name, values: [{name, description}]}]
+  static Future<List<Map<String, dynamic>>> detectEnums(
+      GraphQLClient client) async {
+    final result = await client.query(QueryOptions(
+      document: gql(detectEnumsQuery),
+    ));
+
+    if (result.hasException) {
+      throw Exception('Failed to introspect schema: ${result.exception}');
+    }
+
+    final types = result.data?['__schema']?['types'] ?? [];
+    final enums = types.where((type) => type['kind'] == 'ENUM').map((type) {
+      return {
+        'name': type['name'],
+        'values': type['enumValues']
+                ?.map((v) => {
+                      'name': v['name'],
+                      'description': v['description'],
+                    })
+                ?.toList() ??
+            [],
+      };
+    }).toList();
+
+    return List<Map<String, dynamic>>.from(enums);
+  }
+
+  /// Returns a list of maps: [{typeName, fieldName, fieldType}]
+  /// Each map represents a field whose type is an ENUM.
+  static Future<List<Map<String, dynamic>>> detectEnumFields(
+      GraphQLClient client) async {
+    final result =
+        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    if (result.hasException) {
+      throw Exception('Failed to introspect fields: ${result.exception}');
+    }
+    final types = result.data?['__schema']?['types'] ?? [];
+    final List<Map<String, dynamic>> fieldEnumList = [];
+    for (final type in types) {
+      // Include both OBJECT and INPUT_OBJECT types
+      if ((type['kind'] == 'OBJECT' || type['kind'] == 'INPUT_OBJECT') && 
+          type['fields'] != null) {
+        for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+    }
+    return fieldEnumList;
+  }
+}
+
+```
+
+
+**Tool Call: Edit `/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart`**
+Status: Completed
+
+Diff: /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart
+```
+  /// Returns a list of maps: [{typeName, fieldName, fieldType}]
+  /// Each map represents a field whose type is an ENUM.
+  static Future<List<Map<String, dynamic>>> detectEnumFields(
+      GraphQLClient client) async {
+    final result =
+        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    if (result.hasException) {
+      throw Exception('Failed to introspect fields: ${result.exception}');
+    }
+    final types = result.data?['__schema']?['types'] ?? [];
+    final List<Map<String, dynamic>> fieldEnumList = [];
+    for (final type in types) {
+      // Process OBJECT types (use 'fields')
+      if (type['kind'] == 'OBJECT' && type['fields'] != null) {
+        for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+      // Process INPUT_OBJECT types (use 'inputFields')
+      if (type['kind'] == 'INPUT_OBJECT' && type['inputFields'] != null) {
+        for (final field in type['inputFields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+    }
+    return fieldEnumList;
+  }
+```
+
+
+## Assistant
+
+Let me re-read the file to see the current state:
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart (76 - 115)**
+Status: Completed
+
+```
+                      'description': v['description'],
+                    })
+                ?.toList() ??
+            [],
+      };
+    }).toList();
+
+    return List<Map<String, dynamic>>.from(enums);
+  }
+
+  /// Returns a list of maps: [{typeName, fieldName, fieldType}]
+  /// Each map represents a field whose type is an ENUM.
+  static Future<List<Map<String, dynamic>>> detectEnumFields(
+      GraphQLClient client) async {
+    final result =
+        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    if (result.hasException) {
+      throw Exception('Failed to introspect fields: ${result.exception}');
+    }
+    final types = result.data?['__schema']?['types'] ?? [];
+    final List<Map<String, dynamic>> fieldEnumList = [];
+    for (final type in types) {
+      // Include both OBJECT and INPUT_OBJECT types
+      if ((type['kind'] == 'OBJECT' || type['kind'] == 'INPUT_OBJECT') &&
+          type['fields'] != null) {
+        for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+
+
+<file-read-info>Read lines 75-41. </file-read-info>
+```
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart (111 - 120)**
+Status: Completed
+
+```
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+    }
+    return fieldEnumList;
+  }
+
+
+<file-read-info>Read lines 110-11. </file-read-info>
+```
+
+**Tool Call: Edit `/Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart`**
+Status: Completed
+
+Diff: /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/schema_utils/vendure_schema_utils.dart
+```
+import 'package:graphql/client.dart';
+
+/// Utility class for Vendure GraphQL schema introspection.
+/// Provides methods to detect enums and map fields to enum types.
+class VendureSchemaUtils {
+  /// Introspection query to detect all enum types and their values.
+  static const String detectEnumsQuery = r'''
+    query IntrospectionQuery {
+      __schema {
+        types {
+          kind
+          name
+          enumValues {
+            name
+            description
+          }
+        }
+      }
+    }
+  ''';
+
+  /// Introspection query to detect all fields whose type is an enum.
+  static const String detectEnumFieldsQuery = r'''
+    query EnumFieldsIntrospection {
+      __schema {
+        types {
+          kind
+          name
+          fields {
+            name
+            type {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
+          inputFields {
+            name
+            type {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  ''';
+
+  /// Detects all ENUM types in the Vendure GraphQL schema using introspection.
+  /// Returns a list of enum type maps: [{name, values: [{name, description}]}]
+  static Future<List<Map<String, dynamic>>> detectEnums(
+      GraphQLClient client) async {
+    final result = await client.query(QueryOptions(
+      document: gql(detectEnumsQuery),
+    ));
+
+    if (result.hasException) {
+      throw Exception('Failed to introspect schema: ${result.exception}');
+    }
+
+    final types = result.data?['__schema']?['types'] ?? [];
+    final enums = types.where((type) => type['kind'] == 'ENUM').map((type) {
+      return {
+        'name': type['name'],
+        'values': type['enumValues']
+                ?.map((v) => {
+                      'name': v['name'],
+                      'description': v['description'],
+                    })
+                ?.toList() ??
+            [],
+      };
+    }).toList();
+
+    return List<Map<String, dynamic>>.from(enums);
+  }
+
+  /// Returns a list of maps: [{typeName, fieldName, fieldType}]
+  /// Each map represents a field whose type is an ENUM.
+  static Future<List<Map<String, dynamic>>> detectEnumFields(
+      GraphQLClient client) async {
+    final result =
+        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    if (result.hasException) {
+      throw Exception('Failed to introspect fields: ${result.exception}');
+    }
+    final types = result.data?['__schema']?['types'] ?? [];
+    final List<Map<String, dynamic>> fieldEnumList = [];
+    for (final type in types) {
+      // Process OBJECT types (use 'fields')
+      if (type['kind'] == 'OBJECT' && type['fields'] != null) {
+        for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+      // Process INPUT_OBJECT types (use 'inputFields')
+      if (type['kind'] == 'INPUT_OBJECT' && type['inputFields'] != null) {
+        for (final field in type['inputFields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+    }
+    return fieldEnumList;
+  }
+}
+
+```
+
+
+## Assistant
+
+Perfect! I've fixed both issues:
+
+## Issue 1: Missing `convertEnums` parameter in `query` and `queryList`
+
+**Fixed in** `lib/src/vendure/custom_operations.dart:126-143` and `lib/src/vendure/custom_operations.dart:147-173`
+
+- Added the `convertEnums` parameter to both `query` and `queryList` methods (defaulting to `true`)
+- These methods now pass `convertEnums` to `_executeGraphQLOperation` and `normalizeGraphQLData`, just like the mutation methods do
+
+## Issue 2: Input enums not being converted
+
+**Fixed in** `lib/src/vendure/schema_utils/vendure_schema_utils.dart:28-49` and `lib/src/vendure/schema_utils/vendure_schema_utils.dart:96-138`
+
+The root cause was that GraphQL has two different type kinds for objects:
+- `OBJECT` types use the `fields` property
+- `INPUT_OBJECT` types use the `inputFields` property
+
+Your mutation input types (like `CreateSearchPatternInput`) are `INPUT_OBJECT` types, but the introspection was only looking at `fields`, which doesn't exist on input objects. This meant the enum field mappings for input types were never being detected.
+
+The fix:
+1. Updated the introspection query to include both `fields` and `inputFields`
+2. Updated the `detectEnumFields` function to process both `OBJECT` types (using `fields`) and `INPUT_OBJECT` types (using `inputFields`)
+
+Now when you call your mutation with:
+```dart
+{
+  'input': {
+    'pageType': searchPattern.pageType.name,
+    'patternType': searchPattern.patternType.name,
+    'spaceEncoding': searchPattern.spaceEncoding.name,
+    // ...
+  }
+}
+```
+
+The enum fields inside the `input` object will be properly detected and converted to `CAPITAL_SNAKE_CASE` format before being sent to the GraphQL server.
+
+## User
+
+both had errrs:
+
+## User
+
+Error finding existing pattern: Exception: OperationException(linkException: null, graphqlErrors: [GraphQLError(message: Variable "$input" got invalid value "barcode" at "input.pageType"; Value "barcode" does not exist in "PageType" enum. Did you mean the enum value "BARCODE"?, locations: [ErrorLocation(line: 1, column: 22)], path: null, extensions: {code: BAD_USER_INPUT})])
+   No existing pattern found, creating new one
+{pageType: barcode}
+❌ Error upserting search pattern: Exception: OperationException(linkException: null, graphqlErrors: [GraphQLError(message: null value in column "pageType" of relation "search_pattern" violates not-null constraint, locations: [ErrorLocation(line: 3, column: 3)], path: [createSearchPattern], extensions: null)])
+🧹 VendureAdminTestHelper cleaned up
+
+## Assistant
+
+I see the issue! There are actually two problems happening:
+
+1. The enum conversion is working but converting to lowercase `"barcode"` instead of uppercase `"BARCODE"`
+2. After that fails, it's sending `null` for the pageType field
+
+Let me check the `_convertEnumToGraphQLFormat` function:
+
+**Tool Call: Read /Users/arrrrny/Developer/vendure-flutter-sdk/lib/src/vendure/vendure_utils.dart (153 - 182)**
+Status: Completed
+
+```
+              (item) => normalizeMutationData(item, convertEnums: convertEnums))
+          .toList();
+    }
+    return data;
+  }
+
+  /// Converts a Dart enum format (camelCase) to GraphQL format (CAPITAL_SNAKE_CASE).
+  static String _convertEnumToGraphQLFormat(String enumValue) {
+    // Handle special case: try_ becomes TRY
+    if (enumValue == 'try_') {
+      return 'TRY';
+    }
+
+    // If it's already in SCREAMING_SNAKE_CASE, return as-is
+    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase()) {
+      return enumValue;
+    }
+
+    // Convert camelCase to SCREAMING_SNAKE_CASE
+    // Insert underscore before uppercase letters, then convert to uppercase
+    final snakeCase = enumValue
+        .replaceAllMapped(
+          RegExp(r'([a-z0-9])([A-Z])'),
+          (match) => '${match.group(1)}_${match.group(2)}',
+        )
+        .toUpperCase();
+
+    return snakeCase;
+  }
+
+
+
+<file-read-info>Read lines 152-31. </file-read-info>
+```
+

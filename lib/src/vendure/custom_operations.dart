@@ -26,9 +26,11 @@ class CustomOperations {
     final client = await _client();
 
     // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE) if enabled
-    final normalizedVariables = isMutation
-        ? VendureUtils.normalizeMutationData(variables,
-            convertEnums: convertEnums)
+    final normalizedVariables = isMutation || convertEnums
+        ? VendureUtils.normalizeMutationData(
+            variables,
+            convertEnums: convertEnums,
+          )
         : variables;
 
     final options = isMutation
@@ -106,15 +108,22 @@ class CustomOperations {
     bool convertEnums = true,
   }) async {
     var data = await _executeGraphQLOperation(
-        mutation, variables, true, expectedDataType,
-        convertEnums: convertEnums);
+      mutation,
+      variables,
+      true,
+      expectedDataType,
+      convertEnums: convertEnums,
+    );
 
     if (data == null) {
       throw Exception('No data returned from mutate');
     }
 
     if (data is Map<String, dynamic> || data is List) {
-      data = VendureUtils.normalizeGraphQLData(data);
+      data = VendureUtils.normalizeGraphQLData(
+        data,
+        convertEnums: convertEnums,
+      );
     }
     if (fromJson != null) {
       return fromJson(data);
@@ -127,15 +136,24 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
+    bool convertEnums = true,
   }) async {
     var data = await _executeGraphQLOperation(
-        query, variables, false, expectedDataType);
+      query,
+      variables,
+      false,
+      expectedDataType,
+      convertEnums: convertEnums,
+    );
 
     if (data == null) {
       throw Exception('No data returned from query');
     }
     if (data is Map<String, dynamic> || data is List) {
-      data = VendureUtils.normalizeGraphQLData(data);
+      data = VendureUtils.normalizeGraphQLData(
+        data,
+        convertEnums: convertEnums,
+      );
     }
     if (fromJson != null) {
       return fromJson(data);
@@ -148,9 +166,15 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
+    bool convertEnums = true,
   }) async {
     var data = await _executeGraphQLOperation(
-        query, variables, false, expectedDataType);
+      query,
+      variables,
+      false,
+      expectedDataType,
+      convertEnums: convertEnums,
+    );
 
     if (data == null) {
       throw Exception('No data returned from queryList');
@@ -162,7 +186,10 @@ class CustomOperations {
 
     if (fromJson != null) {
       return data
-          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(
+                item,
+                convertEnums: convertEnums,
+              )))
           .toList();
     }
     return List<T>.from(data);
@@ -189,7 +216,10 @@ class CustomOperations {
 
     if (fromJson != null) {
       return data
-          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(item)))
+          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(
+                item,
+                convertEnums: convertEnums,
+              )))
           .toList();
     }
     return List<T>.from(data);
