@@ -61,26 +61,44 @@ class VendureUtils {
               value.toString()[0].toLowerCase() + value.toString().substring(1);
           continue;
         }
-        final enumType = _fieldToEnumType[key];
-        if (convertEnums &&
-            enumType != null &&
-            _enumTypeValues.containsKey(enumType)) {
-          if (value is List) {
-            normalizedData[key] = value
-                .map((item) =>
-                    _enumTypeValues[enumType]!.contains(item.toString())
-                        ? _convertEnumToDartFormat(item.toString())
-                        : item)
-                .toList();
-            continue;
-          } else if (value != null &&
-              _enumTypeValues[enumType]!.contains(value.toString())) {
-            normalizedData[key] = _convertEnumToDartFormat(value.toString());
-            continue;
+
+        // Try to convert enum values
+        bool wasConverted = false;
+        if (convertEnums && value != null) {
+          // First try the mapped enum type for this field
+          final enumType = _fieldToEnumType[key];
+          if (enumType != null && _enumTypeValues.containsKey(enumType)) {
+            if (value is List) {
+              normalizedData[key] = value
+                  .map((item) =>
+                      _enumTypeValues[enumType]!.contains(item.toString())
+                          ? _convertEnumToDartFormat(item.toString())
+                          : item)
+                  .toList();
+              wasConverted = true;
+            } else if (_enumTypeValues[enumType]!.contains(value.toString())) {
+              normalizedData[key] = _convertEnumToDartFormat(value.toString());
+              wasConverted = true;
+            }
+          }
+
+          // Fallback: check if the value matches ANY known enum value
+          // This handles cases where field names conflict across types
+          if (!wasConverted && value is String) {
+            for (final enumValues in _enumTypeValues.values) {
+              if (enumValues.contains(value)) {
+                normalizedData[key] = _convertEnumToDartFormat(value);
+                wasConverted = true;
+                break;
+              }
+            }
           }
         }
-        normalizedData[key] = normalizeGraphQLData(value,
-            parentKey: key, convertEnums: convertEnums);
+
+        if (!wasConverted) {
+          normalizedData[key] = normalizeGraphQLData(value,
+              parentKey: key, convertEnums: convertEnums);
+        }
       }
       return normalizedData;
     }
