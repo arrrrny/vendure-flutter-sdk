@@ -1,3 +1,9 @@
+## 2.9.0
+- **Fixed Enum Conversion for Conflicting Field Names**: Enhanced `normalizeGraphQLData` to handle cases where multiple GraphQL types have fields with the same name (e.g., `Parser.type`, `Order.type`, `Asset.type`).
+- **Robust Fallback Mechanism**: Added fallback logic that checks if a string value matches ANY known enum value from the introspection cache, ensuring all enums are converted even when field-to-type mappings conflict.
+- **Better Support for Custom Types**: Custom plugin types with enum fields are now properly converted without requiring manual enum mapping.
+- **Non-Breaking Enhancement**: The change is backward compatible and requires no API changes from consumers.
+
 ## 2.8.0
 - Added global enum conversion toggles: `VendureUtils.convertQueryEnums` and `VendureUtils.convertMutationEnums` (both default to `true`).
 - Added `VendureUtils.setConvertEnums({bool? queryEnums, bool? mutationEnums})` helper to change conversion flags globally.
