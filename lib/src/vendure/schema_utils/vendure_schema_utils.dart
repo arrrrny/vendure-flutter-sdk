@@ -37,6 +37,17 @@ class VendureSchemaUtils {
               }
             }
           }
+          inputFields {
+            name
+            type {
+              kind
+              name
+              ofType {
+                kind
+                name
+              }
+            }
+          }
         }
       }
     }
@@ -83,8 +94,28 @@ class VendureSchemaUtils {
     final types = result.data?['__schema']?['types'] ?? [];
     final List<Map<String, dynamic>> fieldEnumList = [];
     for (final type in types) {
+      // Process OBJECT types (use 'fields')
       if (type['kind'] == 'OBJECT' && type['fields'] != null) {
         for (final field in type['fields']) {
+          String? fieldType;
+          if (field['type']['kind'] == 'ENUM') {
+            fieldType = field['type']['name'];
+          } else if (field['type']['ofType'] != null &&
+              field['type']['ofType']['kind'] == 'ENUM') {
+            fieldType = field['type']['ofType']['name'];
+          }
+          if (fieldType != null) {
+            fieldEnumList.add({
+              'typeName': type['name'],
+              'fieldName': field['name'],
+              'fieldType': fieldType,
+            });
+          }
+        }
+      }
+      // Process INPUT_OBJECT types (use 'inputFields')
+      if (type['kind'] == 'INPUT_OBJECT' && type['inputFields'] != null) {
+        for (final field in type['inputFields']) {
           String? fieldType;
           if (field['type']['kind'] == 'ENUM') {
             fieldType = field['type']['name'];
