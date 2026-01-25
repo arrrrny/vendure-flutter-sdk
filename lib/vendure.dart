@@ -132,6 +132,7 @@ class Vendure {
     String? channelToken,
     Duration? timeout,
     AppCheckConfig? appCheckConfig,
+    bool enableEnumDiscovery = false,
   }) async {
     _instance = Vendure._internal(
       endpoint: endpoint,
@@ -162,6 +163,8 @@ class Vendure {
     Duration? timeout,
     Map<String, List<String>>? customFieldsConfig,
     AppCheckConfig? appCheckConfig,
+    String? languageCode,
+    String? channelToken,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -214,6 +217,8 @@ class Vendure {
         customFieldsConfig: customFieldsConfig,
         timeout: timeout,
         appCheckConfig: appCheckConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
       );
     }
 
@@ -691,48 +696,6 @@ class Vendure {
     return client.query(options);
   }
 
-  /// Detects all ENUM types in the Vendure GraphQL schema using introspection.
-  /// Returns a list of enum type names and their possible values.
-  Future<List<Map<String, dynamic>>> detectEnums() async {
-    const introspectionQuery = r'''
-      query IntrospectionQuery {
-        __schema {
-          types {
-            kind
-            name
-            enumValues {
-              name
-              description
-            }
-          }
-        }
-      }
-    ''';
-
-    final result = await query(QueryOptions(
-      document: gql(introspectionQuery),
-    ));
-    if (result.hasException) {
-      throw Exception('Failed to introspect schema: ${result.exception}');
-    }
-
-    final types = result.data?['__schema']?['types'] ?? [];
-    final enums = types.where((type) => type['kind'] == 'ENUM').map((type) {
-      return {
-        'name': type['name'],
-        'values': type['enumValues']
-                ?.map((v) => {
-                      'name': v['name'],
-                      'description': v['description'],
-                    })
-                ?.toList() ??
-            [],
-      };
-    }).toList();
-
-    return List<Map<String, dynamic>>.from(enums);
-  }
-
   /// Centralized post-initialization logic for Vendure instance.
   static Future<void> _finalizeInitialization(Vendure instance,
       {bool checkConnection = false}) async {
@@ -754,12 +717,6 @@ class Vendure {
         throw Exception('Failed to initialize Vendure: $e');
       }
     }
-    // Automatically load enum type names and field-to-enumType map for normalization
-    final client = await _instance!._getClient();
-    await VendureUtils.loadEnumTypeNames(
-      () => VendureSchemaUtils.detectEnums(client),
-      detectFields: () => VendureSchemaUtils.detectEnumFields(client),
-    );
   }
 
   Future<QueryResult> mutate(MutationOptions options) async {

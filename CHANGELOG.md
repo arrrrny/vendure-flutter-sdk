@@ -1,3 +1,10 @@
+## 2.10.0
+- **Added Support for `activeCustomerStream` Subscription**: Now you can subscribe to real-time updates for the active customer.
+- **Improved Enum Handling**: Updated internal field-to-type mappings for all Shop API enums (CurrencyCode, LanguageCode, Permission, AdjustmentType, GlobalFlag, ErrorCode, LogicalOperator, DeletionResult, etc.).
+- **New Utility `VendureSchemaUtils.discoverEnums()`**: A new utility to manually trigger schema introspection and register custom enums at runtime.
+- **BREAKING CHANGE**: Removed `enableEnumDiscovery` parameter from initialization methods and removed `Vendure.enableEnumDiscovery()` method. Use `VendureSchemaUtils.discoverEnums(client)` instead for manual introspection.
+- **Enhanced Normalization**: Improved GraphQL data normalization for subscription results and custom fields.
+
 ## 2.9.0
 - **Fixed Enum Conversion for Conflicting Field Names**: Enhanced `normalizeGraphQLData` to handle cases where multiple GraphQL types have fields with the same name (e.g., `Parser.type`, `Order.type`, `Asset.type`).
 - **Robust Fallback Mechanism**: Added fallback logic that checks if a string value matches ANY known enum value from the introspection cache, ensuring all enums are converted even when field-to-type mappings conflict.

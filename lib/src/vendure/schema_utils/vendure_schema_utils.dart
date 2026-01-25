@@ -1,8 +1,39 @@
 import 'package:graphql/client.dart';
+import 'package:vendure/vendure.dart';
 
 /// Utility class for Vendure GraphQL schema introspection.
 /// Provides methods to detect enums and map fields to enum types.
 class VendureSchemaUtils {
+  /// Manually triggers schema introspection to discover and register custom enum types.
+  ///
+  /// This is an optional step that can be called after initialization if you need
+  /// support for custom enums in your application.
+  ///
+  /// Warning: This operation performs a large introspection query and may be slow.
+  static Future<void> discoverEnums(GraphQLClient client) async {
+    final enums = await detectEnums(client);
+    final fields = await detectEnumFields(client);
+
+    // Register discovered enums
+    for (final enumType in enums) {
+      final typeName = enumType['name'] as String;
+      final values = (enumType['values'] as List)
+          .map((v) => v['name'] as String)
+          .toList();
+
+      // Find all fields using this enum type
+      final relatedFields = fields
+          .where((f) => f['fieldType'] == typeName)
+          .map((f) => f['fieldName'] as String)
+          .toList();
+
+      VendureUtils.registerCustomEnum(
+        typeName,
+        relatedFields,
+        values: values,
+      );
+    }
+  }
   /// Introspection query to detect all enum types and their values.
   static const String detectEnumsQuery = r'''
     query IntrospectionQuery {
