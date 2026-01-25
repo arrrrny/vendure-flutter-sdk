@@ -2,7 +2,6 @@
 - **Added Support for `activeCustomerStream` Subscription**: Now you can subscribe to real-time updates for the active customer.
 - **Improved Enum Handling**: Updated internal field-to-type mappings for all Shop API enums (CurrencyCode, LanguageCode, Permission, AdjustmentType, GlobalFlag, ErrorCode, LogicalOperator, DeletionResult, etc.).
 - **New Utility `VendureSchemaUtils.discoverEnums()`**: A new utility to manually trigger schema introspection and register custom enums at runtime.
-- **BREAKING CHANGE**: Removed `enableEnumDiscovery` parameter from initialization methods and removed `Vendure.enableEnumDiscovery()` method. Use `VendureSchemaUtils.discoverEnums(client)` instead for manual introspection.
 - **Enhanced Normalization**: Improved GraphQL data normalization for subscription results and custom fields.
 
 ## 2.9.0
