@@ -29,7 +29,7 @@ class Vendure {
   late final CatalogOperations catalog;
   late final SystemOperations system;
   final TokenManager? _tokenManager;
-  final Map<String, List<String>>? _customFieldsConfig;
+  final Map<String, List<dynamic>>? _customFieldsConfig;
   final String _endpoint;
   final DefaultPolicies? _policies;
   String? _token;
@@ -53,7 +53,7 @@ class Vendure {
     Duration sessionDuration = const Duration(days: 365),
     String? token,
     bool? useVendureGuestSession = false,
-    Map<String, List<String>>? customFieldsConfig,
+    Map<String, List<dynamic>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
     Duration? timeout,
@@ -126,7 +126,7 @@ class Vendure {
     Duration sessionDuration = const Duration(days: 365),
     String? token,
     bool? useVendureGuestSession,
-    Map<String, List<String>>? customFieldsConfig,
+    Map<String, List<dynamic>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
     Duration? timeout,
@@ -160,7 +160,7 @@ class Vendure {
     required String password,
     Duration sessionDuration = const Duration(days: 365),
     Duration? timeout,
-    Map<String, List<String>>? customFieldsConfig,
+    Map<String, List<dynamic>>? customFieldsConfig,
     AppCheckConfig? appCheckConfig,
     String? languageCode,
     String? channelToken,
@@ -231,7 +231,7 @@ class Vendure {
     required String uid,
     required String jwt,
     Duration sessionDuration = const Duration(hours: 1),
-    Map<String, List<String>>? customFieldsConfig,
+    Map<String, List<dynamic>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
     Duration? timeout,
@@ -303,7 +303,7 @@ class Vendure {
     required TokenFetcher fetchToken,
     required Map<String, dynamic> tokenParams,
     Duration sessionDuration = const Duration(days: 365),
-    Map<String, List<String>>? customFieldsConfig,
+    Map<String, List<dynamic>>? customFieldsConfig,
     String? languageCode,
     String? channelToken,
     Duration? timeout,
@@ -557,6 +557,8 @@ class Vendure {
             _customFieldsConfig,
           )
         : subscription;
+    print('GraphQL Subscription: $processedOperation');
+    print('Variables: $variables');
     final normalizedVariables = convertEnums
         ? VendureUtils.normalizeMutationData(
             variables,

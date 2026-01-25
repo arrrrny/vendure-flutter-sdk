@@ -18,7 +18,7 @@ typedef ActiveCustomerStreamProvider = Stream<Customer> Function({
 
 class CustomerOperations {
   final Future<GraphQLClient> Function() _client;
-  final Map<String, List<String>>? customFieldsConfig;
+  final Map<String, List<dynamic>>? customFieldsConfig;
   final ActiveCustomerStreamProvider? _activeCustomerStreamProvider;
 
   CustomerOperations(this._client,

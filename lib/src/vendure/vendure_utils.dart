@@ -349,7 +349,7 @@ class VendureUtils {
   }
 
   static String replaceCustomFieldsFragment(
-      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+      String queryTemplate, Map<String, List<dynamic>> customFieldsConfig) {
     customFieldsConfig.forEach((typeName, customFields) {
       String fragmentName = '${typeName.capitalize()}CustomFields';
       String generatedFragment =
@@ -364,26 +364,48 @@ class VendureUtils {
   }
 
   static String generateFragmentWithTypename(
-      String typeName, List<String> customFields) {
+      String typeName, List<dynamic> customFields) {
     StringBuffer fragmentBuffer = StringBuffer();
 
     fragmentBuffer.writeln(
         'fragment ${typeName.capitalize()}CustomFields on ${typeName.capitalize()} {');
-    fragmentBuffer.writeln('  customFields {');
-    fragmentBuffer.writeln('    __typename');
-
-    for (var field in customFields) {
-      fragmentBuffer.writeln('    $field');
+    if (customFields.contains('SCALAR_CUSTOM_FIELDS')) {
+      fragmentBuffer.writeln('  customFields');
+    } else {
+      fragmentBuffer.writeln('  customFields {');
+      fragmentBuffer.write(_generateFieldsRecursive(customFields, indent: '    '));
+      fragmentBuffer.writeln('  }');
     }
-
-    fragmentBuffer.writeln('  }');
     fragmentBuffer.writeln('}');
 
     return fragmentBuffer.toString();
   }
 
+  static String _generateFieldsRecursive(List<dynamic> fields,
+      {String indent = ''}) {
+    StringBuffer buffer = StringBuffer();
+    buffer.writeln('${indent}__typename');
+
+    for (var field in fields) {
+      if (field is String) {
+        buffer.writeln('$indent$field');
+      } else if (field is Map<String, dynamic>) {
+        field.forEach((key, value) {
+          buffer.writeln('$indent$key {');
+          if (value is List<dynamic>) {
+            buffer.write(_generateFieldsRecursive(value, indent: '$indent  '));
+          } else {
+            buffer.writeln('$indent  $value');
+          }
+          buffer.writeln('$indent}');
+        });
+      }
+    }
+    return buffer.toString();
+  }
+
   static String generateQueryWithCustomFields(
-      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+      String queryTemplate, Map<String, List<dynamic>> customFieldsConfig) {
     customFieldsConfig.forEach((typeName, customFields) {
       if (customFields.isEmpty) {
         queryTemplate = queryTemplate.replaceAll(
@@ -428,7 +450,7 @@ class VendureUtils {
   }
 
   static String cleanUpCustomFields(
-      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+      String queryTemplate, Map<String, List<dynamic>> customFieldsConfig) {
     queryTemplate = queryTemplate.replaceAll(
         RegExp(r'fragment\s+\w+CustomFields\s+on\s+\w+\s*\{[^}]*\}',
             multiLine: true),
@@ -463,10 +485,10 @@ class VendureUtils {
   }
 
   static String sanitizeGraphQLQuery(
-      String query, Map<String, List<String>> customFieldsConfig) {
+      String query, Map<String, List<dynamic>> customFieldsConfig) {
     final entityNames = customFieldsConfig.keys.join('|');
     final regex = RegExp(
-        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\s*{([\s\S]*?)\n}',
+        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\s*\{([\s\S]*?)\}',
         multiLine: true);
 
     final buffer = StringBuffer();
@@ -480,13 +502,21 @@ class VendureUtils {
       buffer.write(query.substring(lastIndex, match.start));
 
       if (customFieldsConfig[entityName]!.isNotEmpty &&
-          !fragmentContent.contains('customFields {')) {
-        final customFieldsFragment = '''
+          !fragmentContent.contains('customFields ') &&
+          !fragmentContent.contains('customFields{')) {
+        final customFields = customFieldsConfig[entityName]!;
+        String customFieldsFragment;
+        if (customFields.contains('SCALAR_CUSTOM_FIELDS')) {
+          customFieldsFragment = '\n  customFields\n';
+        } else {
+          customFieldsFragment = '''
+
   customFields {
-    ${customFieldsConfig[entityName]!.join('\n    ')}
-  }''';
+${_generateFieldsRecursive(customFields, indent: '    ')}  }
+''';
+        }
         buffer.write(
-            'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment\n}');
+            'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment}');
       } else {
         buffer.write(match.group(0));
       }

@@ -4,7 +4,7 @@ import 'package:vendure/src/vendure/vendure_utils.dart';
 
 class CustomOperations {
   final Future<GraphQLClient> Function() _client;
-  final Map<String, List<String>>? customFieldsConfig;
+  final Map<String, List<dynamic>>? customFieldsConfig;
 
   CustomOperations(this._client, {this.customFieldsConfig});
 
@@ -23,6 +23,8 @@ class CustomOperations {
     bool convertEnums = true,
   }) async {
     final processedOperation = _prepareOperation(operation);
+    print('GraphQL Operation: $processedOperation');
+    print('Variables: $variables');
     final client = await _client();
 
     // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE) if enabled

@@ -9,7 +9,7 @@ import 'package:vendure/src/vendure/custom_operations.dart';
 
 class CatalogOperations {
   final Future<GraphQLClient> Function() _client;
-  final Map<String, List<String>>? customFieldsConfig;
+  final Map<String, List<dynamic>>? customFieldsConfig;
   CatalogOperations(this._client, {this.customFieldsConfig});
 
   Future<CollectionList> getCollections(
