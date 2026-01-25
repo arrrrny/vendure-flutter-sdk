@@ -12,6 +12,8 @@ import 'package:vendure/src/vendure/schema_utils/vendure_schema_utils.dart';
 import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
+import 'src/subscriptions/active_customer_stream_subscription.dart';
+import 'src/types/exports.dart';
 import 'src/vendure/vendure_utils.dart';
 export 'src/vendure/vendure_utils.dart';
 
@@ -40,6 +42,9 @@ class Vendure {
   String? get languageCode => _languageCode;
   final Duration? _timeout;
   final AppCheckConfig? _appCheckConfig;
+  GraphQLClient? _subscriptionClient;
+  String? _lastSubscriptionEndpoint;
+  String? _lastSubscriptionToken;
 
   Vendure._internal({
     required String endpoint,
@@ -102,6 +107,7 @@ class Vendure {
     customer = CustomerOperations(
       _getClient,
       customFieldsConfig: _customFieldsConfig,
+      activeCustomerStreamProvider: activeCustomerStream,
     );
     catalog = CatalogOperations(
       _getClient,
@@ -423,6 +429,194 @@ class Vendure {
           ),
       queryRequestTimeout: _timeout,
     );
+  }
+
+  Stream<Customer> activeCustomerStream({
+    String? websocketEndpoint,
+    bool convertEnums = false,
+    bool includeInitialValue = false,
+  }) async* {
+    if (includeInitialValue) {
+      try {
+        final initialCustomer = await customer.getActiveCustomer();
+        if (initialCustomer != null) {
+          yield initialCustomer;
+        }
+      } catch (e) {
+        // Log or handle error fetching initial customer if needed
+      }
+    }
+
+    yield* _subscribe<Customer>(
+      activeCustomerStreamSubscription,
+      {},
+      fromJson: Customer.fromJson,
+      expectedDataType: 'activeCustomerStream',
+      convertEnums: convertEnums,
+      websocketEndpoint: websocketEndpoint,
+    );
+  }
+
+  Future<GraphQLClient> _getSubscriptionClient(
+      {String? websocketEndpoint}) async {
+    final endpointUrl = _buildWebsocketEndpoint(websocketEndpoint);
+    final authToken = await _resolveAuthToken();
+
+    if (_subscriptionClient != null &&
+        _lastSubscriptionEndpoint == endpointUrl &&
+        _lastSubscriptionToken == authToken) {
+      return _subscriptionClient!;
+    }
+
+    final socketConfig = SocketClientConfig(
+      autoReconnect: true,
+      inactivityTimeout: _timeout,
+      initialPayload: () async => await _buildWebsocketPayload(),
+    );
+    final link = WebSocketLink(
+      endpointUrl,
+      config: socketConfig,
+      subProtocol: GraphQLProtocol.graphqlTransportWs,
+    );
+    _subscriptionClient = GraphQLClient(
+      cache: GraphQLCache(),
+      link: link,
+    );
+    _lastSubscriptionEndpoint = endpointUrl;
+    _lastSubscriptionToken = authToken;
+    return _subscriptionClient!;
+  }
+
+  String _buildWebsocketEndpoint(String? websocketEndpoint) {
+    if (websocketEndpoint != null) {
+      return websocketEndpoint;
+    }
+    final uri = Uri.parse(_endpoint);
+    final queryParameters = Map<String, String>.from(uri.queryParameters);
+    if (_languageCode != null) {
+      queryParameters['languageCode'] = _languageCode!;
+    }
+    final updatedUri = uri.replace(queryParameters: queryParameters);
+    final scheme = switch (updatedUri.scheme) {
+      'https' => 'wss',
+      'http' => 'ws',
+      _ => updatedUri.scheme,
+    };
+    return updatedUri.replace(scheme: scheme).toString();
+  }
+
+  Future<String?> _resolveAuthToken() async {
+    if (_useVendureGuestSession) {
+      return null;
+    }
+    if (_token != null) {
+      return 'Bearer $_token';
+    }
+    if (_tokenManager != null) {
+      return 'Bearer ${await _tokenManager.getValidToken()}';
+    }
+    return null;
+  }
+
+  Future<Map<String, dynamic>> _buildWebsocketPayload() async {
+    final payload = <String, dynamic>{};
+    final authToken = await _resolveAuthToken();
+    if (authToken != null) {
+      payload['Authorization'] = authToken;
+    }
+    if (_channelToken != null) {
+      payload['vendure-token'] = _channelToken;
+    }
+    if (_appCheckConfig != null) {
+      final token = await _appCheckConfig!.tokenProvider();
+      if (token == null && _appCheckConfig!.required) {
+        throw Exception('App Check token is required but not available');
+      }
+      if (token != null) {
+        payload[_appCheckConfig!.headerName] = token;
+      }
+    }
+    return payload;
+  }
+
+  Stream<T> _subscribe<T>(
+    String subscription,
+    Map<String, dynamic> variables, {
+    T Function(Map<String, dynamic>)? fromJson,
+    String? expectedDataType,
+    bool convertEnums = false,
+    String? websocketEndpoint,
+  }) async* {
+    final processedOperation = _customFieldsConfig != null
+        ? VendureUtils.sanitizeGraphQLQuery(
+            subscription,
+            _customFieldsConfig!,
+          )
+        : subscription;
+    final normalizedVariables = convertEnums
+        ? VendureUtils.normalizeMutationData(
+            variables,
+            convertEnums: convertEnums,
+          )
+        : variables;
+    final client =
+        await _getSubscriptionClient(websocketEndpoint: websocketEndpoint);
+    final stream = client.subscribe(
+      SubscriptionOptions(
+        document: gql(processedOperation),
+        variables: normalizedVariables,
+      ),
+    );
+    await for (final result in stream) {
+      if (result.hasException) {
+        throw Exception(result.exception.toString());
+      }
+      dynamic data = result.data;
+      if (data == null) {
+        continue;
+      }
+      data = _extractExpectedData(data, expectedDataType);
+      if (data == null) {
+        continue;
+      }
+      if (data is Map && data['__typename'] == 'ErrorResult') {
+        throw Exception(data['message']);
+      }
+      if (data is Map<String, dynamic> || data is List) {
+        data = VendureUtils.normalizeGraphQLData(
+          data,
+          convertEnums: convertEnums,
+        );
+      }
+      if (fromJson != null) {
+        if (data is! Map<String, dynamic>) {
+          throw Exception('Subscription data must be a map');
+        }
+        yield fromJson(data);
+      } else {
+        yield data as T;
+      }
+    }
+  }
+
+  dynamic _extractExpectedData(dynamic data, String? expectedDataType) {
+    if (expectedDataType == null || data == null) {
+      return data;
+    }
+
+    if (expectedDataType.contains('.')) {
+      var currentData = data;
+      final parts = expectedDataType.split('.');
+      for (var part in parts) {
+        currentData = currentData[part];
+        if (currentData == null) {
+          return null;
+        }
+      }
+      return currentData;
+    }
+
+    return data[expectedDataType];
   }
 
   /// Updates the authentication token on the initialized Vendure instance.
