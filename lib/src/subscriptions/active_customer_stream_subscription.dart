@@ -3,12 +3,13 @@ subscription ActiveCustomerStream {
   activeCustomerStream {
     __typename
     id
-    createdAt
-    updatedAt
+    title
     firstName
     lastName
     phoneNumber
     emailAddress
+    createdAt
+    updatedAt
   }
 }
 ''';
