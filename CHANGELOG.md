@@ -1,3 +1,7 @@
+## 2.12.0
+- **Fix**: Restored the `customFields` operation that was accidentally removed in the previous release. `customFields` support is now available again for all operations that accept custom fields.
+- **Note**: If you experienced missing `customFields` behaviour in 2.11.0, upgrading to 2.12.0 will restore the expected functionality.
+
 ## 2.11.0
 - **Fix**: Ensure enum field mappings include `MetricInterval`, `MetricType`, and `StockMovementType` so enum normalization converts these fields correctly.
 - **Internal**: Updated `VendureUtils` enum mappings and normalization logic to reduce false positives for generic `type` fields.
