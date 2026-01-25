@@ -528,6 +528,10 @@ ${_generateFieldsRecursive(customFields, indent: '    ')}  }
     return buffer.toString();
   }
 
+  static void printLongString(String text) {
+    final RegExp pattern = RegExp('.{1,800}');
+    pattern.allMatches(text).forEach((match) => print(match.group(0)));
+  }
 }
 
 extension StringExtension on String {

@@ -23,8 +23,7 @@ class CustomOperations {
     bool convertEnums = true,
   }) async {
     final processedOperation = _prepareOperation(operation);
-    print('GraphQL Operation: $processedOperation');
-    print('Variables: $variables');
+    // VendureUtils.printLongString(processedOperation);
     final client = await _client();
 
     // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE) if enabled

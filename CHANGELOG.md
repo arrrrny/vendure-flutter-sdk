@@ -1,3 +1,9 @@
+## 2.13.0
+- **Feature**: Added support for nested custom fields in `customFieldsConfig`.
+- **Feature**: Support for `SCALAR_CUSTOM_FIELDS` marker to request `customFields` as a raw scalar (prevents JSON subfield selection errors).
+- **Performance**: Optimized the `Customer` fragment by leaning down fields, resulting in faster queries.
+- **Internal**: Enhanced GraphQL query sanitization to handle complex nested fragments.
+
 ## 2.12.0
 - **Fix**: Restored the `customFields` operation that was accidentally removed in the previous release. `customFields` support is now available again for all operations that accept custom fields.
 - **Note**: If you experienced missing `customFields` behaviour in 2.11.0, upgrading to 2.12.0 will restore the expected functionality.

@@ -557,8 +557,9 @@ class Vendure {
             _customFieldsConfig,
           )
         : subscription;
-    print('GraphQL Subscription: $processedOperation');
-    print('Variables: $variables');
+
+    // VendureUtils.printLongString(processedOperation);
+
     final normalizedVariables = convertEnums
         ? VendureUtils.normalizeMutationData(
             variables,
