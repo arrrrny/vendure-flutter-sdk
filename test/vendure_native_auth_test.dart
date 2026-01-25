@@ -170,7 +170,7 @@ void main() {
 
         // Test that we can use the authenticated instance
         try {
-          var customer = await vendure.customer.getActiveCustomer();
+          await vendure.customer.getActiveCustomer();
           print(
               '✅ Can access authenticated endpoints with initialized instance');
         } catch (e) {
@@ -245,7 +245,7 @@ void main() {
 
       try {
         // Test that we still have a valid session
-        var customer = await vendure.customer.getActiveCustomer();
+        await vendure.customer.getActiveCustomer();
         print('✅ Session is still valid');
       } catch (e) {
         print('❌ Session validation failed: $e');

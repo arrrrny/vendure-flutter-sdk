@@ -329,8 +329,7 @@ void main() {
           expect(product, isA<Product>());
           print('✅ Retrieved product by ID');
           print('📋 Product: ${product.name}');
-          print(
-              '📋 Description: ${product.description.substring(0, 50) ?? 'No description'}...');
+          print('📋 Description: ${product.description.substring(0, 50)}...');
         } else {
           print('ℹ️ No products available to test');
         }

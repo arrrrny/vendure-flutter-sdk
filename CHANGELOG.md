@@ -1,5 +1,4 @@
-## 2.10.1
-- **Patch Release**: Bumped package version to `2.10.1`.
+## 2.11.0
 - **Fix**: Ensure enum field mappings include `MetricInterval`, `MetricType`, and `StockMovementType` so enum normalization converts these fields correctly.
 - **Internal**: Updated `VendureUtils` enum mappings and normalization logic to reduce false positives for generic `type` fields.
 - **Tests**: Added/adjusted unit tests for enum conversion of new mappings and list-valued enum fields.
