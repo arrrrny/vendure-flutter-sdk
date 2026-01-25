@@ -1,8 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import '../error_code/error_code.dart';
-import '../native_auth_strategy_error/native_auth_strategy_error.dart';
-import '../success/success.dart';
 
 part 'request_password_reset_result.freezed.dart';
 part 'request_password_reset_result.g.dart';

@@ -8,7 +8,6 @@ import 'package:vendure/src/vendure/catalog_operations.dart';
 import 'package:vendure/src/vendure/custom_operations.dart';
 import 'package:vendure/src/vendure/customer_operations.dart';
 import 'package:vendure/src/vendure/order_operations.dart';
-import 'package:vendure/src/vendure/schema_utils/vendure_schema_utils.dart';
 import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
@@ -380,16 +379,16 @@ class Vendure {
     // Add App Check token link if configured
     if (_appCheckConfig != null) {
       final appCheckLink = AuthLink(
-        headerKey: _appCheckConfig!.headerName,
+        headerKey: _appCheckConfig.headerName,
         getToken: () async {
           try {
-            final token = await _appCheckConfig!.tokenProvider();
-            if (token == null && _appCheckConfig!.required) {
+            final token = await _appCheckConfig.tokenProvider();
+            if (token == null && _appCheckConfig.required) {
               throw Exception('App Check token is required but not available');
             }
             return token;
           } catch (e) {
-            if (_appCheckConfig!.required) {
+            if (_appCheckConfig.required) {
               rethrow;
             }
             return null;
@@ -533,12 +532,12 @@ class Vendure {
       payload['vendure-token'] = _channelToken;
     }
     if (_appCheckConfig != null) {
-      final token = await _appCheckConfig!.tokenProvider();
-      if (token == null && _appCheckConfig!.required) {
+      final token = await _appCheckConfig.tokenProvider();
+      if (token == null && _appCheckConfig.required) {
         throw Exception('App Check token is required but not available');
       }
       if (token != null) {
-        payload[_appCheckConfig!.headerName] = token;
+        payload[_appCheckConfig.headerName] = token;
       }
     }
     return payload;
@@ -555,7 +554,7 @@ class Vendure {
     final processedOperation = _customFieldsConfig != null
         ? VendureUtils.sanitizeGraphQLQuery(
             subscription,
-            _customFieldsConfig!,
+            _customFieldsConfig,
           )
         : subscription;
     final normalizedVariables = convertEnums

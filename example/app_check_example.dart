@@ -5,6 +5,7 @@
 /// 2. Set up App Check token provider
 /// 3. Initialize Vendure with Firebase Auth and App Check
 /// 4. Make authenticated requests with automatic App Check token injection
+library;
 
 import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_auth/firebase_auth.dart';

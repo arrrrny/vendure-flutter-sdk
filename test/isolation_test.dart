@@ -225,11 +225,11 @@ void main() {
 
       // 5. Trigger update to force stream emission
       // Wait a bit for subscription to establish
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
       await vendureTest.updateCustomer('ManualTest-${DateTime.now().millisecondsSinceEpoch}');
 
       // Wait for completion
-      await completer.future.timeout(Duration(seconds: 10));
+      await completer.future.timeout(const Duration(seconds: 10));
       await sub.cancel();
 
     } catch (e, stack) {

@@ -1,11 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../current_user/current_user.dart';
 import '../current_user_channel/current_user_channel.dart';
 import '../error_code/error_code.dart';
-import '../invalid_credentials_error/invalid_credentials_error.dart';
-import '../native_auth_strategy_error/native_auth_strategy_error.dart';
-import '../not_verified_error/not_verified_error.dart';
 
 part 'native_authentication_result.freezed.dart';
 part 'native_authentication_result.g.dart';

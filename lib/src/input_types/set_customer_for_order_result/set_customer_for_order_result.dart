@@ -1,16 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../already_logged_in_error/already_logged_in_error.dart';
 import '../currency_code/currency_code.dart';
 import '../customer/customer.dart';
 import '../discount/discount.dart';
-import '../email_address_conflict_error/email_address_conflict_error.dart';
 import '../error_code/error_code.dart';
 import '../fulfillment/fulfillment.dart';
-import '../guest_checkout_error/guest_checkout_error.dart';
 import '../history_entry_list/history_entry_list.dart';
-import '../no_active_order_error/no_active_order_error.dart';
-import '../order/order.dart';
 import '../order_address/order_address.dart';
 import '../order_line/order_line.dart';
 import '../order_tax_summary/order_tax_summary.dart';

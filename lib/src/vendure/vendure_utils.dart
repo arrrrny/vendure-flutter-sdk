@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 class VendureUtils {
   // Static set of known enum types (initialized with standard Vendure enums)
@@ -233,8 +232,9 @@ class VendureUtils {
 
   static String _convertEnumToGraphQLFormat(String enumValue) {
     if (enumValue == 'try_') return 'TRY';
-    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase())
+    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase()) {
       return enumValue;
+    }
 
     return enumValue
         .replaceAllMapped(

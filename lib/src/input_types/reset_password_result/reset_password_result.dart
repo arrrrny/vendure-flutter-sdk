@@ -1,13 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../current_user/current_user.dart';
 import '../current_user_channel/current_user_channel.dart';
 import '../error_code/error_code.dart';
-import '../native_auth_strategy_error/native_auth_strategy_error.dart';
-import '../not_verified_error/not_verified_error.dart';
-import '../password_reset_token_expired_error/password_reset_token_expired_error.dart';
-import '../password_reset_token_invalid_error/password_reset_token_invalid_error.dart';
-import '../password_validation_error/password_validation_error.dart';
 
 part 'reset_password_result.freezed.dart';
 part 'reset_password_result.g.dart';

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../order/order.dart';
 
 part 'order_tax_summary.freezed.dart';
 part 'order_tax_summary.g.dart';

@@ -1,15 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../coupon_code_expired_error/coupon_code_expired_error.dart';
-import '../coupon_code_invalid_error/coupon_code_invalid_error.dart';
-import '../coupon_code_limit_error/coupon_code_limit_error.dart';
 import '../currency_code/currency_code.dart';
 import '../customer/customer.dart';
 import '../discount/discount.dart';
 import '../error_code/error_code.dart';
 import '../fulfillment/fulfillment.dart';
 import '../history_entry_list/history_entry_list.dart';
-import '../order/order.dart';
 import '../order_address/order_address.dart';
 import '../order_line/order_line.dart';
 import '../order_tax_summary/order_tax_summary.dart';

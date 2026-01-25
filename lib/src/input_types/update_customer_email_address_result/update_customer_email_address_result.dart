@@ -1,10 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import '../error_code/error_code.dart';
-import '../identifier_change_token_expired_error/identifier_change_token_expired_error.dart';
-import '../identifier_change_token_invalid_error/identifier_change_token_invalid_error.dart';
-import '../native_auth_strategy_error/native_auth_strategy_error.dart';
-import '../success/success.dart';
 
 part 'update_customer_email_address_result.freezed.dart';
 part 'update_customer_email_address_result.g.dart';

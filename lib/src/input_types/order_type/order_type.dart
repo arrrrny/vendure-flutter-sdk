@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../seller/seller.dart';
 
 enum OrderType {
   @JsonKey(name: 'Aggregate')

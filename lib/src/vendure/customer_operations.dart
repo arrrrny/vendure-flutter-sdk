@@ -119,7 +119,7 @@ class CustomerOperations {
       throw Exception(
           'activeCustomerStream is not available. Ensure Vendure is properly initialized.');
     }
-    return _activeCustomerStreamProvider!(
+    return _activeCustomerStreamProvider(
       websocketEndpoint: websocketEndpoint,
       convertEnums: convertEnums,
       includeInitialValue: includeInitialValue,

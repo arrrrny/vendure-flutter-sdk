@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../payment_method/payment_method.dart';
 
 part 'payment_input.freezed.dart';
 part 'payment_input.g.dart';

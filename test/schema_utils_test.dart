@@ -18,7 +18,7 @@ void main() {
       cache: GraphQLCache(),
     );
 
-    final authQuery = r'''
+    const authQuery = r'''
       mutation Login($username: String!, $password: String!) {
         authenticate(input: {
           native: {
@@ -38,7 +38,7 @@ void main() {
 
     final authResult = await authClient.mutate(MutationOptions(
       document: gql(authQuery),
-      variables: {'username': username, 'password': password},
+      variables: const {'username': username, 'password': password},
     ));
 
     if (authResult.hasException) {

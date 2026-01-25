@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../address/address.dart';
-import '../country/country.dart';
 
 part 'update_address_input.freezed.dart';
 part 'update_address_input.g.dart';

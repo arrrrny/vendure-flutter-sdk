@@ -125,7 +125,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly rejected invalid credentials: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly rejected invalid credentials: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -139,7 +139,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly rejected invalid login: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly rejected invalid login: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -256,7 +256,7 @@ void main() {
       try {
         var order = await vendure.order.getOrderByCode(code: testOrderCode);
         expect(order, isNotNull);
-        expect(order!.code, equals(testOrderCode));
+        expect(order.code, equals(testOrderCode));
 
         print('✅ Retrieved order by code');
         print('📋 Order ID: ${order.id}');
@@ -273,7 +273,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid coupon: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled invalid coupon: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -285,7 +285,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '⚠️ No valid coupons available: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '⚠️ No valid coupons available: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -964,7 +964,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid variant: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled invalid variant: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -978,7 +978,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid order line: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled invalid order line: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -989,7 +989,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid collection: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled invalid collection: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -1000,7 +1000,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid product: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled invalid product: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -1019,7 +1019,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid country: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled invalid country: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -1033,7 +1033,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled negative quantity: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled negative quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 
@@ -1047,7 +1047,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled zero quantity: ${errorMsg.length > 100 ? errorMsg.substring(0, 100) + '...' : errorMsg}');
+            '✅ Correctly handled zero quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
       }
     });
 

@@ -1,10 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import '../error_code/error_code.dart';
-import '../invalid_credentials_error/invalid_credentials_error.dart';
-import '../native_auth_strategy_error/native_auth_strategy_error.dart';
-import '../password_validation_error/password_validation_error.dart';
-import '../success/success.dart';
 
 part 'update_customer_password_result.freezed.dart';
 part 'update_customer_password_result.g.dart';

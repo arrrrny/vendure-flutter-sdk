@@ -47,7 +47,7 @@ void main() {
       final customer =
           await completer.future.timeout(const Duration(seconds: 10));
       print(
-          '📡 Initial customer result: ${customer != null ? "found" : "not found"}');
+          '📡 Initial customer result: ${"found"}');
       expect(customer, isA<Customer>());
       expect(customer.emailAddress, equals(emailAddress));
       print(

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import '../region/region.dart';
 import '../region_translation/region_translation.dart';
 import '../types/language_code/language_code.dart';
 

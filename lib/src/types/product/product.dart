@@ -5,7 +5,6 @@ import '../facet_value/facet_value.dart';
 import '../product_option_group/product_option_group.dart';
 import '../product_translation/product_translation.dart';
 import '../product_variant/product_variant.dart';
-import '../product_variant_list/product_variant_list.dart';
 import '../types/language_code/language_code.dart';
 
 part 'product.freezed.dart';

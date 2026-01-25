@@ -330,7 +330,7 @@ void main() {
           print('✅ Retrieved product by ID');
           print('📋 Product: ${product.name}');
           print(
-              '📋 Description: ${product.description?.substring(0, 50) ?? 'No description'}...');
+              '📋 Description: ${product.description.substring(0, 50) ?? 'No description'}...');
         } else {
           print('ℹ️ No products available to test');
         }
