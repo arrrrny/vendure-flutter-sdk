@@ -1,8 +1,15 @@
+## 2.10.1
+- **Patch Release**: Bumped package version to `2.10.1`.
+- **Fix**: Ensure enum field mappings include `MetricInterval`, `MetricType`, and `StockMovementType` so enum normalization converts these fields correctly.
+- **Internal**: Updated `VendureUtils` enum mappings and normalization logic to reduce false positives for generic `type` fields.
+- **Tests**: Added/adjusted unit tests for enum conversion of new mappings and list-valued enum fields.
+
 ## 2.10.0
 - **Added Support for `activeCustomerStream` Subscription**: Now you can subscribe to real-time updates for the active customer.
 - **Improved Enum Handling**: Updated internal field-to-type mappings for all Shop API enums (CurrencyCode, LanguageCode, Permission, AdjustmentType, GlobalFlag, ErrorCode, LogicalOperator, DeletionResult, etc.).
 - **New Utility `VendureSchemaUtils.discoverEnums()`**: A new utility to manually trigger schema introspection and register custom enums at runtime.
 - **Enhanced Normalization**: Improved GraphQL data normalization for subscription results and custom fields.
+
 
 ## 2.9.0
 - **Fixed Enum Conversion for Conflicting Field Names**: Enhanced `normalizeGraphQLData` to handle cases where multiple GraphQL types have fields with the same name (e.g., `Parser.type`, `Order.type`, `Asset.type`).

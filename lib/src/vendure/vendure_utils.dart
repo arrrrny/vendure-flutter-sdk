@@ -1,6 +1,4 @@
-
 import 'dart:convert';
-
 
 class VendureUtils {
   // Static set of known enum types (initialized with standard Vendure enums)
@@ -15,27 +13,80 @@ class VendureUtils {
     'JobState',
     'LanguageCode',
     'LogicalOperator',
+    'MetricInterval',
+    'MetricType',
     'OrderType',
     'Permission',
     'SortOrder',
+    'StockMovementType',
     'UserStatus',
   };
 
   // Static map of fields to their enum types
+  // Add as many field -> enum mappings as can be reasonably inferred from Vendure schema.
   static final Map<String, String> _fieldToEnumType = {
+    // common fields
     'currencyCode': 'CurrencyCode',
     'languageCode': 'LanguageCode',
     'permissions': 'Permission',
-    'type': 'AdjustmentType', // Covers AdjustmentType, AssetType, HistoryEntryType, OrderType etc.
-    'mode': 'GlobalFlag', 
+    'permission': 'Permission',
+    'status': 'UserStatus',
+    'userStatus': 'UserStatus',
+    'sortOrder': 'SortOrder',
+    'orderDirection': 'SortOrder',
+
+    // adjustment / order related
+    'adjustmentType': 'AdjustmentType',
+    'orderType': 'OrderType',
+    'orderTypeCode': 'OrderType',
+
+    // asset related
+    'assetType': 'AssetType',
+    'assetTypeCode': 'AssetType',
+
+    // history / events
+    'historyEntryType': 'HistoryEntryType',
+    'historyType': 'HistoryEntryType',
+
+    // job and state related
+    'jobState': 'JobState',
+    'state':
+        'JobState', // common field name used by Job and others; prefer specific 'jobState' where possible
+
+    // global flags and modes
+    'mode': 'GlobalFlag',
+    'globalFlag': 'GlobalFlag',
+
+    // error / deletion
     'errorCode': 'ErrorCode',
-    'operator': 'LogicalOperator',
     'result': 'DeletionResult',
+
+    // logical / filter operators
+    'operator': 'LogicalOperator',
+    'logicalOperator': 'LogicalOperator',
+
+    // metrics
+    'metricInterval': 'MetricInterval',
+    'interval': 'MetricInterval',
+    'metricType': 'MetricType',
+    'metric': 'MetricType',
+
+    // stock movement
+    'stockMovementType': 'StockMovementType',
+    'movementType': 'StockMovementType',
+
+    // fallback generic 'type' - keep as last-resort; many Vendure types use 'type' field
+    // It is impossible to disambiguate all usages of 'type' without introspection,
+    // but keeping a sensible default helps in many places (e.g., adjustments).
+    'type': 'AdjustmentType',
   };
 
   // Custom enum values registry: TypeName -> Set<Value>
   // Only used if strict validation is required, otherwise we just trust the field mapping
-  static final Map<String, Set<String>> _customEnumValues = {};
+  static final Map<String, Set<String>> _customEnumValues = {
+    // Example: provide known values for CurrencyCode if you want strict validation.
+    // 'CurrencyCode': {'USD', 'EUR', 'GBP', ...},
+  };
 
   // Global toggles for enum conversion.
   static bool convertQueryEnums = true;
@@ -49,7 +100,8 @@ class VendureUtils {
 
   /// Register custom enum types and their fields manually.
   /// This replaces the slow introspection.
-  static void registerCustomEnum(String typeName, List<String> fields, {List<String>? values}) {
+  static void registerCustomEnum(String typeName, List<String> fields,
+      {List<String>? values}) {
     _knownEnumTypes.add(typeName);
     for (final field in fields) {
       _fieldToEnumType[field] = typeName;
@@ -89,13 +141,15 @@ class VendureUtils {
         if (convertEnums && value != null) {
           final enumType = _fieldToEnumType[key];
           if (enumType != null && _knownEnumTypes.contains(enumType)) {
-             if (value is List) {
-               normalizedData[key] = value.map((item) => _convertEnumToDartFormat(item.toString())).toList();
-               wasConverted = true;
-             } else if (value is String) {
-               normalizedData[key] = _convertEnumToDartFormat(value);
-               wasConverted = true;
-             }
+            if (value is List) {
+              normalizedData[key] = value
+                  .map((item) => _convertEnumToDartFormat(item.toString()))
+                  .toList();
+              wasConverted = true;
+            } else if (value is String) {
+              normalizedData[key] = _convertEnumToDartFormat(value);
+              wasConverted = true;
+            }
           }
         }
 
@@ -106,34 +160,40 @@ class VendureUtils {
       }
       return normalizedData;
     }
-    
+
     if (data is List) {
-       // Try to infer from parent key if it's a list of enums
+      // Try to infer from parent key if it's a list of enums
       final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
-      if (convertEnums && enumType != null && _knownEnumTypes.contains(enumType)) {
-        return data.map((item) => _convertEnumToDartFormat(item.toString())).toList();
+      if (convertEnums &&
+          enumType != null &&
+          _knownEnumTypes.contains(enumType)) {
+        return data
+            .map((item) => _convertEnumToDartFormat(item.toString()))
+            .toList();
       }
 
       return data
           .map((item) => normalizeGraphQLData(item, convertEnums: convertEnums))
           .toList();
     }
-    
+
     return data;
   }
 
   static dynamic normalizeMutationData(dynamic data,
       {String? parentKey, bool? convertEnums}) {
     convertEnums = convertEnums ?? convertMutationEnums;
-    
+
     if (data is Map<String, dynamic>) {
       final normalizedData = <String, dynamic>{};
       for (final entry in data.entries) {
         final key = entry.key;
         final value = entry.value;
-        
+
         final enumType = _fieldToEnumType[key];
-        if (convertEnums && enumType != null && _knownEnumTypes.contains(enumType)) {
+        if (convertEnums &&
+            enumType != null &&
+            _knownEnumTypes.contains(enumType)) {
           if (value is List) {
             normalizedData[key] = value
                 .map((item) =>
@@ -145,16 +205,18 @@ class VendureUtils {
             continue;
           }
         }
-        
+
         normalizedData[key] = normalizeMutationData(value,
             parentKey: key, convertEnums: convertEnums);
       }
       return normalizedData;
     }
-    
+
     if (data is List) {
       final enumType = parentKey != null ? _fieldToEnumType[parentKey] : null;
-      if (convertEnums && enumType != null && _knownEnumTypes.contains(enumType)) {
+      if (convertEnums &&
+          enumType != null &&
+          _knownEnumTypes.contains(enumType)) {
         return data
             .map((item) =>
                 item is String ? _convertEnumToGraphQLFormat(item) : item)
@@ -165,13 +227,14 @@ class VendureUtils {
               (item) => normalizeMutationData(item, convertEnums: convertEnums))
           .toList();
     }
-    
+
     return data;
   }
 
   static String _convertEnumToGraphQLFormat(String enumValue) {
     if (enumValue == 'try_') return 'TRY';
-    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase()) return enumValue;
+    if (enumValue.contains('_') && enumValue == enumValue.toUpperCase())
+      return enumValue;
 
     return enumValue
         .replaceAllMapped(
@@ -186,7 +249,11 @@ class VendureUtils {
     if (enumValue.contains('_')) {
       final parts = enumValue.toLowerCase().split('_');
       return parts.first +
-          parts.skip(1).map((w) => w.isNotEmpty ? w[0].toUpperCase() + w.substring(1) : '').join('');
+          parts
+              .skip(1)
+              .map((w) =>
+                  w.isNotEmpty ? w[0].toUpperCase() + w.substring(1) : '')
+              .join('');
     }
     return enumValue.toLowerCase();
   }
