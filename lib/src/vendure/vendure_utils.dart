@@ -321,11 +321,187 @@ class VendureUtils {
     return defaultValues['String'];
   }
 
-  /// Placeholder for custom field injection logic.
+  List<String> getMissingFields(Map<String, dynamic> jsonMap) {
+    final result = <String>[];
+
+    void checkMap(Map<String, dynamic> map, String? parentPath) {
+      map.forEach((key, value) {
+        final fullPath = parentPath != null ? '$parentPath.$key' : key;
+        if (value == null) {
+          result.add(fullPath);
+        } else if (value is Map<String, dynamic>) {
+          checkMap(value, fullPath);
+        } else if (value is List<dynamic>) {
+          for (int i = 0; i < value.length; i++) {
+            final itemPath = '$fullPath[$i]';
+            if (value[i] is Map<String, dynamic>) {
+              checkMap(value[i] as Map<String, dynamic>, itemPath);
+            } else {
+              result.add(itemPath);
+            }
+          }
+        }
+      });
+    }
+
+    checkMap(jsonMap, null);
+    return result;
+  }
+
+  static String replaceCustomFieldsFragment(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    customFieldsConfig.forEach((typeName, customFields) {
+      String fragmentName = '${typeName.capitalize()}CustomFields';
+      String generatedFragment =
+          generateFragmentWithTypename(typeName, customFields);
+
+      queryTemplate = queryTemplate.replaceAll(
+          'fragment $fragmentName on $typeName {\n  __typename\n}',
+          generatedFragment);
+    });
+
+    return queryTemplate;
+  }
+
+  static String generateFragmentWithTypename(
+      String typeName, List<String> customFields) {
+    StringBuffer fragmentBuffer = StringBuffer();
+
+    fragmentBuffer.writeln(
+        'fragment ${typeName.capitalize()}CustomFields on ${typeName.capitalize()} {');
+    fragmentBuffer.writeln('  customFields {');
+    fragmentBuffer.writeln('    __typename');
+
+    for (var field in customFields) {
+      fragmentBuffer.writeln('    $field');
+    }
+
+    fragmentBuffer.writeln('  }');
+    fragmentBuffer.writeln('}');
+
+    return fragmentBuffer.toString();
+  }
+
+  static String generateQueryWithCustomFields(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isEmpty) {
+        queryTemplate = queryTemplate.replaceAll(
+            RegExp(r'\.\.\.' + typeName.capitalize() + r'CustomFields\s*',
+                multiLine: true),
+            '');
+
+        queryTemplate = queryTemplate.replaceAll(
+            RegExp(
+                r'fragment\s+' +
+                    typeName.capitalize() +
+                    r'CustomFields\s+on\s+' +
+                    typeName.capitalize() +
+                    r'\s*\{[^}]*\}',
+                multiLine: true),
+            '');
+      }
+    });
+
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isNotEmpty) {
+        String generatedFragment =
+            generateFragmentWithTypename(typeName, customFields);
+
+        queryTemplate = queryTemplate.replaceAllMapped(
+            RegExp(
+                r'fragment\s+' +
+                    typeName.capitalize() +
+                    r'CustomFields\s+on\s+' +
+                    typeName.capitalize() +
+                    r'\s*\{[^}]*\}',
+                multiLine: true),
+            (match) => generatedFragment);
+      }
+    });
+
+    queryTemplate = queryTemplate
+        .replaceAll(RegExp(r'\n\s*\n', multiLine: true), '\n')
+        .trim();
+
+    return queryTemplate;
+  }
+
+  static String cleanUpCustomFields(
+      String queryTemplate, Map<String, List<String>> customFieldsConfig) {
+    queryTemplate = queryTemplate.replaceAll(
+        RegExp(r'fragment\s+\w+CustomFields\s+on\s+\w+\s*\{[^}]*\}',
+            multiLine: true),
+        '');
+
+    queryTemplate = queryTemplate.replaceAll(
+        RegExp(r'\.\.\.\w+CustomFields\s*', multiLine: true), '');
+
+    customFieldsConfig.forEach((typeName, customFields) {
+      if (customFields.isNotEmpty) {
+        String generatedFragment =
+            generateFragmentWithTypename(typeName, customFields);
+
+        queryTemplate += '\n\n' + generatedFragment;
+
+        queryTemplate = queryTemplate.replaceAllMapped(
+            RegExp(r'(\b' + typeName + r'\b)(\s*\{)', multiLine: true),
+            (match) =>
+                match.group(1)! +
+                match.group(2)! +
+                '\n  ...' +
+                typeName.capitalize() +
+                'CustomFields');
+      }
+    });
+
+    queryTemplate = queryTemplate
+        .replaceAll(RegExp(r'\n\s*\n', multiLine: true), '\n')
+        .trim();
+
+    return queryTemplate;
+  }
+
   static String sanitizeGraphQLQuery(
       String query, Map<String, List<String>> customFieldsConfig) {
-    // TODO: Implement custom field injection if required.
-    // Currently returns the query as-is to satisfy the API.
-    return query;
+    final entityNames = customFieldsConfig.keys.join('|');
+    final regex = RegExp(
+        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\s*{([\s\S]*?)\n}',
+        multiLine: true);
+
+    final buffer = StringBuffer();
+    var lastIndex = 0;
+
+    for (final match in regex.allMatches(query)) {
+      final fragmentName = match.group(1)!;
+      final entityName = match.group(2)!;
+      final fragmentContent = match.group(3)!;
+
+      buffer.write(query.substring(lastIndex, match.start));
+
+      if (customFieldsConfig[entityName]!.isNotEmpty &&
+          !fragmentContent.contains('customFields {')) {
+        final customFieldsFragment = '''
+  customFields {
+    ${customFieldsConfig[entityName]!.join('\n    ')}
+  }''';
+        buffer.write(
+            'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment\n}');
+      } else {
+        buffer.write(match.group(0));
+      }
+
+      lastIndex = match.end;
+    }
+
+    buffer.write(query.substring(lastIndex));
+    return buffer.toString();
+  }
+
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return isNotEmpty ? '${this[0].toUpperCase()}${substring(1)}' : '';
   }
 }
