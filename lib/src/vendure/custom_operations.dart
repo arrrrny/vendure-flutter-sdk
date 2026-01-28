@@ -54,12 +54,12 @@ class CustomOperations {
 
     dynamic data = result.data;
     if (data == null) {
-      return null;
+      throw Exception('No data returned from GraphQL operation');
     }
 
     data = _extractExpectedData(data, expectedDataType);
     if (data == null) {
-      return null;
+      throw Exception('No data returned for expected type: $expectedDataType');
     }
 
     if (data is Map && data['__typename'] == 'ErrorResult') {
@@ -78,7 +78,11 @@ class CustomOperations {
       var currentData = data;
       final parts = expectedDataType.split('.');
       for (var part in parts) {
-        currentData = currentData[part];
+        if (currentData is Map<String, dynamic>) {
+          currentData = currentData[part];
+        } else {
+          return null;
+        }
         if (currentData == null) {
           return null;
         }
@@ -86,7 +90,10 @@ class CustomOperations {
       return currentData;
     }
 
-    return data[expectedDataType];
+    if (data is Map<String, dynamic>) {
+      return data[expectedDataType];
+    }
+    return null;
   }
 
   Map<String, dynamic> _extractHeadersFromResponse(

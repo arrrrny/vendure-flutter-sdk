@@ -24,9 +24,19 @@ class AuthBaseOperations {
         throw Exception(result.exception.toString());
       }
 
+      // Check if data is null
+      if (result.data == null) {
+        throw Exception('No data returned from mutation');
+      }
+
       var data = expectedDataType != null && result.data != null
           ? result.data![expectedDataType]
           : result.data;
+
+      // Check if the extracted data is null
+      if (data == null) {
+        throw Exception('No data returned for expected type: $expectedDataType');
+      }
 
       if (data is Map &&
           data['__typename'] != null &&
@@ -47,7 +57,7 @@ class AuthBaseOperations {
           throw Exception(message);
         }
       }
-      data = VendureUtils.normalizeGraphQLData(data!);
+      data = VendureUtils.normalizeGraphQLData(data);
       if (data is Map) {
         return fromJson(Map<String, dynamic>.from(data));
       } else {
@@ -72,9 +82,20 @@ class AuthBaseOperations {
       if (result.hasException) {
         throw Exception(result.exception.toString());
       }
+
+      // Check if data is null
+      if (result.data == null) {
+        throw Exception('No data returned from query');
+      }
+
       var data = expectedDataType != null && result.data != null
           ? result.data![expectedDataType]
           : result.data;
+
+      // Check if the extracted data is null
+      if (data == null) {
+        throw Exception('No data returned for expected type: $expectedDataType');
+      }
 
       if (data is Map &&
           data['__typename'] != null &&
@@ -95,7 +116,7 @@ class AuthBaseOperations {
           throw Exception(message);
         }
       }
-      data = VendureUtils.normalizeGraphQLData(data!);
+      data = VendureUtils.normalizeGraphQLData(data);
       if (data is Map) {
         return fromJson(Map<String, dynamic>.from(data));
       } else {

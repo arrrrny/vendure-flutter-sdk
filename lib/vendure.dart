@@ -344,67 +344,77 @@ class Vendure {
 
     final httpLink = HttpLink(endpointUrl);
 
-    // Create the authentication link for Authorization header
-    final authLink = AuthLink(
-      // 'Authorization' is the default headerKey
-      getToken: () async {
-        // Skip authentication if using guest session
-        if (_useVendureGuestSession) {
-          return null;
-        }
-        if (_token != null) {
-          return 'Bearer $_token';
-        } else if (_tokenManager != null) {
-          return 'Bearer ${await _tokenManager.getValidToken()}';
-        }
-        return null;
-      },
-    );
-
-    // Create another AuthLink for the vendure-token header
+    // Create the authentication link for Authorization header only if not using guest session
     Link link;
 
-    // Add App Check token link if configured
-    if (_appCheckConfig != null) {
-      final appCheckLink = AuthLink(
-        headerKey: _appCheckConfig.headerName,
-        getToken: () async {
-          try {
-            final token = await _appCheckConfig.tokenProvider();
-            if (token == null && _appCheckConfig.required) {
-              throw Exception('App Check token is required but not available');
-            }
-            return token;
-          } catch (e) {
-            if (_appCheckConfig.required) {
-              rethrow;
-            }
-            return null;
-          }
-        },
-      );
-
+    if (_useVendureGuestSession) {
+      // If using guest session, don't add authentication headers
       if (_channelToken != null) {
         final vendureTokenLink = AuthLink(
           headerKey: 'vendure-token',
           getToken: () async => _channelToken,
         );
-        link = authLink
-            .concat(appCheckLink)
-            .concat(vendureTokenLink)
-            .concat(httpLink);
+        link = vendureTokenLink.concat(httpLink);
       } else {
-        link = authLink.concat(appCheckLink).concat(httpLink);
+        link = httpLink;
       }
-    } else if (_channelToken != null) {
-      final vendureTokenLink = AuthLink(
-        headerKey: 'vendure-token',
-        getToken: () async => _channelToken,
-      );
-      link = authLink.concat(vendureTokenLink).concat(httpLink);
     } else {
-      link = authLink.concat(httpLink);
+      // Create the authentication link for Authorization header
+      final authLink = AuthLink(
+        // 'Authorization' is the default headerKey
+        getToken: () async {
+          if (_token != null) {
+            return 'Bearer $_token';
+          } else if (_tokenManager != null) {
+            return 'Bearer ${await _tokenManager.getValidToken()}';
+          }
+          return null;
+        },
+      );
+
+      // Add App Check token link if configured
+      if (_appCheckConfig != null) {
+        final appCheckLink = AuthLink(
+          headerKey: _appCheckConfig.headerName,
+          getToken: () async {
+            try {
+              final token = await _appCheckConfig.tokenProvider();
+              if (token == null && _appCheckConfig.required) {
+                throw Exception('App Check token is required but not available');
+              }
+              return token;
+            } catch (e) {
+              if (_appCheckConfig.required) {
+                rethrow;
+              }
+              return null;
+            }
+          },
+        );
+
+        if (_channelToken != null) {
+          final vendureTokenLink = AuthLink(
+            headerKey: 'vendure-token',
+            getToken: () async => _channelToken,
+          );
+          link = authLink
+              .concat(appCheckLink)
+              .concat(vendureTokenLink)
+              .concat(httpLink);
+        } else {
+          link = authLink.concat(appCheckLink).concat(httpLink);
+        }
+      } else if (_channelToken != null) {
+        final vendureTokenLink = AuthLink(
+          headerKey: 'vendure-token',
+          getToken: () async => _channelToken,
+        );
+        link = authLink.concat(vendureTokenLink).concat(httpLink);
+      } else {
+        link = authLink.concat(httpLink);
+      }
     }
+
     return GraphQLClient(
       cache: GraphQLCache(),
       link: link,
@@ -512,9 +522,12 @@ class Vendure {
 
   Future<Map<String, dynamic>> _buildWebsocketPayload() async {
     final payload = <String, dynamic>{};
-    final authToken = await _resolveAuthToken();
-    if (authToken != null) {
-      payload['Authorization'] = authToken;
+    // Only add authorization token if not using guest session
+    if (!_useVendureGuestSession) {
+      final authToken = await _resolveAuthToken();
+      if (authToken != null) {
+        payload['Authorization'] = authToken;
+      }
     }
     if (_channelToken != null) {
       payload['vendure-token'] = _channelToken;

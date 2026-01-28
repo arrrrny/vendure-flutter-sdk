@@ -1,3 +1,6 @@
+## 2.14.1
+- **Fix**: Instead of returning null, always throw exception on Auth
+
 ## 2.14.0
 - **Feature**: Converted to dart package, with support for Flutter and Dart.
 
