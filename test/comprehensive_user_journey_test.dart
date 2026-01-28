@@ -1,12 +1,14 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:vendure/vendure.dart';
+
+import 'test_config.dart';
 
 void main() {
   late Vendure vendure;
   late Vendure authenticatedVendure;
-  String endpoint = 'http://localhost:3000/shop-api';
-  String testEmail = 'a@b.com';
-  String testPassword = '123456';
+  String endpoint = TestConfig.shopApiUrl;
+  String testEmail = TestConfig.shopEmail;
+  String testPassword = TestConfig.shopPassword;
   String testFirstName = 'Test';
   String testLastName = 'User';
   String testPhone = '+1234567890';

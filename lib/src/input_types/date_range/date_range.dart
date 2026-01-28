@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'date_range.freezed.dart';
 part 'date_range.g.dart';
 
@@ -16,5 +15,6 @@ class DateRange with _$DateRange {
     required DateTime start,
   }) = _DateRange;
 
-  factory DateRange.fromJson(Map<String, dynamic> json) => _$DateRangeFromJson(json);
+  factory DateRange.fromJson(Map<String, dynamic> json) =>
+      _$DateRangeFromJson(json);
 }

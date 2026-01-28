@@ -207,8 +207,7 @@ class __$$StringOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StringOperatorsImpl extends _StringOperators
-    with DiagnosticableTreeMixin {
+class _$StringOperatorsImpl extends _StringOperators {
   _$StringOperatorsImpl(
       {this.contains,
       this.eq,
@@ -242,23 +241,8 @@ class _$StringOperatorsImpl extends _StringOperators
   String? regex;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'StringOperators(contains: $contains, eq: $eq, in_: $in_, isNull: $isNull, notContains: $notContains, notEq: $notEq, notIn: $notIn, regex: $regex)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'StringOperators'))
-      ..add(DiagnosticsProperty('contains', contains))
-      ..add(DiagnosticsProperty('eq', eq))
-      ..add(DiagnosticsProperty('in_', in_))
-      ..add(DiagnosticsProperty('isNull', isNull))
-      ..add(DiagnosticsProperty('notContains', notContains))
-      ..add(DiagnosticsProperty('notEq', notEq))
-      ..add(DiagnosticsProperty('notIn', notIn))
-      ..add(DiagnosticsProperty('regex', regex));
   }
 
   /// Create a copy of StringOperators

@@ -370,7 +370,7 @@ class __$$ChannelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
+class _$ChannelImpl extends _Channel {
   const _$ChannelImpl(
       {final List<CurrencyCode?>? availableCurrencyCodes,
       final List<LanguageCode?>? availableLanguageCodes,
@@ -463,34 +463,8 @@ class _$ChannelImpl extends _Channel with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Channel(availableCurrencyCodes: $availableCurrencyCodes, availableLanguageCodes: $availableLanguageCodes, code: $code, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, defaultCurrencyCode: $defaultCurrencyCode, defaultLanguageCode: $defaultLanguageCode, defaultShippingZone: $defaultShippingZone, defaultTaxZone: $defaultTaxZone, id: $id, outOfStockThreshold: $outOfStockThreshold, pricesIncludeTax: $pricesIncludeTax, seller: $seller, token: $token, trackInventory: $trackInventory, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Channel'))
-      ..add(
-          DiagnosticsProperty('availableCurrencyCodes', availableCurrencyCodes))
-      ..add(
-          DiagnosticsProperty('availableLanguageCodes', availableLanguageCodes))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('defaultCurrencyCode', defaultCurrencyCode))
-      ..add(DiagnosticsProperty('defaultLanguageCode', defaultLanguageCode))
-      ..add(DiagnosticsProperty('defaultShippingZone', defaultShippingZone))
-      ..add(DiagnosticsProperty('defaultTaxZone', defaultTaxZone))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('outOfStockThreshold', outOfStockThreshold))
-      ..add(DiagnosticsProperty('pricesIncludeTax', pricesIncludeTax))
-      ..add(DiagnosticsProperty('seller', seller))
-      ..add(DiagnosticsProperty('token', token))
-      ..add(DiagnosticsProperty('trackInventory', trackInventory))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

@@ -120,8 +120,7 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordAlreadySetErrorImpl extends _PasswordAlreadySetError
-    with DiagnosticableTreeMixin {
+class _$PasswordAlreadySetErrorImpl extends _PasswordAlreadySetError {
   const _$PasswordAlreadySetErrorImpl({this.errorCode, this.message})
       : super._();
 
@@ -134,17 +133,8 @@ class _$PasswordAlreadySetErrorImpl extends _PasswordAlreadySetError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PasswordAlreadySetError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PasswordAlreadySetError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

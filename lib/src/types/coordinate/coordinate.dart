@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'coordinate.freezed.dart';
 part 'coordinate.g.dart';
+
 @freezed
 class Coordinate with _$Coordinate {
   const Coordinate._();
@@ -11,5 +11,6 @@ class Coordinate with _$Coordinate {
     required double y,
   }) = _Coordinate;
 
-  factory Coordinate.fromJson(Map<String, dynamic> json) => _$CoordinateFromJson(json);
+  factory Coordinate.fromJson(Map<String, dynamic> json) =>
+      _$CoordinateFromJson(json);
 }

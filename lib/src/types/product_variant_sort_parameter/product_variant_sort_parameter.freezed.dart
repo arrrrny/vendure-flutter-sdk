@@ -226,8 +226,7 @@ class __$$ProductVariantSortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
-    with DiagnosticableTreeMixin {
+class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter {
   _$ProductVariantSortParameterImpl(
       {this.createdAt,
       this.id,
@@ -264,24 +263,8 @@ class _$ProductVariantSortParameterImpl extends _ProductVariantSortParameter
   SortOrder? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProductVariantSortParameter(createdAt: $createdAt, id: $id, name: $name, price: $price, priceWithTax: $priceWithTax, productId: $productId, sku: $sku, stockLevel: $stockLevel, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProductVariantSortParameter'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('productId', productId))
-      ..add(DiagnosticsProperty('sku', sku))
-      ..add(DiagnosticsProperty('stockLevel', stockLevel))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of ProductVariantSortParameter

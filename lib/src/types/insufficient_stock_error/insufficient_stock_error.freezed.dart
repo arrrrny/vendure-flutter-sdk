@@ -165,8 +165,7 @@ class __$$InsufficientStockErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InsufficientStockErrorImpl extends _InsufficientStockError
-    with DiagnosticableTreeMixin {
+class _$InsufficientStockErrorImpl extends _InsufficientStockError {
   const _$InsufficientStockErrorImpl(
       {required this.errorCode,
       required this.message,
@@ -187,19 +186,8 @@ class _$InsufficientStockErrorImpl extends _InsufficientStockError
   final int quantityAvailable;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'InsufficientStockError(errorCode: $errorCode, message: $message, order: $order, quantityAvailable: $quantityAvailable)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'InsufficientStockError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('order', order))
-      ..add(DiagnosticsProperty('quantityAvailable', quantityAvailable));
   }
 
   @override

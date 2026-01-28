@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../history_entry_type/history_entry_type.dart';
 
 part 'history_entry.freezed.dart';

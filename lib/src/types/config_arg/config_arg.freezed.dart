@@ -114,7 +114,7 @@ class __$$ConfigArgImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigArgImpl extends _ConfigArg with DiagnosticableTreeMixin {
+class _$ConfigArgImpl extends _ConfigArg {
   const _$ConfigArgImpl({required this.name, required this.value}) : super._();
 
   factory _$ConfigArgImpl.fromJson(Map<String, dynamic> json) =>
@@ -126,17 +126,8 @@ class _$ConfigArgImpl extends _ConfigArg with DiagnosticableTreeMixin {
   final String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ConfigArg(name: $name, value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ConfigArg'))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override

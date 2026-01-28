@@ -140,8 +140,7 @@ class __$$AuthenticationMethodImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AuthenticationMethodImpl extends _AuthenticationMethod
-    with DiagnosticableTreeMixin {
+class _$AuthenticationMethodImpl extends _AuthenticationMethod {
   const _$AuthenticationMethodImpl(
       {required this.createdAt,
       required this.id,
@@ -162,19 +161,8 @@ class _$AuthenticationMethodImpl extends _AuthenticationMethod
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthenticationMethod(createdAt: $createdAt, id: $id, strategy: $strategy, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthenticationMethod'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('strategy', strategy))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

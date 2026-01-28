@@ -353,7 +353,7 @@ class __$$ProductImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
+class _$ProductImpl extends _Product {
   const _$ProductImpl(
       {final List<Asset?>? assets,
       final List<Collection?>? collections,
@@ -481,32 +481,8 @@ class _$ProductImpl extends _Product with DiagnosticableTreeMixin {
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Product(assets: $assets, collections: $collections, createdAt: $createdAt, customFields: $customFields, description: $description, enabled: $enabled, facetValues: $facetValues, featuredAsset: $featuredAsset, id: $id, languageCode: $languageCode, name: $name, optionGroups: $optionGroups, slug: $slug, translations: $translations, updatedAt: $updatedAt, variantList: $variantList, variants: $variants)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Product'))
-      ..add(DiagnosticsProperty('assets', assets))
-      ..add(DiagnosticsProperty('collections', collections))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('enabled', enabled))
-      ..add(DiagnosticsProperty('facetValues', facetValues))
-      ..add(DiagnosticsProperty('featuredAsset', featuredAsset))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('optionGroups', optionGroups))
-      ..add(DiagnosticsProperty('slug', slug))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('variantList', variantList))
-      ..add(DiagnosticsProperty('variants', variants));
   }
 
   @override

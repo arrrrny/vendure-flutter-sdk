@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../shipping_method/shipping_method.dart';
 
 part 'shipping_method_list.freezed.dart';

@@ -123,7 +123,7 @@ class __$$IdentifierChangeTokenInvalidErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$IdentifierChangeTokenInvalidErrorImpl
-    extends _IdentifierChangeTokenInvalidError with DiagnosticableTreeMixin {
+    extends _IdentifierChangeTokenInvalidError {
   const _$IdentifierChangeTokenInvalidErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -138,17 +138,8 @@ class _$IdentifierChangeTokenInvalidErrorImpl
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IdentifierChangeTokenInvalidError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IdentifierChangeTokenInvalidError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

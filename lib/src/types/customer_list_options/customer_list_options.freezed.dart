@@ -222,8 +222,7 @@ class __$$CustomerListOptionsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerListOptionsImpl extends _CustomerListOptions
-    with DiagnosticableTreeMixin {
+class _$CustomerListOptionsImpl extends _CustomerListOptions {
   _$CustomerListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
@@ -253,20 +252,8 @@ class _$CustomerListOptionsImpl extends _CustomerListOptions
   int? take;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomerListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerListOptions'))
-      ..add(DiagnosticsProperty('filter', filter))
-      ..add(DiagnosticsProperty('filterOperator', filterOperator))
-      ..add(DiagnosticsProperty('skip', skip))
-      ..add(DiagnosticsProperty('sort', sort))
-      ..add(DiagnosticsProperty('take', take));
   }
 
   /// Create a copy of CustomerListOptions

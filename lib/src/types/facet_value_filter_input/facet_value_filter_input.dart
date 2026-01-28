@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'facet_value_filter_input.freezed.dart';
 part 'facet_value_filter_input.g.dart';
 

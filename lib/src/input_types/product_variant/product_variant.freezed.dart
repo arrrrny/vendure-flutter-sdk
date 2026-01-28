@@ -424,8 +424,7 @@ class __$$ProductVariantImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductVariantImpl extends _ProductVariant
-    with DiagnosticableTreeMixin {
+class _$ProductVariantImpl extends _ProductVariant {
   const _$ProductVariantImpl(
       {final List<Asset?>? assets,
       this.createdAt,
@@ -539,35 +538,8 @@ class _$ProductVariantImpl extends _ProductVariant
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProductVariant(assets: $assets, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, facetValues: $facetValues, featuredAsset: $featuredAsset, id: $id, languageCode: $languageCode, name: $name, options: $options, price: $price, priceWithTax: $priceWithTax, product: $product, productId: $productId, sku: $sku, stockLevel: $stockLevel, taxCategory: $taxCategory, taxRateApplied: $taxRateApplied, translations: $translations, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProductVariant'))
-      ..add(DiagnosticsProperty('assets', assets))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('facetValues', facetValues))
-      ..add(DiagnosticsProperty('featuredAsset', featuredAsset))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('options', options))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('product', product))
-      ..add(DiagnosticsProperty('productId', productId))
-      ..add(DiagnosticsProperty('sku', sku))
-      ..add(DiagnosticsProperty('stockLevel', stockLevel))
-      ..add(DiagnosticsProperty('taxCategory', taxCategory))
-      ..add(DiagnosticsProperty('taxRateApplied', taxRateApplied))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

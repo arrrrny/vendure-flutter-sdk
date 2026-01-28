@@ -209,8 +209,7 @@ class __$$CustomerSortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerSortParameterImpl extends _CustomerSortParameter
-    with DiagnosticableTreeMixin {
+class _$CustomerSortParameterImpl extends _CustomerSortParameter {
   _$CustomerSortParameterImpl(
       {this.createdAt,
       this.emailAddress,
@@ -243,23 +242,8 @@ class _$CustomerSortParameterImpl extends _CustomerSortParameter
   SortOrder? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomerSortParameter(createdAt: $createdAt, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerSortParameter'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of CustomerSortParameter

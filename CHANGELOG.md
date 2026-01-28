@@ -1,3 +1,6 @@
+## 2.14.0
+- **Feature**: Converted to dart package, with support for Flutter and Dart.
+
 ## 2.13.0
 - **Feature**: Added support for nested custom fields in `customFieldsConfig`.
 - **Feature**: Support for `SCALAR_CUSTOM_FIELDS` marker to request `customFields` as a raw scalar (prevents JSON subfield selection errors).

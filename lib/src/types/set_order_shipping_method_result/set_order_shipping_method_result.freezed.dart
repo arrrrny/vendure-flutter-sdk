@@ -260,8 +260,8 @@ class __$$IneligibleShippingMethodErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IneligibleShippingMethodErrorImpl extends IneligibleShippingMethodError
-    with DiagnosticableTreeMixin {
+class _$IneligibleShippingMethodErrorImpl
+    extends IneligibleShippingMethodError {
   const _$IneligibleShippingMethodErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'ineligibleShippingMethodError',
@@ -280,18 +280,8 @@ class _$IneligibleShippingMethodErrorImpl extends IneligibleShippingMethodError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetOrderShippingMethodResult.ineligibleShippingMethodError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetOrderShippingMethodResult.ineligibleShippingMethodError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -563,8 +553,7 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NoActiveOrderErrorImpl extends NoActiveOrderError
-    with DiagnosticableTreeMixin {
+class _$NoActiveOrderErrorImpl extends NoActiveOrderError {
   const _$NoActiveOrderErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'noActiveOrderError',
@@ -582,18 +571,8 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetOrderShippingMethodResult.noActiveOrderError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetOrderShippingMethodResult.noActiveOrderError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1067,7 +1046,7 @@ class __$$OrderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderImpl extends Order with DiagnosticableTreeMixin {
+class _$OrderImpl extends Order {
   const _$OrderImpl(
       {required this.active,
       this.billingAddress,
@@ -1279,44 +1258,8 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetOrderShippingMethodResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SetOrderShippingMethodResult.order'))
-      ..add(DiagnosticsProperty('active', active))
-      ..add(DiagnosticsProperty('billingAddress', billingAddress))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('couponCodes', couponCodes))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('fulfillments', fulfillments))
-      ..add(DiagnosticsProperty('history', history))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('orderPlacedAt', orderPlacedAt))
-      ..add(DiagnosticsProperty('payments', payments))
-      ..add(DiagnosticsProperty('promotions', promotions))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('shippingAddress', shippingAddress))
-      ..add(DiagnosticsProperty('shippingLines', shippingLines))
-      ..add(DiagnosticsProperty('shippingWithTax', shippingWithTax))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('subTotal', subTotal))
-      ..add(DiagnosticsProperty('subTotalWithTax', subTotalWithTax))
-      ..add(DiagnosticsProperty('surcharges', surcharges))
-      ..add(DiagnosticsProperty('taxSummary', taxSummary))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('totalQuantity', totalQuantity))
-      ..add(DiagnosticsProperty('totalWithTax', totalWithTax))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override
@@ -1831,8 +1774,7 @@ class __$$OrderModificationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderModificationErrorImpl extends OrderModificationError
-    with DiagnosticableTreeMixin {
+class _$OrderModificationErrorImpl extends OrderModificationError {
   _$OrderModificationErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'orderModificationError',
@@ -1850,18 +1792,8 @@ class _$OrderModificationErrorImpl extends OrderModificationError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetOrderShippingMethodResult.orderModificationError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetOrderShippingMethodResult.orderModificationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

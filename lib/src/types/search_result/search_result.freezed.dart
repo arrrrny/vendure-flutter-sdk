@@ -381,7 +381,7 @@ class __$$SearchResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
+class _$SearchResultImpl extends _SearchResult {
   _$SearchResultImpl(
       {required final List<String> collectionIds,
       required this.currencyCode,
@@ -467,32 +467,8 @@ class _$SearchResultImpl extends _SearchResult with DiagnosticableTreeMixin {
   final String slug;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchResult(collectionIds: $collectionIds, currencyCode: $currencyCode, description: $description, facetIds: $facetIds, facetValueIds: $facetValueIds, inStock: $inStock, price: $price, priceWithTax: $priceWithTax, productAsset: $productAsset, productId: $productId, productName: $productName, productVariantAsset: $productVariantAsset, productVariantId: $productVariantId, productVariantName: $productVariantName, score: $score, sku: $sku, slug: $slug)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchResult'))
-      ..add(DiagnosticsProperty('collectionIds', collectionIds))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('facetIds', facetIds))
-      ..add(DiagnosticsProperty('facetValueIds', facetValueIds))
-      ..add(DiagnosticsProperty('inStock', inStock))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('productAsset', productAsset))
-      ..add(DiagnosticsProperty('productId', productId))
-      ..add(DiagnosticsProperty('productName', productName))
-      ..add(DiagnosticsProperty('productVariantAsset', productVariantAsset))
-      ..add(DiagnosticsProperty('productVariantId', productVariantId))
-      ..add(DiagnosticsProperty('productVariantName', productVariantName))
-      ..add(DiagnosticsProperty('score', score))
-      ..add(DiagnosticsProperty('sku', sku))
-      ..add(DiagnosticsProperty('slug', slug));
   }
 
   @override

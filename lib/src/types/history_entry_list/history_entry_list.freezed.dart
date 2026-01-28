@@ -115,8 +115,7 @@ class __$$HistoryEntryListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HistoryEntryListImpl extends _HistoryEntryList
-    with DiagnosticableTreeMixin {
+class _$HistoryEntryListImpl extends _HistoryEntryList {
   const _$HistoryEntryListImpl(
       {required final List<HistoryEntry> items, required this.totalItems})
       : _items = items,
@@ -137,17 +136,8 @@ class _$HistoryEntryListImpl extends _HistoryEntryList
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HistoryEntryList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HistoryEntryList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

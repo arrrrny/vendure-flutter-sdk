@@ -104,8 +104,7 @@ class __$$StringListOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StringListOperatorsImpl extends _StringListOperators
-    with DiagnosticableTreeMixin {
+class _$StringListOperatorsImpl extends _StringListOperators {
   const _$StringListOperatorsImpl({required this.inList}) : super._();
 
   factory _$StringListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
@@ -115,16 +114,8 @@ class _$StringListOperatorsImpl extends _StringListOperators
   final String inList;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'StringListOperators(inList: $inList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'StringListOperators'))
-      ..add(DiagnosticsProperty('inList', inList));
   }
 
   @override

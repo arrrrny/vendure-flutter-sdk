@@ -262,8 +262,7 @@ class __$$OrderSortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderSortParameterImpl extends _OrderSortParameter
-    with DiagnosticableTreeMixin {
+class _$OrderSortParameterImpl extends _OrderSortParameter {
   const _$OrderSortParameterImpl(
       {this.code,
       this.createdAt,
@@ -311,28 +310,8 @@ class _$OrderSortParameterImpl extends _OrderSortParameter
   final SortOrder? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderSortParameter(code: $code, createdAt: $createdAt, id: $id, orderPlacedAt: $orderPlacedAt, shipping: $shipping, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderSortParameter'))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('orderPlacedAt', orderPlacedAt))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('shippingWithTax', shippingWithTax))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('subTotal', subTotal))
-      ..add(DiagnosticsProperty('subTotalWithTax', subTotalWithTax))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('totalQuantity', totalQuantity))
-      ..add(DiagnosticsProperty('totalWithTax', totalWithTax))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

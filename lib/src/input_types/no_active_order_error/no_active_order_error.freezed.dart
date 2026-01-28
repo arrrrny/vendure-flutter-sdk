@@ -115,8 +115,7 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NoActiveOrderErrorImpl extends _NoActiveOrderError
-    with DiagnosticableTreeMixin {
+class _$NoActiveOrderErrorImpl extends _NoActiveOrderError {
   const _$NoActiveOrderErrorImpl({this.errorCode, this.message}) : super._();
 
   factory _$NoActiveOrderErrorImpl.fromJson(Map<String, dynamic> json) =>
@@ -128,17 +127,8 @@ class _$NoActiveOrderErrorImpl extends _NoActiveOrderError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NoActiveOrderError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NoActiveOrderError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

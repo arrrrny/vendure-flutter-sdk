@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../address/address.dart';
 import '../order_list/order_list.dart';
 import '../user/user.dart';

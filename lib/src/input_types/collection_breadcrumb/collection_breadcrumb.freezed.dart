@@ -127,8 +127,7 @@ class __$$CollectionBreadcrumbImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionBreadcrumbImpl extends _CollectionBreadcrumb
-    with DiagnosticableTreeMixin {
+class _$CollectionBreadcrumbImpl extends _CollectionBreadcrumb {
   const _$CollectionBreadcrumbImpl({this.id, this.name, this.slug}) : super._();
 
   factory _$CollectionBreadcrumbImpl.fromJson(Map<String, dynamic> json) =>
@@ -142,18 +141,8 @@ class _$CollectionBreadcrumbImpl extends _CollectionBreadcrumb
   final String? slug;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CollectionBreadcrumb(id: $id, name: $name, slug: $slug)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CollectionBreadcrumb'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('slug', slug));
   }
 
   @override

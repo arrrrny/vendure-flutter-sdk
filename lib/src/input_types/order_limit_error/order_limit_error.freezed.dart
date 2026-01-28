@@ -126,8 +126,7 @@ class __$$OrderLimitErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderLimitErrorImpl extends _OrderLimitError
-    with DiagnosticableTreeMixin {
+class _$OrderLimitErrorImpl extends _OrderLimitError {
   const _$OrderLimitErrorImpl({this.errorCode, this.maxItems, this.message})
       : super._();
 
@@ -142,18 +141,8 @@ class _$OrderLimitErrorImpl extends _OrderLimitError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderLimitError(errorCode: $errorCode, maxItems: $maxItems, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderLimitError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('maxItems', maxItems))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

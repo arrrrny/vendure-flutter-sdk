@@ -178,8 +178,7 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError
-    with DiagnosticableTreeMixin {
+class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError {
   const _$EmailAddressConflictErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'emailAddressConflictError',
@@ -197,18 +196,8 @@ class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RequestUpdateCustomerEmailAddressResult.emailAddressConflictError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type',
-          'RequestUpdateCustomerEmailAddressResult.emailAddressConflictError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -401,8 +390,7 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
-    with DiagnosticableTreeMixin {
+class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError {
   const _$InvalidCredentialsErrorImpl(
       {required this.authenticationError,
       required this.errorCode,
@@ -425,19 +413,8 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RequestUpdateCustomerEmailAddressResult.invalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type',
-          'RequestUpdateCustomerEmailAddressResult.invalidCredentialsError'))
-      ..add(DiagnosticsProperty('authenticationError', authenticationError))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -631,8 +608,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
-    with DiagnosticableTreeMixin {
+class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
   const _$NativeAuthStrategyErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
@@ -650,18 +626,8 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RequestUpdateCustomerEmailAddressResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type',
-          'RequestUpdateCustomerEmailAddressResult.nativeAuthStrategyError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -841,7 +807,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
+class _$SuccessImpl extends Success {
   const _$SuccessImpl({required this.success, final String? $type})
       : $type = $type ?? 'success',
         super._();
@@ -856,17 +822,8 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RequestUpdateCustomerEmailAddressResult.success(success: $success)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'RequestUpdateCustomerEmailAddressResult.success'))
-      ..add(DiagnosticsProperty('success', success));
   }
 
   @override

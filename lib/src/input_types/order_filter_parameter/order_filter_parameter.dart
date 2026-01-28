@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../boolean_operators/boolean_operators.dart';
 import '../date_operators/date_operators.dart';
 import '../id_operators/id_operators.dart';

@@ -159,7 +159,7 @@ class __$$IdOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
+class _$IdOperatorsImpl extends _IdOperators {
   const _$IdOperatorsImpl(
       {this.eq,
       @JsonKey(name: 'in') final List<String>? in_,
@@ -201,20 +201,8 @@ class _$IdOperatorsImpl extends _IdOperators with DiagnosticableTreeMixin {
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IdOperators(eq: $eq, in_: $in_, isNull: $isNull, notEq: $notEq, notIn: $notIn)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IdOperators'))
-      ..add(DiagnosticsProperty('eq', eq))
-      ..add(DiagnosticsProperty('in_', in_))
-      ..add(DiagnosticsProperty('isNull', isNull))
-      ..add(DiagnosticsProperty('notEq', notEq))
-      ..add(DiagnosticsProperty('notIn', notIn));
   }
 
   @override

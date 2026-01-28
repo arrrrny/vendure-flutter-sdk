@@ -287,8 +287,7 @@ class __$$InsufficientStockErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InsufficientStockErrorImpl extends InsufficientStockError
-    with DiagnosticableTreeMixin {
+class _$InsufficientStockErrorImpl extends InsufficientStockError {
   const _$InsufficientStockErrorImpl(
       {required this.errorCode,
       required this.message,
@@ -314,20 +313,8 @@ class _$InsufficientStockErrorImpl extends InsufficientStockError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateOrderItemsResult.insufficientStockError(errorCode: $errorCode, message: $message, order: $order, quantityAvailable: $quantityAvailable)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UpdateOrderItemsResult.insufficientStockError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('order', order))
-      ..add(DiagnosticsProperty('quantityAvailable', quantityAvailable));
   }
 
   @override
@@ -621,8 +608,7 @@ class __$$NegativeQuantityErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NegativeQuantityErrorImpl extends NegativeQuantityError
-    with DiagnosticableTreeMixin {
+class _$NegativeQuantityErrorImpl extends NegativeQuantityError {
   const _$NegativeQuantityErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'negativeQuantityError',
@@ -640,18 +626,8 @@ class _$NegativeQuantityErrorImpl extends NegativeQuantityError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateOrderItemsResult.negativeQuantityError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UpdateOrderItemsResult.negativeQuantityError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1138,7 +1114,7 @@ class __$$OrderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderImpl extends Order with DiagnosticableTreeMixin {
+class _$OrderImpl extends Order {
   const _$OrderImpl(
       {required this.active,
       this.billingAddress,
@@ -1350,44 +1326,8 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateOrderItemsResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'UpdateOrderItemsResult.order'))
-      ..add(DiagnosticsProperty('active', active))
-      ..add(DiagnosticsProperty('billingAddress', billingAddress))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('couponCodes', couponCodes))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('fulfillments', fulfillments))
-      ..add(DiagnosticsProperty('history', history))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('orderPlacedAt', orderPlacedAt))
-      ..add(DiagnosticsProperty('payments', payments))
-      ..add(DiagnosticsProperty('promotions', promotions))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('shippingAddress', shippingAddress))
-      ..add(DiagnosticsProperty('shippingLines', shippingLines))
-      ..add(DiagnosticsProperty('shippingWithTax', shippingWithTax))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('subTotal', subTotal))
-      ..add(DiagnosticsProperty('subTotalWithTax', subTotalWithTax))
-      ..add(DiagnosticsProperty('surcharges', surcharges))
-      ..add(DiagnosticsProperty('taxSummary', taxSummary))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('totalQuantity', totalQuantity))
-      ..add(DiagnosticsProperty('totalWithTax', totalWithTax))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override
@@ -1917,8 +1857,7 @@ class __$$OrderLimitErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderLimitErrorImpl extends OrderLimitError
-    with DiagnosticableTreeMixin {
+class _$OrderLimitErrorImpl extends OrderLimitError {
   const _$OrderLimitErrorImpl(
       {required this.errorCode,
       required this.maxItems,
@@ -1941,19 +1880,8 @@ class _$OrderLimitErrorImpl extends OrderLimitError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateOrderItemsResult.orderLimitError(errorCode: $errorCode, maxItems: $maxItems, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'UpdateOrderItemsResult.orderLimitError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('maxItems', maxItems))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -2241,8 +2169,7 @@ class __$$OrderModificationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderModificationErrorImpl extends OrderModificationError
-    with DiagnosticableTreeMixin {
+class _$OrderModificationErrorImpl extends OrderModificationError {
   const _$OrderModificationErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'orderModificationError',
@@ -2260,18 +2187,8 @@ class _$OrderModificationErrorImpl extends OrderModificationError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateOrderItemsResult.orderModificationError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UpdateOrderItemsResult.orderModificationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

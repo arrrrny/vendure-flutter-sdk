@@ -268,8 +268,7 @@ class __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CouponCodeExpiredErrorImpl extends CouponCodeExpiredError
-    with DiagnosticableTreeMixin {
+class _$CouponCodeExpiredErrorImpl extends CouponCodeExpiredError {
   const _$CouponCodeExpiredErrorImpl(
       {required this.couponCode,
       required this.errorCode,
@@ -292,19 +291,8 @@ class _$CouponCodeExpiredErrorImpl extends CouponCodeExpiredError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ApplyCouponCodeResult.couponCodeExpiredError(couponCode: $couponCode, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ApplyCouponCodeResult.couponCodeExpiredError'))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -589,8 +577,7 @@ class __$$CouponCodeInvalidErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CouponCodeInvalidErrorImpl extends CouponCodeInvalidError
-    with DiagnosticableTreeMixin {
+class _$CouponCodeInvalidErrorImpl extends CouponCodeInvalidError {
   const _$CouponCodeInvalidErrorImpl(
       {required this.couponCode,
       required this.errorCode,
@@ -613,19 +600,8 @@ class _$CouponCodeInvalidErrorImpl extends CouponCodeInvalidError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ApplyCouponCodeResult.couponCodeInvalidError(couponCode: $couponCode, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ApplyCouponCodeResult.couponCodeInvalidError'))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -914,8 +890,7 @@ class __$$CouponCodeLimitErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CouponCodeLimitErrorImpl extends CouponCodeLimitError
-    with DiagnosticableTreeMixin {
+class _$CouponCodeLimitErrorImpl extends CouponCodeLimitError {
   const _$CouponCodeLimitErrorImpl(
       {required this.couponCode,
       required this.errorCode,
@@ -941,20 +916,8 @@ class _$CouponCodeLimitErrorImpl extends CouponCodeLimitError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ApplyCouponCodeResult.couponCodeLimitError(couponCode: $couponCode, errorCode: $errorCode, limit: $limit, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ApplyCouponCodeResult.couponCodeLimitError'))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('limit', limit))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1442,7 +1405,7 @@ class __$$OrderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderImpl extends Order with DiagnosticableTreeMixin {
+class _$OrderImpl extends Order {
   const _$OrderImpl(
       {required this.active,
       this.billingAddress,
@@ -1654,44 +1617,8 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ApplyCouponCodeResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ApplyCouponCodeResult.order'))
-      ..add(DiagnosticsProperty('active', active))
-      ..add(DiagnosticsProperty('billingAddress', billingAddress))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('couponCodes', couponCodes))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('fulfillments', fulfillments))
-      ..add(DiagnosticsProperty('history', history))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('orderPlacedAt', orderPlacedAt))
-      ..add(DiagnosticsProperty('payments', payments))
-      ..add(DiagnosticsProperty('promotions', promotions))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('shippingAddress', shippingAddress))
-      ..add(DiagnosticsProperty('shippingLines', shippingLines))
-      ..add(DiagnosticsProperty('shippingWithTax', shippingWithTax))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('subTotal', subTotal))
-      ..add(DiagnosticsProperty('subTotalWithTax', subTotalWithTax))
-      ..add(DiagnosticsProperty('surcharges', surcharges))
-      ..add(DiagnosticsProperty('taxSummary', taxSummary))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('totalQuantity', totalQuantity))
-      ..add(DiagnosticsProperty('totalWithTax', totalWithTax))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

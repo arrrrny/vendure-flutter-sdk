@@ -123,7 +123,7 @@ class __$$PasswordResetTokenExpiredErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PasswordResetTokenExpiredErrorImpl
-    extends _PasswordResetTokenExpiredError with DiagnosticableTreeMixin {
+    extends _PasswordResetTokenExpiredError {
   const _$PasswordResetTokenExpiredErrorImpl({this.errorCode, this.message})
       : super._();
 
@@ -137,17 +137,8 @@ class _$PasswordResetTokenExpiredErrorImpl
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PasswordResetTokenExpiredError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PasswordResetTokenExpiredError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

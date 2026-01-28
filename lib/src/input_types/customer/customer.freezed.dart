@@ -284,7 +284,7 @@ class __$$CustomerImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerImpl extends _Customer with DiagnosticableTreeMixin {
+class _$CustomerImpl extends _Customer {
   const _$CustomerImpl(
       {final List<Address?>? addresses,
       this.createdAt,
@@ -347,27 +347,8 @@ class _$CustomerImpl extends _Customer with DiagnosticableTreeMixin {
   final User? user;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Customer(addresses: $addresses, createdAt: $createdAt, customFields: $customFields, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, orders: $orders, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt, user: $user)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Customer'))
-      ..add(DiagnosticsProperty('addresses', addresses))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('orders', orders))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('user', user));
   }
 
   @override

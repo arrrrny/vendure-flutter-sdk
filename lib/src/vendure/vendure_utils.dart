@@ -1,4 +1,3 @@
-
 class VendureUtils {
   // Static set of known enum types (initialized with standard Vendure enums)
   static final Set<String> _knownEnumTypes = {
@@ -26,7 +25,11 @@ class VendureUtils {
   static final Map<String, String> _fieldToEnumType = {
     // common fields
     'currencyCode': 'CurrencyCode',
+    'defaultCurrencyCode': 'CurrencyCode',
+    'availableCurrencyCodes': 'CurrencyCode',
     'languageCode': 'LanguageCode',
+    'defaultLanguageCode': 'LanguageCode',
+    'availableLanguageCodes': 'LanguageCode',
     'permissions': 'Permission',
     'permission': 'Permission',
     'status': 'UserStatus',
@@ -123,9 +126,11 @@ class VendureUtils {
       {String? parentKey, bool? convertEnums}) {
     convertEnums = convertEnums ?? convertQueryEnums;
 
-    if (data is Map<String, dynamic>) {
+    if (data is Map) {
+      final map =
+          data is Map<String, dynamic> ? data : Map<String, dynamic>.from(data);
       final normalizedData = <String, dynamic>{};
-      for (final entry in data.entries) {
+      for (final entry in map.entries) {
         final key = entry.key;
         final value = entry.value;
 
@@ -183,9 +188,11 @@ class VendureUtils {
       {String? parentKey, bool? convertEnums}) {
     convertEnums = convertEnums ?? convertMutationEnums;
 
-    if (data is Map<String, dynamic>) {
+    if (data is Map) {
+      final map =
+          data is Map<String, dynamic> ? data : Map<String, dynamic>.from(data);
       final normalizedData = <String, dynamic>{};
-      for (final entry in data.entries) {
+      for (final entry in map.entries) {
         final key = entry.key;
         final value = entry.value;
 
@@ -201,6 +208,13 @@ class VendureUtils {
             continue;
           } else if (value is String) {
             normalizedData[key] = _convertEnumToGraphQLFormat(value);
+            continue;
+          }
+        }
+
+        if (convertEnums && value is String) {
+          if (value == 'asc' || value == 'desc') {
+            normalizedData[key] = value.toUpperCase();
             continue;
           }
         }
@@ -373,7 +387,8 @@ class VendureUtils {
       fragmentBuffer.writeln('  customFields');
     } else {
       fragmentBuffer.writeln('  customFields {');
-      fragmentBuffer.write(_generateFieldsRecursive(customFields, indent: '    '));
+      fragmentBuffer
+          .write(_generateFieldsRecursive(customFields, indent: '    '));
       fragmentBuffer.writeln('  }');
     }
     fragmentBuffer.writeln('}');
@@ -464,16 +479,12 @@ class VendureUtils {
         String generatedFragment =
             generateFragmentWithTypename(typeName, customFields);
 
-        queryTemplate += '\n\n' + generatedFragment;
+        queryTemplate += '\n\n$generatedFragment';
 
         queryTemplate = queryTemplate.replaceAllMapped(
             RegExp(r'(\b' + typeName + r'\b)(\s*\{)', multiLine: true),
             (match) =>
-                match.group(1)! +
-                match.group(2)! +
-                '\n  ...' +
-                typeName.capitalize() +
-                'CustomFields');
+                '${match.group(1)}${match.group(2)}\n  ...${typeName.capitalize()}CustomFields');
       }
     });
 
@@ -486,9 +497,9 @@ class VendureUtils {
 
   static String sanitizeGraphQLQuery(
       String query, Map<String, List<dynamic>> customFieldsConfig) {
-    final entityNames = customFieldsConfig.keys.join('|');
+    final entityNames = customFieldsConfig.keys.map(RegExp.escape).join('|');
     final regex = RegExp(
-        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\s*\{([\s\S]*?)\}',
+        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\b\s*\{([\s\S]*?)\}',
         multiLine: true);
 
     final buffer = StringBuffer();

@@ -115,8 +115,7 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotVerifiedErrorImpl extends _NotVerifiedError
-    with DiagnosticableTreeMixin {
+class _$NotVerifiedErrorImpl extends _NotVerifiedError {
   const _$NotVerifiedErrorImpl({required this.errorCode, required this.message})
       : super._();
 
@@ -129,17 +128,8 @@ class _$NotVerifiedErrorImpl extends _NotVerifiedError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NotVerifiedError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NotVerifiedError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

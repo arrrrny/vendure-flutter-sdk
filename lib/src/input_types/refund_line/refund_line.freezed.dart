@@ -194,7 +194,7 @@ class __$$RefundLineImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
+class _$RefundLineImpl extends _RefundLine {
   const _$RefundLineImpl(
       {this.orderLine,
       this.orderLineId,
@@ -218,20 +218,8 @@ class _$RefundLineImpl extends _RefundLine with DiagnosticableTreeMixin {
   final String? refundId;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RefundLine(orderLine: $orderLine, orderLineId: $orderLineId, quantity: $quantity, refund: $refund, refundId: $refundId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RefundLine'))
-      ..add(DiagnosticsProperty('orderLine', orderLine))
-      ..add(DiagnosticsProperty('orderLineId', orderLineId))
-      ..add(DiagnosticsProperty('quantity', quantity))
-      ..add(DiagnosticsProperty('refund', refund))
-      ..add(DiagnosticsProperty('refundId', refundId));
   }
 
   @override

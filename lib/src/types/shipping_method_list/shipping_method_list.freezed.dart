@@ -115,8 +115,7 @@ class __$$ShippingMethodListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingMethodListImpl extends _ShippingMethodList
-    with DiagnosticableTreeMixin {
+class _$ShippingMethodListImpl extends _ShippingMethodList {
   const _$ShippingMethodListImpl(
       {required final List<ShippingMethod> items, required this.totalItems})
       : _items = items,
@@ -137,17 +136,8 @@ class _$ShippingMethodListImpl extends _ShippingMethodList
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ShippingMethodList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ShippingMethodList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

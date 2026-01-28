@@ -286,8 +286,7 @@ class __$$ShippingMethodImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingMethodImpl extends _ShippingMethod
-    with DiagnosticableTreeMixin {
+class _$ShippingMethodImpl extends _ShippingMethod {
   const _$ShippingMethodImpl(
       {this.calculator,
       this.checker,
@@ -350,28 +349,8 @@ class _$ShippingMethodImpl extends _ShippingMethod
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ShippingMethod(calculator: $calculator, checker: $checker, code: $code, createdAt: $createdAt, customFields: $customFields, description: $description, fulfillmentHandlerCode: $fulfillmentHandlerCode, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ShippingMethod'))
-      ..add(DiagnosticsProperty('calculator', calculator))
-      ..add(DiagnosticsProperty('checker', checker))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(
-          DiagnosticsProperty('fulfillmentHandlerCode', fulfillmentHandlerCode))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

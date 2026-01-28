@@ -165,8 +165,8 @@ class __$$ProductOptionGroupTranslationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductOptionGroupTranslationImpl extends _ProductOptionGroupTranslation
-    with DiagnosticableTreeMixin {
+class _$ProductOptionGroupTranslationImpl
+    extends _ProductOptionGroupTranslation {
   const _$ProductOptionGroupTranslationImpl(
       {required this.createdAt,
       required this.id,
@@ -191,20 +191,8 @@ class _$ProductOptionGroupTranslationImpl extends _ProductOptionGroupTranslation
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProductOptionGroupTranslation(createdAt: $createdAt, id: $id, languageCode: $languageCode, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProductOptionGroupTranslation'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

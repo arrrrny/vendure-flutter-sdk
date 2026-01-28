@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'native_auth_input.freezed.dart';
 part 'native_auth_input.g.dart';
 
@@ -16,5 +15,6 @@ class NativeAuthInput with _$NativeAuthInput {
     required String username,
   }) = _NativeAuthInput;
 
-  factory NativeAuthInput.fromJson(Map<String, dynamic> json) => _$NativeAuthInputFromJson(json);
+  factory NativeAuthInput.fromJson(Map<String, dynamic> json) =>
+      _$NativeAuthInputFromJson(json);
 }

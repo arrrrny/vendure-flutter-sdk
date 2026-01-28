@@ -255,8 +255,7 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig {
   const _$RelationCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.entity,
@@ -346,27 +345,8 @@ class _$RelationCustomFieldConfigImpl extends _RelationCustomFieldConfig
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RelationCustomFieldConfig(description: $description, entity: $entity, internal: $internal, label: $label, list: $list, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, scalarFields: $scalarFields, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RelationCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('entity', entity))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('scalarFields', scalarFields))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override

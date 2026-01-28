@@ -318,8 +318,7 @@ class __$$IneligiblePaymentMethodErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IneligiblePaymentMethodErrorImpl extends IneligiblePaymentMethodError
-    with DiagnosticableTreeMixin {
+class _$IneligiblePaymentMethodErrorImpl extends IneligiblePaymentMethodError {
   const _$IneligiblePaymentMethodErrorImpl(
       {this.eligibilityCheckerMessage,
       this.errorCode,
@@ -343,20 +342,8 @@ class _$IneligiblePaymentMethodErrorImpl extends IneligiblePaymentMethodError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.ineligiblePaymentMethodError(eligibilityCheckerMessage: $eligibilityCheckerMessage, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AddPaymentToOrderResult.ineligiblePaymentMethodError'))
-      ..add(DiagnosticsProperty(
-          'eligibilityCheckerMessage', eligibilityCheckerMessage))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -682,8 +669,7 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NoActiveOrderErrorImpl extends NoActiveOrderError
-    with DiagnosticableTreeMixin {
+class _$NoActiveOrderErrorImpl extends NoActiveOrderError {
   const _$NoActiveOrderErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'noActiveOrderError',
@@ -701,18 +687,8 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.noActiveOrderError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AddPaymentToOrderResult.noActiveOrderError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1257,7 +1233,7 @@ class __$$OrderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderImpl extends Order with DiagnosticableTreeMixin {
+class _$OrderImpl extends Order {
   const _$OrderImpl(
       {this.active,
       this.billingAddress,
@@ -1486,45 +1462,8 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, customer: $customer, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AddPaymentToOrderResult.order'))
-      ..add(DiagnosticsProperty('active', active))
-      ..add(DiagnosticsProperty('billingAddress', billingAddress))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('couponCodes', couponCodes))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('customer', customer))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('fulfillments', fulfillments))
-      ..add(DiagnosticsProperty('history', history))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('orderPlacedAt', orderPlacedAt))
-      ..add(DiagnosticsProperty('payments', payments))
-      ..add(DiagnosticsProperty('promotions', promotions))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('shippingAddress', shippingAddress))
-      ..add(DiagnosticsProperty('shippingLines', shippingLines))
-      ..add(DiagnosticsProperty('shippingWithTax', shippingWithTax))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('subTotal', subTotal))
-      ..add(DiagnosticsProperty('subTotalWithTax', subTotalWithTax))
-      ..add(DiagnosticsProperty('surcharges', surcharges))
-      ..add(DiagnosticsProperty('taxSummary', taxSummary))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('totalQuantity', totalQuantity))
-      ..add(DiagnosticsProperty('totalWithTax', totalWithTax))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override
@@ -2093,8 +2032,7 @@ class __$$OrderPaymentStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderPaymentStateErrorImpl extends OrderPaymentStateError
-    with DiagnosticableTreeMixin {
+class _$OrderPaymentStateErrorImpl extends OrderPaymentStateError {
   const _$OrderPaymentStateErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'orderPaymentStateError',
@@ -2112,18 +2050,8 @@ class _$OrderPaymentStateErrorImpl extends OrderPaymentStateError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.orderPaymentStateError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AddPaymentToOrderResult.orderPaymentStateError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -2460,8 +2388,7 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderStateTransitionErrorImpl extends OrderStateTransitionError
-    with DiagnosticableTreeMixin {
+class _$OrderStateTransitionErrorImpl extends OrderStateTransitionError {
   const _$OrderStateTransitionErrorImpl(
       {this.errorCode,
       this.fromState,
@@ -2490,21 +2417,8 @@ class _$OrderStateTransitionErrorImpl extends OrderStateTransitionError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.orderStateTransitionError(errorCode: $errorCode, fromState: $fromState, message: $message, toState: $toState, transitionError: $transitionError)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AddPaymentToOrderResult.orderStateTransitionError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('fromState', fromState))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('toState', toState))
-      ..add(DiagnosticsProperty('transitionError', transitionError));
   }
 
   @override
@@ -2840,8 +2754,7 @@ class __$$PaymentDeclinedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentDeclinedErrorImpl extends PaymentDeclinedError
-    with DiagnosticableTreeMixin {
+class _$PaymentDeclinedErrorImpl extends PaymentDeclinedError {
   const _$PaymentDeclinedErrorImpl(
       {this.errorCode,
       this.message,
@@ -2864,19 +2777,8 @@ class _$PaymentDeclinedErrorImpl extends PaymentDeclinedError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.paymentDeclinedError(errorCode: $errorCode, message: $message, paymentErrorMessage: $paymentErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AddPaymentToOrderResult.paymentDeclinedError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('paymentErrorMessage', paymentErrorMessage));
   }
 
   @override
@@ -3203,8 +3105,7 @@ class __$$PaymentFailedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentFailedErrorImpl extends PaymentFailedError
-    with DiagnosticableTreeMixin {
+class _$PaymentFailedErrorImpl extends PaymentFailedError {
   const _$PaymentFailedErrorImpl(
       {this.errorCode,
       this.message,
@@ -3227,19 +3128,8 @@ class _$PaymentFailedErrorImpl extends PaymentFailedError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AddPaymentToOrderResult.paymentFailedError(errorCode: $errorCode, message: $message, paymentErrorMessage: $paymentErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AddPaymentToOrderResult.paymentFailedError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('paymentErrorMessage', paymentErrorMessage));
   }
 
   @override

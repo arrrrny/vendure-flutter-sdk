@@ -121,8 +121,7 @@ class __$$ConfigArgInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigArgInputImpl extends _ConfigArgInput
-    with DiagnosticableTreeMixin {
+class _$ConfigArgInputImpl extends _ConfigArgInput {
   _$ConfigArgInputImpl({required this.name, required this.value}) : super._();
 
   factory _$ConfigArgInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -136,17 +135,8 @@ class _$ConfigArgInputImpl extends _ConfigArgInput
   String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ConfigArgInput(name: $name, value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ConfigArgInput'))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   /// Create a copy of ConfigArgInput

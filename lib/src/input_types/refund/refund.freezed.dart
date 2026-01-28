@@ -272,7 +272,7 @@ class __$$RefundImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RefundImpl extends _Refund with DiagnosticableTreeMixin {
+class _$RefundImpl extends _Refund {
   const _$RefundImpl(
       {this.adjustment,
       this.createdAt,
@@ -341,29 +341,8 @@ class _$RefundImpl extends _Refund with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Refund(adjustment: $adjustment, createdAt: $createdAt, id: $id, items: $items, lines: $lines, metadata: $metadata, method: $method, paymentId: $paymentId, reason: $reason, shipping: $shipping, state: $state, total: $total, transactionId: $transactionId, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Refund'))
-      ..add(DiagnosticsProperty('adjustment', adjustment))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('metadata', metadata))
-      ..add(DiagnosticsProperty('method', method))
-      ..add(DiagnosticsProperty('paymentId', paymentId))
-      ..add(DiagnosticsProperty('reason', reason))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('transactionId', transactionId))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

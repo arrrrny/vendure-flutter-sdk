@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../order_line/order_line.dart';
 import '../refund/refund.dart';
 

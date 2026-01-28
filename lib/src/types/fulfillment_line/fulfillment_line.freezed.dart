@@ -186,8 +186,7 @@ class __$$FulfillmentLineImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FulfillmentLineImpl extends _FulfillmentLine
-    with DiagnosticableTreeMixin {
+class _$FulfillmentLineImpl extends _FulfillmentLine {
   const _$FulfillmentLineImpl(
       {required this.fulfillment,
       required this.fulfillmentId,
@@ -211,20 +210,8 @@ class _$FulfillmentLineImpl extends _FulfillmentLine
   final int quantity;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FulfillmentLine(fulfillment: $fulfillment, fulfillmentId: $fulfillmentId, orderLine: $orderLine, orderLineId: $orderLineId, quantity: $quantity)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FulfillmentLine'))
-      ..add(DiagnosticsProperty('fulfillment', fulfillment))
-      ..add(DiagnosticsProperty('fulfillmentId', fulfillmentId))
-      ..add(DiagnosticsProperty('orderLine', orderLine))
-      ..add(DiagnosticsProperty('orderLineId', orderLineId))
-      ..add(DiagnosticsProperty('quantity', quantity));
   }
 
   @override

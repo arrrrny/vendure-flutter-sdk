@@ -117,8 +117,7 @@ class __$$BooleanOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BooleanOperatorsImpl extends _BooleanOperators
-    with DiagnosticableTreeMixin {
+class _$BooleanOperatorsImpl extends _BooleanOperators {
   _$BooleanOperatorsImpl({this.eq, this.isNull}) : super._();
 
   factory _$BooleanOperatorsImpl.fromJson(Map<String, dynamic> json) =>
@@ -130,17 +129,8 @@ class _$BooleanOperatorsImpl extends _BooleanOperators
   bool? isNull;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'BooleanOperators(eq: $eq, isNull: $isNull)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'BooleanOperators'))
-      ..add(DiagnosticsProperty('eq', eq))
-      ..add(DiagnosticsProperty('isNull', isNull));
   }
 
   /// Create a copy of BooleanOperators

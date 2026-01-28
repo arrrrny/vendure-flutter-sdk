@@ -116,8 +116,7 @@ class __$$AlreadyLoggedInErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AlreadyLoggedInErrorImpl extends _AlreadyLoggedInError
-    with DiagnosticableTreeMixin {
+class _$AlreadyLoggedInErrorImpl extends _AlreadyLoggedInError {
   const _$AlreadyLoggedInErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -131,17 +130,8 @@ class _$AlreadyLoggedInErrorImpl extends _AlreadyLoggedInError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AlreadyLoggedInError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AlreadyLoggedInError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

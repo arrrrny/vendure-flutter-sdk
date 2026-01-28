@@ -130,7 +130,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
 
 /// @nodoc
 @JsonSerializable()
-class _$TagImpl extends _Tag with DiagnosticableTreeMixin {
+class _$TagImpl extends _Tag {
   const _$TagImpl(
       {required this.createdAt,
       required this.id,
@@ -151,19 +151,8 @@ class _$TagImpl extends _Tag with DiagnosticableTreeMixin {
   final String value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Tag(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Tag'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override

@@ -199,8 +199,7 @@ class __$$ShippingMethodQuoteImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
-    with DiagnosticableTreeMixin {
+class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote {
   const _$ShippingMethodQuoteImpl(
       {this.code,
       final Map<String, dynamic>? customFields,
@@ -255,23 +254,8 @@ class _$ShippingMethodQuoteImpl extends _ShippingMethodQuote
   final double? priceWithTax;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ShippingMethodQuote(code: $code, customFields: $customFields, description: $description, id: $id, metadata: $metadata, name: $name, price: $price, priceWithTax: $priceWithTax)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ShippingMethodQuote'))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('metadata', metadata))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax));
   }
 
   @override

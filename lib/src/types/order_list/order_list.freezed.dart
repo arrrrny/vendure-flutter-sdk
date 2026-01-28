@@ -114,7 +114,7 @@ class __$$OrderListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderListImpl extends _OrderList with DiagnosticableTreeMixin {
+class _$OrderListImpl extends _OrderList {
   const _$OrderListImpl(
       {required final List<Order> items, required this.totalItems})
       : _items = items,
@@ -135,17 +135,8 @@ class _$OrderListImpl extends _OrderList with DiagnosticableTreeMixin {
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

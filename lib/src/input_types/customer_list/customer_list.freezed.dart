@@ -115,7 +115,7 @@ class __$$CustomerListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerListImpl extends _CustomerList with DiagnosticableTreeMixin {
+class _$CustomerListImpl extends _CustomerList {
   const _$CustomerListImpl({final List<Customer?>? items, this.totalItems})
       : _items = items,
         super._();
@@ -137,17 +137,8 @@ class _$CustomerListImpl extends _CustomerList with DiagnosticableTreeMixin {
   final int? totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomerList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

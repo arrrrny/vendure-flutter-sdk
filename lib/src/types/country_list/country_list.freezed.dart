@@ -115,7 +115,7 @@ class __$$CountryListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CountryListImpl extends _CountryList with DiagnosticableTreeMixin {
+class _$CountryListImpl extends _CountryList {
   const _$CountryListImpl(
       {required final List<Country> items, required this.totalItems})
       : _items = items,
@@ -136,17 +136,8 @@ class _$CountryListImpl extends _CountryList with DiagnosticableTreeMixin {
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CountryList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CountryList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

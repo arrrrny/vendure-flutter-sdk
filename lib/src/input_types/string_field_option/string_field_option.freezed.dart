@@ -115,8 +115,7 @@ class __$$StringFieldOptionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StringFieldOptionImpl extends _StringFieldOption
-    with DiagnosticableTreeMixin {
+class _$StringFieldOptionImpl extends _StringFieldOption {
   const _$StringFieldOptionImpl(
       {final List<LocalizedString?>? label, this.value})
       : _label = label,
@@ -139,17 +138,8 @@ class _$StringFieldOptionImpl extends _StringFieldOption
   final String? value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'StringFieldOption(label: $label, value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'StringFieldOption'))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override

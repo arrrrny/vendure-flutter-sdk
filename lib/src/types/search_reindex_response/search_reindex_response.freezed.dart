@@ -108,8 +108,7 @@ class __$$SearchReindexResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchReindexResponseImpl extends _SearchReindexResponse
-    with DiagnosticableTreeMixin {
+class _$SearchReindexResponseImpl extends _SearchReindexResponse {
   const _$SearchReindexResponseImpl({required this.success}) : super._();
 
   factory _$SearchReindexResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -119,16 +118,8 @@ class _$SearchReindexResponseImpl extends _SearchReindexResponse
   final bool success;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchReindexResponse(success: $success)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchReindexResponse'))
-      ..add(DiagnosticsProperty('success', success));
   }
 
   @override

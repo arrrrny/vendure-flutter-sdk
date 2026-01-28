@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 
 part 'current_user_channel.freezed.dart';
 part 'current_user_channel.g.dart';

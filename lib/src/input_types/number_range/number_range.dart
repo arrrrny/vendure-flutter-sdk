@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'number_range.freezed.dart';
 part 'number_range.g.dart';
 
@@ -16,5 +15,6 @@ class NumberRange with _$NumberRange {
     required double start,
   }) = _NumberRange;
 
-  factory NumberRange.fromJson(Map<String, dynamic> json) => _$NumberRangeFromJson(json);
+  factory NumberRange.fromJson(Map<String, dynamic> json) =>
+      _$NumberRangeFromJson(json);
 }

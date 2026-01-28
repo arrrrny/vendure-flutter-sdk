@@ -243,7 +243,7 @@ class __$$FacetValueImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
+class _$FacetValueImpl extends _FacetValue {
   const _$FacetValueImpl(
       {required this.code,
       required this.createdAt,
@@ -298,25 +298,8 @@ class _$FacetValueImpl extends _FacetValue with DiagnosticableTreeMixin {
   final Facet? facet;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetValue(code: $code, createdAt: $createdAt, customFields: $customFields, facetId: $facetId, id: $id, languageCode: $languageCode, name: $name, translations: $translations, updatedAt: $updatedAt, facet: $facet)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetValue'))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('facetId', facetId))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('facet', facet));
   }
 
   @override

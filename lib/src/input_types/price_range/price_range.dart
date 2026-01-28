@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'price_range.freezed.dart';
 part 'price_range.g.dart';
 
@@ -16,5 +15,6 @@ class PriceRange with _$PriceRange {
     double? min,
   }) = _PriceRange;
 
-  factory PriceRange.fromJson(Map<String, dynamic> json) => _$PriceRangeFromJson(json);
+  factory PriceRange.fromJson(Map<String, dynamic> json) =>
+      _$PriceRangeFromJson(json);
 }

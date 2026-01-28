@@ -262,8 +262,7 @@ class __$$HistoryEntryFilterParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
-    with DiagnosticableTreeMixin {
+class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter {
   _$HistoryEntryFilterParameterImpl(
       {@JsonKey(name: '_and') this.and,
       @JsonKey(name: '_or') this.or,
@@ -293,21 +292,8 @@ class _$HistoryEntryFilterParameterImpl extends _HistoryEntryFilterParameter
   DateOperators? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HistoryEntryFilterParameter(and: $and, or: $or, createdAt: $createdAt, id: $id, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HistoryEntryFilterParameter'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of HistoryEntryFilterParameter

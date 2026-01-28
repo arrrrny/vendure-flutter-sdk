@@ -201,25 +201,21 @@ class Vendure {
     }
 
     // Initialize Vendure instance with the fetched token
-    if (_instance != null) {
-      _instance!._token = token;
-    } else {
-      _instance = Vendure._internal(
-        endpoint: endpoint,
-        fetchToken: fetchToken,
-        tokenParams: {
-          'username': username,
-          'password': password,
-        },
-        sessionDuration: sessionDuration,
-        token: token,
-        customFieldsConfig: customFieldsConfig,
-        timeout: timeout,
-        appCheckConfig: appCheckConfig,
-        languageCode: languageCode,
-        channelToken: channelToken,
-      );
-    }
+    _instance = Vendure._internal(
+      endpoint: endpoint,
+      fetchToken: fetchToken,
+      tokenParams: {
+        'username': username,
+        'password': password,
+      },
+      sessionDuration: sessionDuration,
+      token: token,
+      customFieldsConfig: customFieldsConfig,
+      timeout: timeout,
+      appCheckConfig: appCheckConfig,
+      languageCode: languageCode,
+      channelToken: channelToken,
+    );
 
     // Finalize initialization (token check, enum loading)
     await _finalizeInitialization(_instance!);
@@ -272,25 +268,21 @@ class Vendure {
     }
 
     // Initialize Vendure instance with the fetched token
-    if (_instance != null) {
-      _instance!._token = token;
-    } else {
-      _instance = Vendure._internal(
-        endpoint: endpoint,
-        fetchToken: fetchToken,
-        tokenParams: {
-          'uid': uid,
-          'jwt': jwt,
-        },
-        languageCode: languageCode,
-        channelToken: channelToken,
-        sessionDuration: sessionDuration,
-        token: token,
-        customFieldsConfig: customFieldsConfig,
-        timeout: timeout,
-        appCheckConfig: appCheckConfig,
-      );
-    }
+    _instance = Vendure._internal(
+      endpoint: endpoint,
+      fetchToken: fetchToken,
+      tokenParams: {
+        'uid': uid,
+        'jwt': jwt,
+      },
+      languageCode: languageCode,
+      channelToken: channelToken,
+      sessionDuration: sessionDuration,
+      token: token,
+      customFieldsConfig: customFieldsConfig,
+      timeout: timeout,
+      appCheckConfig: appCheckConfig,
+    );
 
     // Ensure token is set
     // Finalize initialization (token check, enum loading)
@@ -312,21 +304,17 @@ class Vendure {
     if (token == null) {
       throw Exception("Failed to fetch token");
     }
-    if (_instance != null) {
-      _instance!._token = token;
-    } else {
-      _instance = Vendure._internal(
-        endpoint: endpoint,
-        fetchToken: fetchToken,
-        tokenParams: tokenParams,
-        sessionDuration: sessionDuration,
-        token: token,
-        customFieldsConfig: customFieldsConfig,
-        languageCode: languageCode,
-        channelToken: channelToken,
-        timeout: timeout,
-      );
-    }
+    _instance = Vendure._internal(
+      endpoint: endpoint,
+      fetchToken: fetchToken,
+      tokenParams: tokenParams,
+      sessionDuration: sessionDuration,
+      token: token,
+      customFieldsConfig: customFieldsConfig,
+      languageCode: languageCode,
+      channelToken: channelToken,
+      timeout: timeout,
+    );
 
     // Finalize initialization (token check, enum loading)
     await _finalizeInitialization(_instance!);
@@ -589,17 +577,17 @@ class Vendure {
       if (data is Map && data['__typename'] == 'ErrorResult') {
         throw Exception(data['message']);
       }
-      if (data is Map<String, dynamic> || data is List) {
+      if (data is Map || data is List) {
         data = VendureUtils.normalizeGraphQLData(
           data,
           convertEnums: convertEnums,
         );
       }
       if (fromJson != null) {
-        if (data is! Map<String, dynamic>) {
+        if (data is! Map) {
           throw Exception('Subscription data must be a map');
         }
-        yield fromJson(data);
+        yield fromJson(Map<String, dynamic>.from(data));
       } else {
         yield data as T;
       }

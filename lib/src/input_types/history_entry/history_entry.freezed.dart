@@ -158,7 +158,7 @@ class __$$HistoryEntryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HistoryEntryImpl extends _HistoryEntry with DiagnosticableTreeMixin {
+class _$HistoryEntryImpl extends _HistoryEntry {
   const _$HistoryEntryImpl(
       {this.createdAt,
       final Map<String, dynamic>? data,
@@ -191,20 +191,8 @@ class _$HistoryEntryImpl extends _HistoryEntry with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HistoryEntry(createdAt: $createdAt, data: $data, id: $id, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HistoryEntry'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('data', data))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'authentication_method.freezed.dart';
 part 'authentication_method.g.dart';
 
@@ -18,5 +17,6 @@ class AuthenticationMethod with _$AuthenticationMethod {
     DateTime? updatedAt,
   }) = _AuthenticationMethod;
 
-  factory AuthenticationMethod.fromJson(Map<String, dynamic> json) => _$AuthenticationMethodFromJson(json);
+  factory AuthenticationMethod.fromJson(Map<String, dynamic> json) =>
+      _$AuthenticationMethodFromJson(json);
 }

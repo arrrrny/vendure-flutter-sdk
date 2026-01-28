@@ -226,7 +226,7 @@ class __$$UserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserImpl extends _User with DiagnosticableTreeMixin {
+class _$UserImpl extends _User {
   const _$UserImpl(
       {required final List<AuthenticationMethod> authenticationMethods,
       required this.createdAt,
@@ -279,24 +279,8 @@ class _$UserImpl extends _User with DiagnosticableTreeMixin {
   final bool verified;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'User(authenticationMethods: $authenticationMethods, createdAt: $createdAt, customFields: $customFields, id: $id, identifier: $identifier, lastLogin: $lastLogin, roles: $roles, updatedAt: $updatedAt, verified: $verified)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'User'))
-      ..add(DiagnosticsProperty('authenticationMethods', authenticationMethods))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('identifier', identifier))
-      ..add(DiagnosticsProperty('lastLogin', lastLogin))
-      ..add(DiagnosticsProperty('roles', roles))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('verified', verified));
   }
 
   @override

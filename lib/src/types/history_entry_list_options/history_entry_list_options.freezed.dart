@@ -228,8 +228,7 @@ class __$$HistoryEntryListOptionsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
-    with DiagnosticableTreeMixin {
+class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions {
   _$HistoryEntryListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
@@ -259,20 +258,8 @@ class _$HistoryEntryListOptionsImpl extends _HistoryEntryListOptions
   int? take;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HistoryEntryListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HistoryEntryListOptions'))
-      ..add(DiagnosticsProperty('filter', filter))
-      ..add(DiagnosticsProperty('filterOperator', filterOperator))
-      ..add(DiagnosticsProperty('skip', skip))
-      ..add(DiagnosticsProperty('sort', sort))
-      ..add(DiagnosticsProperty('take', take));
   }
 
   /// Create a copy of HistoryEntryListOptions

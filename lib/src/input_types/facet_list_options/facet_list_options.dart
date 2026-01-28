@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../facet_filter_parameter/facet_filter_parameter.dart';
 import '../facet_sort_parameter/facet_sort_parameter.dart';
 import '../logical_operator/logical_operator.dart';

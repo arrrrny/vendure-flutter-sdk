@@ -114,7 +114,7 @@ class __$$AssetListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetListImpl extends _AssetList with DiagnosticableTreeMixin {
+class _$AssetListImpl extends _AssetList {
   const _$AssetListImpl({final List<Asset?>? items, this.totalItems})
       : _items = items,
         super._();
@@ -136,17 +136,8 @@ class _$AssetListImpl extends _AssetList with DiagnosticableTreeMixin {
   final int? totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AssetList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AssetList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

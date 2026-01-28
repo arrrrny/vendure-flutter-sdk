@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../config_arg/config_arg.dart';
 
 part 'configurable_operation.freezed.dart';

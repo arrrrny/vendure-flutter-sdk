@@ -155,7 +155,7 @@ class __$$ZoneImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
+class _$ZoneImpl extends _Zone {
   const _$ZoneImpl(
       {required this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -189,20 +189,8 @@ class _$ZoneImpl extends _Zone with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Zone(createdAt: $createdAt, customFields: $customFields, id: $id, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Zone'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

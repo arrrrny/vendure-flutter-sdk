@@ -140,8 +140,7 @@ class __$$CouponCodeLimitErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CouponCodeLimitErrorImpl extends _CouponCodeLimitError
-    with DiagnosticableTreeMixin {
+class _$CouponCodeLimitErrorImpl extends _CouponCodeLimitError {
   const _$CouponCodeLimitErrorImpl(
       {this.couponCode, this.errorCode, this.limit, this.message})
       : super._();
@@ -159,19 +158,8 @@ class _$CouponCodeLimitErrorImpl extends _CouponCodeLimitError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CouponCodeLimitError(couponCode: $couponCode, errorCode: $errorCode, limit: $limit, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CouponCodeLimitError'))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('limit', limit))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

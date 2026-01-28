@@ -124,8 +124,7 @@ class __$$ConfigurableOperationInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput
-    with DiagnosticableTreeMixin {
+class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput {
   _$ConfigurableOperationInputImpl(
       {required this.arguments, required this.code})
       : super._();
@@ -140,17 +139,8 @@ class _$ConfigurableOperationInputImpl extends _ConfigurableOperationInput
   String code;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ConfigurableOperationInput(arguments: $arguments, code: $code)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ConfigurableOperationInput'))
-      ..add(DiagnosticsProperty('arguments', arguments))
-      ..add(DiagnosticsProperty('code', code));
   }
 
   /// Create a copy of ConfigurableOperationInput

@@ -120,8 +120,7 @@ class __$$OrderModificationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderModificationErrorImpl extends _OrderModificationError
-    with DiagnosticableTreeMixin {
+class _$OrderModificationErrorImpl extends _OrderModificationError {
   const _$OrderModificationErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -135,17 +134,8 @@ class _$OrderModificationErrorImpl extends _OrderModificationError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderModificationError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderModificationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

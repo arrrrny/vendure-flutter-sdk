@@ -186,7 +186,7 @@ class __$$CustomerGroupImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
+class _$CustomerGroupImpl extends _CustomerGroup {
   const _$CustomerGroupImpl(
       {required this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -222,21 +222,8 @@ class _$CustomerGroupImpl extends _CustomerGroup with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomerGroup(createdAt: $createdAt, customFields: $customFields, customers: $customers, id: $id, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerGroup'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('customers', customers))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

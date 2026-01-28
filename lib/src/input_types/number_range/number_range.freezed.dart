@@ -115,7 +115,7 @@ class __$$NumberRangeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
+class _$NumberRangeImpl extends _NumberRange {
   const _$NumberRangeImpl({required this.end, required this.start}) : super._();
 
   factory _$NumberRangeImpl.fromJson(Map<String, dynamic> json) =>
@@ -127,17 +127,8 @@ class _$NumberRangeImpl extends _NumberRange with DiagnosticableTreeMixin {
   final double start;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NumberRange(end: $end, start: $start)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NumberRange'))
-      ..add(DiagnosticsProperty('end', end))
-      ..add(DiagnosticsProperty('start', start));
   }
 
   @override

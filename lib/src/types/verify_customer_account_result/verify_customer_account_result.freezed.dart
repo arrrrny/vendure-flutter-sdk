@@ -220,7 +220,7 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
+class _$CurrentUserImpl extends CurrentUser {
   const _$CurrentUserImpl(
       {required final List<CurrentUserChannel> channels,
       required this.id,
@@ -250,19 +250,8 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.currentUser(channels: $channels, id: $id, identifier: $identifier)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.currentUser'))
-      ..add(DiagnosticsProperty('channels', channels))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('identifier', identifier));
   }
 
   @override
@@ -486,8 +475,7 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MissingPasswordErrorImpl extends MissingPasswordError
-    with DiagnosticableTreeMixin {
+class _$MissingPasswordErrorImpl extends MissingPasswordError {
   const _$MissingPasswordErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'missingPasswordError',
@@ -505,18 +493,8 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.missingPasswordError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.missingPasswordError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -740,8 +718,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
-    with DiagnosticableTreeMixin {
+class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
   const _$NativeAuthStrategyErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
@@ -759,18 +736,8 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.nativeAuthStrategyError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -993,8 +960,7 @@ class __$$PasswordAlreadySetErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
-    with DiagnosticableTreeMixin {
+class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError {
   const _$PasswordAlreadySetErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'passwordAlreadySetError',
@@ -1012,18 +978,8 @@ class _$PasswordAlreadySetErrorImpl extends PasswordAlreadySetError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.passwordAlreadySetError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.passwordAlreadySetError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1252,8 +1208,7 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordValidationErrorImpl extends PasswordValidationError
-    with DiagnosticableTreeMixin {
+class _$PasswordValidationErrorImpl extends PasswordValidationError {
   const _$PasswordValidationErrorImpl(
       {required this.errorCode,
       required this.message,
@@ -1276,20 +1231,8 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.passwordValidationError(errorCode: $errorCode, message: $message, validationErrorMessage: $validationErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.passwordValidationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty(
-          'validationErrorMessage', validationErrorMessage));
   }
 
   @override
@@ -1520,8 +1463,8 @@ class __$$VerificationTokenExpiredErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
-    with DiagnosticableTreeMixin {
+class _$VerificationTokenExpiredErrorImpl
+    extends VerificationTokenExpiredError {
   const _$VerificationTokenExpiredErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'verificationTokenExpiredError',
@@ -1540,18 +1483,8 @@ class _$VerificationTokenExpiredErrorImpl extends VerificationTokenExpiredError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.verificationTokenExpiredError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.verificationTokenExpiredError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1777,8 +1710,8 @@ class __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
-    with DiagnosticableTreeMixin {
+class _$VerificationTokenInvalidErrorImpl
+    extends VerificationTokenInvalidError {
   const _$VerificationTokenInvalidErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'verificationTokenInvalidError',
@@ -1797,18 +1730,8 @@ class _$VerificationTokenInvalidErrorImpl extends VerificationTokenInvalidError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerifyCustomerAccountResult.verificationTokenInvalidError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'VerifyCustomerAccountResult.verificationTokenInvalidError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

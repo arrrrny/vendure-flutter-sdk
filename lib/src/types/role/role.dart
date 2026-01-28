@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../channel/channel.dart';
 import '../types/permission/permission.dart';
 

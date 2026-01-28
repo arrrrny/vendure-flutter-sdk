@@ -1,14 +1,16 @@
 import 'dart:async';
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:vendure/vendure.dart';
+
+import 'test_config.dart';
 
 void main() {
   late Vendure vendure;
-  String endpoint = 'http://127.0.0.1:3000/shop-api';
-  String wsEndpoint = 'ws://127.0.0.1:3000/shop-api';
-  String emailAddress = 'stream.test+1@zikzak.wtf';
-  String password = 'TestPass123!';
+  String endpoint = TestConfig.shopApiUrl;
+  String wsEndpoint = TestConfig.shopWsUrl;
+  String emailAddress = TestConfig.shopEmail;
+  String password = TestConfig.shopPassword;
 
   setUp(() async {
     vendure = await Vendure.initializeWithNativeAuth(
@@ -25,13 +27,16 @@ void main() {
     bool connected = false;
 
     try {
-      subscription = vendure.customer.activeCustomerStream(
+      subscription = vendure.customer
+          .activeCustomerStream(
         websocketEndpoint: wsEndpoint,
         includeInitialValue: false,
-      ).listen(
+      )
+          .listen(
         (customer) {
           connected = true;
-          print('✅ Received customer via subscription: ${customer.emailAddress}');
+          print(
+              '✅ Received customer via subscription: ${customer.emailAddress}');
         },
         onError: (error) {
           print('❌ Subscription error: $error');
@@ -41,9 +46,11 @@ void main() {
       // Wait a bit to see if connection is established
       await Future.delayed(const Duration(seconds: 3));
 
-      expect(connected, isTrue, reason: 'Should receive customer update via subscription');
+      expect(connected, isTrue,
+          reason: 'Should receive customer update via subscription');
 
-      print('✅ WebSocket subscription connection established successfully and received data');
+      print(
+          '✅ WebSocket subscription connection established successfully and received data');
     } catch (e) {
       fail('Error testing subscription connection: $e');
     } finally {

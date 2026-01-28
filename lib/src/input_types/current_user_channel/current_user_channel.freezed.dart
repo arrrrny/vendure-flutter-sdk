@@ -145,8 +145,7 @@ class __$$CurrentUserChannelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserChannelImpl extends _CurrentUserChannel
-    with DiagnosticableTreeMixin {
+class _$CurrentUserChannelImpl extends _CurrentUserChannel {
   const _$CurrentUserChannelImpl(
       {this.code, this.id, final List<Permission?>? permissions, this.token})
       : _permissions = permissions,
@@ -173,19 +172,8 @@ class _$CurrentUserChannelImpl extends _CurrentUserChannel
   final String? token;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CurrentUserChannel(code: $code, id: $id, permissions: $permissions, token: $token)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CurrentUserChannel'))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('permissions', permissions))
-      ..add(DiagnosticsProperty('token', token));
   }
 
   @override

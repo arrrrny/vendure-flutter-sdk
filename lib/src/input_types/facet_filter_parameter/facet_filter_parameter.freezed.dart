@@ -304,8 +304,7 @@ class __$$FacetFilterParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetFilterParameterImpl extends _FacetFilterParameter
-    with DiagnosticableTreeMixin {
+class _$FacetFilterParameterImpl extends _FacetFilterParameter {
   const _$FacetFilterParameterImpl(
       {@JsonKey(name: '_and') final List<FacetFilterParameter>? and,
       @JsonKey(name: '_or') final List<FacetFilterParameter>? or,
@@ -358,23 +357,8 @@ class _$FacetFilterParameterImpl extends _FacetFilterParameter
   final DateOperators? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetFilterParameter(and: $and, or: $or, code: $code, createdAt: $createdAt, id: $id, languageCode: $languageCode, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetFilterParameter'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

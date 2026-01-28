@@ -146,8 +146,7 @@ class __$$OrderTaxSummaryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderTaxSummaryImpl extends _OrderTaxSummary
-    with DiagnosticableTreeMixin {
+class _$OrderTaxSummaryImpl extends _OrderTaxSummary {
   const _$OrderTaxSummaryImpl(
       {required this.description,
       required this.taxBase,
@@ -175,19 +174,8 @@ class _$OrderTaxSummaryImpl extends _OrderTaxSummary
   final double taxTotal;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderTaxSummary(description: $description, taxBase: $taxBase, taxRate: $taxRate, taxTotal: $taxTotal)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderTaxSummary'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('taxBase', taxBase))
-      ..add(DiagnosticsProperty('taxRate', taxRate))
-      ..add(DiagnosticsProperty('taxTotal', taxTotal));
   }
 
   @override

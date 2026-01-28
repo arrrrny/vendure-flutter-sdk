@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../asset/asset.dart';
 import '../discount/discount.dart';
 import '../fulfillment_line/fulfillment_line.dart';

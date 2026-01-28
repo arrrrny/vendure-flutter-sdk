@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'user_custom_fields.freezed.dart';
 part 'user_custom_fields.g.dart';
 
@@ -24,5 +23,6 @@ class UserCustomFields with _$UserCustomFields {
     String? town,
   }) = _UserCustomFields;
 
-  factory UserCustomFields.fromJson(Map<String, dynamic> json) => _$UserCustomFieldsFromJson(json);
+  factory UserCustomFields.fromJson(Map<String, dynamic> json) =>
+      _$UserCustomFieldsFromJson(json);
 }

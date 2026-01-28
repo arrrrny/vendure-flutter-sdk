@@ -122,8 +122,8 @@ class __$$VerificationTokenExpiredErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VerificationTokenExpiredErrorImpl extends _VerificationTokenExpiredError
-    with DiagnosticableTreeMixin {
+class _$VerificationTokenExpiredErrorImpl
+    extends _VerificationTokenExpiredError {
   const _$VerificationTokenExpiredErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -138,17 +138,8 @@ class _$VerificationTokenExpiredErrorImpl extends _VerificationTokenExpiredError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerificationTokenExpiredError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'VerificationTokenExpiredError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

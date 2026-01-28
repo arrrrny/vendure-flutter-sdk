@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'native_auth_input.freezed.dart';
 part 'native_auth_input.g.dart';
 

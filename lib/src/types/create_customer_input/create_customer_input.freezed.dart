@@ -178,8 +178,7 @@ class __$$CreateCustomerInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CreateCustomerInputImpl extends _CreateCustomerInput
-    with DiagnosticableTreeMixin {
+class _$CreateCustomerInputImpl extends _CreateCustomerInput {
   _$CreateCustomerInputImpl(
       {this.customFields,
       required this.emailAddress,
@@ -206,21 +205,8 @@ class _$CreateCustomerInputImpl extends _CreateCustomerInput
   String? title;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CreateCustomerInput(customFields: $customFields, emailAddress: $emailAddress, firstName: $firstName, lastName: $lastName, phoneNumber: $phoneNumber, title: $title)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CreateCustomerInput'))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('title', title));
   }
 
   /// Create a copy of CreateCustomerInput

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'id_list_operators.freezed.dart';
 part 'id_list_operators.g.dart';
 
@@ -15,5 +14,6 @@ class IdListOperators with _$IdListOperators {
     required String inList,
   }) = _IdListOperators;
 
-  factory IdListOperators.fromJson(Map<String, dynamic> json) => _$IdListOperatorsFromJson(json);
+  factory IdListOperators.fromJson(Map<String, dynamic> json) =>
+      _$IdListOperatorsFromJson(json);
 }

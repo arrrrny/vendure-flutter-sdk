@@ -115,7 +115,7 @@ class __$$CoordinateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CoordinateImpl extends _Coordinate with DiagnosticableTreeMixin {
+class _$CoordinateImpl extends _Coordinate {
   const _$CoordinateImpl({this.x, this.y}) : super._();
 
   factory _$CoordinateImpl.fromJson(Map<String, dynamic> json) =>
@@ -127,17 +127,8 @@ class _$CoordinateImpl extends _Coordinate with DiagnosticableTreeMixin {
   final double? y;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Coordinate(x: $x, y: $y)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Coordinate'))
-      ..add(DiagnosticsProperty('x', x))
-      ..add(DiagnosticsProperty('y', y));
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'boolean_list_operators.freezed.dart';
 part 'boolean_list_operators.g.dart';
 
@@ -15,5 +14,6 @@ class BooleanListOperators with _$BooleanListOperators {
     required bool inList,
   }) = _BooleanListOperators;
 
-  factory BooleanListOperators.fromJson(Map<String, dynamic> json) => _$BooleanListOperatorsFromJson(json);
+  factory BooleanListOperators.fromJson(Map<String, dynamic> json) =>
+      _$BooleanListOperatorsFromJson(json);
 }

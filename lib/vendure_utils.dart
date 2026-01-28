@@ -5,4 +5,5 @@
 ///
 /// It simply re-exports the implementation from `src/vendure/vendure_utils.dart`.
 library;
+
 export 'src/vendure/vendure_utils.dart';

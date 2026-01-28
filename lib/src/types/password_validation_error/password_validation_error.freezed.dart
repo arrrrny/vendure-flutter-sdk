@@ -133,8 +133,7 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordValidationErrorImpl extends _PasswordValidationError
-    with DiagnosticableTreeMixin {
+class _$PasswordValidationErrorImpl extends _PasswordValidationError {
   const _$PasswordValidationErrorImpl(
       {required this.errorCode,
       required this.message,
@@ -152,19 +151,8 @@ class _$PasswordValidationErrorImpl extends _PasswordValidationError
   final String validationErrorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PasswordValidationError(errorCode: $errorCode, message: $message, validationErrorMessage: $validationErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PasswordValidationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty(
-          'validationErrorMessage', validationErrorMessage));
   }
 
   @override

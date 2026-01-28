@@ -353,8 +353,7 @@ class __$$FacetValueFilterParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetValueFilterParameterImpl extends _FacetValueFilterParameter
-    with DiagnosticableTreeMixin {
+class _$FacetValueFilterParameterImpl extends _FacetValueFilterParameter {
   _$FacetValueFilterParameterImpl(
       {@JsonKey(name: '_and') this.and,
       @JsonKey(name: '_or') this.or,
@@ -392,24 +391,8 @@ class _$FacetValueFilterParameterImpl extends _FacetValueFilterParameter
   DateOperators? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetValueFilterParameter(and: $and, or: $or, code: $code, createdAt: $createdAt, facetId: $facetId, id: $id, languageCode: $languageCode, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetValueFilterParameter'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('facetId', facetId))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of FacetValueFilterParameter

@@ -203,7 +203,7 @@ class __$$ShippingLineImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
+class _$ShippingLineImpl extends _ShippingLine {
   const _$ShippingLineImpl(
       {this.discountedPrice,
       this.discountedPriceWithTax,
@@ -242,23 +242,8 @@ class _$ShippingLineImpl extends _ShippingLine with DiagnosticableTreeMixin {
   final ShippingMethod? shippingMethod;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ShippingLine(discountedPrice: $discountedPrice, discountedPriceWithTax: $discountedPriceWithTax, discounts: $discounts, id: $id, price: $price, priceWithTax: $priceWithTax, shippingMethod: $shippingMethod)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ShippingLine'))
-      ..add(DiagnosticsProperty('discountedPrice', discountedPrice))
-      ..add(
-          DiagnosticsProperty('discountedPriceWithTax', discountedPriceWithTax))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('shippingMethod', shippingMethod));
   }
 
   @override

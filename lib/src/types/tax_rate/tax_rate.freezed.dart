@@ -265,7 +265,7 @@ class __$$TaxRateImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
+class _$TaxRateImpl extends _TaxRate {
   const _$TaxRateImpl(
       {required this.category,
       required this.createdAt,
@@ -313,25 +313,8 @@ class _$TaxRateImpl extends _TaxRate with DiagnosticableTreeMixin {
   final Zone zone;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TaxRate(category: $category, createdAt: $createdAt, customFields: $customFields, customerGroup: $customerGroup, enabled: $enabled, id: $id, name: $name, updatedAt: $updatedAt, value: $value, zone: $zone)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TaxRate'))
-      ..add(DiagnosticsProperty('category', category))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('customerGroup', customerGroup))
-      ..add(DiagnosticsProperty('enabled', enabled))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('value', value))
-      ..add(DiagnosticsProperty('zone', zone));
   }
 
   @override

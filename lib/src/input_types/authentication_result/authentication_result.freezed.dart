@@ -165,7 +165,7 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
+class _$CurrentUserImpl extends CurrentUser {
   const _$CurrentUserImpl(
       {final List<CurrentUserChannel?>? channels,
       this.id,
@@ -197,18 +197,8 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthenticationResult.currentUser(channels: $channels, id: $id, identifier: $identifier)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthenticationResult.currentUser'))
-      ..add(DiagnosticsProperty('channels', channels))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('identifier', identifier));
   }
 
   @override
@@ -395,8 +385,7 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
-    with DiagnosticableTreeMixin {
+class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError {
   const _$InvalidCredentialsErrorImpl(
       {this.authenticationError,
       this.errorCode,
@@ -419,19 +408,8 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthenticationResult.invalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AuthenticationResult.invalidCredentialsError'))
-      ..add(DiagnosticsProperty('authenticationError', authenticationError))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -612,8 +590,7 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotVerifiedErrorImpl extends NotVerifiedError
-    with DiagnosticableTreeMixin {
+class _$NotVerifiedErrorImpl extends NotVerifiedError {
   const _$NotVerifiedErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'notVerifiedError',
@@ -631,18 +608,8 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthenticationResult.notVerifiedError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'AuthenticationResult.notVerifiedError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

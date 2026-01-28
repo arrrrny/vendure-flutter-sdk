@@ -115,8 +115,7 @@ class __$$LocalizedStringImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LocalizedStringImpl extends _LocalizedString
-    with DiagnosticableTreeMixin {
+class _$LocalizedStringImpl extends _LocalizedString {
   const _$LocalizedStringImpl({this.languageCode, this.value}) : super._();
 
   factory _$LocalizedStringImpl.fromJson(Map<String, dynamic> json) =>
@@ -128,17 +127,8 @@ class _$LocalizedStringImpl extends _LocalizedString
   final String? value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'LocalizedString(languageCode: $languageCode, value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'LocalizedString'))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override

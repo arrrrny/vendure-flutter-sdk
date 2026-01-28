@@ -120,8 +120,7 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EmailAddressConflictErrorImpl extends _EmailAddressConflictError
-    with DiagnosticableTreeMixin {
+class _$EmailAddressConflictErrorImpl extends _EmailAddressConflictError {
   const _$EmailAddressConflictErrorImpl({this.errorCode, this.message})
       : super._();
 
@@ -134,17 +133,8 @@ class _$EmailAddressConflictErrorImpl extends _EmailAddressConflictError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'EmailAddressConflictError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'EmailAddressConflictError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

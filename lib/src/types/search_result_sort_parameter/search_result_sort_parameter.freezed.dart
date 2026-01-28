@@ -122,8 +122,7 @@ class __$$SearchResultSortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchResultSortParameterImpl extends _SearchResultSortParameter
-    with DiagnosticableTreeMixin {
+class _$SearchResultSortParameterImpl extends _SearchResultSortParameter {
   _$SearchResultSortParameterImpl({this.name, this.price}) : super._();
 
   factory _$SearchResultSortParameterImpl.fromJson(Map<String, dynamic> json) =>
@@ -135,17 +134,8 @@ class _$SearchResultSortParameterImpl extends _SearchResultSortParameter
   SortOrder? price;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchResultSortParameter(name: $name, price: $price)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchResultSortParameter'))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('price', price));
   }
 
   /// Create a copy of SearchResultSortParameter

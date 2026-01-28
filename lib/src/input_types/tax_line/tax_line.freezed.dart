@@ -112,7 +112,7 @@ class __$$TaxLineImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TaxLineImpl extends _TaxLine with DiagnosticableTreeMixin {
+class _$TaxLineImpl extends _TaxLine {
   const _$TaxLineImpl({this.description, this.taxRate}) : super._();
 
   factory _$TaxLineImpl.fromJson(Map<String, dynamic> json) =>
@@ -124,17 +124,8 @@ class _$TaxLineImpl extends _TaxLine with DiagnosticableTreeMixin {
   final double? taxRate;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TaxLine(description: $description, taxRate: $taxRate)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TaxLine'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('taxRate', taxRate));
   }
 
   @override

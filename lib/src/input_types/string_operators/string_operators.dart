@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'string_operators.freezed.dart';
 part 'string_operators.g.dart';
 
@@ -14,8 +13,7 @@ class StringOperators with _$StringOperators {
   const factory StringOperators({
     String? contains,
     String? eq,
-    @JsonKey(name: 'in')
-    List<String>? in_,
+    @JsonKey(name: 'in') List<String>? in_,
     bool? isNull,
     String? notContains,
     String? notEq,
@@ -23,5 +21,6 @@ class StringOperators with _$StringOperators {
     String? regex,
   }) = _StringOperators;
 
-  factory StringOperators.fromJson(Map<String, dynamic> json) => _$StringOperatorsFromJson(json);
+  factory StringOperators.fromJson(Map<String, dynamic> json) =>
+      _$StringOperatorsFromJson(json);
 }

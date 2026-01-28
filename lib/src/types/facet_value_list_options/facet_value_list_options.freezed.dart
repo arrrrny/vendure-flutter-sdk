@@ -227,8 +227,7 @@ class __$$FacetValueListOptionsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetValueListOptionsImpl extends _FacetValueListOptions
-    with DiagnosticableTreeMixin {
+class _$FacetValueListOptionsImpl extends _FacetValueListOptions {
   _$FacetValueListOptionsImpl(
       {this.filter, this.filterOperator, this.skip, this.sort, this.take})
       : super._();
@@ -258,20 +257,8 @@ class _$FacetValueListOptionsImpl extends _FacetValueListOptions
   int? take;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetValueListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetValueListOptions'))
-      ..add(DiagnosticsProperty('filter', filter))
-      ..add(DiagnosticsProperty('filterOperator', filterOperator))
-      ..add(DiagnosticsProperty('skip', skip))
-      ..add(DiagnosticsProperty('sort', sort))
-      ..add(DiagnosticsProperty('take', take));
   }
 
   /// Create a copy of FacetValueListOptions

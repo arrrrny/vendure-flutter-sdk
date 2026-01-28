@@ -210,8 +210,7 @@ class __$$CollectionSortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionSortParameterImpl extends _CollectionSortParameter
-    with DiagnosticableTreeMixin {
+class _$CollectionSortParameterImpl extends _CollectionSortParameter {
   _$CollectionSortParameterImpl(
       {this.createdAt,
       this.description,
@@ -244,23 +243,8 @@ class _$CollectionSortParameterImpl extends _CollectionSortParameter
   SortOrder? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CollectionSortParameter(createdAt: $createdAt, description: $description, id: $id, name: $name, parentId: $parentId, position: $position, slug: $slug, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CollectionSortParameter'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('parentId', parentId))
-      ..add(DiagnosticsProperty('position', position))
-      ..add(DiagnosticsProperty('slug', slug))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of CollectionSortParameter

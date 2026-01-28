@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'config_arg_definition.freezed.dart';
 part 'config_arg_definition.g.dart';
 
@@ -17,11 +16,11 @@ class ConfigArgDefinition with _$ConfigArgDefinition {
     String? label,
     bool? list,
     String? name,
-    @JsonKey(name: 'required')
-    bool? required_,
+    @JsonKey(name: 'required') bool? required_,
     String? type,
     Map<String, dynamic>? ui,
   }) = _ConfigArgDefinition;
 
-  factory ConfigArgDefinition.fromJson(Map<String, dynamic> json) => _$ConfigArgDefinitionFromJson(json);
+  factory ConfigArgDefinition.fromJson(Map<String, dynamic> json) =>
+      _$ConfigArgDefinitionFromJson(json);
 }

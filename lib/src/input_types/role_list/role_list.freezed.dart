@@ -114,7 +114,7 @@ class __$$RoleListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RoleListImpl extends _RoleList with DiagnosticableTreeMixin {
+class _$RoleListImpl extends _RoleList {
   const _$RoleListImpl({final List<Role?>? items, this.totalItems})
       : _items = items,
         super._();
@@ -136,17 +136,8 @@ class _$RoleListImpl extends _RoleList with DiagnosticableTreeMixin {
   final int? totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RoleList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RoleList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

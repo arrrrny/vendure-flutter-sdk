@@ -171,7 +171,7 @@ class __$$TaxCategoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
+class _$TaxCategoryImpl extends _TaxCategory {
   const _$TaxCategoryImpl(
       {required this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -207,21 +207,8 @@ class _$TaxCategoryImpl extends _TaxCategory with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TaxCategory(createdAt: $createdAt, customFields: $customFields, id: $id, isDefault: $isDefault, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TaxCategory'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('isDefault', isDefault))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

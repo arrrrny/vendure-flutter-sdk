@@ -123,7 +123,7 @@ class __$$PasswordResetTokenInvalidErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PasswordResetTokenInvalidErrorImpl
-    extends _PasswordResetTokenInvalidError with DiagnosticableTreeMixin {
+    extends _PasswordResetTokenInvalidError {
   const _$PasswordResetTokenInvalidErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -138,17 +138,8 @@ class _$PasswordResetTokenInvalidErrorImpl
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PasswordResetTokenInvalidError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PasswordResetTokenInvalidError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

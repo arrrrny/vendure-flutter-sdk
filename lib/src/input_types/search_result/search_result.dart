@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../currency_code/currency_code.dart';
 import '../search_result_asset/search_result_asset.dart';
 import '../search_result_price/search_result_price.dart';

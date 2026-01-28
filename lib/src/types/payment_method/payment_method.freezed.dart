@@ -269,7 +269,7 @@ class __$$PaymentMethodImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
+class _$PaymentMethodImpl extends _PaymentMethod {
   const _$PaymentMethodImpl(
       {this.checker,
       required this.code,
@@ -327,26 +327,8 @@ class _$PaymentMethodImpl extends _PaymentMethod with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PaymentMethod(checker: $checker, code: $code, createdAt: $createdAt, customFields: $customFields, description: $description, enabled: $enabled, handler: $handler, id: $id, name: $name, translations: $translations, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PaymentMethod'))
-      ..add(DiagnosticsProperty('checker', checker))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('enabled', enabled))
-      ..add(DiagnosticsProperty('handler', handler))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

@@ -129,7 +129,7 @@ class __$$PaymentInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentInputImpl extends _PaymentInput with DiagnosticableTreeMixin {
+class _$PaymentInputImpl extends _PaymentInput {
   _$PaymentInputImpl({required this.metadata, required this.method})
       : super._();
 
@@ -147,17 +147,8 @@ class _$PaymentInputImpl extends _PaymentInput with DiagnosticableTreeMixin {
   String method;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PaymentInput(metadata: $metadata, method: $method)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PaymentInput'))
-      ..add(DiagnosticsProperty('metadata', metadata))
-      ..add(DiagnosticsProperty('method', method));
   }
 
   /// Create a copy of PaymentInput

@@ -145,8 +145,7 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchResponseImpl extends _SearchResponse
-    with DiagnosticableTreeMixin {
+class _$SearchResponseImpl extends _SearchResponse {
   const _$SearchResponseImpl(
       {required final List<CollectionResult> collections,
       required final List<FacetValueResult> facetValues,
@@ -188,19 +187,8 @@ class _$SearchResponseImpl extends _SearchResponse
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchResponse(collections: $collections, facetValues: $facetValues, items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchResponse'))
-      ..add(DiagnosticsProperty('collections', collections))
-      ..add(DiagnosticsProperty('facetValues', facetValues))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

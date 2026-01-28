@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../configurable_operation/configurable_operation.dart';
 import '../payment_method_translation/payment_method_translation.dart';
 

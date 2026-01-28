@@ -123,8 +123,7 @@ class __$$AuthenticationInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AuthenticationInputImpl extends _AuthenticationInput
-    with DiagnosticableTreeMixin {
+class _$AuthenticationInputImpl extends _AuthenticationInput {
   const _$AuthenticationInputImpl({this.native}) : super._();
 
   factory _$AuthenticationInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -134,16 +133,8 @@ class _$AuthenticationInputImpl extends _AuthenticationInput
   final NativeAuthInput? native;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthenticationInput(native: $native)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthenticationInput'))
-      ..add(DiagnosticsProperty('native', native));
   }
 
   @override

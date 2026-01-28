@@ -1,16 +1,17 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:vendure/vendure.dart';
 
+import 'test_config.dart';
+
 void main() {
-  String endpoint = 'http://192.168.1.158:3000shop-api';
-  String adminEndpoint = 'http://192.168.1.158:3000/admin-api';
-  String testUsername = 'a@a.com';
-  String testPassword = '123456';
-  String adminUsername = 'superadmin';
-  String adminPassword = 'superadmin';
-  String verificationToken =
-      'MjAyNS0xMS0wOFQwNTo0NDo1Ny4yMzBa_DQD8F63X6JG5G9ZM';
-  String testEmail = 'a@a.com';
+  String endpoint = TestConfig.shopApiUrl;
+  String adminEndpoint = TestConfig.adminApiUrl;
+  String testUsername = TestConfig.shopEmail;
+  String testPassword = TestConfig.shopPassword;
+  String adminUsername = TestConfig.adminUsername;
+  String adminPassword = TestConfig.adminPassword;
+  String verificationToken = TestConfig.customerVerificationToken;
+  String testEmail = TestConfig.shopEmail;
 
   group('Vendure Native Auth - Connection Test', () {
     test('Check basic connection to Vendure server', () async {
@@ -39,16 +40,21 @@ void main() {
       );
     });
 
-    test('Verify customer account', () async {
-      try {
-        var result =
-            await vendure.auth.verifyCustomerAccount(token: verificationToken);
-        expect(result, isA<AuthenticationResult>());
-        print('✅ Verify customer account successful: ${result.toJson()}');
-      } catch (e) {
-        fail('❌ Authenticate method failed: $e');
-      }
-    });
+    test(
+      'Verify customer account',
+      () async {
+        try {
+          var result = await vendure.auth
+              .verifyCustomerAccount(token: verificationToken);
+          expect(result, isA<AuthenticationResult>());
+          print('✅ Verify customer account successful: ${result.toJson()}');
+        } catch (e) {
+          fail('❌ Authenticate method failed: $e');
+        }
+      },
+      skip:
+          verificationToken.isEmpty ? 'No verification token provided' : false,
+    );
 
     test('Refresh verification', () async {
       try {

@@ -115,7 +115,7 @@ class __$$ProvinceListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProvinceListImpl extends _ProvinceList with DiagnosticableTreeMixin {
+class _$ProvinceListImpl extends _ProvinceList {
   const _$ProvinceListImpl({final List<Province?>? items, this.totalItems})
       : _items = items,
         super._();
@@ -137,17 +137,8 @@ class _$ProvinceListImpl extends _ProvinceList with DiagnosticableTreeMixin {
   final int? totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProvinceList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProvinceList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

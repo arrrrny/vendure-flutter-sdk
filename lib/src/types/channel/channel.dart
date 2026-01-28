@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../seller/seller.dart';
 import '../zone/zone.dart';
 import '../types/currency_code/currency_code.dart';

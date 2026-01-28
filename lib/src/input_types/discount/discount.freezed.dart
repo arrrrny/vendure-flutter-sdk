@@ -157,7 +157,7 @@ class __$$DiscountImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DiscountImpl extends _Discount with DiagnosticableTreeMixin {
+class _$DiscountImpl extends _Discount {
   const _$DiscountImpl(
       {this.adjustmentSource,
       this.amount,
@@ -181,20 +181,8 @@ class _$DiscountImpl extends _Discount with DiagnosticableTreeMixin {
   final AdjustmentType? type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Discount(adjustmentSource: $adjustmentSource, amount: $amount, amountWithTax: $amountWithTax, description: $description, type: $type)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Discount'))
-      ..add(DiagnosticsProperty('adjustmentSource', adjustmentSource))
-      ..add(DiagnosticsProperty('amount', amount))
-      ..add(DiagnosticsProperty('amountWithTax', amountWithTax))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('type', type));
   }
 
   @override

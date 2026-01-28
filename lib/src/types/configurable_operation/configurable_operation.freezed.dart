@@ -119,8 +119,7 @@ class __$$ConfigurableOperationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigurableOperationImpl extends _ConfigurableOperation
-    with DiagnosticableTreeMixin {
+class _$ConfigurableOperationImpl extends _ConfigurableOperation {
   const _$ConfigurableOperationImpl(
       {required final List<ConfigArg> args, required this.code})
       : _args = args,
@@ -141,17 +140,8 @@ class _$ConfigurableOperationImpl extends _ConfigurableOperation
   final String code;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ConfigurableOperation(args: $args, code: $code)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ConfigurableOperation'))
-      ..add(DiagnosticsProperty('args', args))
-      ..add(DiagnosticsProperty('code', code));
   }
 
   @override

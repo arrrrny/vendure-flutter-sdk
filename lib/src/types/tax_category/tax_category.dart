@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'tax_category.freezed.dart';
 part 'tax_category.g.dart';
+
 @freezed
 class TaxCategory with _$TaxCategory {
   const TaxCategory._();
@@ -15,5 +15,6 @@ class TaxCategory with _$TaxCategory {
     required DateTime updatedAt,
   }) = _TaxCategory;
 
-  factory TaxCategory.fromJson(Map<String, dynamic> json) => _$TaxCategoryFromJson(json);
+  factory TaxCategory.fromJson(Map<String, dynamic> json) =>
+      _$TaxCategoryFromJson(json);
 }

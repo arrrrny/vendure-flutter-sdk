@@ -117,8 +117,7 @@ class __$$NativeAuthInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthInputImpl extends _NativeAuthInput
-    with DiagnosticableTreeMixin {
+class _$NativeAuthInputImpl extends _NativeAuthInput {
   _$NativeAuthInputImpl({required this.password, required this.username})
       : super._();
 
@@ -131,17 +130,8 @@ class _$NativeAuthInputImpl extends _NativeAuthInput
   String username;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NativeAuthInput(password: $password, username: $username)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NativeAuthInput'))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('username', username));
   }
 
   /// Create a copy of NativeAuthInput

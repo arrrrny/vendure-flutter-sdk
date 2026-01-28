@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../localized_string/localized_string.dart';
 import '../string_field_option/string_field_option.dart';
 import '../types/permission/permission.dart';

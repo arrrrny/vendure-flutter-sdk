@@ -130,8 +130,7 @@ class __$$FacetValueResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetValueResultImpl extends _FacetValueResult
-    with DiagnosticableTreeMixin {
+class _$FacetValueResultImpl extends _FacetValueResult {
   const _$FacetValueResultImpl({required this.count, required this.facetValue})
       : super._();
 
@@ -144,17 +143,8 @@ class _$FacetValueResultImpl extends _FacetValueResult
   final FacetValue facetValue;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetValueResult(count: $count, facetValue: $facetValue)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetValueResult'))
-      ..add(DiagnosticsProperty('count', count))
-      ..add(DiagnosticsProperty('facetValue', facetValue));
   }
 
   @override

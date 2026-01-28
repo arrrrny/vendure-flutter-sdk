@@ -210,7 +210,7 @@ class __$$FulfillmentImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FulfillmentImpl extends _Fulfillment with DiagnosticableTreeMixin {
+class _$FulfillmentImpl extends _Fulfillment {
   const _$FulfillmentImpl(
       {required this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -269,24 +269,8 @@ class _$FulfillmentImpl extends _Fulfillment with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Fulfillment(createdAt: $createdAt, customFields: $customFields, id: $id, lines: $lines, method: $method, state: $state, summary: $summary, trackingCode: $trackingCode, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Fulfillment'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('method', method))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('summary', summary))
-      ..add(DiagnosticsProperty('trackingCode', trackingCode))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

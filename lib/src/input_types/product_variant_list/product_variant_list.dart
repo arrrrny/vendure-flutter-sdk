@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../product_variant/product_variant.dart';
 
 part 'product_variant_list.freezed.dart';

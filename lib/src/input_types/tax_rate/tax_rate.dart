@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../customer_group/customer_group.dart';
 import '../tax_category/tax_category.dart';
 import '../zone/zone.dart';

@@ -106,8 +106,7 @@ class __$$UpdateOrderInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdateOrderInputImpl extends _UpdateOrderInput
-    with DiagnosticableTreeMixin {
+class _$UpdateOrderInputImpl extends _UpdateOrderInput {
   _$UpdateOrderInputImpl({this.customFields}) : super._();
 
   factory _$UpdateOrderInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -117,16 +116,8 @@ class _$UpdateOrderInputImpl extends _UpdateOrderInput
   Map<String, dynamic>? customFields;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateOrderInput(customFields: $customFields)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'UpdateOrderInput'))
-      ..add(DiagnosticsProperty('customFields', customFields));
   }
 
   /// Create a copy of UpdateOrderInput

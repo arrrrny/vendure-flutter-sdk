@@ -383,8 +383,7 @@ class __$$CustomerFilterParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerFilterParameterImpl extends _CustomerFilterParameter
-    with DiagnosticableTreeMixin {
+class _$CustomerFilterParameterImpl extends _CustomerFilterParameter {
   _$CustomerFilterParameterImpl(
       {@JsonKey(name: '_and') this.and,
       @JsonKey(name: '_or') this.or,
@@ -425,25 +424,8 @@ class _$CustomerFilterParameterImpl extends _CustomerFilterParameter
   DateOperators? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomerFilterParameter(and: $and, or: $or, createdAt: $createdAt, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CustomerFilterParameter'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of CustomerFilterParameter

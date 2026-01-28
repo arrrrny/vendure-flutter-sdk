@@ -115,7 +115,7 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PriceRangeImpl extends _PriceRange with DiagnosticableTreeMixin {
+class _$PriceRangeImpl extends _PriceRange {
   const _$PriceRangeImpl({this.max, this.min}) : super._();
 
   factory _$PriceRangeImpl.fromJson(Map<String, dynamic> json) =>
@@ -127,17 +127,8 @@ class _$PriceRangeImpl extends _PriceRange with DiagnosticableTreeMixin {
   final double? min;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PriceRange(max: $max, min: $min)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PriceRange'))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min));
   }
 
   @override

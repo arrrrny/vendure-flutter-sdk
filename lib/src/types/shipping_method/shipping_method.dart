@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../configurable_operation/configurable_operation.dart';
 import '../shipping_method_translation/shipping_method_translation.dart';
 import '../types/language_code/language_code.dart';

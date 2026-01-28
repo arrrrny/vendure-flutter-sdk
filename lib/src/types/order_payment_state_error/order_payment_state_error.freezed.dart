@@ -120,8 +120,7 @@ class __$$OrderPaymentStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderPaymentStateErrorImpl extends _OrderPaymentStateError
-    with DiagnosticableTreeMixin {
+class _$OrderPaymentStateErrorImpl extends _OrderPaymentStateError {
   const _$OrderPaymentStateErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -135,17 +134,8 @@ class _$OrderPaymentStateErrorImpl extends _OrderPaymentStateError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderPaymentStateError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderPaymentStateError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

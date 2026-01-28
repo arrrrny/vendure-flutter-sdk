@@ -134,8 +134,7 @@ class __$$HistoryEntrySortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter
-    with DiagnosticableTreeMixin {
+class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter {
   _$HistoryEntrySortParameterImpl({this.createdAt, this.id, this.updatedAt})
       : super._();
 
@@ -150,18 +149,8 @@ class _$HistoryEntrySortParameterImpl extends _HistoryEntrySortParameter
   SortOrder? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HistoryEntrySortParameter(createdAt: $createdAt, id: $id, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HistoryEntrySortParameter'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of HistoryEntrySortParameter

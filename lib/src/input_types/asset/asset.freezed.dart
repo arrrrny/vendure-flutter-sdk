@@ -291,7 +291,7 @@ class __$$AssetImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
+class _$AssetImpl extends _Asset {
   const _$AssetImpl(
       {this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -360,29 +360,8 @@ class _$AssetImpl extends _Asset with DiagnosticableTreeMixin {
   final int? width;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Asset(createdAt: $createdAt, customFields: $customFields, fileSize: $fileSize, focalPoint: $focalPoint, height: $height, id: $id, mimeType: $mimeType, name: $name, preview: $preview, source: $source, tags: $tags, type: $type, updatedAt: $updatedAt, width: $width)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Asset'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('fileSize', fileSize))
-      ..add(DiagnosticsProperty('focalPoint', focalPoint))
-      ..add(DiagnosticsProperty('height', height))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('mimeType', mimeType))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('preview', preview))
-      ..add(DiagnosticsProperty('source', source))
-      ..add(DiagnosticsProperty('tags', tags))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('width', width));
   }
 
   @override

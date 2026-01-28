@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../asset/asset.dart';
 
 part 'asset_list.freezed.dart';

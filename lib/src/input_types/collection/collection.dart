@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../asset/asset.dart';
 import '../collection_breadcrumb/collection_breadcrumb.dart';
 import '../collection_translation/collection_translation.dart';

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'order_address.freezed.dart';
 part 'order_address.g.dart';
 
@@ -25,5 +24,6 @@ class OrderAddress with _$OrderAddress {
     String? streetLine2,
   }) = _OrderAddress;
 
-  factory OrderAddress.fromJson(Map<String, dynamic> json) => _$OrderAddressFromJson(json);
+  factory OrderAddress.fromJson(Map<String, dynamic> json) =>
+      _$OrderAddressFromJson(json);
 }

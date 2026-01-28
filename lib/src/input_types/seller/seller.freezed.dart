@@ -155,7 +155,7 @@ class __$$SellerImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SellerImpl extends _Seller with DiagnosticableTreeMixin {
+class _$SellerImpl extends _Seller {
   const _$SellerImpl(
       {this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -188,20 +188,8 @@ class _$SellerImpl extends _Seller with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Seller(createdAt: $createdAt, customFields: $customFields, id: $id, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Seller'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

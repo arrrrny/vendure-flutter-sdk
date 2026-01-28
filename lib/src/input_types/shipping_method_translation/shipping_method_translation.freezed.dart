@@ -176,8 +176,7 @@ class __$$ShippingMethodTranslationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingMethodTranslationImpl extends _ShippingMethodTranslation
-    with DiagnosticableTreeMixin {
+class _$ShippingMethodTranslationImpl extends _ShippingMethodTranslation {
   const _$ShippingMethodTranslationImpl(
       {this.createdAt,
       this.description,
@@ -204,21 +203,8 @@ class _$ShippingMethodTranslationImpl extends _ShippingMethodTranslation
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ShippingMethodTranslation(createdAt: $createdAt, description: $description, id: $id, languageCode: $languageCode, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ShippingMethodTranslation'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

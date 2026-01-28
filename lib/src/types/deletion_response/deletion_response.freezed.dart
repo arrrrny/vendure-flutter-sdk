@@ -115,8 +115,7 @@ class __$$DeletionResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DeletionResponseImpl extends _DeletionResponse
-    with DiagnosticableTreeMixin {
+class _$DeletionResponseImpl extends _DeletionResponse {
   const _$DeletionResponseImpl({this.message, required this.result})
       : super._();
 
@@ -129,17 +128,8 @@ class _$DeletionResponseImpl extends _DeletionResponse
   final DeletionResult result;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'DeletionResponse(message: $message, result: $result)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'DeletionResponse'))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('result', result));
   }
 
   @override

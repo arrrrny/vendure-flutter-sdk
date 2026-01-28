@@ -179,7 +179,7 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
+class _$CurrentUserImpl extends CurrentUser {
   const _$CurrentUserImpl(
       {final List<CurrentUserChannel?>? channels,
       this.id,
@@ -211,19 +211,8 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NativeAuthenticationResult.currentUser(channels: $channels, id: $id, identifier: $identifier)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'NativeAuthenticationResult.currentUser'))
-      ..add(DiagnosticsProperty('channels', channels))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('identifier', identifier));
   }
 
   @override
@@ -420,8 +409,7 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
-    with DiagnosticableTreeMixin {
+class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError {
   const _$InvalidCredentialsErrorImpl(
       {this.authenticationError,
       this.errorCode,
@@ -444,19 +432,8 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NativeAuthenticationResult.invalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'NativeAuthenticationResult.invalidCredentialsError'))
-      ..add(DiagnosticsProperty('authenticationError', authenticationError))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -650,8 +627,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
-    with DiagnosticableTreeMixin {
+class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
   const _$NativeAuthStrategyErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
@@ -669,18 +645,8 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NativeAuthenticationResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'NativeAuthenticationResult.nativeAuthStrategyError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -866,8 +832,7 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotVerifiedErrorImpl extends NotVerifiedError
-    with DiagnosticableTreeMixin {
+class _$NotVerifiedErrorImpl extends NotVerifiedError {
   const _$NotVerifiedErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'notVerifiedError',
@@ -885,18 +850,8 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NativeAuthenticationResult.notVerifiedError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'NativeAuthenticationResult.notVerifiedError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

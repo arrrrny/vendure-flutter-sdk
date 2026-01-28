@@ -123,7 +123,7 @@ class __$$IdentifierChangeTokenExpiredErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$IdentifierChangeTokenExpiredErrorImpl
-    extends _IdentifierChangeTokenExpiredError with DiagnosticableTreeMixin {
+    extends _IdentifierChangeTokenExpiredError {
   const _$IdentifierChangeTokenExpiredErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -138,17 +138,8 @@ class _$IdentifierChangeTokenExpiredErrorImpl
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IdentifierChangeTokenExpiredError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IdentifierChangeTokenExpiredError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

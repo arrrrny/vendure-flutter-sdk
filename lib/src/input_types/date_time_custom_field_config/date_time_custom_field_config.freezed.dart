@@ -268,8 +268,7 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DateTimeCustomFieldConfigImpl extends _DateTimeCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$DateTimeCustomFieldConfigImpl extends _DateTimeCustomFieldConfig {
   const _$DateTimeCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -353,28 +352,8 @@ class _$DateTimeCustomFieldConfigImpl extends _DateTimeCustomFieldConfig
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'DateTimeCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, max: $max, min: $min, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, step: $step, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'DateTimeCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('step', step))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override

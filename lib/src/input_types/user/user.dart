@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../authentication_method/authentication_method.dart';
 import '../role/role.dart';
 import '../user_custom_fields/user_custom_fields.dart';

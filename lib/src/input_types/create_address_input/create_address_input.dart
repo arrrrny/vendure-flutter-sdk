@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'create_address_input.freezed.dart';
 part 'create_address_input.g.dart';
 
@@ -26,5 +25,6 @@ class CreateAddressInput with _$CreateAddressInput {
     String? streetLine2,
   }) = _CreateAddressInput;
 
-  factory CreateAddressInput.fromJson(Map<String, dynamic> json) => _$CreateAddressInputFromJson(json);
+  factory CreateAddressInput.fromJson(Map<String, dynamic> json) =>
+      _$CreateAddressInputFromJson(json);
 }

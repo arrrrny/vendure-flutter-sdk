@@ -182,8 +182,7 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
-    with DiagnosticableTreeMixin {
+class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError {
   const _$InvalidCredentialsErrorImpl(
       {required this.authenticationError,
       required this.errorCode,
@@ -206,19 +205,8 @@ class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateCustomerPasswordResult.invalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UpdateCustomerPasswordResult.invalidCredentialsError'))
-      ..add(DiagnosticsProperty('authenticationError', authenticationError))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -412,8 +400,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
-    with DiagnosticableTreeMixin {
+class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
   const _$NativeAuthStrategyErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
@@ -431,18 +418,8 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateCustomerPasswordResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UpdateCustomerPasswordResult.nativeAuthStrategyError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -636,8 +613,7 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordValidationErrorImpl extends PasswordValidationError
-    with DiagnosticableTreeMixin {
+class _$PasswordValidationErrorImpl extends PasswordValidationError {
   const _$PasswordValidationErrorImpl(
       {required this.errorCode,
       required this.message,
@@ -660,20 +636,8 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateCustomerPasswordResult.passwordValidationError(errorCode: $errorCode, message: $message, validationErrorMessage: $validationErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'UpdateCustomerPasswordResult.passwordValidationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty(
-          'validationErrorMessage', validationErrorMessage));
   }
 
   @override
@@ -861,7 +825,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
+class _$SuccessImpl extends Success {
   const _$SuccessImpl({required this.success, final String? $type})
       : $type = $type ?? 'success',
         super._();
@@ -876,16 +840,8 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateCustomerPasswordResult.success(success: $success)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'UpdateCustomerPasswordResult.success'))
-      ..add(DiagnosticsProperty('success', success));
   }
 
   @override

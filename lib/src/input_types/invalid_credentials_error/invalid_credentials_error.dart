@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../error_code/error_code.dart';
 
 part 'invalid_credentials_error.freezed.dart';
@@ -28,5 +27,5 @@ class InvalidCredentialsError with _$InvalidCredentialsError {
 /// region or script modifier (e.g. de_AT). The selection available is based
 /// on the [Unicode CLDR summary list](https://unicode-org.github.io/cldr-staging/charts/37/summary/root.html)
 /// and includes the major spoken languages of the world and any widely-used variants.
-/// 
+///
 /// @docsCategory common

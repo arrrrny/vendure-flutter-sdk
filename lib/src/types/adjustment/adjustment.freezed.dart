@@ -158,7 +158,7 @@ class __$$AdjustmentImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
+class _$AdjustmentImpl extends _Adjustment {
   const _$AdjustmentImpl(
       {required this.adjustmentSource,
       required this.amount,
@@ -191,20 +191,8 @@ class _$AdjustmentImpl extends _Adjustment with DiagnosticableTreeMixin {
   final AdjustmentType type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Adjustment(adjustmentSource: $adjustmentSource, amount: $amount, data: $data, description: $description, type: $type)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Adjustment'))
-      ..add(DiagnosticsProperty('adjustmentSource', adjustmentSource))
-      ..add(DiagnosticsProperty('amount', amount))
-      ..add(DiagnosticsProperty('data', data))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('type', type));
   }
 
   @override

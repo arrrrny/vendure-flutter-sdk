@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'string_operators.freezed.dart';
 part 'string_operators.g.dart';
 

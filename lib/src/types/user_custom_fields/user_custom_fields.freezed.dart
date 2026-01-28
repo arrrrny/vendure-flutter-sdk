@@ -223,8 +223,7 @@ class __$$UserCustomFieldsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserCustomFieldsImpl extends _UserCustomFields
-    with DiagnosticableTreeMixin {
+class _$UserCustomFieldsImpl extends _UserCustomFields {
   const _$UserCustomFieldsImpl(
       {this.city,
       this.deviceToken,
@@ -263,25 +262,8 @@ class _$UserCustomFieldsImpl extends _UserCustomFields
   final String? town;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UserCustomFields(city: $city, deviceToken: $deviceToken, email: $email, fullName: $fullName, neighborhood: $neighborhood, os: $os, osVersion: $osVersion, phoneBrand: $phoneBrand, phoneModel: $phoneModel, town: $town)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'UserCustomFields'))
-      ..add(DiagnosticsProperty('city', city))
-      ..add(DiagnosticsProperty('deviceToken', deviceToken))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('neighborhood', neighborhood))
-      ..add(DiagnosticsProperty('os', os))
-      ..add(DiagnosticsProperty('osVersion', osVersion))
-      ..add(DiagnosticsProperty('phoneBrand', phoneBrand))
-      ..add(DiagnosticsProperty('phoneModel', phoneModel))
-      ..add(DiagnosticsProperty('town', town));
   }
 
   @override

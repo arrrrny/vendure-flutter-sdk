@@ -131,8 +131,7 @@ class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidCredentialsErrorImpl extends _InvalidCredentialsError
-    with DiagnosticableTreeMixin {
+class _$InvalidCredentialsErrorImpl extends _InvalidCredentialsError {
   const _$InvalidCredentialsErrorImpl(
       {required this.authenticationError,
       required this.errorCode,
@@ -150,18 +149,8 @@ class _$InvalidCredentialsErrorImpl extends _InvalidCredentialsError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'InvalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'InvalidCredentialsError'))
-      ..add(DiagnosticsProperty('authenticationError', authenticationError))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

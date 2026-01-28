@@ -116,8 +116,7 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MissingPasswordErrorImpl extends _MissingPasswordError
-    with DiagnosticableTreeMixin {
+class _$MissingPasswordErrorImpl extends _MissingPasswordError {
   const _$MissingPasswordErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -131,17 +130,8 @@ class _$MissingPasswordErrorImpl extends _MissingPasswordError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'MissingPasswordError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MissingPasswordError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

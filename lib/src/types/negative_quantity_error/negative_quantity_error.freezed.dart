@@ -119,8 +119,7 @@ class __$$NegativeQuantityErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NegativeQuantityErrorImpl extends _NegativeQuantityError
-    with DiagnosticableTreeMixin {
+class _$NegativeQuantityErrorImpl extends _NegativeQuantityError {
   const _$NegativeQuantityErrorImpl(
       {required this.errorCode, required this.message})
       : super._();
@@ -134,17 +133,8 @@ class _$NegativeQuantityErrorImpl extends _NegativeQuantityError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NegativeQuantityError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NegativeQuantityError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

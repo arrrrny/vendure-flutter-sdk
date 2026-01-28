@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'tax_line.freezed.dart';
 part 'tax_line.g.dart';
 
@@ -16,5 +15,6 @@ class TaxLine with _$TaxLine {
     double? taxRate,
   }) = _TaxLine;
 
-  factory TaxLine.fromJson(Map<String, dynamic> json) => _$TaxLineFromJson(json);
+  factory TaxLine.fromJson(Map<String, dynamic> json) =>
+      _$TaxLineFromJson(json);
 }

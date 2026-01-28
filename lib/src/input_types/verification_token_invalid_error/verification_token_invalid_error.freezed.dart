@@ -122,8 +122,8 @@ class __$$VerificationTokenInvalidErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$VerificationTokenInvalidErrorImpl extends _VerificationTokenInvalidError
-    with DiagnosticableTreeMixin {
+class _$VerificationTokenInvalidErrorImpl
+    extends _VerificationTokenInvalidError {
   const _$VerificationTokenInvalidErrorImpl({this.errorCode, this.message})
       : super._();
 
@@ -137,17 +137,8 @@ class _$VerificationTokenInvalidErrorImpl extends _VerificationTokenInvalidError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'VerificationTokenInvalidError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'VerificationTokenInvalidError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

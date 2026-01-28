@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../language_code/language_code.dart';
 
 part 'product_variant_translation.freezed.dart';

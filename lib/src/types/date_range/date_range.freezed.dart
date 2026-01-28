@@ -116,7 +116,7 @@ class __$$DateRangeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DateRangeImpl extends _DateRange with DiagnosticableTreeMixin {
+class _$DateRangeImpl extends _DateRange {
   _$DateRangeImpl({required this.end, required this.start}) : super._();
 
   factory _$DateRangeImpl.fromJson(Map<String, dynamic> json) =>
@@ -128,17 +128,8 @@ class _$DateRangeImpl extends _DateRange with DiagnosticableTreeMixin {
   DateTime start;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'DateRange(end: $end, start: $start)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'DateRange'))
-      ..add(DiagnosticsProperty('end', end))
-      ..add(DiagnosticsProperty('start', start));
   }
 
   /// Create a copy of DateRange

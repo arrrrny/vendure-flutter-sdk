@@ -104,7 +104,7 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SinglePriceImpl extends _SinglePrice with DiagnosticableTreeMixin {
+class _$SinglePriceImpl extends _SinglePrice {
   const _$SinglePriceImpl({this.value}) : super._();
 
   factory _$SinglePriceImpl.fromJson(Map<String, dynamic> json) =>
@@ -114,16 +114,8 @@ class _$SinglePriceImpl extends _SinglePrice with DiagnosticableTreeMixin {
   final double? value;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SinglePrice(value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SinglePrice'))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override

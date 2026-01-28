@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'create_customer_input.freezed.dart';
 part 'create_customer_input.g.dart';
 
@@ -20,5 +19,6 @@ class CreateCustomerInput with _$CreateCustomerInput {
     String? title,
   }) = _CreateCustomerInput;
 
-  factory CreateCustomerInput.fromJson(Map<String, dynamic> json) => _$CreateCustomerInputFromJson(json);
+  factory CreateCustomerInput.fromJson(Map<String, dynamic> json) =>
+      _$CreateCustomerInputFromJson(json);
 }

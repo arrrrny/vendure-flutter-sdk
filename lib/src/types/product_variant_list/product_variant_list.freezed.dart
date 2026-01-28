@@ -115,8 +115,7 @@ class __$$ProductVariantListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductVariantListImpl extends _ProductVariantList
-    with DiagnosticableTreeMixin {
+class _$ProductVariantListImpl extends _ProductVariantList {
   const _$ProductVariantListImpl(
       {required final List<ProductVariant> items, required this.totalItems})
       : _items = items,
@@ -137,17 +136,8 @@ class _$ProductVariantListImpl extends _ProductVariantList
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProductVariantList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProductVariantList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

@@ -126,7 +126,7 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserImpl extends _CurrentUser with DiagnosticableTreeMixin {
+class _$CurrentUserImpl extends _CurrentUser {
   const _$CurrentUserImpl(
       {required final List<CurrentUserChannel> channels,
       required this.id,
@@ -151,18 +151,8 @@ class _$CurrentUserImpl extends _CurrentUser with DiagnosticableTreeMixin {
   final String identifier;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CurrentUser(channels: $channels, id: $id, identifier: $identifier)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CurrentUser'))
-      ..add(DiagnosticsProperty('channels', channels))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('identifier', identifier));
   }
 
   @override

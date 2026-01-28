@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 
 part 'search_result_price.freezed.dart';
 part 'search_result_price.g.dart';
+
 @freezed
 class SearchResultPrice with _$SearchResultPrice {
   const SearchResultPrice._();
@@ -16,5 +16,6 @@ class SearchResultPrice with _$SearchResultPrice {
     required double value,
   }) = SinglePrice;
 
-  factory SearchResultPrice.fromJson(Map<String, dynamic> json) => _$SearchResultPriceFromJson(json);
+  factory SearchResultPrice.fromJson(Map<String, dynamic> json) =>
+      _$SearchResultPriceFromJson(json);
 }

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../customer_list/customer_list.dart';
 
 part 'customer_group.freezed.dart';

@@ -182,7 +182,7 @@ class __$$DateOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
+class _$DateOperatorsImpl extends _DateOperators {
   _$DateOperatorsImpl(
       {this.after, this.before, this.between, this.eq, this.isNull})
       : super._();
@@ -202,20 +202,8 @@ class _$DateOperatorsImpl extends _DateOperators with DiagnosticableTreeMixin {
   bool? isNull;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'DateOperators(after: $after, before: $before, between: $between, eq: $eq, isNull: $isNull)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'DateOperators'))
-      ..add(DiagnosticsProperty('after', after))
-      ..add(DiagnosticsProperty('before', before))
-      ..add(DiagnosticsProperty('between', between))
-      ..add(DiagnosticsProperty('eq', eq))
-      ..add(DiagnosticsProperty('isNull', isNull));
   }
 
   /// Create a copy of DateOperators

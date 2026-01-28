@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../types/sort_order/sort_order.dart';
 
 part 'product_variant_sort_parameter.freezed.dart';

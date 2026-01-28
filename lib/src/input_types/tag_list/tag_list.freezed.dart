@@ -112,7 +112,7 @@ class __$$TagListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TagListImpl extends _TagList with DiagnosticableTreeMixin {
+class _$TagListImpl extends _TagList {
   const _$TagListImpl({final List<Tag?>? items, this.totalItems})
       : _items = items,
         super._();
@@ -134,17 +134,8 @@ class _$TagListImpl extends _TagList with DiagnosticableTreeMixin {
   final int? totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TagList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TagList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

@@ -262,8 +262,7 @@ class __$$CreateAddressInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CreateAddressInputImpl extends _CreateAddressInput
-    with DiagnosticableTreeMixin {
+class _$CreateAddressInputImpl extends _CreateAddressInput {
   _$CreateAddressInputImpl(
       {this.city,
       this.company,
@@ -308,28 +307,8 @@ class _$CreateAddressInputImpl extends _CreateAddressInput
   String? streetLine2;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CreateAddressInput(city: $city, company: $company, countryCode: $countryCode, customFields: $customFields, defaultBillingAddress: $defaultBillingAddress, defaultShippingAddress: $defaultShippingAddress, fullName: $fullName, phoneNumber: $phoneNumber, postalCode: $postalCode, province: $province, streetLine1: $streetLine1, streetLine2: $streetLine2)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CreateAddressInput'))
-      ..add(DiagnosticsProperty('city', city))
-      ..add(DiagnosticsProperty('company', company))
-      ..add(DiagnosticsProperty('countryCode', countryCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('defaultBillingAddress', defaultBillingAddress))
-      ..add(
-          DiagnosticsProperty('defaultShippingAddress', defaultShippingAddress))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('postalCode', postalCode))
-      ..add(DiagnosticsProperty('province', province))
-      ..add(DiagnosticsProperty('streetLine1', streetLine1))
-      ..add(DiagnosticsProperty('streetLine2', streetLine2));
   }
 
   /// Create a copy of CreateAddressInput

@@ -17,9 +17,8 @@ class VendureSchemaUtils {
     // Register discovered enums
     for (final enumType in enums) {
       final typeName = enumType['name'] as String;
-      final values = (enumType['values'] as List)
-          .map((v) => v['name'] as String)
-          .toList();
+      final values =
+          (enumType['values'] as List).map((v) => v['name'] as String).toList();
 
       // Find all fields using this enum type
       final relatedFields = fields
@@ -34,6 +33,7 @@ class VendureSchemaUtils {
       );
     }
   }
+
   /// Introspection query to detect all enum types and their values.
   static const String detectEnumsQuery = r'''
     query IntrospectionQuery {

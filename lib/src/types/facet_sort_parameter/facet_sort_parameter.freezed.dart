@@ -163,8 +163,7 @@ class __$$FacetSortParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetSortParameterImpl extends _FacetSortParameter
-    with DiagnosticableTreeMixin {
+class _$FacetSortParameterImpl extends _FacetSortParameter {
   _$FacetSortParameterImpl(
       {this.code, this.createdAt, this.id, this.name, this.updatedAt})
       : super._();
@@ -184,20 +183,8 @@ class _$FacetSortParameterImpl extends _FacetSortParameter
   SortOrder? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetSortParameter(code: $code, createdAt: $createdAt, id: $id, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetSortParameter'))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of FacetSortParameter

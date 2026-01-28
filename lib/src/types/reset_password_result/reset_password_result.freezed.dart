@@ -200,7 +200,7 @@ class __$$CurrentUserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
+class _$CurrentUserImpl extends CurrentUser {
   const _$CurrentUserImpl(
       {required final List<CurrentUserChannel> channels,
       required this.id,
@@ -230,18 +230,8 @@ class _$CurrentUserImpl extends CurrentUser with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResetPasswordResult.currentUser(channels: $channels, id: $id, identifier: $identifier)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ResetPasswordResult.currentUser'))
-      ..add(DiagnosticsProperty('channels', channels))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('identifier', identifier));
   }
 
   @override
@@ -456,8 +446,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
-    with DiagnosticableTreeMixin {
+class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
   const _$NativeAuthStrategyErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
@@ -475,18 +464,8 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResetPasswordResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ResetPasswordResult.nativeAuthStrategyError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -695,8 +674,7 @@ class __$$NotVerifiedErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NotVerifiedErrorImpl extends NotVerifiedError
-    with DiagnosticableTreeMixin {
+class _$NotVerifiedErrorImpl extends NotVerifiedError {
   const _$NotVerifiedErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'notVerifiedError',
@@ -714,17 +692,8 @@ class _$NotVerifiedErrorImpl extends NotVerifiedError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResetPasswordResult.notVerifiedError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ResetPasswordResult.notVerifiedError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -937,7 +906,7 @@ class __$$PasswordResetTokenExpiredErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PasswordResetTokenExpiredErrorImpl
-    extends PasswordResetTokenExpiredError with DiagnosticableTreeMixin {
+    extends PasswordResetTokenExpiredError {
   const _$PasswordResetTokenExpiredErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'passwordResetTokenExpiredError',
@@ -956,18 +925,8 @@ class _$PasswordResetTokenExpiredErrorImpl
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResetPasswordResult.passwordResetTokenExpiredError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ResetPasswordResult.passwordResetTokenExpiredError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1182,7 +1141,7 @@ class __$$PasswordResetTokenInvalidErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PasswordResetTokenInvalidErrorImpl
-    extends PasswordResetTokenInvalidError with DiagnosticableTreeMixin {
+    extends PasswordResetTokenInvalidError {
   const _$PasswordResetTokenInvalidErrorImpl(
       {required this.errorCode, required this.message, final String? $type})
       : $type = $type ?? 'passwordResetTokenInvalidError',
@@ -1201,18 +1160,8 @@ class _$PasswordResetTokenInvalidErrorImpl
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResetPasswordResult.passwordResetTokenInvalidError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ResetPasswordResult.passwordResetTokenInvalidError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1432,8 +1381,7 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordValidationErrorImpl extends PasswordValidationError
-    with DiagnosticableTreeMixin {
+class _$PasswordValidationErrorImpl extends PasswordValidationError {
   const _$PasswordValidationErrorImpl(
       {required this.errorCode,
       required this.message,
@@ -1456,20 +1404,8 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ResetPasswordResult.passwordValidationError(errorCode: $errorCode, message: $message, validationErrorMessage: $validationErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ResetPasswordResult.passwordValidationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty(
-          'validationErrorMessage', validationErrorMessage));
   }
 
   @override

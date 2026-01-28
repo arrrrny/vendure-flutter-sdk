@@ -273,8 +273,7 @@ class __$$AlreadyLoggedInErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AlreadyLoggedInErrorImpl extends AlreadyLoggedInError
-    with DiagnosticableTreeMixin {
+class _$AlreadyLoggedInErrorImpl extends AlreadyLoggedInError {
   const _$AlreadyLoggedInErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'alreadyLoggedInError',
@@ -292,18 +291,8 @@ class _$AlreadyLoggedInErrorImpl extends AlreadyLoggedInError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetCustomerForOrderResult.alreadyLoggedInError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetCustomerForOrderResult.alreadyLoggedInError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -590,8 +579,7 @@ class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError
-    with DiagnosticableTreeMixin {
+class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError {
   const _$EmailAddressConflictErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'emailAddressConflictError',
@@ -609,18 +597,8 @@ class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetCustomerForOrderResult.emailAddressConflictError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetCustomerForOrderResult.emailAddressConflictError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -909,8 +887,7 @@ class __$$GuestCheckoutErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GuestCheckoutErrorImpl extends GuestCheckoutError
-    with DiagnosticableTreeMixin {
+class _$GuestCheckoutErrorImpl extends GuestCheckoutError {
   const _$GuestCheckoutErrorImpl(
       {this.errorCode, this.errorDetail, this.message, final String? $type})
       : $type = $type ?? 'guestCheckoutError',
@@ -930,19 +907,8 @@ class _$GuestCheckoutErrorImpl extends GuestCheckoutError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetCustomerForOrderResult.guestCheckoutError(errorCode: $errorCode, errorDetail: $errorDetail, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetCustomerForOrderResult.guestCheckoutError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('errorDetail', errorDetail))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1230,8 +1196,7 @@ class __$$NoActiveOrderErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NoActiveOrderErrorImpl extends NoActiveOrderError
-    with DiagnosticableTreeMixin {
+class _$NoActiveOrderErrorImpl extends NoActiveOrderError {
   const _$NoActiveOrderErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'noActiveOrderError',
@@ -1249,18 +1214,8 @@ class _$NoActiveOrderErrorImpl extends NoActiveOrderError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetCustomerForOrderResult.noActiveOrderError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SetCustomerForOrderResult.noActiveOrderError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -1774,7 +1729,7 @@ class __$$OrderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderImpl extends Order with DiagnosticableTreeMixin {
+class _$OrderImpl extends Order {
   const _$OrderImpl(
       {this.active,
       this.billingAddress,
@@ -2003,45 +1958,8 @@ class _$OrderImpl extends Order with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SetCustomerForOrderResult.order(active: $active, billingAddress: $billingAddress, code: $code, couponCodes: $couponCodes, createdAt: $createdAt, currencyCode: $currencyCode, customFields: $customFields, customer: $customer, discounts: $discounts, fulfillments: $fulfillments, history: $history, id: $id, lines: $lines, orderPlacedAt: $orderPlacedAt, payments: $payments, promotions: $promotions, shipping: $shipping, shippingAddress: $shippingAddress, shippingLines: $shippingLines, shippingWithTax: $shippingWithTax, state: $state, subTotal: $subTotal, subTotalWithTax: $subTotalWithTax, surcharges: $surcharges, taxSummary: $taxSummary, total: $total, totalQuantity: $totalQuantity, totalWithTax: $totalWithTax, type: $type, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SetCustomerForOrderResult.order'))
-      ..add(DiagnosticsProperty('active', active))
-      ..add(DiagnosticsProperty('billingAddress', billingAddress))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('couponCodes', couponCodes))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('customer', customer))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('fulfillments', fulfillments))
-      ..add(DiagnosticsProperty('history', history))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('lines', lines))
-      ..add(DiagnosticsProperty('orderPlacedAt', orderPlacedAt))
-      ..add(DiagnosticsProperty('payments', payments))
-      ..add(DiagnosticsProperty('promotions', promotions))
-      ..add(DiagnosticsProperty('shipping', shipping))
-      ..add(DiagnosticsProperty('shippingAddress', shippingAddress))
-      ..add(DiagnosticsProperty('shippingLines', shippingLines))
-      ..add(DiagnosticsProperty('shippingWithTax', shippingWithTax))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('subTotal', subTotal))
-      ..add(DiagnosticsProperty('subTotalWithTax', subTotalWithTax))
-      ..add(DiagnosticsProperty('surcharges', surcharges))
-      ..add(DiagnosticsProperty('taxSummary', taxSummary))
-      ..add(DiagnosticsProperty('total', total))
-      ..add(DiagnosticsProperty('totalQuantity', totalQuantity))
-      ..add(DiagnosticsProperty('totalWithTax', totalWithTax))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

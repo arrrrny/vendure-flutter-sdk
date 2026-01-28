@@ -181,8 +181,7 @@ class __$$RegisterCustomerInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RegisterCustomerInputImpl extends _RegisterCustomerInput
-    with DiagnosticableTreeMixin {
+class _$RegisterCustomerInputImpl extends _RegisterCustomerInput {
   _$RegisterCustomerInputImpl(
       {required this.emailAddress,
       this.firstName,
@@ -209,21 +208,8 @@ class _$RegisterCustomerInputImpl extends _RegisterCustomerInput
   String? title;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RegisterCustomerInput(emailAddress: $emailAddress, firstName: $firstName, lastName: $lastName, password: $password, phoneNumber: $phoneNumber, title: $title)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'RegisterCustomerInput'))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('title', title));
   }
 
   /// Create a copy of RegisterCustomerInput

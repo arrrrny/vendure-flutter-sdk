@@ -220,7 +220,7 @@ class __$$PaymentImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentImpl extends _Payment with DiagnosticableTreeMixin {
+class _$PaymentImpl extends _Payment {
   const _$PaymentImpl(
       {this.amount,
       this.createdAt,
@@ -277,25 +277,8 @@ class _$PaymentImpl extends _Payment with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Payment(amount: $amount, createdAt: $createdAt, errorMessage: $errorMessage, id: $id, metadata: $metadata, method: $method, refunds: $refunds, state: $state, transactionId: $transactionId, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Payment'))
-      ..add(DiagnosticsProperty('amount', amount))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('metadata', metadata))
-      ..add(DiagnosticsProperty('method', method))
-      ..add(DiagnosticsProperty('refunds', refunds))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('transactionId', transactionId))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

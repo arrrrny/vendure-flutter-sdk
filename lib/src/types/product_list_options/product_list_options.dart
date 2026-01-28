@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../product_filter_parameter/product_filter_parameter.dart';
 import '../product_sort_parameter/product_sort_parameter.dart';
 import '../types/logical_operator/logical_operator.dart';

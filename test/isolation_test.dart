@@ -1,16 +1,16 @@
-
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:graphql/client.dart';
 import 'dart:async';
+
+import 'test_config.dart';
 
 /// Flutter/Dart WebSocket Subscription Test for activeCustomerStream
 class VendureSubscriptionTest {
   late GraphQLClient _client;
   String? _authToken;
 
-  // Your Vendure API endpoints - using 127.0.0.1 for macOS compatibility
-  final String httpEndpoint = 'http://127.0.0.1:3000/shop-api';
-  final String wsEndpoint = 'ws://127.0.0.1:3000/shop-api';
+  final String httpEndpoint = TestConfig.shopApiUrl;
+  final String wsEndpoint = TestConfig.shopWsUrl;
 
   /// Step 1: Initialize GraphQL client (call this first)
   Future<void> initialize() async {
@@ -95,7 +95,8 @@ class VendureSubscriptionTest {
     }
 
     // Extract token from response headers
-    final token = result.context.entry<HttpLinkResponseContext>()
+    final token = result.context
+        .entry<HttpLinkResponseContext>()
         ?.headers!['vendure-auth-token'];
 
     if (token == null) {
@@ -198,8 +199,8 @@ void main() {
       // 2. Login
       print('\n🔐 Logging in...');
       await vendureTest.login(
-        'stream.test+1@zikzak.wtf',
-        'TestPass123!',
+        TestConfig.shopEmail,
+        TestConfig.shopPassword,
       );
 
       // 3. Subscribe to customer stream
@@ -215,7 +216,8 @@ void main() {
           print('\n🎉 Got customer update:');
           print('   ID: ${customerData['id']}');
           print('   Email: ${customerData['emailAddress']}');
-          print('   Name: ${customerData['firstName']} ${customerData['lastName']}');
+          print(
+              '   Name: ${customerData['firstName']} ${customerData['lastName']}');
           if (!completer.isCompleted) completer.complete();
         },
         onError: (error) {
@@ -226,12 +228,12 @@ void main() {
       // 5. Trigger update to force stream emission
       // Wait a bit for subscription to establish
       await Future.delayed(const Duration(seconds: 2));
-      await vendureTest.updateCustomer('ManualTest-${DateTime.now().millisecondsSinceEpoch}');
+      await vendureTest.updateCustomer(
+          'ManualTest-${DateTime.now().millisecondsSinceEpoch}');
 
       // Wait for completion
       await completer.future.timeout(const Duration(seconds: 10));
       await sub.cancel();
-
     } catch (e, stack) {
       print('❌ Test failed: $e');
       print(stack);

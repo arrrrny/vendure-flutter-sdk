@@ -1,14 +1,16 @@
 import 'dart:async';
 
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:vendure/vendure.dart';
+
+import 'test_config.dart';
 
 void main() {
   late Vendure vendure;
-  String endpoint = 'http://127.0.0.1:3000/shop-api';
-  String wsEndpoint = 'ws://127.0.0.1:3000/shop-api';
-  String emailAddress = 'stream.test+1@zikzak.wtf';
-  String password = 'TestPass123!';
+  String endpoint = TestConfig.shopApiUrl;
+  String wsEndpoint = TestConfig.shopWsUrl;
+  String emailAddress = TestConfig.shopEmail;
+  String password = TestConfig.shopPassword;
 
   setUp(() async {
     vendure = await Vendure.initializeWithNativeAuth(
@@ -46,8 +48,7 @@ void main() {
       print('📡 Fetching initial customer...');
       final customer =
           await completer.future.timeout(const Duration(seconds: 10));
-      print(
-          '📡 Initial customer result: ${"found"}');
+      print('📡 Initial customer result: ${"found"}');
       expect(customer, isA<Customer>());
       expect(customer.emailAddress, equals(emailAddress));
       print(

@@ -482,8 +482,8 @@ class __$$ProductVariantFilterParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductVariantFilterParameterImpl extends _ProductVariantFilterParameter
-    with DiagnosticableTreeMixin {
+class _$ProductVariantFilterParameterImpl
+    extends _ProductVariantFilterParameter {
   _$ProductVariantFilterParameterImpl(
       {@JsonKey(name: '_and') this.and,
       @JsonKey(name: '_or') this.or,
@@ -534,28 +534,8 @@ class _$ProductVariantFilterParameterImpl extends _ProductVariantFilterParameter
   DateOperators? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ProductVariantFilterParameter(and: $and, or: $or, createdAt: $createdAt, currencyCode: $currencyCode, id: $id, languageCode: $languageCode, name: $name, price: $price, priceWithTax: $priceWithTax, productId: $productId, sku: $sku, stockLevel: $stockLevel, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ProductVariantFilterParameter'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('currencyCode', currencyCode))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('productId', productId))
-      ..add(DiagnosticsProperty('sku', sku))
-      ..add(DiagnosticsProperty('stockLevel', stockLevel))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of ProductVariantFilterParameter

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../tax_line/tax_line.dart';
 
 part 'surcharge.freezed.dart';

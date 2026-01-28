@@ -184,8 +184,7 @@ class __$$PaymentMethodQuoteImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
-    with DiagnosticableTreeMixin {
+class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote {
   const _$PaymentMethodQuoteImpl(
       {this.code,
       final Map<String, dynamic>? customFields,
@@ -224,22 +223,8 @@ class _$PaymentMethodQuoteImpl extends _PaymentMethodQuote
   final String? name;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'PaymentMethodQuote(code: $code, customFields: $customFields, description: $description, eligibilityMessage: $eligibilityMessage, id: $id, isEligible: $isEligible, name: $name)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PaymentMethodQuote'))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('eligibilityMessage', eligibilityMessage))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('isEligible', isEligible))
-      ..add(DiagnosticsProperty('name', name));
   }
 
   @override

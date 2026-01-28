@@ -164,8 +164,7 @@ class __$$UpdateCustomerInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdateCustomerInputImpl extends _UpdateCustomerInput
-    with DiagnosticableTreeMixin {
+class _$UpdateCustomerInputImpl extends _UpdateCustomerInput {
   _$UpdateCustomerInputImpl(
       {this.customFields,
       this.firstName,
@@ -189,20 +188,8 @@ class _$UpdateCustomerInputImpl extends _UpdateCustomerInput
   String? title;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'UpdateCustomerInput(customFields: $customFields, firstName: $firstName, lastName: $lastName, phoneNumber: $phoneNumber, title: $title)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'UpdateCustomerInput'))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('title', title));
   }
 
   /// Create a copy of UpdateCustomerInput

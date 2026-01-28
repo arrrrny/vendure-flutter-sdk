@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'boolean_operators.freezed.dart';
 part 'boolean_operators.g.dart';
 
@@ -16,5 +15,6 @@ class BooleanOperators with _$BooleanOperators {
     bool? isNull,
   }) = _BooleanOperators;
 
-  factory BooleanOperators.fromJson(Map<String, dynamic> json) => _$BooleanOperatorsFromJson(json);
+  factory BooleanOperators.fromJson(Map<String, dynamic> json) =>
+      _$BooleanOperatorsFromJson(json);
 }

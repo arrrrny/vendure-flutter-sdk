@@ -171,8 +171,7 @@ class __$$MissingPasswordErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MissingPasswordErrorImpl extends MissingPasswordError
-    with DiagnosticableTreeMixin {
+class _$MissingPasswordErrorImpl extends MissingPasswordError {
   const _$MissingPasswordErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'missingPasswordError',
@@ -190,18 +189,8 @@ class _$MissingPasswordErrorImpl extends MissingPasswordError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RegisterCustomerAccountResult.missingPasswordError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'RegisterCustomerAccountResult.missingPasswordError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -386,8 +375,7 @@ class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
-    with DiagnosticableTreeMixin {
+class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
   const _$NativeAuthStrategyErrorImpl(
       {this.errorCode, this.message, final String? $type})
       : $type = $type ?? 'nativeAuthStrategyError',
@@ -405,18 +393,8 @@ class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RegisterCustomerAccountResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'RegisterCustomerAccountResult.nativeAuthStrategyError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -606,8 +584,7 @@ class __$$PasswordValidationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordValidationErrorImpl extends PasswordValidationError
-    with DiagnosticableTreeMixin {
+class _$PasswordValidationErrorImpl extends PasswordValidationError {
   const _$PasswordValidationErrorImpl(
       {this.errorCode,
       this.message,
@@ -630,20 +607,8 @@ class _$PasswordValidationErrorImpl extends PasswordValidationError
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RegisterCustomerAccountResult.passwordValidationError(errorCode: $errorCode, message: $message, validationErrorMessage: $validationErrorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'RegisterCustomerAccountResult.passwordValidationError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty(
-          'validationErrorMessage', validationErrorMessage));
   }
 
   @override
@@ -826,7 +791,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
+class _$SuccessImpl extends Success {
   const _$SuccessImpl({this.success, final String? $type})
       : $type = $type ?? 'success',
         super._();
@@ -841,17 +806,8 @@ class _$SuccessImpl extends Success with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'RegisterCustomerAccountResult.success(success: $success)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'RegisterCustomerAccountResult.success'))
-      ..add(DiagnosticsProperty('success', success));
   }
 
   @override

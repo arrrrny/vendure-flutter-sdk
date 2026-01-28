@@ -209,7 +209,7 @@ class __$$SurchargeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SurchargeImpl extends _Surcharge with DiagnosticableTreeMixin {
+class _$SurchargeImpl extends _Surcharge {
   const _$SurchargeImpl(
       {this.createdAt,
       this.description,
@@ -254,24 +254,8 @@ class _$SurchargeImpl extends _Surcharge with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Surcharge(createdAt: $createdAt, description: $description, id: $id, price: $price, priceWithTax: $priceWithTax, sku: $sku, taxLines: $taxLines, taxRate: $taxRate, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Surcharge'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('price', price))
-      ..add(DiagnosticsProperty('priceWithTax', priceWithTax))
-      ..add(DiagnosticsProperty('sku', sku))
-      ..add(DiagnosticsProperty('taxLines', taxLines))
-      ..add(DiagnosticsProperty('taxRate', taxRate))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

@@ -106,8 +106,7 @@ class __$$BooleanListOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BooleanListOperatorsImpl extends _BooleanListOperators
-    with DiagnosticableTreeMixin {
+class _$BooleanListOperatorsImpl extends _BooleanListOperators {
   _$BooleanListOperatorsImpl({required this.inList}) : super._();
 
   factory _$BooleanListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
@@ -117,16 +116,8 @@ class _$BooleanListOperatorsImpl extends _BooleanListOperators
   bool inList;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'BooleanListOperators(inList: $inList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'BooleanListOperators'))
-      ..add(DiagnosticsProperty('inList', inList));
   }
 
   /// Create a copy of BooleanListOperators

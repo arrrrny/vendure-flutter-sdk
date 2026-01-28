@@ -115,7 +115,7 @@ class __$$TaxRateListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TaxRateListImpl extends _TaxRateList with DiagnosticableTreeMixin {
+class _$TaxRateListImpl extends _TaxRateList {
   const _$TaxRateListImpl({final List<TaxRate?>? items, this.totalItems})
       : _items = items,
         super._();
@@ -137,17 +137,8 @@ class _$TaxRateListImpl extends _TaxRateList with DiagnosticableTreeMixin {
   final int? totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TaxRateList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TaxRateList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

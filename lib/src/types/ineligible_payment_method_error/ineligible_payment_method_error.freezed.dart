@@ -135,8 +135,7 @@ class __$$IneligiblePaymentMethodErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IneligiblePaymentMethodErrorImpl extends _IneligiblePaymentMethodError
-    with DiagnosticableTreeMixin {
+class _$IneligiblePaymentMethodErrorImpl extends _IneligiblePaymentMethodError {
   const _$IneligiblePaymentMethodErrorImpl(
       {this.eligibilityCheckerMessage,
       required this.errorCode,
@@ -155,19 +154,8 @@ class _$IneligiblePaymentMethodErrorImpl extends _IneligiblePaymentMethodError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IneligiblePaymentMethodError(eligibilityCheckerMessage: $eligibilityCheckerMessage, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IneligiblePaymentMethodError'))
-      ..add(DiagnosticsProperty(
-          'eligibilityCheckerMessage', eligibilityCheckerMessage))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

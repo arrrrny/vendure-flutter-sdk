@@ -105,8 +105,7 @@ class __$$IdListOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IdListOperatorsImpl extends _IdListOperators
-    with DiagnosticableTreeMixin {
+class _$IdListOperatorsImpl extends _IdListOperators {
   _$IdListOperatorsImpl({required this.inList}) : super._();
 
   factory _$IdListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
@@ -116,16 +115,8 @@ class _$IdListOperatorsImpl extends _IdListOperators
   String inList;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IdListOperators(inList: $inList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IdListOperators'))
-      ..add(DiagnosticsProperty('inList', inList));
   }
 
   /// Create a copy of IdListOperators

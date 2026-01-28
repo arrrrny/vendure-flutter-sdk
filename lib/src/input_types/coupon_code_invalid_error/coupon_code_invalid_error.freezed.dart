@@ -131,8 +131,7 @@ class __$$CouponCodeInvalidErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CouponCodeInvalidErrorImpl extends _CouponCodeInvalidError
-    with DiagnosticableTreeMixin {
+class _$CouponCodeInvalidErrorImpl extends _CouponCodeInvalidError {
   const _$CouponCodeInvalidErrorImpl(
       {this.couponCode, this.errorCode, this.message})
       : super._();
@@ -148,18 +147,8 @@ class _$CouponCodeInvalidErrorImpl extends _CouponCodeInvalidError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CouponCodeInvalidError(couponCode: $couponCode, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CouponCodeInvalidError'))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

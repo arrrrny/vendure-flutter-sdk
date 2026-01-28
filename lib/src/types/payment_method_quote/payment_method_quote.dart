@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'payment_method_quote.freezed.dart';
 part 'payment_method_quote.g.dart';
+
 @freezed
 class PaymentMethodQuote with _$PaymentMethodQuote {
   const PaymentMethodQuote._();
@@ -16,5 +16,6 @@ class PaymentMethodQuote with _$PaymentMethodQuote {
     required String name,
   }) = _PaymentMethodQuote;
 
-  factory PaymentMethodQuote.fromJson(Map<String, dynamic> json) => _$PaymentMethodQuoteFromJson(json);
+  factory PaymentMethodQuote.fromJson(Map<String, dynamic> json) =>
+      _$PaymentMethodQuoteFromJson(json);
 }

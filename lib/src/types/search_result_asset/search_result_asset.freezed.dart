@@ -145,8 +145,7 @@ class __$$SearchResultAssetImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchResultAssetImpl extends _SearchResultAsset
-    with DiagnosticableTreeMixin {
+class _$SearchResultAssetImpl extends _SearchResultAsset {
   const _$SearchResultAssetImpl(
       {this.focalPoint, required this.id, required this.preview})
       : super._();
@@ -162,18 +161,8 @@ class _$SearchResultAssetImpl extends _SearchResultAsset
   final String preview;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchResultAsset(focalPoint: $focalPoint, id: $id, preview: $preview)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchResultAsset'))
-      ..add(DiagnosticsProperty('focalPoint', focalPoint))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('preview', preview));
   }
 
   @override

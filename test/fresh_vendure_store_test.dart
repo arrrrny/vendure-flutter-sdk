@@ -1,9 +1,11 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:vendure/vendure.dart';
+
+import 'test_config.dart';
 
 void main() {
   late Vendure vendure;
-  String endpoint = 'http://localhost:3000/shop-api';
+  String endpoint = TestConfig.shopApiUrl;
   String testEmail = 'test@example.com';
   String testPassword = 'TestPassword123!';
   String testFirstName = 'Test';

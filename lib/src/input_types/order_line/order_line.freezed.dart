@@ -556,7 +556,7 @@ class __$$OrderLineImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
+class _$OrderLineImpl extends _OrderLine {
   const _$OrderLineImpl(
       {this.createdAt,
       final Map<String, dynamic>? customFields,
@@ -728,49 +728,8 @@ class _$OrderLineImpl extends _OrderLine with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderLine(createdAt: $createdAt, customFields: $customFields, discountedLinePrice: $discountedLinePrice, discountedLinePriceWithTax: $discountedLinePriceWithTax, discountedUnitPrice: $discountedUnitPrice, discountedUnitPriceWithTax: $discountedUnitPriceWithTax, discounts: $discounts, featuredAsset: $featuredAsset, fulfillmentLines: $fulfillmentLines, id: $id, linePrice: $linePrice, linePriceWithTax: $linePriceWithTax, lineTax: $lineTax, order: $order, orderPlacedQuantity: $orderPlacedQuantity, productVariant: $productVariant, proratedLinePrice: $proratedLinePrice, proratedLinePriceWithTax: $proratedLinePriceWithTax, proratedUnitPrice: $proratedUnitPrice, proratedUnitPriceWithTax: $proratedUnitPriceWithTax, quantity: $quantity, taxLines: $taxLines, taxRate: $taxRate, unitPrice: $unitPrice, unitPriceChangeSinceAdded: $unitPriceChangeSinceAdded, unitPriceWithTax: $unitPriceWithTax, unitPriceWithTaxChangeSinceAdded: $unitPriceWithTaxChangeSinceAdded, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderLine'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('discountedLinePrice', discountedLinePrice))
-      ..add(DiagnosticsProperty(
-          'discountedLinePriceWithTax', discountedLinePriceWithTax))
-      ..add(DiagnosticsProperty('discountedUnitPrice', discountedUnitPrice))
-      ..add(DiagnosticsProperty(
-          'discountedUnitPriceWithTax', discountedUnitPriceWithTax))
-      ..add(DiagnosticsProperty('discounts', discounts))
-      ..add(DiagnosticsProperty('featuredAsset', featuredAsset))
-      ..add(DiagnosticsProperty('fulfillmentLines', fulfillmentLines))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('linePrice', linePrice))
-      ..add(DiagnosticsProperty('linePriceWithTax', linePriceWithTax))
-      ..add(DiagnosticsProperty('lineTax', lineTax))
-      ..add(DiagnosticsProperty('order', order))
-      ..add(DiagnosticsProperty('orderPlacedQuantity', orderPlacedQuantity))
-      ..add(DiagnosticsProperty('productVariant', productVariant))
-      ..add(DiagnosticsProperty('proratedLinePrice', proratedLinePrice))
-      ..add(DiagnosticsProperty(
-          'proratedLinePriceWithTax', proratedLinePriceWithTax))
-      ..add(DiagnosticsProperty('proratedUnitPrice', proratedUnitPrice))
-      ..add(DiagnosticsProperty(
-          'proratedUnitPriceWithTax', proratedUnitPriceWithTax))
-      ..add(DiagnosticsProperty('quantity', quantity))
-      ..add(DiagnosticsProperty('taxLines', taxLines))
-      ..add(DiagnosticsProperty('taxRate', taxRate))
-      ..add(DiagnosticsProperty('unitPrice', unitPrice))
-      ..add(DiagnosticsProperty(
-          'unitPriceChangeSinceAdded', unitPriceChangeSinceAdded))
-      ..add(DiagnosticsProperty('unitPriceWithTax', unitPriceWithTax))
-      ..add(DiagnosticsProperty(
-          'unitPriceWithTaxChangeSinceAdded', unitPriceWithTaxChangeSinceAdded))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

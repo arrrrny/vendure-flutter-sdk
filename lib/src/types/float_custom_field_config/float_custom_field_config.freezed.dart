@@ -268,8 +268,7 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FloatCustomFieldConfigImpl extends _FloatCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$FloatCustomFieldConfigImpl extends _FloatCustomFieldConfig {
   const _$FloatCustomFieldConfigImpl(
       {final List<LocalizedString>? description,
       this.internal,
@@ -353,28 +352,8 @@ class _$FloatCustomFieldConfigImpl extends _FloatCustomFieldConfig
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FloatCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, max: $max, min: $min, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, step: $step, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FloatCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('step', step))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override

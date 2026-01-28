@@ -121,8 +121,7 @@ class __$$FacetValueFilterInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetValueFilterInputImpl extends _FacetValueFilterInput
-    with DiagnosticableTreeMixin {
+class _$FacetValueFilterInputImpl extends _FacetValueFilterInput {
   _$FacetValueFilterInputImpl({this.and, this.or}) : super._();
 
   factory _$FacetValueFilterInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -134,17 +133,8 @@ class _$FacetValueFilterInputImpl extends _FacetValueFilterInput
   List<String>? or;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetValueFilterInput(and: $and, or: $or)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetValueFilterInput'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or));
   }
 
   /// Create a copy of FacetValueFilterInput

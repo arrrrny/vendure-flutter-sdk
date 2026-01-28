@@ -133,7 +133,7 @@ class __$$PriceRangeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
+class _$PriceRangeImpl extends PriceRange {
   const _$PriceRangeImpl(
       {required this.max, required this.min, final String? $type})
       : $type = $type ?? 'priceRange',
@@ -151,17 +151,8 @@ class _$PriceRangeImpl extends PriceRange with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchResultPrice.priceRange(max: $max, min: $min)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchResultPrice.priceRange'))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min));
   }
 
   @override
@@ -309,7 +300,7 @@ class __$$SinglePriceImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
+class _$SinglePriceImpl extends SinglePrice {
   const _$SinglePriceImpl({required this.value, final String? $type})
       : $type = $type ?? 'singlePrice',
         super._();
@@ -324,16 +315,8 @@ class _$SinglePriceImpl extends SinglePrice with DiagnosticableTreeMixin {
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchResultPrice.singlePrice(value: $value)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchResultPrice.singlePrice'))
-      ..add(DiagnosticsProperty('value', value));
   }
 
   @override

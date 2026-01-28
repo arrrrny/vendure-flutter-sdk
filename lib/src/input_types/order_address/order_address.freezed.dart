@@ -236,7 +236,7 @@ class __$$OrderAddressImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderAddressImpl extends _OrderAddress with DiagnosticableTreeMixin {
+class _$OrderAddressImpl extends _OrderAddress {
   const _$OrderAddressImpl(
       {this.city,
       this.company,
@@ -287,26 +287,8 @@ class _$OrderAddressImpl extends _OrderAddress with DiagnosticableTreeMixin {
   final String? streetLine2;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderAddress(city: $city, company: $company, country: $country, countryCode: $countryCode, customFields: $customFields, fullName: $fullName, phoneNumber: $phoneNumber, postalCode: $postalCode, province: $province, streetLine1: $streetLine1, streetLine2: $streetLine2)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderAddress'))
-      ..add(DiagnosticsProperty('city', city))
-      ..add(DiagnosticsProperty('company', company))
-      ..add(DiagnosticsProperty('country', country))
-      ..add(DiagnosticsProperty('countryCode', countryCode))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('postalCode', postalCode))
-      ..add(DiagnosticsProperty('province', province))
-      ..add(DiagnosticsProperty('streetLine1', streetLine1))
-      ..add(DiagnosticsProperty('streetLine2', streetLine2));
   }
 
   @override

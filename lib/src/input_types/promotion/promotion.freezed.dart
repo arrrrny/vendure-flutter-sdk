@@ -290,7 +290,7 @@ class __$$PromotionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
+class _$PromotionImpl extends _Promotion {
   const _$PromotionImpl(
       {final List<ConfigurableOperation?>? actions,
       final List<ConfigurableOperation?>? conditions,
@@ -380,30 +380,8 @@ class _$PromotionImpl extends _Promotion with DiagnosticableTreeMixin {
   final int? usageLimit;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Promotion(actions: $actions, conditions: $conditions, couponCode: $couponCode, createdAt: $createdAt, customFields: $customFields, description: $description, enabled: $enabled, endsAt: $endsAt, id: $id, name: $name, perCustomerUsageLimit: $perCustomerUsageLimit, startsAt: $startsAt, translations: $translations, updatedAt: $updatedAt, usageLimit: $usageLimit)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Promotion'))
-      ..add(DiagnosticsProperty('actions', actions))
-      ..add(DiagnosticsProperty('conditions', conditions))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('enabled', enabled))
-      ..add(DiagnosticsProperty('endsAt', endsAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('perCustomerUsageLimit', perCustomerUsageLimit))
-      ..add(DiagnosticsProperty('startsAt', startsAt))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('usageLimit', usageLimit));
   }
 
   @override

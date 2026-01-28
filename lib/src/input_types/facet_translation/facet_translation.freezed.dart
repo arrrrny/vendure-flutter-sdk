@@ -158,8 +158,7 @@ class __$$FacetTranslationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetTranslationImpl extends _FacetTranslation
-    with DiagnosticableTreeMixin {
+class _$FacetTranslationImpl extends _FacetTranslation {
   const _$FacetTranslationImpl(
       {this.createdAt, this.id, this.languageCode, this.name, this.updatedAt})
       : super._();
@@ -179,20 +178,8 @@ class _$FacetTranslationImpl extends _FacetTranslation
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetTranslation(createdAt: $createdAt, id: $id, languageCode: $languageCode, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetTranslation'))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

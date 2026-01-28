@@ -120,14 +120,17 @@ class CustomOperations {
       throw Exception('No data returned from mutate');
     }
 
-    if (data is Map<String, dynamic> || data is List) {
+    if (data is Map || data is List) {
       data = VendureUtils.normalizeGraphQLData(
         data,
         convertEnums: convertEnums,
       );
     }
     if (fromJson != null) {
-      return fromJson(data);
+      if (data is! Map) {
+        throw Exception('Expected map data but got ${data.runtimeType}');
+      }
+      return fromJson(Map<String, dynamic>.from(data));
     }
     return data;
   }
@@ -150,14 +153,17 @@ class CustomOperations {
     if (data == null) {
       throw Exception('No data returned from query');
     }
-    if (data is Map<String, dynamic> || data is List) {
+    if (data is Map || data is List) {
       data = VendureUtils.normalizeGraphQLData(
         data,
         convertEnums: convertEnums,
       );
     }
     if (fromJson != null) {
-      return fromJson(data);
+      if (data is! Map) {
+        throw Exception('Expected map data but got ${data.runtimeType}');
+      }
+      return fromJson(Map<String, dynamic>.from(data));
     }
     return data;
   }
@@ -186,12 +192,17 @@ class CustomOperations {
     }
 
     if (fromJson != null) {
-      return data
-          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(
-                item,
-                convertEnums: convertEnums,
-              )))
-          .toList();
+      return data.map<T>((item) {
+        final normalized = VendureUtils.normalizeGraphQLData(
+          item,
+          convertEnums: convertEnums,
+        );
+        if (normalized is! Map) {
+          throw Exception(
+              'Expected map list item but got ${normalized.runtimeType}');
+        }
+        return fromJson(Map<String, dynamic>.from(normalized));
+      }).toList();
     }
     return List<T>.from(data);
   }
@@ -216,12 +227,17 @@ class CustomOperations {
     }
 
     if (fromJson != null) {
-      return data
-          .map<T>((item) => fromJson(VendureUtils.normalizeGraphQLData(
-                item,
-                convertEnums: convertEnums,
-              )))
-          .toList();
+      return data.map<T>((item) {
+        final normalized = VendureUtils.normalizeGraphQLData(
+          item,
+          convertEnums: convertEnums,
+        );
+        if (normalized is! Map) {
+          throw Exception(
+              'Expected map list item but got ${normalized.runtimeType}');
+        }
+        return fromJson(Map<String, dynamic>.from(normalized));
+      }).toList();
     }
     return List<T>.from(data);
   }

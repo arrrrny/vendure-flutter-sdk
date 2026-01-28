@@ -180,7 +180,7 @@ class __$$RoleImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RoleImpl extends _Role with DiagnosticableTreeMixin {
+class _$RoleImpl extends _Role {
   const _$RoleImpl(
       {final List<Channel?>? channels,
       this.code,
@@ -228,22 +228,8 @@ class _$RoleImpl extends _Role with DiagnosticableTreeMixin {
   final DateTime? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Role(channels: $channels, code: $code, createdAt: $createdAt, description: $description, id: $id, permissions: $permissions, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Role'))
-      ..add(DiagnosticsProperty('channels', channels))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('permissions', permissions))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

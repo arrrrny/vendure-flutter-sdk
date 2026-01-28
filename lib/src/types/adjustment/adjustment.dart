@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../types/adjustment_type/adjustment_type.dart';
 
 part 'adjustment.freezed.dart';

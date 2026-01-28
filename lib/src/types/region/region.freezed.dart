@@ -253,7 +253,7 @@ class __$$RegionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RegionImpl extends _Region with DiagnosticableTreeMixin {
+class _$RegionImpl extends _Region {
   const _$RegionImpl(
       {required this.id,
       required this.createdAt,
@@ -301,26 +301,8 @@ class _$RegionImpl extends _Region with DiagnosticableTreeMixin {
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Region(id: $id, createdAt: $createdAt, updatedAt: $updatedAt, languageCode: $languageCode, code: $code, type: $type, name: $name, enabled: $enabled, parent: $parent, parentId: $parentId, translations: $translations)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Region'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('code', code))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('enabled', enabled))
-      ..add(DiagnosticsProperty('parent', parent))
-      ..add(DiagnosticsProperty('parentId', parentId))
-      ..add(DiagnosticsProperty('translations', translations));
   }
 
   @override

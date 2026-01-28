@@ -122,8 +122,8 @@ class __$$IneligibleShippingMethodErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IneligibleShippingMethodErrorImpl extends _IneligibleShippingMethodError
-    with DiagnosticableTreeMixin {
+class _$IneligibleShippingMethodErrorImpl
+    extends _IneligibleShippingMethodError {
   const _$IneligibleShippingMethodErrorImpl({this.errorCode, this.message})
       : super._();
 
@@ -137,17 +137,8 @@ class _$IneligibleShippingMethodErrorImpl extends _IneligibleShippingMethodError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IneligibleShippingMethodError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IneligibleShippingMethodError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

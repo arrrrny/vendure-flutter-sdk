@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../number_range/number_range.dart';
 
 part 'number_operators.freezed.dart';

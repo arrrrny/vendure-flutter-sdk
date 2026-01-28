@@ -163,8 +163,7 @@ class __$$OrderStateTransitionErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderStateTransitionErrorImpl extends _OrderStateTransitionError
-    with DiagnosticableTreeMixin {
+class _$OrderStateTransitionErrorImpl extends _OrderStateTransitionError {
   const _$OrderStateTransitionErrorImpl(
       {this.errorCode,
       this.fromState,
@@ -188,20 +187,8 @@ class _$OrderStateTransitionErrorImpl extends _OrderStateTransitionError
   final String? transitionError;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'OrderStateTransitionError(errorCode: $errorCode, fromState: $fromState, message: $message, toState: $toState, transitionError: $transitionError)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'OrderStateTransitionError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('fromState', fromState))
-      ..add(DiagnosticsProperty('message', message))
-      ..add(DiagnosticsProperty('toState', toState))
-      ..add(DiagnosticsProperty('transitionError', transitionError));
   }
 
   @override

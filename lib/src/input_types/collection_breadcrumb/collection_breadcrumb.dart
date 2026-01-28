@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'collection_breadcrumb.freezed.dart';
 part 'collection_breadcrumb.g.dart';
 
@@ -17,5 +16,6 @@ class CollectionBreadcrumb with _$CollectionBreadcrumb {
     String? slug,
   }) = _CollectionBreadcrumb;
 
-  factory CollectionBreadcrumb.fromJson(Map<String, dynamic> json) => _$CollectionBreadcrumbFromJson(json);
+  factory CollectionBreadcrumb.fromJson(Map<String, dynamic> json) =>
+      _$CollectionBreadcrumbFromJson(json);
 }

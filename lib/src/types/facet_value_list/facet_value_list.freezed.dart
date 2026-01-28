@@ -115,8 +115,7 @@ class __$$FacetValueListImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FacetValueListImpl extends _FacetValueList
-    with DiagnosticableTreeMixin {
+class _$FacetValueListImpl extends _FacetValueList {
   const _$FacetValueListImpl(
       {required final List<FacetValue> items, required this.totalItems})
       : _items = items,
@@ -137,17 +136,8 @@ class _$FacetValueListImpl extends _FacetValueList
   final int totalItems;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FacetValueList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FacetValueList'))
-      ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('totalItems', totalItems));
   }
 
   @override

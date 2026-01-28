@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'update_order_input.freezed.dart';
 part 'update_order_input.g.dart';
 
@@ -15,5 +14,6 @@ class UpdateOrderInput with _$UpdateOrderInput {
     Map<String, dynamic>? customFields,
   }) = _UpdateOrderInput;
 
-  factory UpdateOrderInput.fromJson(Map<String, dynamic> json) => _$UpdateOrderInputFromJson(json);
+  factory UpdateOrderInput.fromJson(Map<String, dynamic> json) =>
+      _$UpdateOrderInputFromJson(json);
 }

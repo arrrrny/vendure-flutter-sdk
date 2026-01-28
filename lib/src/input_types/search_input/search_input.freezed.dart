@@ -230,7 +230,7 @@ class __$$SearchInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
+class _$SearchInputImpl extends _SearchInput {
   const _$SearchInputImpl(
       {this.collectionId,
       this.collectionSlug,
@@ -276,24 +276,8 @@ class _$SearchInputImpl extends _SearchInput with DiagnosticableTreeMixin {
   final String? term;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SearchInput(collectionId: $collectionId, collectionSlug: $collectionSlug, facetValueFilters: $facetValueFilters, groupByProduct: $groupByProduct, inStock: $inStock, skip: $skip, sort: $sort, take: $take, term: $term)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SearchInput'))
-      ..add(DiagnosticsProperty('collectionId', collectionId))
-      ..add(DiagnosticsProperty('collectionSlug', collectionSlug))
-      ..add(DiagnosticsProperty('facetValueFilters', facetValueFilters))
-      ..add(DiagnosticsProperty('groupByProduct', groupByProduct))
-      ..add(DiagnosticsProperty('inStock', inStock))
-      ..add(DiagnosticsProperty('skip', skip))
-      ..add(DiagnosticsProperty('sort', sort))
-      ..add(DiagnosticsProperty('take', take))
-      ..add(DiagnosticsProperty('term', term));
   }
 
   @override

@@ -241,8 +241,7 @@ class __$$CollectionListOptionsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionListOptionsImpl extends _CollectionListOptions
-    with DiagnosticableTreeMixin {
+class _$CollectionListOptionsImpl extends _CollectionListOptions {
   _$CollectionListOptionsImpl(
       {this.filter,
       this.filterOperator,
@@ -279,21 +278,8 @@ class _$CollectionListOptionsImpl extends _CollectionListOptions
   bool? topLevelOnly;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CollectionListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take, topLevelOnly: $topLevelOnly)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CollectionListOptions'))
-      ..add(DiagnosticsProperty('filter', filter))
-      ..add(DiagnosticsProperty('filterOperator', filterOperator))
-      ..add(DiagnosticsProperty('skip', skip))
-      ..add(DiagnosticsProperty('sort', sort))
-      ..add(DiagnosticsProperty('take', take))
-      ..add(DiagnosticsProperty('topLevelOnly', topLevelOnly));
   }
 
   /// Create a copy of CollectionListOptions

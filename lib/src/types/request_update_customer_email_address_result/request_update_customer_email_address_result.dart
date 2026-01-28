@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../types/error_code/error_code.dart';
 
 part 'request_update_customer_email_address_result.freezed.dart';

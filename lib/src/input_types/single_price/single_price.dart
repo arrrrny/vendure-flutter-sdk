@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'single_price.freezed.dart';
 part 'single_price.g.dart';
 
@@ -15,5 +14,6 @@ class SinglePrice with _$SinglePrice {
     double? value,
   }) = _SinglePrice;
 
-  factory SinglePrice.fromJson(Map<String, dynamic> json) => _$SinglePriceFromJson(json);
+  factory SinglePrice.fromJson(Map<String, dynamic> json) =>
+      _$SinglePriceFromJson(json);
 }

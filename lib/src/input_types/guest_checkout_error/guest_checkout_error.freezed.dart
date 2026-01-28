@@ -126,8 +126,7 @@ class __$$GuestCheckoutErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GuestCheckoutErrorImpl extends _GuestCheckoutError
-    with DiagnosticableTreeMixin {
+class _$GuestCheckoutErrorImpl extends _GuestCheckoutError {
   const _$GuestCheckoutErrorImpl(
       {this.errorCode, this.errorDetail, this.message})
       : super._();
@@ -143,18 +142,8 @@ class _$GuestCheckoutErrorImpl extends _GuestCheckoutError
   final String? message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'GuestCheckoutError(errorCode: $errorCode, errorDetail: $errorDetail, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'GuestCheckoutError'))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('errorDetail', errorDetail))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 part 'update_customer_input.freezed.dart';
 part 'update_customer_input.g.dart';
 
@@ -19,5 +18,6 @@ class UpdateCustomerInput with _$UpdateCustomerInput {
     String? title,
   }) = _UpdateCustomerInput;
 
-  factory UpdateCustomerInput.fromJson(Map<String, dynamic> json) => _$UpdateCustomerInputFromJson(json);
+  factory UpdateCustomerInput.fromJson(Map<String, dynamic> json) =>
+      _$UpdateCustomerInputFromJson(json);
 }

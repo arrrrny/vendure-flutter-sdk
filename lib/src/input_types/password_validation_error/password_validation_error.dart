@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../error_code/error_code.dart';
 
 part 'password_validation_error.freezed.dart';

@@ -203,8 +203,7 @@ class __$$NumberOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NumberOperatorsImpl extends _NumberOperators
-    with DiagnosticableTreeMixin {
+class _$NumberOperatorsImpl extends _NumberOperators {
   const _$NumberOperatorsImpl(
       {this.between,
       this.eq,
@@ -234,22 +233,8 @@ class _$NumberOperatorsImpl extends _NumberOperators
   final double? lte;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'NumberOperators(between: $between, eq: $eq, gt: $gt, gte: $gte, isNull: $isNull, lt: $lt, lte: $lte)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'NumberOperators'))
-      ..add(DiagnosticsProperty('between', between))
-      ..add(DiagnosticsProperty('eq', eq))
-      ..add(DiagnosticsProperty('gt', gt))
-      ..add(DiagnosticsProperty('gte', gte))
-      ..add(DiagnosticsProperty('isNull', isNull))
-      ..add(DiagnosticsProperty('lt', lt))
-      ..add(DiagnosticsProperty('lte', lte));
   }
 
   @override

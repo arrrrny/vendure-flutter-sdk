@@ -101,7 +101,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessImpl extends _Success with DiagnosticableTreeMixin {
+class _$SuccessImpl extends _Success {
   const _$SuccessImpl({this.success}) : super._();
 
   factory _$SuccessImpl.fromJson(Map<String, dynamic> json) =>
@@ -111,16 +111,8 @@ class _$SuccessImpl extends _Success with DiagnosticableTreeMixin {
   final bool? success;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Success(success: $success)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Success'))
-      ..add(DiagnosticsProperty('success', success));
   }
 
   @override

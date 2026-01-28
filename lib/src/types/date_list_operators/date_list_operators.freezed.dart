@@ -105,8 +105,7 @@ class __$$DateListOperatorsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DateListOperatorsImpl extends _DateListOperators
-    with DiagnosticableTreeMixin {
+class _$DateListOperatorsImpl extends _DateListOperators {
   _$DateListOperatorsImpl({required this.inList}) : super._();
 
   factory _$DateListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
@@ -116,16 +115,8 @@ class _$DateListOperatorsImpl extends _DateListOperators
   DateTime inList;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'DateListOperators(inList: $inList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'DateListOperators'))
-      ..add(DiagnosticsProperty('inList', inList));
   }
 
   /// Create a copy of DateListOperators

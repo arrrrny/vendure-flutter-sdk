@@ -131,8 +131,7 @@ class __$$CouponCodeExpiredErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CouponCodeExpiredErrorImpl extends _CouponCodeExpiredError
-    with DiagnosticableTreeMixin {
+class _$CouponCodeExpiredErrorImpl extends _CouponCodeExpiredError {
   const _$CouponCodeExpiredErrorImpl(
       {required this.couponCode,
       required this.errorCode,
@@ -150,18 +149,8 @@ class _$CouponCodeExpiredErrorImpl extends _CouponCodeExpiredError
   final String message;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CouponCodeExpiredError(couponCode: $couponCode, errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CouponCodeExpiredError'))
-      ..add(DiagnosticsProperty('couponCode', couponCode))
-      ..add(DiagnosticsProperty('errorCode', errorCode))
-      ..add(DiagnosticsProperty('message', message));
   }
 
   @override

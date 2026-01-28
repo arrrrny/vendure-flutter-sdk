@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import '../error_code/error_code.dart';
 
 part 'identifier_change_token_expired_error.freezed.dart';

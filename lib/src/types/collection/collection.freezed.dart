@@ -382,7 +382,7 @@ class __$$CollectionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
+class _$CollectionImpl extends _Collection {
   const _$CollectionImpl(
       {required final List<Asset> assets,
       required final List<CollectionBreadcrumb> breadcrumbs,
@@ -491,33 +491,8 @@ class _$CollectionImpl extends _Collection with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Collection(assets: $assets, breadcrumbs: $breadcrumbs, children: $children, createdAt: $createdAt, customFields: $customFields, description: $description, featuredAsset: $featuredAsset, filters: $filters, id: $id, languageCode: $languageCode, name: $name, parent: $parent, parentId: $parentId, position: $position, productVariants: $productVariants, slug: $slug, translations: $translations, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Collection'))
-      ..add(DiagnosticsProperty('assets', assets))
-      ..add(DiagnosticsProperty('breadcrumbs', breadcrumbs))
-      ..add(DiagnosticsProperty('children', children))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('featuredAsset', featuredAsset))
-      ..add(DiagnosticsProperty('filters', filters))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('parent', parent))
-      ..add(DiagnosticsProperty('parentId', parentId))
-      ..add(DiagnosticsProperty('position', position))
-      ..add(DiagnosticsProperty('productVariants', productVariants))
-      ..add(DiagnosticsProperty('slug', slug))
-      ..add(DiagnosticsProperty('translations', translations))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

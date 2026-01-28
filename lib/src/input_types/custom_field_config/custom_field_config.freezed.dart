@@ -691,8 +691,7 @@ class __$$BooleanCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig {
   const _$BooleanCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -772,26 +771,8 @@ class _$BooleanCustomFieldConfigImpl extends BooleanCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.booleanCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.booleanCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -1475,8 +1456,7 @@ class __$$DateTimeCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig {
   const _$DateTimeCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -1565,29 +1545,8 @@ class _$DateTimeCustomFieldConfigImpl extends DateTimeCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.dateTimeCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, max: $max, min: $min, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, step: $step, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.dateTimeCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('step', step))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -2282,8 +2241,7 @@ class __$$FloatCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig {
   const _$FloatCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -2372,29 +2330,8 @@ class _$FloatCustomFieldConfigImpl extends FloatCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.floatCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, max: $max, min: $min, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, step: $step, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.floatCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('step', step))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -3087,8 +3024,7 @@ class __$$IntCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig {
   const _$IntCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -3177,29 +3113,8 @@ class _$IntCustomFieldConfigImpl extends IntCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.intCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, max: $max, min: $min, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, step: $step, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'CustomFieldConfig.intCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('max', max))
-      ..add(DiagnosticsProperty('min', min))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('step', step))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -3890,8 +3805,8 @@ class __$$LocaleStringCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$LocaleStringCustomFieldConfigImpl
+    extends LocaleStringCustomFieldConfig {
   const _$LocaleStringCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -3978,28 +3893,8 @@ class _$LocaleStringCustomFieldConfigImpl extends LocaleStringCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.localeStringCustomFieldConfig(description: $description, internal: $internal, label: $label, length: $length, list: $list, name: $name, nullable: $nullable, pattern: $pattern, readonly: $readonly, requiresPermission: $requiresPermission, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.localeStringCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('length', length))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('pattern', pattern))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -4697,8 +4592,7 @@ class __$$LocaleTextCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig {
   const _$LocaleTextCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -4779,26 +4673,8 @@ class _$LocaleTextCustomFieldConfigImpl extends LocaleTextCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.localeTextCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.localeTextCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -5476,8 +5352,7 @@ class __$$RelationCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig {
   const _$RelationCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.entity,
@@ -5572,28 +5447,8 @@ class _$RelationCustomFieldConfigImpl extends RelationCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.relationCustomFieldConfig(description: $description, entity: $entity, internal: $internal, label: $label, list: $list, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, scalarFields: $scalarFields, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.relationCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('entity', entity))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('scalarFields', scalarFields))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -6307,8 +6162,7 @@ class __$$StringCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig {
   const _$StringCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -6406,29 +6260,8 @@ class _$StringCustomFieldConfigImpl extends StringCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.stringCustomFieldConfig(description: $description, internal: $internal, label: $label, length: $length, list: $list, name: $name, nullable: $nullable, options: $options, pattern: $pattern, readonly: $readonly, requiresPermission: $requiresPermission, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.stringCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('length', length))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('options', options))
-      ..add(DiagnosticsProperty('pattern', pattern))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override
@@ -7140,8 +6973,7 @@ class __$$TextCustomFieldConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
-    with DiagnosticableTreeMixin {
+class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig {
   const _$TextCustomFieldConfigImpl(
       {final List<LocalizedString?>? description,
       this.internal,
@@ -7221,26 +7053,8 @@ class _$TextCustomFieldConfigImpl extends TextCustomFieldConfig
   final String $type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CustomFieldConfig.textCustomFieldConfig(description: $description, internal: $internal, label: $label, list: $list, name: $name, nullable: $nullable, readonly: $readonly, requiresPermission: $requiresPermission, type: $type, ui: $ui)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'CustomFieldConfig.textCustomFieldConfig'))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('internal', internal))
-      ..add(DiagnosticsProperty('label', label))
-      ..add(DiagnosticsProperty('list', list))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('nullable', nullable))
-      ..add(DiagnosticsProperty('readonly', readonly))
-      ..add(DiagnosticsProperty('requiresPermission', requiresPermission))
-      ..add(DiagnosticsProperty('type', type))
-      ..add(DiagnosticsProperty('ui', ui));
   }
 
   @override

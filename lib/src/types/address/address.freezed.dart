@@ -300,7 +300,7 @@ class __$$AddressImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AddressImpl extends _Address with DiagnosticableTreeMixin {
+class _$AddressImpl extends _Address {
   const _$AddressImpl(
       {this.city,
       this.company,
@@ -363,31 +363,8 @@ class _$AddressImpl extends _Address with DiagnosticableTreeMixin {
   final DateTime updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Address(city: $city, company: $company, country: $country, createdAt: $createdAt, customFields: $customFields, defaultBillingAddress: $defaultBillingAddress, defaultShippingAddress: $defaultShippingAddress, fullName: $fullName, id: $id, phoneNumber: $phoneNumber, postalCode: $postalCode, province: $province, streetLine1: $streetLine1, streetLine2: $streetLine2, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Address'))
-      ..add(DiagnosticsProperty('city', city))
-      ..add(DiagnosticsProperty('company', company))
-      ..add(DiagnosticsProperty('country', country))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('customFields', customFields))
-      ..add(DiagnosticsProperty('defaultBillingAddress', defaultBillingAddress))
-      ..add(
-          DiagnosticsProperty('defaultShippingAddress', defaultShippingAddress))
-      ..add(DiagnosticsProperty('fullName', fullName))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('postalCode', postalCode))
-      ..add(DiagnosticsProperty('province', province))
-      ..add(DiagnosticsProperty('streetLine1', streetLine1))
-      ..add(DiagnosticsProperty('streetLine2', streetLine2))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   @override

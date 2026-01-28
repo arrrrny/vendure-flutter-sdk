@@ -415,8 +415,7 @@ class __$$CollectionFilterParameterImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
-    with DiagnosticableTreeMixin {
+class _$CollectionFilterParameterImpl extends _CollectionFilterParameter {
   _$CollectionFilterParameterImpl(
       {@JsonKey(name: '_and') this.and,
       @JsonKey(name: '_or') this.or,
@@ -460,26 +459,8 @@ class _$CollectionFilterParameterImpl extends _CollectionFilterParameter
   DateOperators? updatedAt;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CollectionFilterParameter(and: $and, or: $or, createdAt: $createdAt, description: $description, id: $id, languageCode: $languageCode, name: $name, parentId: $parentId, position: $position, slug: $slug, updatedAt: $updatedAt)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CollectionFilterParameter'))
-      ..add(DiagnosticsProperty('and', and))
-      ..add(DiagnosticsProperty('or', or))
-      ..add(DiagnosticsProperty('createdAt', createdAt))
-      ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('languageCode', languageCode))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('parentId', parentId))
-      ..add(DiagnosticsProperty('position', position))
-      ..add(DiagnosticsProperty('slug', slug))
-      ..add(DiagnosticsProperty('updatedAt', updatedAt));
   }
 
   /// Create a copy of CollectionFilterParameter
