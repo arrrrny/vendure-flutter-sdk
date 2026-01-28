@@ -35,7 +35,8 @@ class AuthBaseOperations {
 
       // Check if the extracted data is null
       if (data == null) {
-        throw Exception('No data returned for expected type: $expectedDataType');
+        throw Exception(
+            'No data returned for expected type: $expectedDataType');
       }
 
       if (data is Map &&
@@ -94,7 +95,8 @@ class AuthBaseOperations {
 
       // Check if the extracted data is null
       if (data == null) {
-        throw Exception('No data returned for expected type: $expectedDataType');
+        throw Exception(
+            'No data returned for expected type: $expectedDataType');
       }
 
       if (data is Map &&

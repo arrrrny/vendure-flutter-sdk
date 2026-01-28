@@ -380,7 +380,8 @@ class Vendure {
             try {
               final token = await _appCheckConfig.tokenProvider();
               if (token == null && _appCheckConfig.required) {
-                throw Exception('App Check token is required but not available');
+                throw Exception(
+                    'App Check token is required but not available');
               }
               return token;
             } catch (e) {
