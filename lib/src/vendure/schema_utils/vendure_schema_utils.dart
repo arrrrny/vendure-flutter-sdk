@@ -1,5 +1,6 @@
 import 'package:graphql/client.dart';
-import 'package:vendure/vendure.dart';
+
+import '../../../vendure_utils.dart';
 
 /// Utility class for Vendure GraphQL schema introspection.
 /// Provides methods to detect enums and map fields to enum types.

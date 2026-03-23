@@ -20,8 +20,8 @@ ProductList _$ProductListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductList {
-  List<Product?>? get items => throw _privateConstructorUsedError;
-  int? get totalItems => throw _privateConstructorUsedError;
+  List<Product> get items => throw _privateConstructorUsedError;
+  int get totalItems => throw _privateConstructorUsedError;
 
   /// Serializes this ProductList to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $ProductListCopyWith<$Res> {
           ProductList value, $Res Function(ProductList) then) =
       _$ProductListCopyWithImpl<$Res, ProductList>;
   @useResult
-  $Res call({List<Product?>? items, int? totalItems});
+  $Res call({List<Product> items, int totalItems});
 }
 
 /// @nodoc
@@ -57,18 +57,18 @@ class _$ProductListCopyWithImpl<$Res, $Val extends ProductList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_value.copyWith(
-      items: freezed == items
+      items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Product?>?,
-      totalItems: freezed == totalItems
+              as List<Product>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$ProductListImplCopyWith<$Res>
       __$$ProductListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Product?>? items, int? totalItems});
+  $Res call({List<Product> items, int totalItems});
 }
 
 /// @nodoc
@@ -97,18 +97,18 @@ class __$$ProductListImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? items = freezed,
-    Object? totalItems = freezed,
+    Object? items = null,
+    Object? totalItems = null,
   }) {
     return _then(_$ProductListImpl(
-      items: freezed == items
+      items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Product?>?,
-      totalItems: freezed == totalItems
+              as List<Product>,
+      totalItems: null == totalItems
           ? _value.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -116,25 +116,24 @@ class __$$ProductListImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductListImpl extends _ProductList {
-  const _$ProductListImpl({final List<Product?>? items, this.totalItems})
+  const _$ProductListImpl(
+      {required final List<Product> items, required this.totalItems})
       : _items = items,
         super._();
 
   factory _$ProductListImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductListImplFromJson(json);
 
-  final List<Product?>? _items;
+  final List<Product> _items;
   @override
-  List<Product?>? get items {
-    final value = _items;
-    if (value == null) return null;
+  List<Product> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_items);
   }
 
   @override
-  final int? totalItems;
+  final int totalItems;
 
   @override
   String toString() {
@@ -174,16 +173,17 @@ class _$ProductListImpl extends _ProductList {
 
 abstract class _ProductList extends ProductList {
   const factory _ProductList(
-      {final List<Product?>? items, final int? totalItems}) = _$ProductListImpl;
+      {required final List<Product> items,
+      required final int totalItems}) = _$ProductListImpl;
   const _ProductList._() : super._();
 
   factory _ProductList.fromJson(Map<String, dynamic> json) =
       _$ProductListImpl.fromJson;
 
   @override
-  List<Product?>? get items;
+  List<Product> get items;
   @override
-  int? get totalItems;
+  int get totalItems;
 
   /// Create a copy of ProductList
   /// with the given fields replaced by the non-null parameter values.

@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../product/product.dart';
 
+import '../paginated_list.dart';
+
 part 'product_list.freezed.dart';
 part 'product_list.g.dart';
 
@@ -9,12 +11,12 @@ part 'product_list.g.dart';
   equal: true,
   makeCollectionsUnmodifiable: true,
 )
-class ProductList with _$ProductList {
+class ProductList with _$ProductList implements PaginatedList<Product> {
   const ProductList._();
 
   const factory ProductList({
-    List<Product?>? items,
-    int? totalItems,
+    required List<Product> items,
+    required int totalItems,
   }) = _ProductList;
 
   factory ProductList.fromJson(Map<String, dynamic> json) =>

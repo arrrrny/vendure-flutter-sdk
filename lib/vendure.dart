@@ -12,11 +12,11 @@ import 'package:vendure/src/vendure/system_operations.dart';
 import 'package:vendure/src/vendure/token_manager.dart';
 
 import 'src/subscriptions/active_customer_stream_subscription.dart';
-import 'src/types/exports.dart';
-import 'src/vendure/vendure_utils.dart';
-export 'src/vendure/vendure_utils.dart';
-
-export '../src/types/exports.dart'; // Add this line
+import 'vendure.dart';
+import 'vendure_utils.dart';
+export 'src/types/exports.dart';
+export 'src/input_types/vendure_query_options.dart';
+export 'src/input_types/paginated_list.dart';
 
 class Vendure {
   static Vendure? _instance;

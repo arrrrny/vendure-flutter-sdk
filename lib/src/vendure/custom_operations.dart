@@ -1,4 +1,5 @@
 import 'package:graphql/client.dart';
+import 'package:vendure/src/input_types/paginated_list.dart';
 import 'package:vendure/src/vendure/operation_type_enum.dart';
 import 'package:vendure/src/vendure/vendure_utils.dart';
 
@@ -20,7 +21,7 @@ class CustomOperations {
     Map<String, dynamic> variables,
     bool isMutation,
     String? expectedDataType, {
-    bool convertEnums = true,
+    bool convertEnums = false,
   }) async {
     final processedOperation = _prepareOperation(operation);
     // VendureUtils.printLongString(processedOperation);
@@ -147,7 +148,7 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
-    bool convertEnums = true,
+    bool convertEnums = false,
   }) async {
     var data = await _executeGraphQLOperation(
       query,
@@ -180,7 +181,7 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
-    bool convertEnums = true,
+    bool convertEnums = false,
   }) async {
     var data = await _executeGraphQLOperation(
       query,
@@ -200,15 +201,7 @@ class CustomOperations {
 
     if (fromJson != null) {
       return data.map<T>((item) {
-        final normalized = VendureUtils.normalizeGraphQLData(
-          item,
-          convertEnums: convertEnums,
-        );
-        if (normalized is! Map) {
-          throw Exception(
-              'Expected map list item but got ${normalized.runtimeType}');
-        }
-        return fromJson(Map<String, dynamic>.from(normalized));
+        return fromJson(item);
       }).toList();
     }
     return List<T>.from(data);
@@ -219,7 +212,7 @@ class CustomOperations {
     Map<String, dynamic> variables, {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
-    bool convertEnums = true,
+    bool convertEnums = false,
   }) async {
     var data = await _executeGraphQLOperation(
         mutation, variables, true, expectedDataType,
@@ -235,18 +228,122 @@ class CustomOperations {
 
     if (fromJson != null) {
       return data.map<T>((item) {
-        final normalized = VendureUtils.normalizeGraphQLData(
-          item,
-          convertEnums: convertEnums,
-        );
-        if (normalized is! Map) {
-          throw Exception(
-              'Expected map list item but got ${normalized.runtimeType}');
-        }
-        return fromJson(Map<String, dynamic>.from(normalized));
+        return fromJson(item);
       }).toList();
     }
     return List<T>.from(data);
+  }
+
+  Future<PaginatedList<T>> queryListPaginated<T>(
+    String query, {
+    required T Function(Map<String, dynamic>) fromJson,
+    String? expectedDataType,
+    bool convertEnums = false,
+    ListOptions? options,
+  }) async {
+    final Map<String, dynamic> combinedVariables = {
+      if (options != null) ...{
+        'filter': options.filter != null ? options.toJson()['filter'] : null,
+        'sort': options.sort != null ? options.toJson()['sort'] : null,
+        'pagination': {
+          if (options.take != null) 'take': options.take,
+          if (options.skip != null) 'skip': options.skip,
+        },
+      },
+    };
+
+    var data = await _executeGraphQLOperation(
+      query,
+      combinedVariables,
+      false,
+      expectedDataType,
+      convertEnums: convertEnums,
+    );
+
+    if (data == null) {
+      throw Exception('No data returned from queryListPaginated');
+    }
+
+    if (data is Map || data is List) {
+      data = VendureUtils.normalizeGraphQLData(
+        data,
+        convertEnums: convertEnums,
+      );
+    }
+
+    if (data is! Map) {
+      throw Exception(
+          'Expected map data for PaginatedList but got ${data.runtimeType}');
+    }
+
+    final items = (data['items'] as List?)
+            ?.map((item) => fromJson(item is Map<String, dynamic>
+                ? Map<String, dynamic>.from(item)
+                : item))
+            .toList() ??
+        [];
+    final totalItems = (data['totalItems'] as num?)?.toInt() ?? 0;
+
+    return PaginatedListImpl<T>(
+      items: items,
+      totalItems: totalItems,
+    );
+  }
+
+  Future<PaginatedList<T>> mutateListPaginated<T>(
+    String mutation,
+    Map<String, dynamic> variables, {
+    required T Function(Map<String, dynamic>) fromJson,
+    String? expectedDataType,
+    bool convertEnums = true,
+    ListOptions? options,
+  }) async {
+    final Map<String, dynamic> combinedVariables = {
+      ...variables,
+      if (options != null) ...{
+        'filter': options.filter != null ? options.toJson()['filter'] : null,
+        'sort': options.sort != null ? options.toJson()['sort'] : null,
+        'pagination': {
+          if (options.take != null) 'take': options.take,
+          if (options.skip != null) 'skip': options.skip,
+        },
+      },
+    };
+
+    var data = await _executeGraphQLOperation(
+      mutation,
+      combinedVariables,
+      true,
+      expectedDataType,
+      convertEnums: convertEnums,
+    );
+
+    if (data == null) {
+      throw Exception('No data returned from mutateListPaginated');
+    }
+
+    if (data is Map || data is List) {
+      data = VendureUtils.normalizeGraphQLData(
+        data,
+        convertEnums: convertEnums,
+      );
+    }
+
+    if (data is! Map) {
+      throw Exception(
+          'Expected map data for PaginatedList but got ${data.runtimeType}');
+    }
+
+    final items = (data['items'] as List?)
+            ?.map((item) => fromJson(Map<String, dynamic>.from(item)))
+            .toList() ??
+        [];
+    final totalItems = (data['totalItems'] as num?)?.toInt() ?? 0;
+
+    return PaginatedListImpl<T>(
+      items: items,
+      totalItems: totalItems,
+    );
   }
 
   Future<Map<String, dynamic>> extractResponseHeaders(
