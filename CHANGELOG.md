@@ -1,3 +1,9 @@
+## 2.15.0
+- **Feature**: Added support for paginated queries and mutations
+- **Breaking Change**: Converted to dart package with support for both Flutter and Dart
+- **Fix**: Authentication methods now always throw exceptions instead of returning null
+- **Internal**: Code formatting and linting improvements
+
 ## 2.14.1
 - **Fix**: Instead of returning null, always throw exception on Auth
 
