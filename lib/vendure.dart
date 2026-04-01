@@ -2,21 +2,22 @@ library vendure;
 
 import 'package:graphql/client.dart';
 import 'package:http/http.dart' as http;
-import 'package:vendure/src/vendure/app_check_provider.dart';
-import 'package:vendure/src/vendure/auth_operations.dart';
-import 'package:vendure/src/vendure/catalog_operations.dart';
-import 'package:vendure/src/vendure/custom_operations.dart';
-import 'package:vendure/src/vendure/customer_operations.dart';
-import 'package:vendure/src/vendure/order_operations.dart';
-import 'package:vendure/src/vendure/system_operations.dart';
-import 'package:vendure/src/vendure/token_manager.dart';
 
 import 'src/subscriptions/active_customer_stream_subscription.dart';
-import 'vendure.dart';
+import 'src/types/customer/customer.dart' show Customer;
+import 'src/vendure/app_check_provider.dart';
+import 'src/vendure/auth_operations.dart';
+import 'src/vendure/catalog_operations.dart';
+import 'src/vendure/custom_operations.dart';
+import 'src/vendure/customer_operations.dart';
+import 'src/vendure/order_operations.dart';
+import 'src/vendure/system_operations.dart';
+import 'src/vendure/token_manager.dart';
 import 'vendure_utils.dart';
 export 'src/types/exports.dart';
 export 'src/input_types/vendure_query_options.dart';
 export 'src/input_types/paginated_list.dart';
+export 'src/vendure/app_check_provider.dart';
 
 class Vendure {
   static Vendure? _instance;
