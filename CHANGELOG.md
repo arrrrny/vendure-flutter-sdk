@@ -1,3 +1,6 @@
+## 2.16.0
+- **Fix**: Active customer stream subscription now uses the `Customer` fragment, allowing `sanitizeGraphQLQuery` to inject `customFields`. Previously the subscription used an inline selection, so `customFields` was always `null` on WebSocket updates.
+
 ## 2.15.0
 - **Feature**: Added support for paginated queries and mutations
 - **Breaking Change**: Converted to dart package with support for both Flutter and Dart

@@ -1,15 +1,10 @@
-const String activeCustomerStreamSubscription = r'''
+import 'package:vendure/src/fragments/customer_fragment.dart';
+
+const String activeCustomerStreamSubscription = customerFragment +
+    r'''
 subscription ActiveCustomerStream {
   activeCustomerStream {
-    __typename
-    id
-    title
-    firstName
-    lastName
-    phoneNumber
-    emailAddress
-    createdAt
-    updatedAt
+    ...Customer
   }
 }
 ''';
