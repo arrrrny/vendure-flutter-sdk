@@ -1,6 +1,5 @@
 import 'package:test/test.dart';
 import 'package:graphql/client.dart';
-import 'package:vendure/vendure.dart';
 import 'package:vendure/src/vendure/schema_utils/vendure_schema_utils.dart';
 import 'package:vendure/src/vendure/vendure_utils.dart';
 

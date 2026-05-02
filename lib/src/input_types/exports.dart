@@ -197,8 +197,9 @@ export './payment_method_quote/payment_method_quote.dart'
     show PaymentMethodQuote;
 export './payment_method_translation/payment_method_translation.dart'
     show PaymentMethodTranslation;
-export './paginated_list.dart' show Node, PaginatedList, ListOptions;
-export './vendure_query_options.dart' show VendureQueryOptions, VendureMutationOptions;
+export './paginated_list.dart' show PaginatedList, ListOptions;
+export './vendure_query_options.dart'
+    show VendureQueryOptions, VendureMutationOptions;
 export './permission/permission.dart' show Permission;
 export './price_range/price_range.dart' show PriceRange;
 export './product/product.dart' show Product;
