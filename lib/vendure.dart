@@ -22,7 +22,8 @@ export 'src/vendure/app_check_provider.dart';
 class Vendure {
   static Vendure? _instance;
 
-  final GraphQLClient _authClient;
+  late final GraphQLClient _authClient;
+  final http.Client _httpClient = http.Client();
   late final OrderOperations order;
   late final AuthOperations auth;
   late final CustomOperations custom;
@@ -74,27 +75,27 @@ class Vendure {
         _token = token,
         _languageCode = languageCode,
         _channelToken = channelToken,
-        _authClient = GraphQLClient(
-          defaultPolicies: DefaultPolicies(
-            query: Policies(
-              fetch: FetchPolicy.noCache,
-              cacheReread: CacheRereadPolicy.ignoreAll,
-            ),
-            mutate: Policies(
-              fetch: FetchPolicy.noCache,
-              cacheReread: CacheRereadPolicy.ignoreAll,
-            ),
-          ),
-          link: HttpLink(
-            endpoint,
-            defaultHeaders: {
-              'Content-Type': 'application/json',
-            },
-            httpClient: http.Client(),
-          ),
-          cache: GraphQLCache(),
-        ),
         _customFieldsConfig = customFieldsConfig {
+    _authClient = GraphQLClient(
+      defaultPolicies: DefaultPolicies(
+        query: Policies(
+          fetch: FetchPolicy.noCache,
+          cacheReread: CacheRereadPolicy.ignoreAll,
+        ),
+        mutate: Policies(
+          fetch: FetchPolicy.noCache,
+          cacheReread: CacheRereadPolicy.ignoreAll,
+        ),
+      ),
+      link: HttpLink(
+        endpoint,
+        defaultHeaders: {
+          'Content-Type': 'application/json',
+        },
+        httpClient: _httpClient,
+      ),
+      cache: GraphQLCache(),
+    );
     auth = AuthOperations(_authClient);
     order = OrderOperations(
       _getClient,
@@ -328,6 +329,18 @@ class Vendure {
           'Vendure has not been initialized. Call Vendure.initialize() first.');
     }
     return _instance!;
+  }
+
+  /// Destroys the current Vendure instance, closing the underlying HTTP client
+  /// and clearing all state. Call this on user sign-out to ensure a clean slate
+  /// for the next user session. After calling [destroy], you must call one of the
+  /// [initialize], [initializeWithFirebaseAuth], etc. methods before using Vendure again.
+  static void destroy() {
+    final instance = _instance;
+    if (instance == null) return;
+    instance._httpClient.close();
+    instance._subscriptionClient = null;
+    _instance = null;
   }
 
   Future<GraphQLClient> _getClient() async {
