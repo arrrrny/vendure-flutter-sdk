@@ -38,9 +38,13 @@ class Vendure {
   final bool _useVendureGuestSession;
   String? _languageCode;
   String? _channelToken;
+  String? _apiKey;
+  String? _apiKeyHeaderKey;
   String? get token => _token;
   String? get channelToken => _channelToken;
   String? get languageCode => _languageCode;
+  String? get apiKey => _apiKey;
+  String? get apiKeyHeaderKey => _apiKeyHeaderKey;
   final Duration? _timeout;
   final AppCheckConfig? _appCheckConfig;
   GraphQLClient? _subscriptionClient;
@@ -60,6 +64,8 @@ class Vendure {
     String? channelToken,
     Duration? timeout,
     AppCheckConfig? appCheckConfig,
+    String? apiKey,
+    String? apiKeyHeaderKey,
   })  : _tokenManager = fetchToken != null && tokenParams != null
             ? TokenManager(
                 fetchToken: fetchToken,
@@ -75,6 +81,8 @@ class Vendure {
         _token = token,
         _languageCode = languageCode,
         _channelToken = channelToken,
+        _apiKey = apiKey,
+        _apiKeyHeaderKey = apiKeyHeaderKey ?? 'vendure-api-key',
         _customFieldsConfig = customFieldsConfig {
     _authClient = GraphQLClient(
       defaultPolicies: DefaultPolicies(
@@ -133,6 +141,8 @@ class Vendure {
     String? channelToken,
     Duration? timeout,
     AppCheckConfig? appCheckConfig,
+    String? apiKey,
+    String? apiKeyHeaderKey,
     bool enableEnumDiscovery = false,
   }) async {
     _instance = Vendure._internal(
@@ -148,6 +158,8 @@ class Vendure {
       channelToken: channelToken,
       timeout: timeout,
       appCheckConfig: appCheckConfig,
+      apiKey: apiKey,
+      apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
     // Perform a connection check and finalize initialization
@@ -166,6 +178,8 @@ class Vendure {
     AppCheckConfig? appCheckConfig,
     String? languageCode,
     String? channelToken,
+    String? apiKey,
+    String? apiKeyHeaderKey,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -217,6 +231,8 @@ class Vendure {
       appCheckConfig: appCheckConfig,
       languageCode: languageCode,
       channelToken: channelToken,
+      apiKey: apiKey,
+      apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
     // Finalize initialization (token check, enum loading)
@@ -234,6 +250,8 @@ class Vendure {
     String? channelToken,
     Duration? timeout,
     AppCheckConfig? appCheckConfig,
+    String? apiKey,
+    String? apiKeyHeaderKey,
   }) async {
     // Helper function to fetch and return token
     Future<String?> fetchToken(Map<String, dynamic> params) async {
@@ -284,6 +302,8 @@ class Vendure {
       customFieldsConfig: customFieldsConfig,
       timeout: timeout,
       appCheckConfig: appCheckConfig,
+      apiKey: apiKey,
+      apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
     // Ensure token is set
@@ -301,6 +321,8 @@ class Vendure {
     String? languageCode,
     String? channelToken,
     Duration? timeout,
+    String? apiKey,
+    String? apiKeyHeaderKey,
   }) async {
     final token = await fetchToken(tokenParams);
     if (token == null) {
@@ -316,10 +338,41 @@ class Vendure {
       languageCode: languageCode,
       channelToken: channelToken,
       timeout: timeout,
+      apiKey: apiKey,
+      apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
     // Finalize initialization (token check, enum loading)
     await _finalizeInitialization(_instance!);
+    return _instance!;
+  }
+
+  /// Initialize Vendure with API key authentication.
+  /// This is useful for machine-to-machine authentication where you have a long-lived API key.
+  /// The API key is sent in the header specified by [apiKeyHeaderKey] (defaults to 'vendure-api-key').
+  static Future<Vendure> initializeWithApiKey({
+    required String endpoint,
+    required String apiKey,
+    String? apiKeyHeaderKey,
+    Map<String, List<dynamic>>? customFieldsConfig,
+    String? languageCode,
+    String? channelToken,
+    Duration? timeout,
+    AppCheckConfig? appCheckConfig,
+  }) async {
+    _instance = Vendure._internal(
+      endpoint: endpoint,
+      apiKey: apiKey,
+      apiKeyHeaderKey: apiKeyHeaderKey,
+      customFieldsConfig: customFieldsConfig,
+      languageCode: languageCode,
+      channelToken: channelToken,
+      timeout: timeout,
+      appCheckConfig: appCheckConfig,
+    );
+
+    // Finalize initialization (connection check, enum loading)
+    await _finalizeInitialization(_instance!, checkConnection: true);
     return _instance!;
   }
 
@@ -358,22 +411,52 @@ class Vendure {
 
     final httpLink = HttpLink(endpointUrl);
 
-    // Create the authentication link for Authorization header only if not using guest session
-    Link link;
+    // Build the link chain starting with the API key link if configured
+    Link link = httpLink;
 
-    if (_useVendureGuestSession) {
-      // If using guest session, don't add authentication headers
-      if (_channelToken != null) {
-        final vendureTokenLink = AuthLink(
-          headerKey: 'vendure-token',
-          getToken: () async => _channelToken,
-        );
-        link = vendureTokenLink.concat(httpLink);
-      } else {
-        link = httpLink;
-      }
-    } else {
-      // Create the authentication link for Authorization header
+    // Add API key link if configured (machine-to-machine auth)
+    if (_apiKey != null) {
+      final apiKeyLink = AuthLink(
+        headerKey: _apiKeyHeaderKey!,
+        getToken: () async => _apiKey,
+      );
+      link = apiKeyLink.concat(link);
+    }
+
+    // Add channel token link if configured
+    if (_channelToken != null) {
+      final vendureTokenLink = AuthLink(
+        headerKey: 'vendure-token',
+        getToken: () async => _channelToken,
+      );
+      link = vendureTokenLink.concat(link);
+    }
+
+    // Add App Check token link if configured
+    if (_appCheckConfig != null) {
+      final appCheckLink = AuthLink(
+        headerKey: _appCheckConfig.headerName,
+        getToken: () async {
+          try {
+            final token = await _appCheckConfig.tokenProvider();
+            if (token == null && _appCheckConfig.required) {
+              throw Exception(
+                  'App Check token is required but not available');
+            }
+            return token;
+          } catch (e) {
+            if (_appCheckConfig.required) {
+              rethrow;
+            }
+            return null;
+          }
+        },
+      );
+      link = appCheckLink.concat(link);
+    }
+
+    // Add Authorization Bearer token if not using guest session
+    if (!_useVendureGuestSession) {
       final authLink = AuthLink(
         // 'Authorization' is the default headerKey
         getToken: () async {
@@ -385,49 +468,7 @@ class Vendure {
           return null;
         },
       );
-
-      // Add App Check token link if configured
-      if (_appCheckConfig != null) {
-        final appCheckLink = AuthLink(
-          headerKey: _appCheckConfig.headerName,
-          getToken: () async {
-            try {
-              final token = await _appCheckConfig.tokenProvider();
-              if (token == null && _appCheckConfig.required) {
-                throw Exception(
-                    'App Check token is required but not available');
-              }
-              return token;
-            } catch (e) {
-              if (_appCheckConfig.required) {
-                rethrow;
-              }
-              return null;
-            }
-          },
-        );
-
-        if (_channelToken != null) {
-          final vendureTokenLink = AuthLink(
-            headerKey: 'vendure-token',
-            getToken: () async => _channelToken,
-          );
-          link = authLink
-              .concat(appCheckLink)
-              .concat(vendureTokenLink)
-              .concat(httpLink);
-        } else {
-          link = authLink.concat(appCheckLink).concat(httpLink);
-        }
-      } else if (_channelToken != null) {
-        final vendureTokenLink = AuthLink(
-          headerKey: 'vendure-token',
-          getToken: () async => _channelToken,
-        );
-        link = authLink.concat(vendureTokenLink).concat(httpLink);
-      } else {
-        link = authLink.concat(httpLink);
-      }
+      link = authLink.concat(link);
     }
 
     return GraphQLClient(
@@ -537,6 +578,10 @@ class Vendure {
 
   Future<Map<String, dynamic>> _buildWebsocketPayload() async {
     final payload = <String, dynamic>{};
+    // Add API key if configured (machine-to-machine auth)
+    if (_apiKey != null) {
+      payload[_apiKeyHeaderKey!] = _apiKey;
+    }
     // Only add authorization token if not using guest session
     if (!_useVendureGuestSession) {
       final authToken = await _resolveAuthToken();
@@ -691,6 +736,20 @@ class Vendure {
     _instance!._channelToken = channelToken;
   }
 
+  /// Updates the API key on the initialized Vendure instance.
+  /// This affects all subsequent GraphQL requests by adding the API key header.
+  /// Pass null to remove the API key from requests.
+  static void setApiKey(String? apiKey, {String? apiKeyHeaderKey}) {
+    if (_instance == null) {
+      throw Exception(
+          'Vendure has not been initialized. Call Vendure.initialize() first.');
+    }
+    _instance!._apiKey = apiKey;
+    if (apiKeyHeaderKey != null) {
+      _instance!._apiKeyHeaderKey = apiKeyHeaderKey;
+    }
+  }
+
   /// Fetch a new Vendure session token using the instance's TokenManager fetcher and params.
   /// Throws if no TokenManager is configured.
   Future<void> _refreshToken(Map<String, dynamic> params) async {
@@ -718,7 +777,10 @@ class Vendure {
   static Future<void> _finalizeInitialization(Vendure instance,
       {bool checkConnection = false}) async {
     _instance = instance;
-    if (!_instance!._useVendureGuestSession && _instance!._token == null) {
+    // Skip token check if using guest session or API key auth
+    if (!_instance!._useVendureGuestSession &&
+        _instance!._token == null &&
+        _instance!._apiKey == null) {
       throw Exception("Failed to set token in instance");
     }
     if (checkConnection) {

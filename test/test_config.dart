@@ -97,6 +97,25 @@ class TestConfig {
     return Platform.environment['VENDURE_FIREBASE_JWT'] ?? '';
   }
 
+  static String get apiKey {
+    final fromDefine = const String.fromEnvironment(
+      'VENDURE_API_KEY',
+      defaultValue: '',
+    );
+    if (fromDefine.isNotEmpty) return fromDefine;
+    return Platform.environment['VENDURE_API_KEY'] ?? '';
+  }
+
+  static String get apiKeyHeaderKey {
+    final fromDefine = const String.fromEnvironment(
+      'VENDURE_API_KEY_HEADER_KEY',
+      defaultValue: '',
+    );
+    if (fromDefine.isNotEmpty) return fromDefine;
+    return Platform.environment['VENDURE_API_KEY_HEADER_KEY'] ??
+        'vendure-api-key';
+  }
+
   static bool get useFirebaseAuth {
     final fromDefine = const String.fromEnvironment(
       'VENDURE_USE_FIREBASE_AUTH',

@@ -1,3 +1,9 @@
+## 2.17.0
+
+- **Feature**: Added API key authentication support for machine-to-machine authentication. New `initializeWithApiKey()` method and `setApiKey()` runtime setter.
+- **Feature**: All initialization methods (`initialize`, `initializeWithNativeAuth`, `initializeWithFirebaseAuth`, `initializeWithCustomAuth`) now accept `apiKey` and `apiKeyHeaderKey` parameters.
+- **Internal**: HTTP requests and WebSocket subscriptions now include the API key header (defaults to `vendure-api-key`).
+
 ## 2.16.0
 
 - **Fix**: Active customer stream subscription now uses the `Customer` fragment, allowing `sanitizeGraphQLQuery` to inject `customFields`. Previously the subscription used an inline selection, so `customFields` was always `null` on WebSocket updates.
