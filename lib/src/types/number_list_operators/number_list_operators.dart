@@ -3,12 +3,10 @@ part 'number_list_operators.freezed.dart';
 part 'number_list_operators.g.dart';
 
 @unfreezed
-class NumberListOperators with _$NumberListOperators {
+abstract class NumberListOperators with _$NumberListOperators {
   const NumberListOperators._();
 
-  factory NumberListOperators({
-    required double inList,
-  }) = _NumberListOperators;
+  factory NumberListOperators({required double inList}) = _NumberListOperators;
 
   factory NumberListOperators.fromJson(Map<String, dynamic> json) =>
       _$NumberListOperatorsFromJson(json);

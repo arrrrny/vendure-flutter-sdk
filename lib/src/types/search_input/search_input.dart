@@ -6,7 +6,7 @@ part 'search_input.freezed.dart';
 part 'search_input.g.dart';
 
 @unfreezed
-class SearchInput with _$SearchInput {
+abstract class SearchInput with _$SearchInput {
   const SearchInput._();
 
   factory SearchInput({

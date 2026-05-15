@@ -6,9 +6,8 @@ part of 'order_state_transition_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderStateTransitionErrorImpl _$$OrderStateTransitionErrorImplFromJson(
-        Map json) =>
-    _$OrderStateTransitionErrorImpl(
+_OrderStateTransitionError _$OrderStateTransitionErrorFromJson(Map json) =>
+    _OrderStateTransitionError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       fromState: json['fromState'] as String?,
       message: json['message'] as String?,
@@ -16,16 +15,15 @@ _$OrderStateTransitionErrorImpl _$$OrderStateTransitionErrorImplFromJson(
       transitionError: json['transitionError'] as String?,
     );
 
-Map<String, dynamic> _$$OrderStateTransitionErrorImplToJson(
-        _$OrderStateTransitionErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.fromState case final value?) 'fromState': value,
-      if (instance.message case final value?) 'message': value,
-      if (instance.toState case final value?) 'toState': value,
-      if (instance.transitionError case final value?) 'transitionError': value,
-    };
+Map<String, dynamic> _$OrderStateTransitionErrorToJson(
+  _OrderStateTransitionError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'fromState': ?instance.fromState,
+  'message': ?instance.message,
+  'toState': ?instance.toState,
+  'transitionError': ?instance.transitionError,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

@@ -6,20 +6,19 @@ part of 'password_reset_token_expired_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PasswordResetTokenExpiredErrorImpl
-    _$$PasswordResetTokenExpiredErrorImplFromJson(Map json) =>
-        _$PasswordResetTokenExpiredErrorImpl(
-          errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String?,
-        );
+_PasswordResetTokenExpiredError _$PasswordResetTokenExpiredErrorFromJson(
+  Map json,
+) => _PasswordResetTokenExpiredError(
+  errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String?,
+);
 
-Map<String, dynamic> _$$PasswordResetTokenExpiredErrorImplToJson(
-        _$PasswordResetTokenExpiredErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-    };
+Map<String, dynamic> _$PasswordResetTokenExpiredErrorToJson(
+  _PasswordResetTokenExpiredError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

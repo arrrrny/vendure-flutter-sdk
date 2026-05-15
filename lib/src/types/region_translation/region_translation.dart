@@ -5,7 +5,7 @@ part 'region_translation.freezed.dart';
 part 'region_translation.g.dart';
 
 @freezed
-class RegionTranslation with _$RegionTranslation {
+abstract class RegionTranslation with _$RegionTranslation {
   const RegionTranslation._();
 
   const factory RegionTranslation({

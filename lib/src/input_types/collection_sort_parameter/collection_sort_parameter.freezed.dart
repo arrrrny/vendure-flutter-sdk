@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,314 +9,290 @@ part of 'collection_sort_parameter.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CollectionSortParameter _$CollectionSortParameterFromJson(
-    Map<String, dynamic> json) {
-  return _CollectionSortParameter.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CollectionSortParameter {
-  SortOrder? get createdAt => throw _privateConstructorUsedError;
-  SortOrder? get description => throw _privateConstructorUsedError;
-  SortOrder? get id => throw _privateConstructorUsedError;
-  SortOrder? get name => throw _privateConstructorUsedError;
-  SortOrder? get parentId => throw _privateConstructorUsedError;
-  SortOrder? get position => throw _privateConstructorUsedError;
-  SortOrder? get slug => throw _privateConstructorUsedError;
-  SortOrder? get updatedAt => throw _privateConstructorUsedError;
+
+ SortOrder? get createdAt; SortOrder? get description; SortOrder? get id; SortOrder? get name; SortOrder? get parentId; SortOrder? get position; SortOrder? get slug; SortOrder? get updatedAt;
+/// Create a copy of CollectionSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CollectionSortParameterCopyWith<CollectionSortParameter> get copyWith => _$CollectionSortParameterCopyWithImpl<CollectionSortParameter>(this as CollectionSortParameter, _$identity);
 
   /// Serializes this CollectionSortParameter to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CollectionSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CollectionSortParameterCopyWith<CollectionSortParameter> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CollectionSortParameter&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.description, description) || other.description == description)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.position, position) || other.position == position)&&(identical(other.slug, slug) || other.slug == slug)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,createdAt,description,id,name,parentId,position,slug,updatedAt);
+
+@override
+String toString() {
+  return 'CollectionSortParameter(createdAt: $createdAt, description: $description, id: $id, name: $name, parentId: $parentId, position: $position, slug: $slug, updatedAt: $updatedAt)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CollectionSortParameterCopyWith<$Res> {
-  factory $CollectionSortParameterCopyWith(CollectionSortParameter value,
-          $Res Function(CollectionSortParameter) then) =
-      _$CollectionSortParameterCopyWithImpl<$Res, CollectionSortParameter>;
-  @useResult
-  $Res call(
-      {SortOrder? createdAt,
-      SortOrder? description,
-      SortOrder? id,
-      SortOrder? name,
-      SortOrder? parentId,
-      SortOrder? position,
-      SortOrder? slug,
-      SortOrder? updatedAt});
-}
+abstract mixin class $CollectionSortParameterCopyWith<$Res>  {
+  factory $CollectionSortParameterCopyWith(CollectionSortParameter value, $Res Function(CollectionSortParameter) _then) = _$CollectionSortParameterCopyWithImpl;
+@useResult
+$Res call({
+ SortOrder? createdAt, SortOrder? description, SortOrder? id, SortOrder? name, SortOrder? parentId, SortOrder? position, SortOrder? slug, SortOrder? updatedAt
+});
 
+
+
+
+}
 /// @nodoc
-class _$CollectionSortParameterCopyWithImpl<$Res,
-        $Val extends CollectionSortParameter>
+class _$CollectionSortParameterCopyWithImpl<$Res>
     implements $CollectionSortParameterCopyWith<$Res> {
-  _$CollectionSortParameterCopyWithImpl(this._value, this._then);
+  _$CollectionSortParameterCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CollectionSortParameter _self;
+  final $Res Function(CollectionSortParameter) _then;
 
-  /// Create a copy of CollectionSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? parentId = freezed,
-    Object? position = freezed,
-    Object? slug = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      parentId: freezed == parentId
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      slug: freezed == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-    ) as $Val);
-  }
+/// Create a copy of CollectionSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? createdAt = freezed,Object? description = freezed,Object? id = freezed,Object? name = freezed,Object? parentId = freezed,Object? position = freezed,Object? slug = freezed,Object? updatedAt = freezed,}) {
+  return _then(_self.copyWith(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as SortOrder?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as SortOrder?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as SortOrder?,parentId: freezed == parentId ? _self.parentId : parentId // ignore: cast_nullable_to_non_nullable
+as SortOrder?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
+as SortOrder?,slug: freezed == slug ? _self.slug : slug // ignore: cast_nullable_to_non_nullable
+as SortOrder?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$CollectionSortParameterImplCopyWith<$Res>
-    implements $CollectionSortParameterCopyWith<$Res> {
-  factory _$$CollectionSortParameterImplCopyWith(
-          _$CollectionSortParameterImpl value,
-          $Res Function(_$CollectionSortParameterImpl) then) =
-      __$$CollectionSortParameterImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {SortOrder? createdAt,
-      SortOrder? description,
-      SortOrder? id,
-      SortOrder? name,
-      SortOrder? parentId,
-      SortOrder? position,
-      SortOrder? slug,
-      SortOrder? updatedAt});
 }
 
-/// @nodoc
-class __$$CollectionSortParameterImplCopyWithImpl<$Res>
-    extends _$CollectionSortParameterCopyWithImpl<$Res,
-        _$CollectionSortParameterImpl>
-    implements _$$CollectionSortParameterImplCopyWith<$Res> {
-  __$$CollectionSortParameterImplCopyWithImpl(
-      _$CollectionSortParameterImpl _value,
-      $Res Function(_$CollectionSortParameterImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of CollectionSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? description = freezed,
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? parentId = freezed,
-    Object? position = freezed,
-    Object? slug = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_$CollectionSortParameterImpl(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      parentId: freezed == parentId
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      slug: freezed == slug
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [CollectionSortParameter].
+extension CollectionSortParameterPatterns on CollectionSortParameter {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CollectionSortParameter value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CollectionSortParameter() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CollectionSortParameter value)  $default,){
+final _that = this;
+switch (_that) {
+case _CollectionSortParameter():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CollectionSortParameter value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CollectionSortParameter() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( SortOrder? createdAt,  SortOrder? description,  SortOrder? id,  SortOrder? name,  SortOrder? parentId,  SortOrder? position,  SortOrder? slug,  SortOrder? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CollectionSortParameter() when $default != null:
+return $default(_that.createdAt,_that.description,_that.id,_that.name,_that.parentId,_that.position,_that.slug,_that.updatedAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( SortOrder? createdAt,  SortOrder? description,  SortOrder? id,  SortOrder? name,  SortOrder? parentId,  SortOrder? position,  SortOrder? slug,  SortOrder? updatedAt)  $default,) {final _that = this;
+switch (_that) {
+case _CollectionSortParameter():
+return $default(_that.createdAt,_that.description,_that.id,_that.name,_that.parentId,_that.position,_that.slug,_that.updatedAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( SortOrder? createdAt,  SortOrder? description,  SortOrder? id,  SortOrder? name,  SortOrder? parentId,  SortOrder? position,  SortOrder? slug,  SortOrder? updatedAt)?  $default,) {final _that = this;
+switch (_that) {
+case _CollectionSortParameter() when $default != null:
+return $default(_that.createdAt,_that.description,_that.id,_that.name,_that.parentId,_that.position,_that.slug,_that.updatedAt);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CollectionSortParameterImpl extends _CollectionSortParameter {
-  const _$CollectionSortParameterImpl(
-      {this.createdAt,
-      this.description,
-      this.id,
-      this.name,
-      this.parentId,
-      this.position,
-      this.slug,
-      this.updatedAt})
-      : super._();
 
-  factory _$CollectionSortParameterImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CollectionSortParameterImplFromJson(json);
+class _CollectionSortParameter extends CollectionSortParameter {
+  const _CollectionSortParameter({this.createdAt, this.description, this.id, this.name, this.parentId, this.position, this.slug, this.updatedAt}): super._();
+  factory _CollectionSortParameter.fromJson(Map<String, dynamic> json) => _$CollectionSortParameterFromJson(json);
 
-  @override
-  final SortOrder? createdAt;
-  @override
-  final SortOrder? description;
-  @override
-  final SortOrder? id;
-  @override
-  final SortOrder? name;
-  @override
-  final SortOrder? parentId;
-  @override
-  final SortOrder? position;
-  @override
-  final SortOrder? slug;
-  @override
-  final SortOrder? updatedAt;
+@override final  SortOrder? createdAt;
+@override final  SortOrder? description;
+@override final  SortOrder? id;
+@override final  SortOrder? name;
+@override final  SortOrder? parentId;
+@override final  SortOrder? position;
+@override final  SortOrder? slug;
+@override final  SortOrder? updatedAt;
 
-  @override
-  String toString() {
-    return 'CollectionSortParameter(createdAt: $createdAt, description: $description, id: $id, name: $name, parentId: $parentId, position: $position, slug: $slug, updatedAt: $updatedAt)';
-  }
+/// Create a copy of CollectionSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CollectionSortParameterCopyWith<_CollectionSortParameter> get copyWith => __$CollectionSortParameterCopyWithImpl<_CollectionSortParameter>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CollectionSortParameterImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, createdAt, description, id, name,
-      parentId, position, slug, updatedAt);
-
-  /// Create a copy of CollectionSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CollectionSortParameterImplCopyWith<_$CollectionSortParameterImpl>
-      get copyWith => __$$CollectionSortParameterImplCopyWithImpl<
-          _$CollectionSortParameterImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CollectionSortParameterImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$CollectionSortParameterToJson(this, );
 }
 
-abstract class _CollectionSortParameter extends CollectionSortParameter {
-  const factory _CollectionSortParameter(
-      {final SortOrder? createdAt,
-      final SortOrder? description,
-      final SortOrder? id,
-      final SortOrder? name,
-      final SortOrder? parentId,
-      final SortOrder? position,
-      final SortOrder? slug,
-      final SortOrder? updatedAt}) = _$CollectionSortParameterImpl;
-  const _CollectionSortParameter._() : super._();
-
-  factory _CollectionSortParameter.fromJson(Map<String, dynamic> json) =
-      _$CollectionSortParameterImpl.fromJson;
-
-  @override
-  SortOrder? get createdAt;
-  @override
-  SortOrder? get description;
-  @override
-  SortOrder? get id;
-  @override
-  SortOrder? get name;
-  @override
-  SortOrder? get parentId;
-  @override
-  SortOrder? get position;
-  @override
-  SortOrder? get slug;
-  @override
-  SortOrder? get updatedAt;
-
-  /// Create a copy of CollectionSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CollectionSortParameterImplCopyWith<_$CollectionSortParameterImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CollectionSortParameter&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.description, description) || other.description == description)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.position, position) || other.position == position)&&(identical(other.slug, slug) || other.slug == slug)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,createdAt,description,id,name,parentId,position,slug,updatedAt);
+
+@override
+String toString() {
+  return 'CollectionSortParameter(createdAt: $createdAt, description: $description, id: $id, name: $name, parentId: $parentId, position: $position, slug: $slug, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CollectionSortParameterCopyWith<$Res> implements $CollectionSortParameterCopyWith<$Res> {
+  factory _$CollectionSortParameterCopyWith(_CollectionSortParameter value, $Res Function(_CollectionSortParameter) _then) = __$CollectionSortParameterCopyWithImpl;
+@override @useResult
+$Res call({
+ SortOrder? createdAt, SortOrder? description, SortOrder? id, SortOrder? name, SortOrder? parentId, SortOrder? position, SortOrder? slug, SortOrder? updatedAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$CollectionSortParameterCopyWithImpl<$Res>
+    implements _$CollectionSortParameterCopyWith<$Res> {
+  __$CollectionSortParameterCopyWithImpl(this._self, this._then);
+
+  final _CollectionSortParameter _self;
+  final $Res Function(_CollectionSortParameter) _then;
+
+/// Create a copy of CollectionSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? createdAt = freezed,Object? description = freezed,Object? id = freezed,Object? name = freezed,Object? parentId = freezed,Object? position = freezed,Object? slug = freezed,Object? updatedAt = freezed,}) {
+  return _then(_CollectionSortParameter(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as SortOrder?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as SortOrder?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as SortOrder?,parentId: freezed == parentId ? _self.parentId : parentId // ignore: cast_nullable_to_non_nullable
+as SortOrder?,position: freezed == position ? _self.position : position // ignore: cast_nullable_to_non_nullable
+as SortOrder?,slug: freezed == slug ? _self.slug : slug // ignore: cast_nullable_to_non_nullable
+as SortOrder?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,
+  ));
+}
+
+
+}
+
+// dart format on

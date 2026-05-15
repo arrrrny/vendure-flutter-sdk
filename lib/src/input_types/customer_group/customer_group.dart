@@ -4,12 +4,8 @@ import '../customer_list/customer_list.dart';
 part 'customer_group.freezed.dart';
 part 'customer_group.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CustomerGroup with _$CustomerGroup {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CustomerGroup with _$CustomerGroup {
   const CustomerGroup._();
 
   const factory CustomerGroup({

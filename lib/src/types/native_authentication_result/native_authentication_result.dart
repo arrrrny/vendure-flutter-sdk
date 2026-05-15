@@ -6,7 +6,7 @@ part 'native_authentication_result.freezed.dart';
 part 'native_authentication_result.g.dart';
 
 @freezed
-class NativeAuthenticationResult with _$NativeAuthenticationResult {
+sealed class NativeAuthenticationResult with _$NativeAuthenticationResult {
   const NativeAuthenticationResult._();
 
   const factory NativeAuthenticationResult.currentUser({

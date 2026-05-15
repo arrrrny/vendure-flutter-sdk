@@ -6,19 +6,19 @@ part of 'password_reset_token_invalid_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PasswordResetTokenInvalidErrorImpl
-    _$$PasswordResetTokenInvalidErrorImplFromJson(Map json) =>
-        _$PasswordResetTokenInvalidErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-        );
+_PasswordResetTokenInvalidError _$PasswordResetTokenInvalidErrorFromJson(
+  Map json,
+) => _PasswordResetTokenInvalidError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$PasswordResetTokenInvalidErrorImplToJson(
-        _$PasswordResetTokenInvalidErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$PasswordResetTokenInvalidErrorToJson(
+  _PasswordResetTokenInvalidError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

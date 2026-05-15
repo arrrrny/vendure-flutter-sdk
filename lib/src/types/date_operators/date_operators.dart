@@ -5,7 +5,7 @@ part 'date_operators.freezed.dart';
 part 'date_operators.g.dart';
 
 @unfreezed
-class DateOperators with _$DateOperators {
+abstract class DateOperators with _$DateOperators {
   const DateOperators._();
 
   factory DateOperators({

@@ -5,7 +5,8 @@ part 'ineligible_payment_method_error.freezed.dart';
 part 'ineligible_payment_method_error.g.dart';
 
 @freezed
-class IneligiblePaymentMethodError with _$IneligiblePaymentMethodError {
+abstract class IneligiblePaymentMethodError
+    with _$IneligiblePaymentMethodError {
   const IneligiblePaymentMethodError._();
 
   const factory IneligiblePaymentMethodError({

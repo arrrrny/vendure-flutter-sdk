@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/catalog_fragment.dart';
 
-const String getCollectionsQuery = collectionFragment +
+const String getCollectionsQuery =
+    collectionFragment +
     r'''
     query GetCollections($options: CollectionListOptions) {
       collections(options:$options) {
@@ -12,7 +13,8 @@ const String getCollectionsQuery = collectionFragment +
     }
 ''';
 
-const String getCollectionByIdQuery = collectionFragment +
+const String getCollectionByIdQuery =
+    collectionFragment +
     r'''
     query GetCollectionById($id: ID!) {
       collection(id: $id) {
@@ -21,7 +23,8 @@ const String getCollectionByIdQuery = collectionFragment +
     }
     ''';
 
-const String getCollectionBySlugQuery = collectionFragment +
+const String getCollectionBySlugQuery =
+    collectionFragment +
     r'''
     query GetCollectionBySlug($slug: String!) {
       collection(slug: $slug) {
@@ -30,7 +33,8 @@ const String getCollectionBySlugQuery = collectionFragment +
     }
     ''';
 
-const String getCollectionsFlexibleQuery = flexibleCollectionFragment +
+const String getCollectionsFlexibleQuery =
+    flexibleCollectionFragment +
     r'''
     query GetCollections($options: CollectionListOptions) {
       collections(options:$options) {
@@ -44,7 +48,7 @@ const String getCollectionsFlexibleQuery = flexibleCollectionFragment +
 
 const String getCollectionListWithParentChildrenQuery =
     collectionWithParentChildrenFragment +
-        r'''
+    r'''
     query GetCollections($options: CollectionListOptions) {
       collections(options:$options) {
         items{
@@ -57,7 +61,7 @@ const String getCollectionListWithParentChildrenQuery =
 
 const String getCollectionWithParentChildrenQuery =
     collectionWithParentChildrenFragment +
-        r'''
+    r'''
     query GetCollectionById($id: ID!) {
       collection(id: $id) {
         ...CollectionWithParentChildren
@@ -65,7 +69,8 @@ const String getCollectionWithParentChildrenQuery =
     }
     ''';
 
-const String getCollectionWithChildrenQuery = collectionWithChildrenFragment +
+const String getCollectionWithChildrenQuery =
+    collectionWithChildrenFragment +
     r'''
     query GetCollectionById($id: ID!) {
       collection(id: $id) {
@@ -74,7 +79,8 @@ const String getCollectionWithChildrenQuery = collectionWithChildrenFragment +
     }
     ''';
 
-const String getCollectionWithParentQuery = collectionWithParentFragment +
+const String getCollectionWithParentQuery =
+    collectionWithParentFragment +
     r'''
     query GetCollectionById($id: ID!) {
       collection(id: $id) {

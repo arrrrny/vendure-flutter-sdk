@@ -5,7 +5,8 @@ part 'verification_token_invalid_error.freezed.dart';
 part 'verification_token_invalid_error.g.dart';
 
 @freezed
-class VerificationTokenInvalidError with _$VerificationTokenInvalidError {
+abstract class VerificationTokenInvalidError
+    with _$VerificationTokenInvalidError {
   const VerificationTokenInvalidError._();
 
   const factory VerificationTokenInvalidError({

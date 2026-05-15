@@ -138,10 +138,7 @@ class TestConfig {
     int count = 2,
   }) async {
     final products = await vendure.catalog.getProducts(
-      options: ProductListOptions(
-        take: 50,
-        skip: 0,
-      ),
+      options: ProductListOptions(take: 50, skip: 0),
     );
     if (products.items.isEmpty) {
       throw StateError('No products available');
@@ -171,10 +168,7 @@ class TestConfig {
 
   static Future<String> fetchAnyProductId(Vendure vendure) async {
     final products = await vendure.catalog.getProducts(
-      options: ProductListOptions(
-        take: 1,
-        skip: 0,
-      ),
+      options: ProductListOptions(take: 1, skip: 0),
     );
     if (products.items.isEmpty) {
       throw StateError('No products available');
@@ -184,10 +178,7 @@ class TestConfig {
 
   static Future<String> fetchAnyProductSlug(Vendure vendure) async {
     final products = await vendure.catalog.getProducts(
-      options: ProductListOptions(
-        take: 1,
-        skip: 0,
-      ),
+      options: ProductListOptions(take: 1, skip: 0),
     );
     if (products.items.isEmpty) {
       throw StateError('No products available');

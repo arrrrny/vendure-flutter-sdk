@@ -7,7 +7,7 @@ part 'string_custom_field_config.freezed.dart';
 part 'string_custom_field_config.g.dart';
 
 @freezed
-class StringCustomFieldConfig with _$StringCustomFieldConfig {
+abstract class StringCustomFieldConfig with _$StringCustomFieldConfig {
   const StringCustomFieldConfig._();
 
   const factory StringCustomFieldConfig({

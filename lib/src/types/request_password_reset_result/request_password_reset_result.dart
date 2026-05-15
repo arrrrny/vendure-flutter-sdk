@@ -5,7 +5,7 @@ part 'request_password_reset_result.freezed.dart';
 part 'request_password_reset_result.g.dart';
 
 @freezed
-class RequestPasswordResetResult with _$RequestPasswordResetResult {
+sealed class RequestPasswordResetResult with _$RequestPasswordResetResult {
   const RequestPasswordResetResult._();
 
   const factory RequestPasswordResetResult.nativeAuthStrategyError({
@@ -13,9 +13,8 @@ class RequestPasswordResetResult with _$RequestPasswordResetResult {
     required String message,
   }) = NativeAuthStrategyError;
 
-  const factory RequestPasswordResetResult.success({
-    required bool success,
-  }) = Success;
+  const factory RequestPasswordResetResult.success({required bool success}) =
+      Success;
 
   factory RequestPasswordResetResult.fromJson(Map<String, dynamic> json) =>
       _$RequestPasswordResetResultFromJson(json);

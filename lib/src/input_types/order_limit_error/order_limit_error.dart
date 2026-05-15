@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'order_limit_error.freezed.dart';
 part 'order_limit_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderLimitError with _$OrderLimitError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderLimitError with _$OrderLimitError {
   const OrderLimitError._();
 
   const factory OrderLimitError({

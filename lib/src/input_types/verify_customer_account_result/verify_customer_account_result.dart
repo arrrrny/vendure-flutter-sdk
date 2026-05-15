@@ -5,12 +5,8 @@ import '../error_code/error_code.dart';
 part 'verify_customer_account_result.freezed.dart';
 part 'verify_customer_account_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class VerifyCustomerAccountResult with _$VerifyCustomerAccountResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class VerifyCustomerAccountResult with _$VerifyCustomerAccountResult {
   const VerifyCustomerAccountResult._();
 
   const factory VerifyCustomerAccountResult.currentUser({

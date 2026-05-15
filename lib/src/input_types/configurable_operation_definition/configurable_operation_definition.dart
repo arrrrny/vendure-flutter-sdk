@@ -4,12 +4,9 @@ import '../config_arg_definition/config_arg_definition.dart';
 part 'configurable_operation_definition.freezed.dart';
 part 'configurable_operation_definition.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ConfigurableOperationDefinition with _$ConfigurableOperationDefinition {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ConfigurableOperationDefinition
+    with _$ConfigurableOperationDefinition {
   const ConfigurableOperationDefinition._();
 
   const factory ConfigurableOperationDefinition({

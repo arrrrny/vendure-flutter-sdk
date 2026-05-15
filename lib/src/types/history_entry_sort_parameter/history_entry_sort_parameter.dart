@@ -5,7 +5,7 @@ part 'history_entry_sort_parameter.freezed.dart';
 part 'history_entry_sort_parameter.g.dart';
 
 @unfreezed
-class HistoryEntrySortParameter with _$HistoryEntrySortParameter {
+abstract class HistoryEntrySortParameter with _$HistoryEntrySortParameter {
   const HistoryEntrySortParameter._();
 
   factory HistoryEntrySortParameter({

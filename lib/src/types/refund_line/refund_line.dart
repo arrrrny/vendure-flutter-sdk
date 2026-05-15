@@ -4,7 +4,7 @@ part 'refund_line.freezed.dart';
 part 'refund_line.g.dart';
 
 @freezed
-class RefundLine with _$RefundLine {
+abstract class RefundLine with _$RefundLine {
   const RefundLine._();
 
   const factory RefundLine({

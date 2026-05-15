@@ -6,8 +6,8 @@ part of 'update_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UpdateCustomerInputImpl _$$UpdateCustomerInputImplFromJson(Map json) =>
-    _$UpdateCustomerInputImpl(
+_UpdateCustomerInput _$UpdateCustomerInputFromJson(Map json) =>
+    _UpdateCustomerInput(
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
       ),
@@ -17,12 +17,12 @@ _$UpdateCustomerInputImpl _$$UpdateCustomerInputImplFromJson(Map json) =>
       title: json['title'] as String?,
     );
 
-Map<String, dynamic> _$$UpdateCustomerInputImplToJson(
-        _$UpdateCustomerInputImpl instance) =>
-    <String, dynamic>{
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.firstName case final value?) 'firstName': value,
-      if (instance.lastName case final value?) 'lastName': value,
-      if (instance.phoneNumber case final value?) 'phoneNumber': value,
-      if (instance.title case final value?) 'title': value,
-    };
+Map<String, dynamic> _$UpdateCustomerInputToJson(
+  _UpdateCustomerInput instance,
+) => <String, dynamic>{
+  'customFields': ?instance.customFields,
+  'firstName': ?instance.firstName,
+  'lastName': ?instance.lastName,
+  'phoneNumber': ?instance.phoneNumber,
+  'title': ?instance.title,
+};

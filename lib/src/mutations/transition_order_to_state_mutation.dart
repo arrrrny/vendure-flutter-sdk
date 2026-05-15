@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String transitionOrderToStateMutation = orderFragment +
+const String transitionOrderToStateMutation =
+    orderFragment +
     r'''
     mutation TransitionOrderToState($state: String!) {
         transitionOrderToState(state: $state) {

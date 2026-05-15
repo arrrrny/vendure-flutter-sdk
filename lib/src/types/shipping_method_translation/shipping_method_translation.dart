@@ -5,7 +5,7 @@ part 'shipping_method_translation.freezed.dart';
 part 'shipping_method_translation.g.dart';
 
 @freezed
-class ShippingMethodTranslation with _$ShippingMethodTranslation {
+abstract class ShippingMethodTranslation with _$ShippingMethodTranslation {
   const ShippingMethodTranslation._();
 
   const factory ShippingMethodTranslation({

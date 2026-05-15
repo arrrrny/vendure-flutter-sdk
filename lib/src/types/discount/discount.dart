@@ -5,7 +5,7 @@ part 'discount.freezed.dart';
 part 'discount.g.dart';
 
 @freezed
-class Discount with _$Discount {
+abstract class Discount with _$Discount {
   const Discount._();
 
   const factory Discount({

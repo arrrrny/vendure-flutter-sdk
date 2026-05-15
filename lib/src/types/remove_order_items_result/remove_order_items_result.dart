@@ -17,7 +17,7 @@ part 'remove_order_items_result.freezed.dart';
 part 'remove_order_items_result.g.dart';
 
 @freezed
-class RemoveOrderItemsResult with _$RemoveOrderItemsResult {
+sealed class RemoveOrderItemsResult with _$RemoveOrderItemsResult {
   const RemoveOrderItemsResult._();
 
   const factory RemoveOrderItemsResult.order({

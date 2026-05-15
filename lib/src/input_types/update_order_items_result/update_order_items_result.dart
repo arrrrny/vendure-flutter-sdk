@@ -17,12 +17,8 @@ import '../surcharge/surcharge.dart';
 part 'update_order_items_result.freezed.dart';
 part 'update_order_items_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class UpdateOrderItemsResult with _$UpdateOrderItemsResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class UpdateOrderItemsResult with _$UpdateOrderItemsResult {
   const UpdateOrderItemsResult._();
 
   const factory UpdateOrderItemsResult.insufficientStockError({

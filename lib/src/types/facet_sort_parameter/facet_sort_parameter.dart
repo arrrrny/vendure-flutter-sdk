@@ -5,7 +5,7 @@ part 'facet_sort_parameter.freezed.dart';
 part 'facet_sort_parameter.g.dart';
 
 @unfreezed
-class FacetSortParameter with _$FacetSortParameter {
+abstract class FacetSortParameter with _$FacetSortParameter {
   const FacetSortParameter._();
 
   factory FacetSortParameter({

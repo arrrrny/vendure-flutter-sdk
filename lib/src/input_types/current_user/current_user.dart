@@ -4,12 +4,8 @@ import '../current_user_channel/current_user_channel.dart';
 part 'current_user.freezed.dart';
 part 'current_user.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CurrentUser with _$CurrentUser {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CurrentUser with _$CurrentUser {
   const CurrentUser._();
 
   const factory CurrentUser({

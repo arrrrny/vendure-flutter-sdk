@@ -5,7 +5,7 @@ part 'request_update_customer_email_address_result.freezed.dart';
 part 'request_update_customer_email_address_result.g.dart';
 
 @freezed
-class RequestUpdateCustomerEmailAddressResult
+sealed class RequestUpdateCustomerEmailAddressResult
     with _$RequestUpdateCustomerEmailAddressResult {
   const RequestUpdateCustomerEmailAddressResult._();
 
@@ -30,6 +30,6 @@ class RequestUpdateCustomerEmailAddressResult
   }) = Success;
 
   factory RequestUpdateCustomerEmailAddressResult.fromJson(
-          Map<String, dynamic> json) =>
-      _$RequestUpdateCustomerEmailAddressResultFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$RequestUpdateCustomerEmailAddressResultFromJson(json);
 }

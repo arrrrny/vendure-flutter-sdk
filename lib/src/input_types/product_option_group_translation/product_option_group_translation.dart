@@ -4,12 +4,9 @@ import '../language_code/language_code.dart';
 part 'product_option_group_translation.freezed.dart';
 part 'product_option_group_translation.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ProductOptionGroupTranslation with _$ProductOptionGroupTranslation {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ProductOptionGroupTranslation
+    with _$ProductOptionGroupTranslation {
   const ProductOptionGroupTranslation._();
 
   const factory ProductOptionGroupTranslation({

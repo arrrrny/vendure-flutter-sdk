@@ -9,7 +9,7 @@ part 'order_filter_parameter.freezed.dart';
 part 'order_filter_parameter.g.dart';
 
 @unfreezed
-class OrderFilterParameter with _$OrderFilterParameter {
+abstract class OrderFilterParameter with _$OrderFilterParameter {
   const OrderFilterParameter._();
 
   factory OrderFilterParameter({

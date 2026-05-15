@@ -6,23 +6,20 @@ part of 'invalid_credentials_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map json) =>
-    _$InvalidCredentialsErrorImpl(
+_InvalidCredentialsError _$InvalidCredentialsErrorFromJson(Map json) =>
+    _InvalidCredentialsError(
       authenticationError: json['authenticationError'] as String?,
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$InvalidCredentialsErrorImplToJson(
-        _$InvalidCredentialsErrorImpl instance) =>
-    <String, dynamic>{
-      if (instance.authenticationError case final value?)
-        'authenticationError': value,
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-    };
+Map<String, dynamic> _$InvalidCredentialsErrorToJson(
+  _InvalidCredentialsError instance,
+) => <String, dynamic>{
+  'authenticationError': ?instance.authenticationError,
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

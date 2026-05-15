@@ -6,12 +6,8 @@ import '../string_field_option/string_field_option.dart';
 part 'custom_field_config.freezed.dart';
 part 'custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CustomFieldConfig with _$CustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class CustomFieldConfig with _$CustomFieldConfig {
   const CustomFieldConfig._();
 
   const factory CustomFieldConfig.booleanCustomFieldConfig({

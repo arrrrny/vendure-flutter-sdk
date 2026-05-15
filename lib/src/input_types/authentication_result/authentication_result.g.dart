@@ -6,46 +6,43 @@ part of 'authentication_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
-      channels: (json['channels'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : CurrentUserChannel.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      id: json['id'] as String?,
-      identifier: json['identifier'] as String?,
-      $type: json['runtimeType'] as String?,
-    );
+CurrentUser _$CurrentUserFromJson(Map json) => CurrentUser(
+  channels: (json['channels'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : CurrentUserChannel.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  id: json['id'] as String?,
+  identifier: json['identifier'] as String?,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
+Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
     <String, dynamic>{
-      if (instance.channels?.map((e) => e?.toJson()).toList() case final value?)
-        'channels': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.identifier case final value?) 'identifier': value,
+      'channels': ?instance.channels?.map((e) => e?.toJson()).toList(),
+      'id': ?instance.id,
+      'identifier': ?instance.identifier,
       'runtimeType': instance.$type,
     };
 
-_$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map json) =>
-    _$InvalidCredentialsErrorImpl(
+InvalidCredentialsError _$InvalidCredentialsErrorFromJson(Map json) =>
+    InvalidCredentialsError(
       authenticationError: json['authenticationError'] as String?,
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$InvalidCredentialsErrorImplToJson(
-        _$InvalidCredentialsErrorImpl instance) =>
-    <String, dynamic>{
-      if (instance.authenticationError case final value?)
-        'authenticationError': value,
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$InvalidCredentialsErrorToJson(
+  InvalidCredentialsError instance,
+) => <String, dynamic>{
+  'authenticationError': ?instance.authenticationError,
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+  'runtimeType': instance.$type,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -82,18 +79,15 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
-    _$NotVerifiedErrorImpl(
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String?,
-      $type: json['runtimeType'] as String?,
-    );
+NotVerifiedError _$NotVerifiedErrorFromJson(Map json) => NotVerifiedError(
+  errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String?,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$NotVerifiedErrorImplToJson(
-        _$NotVerifiedErrorImpl instance) =>
+Map<String, dynamic> _$NotVerifiedErrorToJson(NotVerifiedError instance) =>
     <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
+      'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+      'message': ?instance.message,
       'runtimeType': instance.$type,
     };

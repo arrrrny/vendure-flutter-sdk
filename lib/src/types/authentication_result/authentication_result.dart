@@ -6,7 +6,7 @@ part 'authentication_result.freezed.dart';
 part 'authentication_result.g.dart';
 
 @freezed
-class AuthenticationResult with _$AuthenticationResult {
+sealed class AuthenticationResult with _$AuthenticationResult {
   const AuthenticationResult._();
 
   const factory AuthenticationResult.currentUser({

@@ -5,7 +5,7 @@ part 'customer_sort_parameter.freezed.dart';
 part 'customer_sort_parameter.g.dart';
 
 @unfreezed
-class CustomerSortParameter with _$CustomerSortParameter {
+abstract class CustomerSortParameter with _$CustomerSortParameter {
   const CustomerSortParameter._();
 
   factory CustomerSortParameter({

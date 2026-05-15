@@ -5,7 +5,7 @@ part 'product_option_translation.freezed.dart';
 part 'product_option_translation.g.dart';
 
 @freezed
-class ProductOptionTranslation with _$ProductOptionTranslation {
+abstract class ProductOptionTranslation with _$ProductOptionTranslation {
   const ProductOptionTranslation._();
 
   const factory ProductOptionTranslation({

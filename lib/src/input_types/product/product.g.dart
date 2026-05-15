@@ -6,100 +6,96 @@ part of 'product.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
-      assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Asset.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      collections: (json['collections'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Collection.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String?,
-      enabled: json['enabled'] as bool?,
-      facetValues: (json['facetValues'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      featuredAsset: json['featuredAsset'] == null
-          ? null
-          : Asset.fromJson(
-              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      optionGroups: (json['optionGroups'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOptionGroup.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      slug: json['slug'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductTranslation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      variantList: json['variantList'] == null
-          ? null
-          : ProductVariantList.fromJson(
-              Map<String, dynamic>.from(json['variantList'] as Map)),
-      variants: (json['variants'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductVariant.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-    );
+_Product _$ProductFromJson(Map json) => _Product(
+  assets: (json['assets'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Asset.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  collections: (json['collections'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Collection.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  description: json['description'] as String?,
+  enabled: json['enabled'] as bool?,
+  facetValues: (json['facetValues'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  featuredAsset: json['featuredAsset'] == null
+      ? null
+      : Asset.fromJson(Map<String, dynamic>.from(json['featuredAsset'] as Map)),
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  optionGroups: (json['optionGroups'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ProductOptionGroup.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  slug: json['slug'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ProductTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+  variantList: json['variantList'] == null
+      ? null
+      : ProductVariantList.fromJson(
+          Map<String, dynamic>.from(json['variantList'] as Map),
+        ),
+  variants: (json['variants'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ProductVariant.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+);
 
-Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
-    <String, dynamic>{
-      if (instance.assets?.map((e) => e?.toJson()).toList() case final value?)
-        'assets': value,
-      if (instance.collections?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'collections': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.enabled case final value?) 'enabled': value,
-      if (instance.facetValues?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'facetValues': value,
-      if (instance.featuredAsset?.toJson() case final value?)
-        'featuredAsset': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.optionGroups?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'optionGroups': value,
-      if (instance.slug case final value?) 'slug': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-      if (instance.variantList?.toJson() case final value?)
-        'variantList': value,
-      if (instance.variants?.map((e) => e?.toJson()).toList() case final value?)
-        'variants': value,
-    };
+Map<String, dynamic> _$ProductToJson(_Product instance) => <String, dynamic>{
+  'assets': ?instance.assets?.map((e) => e?.toJson()).toList(),
+  'collections': ?instance.collections?.map((e) => e?.toJson()).toList(),
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'customFields': ?instance.customFields,
+  'description': ?instance.description,
+  'enabled': ?instance.enabled,
+  'facetValues': ?instance.facetValues?.map((e) => e?.toJson()).toList(),
+  'featuredAsset': ?instance.featuredAsset?.toJson(),
+  'id': ?instance.id,
+  'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+  'name': ?instance.name,
+  'optionGroups': ?instance.optionGroups?.map((e) => e?.toJson()).toList(),
+  'slug': ?instance.slug,
+  'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+  'variantList': ?instance.variantList?.toJson(),
+  'variants': ?instance.variants?.map((e) => e?.toJson()).toList(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'guest_checkout_error.freezed.dart';
 part 'guest_checkout_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class GuestCheckoutError with _$GuestCheckoutError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class GuestCheckoutError with _$GuestCheckoutError {
   const GuestCheckoutError._();
 
   const factory GuestCheckoutError({

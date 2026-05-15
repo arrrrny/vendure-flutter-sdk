@@ -6,13 +6,12 @@ part of 'tax_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaxLineImpl _$$TaxLineImplFromJson(Map json) => _$TaxLineImpl(
-      description: json['description'] as String,
-      taxRate: (json['taxRate'] as num).toDouble(),
-    );
+_TaxLine _$TaxLineFromJson(Map json) => _TaxLine(
+  description: json['description'] as String,
+  taxRate: (json['taxRate'] as num).toDouble(),
+);
 
-Map<String, dynamic> _$$TaxLineImplToJson(_$TaxLineImpl instance) =>
-    <String, dynamic>{
-      'description': instance.description,
-      'taxRate': instance.taxRate,
-    };
+Map<String, dynamic> _$TaxLineToJson(_TaxLine instance) => <String, dynamic>{
+  'description': instance.description,
+  'taxRate': instance.taxRate,
+};

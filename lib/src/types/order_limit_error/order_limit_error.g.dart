@@ -6,15 +6,13 @@ part of 'order_limit_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderLimitErrorImpl _$$OrderLimitErrorImplFromJson(Map json) =>
-    _$OrderLimitErrorImpl(
-      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-      maxItems: (json['maxItems'] as num).toInt(),
-      message: json['message'] as String,
-    );
+_OrderLimitError _$OrderLimitErrorFromJson(Map json) => _OrderLimitError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  maxItems: (json['maxItems'] as num).toInt(),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$OrderLimitErrorImplToJson(
-        _$OrderLimitErrorImpl instance) =>
+Map<String, dynamic> _$OrderLimitErrorToJson(_OrderLimitError instance) =>
     <String, dynamic>{
       'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
       'maxItems': instance.maxItems,

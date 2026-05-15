@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
-const String productVariantFragment = productOptionFragment +
+const String productVariantFragment =
+    productOptionFragment +
     facetValueFragment +
     assetFragment +
     taxCategoryFragment +
@@ -49,7 +50,8 @@ fragment ProductVariant on ProductVariant {
 
 ''';
 
-const String productFragment = productVariantFragment +
+const String productFragment =
+    productVariantFragment +
     productOptionGroupFragment +
     r'''
 fragment Product on Product {
@@ -148,7 +150,8 @@ fragment ProductOptionGroup on ProductOptionGroup {
 
 ''';
 
-const String orderLineProductVariantFragment = productOptionFragment +
+const String orderLineProductVariantFragment =
+    productOptionFragment +
     facetValueFragment +
     taxRateFragment +
     r'''
@@ -205,7 +208,8 @@ fragment OrderLineProductVariant on ProductVariant {
 
 ''';
 
-const String productVariantSubselection = facetValueFragment +
+const String productVariantSubselection =
+    facetValueFragment +
     productOptionGroupFragment +
     taxCategoryFragment +
     r'''
@@ -306,7 +310,8 @@ const String searchResultFragment = r'''
     }
     ''';
 
-const String collectionFragment = assetFragment +
+const String collectionFragment =
+    assetFragment +
     r'''
 fragment Collection on Collection {
   __typename
@@ -399,7 +404,8 @@ fragment ChildCollection on Collection {
 }
 ''';
 
-const String parentCollectionFragment = collectionFragment +
+const String parentCollectionFragment =
+    collectionFragment +
     r'''
 fragment ParentCollection on Collection {
   __typename
@@ -445,7 +451,8 @@ fragment ParentCollection on Collection {
 }
 ''';
 
-const String flexibleCollectionFragment = parentCollectionFragment +
+const String flexibleCollectionFragment =
+    parentCollectionFragment +
     childCollectionFragment +
     r'''
 fragment FlexibleCollection on Collection {
@@ -496,7 +503,8 @@ fragment FlexibleCollection on Collection {
 }
 ''';
 
-const String collectionWithoutParentIdFragment = assetFragment +
+const String collectionWithoutParentIdFragment =
+    assetFragment +
     r'''
 fragment CollectionWithoutParentId on Collection {
   __typename
@@ -543,7 +551,7 @@ fragment CollectionWithoutParentId on Collection {
 
 const String collectionWithParentChildrenFragment =
     collectionWithoutParentIdFragment +
-        r'''
+    r'''
 fragment CollectionWithParentChildren on Collection {
   __typename
   id
@@ -599,7 +607,7 @@ fragment CollectionWithParentChildren on Collection {
 
 const String collectionWithChildrenFragment =
     collectionWithoutParentIdFragment +
-        r'''
+    r'''
 fragment CollectionWithChildren on Collection {
   __typename
   id
@@ -649,7 +657,8 @@ fragment CollectionWithChildren on Collection {
 
 ''';
 
-const String collectionWithParentFragment = collectionWithoutParentIdFragment +
+const String collectionWithParentFragment =
+    collectionWithoutParentIdFragment +
     r'''
 fragment CollectionWithParent on Collection {
   __typename

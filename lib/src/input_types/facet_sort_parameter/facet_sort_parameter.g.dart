@@ -6,8 +6,8 @@ part of 'facet_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetSortParameterImpl _$$FacetSortParameterImplFromJson(Map json) =>
-    _$FacetSortParameterImpl(
+_FacetSortParameter _$FacetSortParameterFromJson(Map json) =>
+    _FacetSortParameter(
       code: $enumDecodeNullable(_$SortOrderEnumMap, json['code']),
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
@@ -15,19 +15,13 @@ _$FacetSortParameterImpl _$$FacetSortParameterImplFromJson(Map json) =>
       updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
     );
 
-Map<String, dynamic> _$$FacetSortParameterImplToJson(
-        _$FacetSortParameterImpl instance) =>
+Map<String, dynamic> _$FacetSortParameterToJson(_FacetSortParameter instance) =>
     <String, dynamic>{
-      if (_$SortOrderEnumMap[instance.code] case final value?) 'code': value,
-      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
-        'createdAt': value,
-      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
-      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
-      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
-        'updatedAt': value,
+      'code': ?_$SortOrderEnumMap[instance.code],
+      'createdAt': ?_$SortOrderEnumMap[instance.createdAt],
+      'id': ?_$SortOrderEnumMap[instance.id],
+      'name': ?_$SortOrderEnumMap[instance.name],
+      'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
     };
 
-const _$SortOrderEnumMap = {
-  SortOrder.asc: 'asc',
-  SortOrder.desc: 'desc',
-};
+const _$SortOrderEnumMap = {SortOrder.asc: 'asc', SortOrder.desc: 'desc'};

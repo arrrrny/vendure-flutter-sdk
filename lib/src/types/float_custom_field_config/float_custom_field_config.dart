@@ -6,7 +6,7 @@ part 'float_custom_field_config.freezed.dart';
 part 'float_custom_field_config.g.dart';
 
 @freezed
-class FloatCustomFieldConfig with _$FloatCustomFieldConfig {
+abstract class FloatCustomFieldConfig with _$FloatCustomFieldConfig {
   const FloatCustomFieldConfig._();
 
   const factory FloatCustomFieldConfig({

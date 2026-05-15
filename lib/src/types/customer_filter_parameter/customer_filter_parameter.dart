@@ -7,7 +7,7 @@ part 'customer_filter_parameter.freezed.dart';
 part 'customer_filter_parameter.g.dart';
 
 @unfreezed
-class CustomerFilterParameter with _$CustomerFilterParameter {
+abstract class CustomerFilterParameter with _$CustomerFilterParameter {
   const CustomerFilterParameter._();
 
   factory CustomerFilterParameter({

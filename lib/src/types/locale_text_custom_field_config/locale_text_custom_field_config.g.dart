@@ -6,17 +6,20 @@ part of 'locale_text_custom_field_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
-        Map json) =>
-    _$LocaleTextCustomFieldConfigImpl(
+_LocaleTextCustomFieldConfig _$LocaleTextCustomFieldConfigFromJson(Map json) =>
+    _LocaleTextCustomFieldConfig(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) =>
-              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) =>
+                LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) =>
-              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) =>
+                LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       list: json['list'] as bool,
       name: json['name'] as String,
@@ -26,32 +29,25 @@ _$LocaleTextCustomFieldConfigImpl _$$LocaleTextCustomFieldConfigImplFromJson(
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       type: json['type'] as String,
-      ui: (json['ui'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
+      ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
-Map<String, dynamic> _$$LocaleTextCustomFieldConfigImplToJson(
-        _$LocaleTextCustomFieldConfigImpl instance) =>
-    <String, dynamic>{
-      if (instance.description?.map((e) => e.toJson()).toList()
-          case final value?)
-        'description': value,
-      if (instance.internal case final value?) 'internal': value,
-      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
-        'label': value,
-      'list': instance.list,
-      'name': instance.name,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.readonly case final value?) 'readonly': value,
-      if (instance.requiresPermission
-              ?.map((e) => _$PermissionEnumMap[e]!)
-              .toList()
-          case final value?)
-        'requiresPermission': value,
-      'type': instance.type,
-      if (instance.ui case final value?) 'ui': value,
-    };
+Map<String, dynamic> _$LocaleTextCustomFieldConfigToJson(
+  _LocaleTextCustomFieldConfig instance,
+) => <String, dynamic>{
+  'description': ?instance.description?.map((e) => e.toJson()).toList(),
+  'internal': ?instance.internal,
+  'label': ?instance.label?.map((e) => e.toJson()).toList(),
+  'list': instance.list,
+  'name': instance.name,
+  'nullable': ?instance.nullable,
+  'readonly': ?instance.readonly,
+  'requiresPermission': ?instance.requiresPermission
+      ?.map((e) => _$PermissionEnumMap[e]!)
+      .toList(),
+  'type': instance.type,
+  'ui': ?instance.ui,
+};
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

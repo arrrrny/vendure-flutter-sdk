@@ -3,12 +3,11 @@ part 'search_reindex_response.freezed.dart';
 part 'search_reindex_response.g.dart';
 
 @freezed
-class SearchReindexResponse with _$SearchReindexResponse {
+abstract class SearchReindexResponse with _$SearchReindexResponse {
   const SearchReindexResponse._();
 
-  const factory SearchReindexResponse({
-    required bool success,
-  }) = _SearchReindexResponse;
+  const factory SearchReindexResponse({required bool success}) =
+      _SearchReindexResponse;
 
   factory SearchReindexResponse.fromJson(Map<String, dynamic> json) =>
       _$SearchReindexResponseFromJson(json);

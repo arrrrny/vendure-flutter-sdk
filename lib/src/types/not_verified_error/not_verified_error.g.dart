@@ -6,14 +6,12 @@ part of 'not_verified_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
-    _$NotVerifiedErrorImpl(
-      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String,
-    );
+_NotVerifiedError _$NotVerifiedErrorFromJson(Map json) => _NotVerifiedError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$NotVerifiedErrorImplToJson(
-        _$NotVerifiedErrorImpl instance) =>
+Map<String, dynamic> _$NotVerifiedErrorToJson(_NotVerifiedError instance) =>
     <String, dynamic>{
       'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
       'message': instance.message,

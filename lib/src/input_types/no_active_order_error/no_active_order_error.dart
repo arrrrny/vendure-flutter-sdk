@@ -4,18 +4,12 @@ import '../error_code/error_code.dart';
 part 'no_active_order_error.freezed.dart';
 part 'no_active_order_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class NoActiveOrderError with _$NoActiveOrderError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class NoActiveOrderError with _$NoActiveOrderError {
   const NoActiveOrderError._();
 
-  const factory NoActiveOrderError({
-    ErrorCode? errorCode,
-    String? message,
-  }) = _NoActiveOrderError;
+  const factory NoActiveOrderError({ErrorCode? errorCode, String? message}) =
+      _NoActiveOrderError;
 
   factory NoActiveOrderError.fromJson(Map<String, dynamic> json) =>
       _$NoActiveOrderErrorFromJson(json);

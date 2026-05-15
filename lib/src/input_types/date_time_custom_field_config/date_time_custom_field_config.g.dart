@@ -6,19 +6,22 @@ part of 'date_time_custom_field_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DateTimeCustomFieldConfigImpl _$$DateTimeCustomFieldConfigImplFromJson(
-        Map json) =>
-    _$DateTimeCustomFieldConfigImpl(
+_DateTimeCustomFieldConfig _$DateTimeCustomFieldConfigFromJson(Map json) =>
+    _DateTimeCustomFieldConfig(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       list: json['list'] as bool?,
       max: json['max'] as String?,
@@ -31,35 +34,28 @@ _$DateTimeCustomFieldConfigImpl _$$DateTimeCustomFieldConfigImplFromJson(
           .toList(),
       step: (json['step'] as num?)?.toInt(),
       type: json['type'] as String?,
-      ui: (json['ui'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
+      ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
-Map<String, dynamic> _$$DateTimeCustomFieldConfigImplToJson(
-        _$DateTimeCustomFieldConfigImpl instance) =>
-    <String, dynamic>{
-      if (instance.description?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'description': value,
-      if (instance.internal case final value?) 'internal': value,
-      if (instance.label?.map((e) => e?.toJson()).toList() case final value?)
-        'label': value,
-      if (instance.list case final value?) 'list': value,
-      if (instance.max case final value?) 'max': value,
-      if (instance.min case final value?) 'min': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.readonly case final value?) 'readonly': value,
-      if (instance.requiresPermission
-              ?.map((e) => _$PermissionEnumMap[e])
-              .toList()
-          case final value?)
-        'requiresPermission': value,
-      if (instance.step case final value?) 'step': value,
-      if (instance.type case final value?) 'type': value,
-      if (instance.ui case final value?) 'ui': value,
-    };
+Map<String, dynamic> _$DateTimeCustomFieldConfigToJson(
+  _DateTimeCustomFieldConfig instance,
+) => <String, dynamic>{
+  'description': ?instance.description?.map((e) => e?.toJson()).toList(),
+  'internal': ?instance.internal,
+  'label': ?instance.label?.map((e) => e?.toJson()).toList(),
+  'list': ?instance.list,
+  'max': ?instance.max,
+  'min': ?instance.min,
+  'name': ?instance.name,
+  'nullable': ?instance.nullable,
+  'readonly': ?instance.readonly,
+  'requiresPermission': ?instance.requiresPermission
+      ?.map((e) => _$PermissionEnumMap[e])
+      .toList(),
+  'step': ?instance.step,
+  'type': ?instance.type,
+  'ui': ?instance.ui,
+};
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

@@ -5,7 +5,7 @@ part 'deletion_response.freezed.dart';
 part 'deletion_response.g.dart';
 
 @freezed
-class DeletionResponse with _$DeletionResponse {
+abstract class DeletionResponse with _$DeletionResponse {
   const DeletionResponse._();
 
   const factory DeletionResponse({

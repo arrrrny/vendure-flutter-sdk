@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,317 +9,311 @@ part of 'shipping_line.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ShippingLine _$ShippingLineFromJson(Map<String, dynamic> json) {
-  return _ShippingLine.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ShippingLine {
-  double get discountedPrice => throw _privateConstructorUsedError;
-  double get discountedPriceWithTax => throw _privateConstructorUsedError;
-  List<Discount> get discounts => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  double get price => throw _privateConstructorUsedError;
-  double get priceWithTax => throw _privateConstructorUsedError;
-  ShippingMethod get shippingMethod => throw _privateConstructorUsedError;
+
+ double get discountedPrice; double get discountedPriceWithTax; List<Discount> get discounts; String get id; double get price; double get priceWithTax; ShippingMethod get shippingMethod;
+/// Create a copy of ShippingLine
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ShippingLineCopyWith<ShippingLine> get copyWith => _$ShippingLineCopyWithImpl<ShippingLine>(this as ShippingLine, _$identity);
 
   /// Serializes this ShippingLine to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ShippingLine
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ShippingLineCopyWith<ShippingLine> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ShippingLine&&(identical(other.discountedPrice, discountedPrice) || other.discountedPrice == discountedPrice)&&(identical(other.discountedPriceWithTax, discountedPriceWithTax) || other.discountedPriceWithTax == discountedPriceWithTax)&&const DeepCollectionEquality().equals(other.discounts, discounts)&&(identical(other.id, id) || other.id == id)&&(identical(other.price, price) || other.price == price)&&(identical(other.priceWithTax, priceWithTax) || other.priceWithTax == priceWithTax)&&(identical(other.shippingMethod, shippingMethod) || other.shippingMethod == shippingMethod));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,discountedPrice,discountedPriceWithTax,const DeepCollectionEquality().hash(discounts),id,price,priceWithTax,shippingMethod);
+
+@override
+String toString() {
+  return 'ShippingLine(discountedPrice: $discountedPrice, discountedPriceWithTax: $discountedPriceWithTax, discounts: $discounts, id: $id, price: $price, priceWithTax: $priceWithTax, shippingMethod: $shippingMethod)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ShippingLineCopyWith<$Res> {
-  factory $ShippingLineCopyWith(
-          ShippingLine value, $Res Function(ShippingLine) then) =
-      _$ShippingLineCopyWithImpl<$Res, ShippingLine>;
-  @useResult
-  $Res call(
-      {double discountedPrice,
-      double discountedPriceWithTax,
-      List<Discount> discounts,
-      String id,
-      double price,
-      double priceWithTax,
-      ShippingMethod shippingMethod});
+abstract mixin class $ShippingLineCopyWith<$Res>  {
+  factory $ShippingLineCopyWith(ShippingLine value, $Res Function(ShippingLine) _then) = _$ShippingLineCopyWithImpl;
+@useResult
+$Res call({
+ double discountedPrice, double discountedPriceWithTax, List<Discount> discounts, String id, double price, double priceWithTax, ShippingMethod shippingMethod
+});
 
-  $ShippingMethodCopyWith<$Res> get shippingMethod;
+
+$ShippingMethodCopyWith<$Res> get shippingMethod;
+
 }
-
 /// @nodoc
-class _$ShippingLineCopyWithImpl<$Res, $Val extends ShippingLine>
+class _$ShippingLineCopyWithImpl<$Res>
     implements $ShippingLineCopyWith<$Res> {
-  _$ShippingLineCopyWithImpl(this._value, this._then);
+  _$ShippingLineCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ShippingLine _self;
+  final $Res Function(ShippingLine) _then;
 
-  /// Create a copy of ShippingLine
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? discountedPrice = null,
-    Object? discountedPriceWithTax = null,
-    Object? discounts = null,
-    Object? id = null,
-    Object? price = null,
-    Object? priceWithTax = null,
-    Object? shippingMethod = null,
-  }) {
-    return _then(_value.copyWith(
-      discountedPrice: null == discountedPrice
-          ? _value.discountedPrice
-          : discountedPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      discountedPriceWithTax: null == discountedPriceWithTax
-          ? _value.discountedPriceWithTax
-          : discountedPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double,
-      discounts: null == discounts
-          ? _value.discounts
-          : discounts // ignore: cast_nullable_to_non_nullable
-              as List<Discount>,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      priceWithTax: null == priceWithTax
-          ? _value.priceWithTax
-          : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double,
-      shippingMethod: null == shippingMethod
-          ? _value.shippingMethod
-          : shippingMethod // ignore: cast_nullable_to_non_nullable
-              as ShippingMethod,
-    ) as $Val);
-  }
-
-  /// Create a copy of ShippingLine
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ShippingMethodCopyWith<$Res> get shippingMethod {
-    return $ShippingMethodCopyWith<$Res>(_value.shippingMethod, (value) {
-      return _then(_value.copyWith(shippingMethod: value) as $Val);
-    });
-  }
+/// Create a copy of ShippingLine
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? discountedPrice = null,Object? discountedPriceWithTax = null,Object? discounts = null,Object? id = null,Object? price = null,Object? priceWithTax = null,Object? shippingMethod = null,}) {
+  return _then(_self.copyWith(
+discountedPrice: null == discountedPrice ? _self.discountedPrice : discountedPrice // ignore: cast_nullable_to_non_nullable
+as double,discountedPriceWithTax: null == discountedPriceWithTax ? _self.discountedPriceWithTax : discountedPriceWithTax // ignore: cast_nullable_to_non_nullable
+as double,discounts: null == discounts ? _self.discounts : discounts // ignore: cast_nullable_to_non_nullable
+as List<Discount>,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double,priceWithTax: null == priceWithTax ? _self.priceWithTax : priceWithTax // ignore: cast_nullable_to_non_nullable
+as double,shippingMethod: null == shippingMethod ? _self.shippingMethod : shippingMethod // ignore: cast_nullable_to_non_nullable
+as ShippingMethod,
+  ));
+}
+/// Create a copy of ShippingLine
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ShippingMethodCopyWith<$Res> get shippingMethod {
+  
+  return $ShippingMethodCopyWith<$Res>(_self.shippingMethod, (value) {
+    return _then(_self.copyWith(shippingMethod: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$ShippingLineImplCopyWith<$Res>
-    implements $ShippingLineCopyWith<$Res> {
-  factory _$$ShippingLineImplCopyWith(
-          _$ShippingLineImpl value, $Res Function(_$ShippingLineImpl) then) =
-      __$$ShippingLineImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {double discountedPrice,
-      double discountedPriceWithTax,
-      List<Discount> discounts,
-      String id,
-      double price,
-      double priceWithTax,
-      ShippingMethod shippingMethod});
 
-  @override
-  $ShippingMethodCopyWith<$Res> get shippingMethod;
+/// Adds pattern-matching-related methods to [ShippingLine].
+extension ShippingLinePatterns on ShippingLine {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ShippingLine value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ShippingLine() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ShippingLine value)  $default,){
+final _that = this;
+switch (_that) {
+case _ShippingLine():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ShippingLine value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ShippingLine() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double discountedPrice,  double discountedPriceWithTax,  List<Discount> discounts,  String id,  double price,  double priceWithTax,  ShippingMethod shippingMethod)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ShippingLine() when $default != null:
+return $default(_that.discountedPrice,_that.discountedPriceWithTax,_that.discounts,_that.id,_that.price,_that.priceWithTax,_that.shippingMethod);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double discountedPrice,  double discountedPriceWithTax,  List<Discount> discounts,  String id,  double price,  double priceWithTax,  ShippingMethod shippingMethod)  $default,) {final _that = this;
+switch (_that) {
+case _ShippingLine():
+return $default(_that.discountedPrice,_that.discountedPriceWithTax,_that.discounts,_that.id,_that.price,_that.priceWithTax,_that.shippingMethod);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double discountedPrice,  double discountedPriceWithTax,  List<Discount> discounts,  String id,  double price,  double priceWithTax,  ShippingMethod shippingMethod)?  $default,) {final _that = this;
+switch (_that) {
+case _ShippingLine() when $default != null:
+return $default(_that.discountedPrice,_that.discountedPriceWithTax,_that.discounts,_that.id,_that.price,_that.priceWithTax,_that.shippingMethod);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$ShippingLineImplCopyWithImpl<$Res>
-    extends _$ShippingLineCopyWithImpl<$Res, _$ShippingLineImpl>
-    implements _$$ShippingLineImplCopyWith<$Res> {
-  __$$ShippingLineImplCopyWithImpl(
-      _$ShippingLineImpl _value, $Res Function(_$ShippingLineImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ShippingLine
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? discountedPrice = null,
-    Object? discountedPriceWithTax = null,
-    Object? discounts = null,
-    Object? id = null,
-    Object? price = null,
-    Object? priceWithTax = null,
-    Object? shippingMethod = null,
-  }) {
-    return _then(_$ShippingLineImpl(
-      discountedPrice: null == discountedPrice
-          ? _value.discountedPrice
-          : discountedPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      discountedPriceWithTax: null == discountedPriceWithTax
-          ? _value.discountedPriceWithTax
-          : discountedPriceWithTax // ignore: cast_nullable_to_non_nullable
-              as double,
-      discounts: null == discounts
-          ? _value._discounts
-          : discounts // ignore: cast_nullable_to_non_nullable
-              as List<Discount>,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      priceWithTax: null == priceWithTax
-          ? _value.priceWithTax
-          : priceWithTax // ignore: cast_nullable_to_non_nullable
-              as double,
-      shippingMethod: null == shippingMethod
-          ? _value.shippingMethod
-          : shippingMethod // ignore: cast_nullable_to_non_nullable
-              as ShippingMethod,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ShippingLineImpl extends _ShippingLine {
-  const _$ShippingLineImpl(
-      {required this.discountedPrice,
-      required this.discountedPriceWithTax,
-      required final List<Discount> discounts,
-      required this.id,
-      required this.price,
-      required this.priceWithTax,
-      required this.shippingMethod})
-      : _discounts = discounts,
-        super._();
 
-  factory _$ShippingLineImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ShippingLineImplFromJson(json);
+class _ShippingLine extends ShippingLine {
+  const _ShippingLine({required this.discountedPrice, required this.discountedPriceWithTax, required final  List<Discount> discounts, required this.id, required this.price, required this.priceWithTax, required this.shippingMethod}): _discounts = discounts,super._();
+  factory _ShippingLine.fromJson(Map<String, dynamic> json) => _$ShippingLineFromJson(json);
 
-  @override
-  final double discountedPrice;
-  @override
-  final double discountedPriceWithTax;
-  final List<Discount> _discounts;
-  @override
-  List<Discount> get discounts {
-    if (_discounts is EqualUnmodifiableListView) return _discounts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_discounts);
-  }
-
-  @override
-  final String id;
-  @override
-  final double price;
-  @override
-  final double priceWithTax;
-  @override
-  final ShippingMethod shippingMethod;
-
-  @override
-  String toString() {
-    return 'ShippingLine(discountedPrice: $discountedPrice, discountedPriceWithTax: $discountedPriceWithTax, discounts: $discounts, id: $id, price: $price, priceWithTax: $priceWithTax, shippingMethod: $shippingMethod)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShippingLineImpl &&
-            (identical(other.discountedPrice, discountedPrice) ||
-                other.discountedPrice == discountedPrice) &&
-            (identical(other.discountedPriceWithTax, discountedPriceWithTax) ||
-                other.discountedPriceWithTax == discountedPriceWithTax) &&
-            const DeepCollectionEquality()
-                .equals(other._discounts, _discounts) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.priceWithTax, priceWithTax) ||
-                other.priceWithTax == priceWithTax) &&
-            (identical(other.shippingMethod, shippingMethod) ||
-                other.shippingMethod == shippingMethod));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      discountedPrice,
-      discountedPriceWithTax,
-      const DeepCollectionEquality().hash(_discounts),
-      id,
-      price,
-      priceWithTax,
-      shippingMethod);
-
-  /// Create a copy of ShippingLine
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShippingLineImplCopyWith<_$ShippingLineImpl> get copyWith =>
-      __$$ShippingLineImplCopyWithImpl<_$ShippingLineImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ShippingLineImplToJson(
-      this,
-    );
-  }
+@override final  double discountedPrice;
+@override final  double discountedPriceWithTax;
+ final  List<Discount> _discounts;
+@override List<Discount> get discounts {
+  if (_discounts is EqualUnmodifiableListView) return _discounts;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_discounts);
 }
 
-abstract class _ShippingLine extends ShippingLine {
-  const factory _ShippingLine(
-      {required final double discountedPrice,
-      required final double discountedPriceWithTax,
-      required final List<Discount> discounts,
-      required final String id,
-      required final double price,
-      required final double priceWithTax,
-      required final ShippingMethod shippingMethod}) = _$ShippingLineImpl;
-  const _ShippingLine._() : super._();
+@override final  String id;
+@override final  double price;
+@override final  double priceWithTax;
+@override final  ShippingMethod shippingMethod;
 
-  factory _ShippingLine.fromJson(Map<String, dynamic> json) =
-      _$ShippingLineImpl.fromJson;
+/// Create a copy of ShippingLine
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ShippingLineCopyWith<_ShippingLine> get copyWith => __$ShippingLineCopyWithImpl<_ShippingLine>(this, _$identity);
 
-  @override
-  double get discountedPrice;
-  @override
-  double get discountedPriceWithTax;
-  @override
-  List<Discount> get discounts;
-  @override
-  String get id;
-  @override
-  double get price;
-  @override
-  double get priceWithTax;
-  @override
-  ShippingMethod get shippingMethod;
-
-  /// Create a copy of ShippingLine
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ShippingLineImplCopyWith<_$ShippingLineImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$ShippingLineToJson(this, );
 }
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ShippingLine&&(identical(other.discountedPrice, discountedPrice) || other.discountedPrice == discountedPrice)&&(identical(other.discountedPriceWithTax, discountedPriceWithTax) || other.discountedPriceWithTax == discountedPriceWithTax)&&const DeepCollectionEquality().equals(other._discounts, _discounts)&&(identical(other.id, id) || other.id == id)&&(identical(other.price, price) || other.price == price)&&(identical(other.priceWithTax, priceWithTax) || other.priceWithTax == priceWithTax)&&(identical(other.shippingMethod, shippingMethod) || other.shippingMethod == shippingMethod));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,discountedPrice,discountedPriceWithTax,const DeepCollectionEquality().hash(_discounts),id,price,priceWithTax,shippingMethod);
+
+@override
+String toString() {
+  return 'ShippingLine(discountedPrice: $discountedPrice, discountedPriceWithTax: $discountedPriceWithTax, discounts: $discounts, id: $id, price: $price, priceWithTax: $priceWithTax, shippingMethod: $shippingMethod)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ShippingLineCopyWith<$Res> implements $ShippingLineCopyWith<$Res> {
+  factory _$ShippingLineCopyWith(_ShippingLine value, $Res Function(_ShippingLine) _then) = __$ShippingLineCopyWithImpl;
+@override @useResult
+$Res call({
+ double discountedPrice, double discountedPriceWithTax, List<Discount> discounts, String id, double price, double priceWithTax, ShippingMethod shippingMethod
+});
+
+
+@override $ShippingMethodCopyWith<$Res> get shippingMethod;
+
+}
+/// @nodoc
+class __$ShippingLineCopyWithImpl<$Res>
+    implements _$ShippingLineCopyWith<$Res> {
+  __$ShippingLineCopyWithImpl(this._self, this._then);
+
+  final _ShippingLine _self;
+  final $Res Function(_ShippingLine) _then;
+
+/// Create a copy of ShippingLine
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? discountedPrice = null,Object? discountedPriceWithTax = null,Object? discounts = null,Object? id = null,Object? price = null,Object? priceWithTax = null,Object? shippingMethod = null,}) {
+  return _then(_ShippingLine(
+discountedPrice: null == discountedPrice ? _self.discountedPrice : discountedPrice // ignore: cast_nullable_to_non_nullable
+as double,discountedPriceWithTax: null == discountedPriceWithTax ? _self.discountedPriceWithTax : discountedPriceWithTax // ignore: cast_nullable_to_non_nullable
+as double,discounts: null == discounts ? _self._discounts : discounts // ignore: cast_nullable_to_non_nullable
+as List<Discount>,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double,priceWithTax: null == priceWithTax ? _self.priceWithTax : priceWithTax // ignore: cast_nullable_to_non_nullable
+as double,shippingMethod: null == shippingMethod ? _self.shippingMethod : shippingMethod // ignore: cast_nullable_to_non_nullable
+as ShippingMethod,
+  ));
+}
+
+/// Create a copy of ShippingLine
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ShippingMethodCopyWith<$Res> get shippingMethod {
+  
+  return $ShippingMethodCopyWith<$Res>(_self.shippingMethod, (value) {
+    return _then(_self.copyWith(shippingMethod: value));
+  });
+}
+}
+
+// dart format on

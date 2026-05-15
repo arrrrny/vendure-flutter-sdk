@@ -6,8 +6,8 @@ part of 'register_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(Map json) =>
-    _$RegisterCustomerInputImpl(
+_RegisterCustomerInput _$RegisterCustomerInputFromJson(Map json) =>
+    _RegisterCustomerInput(
       emailAddress: json['emailAddress'] as String,
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
@@ -16,13 +16,13 @@ _$RegisterCustomerInputImpl _$$RegisterCustomerInputImplFromJson(Map json) =>
       title: json['title'] as String?,
     );
 
-Map<String, dynamic> _$$RegisterCustomerInputImplToJson(
-        _$RegisterCustomerInputImpl instance) =>
-    <String, dynamic>{
-      'emailAddress': instance.emailAddress,
-      if (instance.firstName case final value?) 'firstName': value,
-      if (instance.lastName case final value?) 'lastName': value,
-      if (instance.password case final value?) 'password': value,
-      if (instance.phoneNumber case final value?) 'phoneNumber': value,
-      if (instance.title case final value?) 'title': value,
-    };
+Map<String, dynamic> _$RegisterCustomerInputToJson(
+  _RegisterCustomerInput instance,
+) => <String, dynamic>{
+  'emailAddress': instance.emailAddress,
+  'firstName': ?instance.firstName,
+  'lastName': ?instance.lastName,
+  'password': ?instance.password,
+  'phoneNumber': ?instance.phoneNumber,
+  'title': ?instance.title,
+};

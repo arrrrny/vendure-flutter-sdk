@@ -17,7 +17,8 @@ class TokenManager {
       String? token = await _fetchToken(params);
       if (token == null) {
         throw Exception(
-            'TokenFetcher returned null. Failed to refresh token. Params: $params');
+          'TokenFetcher returned null. Failed to refresh token. Params: $params',
+        );
       }
       setToken(token);
     } catch (e) {
@@ -29,9 +30,9 @@ class TokenManager {
     TokenFetcher? fetchToken,
     Map<String, dynamic>? params,
     Duration sessionDuration = const Duration(days: 365),
-  })  : _fetchToken = fetchToken,
-        _params = params,
-        _sessionDuration = sessionDuration;
+  }) : _fetchToken = fetchToken,
+       _params = params,
+       _sessionDuration = sessionDuration;
 
   void setToken(String token) {
     _token = token;

@@ -6,12 +6,10 @@ import '../paginated_list.dart';
 part 'collection_list.freezed.dart';
 part 'collection_list.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CollectionList with _$CollectionList implements PaginatedList<Collection> {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CollectionList
+    with _$CollectionList
+    implements PaginatedList<Collection> {
   const CollectionList._();
 
   const factory CollectionList({

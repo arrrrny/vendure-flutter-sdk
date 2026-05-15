@@ -5,7 +5,7 @@ part 'negative_quantity_error.freezed.dart';
 part 'negative_quantity_error.g.dart';
 
 @freezed
-class NegativeQuantityError with _$NegativeQuantityError {
+abstract class NegativeQuantityError with _$NegativeQuantityError {
   const NegativeQuantityError._();
 
   const factory NegativeQuantityError({

@@ -6,61 +6,60 @@ part of 'shipping_method.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShippingMethodImpl _$$ShippingMethodImplFromJson(Map json) =>
-    _$ShippingMethodImpl(
-      calculator: json['calculator'] == null
-          ? null
-          : ConfigurableOperation.fromJson(
-              Map<String, dynamic>.from(json['calculator'] as Map)),
-      checker: json['checker'] == null
-          ? null
-          : ConfigurableOperation.fromJson(
-              Map<String, dynamic>.from(json['checker'] as Map)),
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String?,
-      fulfillmentHandlerCode: json['fulfillmentHandlerCode'] as String?,
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ShippingMethodTranslation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_ShippingMethod _$ShippingMethodFromJson(Map json) => _ShippingMethod(
+  calculator: json['calculator'] == null
+      ? null
+      : ConfigurableOperation.fromJson(
+          Map<String, dynamic>.from(json['calculator'] as Map),
+        ),
+  checker: json['checker'] == null
+      ? null
+      : ConfigurableOperation.fromJson(
+          Map<String, dynamic>.from(json['checker'] as Map),
+        ),
+  code: json['code'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  description: json['description'] as String?,
+  fulfillmentHandlerCode: json['fulfillmentHandlerCode'] as String?,
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ShippingMethodTranslation.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$ShippingMethodImplToJson(
-        _$ShippingMethodImpl instance) =>
+Map<String, dynamic> _$ShippingMethodToJson(_ShippingMethod instance) =>
     <String, dynamic>{
-      if (instance.calculator?.toJson() case final value?) 'calculator': value,
-      if (instance.checker?.toJson() case final value?) 'checker': value,
-      if (instance.code case final value?) 'code': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.fulfillmentHandlerCode case final value?)
-        'fulfillmentHandlerCode': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'calculator': ?instance.calculator?.toJson(),
+      'checker': ?instance.checker?.toJson(),
+      'code': ?instance.code,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'description': ?instance.description,
+      'fulfillmentHandlerCode': ?instance.fulfillmentHandlerCode,
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {

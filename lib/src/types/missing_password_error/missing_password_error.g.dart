@@ -6,18 +6,18 @@ part of 'missing_password_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MissingPasswordErrorImpl _$$MissingPasswordErrorImplFromJson(Map json) =>
-    _$MissingPasswordErrorImpl(
+_MissingPasswordError _$MissingPasswordErrorFromJson(Map json) =>
+    _MissingPasswordError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$MissingPasswordErrorImplToJson(
-        _$MissingPasswordErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$MissingPasswordErrorToJson(
+  _MissingPasswordError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

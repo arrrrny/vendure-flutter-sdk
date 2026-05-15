@@ -5,7 +5,7 @@ part 'current_user.freezed.dart';
 part 'current_user.g.dart';
 
 @freezed
-class CurrentUser with _$CurrentUser {
+abstract class CurrentUser with _$CurrentUser {
   const CurrentUser._();
 
   const factory CurrentUser({

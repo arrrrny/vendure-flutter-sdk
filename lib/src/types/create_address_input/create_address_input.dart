@@ -3,7 +3,7 @@ part 'create_address_input.freezed.dart';
 part 'create_address_input.g.dart';
 
 @unfreezed
-class CreateAddressInput with _$CreateAddressInput {
+abstract class CreateAddressInput with _$CreateAddressInput {
   const CreateAddressInput._();
 
   factory CreateAddressInput({

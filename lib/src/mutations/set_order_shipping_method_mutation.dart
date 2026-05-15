@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String setOrderShippingMethodMutation = orderFragment +
+const String setOrderShippingMethodMutation =
+    orderFragment +
     r'''
 mutation SetOrderShippingMethod($shippingMethodId:[ID!]!) {
     setOrderShippingMethod(shippingMethodId: $shippingMethodId) {

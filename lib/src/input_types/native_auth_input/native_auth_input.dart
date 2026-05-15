@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'native_auth_input.freezed.dart';
 part 'native_auth_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class NativeAuthInput with _$NativeAuthInput {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class NativeAuthInput with _$NativeAuthInput {
   const NativeAuthInput._();
 
   const factory NativeAuthInput({

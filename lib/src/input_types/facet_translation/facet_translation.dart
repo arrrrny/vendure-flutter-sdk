@@ -4,12 +4,8 @@ import '../language_code/language_code.dart';
 part 'facet_translation.freezed.dart';
 part 'facet_translation.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FacetTranslation with _$FacetTranslation {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FacetTranslation with _$FacetTranslation {
   const FacetTranslation._();
 
   const factory FacetTranslation({

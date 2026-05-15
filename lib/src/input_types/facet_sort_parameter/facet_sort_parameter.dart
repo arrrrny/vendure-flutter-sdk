@@ -4,12 +4,8 @@ import '../sort_order/sort_order.dart';
 part 'facet_sort_parameter.freezed.dart';
 part 'facet_sort_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FacetSortParameter with _$FacetSortParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FacetSortParameter with _$FacetSortParameter {
   const FacetSortParameter._();
 
   const factory FacetSortParameter({

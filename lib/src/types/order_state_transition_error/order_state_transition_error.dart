@@ -5,7 +5,7 @@ part 'order_state_transition_error.freezed.dart';
 part 'order_state_transition_error.g.dart';
 
 @freezed
-class OrderStateTransitionError with _$OrderStateTransitionError {
+abstract class OrderStateTransitionError with _$OrderStateTransitionError {
   const OrderStateTransitionError._();
 
   const factory OrderStateTransitionError({

@@ -6,22 +6,22 @@ part of 'apply_coupon_code_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CouponCodeExpiredErrorImpl _$$CouponCodeExpiredErrorImplFromJson(Map json) =>
-    _$CouponCodeExpiredErrorImpl(
+CouponCodeExpiredError _$CouponCodeExpiredErrorFromJson(Map json) =>
+    CouponCodeExpiredError(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CouponCodeExpiredErrorImplToJson(
-        _$CouponCodeExpiredErrorImpl instance) =>
-    <String, dynamic>{
-      'couponCode': instance.couponCode,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$CouponCodeExpiredErrorToJson(
+  CouponCodeExpiredError instance,
+) => <String, dynamic>{
+  'couponCode': instance.couponCode,
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'runtimeType': instance.$type,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -58,25 +58,25 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$CouponCodeInvalidErrorImpl _$$CouponCodeInvalidErrorImplFromJson(Map json) =>
-    _$CouponCodeInvalidErrorImpl(
+CouponCodeInvalidError _$CouponCodeInvalidErrorFromJson(Map json) =>
+    CouponCodeInvalidError(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CouponCodeInvalidErrorImplToJson(
-        _$CouponCodeInvalidErrorImpl instance) =>
-    <String, dynamic>{
-      'couponCode': instance.couponCode,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$CouponCodeInvalidErrorToJson(
+  CouponCodeInvalidError instance,
+) => <String, dynamic>{
+  'couponCode': instance.couponCode,
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'runtimeType': instance.$type,
+};
 
-_$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(Map json) =>
-    _$CouponCodeLimitErrorImpl(
+CouponCodeLimitError _$CouponCodeLimitErrorFromJson(Map json) =>
+    CouponCodeLimitError(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       limit: (json['limit'] as num).toInt(),
@@ -84,120 +84,113 @@ _$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(Map json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$CouponCodeLimitErrorImplToJson(
-        _$CouponCodeLimitErrorImpl instance) =>
-    <String, dynamic>{
-      'couponCode': instance.couponCode,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'limit': instance.limit,
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$CouponCodeLimitErrorToJson(
+  CouponCodeLimitError instance,
+) => <String, dynamic>{
+  'couponCode': instance.couponCode,
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'limit': instance.limit,
+  'message': instance.message,
+  'runtimeType': instance.$type,
+};
 
-_$OrderImpl _$$OrderImplFromJson(Map json) => _$OrderImpl(
-      active: json['active'] as bool,
-      billingAddress: json['billingAddress'] == null
-          ? null
-          : OrderAddress.fromJson(
-              Map<String, dynamic>.from(json['billingAddress'] as Map)),
-      code: json['code'] as String,
-      couponCodes: (json['couponCodes'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      discounts: (json['discounts'] as List<dynamic>)
-          .map((e) => Discount.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      fulfillments: (json['fulfillments'] as List<dynamic>?)
-          ?.map(
-              (e) => Fulfillment.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      history: HistoryEntryList.fromJson(
-          Map<String, dynamic>.from(json['history'] as Map)),
-      id: json['id'] as String,
-      lines: (json['lines'] as List<dynamic>)
-          .map((e) => OrderLine.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      orderPlacedAt: json['orderPlacedAt'] == null
-          ? null
-          : DateTime.parse(json['orderPlacedAt'] as String),
-      payments: (json['payments'] as List<dynamic>?)
-          ?.map((e) => Payment.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      promotions: (json['promotions'] as List<dynamic>)
-          .map((e) => Promotion.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      shipping: (json['shipping'] as num).toDouble(),
-      shippingAddress: json['shippingAddress'] == null
-          ? null
-          : OrderAddress.fromJson(
-              Map<String, dynamic>.from(json['shippingAddress'] as Map)),
-      shippingLines: (json['shippingLines'] as List<dynamic>)
-          .map(
-              (e) => ShippingLine.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      shippingWithTax: (json['shippingWithTax'] as num).toDouble(),
-      state: json['state'] as String,
-      subTotal: (json['subTotal'] as num).toDouble(),
-      subTotalWithTax: (json['subTotalWithTax'] as num).toDouble(),
-      surcharges: (json['surcharges'] as List<dynamic>)
-          .map((e) => Surcharge.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      taxSummary: (json['taxSummary'] as List<dynamic>)
-          .map((e) =>
-              OrderTaxSummary.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      total: (json['total'] as num).toDouble(),
-      totalQuantity: (json['totalQuantity'] as num).toInt(),
-      totalWithTax: (json['totalWithTax'] as num).toDouble(),
-      type: $enumDecode(_$OrderTypeEnumMap, json['type']),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      $type: json['runtimeType'] as String?,
-    );
+Order _$OrderFromJson(Map json) => Order(
+  active: json['active'] as bool,
+  billingAddress: json['billingAddress'] == null
+      ? null
+      : OrderAddress.fromJson(
+          Map<String, dynamic>.from(json['billingAddress'] as Map),
+        ),
+  code: json['code'] as String,
+  couponCodes: (json['couponCodes'] as List<dynamic>)
+      .map((e) => e as String)
+      .toList(),
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  discounts: (json['discounts'] as List<dynamic>)
+      .map((e) => Discount.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  fulfillments: (json['fulfillments'] as List<dynamic>?)
+      ?.map((e) => Fulfillment.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  history: HistoryEntryList.fromJson(
+    Map<String, dynamic>.from(json['history'] as Map),
+  ),
+  id: json['id'] as String,
+  lines: (json['lines'] as List<dynamic>)
+      .map((e) => OrderLine.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  orderPlacedAt: json['orderPlacedAt'] == null
+      ? null
+      : DateTime.parse(json['orderPlacedAt'] as String),
+  payments: (json['payments'] as List<dynamic>?)
+      ?.map((e) => Payment.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  promotions: (json['promotions'] as List<dynamic>)
+      .map((e) => Promotion.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  shipping: (json['shipping'] as num).toDouble(),
+  shippingAddress: json['shippingAddress'] == null
+      ? null
+      : OrderAddress.fromJson(
+          Map<String, dynamic>.from(json['shippingAddress'] as Map),
+        ),
+  shippingLines: (json['shippingLines'] as List<dynamic>)
+      .map((e) => ShippingLine.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  shippingWithTax: (json['shippingWithTax'] as num).toDouble(),
+  state: json['state'] as String,
+  subTotal: (json['subTotal'] as num).toDouble(),
+  subTotalWithTax: (json['subTotalWithTax'] as num).toDouble(),
+  surcharges: (json['surcharges'] as List<dynamic>)
+      .map((e) => Surcharge.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  taxSummary: (json['taxSummary'] as List<dynamic>)
+      .map((e) => OrderTaxSummary.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  total: (json['total'] as num).toDouble(),
+  totalQuantity: (json['totalQuantity'] as num).toInt(),
+  totalWithTax: (json['totalWithTax'] as num).toDouble(),
+  type: $enumDecode(_$OrderTypeEnumMap, json['type']),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$OrderImplToJson(_$OrderImpl instance) =>
-    <String, dynamic>{
-      'active': instance.active,
-      if (instance.billingAddress?.toJson() case final value?)
-        'billingAddress': value,
-      'code': instance.code,
-      'couponCodes': instance.couponCodes,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
-      if (instance.customFields case final value?) 'customFields': value,
-      'discounts': instance.discounts.map((e) => e.toJson()).toList(),
-      if (instance.fulfillments?.map((e) => e.toJson()).toList()
-          case final value?)
-        'fulfillments': value,
-      'history': instance.history.toJson(),
-      'id': instance.id,
-      'lines': instance.lines.map((e) => e.toJson()).toList(),
-      if (instance.orderPlacedAt?.toIso8601String() case final value?)
-        'orderPlacedAt': value,
-      if (instance.payments?.map((e) => e.toJson()).toList() case final value?)
-        'payments': value,
-      'promotions': instance.promotions.map((e) => e.toJson()).toList(),
-      'shipping': instance.shipping,
-      if (instance.shippingAddress?.toJson() case final value?)
-        'shippingAddress': value,
-      'shippingLines': instance.shippingLines.map((e) => e.toJson()).toList(),
-      'shippingWithTax': instance.shippingWithTax,
-      'state': instance.state,
-      'subTotal': instance.subTotal,
-      'subTotalWithTax': instance.subTotalWithTax,
-      'surcharges': instance.surcharges.map((e) => e.toJson()).toList(),
-      'taxSummary': instance.taxSummary.map((e) => e.toJson()).toList(),
-      'total': instance.total,
-      'totalQuantity': instance.totalQuantity,
-      'totalWithTax': instance.totalWithTax,
-      'type': _$OrderTypeEnumMap[instance.type]!,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$OrderToJson(Order instance) => <String, dynamic>{
+  'active': instance.active,
+  'billingAddress': ?instance.billingAddress?.toJson(),
+  'code': instance.code,
+  'couponCodes': instance.couponCodes,
+  'createdAt': instance.createdAt.toIso8601String(),
+  'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+  'customFields': ?instance.customFields,
+  'discounts': instance.discounts.map((e) => e.toJson()).toList(),
+  'fulfillments': ?instance.fulfillments?.map((e) => e.toJson()).toList(),
+  'history': instance.history.toJson(),
+  'id': instance.id,
+  'lines': instance.lines.map((e) => e.toJson()).toList(),
+  'orderPlacedAt': ?instance.orderPlacedAt?.toIso8601String(),
+  'payments': ?instance.payments?.map((e) => e.toJson()).toList(),
+  'promotions': instance.promotions.map((e) => e.toJson()).toList(),
+  'shipping': instance.shipping,
+  'shippingAddress': ?instance.shippingAddress?.toJson(),
+  'shippingLines': instance.shippingLines.map((e) => e.toJson()).toList(),
+  'shippingWithTax': instance.shippingWithTax,
+  'state': instance.state,
+  'subTotal': instance.subTotal,
+  'subTotalWithTax': instance.subTotalWithTax,
+  'surcharges': instance.surcharges.map((e) => e.toJson()).toList(),
+  'taxSummary': instance.taxSummary.map((e) => e.toJson()).toList(),
+  'total': instance.total,
+  'totalQuantity': instance.totalQuantity,
+  'totalWithTax': instance.totalWithTax,
+  'type': _$OrderTypeEnumMap[instance.type]!,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+  'runtimeType': instance.$type,
+};
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

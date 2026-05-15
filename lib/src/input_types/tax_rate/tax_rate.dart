@@ -6,12 +6,8 @@ import '../zone/zone.dart';
 part 'tax_rate.freezed.dart';
 part 'tax_rate.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class TaxRate with _$TaxRate {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class TaxRate with _$TaxRate {
   const TaxRate._();
 
   const factory TaxRate({

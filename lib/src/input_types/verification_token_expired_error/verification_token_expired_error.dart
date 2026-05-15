@@ -4,12 +4,9 @@ import '../error_code/error_code.dart';
 part 'verification_token_expired_error.freezed.dart';
 part 'verification_token_expired_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class VerificationTokenExpiredError with _$VerificationTokenExpiredError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class VerificationTokenExpiredError
+    with _$VerificationTokenExpiredError {
   const VerificationTokenExpiredError._();
 
   const factory VerificationTokenExpiredError({

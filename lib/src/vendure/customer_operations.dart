@@ -10,21 +10,23 @@ import 'package:vendure/src/vendure/custom_operations.dart';
 
 import '../types/exports.dart';
 
-typedef ActiveCustomerStreamProvider = Stream<Customer> Function({
-  String? websocketEndpoint,
-  bool convertEnums,
-  bool includeInitialValue,
-});
+typedef ActiveCustomerStreamProvider =
+    Stream<Customer> Function({
+      String? websocketEndpoint,
+      bool convertEnums,
+      bool includeInitialValue,
+    });
 
 class CustomerOperations {
   final Future<GraphQLClient> Function() _client;
   final Map<String, List<dynamic>>? customFieldsConfig;
   final ActiveCustomerStreamProvider? _activeCustomerStreamProvider;
 
-  CustomerOperations(this._client,
-      {this.customFieldsConfig,
-      ActiveCustomerStreamProvider? activeCustomerStreamProvider})
-      : _activeCustomerStreamProvider = activeCustomerStreamProvider;
+  CustomerOperations(
+    this._client, {
+    this.customFieldsConfig,
+    ActiveCustomerStreamProvider? activeCustomerStreamProvider,
+  }) : _activeCustomerStreamProvider = activeCustomerStreamProvider;
 
   Future<Customer?> getActiveCustomer() {
     return CustomOperations(
@@ -117,7 +119,8 @@ class CustomerOperations {
   }) {
     if (_activeCustomerStreamProvider == null) {
       throw Exception(
-          'activeCustomerStream is not available. Ensure Vendure is properly initialized.');
+        'activeCustomerStream is not available. Ensure Vendure is properly initialized.',
+      );
     }
     return _activeCustomerStreamProvider(
       websocketEndpoint: websocketEndpoint,

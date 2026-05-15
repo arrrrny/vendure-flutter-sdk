@@ -4,12 +4,9 @@ import '../error_code/error_code.dart';
 part 'ineligible_payment_method_error.freezed.dart';
 part 'ineligible_payment_method_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class IneligiblePaymentMethodError with _$IneligiblePaymentMethodError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class IneligiblePaymentMethodError
+    with _$IneligiblePaymentMethodError {
   const IneligiblePaymentMethodError._();
 
   const factory IneligiblePaymentMethodError({

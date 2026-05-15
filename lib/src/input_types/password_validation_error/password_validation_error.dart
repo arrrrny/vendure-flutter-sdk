@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'password_validation_error.freezed.dart';
 part 'password_validation_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class PasswordValidationError with _$PasswordValidationError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class PasswordValidationError with _$PasswordValidationError {
   const PasswordValidationError._();
 
   const factory PasswordValidationError({

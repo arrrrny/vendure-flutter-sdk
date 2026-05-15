@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'authentication_method.freezed.dart';
 part 'authentication_method.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class AuthenticationMethod with _$AuthenticationMethod {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class AuthenticationMethod with _$AuthenticationMethod {
   const AuthenticationMethod._();
 
   const factory AuthenticationMethod({

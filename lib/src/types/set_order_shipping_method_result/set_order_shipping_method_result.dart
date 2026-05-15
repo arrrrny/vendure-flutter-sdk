@@ -17,7 +17,7 @@ part 'set_order_shipping_method_result.freezed.dart';
 part 'set_order_shipping_method_result.g.dart';
 
 @freezed
-class SetOrderShippingMethodResult with _$SetOrderShippingMethodResult {
+sealed class SetOrderShippingMethodResult with _$SetOrderShippingMethodResult {
   const SetOrderShippingMethodResult._();
 
   const factory SetOrderShippingMethodResult.ineligibleShippingMethodError({

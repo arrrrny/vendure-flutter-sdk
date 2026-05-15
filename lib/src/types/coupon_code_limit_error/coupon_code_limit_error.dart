@@ -5,7 +5,7 @@ part 'coupon_code_limit_error.freezed.dart';
 part 'coupon_code_limit_error.g.dart';
 
 @freezed
-class CouponCodeLimitError with _$CouponCodeLimitError {
+abstract class CouponCodeLimitError with _$CouponCodeLimitError {
   const CouponCodeLimitError._();
 
   const factory CouponCodeLimitError({

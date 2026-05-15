@@ -5,7 +5,7 @@ part 'shipping_method_list.freezed.dart';
 part 'shipping_method_list.g.dart';
 
 @freezed
-class ShippingMethodList with _$ShippingMethodList {
+abstract class ShippingMethodList with _$ShippingMethodList {
   const ShippingMethodList._();
 
   const factory ShippingMethodList({

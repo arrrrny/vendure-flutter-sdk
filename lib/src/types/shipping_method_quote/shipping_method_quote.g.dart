@@ -6,8 +6,8 @@ part of 'shipping_method_quote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShippingMethodQuoteImpl _$$ShippingMethodQuoteImplFromJson(Map json) =>
-    _$ShippingMethodQuoteImpl(
+_ShippingMethodQuote _$ShippingMethodQuoteFromJson(Map json) =>
+    _ShippingMethodQuote(
       code: json['code'] as String,
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
@@ -22,15 +22,15 @@ _$ShippingMethodQuoteImpl _$$ShippingMethodQuoteImplFromJson(Map json) =>
       priceWithTax: (json['priceWithTax'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$ShippingMethodQuoteImplToJson(
-        _$ShippingMethodQuoteImpl instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      if (instance.customFields case final value?) 'customFields': value,
-      'description': instance.description,
-      'id': instance.id,
-      if (instance.metadata case final value?) 'metadata': value,
-      'name': instance.name,
-      'price': instance.price,
-      'priceWithTax': instance.priceWithTax,
-    };
+Map<String, dynamic> _$ShippingMethodQuoteToJson(
+  _ShippingMethodQuote instance,
+) => <String, dynamic>{
+  'code': instance.code,
+  'customFields': ?instance.customFields,
+  'description': instance.description,
+  'id': instance.id,
+  'metadata': ?instance.metadata,
+  'name': instance.name,
+  'price': instance.price,
+  'priceWithTax': instance.priceWithTax,
+};

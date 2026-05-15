@@ -5,7 +5,7 @@ part 'configurable_operation.freezed.dart';
 part 'configurable_operation.g.dart';
 
 @freezed
-class ConfigurableOperation with _$ConfigurableOperation {
+abstract class ConfigurableOperation with _$ConfigurableOperation {
   const ConfigurableOperation._();
 
   const factory ConfigurableOperation({

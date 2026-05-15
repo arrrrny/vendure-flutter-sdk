@@ -1,7 +1,8 @@
 import 'package:vendure/src/fragments/catalog_fragment.dart';
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
-const String orderFragment = promotionFragment +
+const String orderFragment =
+    promotionFragment +
     paymentFragment +
     fulfillmentFragment +
     shippingLineFragment +
@@ -156,7 +157,8 @@ fragment Promotion on Promotion {
 
 ''';
 
-const String orderLineFragment = assetFragment +
+const String orderLineFragment =
+    assetFragment +
     orderLineProductVariantFragment +
     fulfillmentLineFragment +
     r'''
@@ -224,7 +226,8 @@ fragment HistoryEntry on HistoryEntry {
 
 ''';
 
-const String shippingLineFragment = discountFragment +
+const String shippingLineFragment =
+    discountFragment +
     shippingMethodFragment +
     r'''
 fragment ShippingLine on ShippingLine {
@@ -283,7 +286,8 @@ fragment ShippingMethod on ShippingMethod {
 
 ''';
 
-const String paymentFragment = refundFragment +
+const String paymentFragment =
+    refundFragment +
     r'''
 fragment Payment on Payment {
   __typename

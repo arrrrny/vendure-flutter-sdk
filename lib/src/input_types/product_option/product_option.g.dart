@@ -6,52 +6,52 @@ part of 'product_option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionImpl _$$ProductOptionImplFromJson(Map json) =>
-    _$ProductOptionImpl(
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      group: json['group'] == null
-          ? null
-          : ProductOptionGroup.fromJson(
-              Map<String, dynamic>.from(json['group'] as Map)),
-      groupId: json['groupId'] as String?,
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOptionTranslation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_ProductOption _$ProductOptionFromJson(Map json) => _ProductOption(
+  code: json['code'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  group: json['group'] == null
+      ? null
+      : ProductOptionGroup.fromJson(
+          Map<String, dynamic>.from(json['group'] as Map),
+        ),
+  groupId: json['groupId'] as String?,
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ProductOptionTranslation.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) =>
+Map<String, dynamic> _$ProductOptionToJson(_ProductOption instance) =>
     <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.group?.toJson() case final value?) 'group': value,
-      if (instance.groupId case final value?) 'groupId': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'code': ?instance.code,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'group': ?instance.group?.toJson(),
+      'groupId': ?instance.groupId,
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {

@@ -5,7 +5,7 @@ part 'coupon_code_expired_error.freezed.dart';
 part 'coupon_code_expired_error.g.dart';
 
 @freezed
-class CouponCodeExpiredError with _$CouponCodeExpiredError {
+abstract class CouponCodeExpiredError with _$CouponCodeExpiredError {
   const CouponCodeExpiredError._();
 
   const factory CouponCodeExpiredError({

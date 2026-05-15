@@ -5,7 +5,7 @@ part 'refresh_customer_verification_result.freezed.dart';
 part 'refresh_customer_verification_result.g.dart';
 
 @freezed
-class RefreshCustomerVerificationResult
+sealed class RefreshCustomerVerificationResult
     with _$RefreshCustomerVerificationResult {
   const RefreshCustomerVerificationResult._();
 
@@ -19,6 +19,6 @@ class RefreshCustomerVerificationResult
   }) = Success;
 
   factory RefreshCustomerVerificationResult.fromJson(
-          Map<String, dynamic> json) =>
-      _$RefreshCustomerVerificationResultFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$RefreshCustomerVerificationResultFromJson(json);
 }

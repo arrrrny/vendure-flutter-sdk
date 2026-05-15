@@ -6,12 +6,8 @@ import '../region_translation/region_translation.dart';
 part 'province.freezed.dart';
 part 'province.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Province with _$Province {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Province with _$Province {
   const Province._();
 
   const factory Province({

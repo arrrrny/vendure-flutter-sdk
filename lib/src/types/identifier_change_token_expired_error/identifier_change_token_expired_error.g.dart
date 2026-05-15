@@ -6,19 +6,19 @@ part of 'identifier_change_token_expired_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IdentifierChangeTokenExpiredErrorImpl
-    _$$IdentifierChangeTokenExpiredErrorImplFromJson(Map json) =>
-        _$IdentifierChangeTokenExpiredErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-        );
+_IdentifierChangeTokenExpiredError _$IdentifierChangeTokenExpiredErrorFromJson(
+  Map json,
+) => _IdentifierChangeTokenExpiredError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$IdentifierChangeTokenExpiredErrorImplToJson(
-        _$IdentifierChangeTokenExpiredErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$IdentifierChangeTokenExpiredErrorToJson(
+  _IdentifierChangeTokenExpiredError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

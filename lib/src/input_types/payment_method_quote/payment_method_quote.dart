@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'payment_method_quote.freezed.dart';
 part 'payment_method_quote.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class PaymentMethodQuote with _$PaymentMethodQuote {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class PaymentMethodQuote with _$PaymentMethodQuote {
   const PaymentMethodQuote._();
 
   const factory PaymentMethodQuote({

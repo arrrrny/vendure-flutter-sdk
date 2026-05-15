@@ -6,21 +6,20 @@ part of 'password_validation_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
-        Map json) =>
-    _$PasswordValidationErrorImpl(
+_PasswordValidationError _$PasswordValidationErrorFromJson(Map json) =>
+    _PasswordValidationError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
       validationErrorMessage: json['validationErrorMessage'] as String,
     );
 
-Map<String, dynamic> _$$PasswordValidationErrorImplToJson(
-        _$PasswordValidationErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'validationErrorMessage': instance.validationErrorMessage,
-    };
+Map<String, dynamic> _$PasswordValidationErrorToJson(
+  _PasswordValidationError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'validationErrorMessage': instance.validationErrorMessage,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

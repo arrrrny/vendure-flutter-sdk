@@ -5,7 +5,7 @@ part 'collection_translation.freezed.dart';
 part 'collection_translation.g.dart';
 
 @freezed
-class CollectionTranslation with _$CollectionTranslation {
+abstract class CollectionTranslation with _$CollectionTranslation {
   const CollectionTranslation._();
 
   const factory CollectionTranslation({

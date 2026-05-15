@@ -4,7 +4,7 @@ part 'update_address_input.freezed.dart';
 part 'update_address_input.g.dart';
 
 @unfreezed
-class UpdateAddressInput with _$UpdateAddressInput {
+abstract class UpdateAddressInput with _$UpdateAddressInput {
   const UpdateAddressInput._();
 
   /// Input used to update an Address.

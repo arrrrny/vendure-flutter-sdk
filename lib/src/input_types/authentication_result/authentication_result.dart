@@ -5,12 +5,8 @@ import '../error_code/error_code.dart';
 part 'authentication_result.freezed.dart';
 part 'authentication_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class AuthenticationResult with _$AuthenticationResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class AuthenticationResult with _$AuthenticationResult {
   const AuthenticationResult._();
 
   const factory AuthenticationResult.currentUser({

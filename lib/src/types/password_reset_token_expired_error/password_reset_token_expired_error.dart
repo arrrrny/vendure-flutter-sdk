@@ -5,7 +5,8 @@ part 'password_reset_token_expired_error.freezed.dart';
 part 'password_reset_token_expired_error.g.dart';
 
 @freezed
-class PasswordResetTokenExpiredError with _$PasswordResetTokenExpiredError {
+abstract class PasswordResetTokenExpiredError
+    with _$PasswordResetTokenExpiredError {
   const PasswordResetTokenExpiredError._();
 
   const factory PasswordResetTokenExpiredError({

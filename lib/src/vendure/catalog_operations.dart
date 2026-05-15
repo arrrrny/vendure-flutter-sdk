@@ -12,8 +12,9 @@ class CatalogOperations {
   final Map<String, List<dynamic>>? customFieldsConfig;
   CatalogOperations(this._client, {this.customFieldsConfig});
 
-  Future<CollectionList> getCollections(
-      {CollectionListOptions? options}) async {
+  Future<CollectionList> getCollections({
+    CollectionListOptions? options,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,
@@ -97,8 +98,9 @@ class CatalogOperations {
     );
   }
 
-  Future<Collection> getCollectionWithParentChildren(
-      {required String id}) async {
+  Future<Collection> getCollectionWithParentChildren({
+    required String id,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,
@@ -134,8 +136,9 @@ class CatalogOperations {
     );
   }
 
-  Future<CollectionList> getCollectionListWithParentChildren(
-      {CollectionListOptions? options}) async {
+  Future<CollectionList> getCollectionListWithParentChildren({
+    CollectionListOptions? options,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,

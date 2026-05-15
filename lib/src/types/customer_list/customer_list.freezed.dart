@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,186 +9,278 @@ part of 'customer_list.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CustomerList _$CustomerListFromJson(Map<String, dynamic> json) {
-  return _CustomerList.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CustomerList {
-  List<Customer> get items => throw _privateConstructorUsedError;
-  int get totalItems => throw _privateConstructorUsedError;
+
+ List<Customer> get items; int get totalItems;
+/// Create a copy of CustomerList
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CustomerListCopyWith<CustomerList> get copyWith => _$CustomerListCopyWithImpl<CustomerList>(this as CustomerList, _$identity);
 
   /// Serializes this CustomerList to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CustomerList
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CustomerListCopyWith<CustomerList> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CustomerList&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.totalItems, totalItems) || other.totalItems == totalItems));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(items),totalItems);
+
+@override
+String toString() {
+  return 'CustomerList(items: $items, totalItems: $totalItems)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CustomerListCopyWith<$Res> {
-  factory $CustomerListCopyWith(
-          CustomerList value, $Res Function(CustomerList) then) =
-      _$CustomerListCopyWithImpl<$Res, CustomerList>;
-  @useResult
-  $Res call({List<Customer> items, int totalItems});
-}
+abstract mixin class $CustomerListCopyWith<$Res>  {
+  factory $CustomerListCopyWith(CustomerList value, $Res Function(CustomerList) _then) = _$CustomerListCopyWithImpl;
+@useResult
+$Res call({
+ List<Customer> items, int totalItems
+});
 
+
+
+
+}
 /// @nodoc
-class _$CustomerListCopyWithImpl<$Res, $Val extends CustomerList>
+class _$CustomerListCopyWithImpl<$Res>
     implements $CustomerListCopyWith<$Res> {
-  _$CustomerListCopyWithImpl(this._value, this._then);
+  _$CustomerListCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CustomerList _self;
+  final $Res Function(CustomerList) _then;
 
-  /// Create a copy of CustomerList
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? items = null,
-    Object? totalItems = null,
-  }) {
-    return _then(_value.copyWith(
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Customer>,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of CustomerList
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? items = null,Object? totalItems = null,}) {
+  return _then(_self.copyWith(
+items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<Customer>,totalItems: null == totalItems ? _self.totalItems : totalItems // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$CustomerListImplCopyWith<$Res>
-    implements $CustomerListCopyWith<$Res> {
-  factory _$$CustomerListImplCopyWith(
-          _$CustomerListImpl value, $Res Function(_$CustomerListImpl) then) =
-      __$$CustomerListImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<Customer> items, int totalItems});
 }
 
-/// @nodoc
-class __$$CustomerListImplCopyWithImpl<$Res>
-    extends _$CustomerListCopyWithImpl<$Res, _$CustomerListImpl>
-    implements _$$CustomerListImplCopyWith<$Res> {
-  __$$CustomerListImplCopyWithImpl(
-      _$CustomerListImpl _value, $Res Function(_$CustomerListImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of CustomerList
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? items = null,
-    Object? totalItems = null,
-  }) {
-    return _then(_$CustomerListImpl(
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Customer>,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
+/// Adds pattern-matching-related methods to [CustomerList].
+extension CustomerListPatterns on CustomerList {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CustomerList value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CustomerList() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CustomerList value)  $default,){
+final _that = this;
+switch (_that) {
+case _CustomerList():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CustomerList value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CustomerList() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Customer> items,  int totalItems)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CustomerList() when $default != null:
+return $default(_that.items,_that.totalItems);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Customer> items,  int totalItems)  $default,) {final _that = this;
+switch (_that) {
+case _CustomerList():
+return $default(_that.items,_that.totalItems);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Customer> items,  int totalItems)?  $default,) {final _that = this;
+switch (_that) {
+case _CustomerList() when $default != null:
+return $default(_that.items,_that.totalItems);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerListImpl extends _CustomerList {
-  const _$CustomerListImpl(
-      {required final List<Customer> items, required this.totalItems})
-      : _items = items,
-        super._();
 
-  factory _$CustomerListImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomerListImplFromJson(json);
+class _CustomerList extends CustomerList {
+  const _CustomerList({required final  List<Customer> items, required this.totalItems}): _items = items,super._();
+  factory _CustomerList.fromJson(Map<String, dynamic> json) => _$CustomerListFromJson(json);
 
-  final List<Customer> _items;
-  @override
-  List<Customer> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
-  }
-
-  @override
-  final int totalItems;
-
-  @override
-  String toString() {
-    return 'CustomerList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CustomerListImpl &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
-            (identical(other.totalItems, totalItems) ||
-                other.totalItems == totalItems));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
-
-  /// Create a copy of CustomerList
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CustomerListImplCopyWith<_$CustomerListImpl> get copyWith =>
-      __$$CustomerListImplCopyWithImpl<_$CustomerListImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CustomerListImplToJson(
-      this,
-    );
-  }
+ final  List<Customer> _items;
+@override List<Customer> get items {
+  if (_items is EqualUnmodifiableListView) return _items;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_items);
 }
 
-abstract class _CustomerList extends CustomerList {
-  const factory _CustomerList(
-      {required final List<Customer> items,
-      required final int totalItems}) = _$CustomerListImpl;
-  const _CustomerList._() : super._();
+@override final  int totalItems;
 
-  factory _CustomerList.fromJson(Map<String, dynamic> json) =
-      _$CustomerListImpl.fromJson;
+/// Create a copy of CustomerList
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CustomerListCopyWith<_CustomerList> get copyWith => __$CustomerListCopyWithImpl<_CustomerList>(this, _$identity);
 
-  @override
-  List<Customer> get items;
-  @override
-  int get totalItems;
-
-  /// Create a copy of CustomerList
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CustomerListImplCopyWith<_$CustomerListImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$CustomerListToJson(this, );
 }
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CustomerList&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.totalItems, totalItems) || other.totalItems == totalItems));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_items),totalItems);
+
+@override
+String toString() {
+  return 'CustomerList(items: $items, totalItems: $totalItems)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CustomerListCopyWith<$Res> implements $CustomerListCopyWith<$Res> {
+  factory _$CustomerListCopyWith(_CustomerList value, $Res Function(_CustomerList) _then) = __$CustomerListCopyWithImpl;
+@override @useResult
+$Res call({
+ List<Customer> items, int totalItems
+});
+
+
+
+
+}
+/// @nodoc
+class __$CustomerListCopyWithImpl<$Res>
+    implements _$CustomerListCopyWith<$Res> {
+  __$CustomerListCopyWithImpl(this._self, this._then);
+
+  final _CustomerList _self;
+  final $Res Function(_CustomerList) _then;
+
+/// Create a copy of CustomerList
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? items = null,Object? totalItems = null,}) {
+  return _then(_CustomerList(
+items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as List<Customer>,totalItems: null == totalItems ? _self.totalItems : totalItems // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

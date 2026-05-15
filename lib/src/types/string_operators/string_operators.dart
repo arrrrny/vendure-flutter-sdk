@@ -3,7 +3,7 @@ part 'string_operators.freezed.dart';
 part 'string_operators.g.dart';
 
 @unfreezed
-class StringOperators with _$StringOperators {
+abstract class StringOperators with _$StringOperators {
   const StringOperators._();
 
   factory StringOperators({

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,149 +9,255 @@ part of 'number_list_operators.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-NumberListOperators _$NumberListOperatorsFromJson(Map<String, dynamic> json) {
-  return _NumberListOperators.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NumberListOperators {
-  double get inList => throw _privateConstructorUsedError;
-  set inList(double value) => throw _privateConstructorUsedError;
+
+ double get inList; set inList(double value);
+/// Create a copy of NumberListOperators
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NumberListOperatorsCopyWith<NumberListOperators> get copyWith => _$NumberListOperatorsCopyWithImpl<NumberListOperators>(this as NumberListOperators, _$identity);
 
   /// Serializes this NumberListOperators to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of NumberListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $NumberListOperatorsCopyWith<NumberListOperators> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+
+@override
+String toString() {
+  return 'NumberListOperators(inList: $inList)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $NumberListOperatorsCopyWith<$Res> {
-  factory $NumberListOperatorsCopyWith(
-          NumberListOperators value, $Res Function(NumberListOperators) then) =
-      _$NumberListOperatorsCopyWithImpl<$Res, NumberListOperators>;
-  @useResult
-  $Res call({double inList});
-}
+abstract mixin class $NumberListOperatorsCopyWith<$Res>  {
+  factory $NumberListOperatorsCopyWith(NumberListOperators value, $Res Function(NumberListOperators) _then) = _$NumberListOperatorsCopyWithImpl;
+@useResult
+$Res call({
+ double inList
+});
 
+
+
+
+}
 /// @nodoc
-class _$NumberListOperatorsCopyWithImpl<$Res, $Val extends NumberListOperators>
+class _$NumberListOperatorsCopyWithImpl<$Res>
     implements $NumberListOperatorsCopyWith<$Res> {
-  _$NumberListOperatorsCopyWithImpl(this._value, this._then);
+  _$NumberListOperatorsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final NumberListOperators _self;
+  final $Res Function(NumberListOperators) _then;
 
-  /// Create a copy of NumberListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inList = null,
-  }) {
-    return _then(_value.copyWith(
-      inList: null == inList
-          ? _value.inList
-          : inList // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
-  }
+/// Create a copy of NumberListOperators
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? inList = null,}) {
+  return _then(_self.copyWith(
+inList: null == inList ? _self.inList : inList // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
 }
 
-/// @nodoc
-abstract class _$$NumberListOperatorsImplCopyWith<$Res>
-    implements $NumberListOperatorsCopyWith<$Res> {
-  factory _$$NumberListOperatorsImplCopyWith(_$NumberListOperatorsImpl value,
-          $Res Function(_$NumberListOperatorsImpl) then) =
-      __$$NumberListOperatorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({double inList});
 }
 
-/// @nodoc
-class __$$NumberListOperatorsImplCopyWithImpl<$Res>
-    extends _$NumberListOperatorsCopyWithImpl<$Res, _$NumberListOperatorsImpl>
-    implements _$$NumberListOperatorsImplCopyWith<$Res> {
-  __$$NumberListOperatorsImplCopyWithImpl(_$NumberListOperatorsImpl _value,
-      $Res Function(_$NumberListOperatorsImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of NumberListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inList = null,
-  }) {
-    return _then(_$NumberListOperatorsImpl(
-      inList: null == inList
-          ? _value.inList
-          : inList // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
+/// Adds pattern-matching-related methods to [NumberListOperators].
+extension NumberListOperatorsPatterns on NumberListOperators {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _NumberListOperators value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _NumberListOperators() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _NumberListOperators value)  $default,){
+final _that = this;
+switch (_that) {
+case _NumberListOperators():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _NumberListOperators value)?  $default,){
+final _that = this;
+switch (_that) {
+case _NumberListOperators() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double inList)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _NumberListOperators() when $default != null:
+return $default(_that.inList);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double inList)  $default,) {final _that = this;
+switch (_that) {
+case _NumberListOperators():
+return $default(_that.inList);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double inList)?  $default,) {final _that = this;
+switch (_that) {
+case _NumberListOperators() when $default != null:
+return $default(_that.inList);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NumberListOperatorsImpl extends _NumberListOperators {
-  _$NumberListOperatorsImpl({required this.inList}) : super._();
 
-  factory _$NumberListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NumberListOperatorsImplFromJson(json);
+class _NumberListOperators extends NumberListOperators {
+   _NumberListOperators({required this.inList}): super._();
+  factory _NumberListOperators.fromJson(Map<String, dynamic> json) => _$NumberListOperatorsFromJson(json);
 
-  @override
-  double inList;
+@override  double inList;
 
-  @override
-  String toString() {
-    return 'NumberListOperators(inList: $inList)';
-  }
+/// Create a copy of NumberListOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NumberListOperatorsCopyWith<_NumberListOperators> get copyWith => __$NumberListOperatorsCopyWithImpl<_NumberListOperators>(this, _$identity);
 
-  /// Create a copy of NumberListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NumberListOperatorsImplCopyWith<_$NumberListOperatorsImpl> get copyWith =>
-      __$$NumberListOperatorsImplCopyWithImpl<_$NumberListOperatorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NumberListOperatorsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$NumberListOperatorsToJson(this, );
 }
 
-abstract class _NumberListOperators extends NumberListOperators {
-  factory _NumberListOperators({required double inList}) =
-      _$NumberListOperatorsImpl;
-  _NumberListOperators._() : super._();
 
-  factory _NumberListOperators.fromJson(Map<String, dynamic> json) =
-      _$NumberListOperatorsImpl.fromJson;
 
-  @override
-  double get inList;
-  set inList(double value);
-
-  /// Create a copy of NumberListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NumberListOperatorsImplCopyWith<_$NumberListOperatorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'NumberListOperators(inList: $inList)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$NumberListOperatorsCopyWith<$Res> implements $NumberListOperatorsCopyWith<$Res> {
+  factory _$NumberListOperatorsCopyWith(_NumberListOperators value, $Res Function(_NumberListOperators) _then) = __$NumberListOperatorsCopyWithImpl;
+@override @useResult
+$Res call({
+ double inList
+});
+
+
+
+
+}
+/// @nodoc
+class __$NumberListOperatorsCopyWithImpl<$Res>
+    implements _$NumberListOperatorsCopyWith<$Res> {
+  __$NumberListOperatorsCopyWithImpl(this._self, this._then);
+
+  final _NumberListOperators _self;
+  final $Res Function(_NumberListOperators) _then;
+
+/// Create a copy of NumberListOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? inList = null,}) {
+  return _then(_NumberListOperators(
+inList: null == inList ? _self.inList : inList // ignore: cast_nullable_to_non_nullable
+as double,
+  ));
+}
+
+
+}
+
+// dart format on

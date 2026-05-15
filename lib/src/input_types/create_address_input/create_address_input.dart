@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'create_address_input.freezed.dart';
 part 'create_address_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CreateAddressInput with _$CreateAddressInput {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CreateAddressInput with _$CreateAddressInput {
   const CreateAddressInput._();
 
   const factory CreateAddressInput({

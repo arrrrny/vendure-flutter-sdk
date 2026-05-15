@@ -2,19 +2,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'collection_breadcrumb.freezed.dart';
 part 'collection_breadcrumb.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CollectionBreadcrumb with _$CollectionBreadcrumb {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CollectionBreadcrumb with _$CollectionBreadcrumb {
   const CollectionBreadcrumb._();
 
-  const factory CollectionBreadcrumb({
-    String? id,
-    String? name,
-    String? slug,
-  }) = _CollectionBreadcrumb;
+  const factory CollectionBreadcrumb({String? id, String? name, String? slug}) =
+      _CollectionBreadcrumb;
 
   factory CollectionBreadcrumb.fromJson(Map<String, dynamic> json) =>
       _$CollectionBreadcrumbFromJson(json);

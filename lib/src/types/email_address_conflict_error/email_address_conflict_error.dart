@@ -5,7 +5,7 @@ part 'email_address_conflict_error.freezed.dart';
 part 'email_address_conflict_error.g.dart';
 
 @freezed
-class EmailAddressConflictError with _$EmailAddressConflictError {
+abstract class EmailAddressConflictError with _$EmailAddressConflictError {
   const EmailAddressConflictError._();
 
   const factory EmailAddressConflictError({

@@ -6,19 +6,17 @@ part of 'string_field_option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StringFieldOptionImpl _$$StringFieldOptionImplFromJson(Map json) =>
-    _$StringFieldOptionImpl(
-      label: (json['label'] as List<dynamic>?)
-          ?.map((e) =>
-              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      value: json['value'] as String,
-    );
+_StringFieldOption _$StringFieldOptionFromJson(Map json) => _StringFieldOption(
+  label: (json['label'] as List<dynamic>?)
+      ?.map(
+        (e) => LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  value: json['value'] as String,
+);
 
-Map<String, dynamic> _$$StringFieldOptionImplToJson(
-        _$StringFieldOptionImpl instance) =>
+Map<String, dynamic> _$StringFieldOptionToJson(_StringFieldOption instance) =>
     <String, dynamic>{
-      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
-        'label': value,
+      'label': ?instance.label?.map((e) => e.toJson()).toList(),
       'value': instance.value,
     };

@@ -5,13 +5,11 @@ part 'search_result_sort_parameter.freezed.dart';
 part 'search_result_sort_parameter.g.dart';
 
 @unfreezed
-class SearchResultSortParameter with _$SearchResultSortParameter {
+abstract class SearchResultSortParameter with _$SearchResultSortParameter {
   const SearchResultSortParameter._();
 
-  factory SearchResultSortParameter({
-    SortOrder? name,
-    SortOrder? price,
-  }) = _SearchResultSortParameter;
+  factory SearchResultSortParameter({SortOrder? name, SortOrder? price}) =
+      _SearchResultSortParameter;
 
   factory SearchResultSortParameter.fromJson(Map<String, dynamic> json) =>
       _$SearchResultSortParameterFromJson(json);

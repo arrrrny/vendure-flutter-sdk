@@ -5,7 +5,7 @@ part 'search_result_asset.freezed.dart';
 part 'search_result_asset.g.dart';
 
 @freezed
-class SearchResultAsset with _$SearchResultAsset {
+abstract class SearchResultAsset with _$SearchResultAsset {
   const SearchResultAsset._();
 
   const factory SearchResultAsset({

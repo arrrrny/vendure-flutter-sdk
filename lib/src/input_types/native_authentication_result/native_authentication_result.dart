@@ -5,12 +5,8 @@ import '../error_code/error_code.dart';
 part 'native_authentication_result.freezed.dart';
 part 'native_authentication_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class NativeAuthenticationResult with _$NativeAuthenticationResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class NativeAuthenticationResult with _$NativeAuthenticationResult {
   const NativeAuthenticationResult._();
 
   const factory NativeAuthenticationResult.currentUser({

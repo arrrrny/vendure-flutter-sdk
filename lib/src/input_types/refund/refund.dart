@@ -4,12 +4,8 @@ import '../refund_line/refund_line.dart';
 part 'refund.freezed.dart';
 part 'refund.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Refund with _$Refund {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Refund with _$Refund {
   const Refund._();
 
   const factory Refund({

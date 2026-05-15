@@ -3,12 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'order_tax_summary.freezed.dart';
 part 'order_tax_summary.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderTaxSummary with _$OrderTaxSummary {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderTaxSummary with _$OrderTaxSummary {
   const OrderTaxSummary._();
 
   const factory OrderTaxSummary({

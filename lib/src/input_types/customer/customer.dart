@@ -6,12 +6,8 @@ import '../user/user.dart';
 part 'customer.freezed.dart';
 part 'customer.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Customer with _$Customer {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Customer with _$Customer {
   const Customer._();
 
   const factory Customer({

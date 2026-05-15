@@ -6,8 +6,8 @@ part of 'promotion_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PromotionTranslationImpl _$$PromotionTranslationImplFromJson(Map json) =>
-    _$PromotionTranslationImpl(
+_PromotionTranslation _$PromotionTranslationFromJson(Map json) =>
+    _PromotionTranslation(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String,
       id: json['id'] as String,
@@ -16,16 +16,16 @@ _$PromotionTranslationImpl _$$PromotionTranslationImplFromJson(Map json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$PromotionTranslationImplToJson(
-        _$PromotionTranslationImpl instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'description': instance.description,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$PromotionTranslationToJson(
+  _PromotionTranslation instance,
+) => <String, dynamic>{
+  'createdAt': instance.createdAt.toIso8601String(),
+  'description': instance.description,
+  'id': instance.id,
+  'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+  'name': instance.name,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

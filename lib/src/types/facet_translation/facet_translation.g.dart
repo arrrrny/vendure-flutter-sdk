@@ -6,17 +6,15 @@ part of 'facet_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetTranslationImpl _$$FacetTranslationImplFromJson(Map json) =>
-    _$FacetTranslationImpl(
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      id: json['id'] as String,
-      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String,
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_FacetTranslation _$FacetTranslationFromJson(Map json) => _FacetTranslation(
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  id: json['id'] as String,
+  languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+  name: json['name'] as String,
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$FacetTranslationImplToJson(
-        _$FacetTranslationImpl instance) =>
+Map<String, dynamic> _$FacetTranslationToJson(_FacetTranslation instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'id': instance.id,

@@ -4,12 +4,9 @@ import '../error_code/error_code.dart';
 part 'update_customer_email_address_result.freezed.dart';
 part 'update_customer_email_address_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class UpdateCustomerEmailAddressResult with _$UpdateCustomerEmailAddressResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class UpdateCustomerEmailAddressResult
+    with _$UpdateCustomerEmailAddressResult {
   const UpdateCustomerEmailAddressResult._();
 
   const factory UpdateCustomerEmailAddressResult.identifierChangeTokenExpiredError({
@@ -27,11 +24,10 @@ class UpdateCustomerEmailAddressResult with _$UpdateCustomerEmailAddressResult {
     String? message,
   }) = NativeAuthStrategyError;
 
-  const factory UpdateCustomerEmailAddressResult.success({
-    bool? success,
-  }) = Success;
+  const factory UpdateCustomerEmailAddressResult.success({bool? success}) =
+      Success;
 
   factory UpdateCustomerEmailAddressResult.fromJson(
-          Map<String, dynamic> json) =>
-      _$UpdateCustomerEmailAddressResultFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$UpdateCustomerEmailAddressResultFromJson(json);
 }

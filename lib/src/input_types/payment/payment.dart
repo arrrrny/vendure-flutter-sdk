@@ -4,12 +4,8 @@ import '../refund/refund.dart';
 part 'payment.freezed.dart';
 part 'payment.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Payment with _$Payment {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Payment with _$Payment {
   const Payment._();
 
   const factory Payment({

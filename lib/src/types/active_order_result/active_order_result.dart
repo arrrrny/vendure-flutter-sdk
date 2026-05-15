@@ -17,7 +17,7 @@ part 'active_order_result.freezed.dart';
 part 'active_order_result.g.dart';
 
 @freezed
-class ActiveOrderResult with _$ActiveOrderResult {
+sealed class ActiveOrderResult with _$ActiveOrderResult {
   const ActiveOrderResult._();
 
   const factory ActiveOrderResult.noActiveOrderError({

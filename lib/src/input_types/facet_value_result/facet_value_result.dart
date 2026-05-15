@@ -4,18 +4,12 @@ import '../facet_value/facet_value.dart';
 part 'facet_value_result.freezed.dart';
 part 'facet_value_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FacetValueResult with _$FacetValueResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FacetValueResult with _$FacetValueResult {
   const FacetValueResult._();
 
-  const factory FacetValueResult({
-    int? count,
-    FacetValue? facetValue,
-  }) = _FacetValueResult;
+  const factory FacetValueResult({int? count, FacetValue? facetValue}) =
+      _FacetValueResult;
 
   factory FacetValueResult.fromJson(Map<String, dynamic> json) =>
       _$FacetValueResultFromJson(json);

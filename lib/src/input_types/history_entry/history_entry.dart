@@ -4,12 +4,8 @@ import '../history_entry_type/history_entry_type.dart';
 part 'history_entry.freezed.dart';
 part 'history_entry.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class HistoryEntry with _$HistoryEntry {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class HistoryEntry with _$HistoryEntry {
   const HistoryEntry._();
 
   const factory HistoryEntry({

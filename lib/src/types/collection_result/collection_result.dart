@@ -5,7 +5,7 @@ part 'collection_result.freezed.dart';
 part 'collection_result.g.dart';
 
 @freezed
-class CollectionResult with _$CollectionResult {
+abstract class CollectionResult with _$CollectionResult {
   const CollectionResult._();
 
   const factory CollectionResult({

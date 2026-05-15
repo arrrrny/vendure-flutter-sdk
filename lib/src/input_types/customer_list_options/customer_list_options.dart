@@ -6,12 +6,8 @@ import '../logical_operator/logical_operator.dart';
 part 'customer_list_options.freezed.dart';
 part 'customer_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CustomerListOptions with _$CustomerListOptions {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CustomerListOptions with _$CustomerListOptions {
   const CustomerListOptions._();
 
   const factory CustomerListOptions({

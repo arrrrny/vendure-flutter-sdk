@@ -7,7 +7,7 @@ part 'province.freezed.dart';
 part 'province.g.dart';
 
 @freezed
-class Province with _$Province {
+abstract class Province with _$Province {
   const Province._();
 
   const factory Province({

@@ -5,7 +5,7 @@ part 'localized_string.freezed.dart';
 part 'localized_string.g.dart';
 
 @freezed
-class LocalizedString with _$LocalizedString {
+abstract class LocalizedString with _$LocalizedString {
   const LocalizedString._();
 
   const factory LocalizedString({

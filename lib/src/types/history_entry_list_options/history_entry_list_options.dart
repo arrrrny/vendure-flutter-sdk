@@ -7,7 +7,7 @@ part 'history_entry_list_options.freezed.dart';
 part 'history_entry_list_options.g.dart';
 
 @unfreezed
-class HistoryEntryListOptions with _$HistoryEntryListOptions {
+abstract class HistoryEntryListOptions with _$HistoryEntryListOptions {
   const HistoryEntryListOptions._();
 
   factory HistoryEntryListOptions({

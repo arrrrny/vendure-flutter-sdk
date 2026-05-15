@@ -6,19 +6,18 @@ part of 'native_auth_strategy_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map json) =>
-    _$NativeAuthStrategyErrorImpl(
+_NativeAuthStrategyError _$NativeAuthStrategyErrorFromJson(Map json) =>
+    _NativeAuthStrategyError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
-        _$NativeAuthStrategyErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$NativeAuthStrategyErrorToJson(
+  _NativeAuthStrategyError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

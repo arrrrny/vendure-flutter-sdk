@@ -6,98 +6,100 @@ part of 'collection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionImpl _$$CollectionImplFromJson(Map json) => _$CollectionImpl(
-      assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Asset.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      breadcrumbs: (json['breadcrumbs'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : CollectionBreadcrumb.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      children: (json['children'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Collection.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String?,
-      featuredAsset: json['featuredAsset'] == null
-          ? null
-          : Asset.fromJson(
-              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
-      filters: (json['filters'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ConfigurableOperation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      parent: json['parent'] == null
-          ? null
-          : Collection.fromJson(
-              Map<String, dynamic>.from(json['parent'] as Map)),
-      parentId: json['parentId'] as String?,
-      position: (json['position'] as num?)?.toInt(),
-      productVariants: json['productVariants'] == null
-          ? null
-          : ProductVariantList.fromJson(
-              Map<String, dynamic>.from(json['productVariants'] as Map)),
-      slug: json['slug'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : CollectionTranslation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_Collection _$CollectionFromJson(Map json) => _Collection(
+  assets: (json['assets'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Asset.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  breadcrumbs: (json['breadcrumbs'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : CollectionBreadcrumb.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  children: (json['children'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Collection.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  description: json['description'] as String?,
+  featuredAsset: json['featuredAsset'] == null
+      ? null
+      : Asset.fromJson(Map<String, dynamic>.from(json['featuredAsset'] as Map)),
+  filters: (json['filters'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ConfigurableOperation.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  parent: json['parent'] == null
+      ? null
+      : Collection.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
+  parentId: json['parentId'] as String?,
+  position: (json['position'] as num?)?.toInt(),
+  productVariants: json['productVariants'] == null
+      ? null
+      : ProductVariantList.fromJson(
+          Map<String, dynamic>.from(json['productVariants'] as Map),
+        ),
+  slug: json['slug'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : CollectionTranslation.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) =>
+Map<String, dynamic> _$CollectionToJson(_Collection instance) =>
     <String, dynamic>{
-      if (instance.assets?.map((e) => e?.toJson()).toList() case final value?)
-        'assets': value,
-      if (instance.breadcrumbs?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'breadcrumbs': value,
-      if (instance.children?.map((e) => e?.toJson()).toList() case final value?)
-        'children': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.featuredAsset?.toJson() case final value?)
-        'featuredAsset': value,
-      if (instance.filters?.map((e) => e?.toJson()).toList() case final value?)
-        'filters': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.parent?.toJson() case final value?) 'parent': value,
-      if (instance.parentId case final value?) 'parentId': value,
-      if (instance.position case final value?) 'position': value,
-      if (instance.productVariants?.toJson() case final value?)
-        'productVariants': value,
-      if (instance.slug case final value?) 'slug': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'assets': ?instance.assets?.map((e) => e?.toJson()).toList(),
+      'breadcrumbs': ?instance.breadcrumbs?.map((e) => e?.toJson()).toList(),
+      'children': ?instance.children?.map((e) => e?.toJson()).toList(),
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'description': ?instance.description,
+      'featuredAsset': ?instance.featuredAsset?.toJson(),
+      'filters': ?instance.filters?.map((e) => e?.toJson()).toList(),
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'parent': ?instance.parent?.toJson(),
+      'parentId': ?instance.parentId,
+      'position': ?instance.position,
+      'productVariants': ?instance.productVariants?.toJson(),
+      'slug': ?instance.slug,
+      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {

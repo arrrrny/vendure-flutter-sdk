@@ -44,22 +44,25 @@ void main() {
       'Verify customer account',
       () async {
         try {
-          var result = await vendure.auth
-              .verifyCustomerAccount(token: verificationToken);
+          var result = await vendure.auth.verifyCustomerAccount(
+            token: verificationToken,
+          );
           expect(result, isA<AuthenticationResult>());
           print('✅ Verify customer account successful: ${result.toJson()}');
         } catch (e) {
           fail('❌ Authenticate method failed: $e');
         }
       },
-      skip:
-          verificationToken.isEmpty ? 'No verification token provided' : false,
+      skip: verificationToken.isEmpty
+          ? 'No verification token provided'
+          : false,
     );
 
     test('Refresh verification', () async {
       try {
-        var result = await vendure.auth
-            .refreshCustomerVerification(emailAddress: testEmail);
+        var result = await vendure.auth.refreshCustomerVerification(
+          emailAddress: testEmail,
+        );
         expect(result, isA<RefreshCustomerVerificationResult>());
         print('✅ Refresh successful: ${result.toJson()}');
       } catch (e) {
@@ -121,17 +124,19 @@ void main() {
           password: 'wrongpassword',
         );
         print(
-            '⚠️ Authenticate with invalid credentials did not throw exception');
+          '⚠️ Authenticate with invalid credentials did not throw exception',
+        );
       } catch (e) {
         print('✅ Authenticate correctly rejected invalid credentials: $e');
         expect(
-            e.toString().toLowerCase(),
-            anyOf([
-              contains('invalid'),
-              contains('credentials'),
-              contains('unauthorized'),
-              contains('authentication'),
-            ]));
+          e.toString().toLowerCase(),
+          anyOf([
+            contains('invalid'),
+            contains('credentials'),
+            contains('unauthorized'),
+            contains('authentication'),
+          ]),
+        );
       }
     });
 
@@ -178,7 +183,8 @@ void main() {
         try {
           await vendure.customer.getActiveCustomer();
           print(
-              '✅ Can access authenticated endpoints with initialized instance');
+            '✅ Can access authenticated endpoints with initialized instance',
+          );
         } catch (e) {
           print('⚠️ Could not access authenticated endpoints: $e');
         }
@@ -198,15 +204,17 @@ void main() {
         fail('Should have thrown exception for invalid credentials');
       } catch (e) {
         print(
-            '✅ InitializeWithNativeAuth correctly rejected invalid credentials: $e');
+          '✅ InitializeWithNativeAuth correctly rejected invalid credentials: $e',
+        );
         expect(
-            e.toString().toLowerCase(),
-            anyOf([
-              contains('failed to fetch token'),
-              contains('invalid'),
-              contains('credentials'),
-              contains('unauthorized'),
-            ]));
+          e.toString().toLowerCase(),
+          anyOf([
+            contains('failed to fetch token'),
+            contains('invalid'),
+            contains('credentials'),
+            contains('unauthorized'),
+          ]),
+        );
       }
     });
   });
@@ -361,10 +369,7 @@ void main() {
         var vendure = await Vendure.initializeWithCustomAuth(
           endpoint: endpoint,
           fetchToken: customTokenFetcher,
-          tokenParams: {
-            'username': testUsername,
-            'password': testPassword,
-          },
+          tokenParams: {'username': testUsername, 'password': testPassword},
         );
 
         expect(vendure, isA<Vendure>());
@@ -461,7 +466,8 @@ void main() {
           password: 'wrongpassword',
         );
         print(
-            '⚠️ Admin API authentication with invalid credentials did not throw exception');
+          '⚠️ Admin API authentication with invalid credentials did not throw exception',
+        );
       } catch (e) {
         print('✅ Admin API correctly rejected invalid credentials: $e');
       }

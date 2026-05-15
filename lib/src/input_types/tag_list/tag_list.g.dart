@@ -6,18 +6,18 @@ part of 'tag_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TagListImpl _$$TagListImplFromJson(Map json) => _$TagListImpl(
-      items: (json['items'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Tag.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      totalItems: (json['totalItems'] as num?)?.toInt(),
-    );
+_TagList _$TagListFromJson(Map json) => _TagList(
+  items: (json['items'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Tag.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  totalItems: (json['totalItems'] as num?)?.toInt(),
+);
 
-Map<String, dynamic> _$$TagListImplToJson(_$TagListImpl instance) =>
-    <String, dynamic>{
-      if (instance.items?.map((e) => e?.toJson()).toList() case final value?)
-        'items': value,
-      if (instance.totalItems case final value?) 'totalItems': value,
-    };
+Map<String, dynamic> _$TagListToJson(_TagList instance) => <String, dynamic>{
+  'items': ?instance.items?.map((e) => e?.toJson()).toList(),
+  'totalItems': ?instance.totalItems,
+};

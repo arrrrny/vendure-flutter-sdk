@@ -9,12 +9,8 @@ import '../tax_line/tax_line.dart';
 part 'order_line.freezed.dart';
 part 'order_line.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderLine with _$OrderLine {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderLine with _$OrderLine {
   const OrderLine._();
 
   const factory OrderLine({

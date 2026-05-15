@@ -6,17 +6,18 @@ part of 'reset_password_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserImpl _$$CurrentUserImplFromJson(Map json) => _$CurrentUserImpl(
-      channels: (json['channels'] as List<dynamic>)
-          .map((e) =>
-              CurrentUserChannel.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      id: json['id'] as String,
-      identifier: json['identifier'] as String,
-      $type: json['runtimeType'] as String?,
-    );
+CurrentUser _$CurrentUserFromJson(Map json) => CurrentUser(
+  channels: (json['channels'] as List<dynamic>)
+      .map(
+        (e) => CurrentUserChannel.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  id: json['id'] as String,
+  identifier: json['identifier'] as String,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
+Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
     <String, dynamic>{
       'channels': instance.channels.map((e) => e.toJson()).toList(),
       'id': instance.id,
@@ -24,21 +25,20 @@ Map<String, dynamic> _$$CurrentUserImplToJson(_$CurrentUserImpl instance) =>
       'runtimeType': instance.$type,
     };
 
-_$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map json) =>
-    _$NativeAuthStrategyErrorImpl(
+NativeAuthStrategyError _$NativeAuthStrategyErrorFromJson(Map json) =>
+    NativeAuthStrategyError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
-        _$NativeAuthStrategyErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$NativeAuthStrategyErrorToJson(
+  NativeAuthStrategyError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'runtimeType': instance.$type,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -75,67 +75,64 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$NotVerifiedErrorImpl _$$NotVerifiedErrorImplFromJson(Map json) =>
-    _$NotVerifiedErrorImpl(
-      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String,
-      $type: json['runtimeType'] as String?,
-    );
+NotVerifiedError _$NotVerifiedErrorFromJson(Map json) => NotVerifiedError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$NotVerifiedErrorImplToJson(
-        _$NotVerifiedErrorImpl instance) =>
+Map<String, dynamic> _$NotVerifiedErrorToJson(NotVerifiedError instance) =>
     <String, dynamic>{
       'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
       'message': instance.message,
       'runtimeType': instance.$type,
     };
 
-_$PasswordResetTokenExpiredErrorImpl
-    _$$PasswordResetTokenExpiredErrorImplFromJson(Map json) =>
-        _$PasswordResetTokenExpiredErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-          $type: json['runtimeType'] as String?,
-        );
+PasswordResetTokenExpiredError _$PasswordResetTokenExpiredErrorFromJson(
+  Map json,
+) => PasswordResetTokenExpiredError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$PasswordResetTokenExpiredErrorImplToJson(
-        _$PasswordResetTokenExpiredErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$PasswordResetTokenExpiredErrorToJson(
+  PasswordResetTokenExpiredError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'runtimeType': instance.$type,
+};
 
-_$PasswordResetTokenInvalidErrorImpl
-    _$$PasswordResetTokenInvalidErrorImplFromJson(Map json) =>
-        _$PasswordResetTokenInvalidErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-          $type: json['runtimeType'] as String?,
-        );
+PasswordResetTokenInvalidError _$PasswordResetTokenInvalidErrorFromJson(
+  Map json,
+) => PasswordResetTokenInvalidError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$PasswordResetTokenInvalidErrorImplToJson(
-        _$PasswordResetTokenInvalidErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$PasswordResetTokenInvalidErrorToJson(
+  PasswordResetTokenInvalidError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'runtimeType': instance.$type,
+};
 
-_$PasswordValidationErrorImpl _$$PasswordValidationErrorImplFromJson(
-        Map json) =>
-    _$PasswordValidationErrorImpl(
+PasswordValidationError _$PasswordValidationErrorFromJson(Map json) =>
+    PasswordValidationError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
       validationErrorMessage: json['validationErrorMessage'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$PasswordValidationErrorImplToJson(
-        _$PasswordValidationErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'validationErrorMessage': instance.validationErrorMessage,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$PasswordValidationErrorToJson(
+  PasswordValidationError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'validationErrorMessage': instance.validationErrorMessage,
+  'runtimeType': instance.$type,
+};

@@ -4,12 +4,9 @@ import '../error_code/error_code.dart';
 part 'ineligible_shipping_method_error.freezed.dart';
 part 'ineligible_shipping_method_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class IneligibleShippingMethodError with _$IneligibleShippingMethodError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class IneligibleShippingMethodError
+    with _$IneligibleShippingMethodError {
   const IneligibleShippingMethodError._();
 
   const factory IneligibleShippingMethodError({

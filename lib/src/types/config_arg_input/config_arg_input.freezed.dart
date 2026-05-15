@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,176 +9,261 @@ part of 'config_arg_input.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ConfigArgInput _$ConfigArgInputFromJson(Map<String, dynamic> json) {
-  return _ConfigArgInput.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ConfigArgInput {
-  String get name => throw _privateConstructorUsedError;
-  set name(String value) => throw _privateConstructorUsedError;
 
-  /// A JSON stringified representation of the actual value
-  String get value => throw _privateConstructorUsedError;
-
-  /// A JSON stringified representation of the actual value
-  set value(String value) => throw _privateConstructorUsedError;
+ String get name; set name(String value);/// A JSON stringified representation of the actual value
+ String get value;/// A JSON stringified representation of the actual value
+ set value(String value);
+/// Create a copy of ConfigArgInput
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ConfigArgInputCopyWith<ConfigArgInput> get copyWith => _$ConfigArgInputCopyWithImpl<ConfigArgInput>(this as ConfigArgInput, _$identity);
 
   /// Serializes this ConfigArgInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ConfigArgInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ConfigArgInputCopyWith<ConfigArgInput> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+
+@override
+String toString() {
+  return 'ConfigArgInput(name: $name, value: $value)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ConfigArgInputCopyWith<$Res> {
-  factory $ConfigArgInputCopyWith(
-          ConfigArgInput value, $Res Function(ConfigArgInput) then) =
-      _$ConfigArgInputCopyWithImpl<$Res, ConfigArgInput>;
-  @useResult
-  $Res call({String name, String value});
-}
+abstract mixin class $ConfigArgInputCopyWith<$Res>  {
+  factory $ConfigArgInputCopyWith(ConfigArgInput value, $Res Function(ConfigArgInput) _then) = _$ConfigArgInputCopyWithImpl;
+@useResult
+$Res call({
+ String name, String value
+});
 
+
+
+
+}
 /// @nodoc
-class _$ConfigArgInputCopyWithImpl<$Res, $Val extends ConfigArgInput>
+class _$ConfigArgInputCopyWithImpl<$Res>
     implements $ConfigArgInputCopyWith<$Res> {
-  _$ConfigArgInputCopyWithImpl(this._value, this._then);
+  _$ConfigArgInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ConfigArgInput _self;
+  final $Res Function(ConfigArgInput) _then;
 
-  /// Create a copy of ConfigArgInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of ConfigArgInput
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? value = null,}) {
+  return _then(_self.copyWith(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ConfigArgInputImplCopyWith<$Res>
-    implements $ConfigArgInputCopyWith<$Res> {
-  factory _$$ConfigArgInputImplCopyWith(_$ConfigArgInputImpl value,
-          $Res Function(_$ConfigArgInputImpl) then) =
-      __$$ConfigArgInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String value});
 }
 
-/// @nodoc
-class __$$ConfigArgInputImplCopyWithImpl<$Res>
-    extends _$ConfigArgInputCopyWithImpl<$Res, _$ConfigArgInputImpl>
-    implements _$$ConfigArgInputImplCopyWith<$Res> {
-  __$$ConfigArgInputImplCopyWithImpl(
-      _$ConfigArgInputImpl _value, $Res Function(_$ConfigArgInputImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of ConfigArgInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_$ConfigArgInputImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [ConfigArgInput].
+extension ConfigArgInputPatterns on ConfigArgInput {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ConfigArgInput value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ConfigArgInput() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ConfigArgInput value)  $default,){
+final _that = this;
+switch (_that) {
+case _ConfigArgInput():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ConfigArgInput value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ConfigArgInput() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name,  String value)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ConfigArgInput() when $default != null:
+return $default(_that.name,_that.value);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name,  String value)  $default,) {final _that = this;
+switch (_that) {
+case _ConfigArgInput():
+return $default(_that.name,_that.value);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name,  String value)?  $default,) {final _that = this;
+switch (_that) {
+case _ConfigArgInput() when $default != null:
+return $default(_that.name,_that.value);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigArgInputImpl extends _ConfigArgInput {
-  _$ConfigArgInputImpl({required this.name, required this.value}) : super._();
 
-  factory _$ConfigArgInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConfigArgInputImplFromJson(json);
+class _ConfigArgInput extends ConfigArgInput {
+   _ConfigArgInput({required this.name, required this.value}): super._();
+  factory _ConfigArgInput.fromJson(Map<String, dynamic> json) => _$ConfigArgInputFromJson(json);
 
-  @override
-  String name;
+@override  String name;
+/// A JSON stringified representation of the actual value
+@override  String value;
 
-  /// A JSON stringified representation of the actual value
-  @override
-  String value;
+/// Create a copy of ConfigArgInput
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ConfigArgInputCopyWith<_ConfigArgInput> get copyWith => __$ConfigArgInputCopyWithImpl<_ConfigArgInput>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'ConfigArgInput(name: $name, value: $value)';
-  }
-
-  /// Create a copy of ConfigArgInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ConfigArgInputImplCopyWith<_$ConfigArgInputImpl> get copyWith =>
-      __$$ConfigArgInputImplCopyWithImpl<_$ConfigArgInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConfigArgInputImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ConfigArgInputToJson(this, );
 }
 
-abstract class _ConfigArgInput extends ConfigArgInput {
-  factory _ConfigArgInput({required String name, required String value}) =
-      _$ConfigArgInputImpl;
-  _ConfigArgInput._() : super._();
 
-  factory _ConfigArgInput.fromJson(Map<String, dynamic> json) =
-      _$ConfigArgInputImpl.fromJson;
 
-  @override
-  String get name;
-  set name(String value);
-
-  /// A JSON stringified representation of the actual value
-  @override
-  String get value;
-
-  /// A JSON stringified representation of the actual value
-  set value(String value);
-
-  /// Create a copy of ConfigArgInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConfigArgInputImplCopyWith<_$ConfigArgInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ConfigArgInput(name: $name, value: $value)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ConfigArgInputCopyWith<$Res> implements $ConfigArgInputCopyWith<$Res> {
+  factory _$ConfigArgInputCopyWith(_ConfigArgInput value, $Res Function(_ConfigArgInput) _then) = __$ConfigArgInputCopyWithImpl;
+@override @useResult
+$Res call({
+ String name, String value
+});
+
+
+
+
+}
+/// @nodoc
+class __$ConfigArgInputCopyWithImpl<$Res>
+    implements _$ConfigArgInputCopyWith<$Res> {
+  __$ConfigArgInputCopyWithImpl(this._self, this._then);
+
+  final _ConfigArgInput _self;
+  final $Res Function(_ConfigArgInput) _then;
+
+/// Create a copy of ConfigArgInput
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? value = null,}) {
+  return _then(_ConfigArgInput(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

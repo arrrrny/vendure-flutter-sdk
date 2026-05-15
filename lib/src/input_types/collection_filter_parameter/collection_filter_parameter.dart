@@ -7,12 +7,8 @@ import '../string_operators/string_operators.dart';
 part 'collection_filter_parameter.freezed.dart';
 part 'collection_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CollectionFilterParameter with _$CollectionFilterParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CollectionFilterParameter with _$CollectionFilterParameter {
   const CollectionFilterParameter._();
 
   const factory CollectionFilterParameter({

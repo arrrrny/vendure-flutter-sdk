@@ -5,7 +5,8 @@ part 'configurable_operation_definition.freezed.dart';
 part 'configurable_operation_definition.g.dart';
 
 @freezed
-class ConfigurableOperationDefinition with _$ConfigurableOperationDefinition {
+abstract class ConfigurableOperationDefinition
+    with _$ConfigurableOperationDefinition {
   const ConfigurableOperationDefinition._();
 
   const factory ConfigurableOperationDefinition({

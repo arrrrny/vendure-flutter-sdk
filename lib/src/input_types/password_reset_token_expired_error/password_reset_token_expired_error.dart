@@ -4,12 +4,9 @@ import '../error_code/error_code.dart';
 part 'password_reset_token_expired_error.freezed.dart';
 part 'password_reset_token_expired_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class PasswordResetTokenExpiredError with _$PasswordResetTokenExpiredError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class PasswordResetTokenExpiredError
+    with _$PasswordResetTokenExpiredError {
   const PasswordResetTokenExpiredError._();
 
   const factory PasswordResetTokenExpiredError({

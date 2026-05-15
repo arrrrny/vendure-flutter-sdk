@@ -5,7 +5,7 @@ part 'missing_password_error.freezed.dart';
 part 'missing_password_error.g.dart';
 
 @freezed
-class MissingPasswordError with _$MissingPasswordError {
+abstract class MissingPasswordError with _$MissingPasswordError {
   const MissingPasswordError._();
 
   const factory MissingPasswordError({

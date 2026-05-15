@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'config_arg_definition.freezed.dart';
 part 'config_arg_definition.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ConfigArgDefinition with _$ConfigArgDefinition {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ConfigArgDefinition with _$ConfigArgDefinition {
   const ConfigArgDefinition._();
 
   const factory ConfigArgDefinition({

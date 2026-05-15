@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'order_modification_error.freezed.dart';
 part 'order_modification_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderModificationError with _$OrderModificationError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderModificationError with _$OrderModificationError {
   const OrderModificationError._();
 
   const factory OrderModificationError({

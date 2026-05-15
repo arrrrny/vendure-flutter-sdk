@@ -5,7 +5,8 @@ part 'verification_token_expired_error.freezed.dart';
 part 'verification_token_expired_error.g.dart';
 
 @freezed
-class VerificationTokenExpiredError with _$VerificationTokenExpiredError {
+abstract class VerificationTokenExpiredError
+    with _$VerificationTokenExpiredError {
   const VerificationTokenExpiredError._();
 
   const factory VerificationTokenExpiredError({

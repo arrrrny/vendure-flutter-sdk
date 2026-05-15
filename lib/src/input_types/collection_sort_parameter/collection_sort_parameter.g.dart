@@ -6,9 +6,8 @@ part of 'collection_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionSortParameterImpl _$$CollectionSortParameterImplFromJson(
-        Map json) =>
-    _$CollectionSortParameterImpl(
+_CollectionSortParameter _$CollectionSortParameterFromJson(Map json) =>
+    _CollectionSortParameter(
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       description: $enumDecodeNullable(_$SortOrderEnumMap, json['description']),
       id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
@@ -19,25 +18,17 @@ _$CollectionSortParameterImpl _$$CollectionSortParameterImplFromJson(
       updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
     );
 
-Map<String, dynamic> _$$CollectionSortParameterImplToJson(
-        _$CollectionSortParameterImpl instance) =>
-    <String, dynamic>{
-      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
-        'createdAt': value,
-      if (_$SortOrderEnumMap[instance.description] case final value?)
-        'description': value,
-      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
-      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
-      if (_$SortOrderEnumMap[instance.parentId] case final value?)
-        'parentId': value,
-      if (_$SortOrderEnumMap[instance.position] case final value?)
-        'position': value,
-      if (_$SortOrderEnumMap[instance.slug] case final value?) 'slug': value,
-      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
-        'updatedAt': value,
-    };
-
-const _$SortOrderEnumMap = {
-  SortOrder.asc: 'asc',
-  SortOrder.desc: 'desc',
+Map<String, dynamic> _$CollectionSortParameterToJson(
+  _CollectionSortParameter instance,
+) => <String, dynamic>{
+  'createdAt': ?_$SortOrderEnumMap[instance.createdAt],
+  'description': ?_$SortOrderEnumMap[instance.description],
+  'id': ?_$SortOrderEnumMap[instance.id],
+  'name': ?_$SortOrderEnumMap[instance.name],
+  'parentId': ?_$SortOrderEnumMap[instance.parentId],
+  'position': ?_$SortOrderEnumMap[instance.position],
+  'slug': ?_$SortOrderEnumMap[instance.slug],
+  'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
+
+const _$SortOrderEnumMap = {SortOrder.asc: 'asc', SortOrder.desc: 'desc'};

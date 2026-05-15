@@ -4,12 +4,8 @@ import '../region_translation/region_translation.dart';
 part 'region.freezed.dart';
 part 'region.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Region with _$Region {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Region with _$Region {
   const Region._();
   const factory Region({
     required String id,

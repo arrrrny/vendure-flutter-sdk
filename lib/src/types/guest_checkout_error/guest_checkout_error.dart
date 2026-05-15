@@ -5,7 +5,7 @@ part 'guest_checkout_error.freezed.dart';
 part 'guest_checkout_error.g.dart';
 
 @freezed
-class GuestCheckoutError with _$GuestCheckoutError {
+abstract class GuestCheckoutError with _$GuestCheckoutError {
   const GuestCheckoutError._();
 
   const factory GuestCheckoutError({

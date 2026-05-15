@@ -6,22 +6,20 @@ part of 'request_update_customer_email_address_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
-        Map json) =>
-    _$EmailAddressConflictErrorImpl(
+EmailAddressConflictError _$EmailAddressConflictErrorFromJson(Map json) =>
+    EmailAddressConflictError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EmailAddressConflictErrorImplToJson(
-        _$EmailAddressConflictErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$EmailAddressConflictErrorToJson(
+  EmailAddressConflictError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+  'runtimeType': instance.$type,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',
@@ -58,50 +56,44 @@ const _$ErrorCodeEnumMap = {
   ErrorCode.verificationTokenInvalidError: 'verificationTokenInvalidError',
 };
 
-_$InvalidCredentialsErrorImpl _$$InvalidCredentialsErrorImplFromJson(
-        Map json) =>
-    _$InvalidCredentialsErrorImpl(
+InvalidCredentialsError _$InvalidCredentialsErrorFromJson(Map json) =>
+    InvalidCredentialsError(
       authenticationError: json['authenticationError'] as String?,
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$InvalidCredentialsErrorImplToJson(
-        _$InvalidCredentialsErrorImpl instance) =>
-    <String, dynamic>{
-      if (instance.authenticationError case final value?)
-        'authenticationError': value,
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$InvalidCredentialsErrorToJson(
+  InvalidCredentialsError instance,
+) => <String, dynamic>{
+  'authenticationError': ?instance.authenticationError,
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+  'runtimeType': instance.$type,
+};
 
-_$NativeAuthStrategyErrorImpl _$$NativeAuthStrategyErrorImplFromJson(
-        Map json) =>
-    _$NativeAuthStrategyErrorImpl(
+NativeAuthStrategyError _$NativeAuthStrategyErrorFromJson(Map json) =>
+    NativeAuthStrategyError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$NativeAuthStrategyErrorImplToJson(
-        _$NativeAuthStrategyErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$NativeAuthStrategyErrorToJson(
+  NativeAuthStrategyError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+  'runtimeType': instance.$type,
+};
 
-_$SuccessImpl _$$SuccessImplFromJson(Map json) => _$SuccessImpl(
-      success: json['success'] as bool?,
-      $type: json['runtimeType'] as String?,
-    );
+Success _$SuccessFromJson(Map json) => Success(
+  success: json['success'] as bool?,
+  $type: json['runtimeType'] as String?,
+);
 
-Map<String, dynamic> _$$SuccessImplToJson(_$SuccessImpl instance) =>
-    <String, dynamic>{
-      if (instance.success case final value?) 'success': value,
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$SuccessToJson(Success instance) => <String, dynamic>{
+  'success': ?instance.success,
+  'runtimeType': instance.$type,
+};

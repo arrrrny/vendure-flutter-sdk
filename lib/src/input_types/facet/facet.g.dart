@@ -6,56 +6,56 @@ part of 'facet.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetImpl _$$FacetImplFromJson(Map json) => _$FacetImpl(
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : FacetTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      valueList: json['valueList'] == null
-          ? null
-          : FacetValueList.fromJson(
-              Map<String, dynamic>.from(json['valueList'] as Map)),
-      values: (json['values'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-    );
+_Facet _$FacetFromJson(Map json) => _Facet(
+  code: json['code'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : FacetTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+  valueList: json['valueList'] == null
+      ? null
+      : FacetValueList.fromJson(
+          Map<String, dynamic>.from(json['valueList'] as Map),
+        ),
+  values: (json['values'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+);
 
-Map<String, dynamic> _$$FacetImplToJson(_$FacetImpl instance) =>
-    <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-      if (instance.valueList?.toJson() case final value?) 'valueList': value,
-      if (instance.values?.map((e) => e?.toJson()).toList() case final value?)
-        'values': value,
-    };
+Map<String, dynamic> _$FacetToJson(_Facet instance) => <String, dynamic>{
+  'code': ?instance.code,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'customFields': ?instance.customFields,
+  'id': ?instance.id,
+  'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+  'name': ?instance.name,
+  'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+  'valueList': ?instance.valueList?.toJson(),
+  'values': ?instance.values?.map((e) => e?.toJson()).toList(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

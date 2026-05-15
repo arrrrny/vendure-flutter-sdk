@@ -6,37 +6,40 @@ part of 'shipping_method.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ShippingMethodImpl _$$ShippingMethodImplFromJson(Map json) =>
-    _$ShippingMethodImpl(
-      calculator: ConfigurableOperation.fromJson(
-          Map<String, dynamic>.from(json['calculator'] as Map)),
-      checker: ConfigurableOperation.fromJson(
-          Map<String, dynamic>.from(json['checker'] as Map)),
-      code: json['code'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String,
-      fulfillmentHandlerCode: json['fulfillmentHandlerCode'] as String,
-      id: json['id'] as String,
-      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String,
-      translations: (json['translations'] as List<dynamic>)
-          .map((e) => ShippingMethodTranslation.fromJson(
-              Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_ShippingMethod _$ShippingMethodFromJson(Map json) => _ShippingMethod(
+  calculator: ConfigurableOperation.fromJson(
+    Map<String, dynamic>.from(json['calculator'] as Map),
+  ),
+  checker: ConfigurableOperation.fromJson(
+    Map<String, dynamic>.from(json['checker'] as Map),
+  ),
+  code: json['code'] as String,
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  description: json['description'] as String,
+  fulfillmentHandlerCode: json['fulfillmentHandlerCode'] as String,
+  id: json['id'] as String,
+  languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+  name: json['name'] as String,
+  translations: (json['translations'] as List<dynamic>)
+      .map(
+        (e) => ShippingMethodTranslation.fromJson(
+          Map<String, dynamic>.from(e as Map),
+        ),
+      )
+      .toList(),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$ShippingMethodImplToJson(
-        _$ShippingMethodImpl instance) =>
+Map<String, dynamic> _$ShippingMethodToJson(_ShippingMethod instance) =>
     <String, dynamic>{
       'calculator': instance.calculator.toJson(),
       'checker': instance.checker.toJson(),
       'code': instance.code,
       'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.customFields case final value?) 'customFields': value,
+      'customFields': ?instance.customFields,
       'description': instance.description,
       'fulfillmentHandlerCode': instance.fulfillmentHandlerCode,
       'id': instance.id,

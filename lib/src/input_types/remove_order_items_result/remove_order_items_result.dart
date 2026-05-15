@@ -17,12 +17,8 @@ import '../surcharge/surcharge.dart';
 part 'remove_order_items_result.freezed.dart';
 part 'remove_order_items_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RemoveOrderItemsResult with _$RemoveOrderItemsResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class RemoveOrderItemsResult with _$RemoveOrderItemsResult {
   const RemoveOrderItemsResult._();
 
   const factory RemoveOrderItemsResult.order({

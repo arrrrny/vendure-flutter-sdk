@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,476 +9,348 @@ part of 'asset.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Asset _$AssetFromJson(Map<String, dynamic> json) {
-  return _Asset.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Asset {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  int? get fileSize => throw _privateConstructorUsedError;
-  Coordinate? get focalPoint => throw _privateConstructorUsedError;
-  int? get height => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  String? get mimeType => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get preview => throw _privateConstructorUsedError;
-  String? get source => throw _privateConstructorUsedError;
-  List<Tag?>? get tags => throw _privateConstructorUsedError;
-  AssetType? get type => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  int? get width => throw _privateConstructorUsedError;
+
+ DateTime? get createdAt; Map<String, dynamic>? get customFields; int? get fileSize; Coordinate? get focalPoint; int? get height; String? get id; String? get mimeType; String? get name; String? get preview; String? get source; List<Tag?>? get tags; AssetType? get type; DateTime? get updatedAt; int? get width;
+/// Create a copy of Asset
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AssetCopyWith<Asset> get copyWith => _$AssetCopyWithImpl<Asset>(this as Asset, _$identity);
 
   /// Serializes this Asset to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Asset&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.fileSize, fileSize) || other.fileSize == fileSize)&&(identical(other.focalPoint, focalPoint) || other.focalPoint == focalPoint)&&(identical(other.height, height) || other.height == height)&&(identical(other.id, id) || other.id == id)&&(identical(other.mimeType, mimeType) || other.mimeType == mimeType)&&(identical(other.name, name) || other.name == name)&&(identical(other.preview, preview) || other.preview == preview)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other.tags, tags)&&(identical(other.type, type) || other.type == type)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.width, width) || other.width == width));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,createdAt,const DeepCollectionEquality().hash(customFields),fileSize,focalPoint,height,id,mimeType,name,preview,source,const DeepCollectionEquality().hash(tags),type,updatedAt,width);
+
+@override
+String toString() {
+  return 'Asset(createdAt: $createdAt, customFields: $customFields, fileSize: $fileSize, focalPoint: $focalPoint, height: $height, id: $id, mimeType: $mimeType, name: $name, preview: $preview, source: $source, tags: $tags, type: $type, updatedAt: $updatedAt, width: $width)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AssetCopyWith<$Res> {
-  factory $AssetCopyWith(Asset value, $Res Function(Asset) then) =
-      _$AssetCopyWithImpl<$Res, Asset>;
-  @useResult
-  $Res call(
-      {DateTime? createdAt,
-      Map<String, dynamic>? customFields,
-      int? fileSize,
-      Coordinate? focalPoint,
-      int? height,
-      String? id,
-      String? mimeType,
-      String? name,
-      String? preview,
-      String? source,
-      List<Tag?>? tags,
-      AssetType? type,
-      DateTime? updatedAt,
-      int? width});
+abstract mixin class $AssetCopyWith<$Res>  {
+  factory $AssetCopyWith(Asset value, $Res Function(Asset) _then) = _$AssetCopyWithImpl;
+@useResult
+$Res call({
+ DateTime? createdAt, Map<String, dynamic>? customFields, int? fileSize, Coordinate? focalPoint, int? height, String? id, String? mimeType, String? name, String? preview, String? source, List<Tag?>? tags, AssetType? type, DateTime? updatedAt, int? width
+});
 
-  $CoordinateCopyWith<$Res>? get focalPoint;
+
+$CoordinateCopyWith<$Res>? get focalPoint;
+
 }
-
 /// @nodoc
-class _$AssetCopyWithImpl<$Res, $Val extends Asset>
+class _$AssetCopyWithImpl<$Res>
     implements $AssetCopyWith<$Res> {
-  _$AssetCopyWithImpl(this._value, this._then);
+  _$AssetCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Asset _self;
+  final $Res Function(Asset) _then;
 
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? customFields = freezed,
-    Object? fileSize = freezed,
-    Object? focalPoint = freezed,
-    Object? height = freezed,
-    Object? id = freezed,
-    Object? mimeType = freezed,
-    Object? name = freezed,
-    Object? preview = freezed,
-    Object? source = freezed,
-    Object? tags = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
-    Object? width = freezed,
-  }) {
-    return _then(_value.copyWith(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      customFields: freezed == customFields
-          ? _value.customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      fileSize: freezed == fileSize
-          ? _value.fileSize
-          : fileSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-      focalPoint: freezed == focalPoint
-          ? _value.focalPoint
-          : focalPoint // ignore: cast_nullable_to_non_nullable
-              as Coordinate?,
-      height: freezed == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mimeType: freezed == mimeType
-          ? _value.mimeType
-          : mimeType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preview: freezed == preview
-          ? _value.preview
-          : preview // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: freezed == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag?>?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AssetType?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      width: freezed == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+/// Create a copy of Asset
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? createdAt = freezed,Object? customFields = freezed,Object? fileSize = freezed,Object? focalPoint = freezed,Object? height = freezed,Object? id = freezed,Object? mimeType = freezed,Object? name = freezed,Object? preview = freezed,Object? source = freezed,Object? tags = freezed,Object? type = freezed,Object? updatedAt = freezed,Object? width = freezed,}) {
+  return _then(_self.copyWith(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,customFields: freezed == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,fileSize: freezed == fileSize ? _self.fileSize : fileSize // ignore: cast_nullable_to_non_nullable
+as int?,focalPoint: freezed == focalPoint ? _self.focalPoint : focalPoint // ignore: cast_nullable_to_non_nullable
+as Coordinate?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,mimeType: freezed == mimeType ? _self.mimeType : mimeType // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,preview: freezed == preview ? _self.preview : preview // ignore: cast_nullable_to_non_nullable
+as String?,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String?,tags: freezed == tags ? _self.tags : tags // ignore: cast_nullable_to_non_nullable
+as List<Tag?>?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as AssetType?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+/// Create a copy of Asset
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CoordinateCopyWith<$Res>? get focalPoint {
+    if (_self.focalPoint == null) {
+    return null;
   }
 
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CoordinateCopyWith<$Res>? get focalPoint {
-    if (_value.focalPoint == null) {
-      return null;
-    }
-
-    return $CoordinateCopyWith<$Res>(_value.focalPoint!, (value) {
-      return _then(_value.copyWith(focalPoint: value) as $Val);
-    });
-  }
+  return $CoordinateCopyWith<$Res>(_self.focalPoint!, (value) {
+    return _then(_self.copyWith(focalPoint: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
-  factory _$$AssetImplCopyWith(
-          _$AssetImpl value, $Res Function(_$AssetImpl) then) =
-      __$$AssetImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {DateTime? createdAt,
-      Map<String, dynamic>? customFields,
-      int? fileSize,
-      Coordinate? focalPoint,
-      int? height,
-      String? id,
-      String? mimeType,
-      String? name,
-      String? preview,
-      String? source,
-      List<Tag?>? tags,
-      AssetType? type,
-      DateTime? updatedAt,
-      int? width});
 
-  @override
-  $CoordinateCopyWith<$Res>? get focalPoint;
+/// Adds pattern-matching-related methods to [Asset].
+extension AssetPatterns on Asset {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Asset value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Asset() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Asset value)  $default,){
+final _that = this;
+switch (_that) {
+case _Asset():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Asset value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Asset() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime? createdAt,  Map<String, dynamic>? customFields,  int? fileSize,  Coordinate? focalPoint,  int? height,  String? id,  String? mimeType,  String? name,  String? preview,  String? source,  List<Tag?>? tags,  AssetType? type,  DateTime? updatedAt,  int? width)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Asset() when $default != null:
+return $default(_that.createdAt,_that.customFields,_that.fileSize,_that.focalPoint,_that.height,_that.id,_that.mimeType,_that.name,_that.preview,_that.source,_that.tags,_that.type,_that.updatedAt,_that.width);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime? createdAt,  Map<String, dynamic>? customFields,  int? fileSize,  Coordinate? focalPoint,  int? height,  String? id,  String? mimeType,  String? name,  String? preview,  String? source,  List<Tag?>? tags,  AssetType? type,  DateTime? updatedAt,  int? width)  $default,) {final _that = this;
+switch (_that) {
+case _Asset():
+return $default(_that.createdAt,_that.customFields,_that.fileSize,_that.focalPoint,_that.height,_that.id,_that.mimeType,_that.name,_that.preview,_that.source,_that.tags,_that.type,_that.updatedAt,_that.width);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime? createdAt,  Map<String, dynamic>? customFields,  int? fileSize,  Coordinate? focalPoint,  int? height,  String? id,  String? mimeType,  String? name,  String? preview,  String? source,  List<Tag?>? tags,  AssetType? type,  DateTime? updatedAt,  int? width)?  $default,) {final _that = this;
+switch (_that) {
+case _Asset() when $default != null:
+return $default(_that.createdAt,_that.customFields,_that.fileSize,_that.focalPoint,_that.height,_that.id,_that.mimeType,_that.name,_that.preview,_that.source,_that.tags,_that.type,_that.updatedAt,_that.width);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$AssetImplCopyWithImpl<$Res>
-    extends _$AssetCopyWithImpl<$Res, _$AssetImpl>
-    implements _$$AssetImplCopyWith<$Res> {
-  __$$AssetImplCopyWithImpl(
-      _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? customFields = freezed,
-    Object? fileSize = freezed,
-    Object? focalPoint = freezed,
-    Object? height = freezed,
-    Object? id = freezed,
-    Object? mimeType = freezed,
-    Object? name = freezed,
-    Object? preview = freezed,
-    Object? source = freezed,
-    Object? tags = freezed,
-    Object? type = freezed,
-    Object? updatedAt = freezed,
-    Object? width = freezed,
-  }) {
-    return _then(_$AssetImpl(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      customFields: freezed == customFields
-          ? _value._customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      fileSize: freezed == fileSize
-          ? _value.fileSize
-          : fileSize // ignore: cast_nullable_to_non_nullable
-              as int?,
-      focalPoint: freezed == focalPoint
-          ? _value.focalPoint
-          : focalPoint // ignore: cast_nullable_to_non_nullable
-              as Coordinate?,
-      height: freezed == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mimeType: freezed == mimeType
-          ? _value.mimeType
-          : mimeType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      preview: freezed == preview
-          ? _value.preview
-          : preview // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: freezed == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag?>?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as AssetType?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      width: freezed == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetImpl extends _Asset {
-  const _$AssetImpl(
-      {this.createdAt,
-      final Map<String, dynamic>? customFields,
-      this.fileSize,
-      this.focalPoint,
-      this.height,
-      this.id,
-      this.mimeType,
-      this.name,
-      this.preview,
-      this.source,
-      final List<Tag?>? tags,
-      this.type,
-      this.updatedAt,
-      this.width})
-      : _customFields = customFields,
-        _tags = tags,
-        super._();
 
-  factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetImplFromJson(json);
+class _Asset extends Asset {
+  const _Asset({this.createdAt, final  Map<String, dynamic>? customFields, this.fileSize, this.focalPoint, this.height, this.id, this.mimeType, this.name, this.preview, this.source, final  List<Tag?>? tags, this.type, this.updatedAt, this.width}): _customFields = customFields,_tags = tags,super._();
+  factory _Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 
-  @override
-  final DateTime? createdAt;
-  final Map<String, dynamic>? _customFields;
-  @override
-  Map<String, dynamic>? get customFields {
-    final value = _customFields;
-    if (value == null) return null;
-    if (_customFields is EqualUnmodifiableMapView) return _customFields;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  final int? fileSize;
-  @override
-  final Coordinate? focalPoint;
-  @override
-  final int? height;
-  @override
-  final String? id;
-  @override
-  final String? mimeType;
-  @override
-  final String? name;
-  @override
-  final String? preview;
-  @override
-  final String? source;
-  final List<Tag?>? _tags;
-  @override
-  List<Tag?>? get tags {
-    final value = _tags;
-    if (value == null) return null;
-    if (_tags is EqualUnmodifiableListView) return _tags;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final AssetType? type;
-  @override
-  final DateTime? updatedAt;
-  @override
-  final int? width;
-
-  @override
-  String toString() {
-    return 'Asset(createdAt: $createdAt, customFields: $customFields, fileSize: $fileSize, focalPoint: $focalPoint, height: $height, id: $id, mimeType: $mimeType, name: $name, preview: $preview, source: $source, tags: $tags, type: $type, updatedAt: $updatedAt, width: $width)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AssetImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
-            (identical(other.fileSize, fileSize) ||
-                other.fileSize == fileSize) &&
-            (identical(other.focalPoint, focalPoint) ||
-                other.focalPoint == focalPoint) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.mimeType, mimeType) ||
-                other.mimeType == mimeType) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.preview, preview) || other.preview == preview) &&
-            (identical(other.source, source) || other.source == source) &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.width, width) || other.width == width));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      createdAt,
-      const DeepCollectionEquality().hash(_customFields),
-      fileSize,
-      focalPoint,
-      height,
-      id,
-      mimeType,
-      name,
-      preview,
-      source,
-      const DeepCollectionEquality().hash(_tags),
-      type,
-      updatedAt,
-      width);
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AssetImplToJson(
-      this,
-    );
-  }
+@override final  DateTime? createdAt;
+ final  Map<String, dynamic>? _customFields;
+@override Map<String, dynamic>? get customFields {
+  final value = _customFields;
+  if (value == null) return null;
+  if (_customFields is EqualUnmodifiableMapView) return _customFields;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
 }
 
-abstract class _Asset extends Asset {
-  const factory _Asset(
-      {final DateTime? createdAt,
-      final Map<String, dynamic>? customFields,
-      final int? fileSize,
-      final Coordinate? focalPoint,
-      final int? height,
-      final String? id,
-      final String? mimeType,
-      final String? name,
-      final String? preview,
-      final String? source,
-      final List<Tag?>? tags,
-      final AssetType? type,
-      final DateTime? updatedAt,
-      final int? width}) = _$AssetImpl;
-  const _Asset._() : super._();
-
-  factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
-
-  @override
-  DateTime? get createdAt;
-  @override
-  Map<String, dynamic>? get customFields;
-  @override
-  int? get fileSize;
-  @override
-  Coordinate? get focalPoint;
-  @override
-  int? get height;
-  @override
-  String? get id;
-  @override
-  String? get mimeType;
-  @override
-  String? get name;
-  @override
-  String? get preview;
-  @override
-  String? get source;
-  @override
-  List<Tag?>? get tags;
-  @override
-  AssetType? get type;
-  @override
-  DateTime? get updatedAt;
-  @override
-  int? get width;
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override final  int? fileSize;
+@override final  Coordinate? focalPoint;
+@override final  int? height;
+@override final  String? id;
+@override final  String? mimeType;
+@override final  String? name;
+@override final  String? preview;
+@override final  String? source;
+ final  List<Tag?>? _tags;
+@override List<Tag?>? get tags {
+  final value = _tags;
+  if (value == null) return null;
+  if (_tags is EqualUnmodifiableListView) return _tags;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
 }
+
+@override final  AssetType? type;
+@override final  DateTime? updatedAt;
+@override final  int? width;
+
+/// Create a copy of Asset
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AssetCopyWith<_Asset> get copyWith => __$AssetCopyWithImpl<_Asset>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$AssetToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Asset&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.fileSize, fileSize) || other.fileSize == fileSize)&&(identical(other.focalPoint, focalPoint) || other.focalPoint == focalPoint)&&(identical(other.height, height) || other.height == height)&&(identical(other.id, id) || other.id == id)&&(identical(other.mimeType, mimeType) || other.mimeType == mimeType)&&(identical(other.name, name) || other.name == name)&&(identical(other.preview, preview) || other.preview == preview)&&(identical(other.source, source) || other.source == source)&&const DeepCollectionEquality().equals(other._tags, _tags)&&(identical(other.type, type) || other.type == type)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.width, width) || other.width == width));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,createdAt,const DeepCollectionEquality().hash(_customFields),fileSize,focalPoint,height,id,mimeType,name,preview,source,const DeepCollectionEquality().hash(_tags),type,updatedAt,width);
+
+@override
+String toString() {
+  return 'Asset(createdAt: $createdAt, customFields: $customFields, fileSize: $fileSize, focalPoint: $focalPoint, height: $height, id: $id, mimeType: $mimeType, name: $name, preview: $preview, source: $source, tags: $tags, type: $type, updatedAt: $updatedAt, width: $width)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
+  factory _$AssetCopyWith(_Asset value, $Res Function(_Asset) _then) = __$AssetCopyWithImpl;
+@override @useResult
+$Res call({
+ DateTime? createdAt, Map<String, dynamic>? customFields, int? fileSize, Coordinate? focalPoint, int? height, String? id, String? mimeType, String? name, String? preview, String? source, List<Tag?>? tags, AssetType? type, DateTime? updatedAt, int? width
+});
+
+
+@override $CoordinateCopyWith<$Res>? get focalPoint;
+
+}
+/// @nodoc
+class __$AssetCopyWithImpl<$Res>
+    implements _$AssetCopyWith<$Res> {
+  __$AssetCopyWithImpl(this._self, this._then);
+
+  final _Asset _self;
+  final $Res Function(_Asset) _then;
+
+/// Create a copy of Asset
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? createdAt = freezed,Object? customFields = freezed,Object? fileSize = freezed,Object? focalPoint = freezed,Object? height = freezed,Object? id = freezed,Object? mimeType = freezed,Object? name = freezed,Object? preview = freezed,Object? source = freezed,Object? tags = freezed,Object? type = freezed,Object? updatedAt = freezed,Object? width = freezed,}) {
+  return _then(_Asset(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,customFields: freezed == customFields ? _self._customFields : customFields // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,fileSize: freezed == fileSize ? _self.fileSize : fileSize // ignore: cast_nullable_to_non_nullable
+as int?,focalPoint: freezed == focalPoint ? _self.focalPoint : focalPoint // ignore: cast_nullable_to_non_nullable
+as Coordinate?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,mimeType: freezed == mimeType ? _self.mimeType : mimeType // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,preview: freezed == preview ? _self.preview : preview // ignore: cast_nullable_to_non_nullable
+as String?,source: freezed == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String?,tags: freezed == tags ? _self._tags : tags // ignore: cast_nullable_to_non_nullable
+as List<Tag?>?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as AssetType?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+/// Create a copy of Asset
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CoordinateCopyWith<$Res>? get focalPoint {
+    if (_self.focalPoint == null) {
+    return null;
+  }
+
+  return $CoordinateCopyWith<$Res>(_self.focalPoint!, (value) {
+    return _then(_self.copyWith(focalPoint: value));
+  });
+}
+}
+
+// dart format on

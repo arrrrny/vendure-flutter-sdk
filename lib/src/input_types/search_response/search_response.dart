@@ -6,12 +6,8 @@ import '../search_result/search_result.dart';
 part 'search_response.freezed.dart';
 part 'search_response.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class SearchResponse with _$SearchResponse {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class SearchResponse with _$SearchResponse {
   const SearchResponse._();
 
   const factory SearchResponse({

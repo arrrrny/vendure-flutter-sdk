@@ -5,7 +5,7 @@ part 'promotion_translation.freezed.dart';
 part 'promotion_translation.g.dart';
 
 @freezed
-class PromotionTranslation with _$PromotionTranslation {
+abstract class PromotionTranslation with _$PromotionTranslation {
   const PromotionTranslation._();
 
   const factory PromotionTranslation({

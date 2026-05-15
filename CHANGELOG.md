@@ -1,3 +1,7 @@
+## 2.18.0
+
+- **Change**: Updated dependencies to the latest compatible versions.
+
 ## 2.17.0
 
 - **Feature**: Added API key authentication support for machine-to-machine authentication. New `initializeWithApiKey()` method and `setApiKey()` runtime setter.

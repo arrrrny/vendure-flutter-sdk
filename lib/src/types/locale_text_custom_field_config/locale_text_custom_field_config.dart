@@ -6,7 +6,7 @@ part 'locale_text_custom_field_config.freezed.dart';
 part 'locale_text_custom_field_config.g.dart';
 
 @freezed
-class LocaleTextCustomFieldConfig with _$LocaleTextCustomFieldConfig {
+abstract class LocaleTextCustomFieldConfig with _$LocaleTextCustomFieldConfig {
   const LocaleTextCustomFieldConfig._();
 
   const factory LocaleTextCustomFieldConfig({

@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'coupon_code_invalid_error.freezed.dart';
 part 'coupon_code_invalid_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CouponCodeInvalidError with _$CouponCodeInvalidError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CouponCodeInvalidError with _$CouponCodeInvalidError {
   const CouponCodeInvalidError._();
 
   const factory CouponCodeInvalidError({

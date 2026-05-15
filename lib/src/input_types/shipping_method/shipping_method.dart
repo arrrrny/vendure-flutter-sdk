@@ -6,12 +6,8 @@ import '../shipping_method_translation/shipping_method_translation.dart';
 part 'shipping_method.freezed.dart';
 part 'shipping_method.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ShippingMethod with _$ShippingMethod {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ShippingMethod with _$ShippingMethod {
   const ShippingMethod._();
 
   const factory ShippingMethod({

@@ -6,13 +6,10 @@ part of 'coordinate.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CoordinateImpl _$$CoordinateImplFromJson(Map json) => _$CoordinateImpl(
-      x: (json['x'] as num).toDouble(),
-      y: (json['y'] as num).toDouble(),
-    );
+_Coordinate _$CoordinateFromJson(Map json) => _Coordinate(
+  x: (json['x'] as num).toDouble(),
+  y: (json['y'] as num).toDouble(),
+);
 
-Map<String, dynamic> _$$CoordinateImplToJson(_$CoordinateImpl instance) =>
-    <String, dynamic>{
-      'x': instance.x,
-      'y': instance.y,
-    };
+Map<String, dynamic> _$CoordinateToJson(_Coordinate instance) =>
+    <String, dynamic>{'x': instance.x, 'y': instance.y};

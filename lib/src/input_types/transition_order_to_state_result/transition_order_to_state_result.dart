@@ -17,12 +17,8 @@ import '../surcharge/surcharge.dart';
 part 'transition_order_to_state_result.freezed.dart';
 part 'transition_order_to_state_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class TransitionOrderToStateResult with _$TransitionOrderToStateResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class TransitionOrderToStateResult with _$TransitionOrderToStateResult {
   const TransitionOrderToStateResult._();
 
   const factory TransitionOrderToStateResult.order({

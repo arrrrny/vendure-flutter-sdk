@@ -6,102 +6,101 @@ part of 'product_variant.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductVariantImpl _$$ProductVariantImplFromJson(Map json) =>
-    _$ProductVariantImpl(
-      assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Asset.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      currencyCode:
-          $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      facetValues: (json['facetValues'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      featuredAsset: json['featuredAsset'] == null
-          ? null
-          : Asset.fromJson(
-              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      options: (json['options'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOption.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      price: (json['price'] as num?)?.toDouble(),
-      priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),
-      product: json['product'] == null
-          ? null
-          : Product.fromJson(Map<String, dynamic>.from(json['product'] as Map)),
-      productId: json['productId'] as String?,
-      sku: json['sku'] as String?,
-      stockLevel: json['stockLevel'] as String?,
-      taxCategory: json['taxCategory'] == null
-          ? null
-          : TaxCategory.fromJson(
-              Map<String, dynamic>.from(json['taxCategory'] as Map)),
-      taxRateApplied: json['taxRateApplied'] == null
-          ? null
-          : TaxRate.fromJson(
-              Map<String, dynamic>.from(json['taxRateApplied'] as Map)),
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductVariantTranslation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_ProductVariant _$ProductVariantFromJson(Map json) => _ProductVariant(
+  assets: (json['assets'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Asset.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  currencyCode: $enumDecodeNullable(
+    _$CurrencyCodeEnumMap,
+    json['currencyCode'],
+  ),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  facetValues: (json['facetValues'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : FacetValue.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  featuredAsset: json['featuredAsset'] == null
+      ? null
+      : Asset.fromJson(Map<String, dynamic>.from(json['featuredAsset'] as Map)),
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  options: (json['options'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ProductOption.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  price: (json['price'] as num?)?.toDouble(),
+  priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),
+  product: json['product'] == null
+      ? null
+      : Product.fromJson(Map<String, dynamic>.from(json['product'] as Map)),
+  productId: json['productId'] as String?,
+  sku: json['sku'] as String?,
+  stockLevel: json['stockLevel'] as String?,
+  taxCategory: json['taxCategory'] == null
+      ? null
+      : TaxCategory.fromJson(
+          Map<String, dynamic>.from(json['taxCategory'] as Map),
+        ),
+  taxRateApplied: json['taxRateApplied'] == null
+      ? null
+      : TaxRate.fromJson(
+          Map<String, dynamic>.from(json['taxRateApplied'] as Map),
+        ),
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ProductVariantTranslation.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$ProductVariantImplToJson(
-        _$ProductVariantImpl instance) =>
+Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
     <String, dynamic>{
-      if (instance.assets?.map((e) => e?.toJson()).toList() case final value?)
-        'assets': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (_$CurrencyCodeEnumMap[instance.currencyCode] case final value?)
-        'currencyCode': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.facetValues?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'facetValues': value,
-      if (instance.featuredAsset?.toJson() case final value?)
-        'featuredAsset': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.options?.map((e) => e?.toJson()).toList() case final value?)
-        'options': value,
-      if (instance.price case final value?) 'price': value,
-      if (instance.priceWithTax case final value?) 'priceWithTax': value,
-      if (instance.product?.toJson() case final value?) 'product': value,
-      if (instance.productId case final value?) 'productId': value,
-      if (instance.sku case final value?) 'sku': value,
-      if (instance.stockLevel case final value?) 'stockLevel': value,
-      if (instance.taxCategory?.toJson() case final value?)
-        'taxCategory': value,
-      if (instance.taxRateApplied?.toJson() case final value?)
-        'taxRateApplied': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'assets': ?instance.assets?.map((e) => e?.toJson()).toList(),
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'currencyCode': ?_$CurrencyCodeEnumMap[instance.currencyCode],
+      'customFields': ?instance.customFields,
+      'facetValues': ?instance.facetValues?.map((e) => e?.toJson()).toList(),
+      'featuredAsset': ?instance.featuredAsset?.toJson(),
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'options': ?instance.options?.map((e) => e?.toJson()).toList(),
+      'price': ?instance.price,
+      'priceWithTax': ?instance.priceWithTax,
+      'product': ?instance.product?.toJson(),
+      'productId': ?instance.productId,
+      'sku': ?instance.sku,
+      'stockLevel': ?instance.stockLevel,
+      'taxCategory': ?instance.taxCategory?.toJson(),
+      'taxRateApplied': ?instance.taxRateApplied?.toJson(),
+      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$CurrencyCodeEnumMap = {

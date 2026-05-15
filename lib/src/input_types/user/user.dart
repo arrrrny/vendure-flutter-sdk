@@ -6,12 +6,8 @@ import '../user_custom_fields/user_custom_fields.dart';
 part 'user.freezed.dart';
 part 'user.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class User with _$User {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class User with _$User {
   const User._();
 
   const factory User({

@@ -10,7 +10,7 @@ part 'product.freezed.dart';
 part 'product.g.dart';
 
 @freezed
-class Product with _$Product {
+abstract class Product with _$Product {
   const Product._();
 
   const factory Product({

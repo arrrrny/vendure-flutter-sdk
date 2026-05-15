@@ -5,7 +5,7 @@ part 'order_list.freezed.dart';
 part 'order_list.g.dart';
 
 @freezed
-class OrderList with _$OrderList {
+abstract class OrderList with _$OrderList {
   const OrderList._();
 
   const factory OrderList({

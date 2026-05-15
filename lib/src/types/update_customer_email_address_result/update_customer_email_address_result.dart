@@ -5,7 +5,8 @@ part 'update_customer_email_address_result.freezed.dart';
 part 'update_customer_email_address_result.g.dart';
 
 @freezed
-class UpdateCustomerEmailAddressResult with _$UpdateCustomerEmailAddressResult {
+sealed class UpdateCustomerEmailAddressResult
+    with _$UpdateCustomerEmailAddressResult {
   const UpdateCustomerEmailAddressResult._();
 
   const factory UpdateCustomerEmailAddressResult.identifierChangeTokenExpiredError({
@@ -28,6 +29,6 @@ class UpdateCustomerEmailAddressResult with _$UpdateCustomerEmailAddressResult {
   }) = Success;
 
   factory UpdateCustomerEmailAddressResult.fromJson(
-          Map<String, dynamic> json) =>
-      _$UpdateCustomerEmailAddressResultFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$UpdateCustomerEmailAddressResultFromJson(json);
 }

@@ -6,18 +6,18 @@ part of 'order_payment_state_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderPaymentStateErrorImpl _$$OrderPaymentStateErrorImplFromJson(Map json) =>
-    _$OrderPaymentStateErrorImpl(
+_OrderPaymentStateError _$OrderPaymentStateErrorFromJson(Map json) =>
+    _OrderPaymentStateError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$OrderPaymentStateErrorImplToJson(
-        _$OrderPaymentStateErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$OrderPaymentStateErrorToJson(
+  _OrderPaymentStateError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

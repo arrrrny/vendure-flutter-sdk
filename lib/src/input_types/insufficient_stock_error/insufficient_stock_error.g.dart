@@ -6,8 +6,8 @@ part of 'insufficient_stock_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InsufficientStockErrorImpl _$$InsufficientStockErrorImplFromJson(Map json) =>
-    _$InsufficientStockErrorImpl(
+_InsufficientStockError _$InsufficientStockErrorFromJson(Map json) =>
+    _InsufficientStockError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       order: json['order'] == null
@@ -16,16 +16,14 @@ _$InsufficientStockErrorImpl _$$InsufficientStockErrorImplFromJson(Map json) =>
       quantityAvailable: (json['quantityAvailable'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$InsufficientStockErrorImplToJson(
-        _$InsufficientStockErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-      if (instance.order?.toJson() case final value?) 'order': value,
-      if (instance.quantityAvailable case final value?)
-        'quantityAvailable': value,
-    };
+Map<String, dynamic> _$InsufficientStockErrorToJson(
+  _InsufficientStockError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+  'order': ?instance.order?.toJson(),
+  'quantityAvailable': ?instance.quantityAvailable,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

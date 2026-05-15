@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'native_auth_strategy_error.freezed.dart';
 part 'native_auth_strategy_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class NativeAuthStrategyError with _$NativeAuthStrategyError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class NativeAuthStrategyError with _$NativeAuthStrategyError {
   const NativeAuthStrategyError._();
 
   const factory NativeAuthStrategyError({

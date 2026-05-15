@@ -5,7 +5,7 @@ part 'update_customer_password_result.freezed.dart';
 part 'update_customer_password_result.g.dart';
 
 @freezed
-class UpdateCustomerPasswordResult with _$UpdateCustomerPasswordResult {
+sealed class UpdateCustomerPasswordResult with _$UpdateCustomerPasswordResult {
   const UpdateCustomerPasswordResult._();
 
   const factory UpdateCustomerPasswordResult.invalidCredentialsError({
@@ -25,9 +25,8 @@ class UpdateCustomerPasswordResult with _$UpdateCustomerPasswordResult {
     required String validationErrorMessage,
   }) = PasswordValidationError;
 
-  const factory UpdateCustomerPasswordResult.success({
-    required bool success,
-  }) = Success;
+  const factory UpdateCustomerPasswordResult.success({required bool success}) =
+      Success;
 
   factory UpdateCustomerPasswordResult.fromJson(Map<String, dynamic> json) =>
       _$UpdateCustomerPasswordResultFromJson(json);

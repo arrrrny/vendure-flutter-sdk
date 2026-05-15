@@ -17,7 +17,7 @@ part 'apply_coupon_code_result.freezed.dart';
 part 'apply_coupon_code_result.g.dart';
 
 @freezed
-class ApplyCouponCodeResult with _$ApplyCouponCodeResult {
+sealed class ApplyCouponCodeResult with _$ApplyCouponCodeResult {
   const ApplyCouponCodeResult._();
 
   const factory ApplyCouponCodeResult.couponCodeExpiredError({

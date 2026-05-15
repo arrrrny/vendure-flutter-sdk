@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,304 +9,276 @@ part of 'customer_sort_parameter.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CustomerSortParameter _$CustomerSortParameterFromJson(
-    Map<String, dynamic> json) {
-  return _CustomerSortParameter.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CustomerSortParameter {
-  SortOrder? get createdAt => throw _privateConstructorUsedError;
-  set createdAt(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get emailAddress => throw _privateConstructorUsedError;
-  set emailAddress(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get firstName => throw _privateConstructorUsedError;
-  set firstName(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get id => throw _privateConstructorUsedError;
-  set id(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get lastName => throw _privateConstructorUsedError;
-  set lastName(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get phoneNumber => throw _privateConstructorUsedError;
-  set phoneNumber(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get title => throw _privateConstructorUsedError;
-  set title(SortOrder? value) => throw _privateConstructorUsedError;
-  SortOrder? get updatedAt => throw _privateConstructorUsedError;
-  set updatedAt(SortOrder? value) => throw _privateConstructorUsedError;
+
+ SortOrder? get createdAt; set createdAt(SortOrder? value); SortOrder? get emailAddress; set emailAddress(SortOrder? value); SortOrder? get firstName; set firstName(SortOrder? value); SortOrder? get id; set id(SortOrder? value); SortOrder? get lastName; set lastName(SortOrder? value); SortOrder? get phoneNumber; set phoneNumber(SortOrder? value); SortOrder? get title; set title(SortOrder? value); SortOrder? get updatedAt; set updatedAt(SortOrder? value);
+/// Create a copy of CustomerSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CustomerSortParameterCopyWith<CustomerSortParameter> get copyWith => _$CustomerSortParameterCopyWithImpl<CustomerSortParameter>(this as CustomerSortParameter, _$identity);
 
   /// Serializes this CustomerSortParameter to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CustomerSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CustomerSortParameterCopyWith<CustomerSortParameter> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+
+@override
+String toString() {
+  return 'CustomerSortParameter(createdAt: $createdAt, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CustomerSortParameterCopyWith<$Res> {
-  factory $CustomerSortParameterCopyWith(CustomerSortParameter value,
-          $Res Function(CustomerSortParameter) then) =
-      _$CustomerSortParameterCopyWithImpl<$Res, CustomerSortParameter>;
-  @useResult
-  $Res call(
-      {SortOrder? createdAt,
-      SortOrder? emailAddress,
-      SortOrder? firstName,
-      SortOrder? id,
-      SortOrder? lastName,
-      SortOrder? phoneNumber,
-      SortOrder? title,
-      SortOrder? updatedAt});
-}
+abstract mixin class $CustomerSortParameterCopyWith<$Res>  {
+  factory $CustomerSortParameterCopyWith(CustomerSortParameter value, $Res Function(CustomerSortParameter) _then) = _$CustomerSortParameterCopyWithImpl;
+@useResult
+$Res call({
+ SortOrder? createdAt, SortOrder? emailAddress, SortOrder? firstName, SortOrder? id, SortOrder? lastName, SortOrder? phoneNumber, SortOrder? title, SortOrder? updatedAt
+});
 
+
+
+
+}
 /// @nodoc
-class _$CustomerSortParameterCopyWithImpl<$Res,
-        $Val extends CustomerSortParameter>
+class _$CustomerSortParameterCopyWithImpl<$Res>
     implements $CustomerSortParameterCopyWith<$Res> {
-  _$CustomerSortParameterCopyWithImpl(this._value, this._then);
+  _$CustomerSortParameterCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CustomerSortParameter _self;
+  final $Res Function(CustomerSortParameter) _then;
 
-  /// Create a copy of CustomerSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? emailAddress = freezed,
-    Object? firstName = freezed,
-    Object? id = freezed,
-    Object? lastName = freezed,
-    Object? phoneNumber = freezed,
-    Object? title = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      emailAddress: freezed == emailAddress
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-    ) as $Val);
-  }
+/// Create a copy of CustomerSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? createdAt = freezed,Object? emailAddress = freezed,Object? firstName = freezed,Object? id = freezed,Object? lastName = freezed,Object? phoneNumber = freezed,Object? title = freezed,Object? updatedAt = freezed,}) {
+  return _then(_self.copyWith(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,emailAddress: freezed == emailAddress ? _self.emailAddress : emailAddress // ignore: cast_nullable_to_non_nullable
+as SortOrder?,firstName: freezed == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable
+as SortOrder?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as SortOrder?,lastName: freezed == lastName ? _self.lastName : lastName // ignore: cast_nullable_to_non_nullable
+as SortOrder?,phoneNumber: freezed == phoneNumber ? _self.phoneNumber : phoneNumber // ignore: cast_nullable_to_non_nullable
+as SortOrder?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as SortOrder?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$CustomerSortParameterImplCopyWith<$Res>
-    implements $CustomerSortParameterCopyWith<$Res> {
-  factory _$$CustomerSortParameterImplCopyWith(
-          _$CustomerSortParameterImpl value,
-          $Res Function(_$CustomerSortParameterImpl) then) =
-      __$$CustomerSortParameterImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {SortOrder? createdAt,
-      SortOrder? emailAddress,
-      SortOrder? firstName,
-      SortOrder? id,
-      SortOrder? lastName,
-      SortOrder? phoneNumber,
-      SortOrder? title,
-      SortOrder? updatedAt});
 }
 
-/// @nodoc
-class __$$CustomerSortParameterImplCopyWithImpl<$Res>
-    extends _$CustomerSortParameterCopyWithImpl<$Res,
-        _$CustomerSortParameterImpl>
-    implements _$$CustomerSortParameterImplCopyWith<$Res> {
-  __$$CustomerSortParameterImplCopyWithImpl(_$CustomerSortParameterImpl _value,
-      $Res Function(_$CustomerSortParameterImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of CustomerSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? emailAddress = freezed,
-    Object? firstName = freezed,
-    Object? id = freezed,
-    Object? lastName = freezed,
-    Object? phoneNumber = freezed,
-    Object? title = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_$CustomerSortParameterImpl(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      emailAddress: freezed == emailAddress
-          ? _value.emailAddress
-          : emailAddress // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      firstName: freezed == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      lastName: freezed == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      title: freezed == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as SortOrder?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [CustomerSortParameter].
+extension CustomerSortParameterPatterns on CustomerSortParameter {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CustomerSortParameter value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CustomerSortParameter() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CustomerSortParameter value)  $default,){
+final _that = this;
+switch (_that) {
+case _CustomerSortParameter():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CustomerSortParameter value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CustomerSortParameter() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( SortOrder? createdAt,  SortOrder? emailAddress,  SortOrder? firstName,  SortOrder? id,  SortOrder? lastName,  SortOrder? phoneNumber,  SortOrder? title,  SortOrder? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CustomerSortParameter() when $default != null:
+return $default(_that.createdAt,_that.emailAddress,_that.firstName,_that.id,_that.lastName,_that.phoneNumber,_that.title,_that.updatedAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( SortOrder? createdAt,  SortOrder? emailAddress,  SortOrder? firstName,  SortOrder? id,  SortOrder? lastName,  SortOrder? phoneNumber,  SortOrder? title,  SortOrder? updatedAt)  $default,) {final _that = this;
+switch (_that) {
+case _CustomerSortParameter():
+return $default(_that.createdAt,_that.emailAddress,_that.firstName,_that.id,_that.lastName,_that.phoneNumber,_that.title,_that.updatedAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( SortOrder? createdAt,  SortOrder? emailAddress,  SortOrder? firstName,  SortOrder? id,  SortOrder? lastName,  SortOrder? phoneNumber,  SortOrder? title,  SortOrder? updatedAt)?  $default,) {final _that = this;
+switch (_that) {
+case _CustomerSortParameter() when $default != null:
+return $default(_that.createdAt,_that.emailAddress,_that.firstName,_that.id,_that.lastName,_that.phoneNumber,_that.title,_that.updatedAt);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerSortParameterImpl extends _CustomerSortParameter {
-  _$CustomerSortParameterImpl(
-      {this.createdAt,
-      this.emailAddress,
-      this.firstName,
-      this.id,
-      this.lastName,
-      this.phoneNumber,
-      this.title,
-      this.updatedAt})
-      : super._();
 
-  factory _$CustomerSortParameterImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomerSortParameterImplFromJson(json);
+class _CustomerSortParameter extends CustomerSortParameter {
+   _CustomerSortParameter({this.createdAt, this.emailAddress, this.firstName, this.id, this.lastName, this.phoneNumber, this.title, this.updatedAt}): super._();
+  factory _CustomerSortParameter.fromJson(Map<String, dynamic> json) => _$CustomerSortParameterFromJson(json);
 
-  @override
-  SortOrder? createdAt;
-  @override
-  SortOrder? emailAddress;
-  @override
-  SortOrder? firstName;
-  @override
-  SortOrder? id;
-  @override
-  SortOrder? lastName;
-  @override
-  SortOrder? phoneNumber;
-  @override
-  SortOrder? title;
-  @override
-  SortOrder? updatedAt;
+@override  SortOrder? createdAt;
+@override  SortOrder? emailAddress;
+@override  SortOrder? firstName;
+@override  SortOrder? id;
+@override  SortOrder? lastName;
+@override  SortOrder? phoneNumber;
+@override  SortOrder? title;
+@override  SortOrder? updatedAt;
 
-  @override
-  String toString() {
-    return 'CustomerSortParameter(createdAt: $createdAt, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt)';
-  }
+/// Create a copy of CustomerSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CustomerSortParameterCopyWith<_CustomerSortParameter> get copyWith => __$CustomerSortParameterCopyWithImpl<_CustomerSortParameter>(this, _$identity);
 
-  /// Create a copy of CustomerSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CustomerSortParameterImplCopyWith<_$CustomerSortParameterImpl>
-      get copyWith => __$$CustomerSortParameterImplCopyWithImpl<
-          _$CustomerSortParameterImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CustomerSortParameterImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$CustomerSortParameterToJson(this, );
 }
 
-abstract class _CustomerSortParameter extends CustomerSortParameter {
-  factory _CustomerSortParameter(
-      {SortOrder? createdAt,
-      SortOrder? emailAddress,
-      SortOrder? firstName,
-      SortOrder? id,
-      SortOrder? lastName,
-      SortOrder? phoneNumber,
-      SortOrder? title,
-      SortOrder? updatedAt}) = _$CustomerSortParameterImpl;
-  _CustomerSortParameter._() : super._();
 
-  factory _CustomerSortParameter.fromJson(Map<String, dynamic> json) =
-      _$CustomerSortParameterImpl.fromJson;
 
-  @override
-  SortOrder? get createdAt;
-  set createdAt(SortOrder? value);
-  @override
-  SortOrder? get emailAddress;
-  set emailAddress(SortOrder? value);
-  @override
-  SortOrder? get firstName;
-  set firstName(SortOrder? value);
-  @override
-  SortOrder? get id;
-  set id(SortOrder? value);
-  @override
-  SortOrder? get lastName;
-  set lastName(SortOrder? value);
-  @override
-  SortOrder? get phoneNumber;
-  set phoneNumber(SortOrder? value);
-  @override
-  SortOrder? get title;
-  set title(SortOrder? value);
-  @override
-  SortOrder? get updatedAt;
-  set updatedAt(SortOrder? value);
-
-  /// Create a copy of CustomerSortParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CustomerSortParameterImplCopyWith<_$CustomerSortParameterImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'CustomerSortParameter(createdAt: $createdAt, emailAddress: $emailAddress, firstName: $firstName, id: $id, lastName: $lastName, phoneNumber: $phoneNumber, title: $title, updatedAt: $updatedAt)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CustomerSortParameterCopyWith<$Res> implements $CustomerSortParameterCopyWith<$Res> {
+  factory _$CustomerSortParameterCopyWith(_CustomerSortParameter value, $Res Function(_CustomerSortParameter) _then) = __$CustomerSortParameterCopyWithImpl;
+@override @useResult
+$Res call({
+ SortOrder? createdAt, SortOrder? emailAddress, SortOrder? firstName, SortOrder? id, SortOrder? lastName, SortOrder? phoneNumber, SortOrder? title, SortOrder? updatedAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$CustomerSortParameterCopyWithImpl<$Res>
+    implements _$CustomerSortParameterCopyWith<$Res> {
+  __$CustomerSortParameterCopyWithImpl(this._self, this._then);
+
+  final _CustomerSortParameter _self;
+  final $Res Function(_CustomerSortParameter) _then;
+
+/// Create a copy of CustomerSortParameter
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? createdAt = freezed,Object? emailAddress = freezed,Object? firstName = freezed,Object? id = freezed,Object? lastName = freezed,Object? phoneNumber = freezed,Object? title = freezed,Object? updatedAt = freezed,}) {
+  return _then(_CustomerSortParameter(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,emailAddress: freezed == emailAddress ? _self.emailAddress : emailAddress // ignore: cast_nullable_to_non_nullable
+as SortOrder?,firstName: freezed == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable
+as SortOrder?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as SortOrder?,lastName: freezed == lastName ? _self.lastName : lastName // ignore: cast_nullable_to_non_nullable
+as SortOrder?,phoneNumber: freezed == phoneNumber ? _self.phoneNumber : phoneNumber // ignore: cast_nullable_to_non_nullable
+as SortOrder?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as SortOrder?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as SortOrder?,
+  ));
+}
+
+
+}
+
+// dart format on

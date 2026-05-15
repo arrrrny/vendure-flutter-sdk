@@ -7,7 +7,7 @@ part 'asset.freezed.dart';
 part 'asset.g.dart';
 
 @freezed
-class Asset with _$Asset {
+abstract class Asset with _$Asset {
   const Asset._();
 
   const factory Asset({

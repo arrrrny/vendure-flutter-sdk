@@ -4,12 +4,8 @@ import '../language_code/language_code.dart';
 part 'shipping_method_translation.freezed.dart';
 part 'shipping_method_translation.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ShippingMethodTranslation with _$ShippingMethodTranslation {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ShippingMethodTranslation with _$ShippingMethodTranslation {
   const ShippingMethodTranslation._();
 
   const factory ShippingMethodTranslation({

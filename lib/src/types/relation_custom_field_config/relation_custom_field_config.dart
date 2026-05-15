@@ -6,7 +6,7 @@ part 'relation_custom_field_config.freezed.dart';
 part 'relation_custom_field_config.g.dart';
 
 @freezed
-class RelationCustomFieldConfig with _$RelationCustomFieldConfig {
+abstract class RelationCustomFieldConfig with _$RelationCustomFieldConfig {
   const RelationCustomFieldConfig._();
 
   const factory RelationCustomFieldConfig({

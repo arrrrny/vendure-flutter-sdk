@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'coupon_code_expired_error.freezed.dart';
 part 'coupon_code_expired_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CouponCodeExpiredError with _$CouponCodeExpiredError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CouponCodeExpiredError with _$CouponCodeExpiredError {
   const CouponCodeExpiredError._();
 
   const factory CouponCodeExpiredError({

@@ -5,12 +5,8 @@ import '../permission/permission.dart';
 part 'role.freezed.dart';
 part 'role.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Role with _$Role {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Role with _$Role {
   const Role._();
 
   const factory Role({

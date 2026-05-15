@@ -17,7 +17,7 @@ part 'transition_order_to_state_result.freezed.dart';
 part 'transition_order_to_state_result.g.dart';
 
 @freezed
-class TransitionOrderToStateResult with _$TransitionOrderToStateResult {
+sealed class TransitionOrderToStateResult with _$TransitionOrderToStateResult {
   const TransitionOrderToStateResult._();
 
   const factory TransitionOrderToStateResult.order({

@@ -5,7 +5,7 @@ part 'invalid_credentials_error.freezed.dart';
 part 'invalid_credentials_error.g.dart';
 
 @freezed
-class InvalidCredentialsError with _$InvalidCredentialsError {
+abstract class InvalidCredentialsError with _$InvalidCredentialsError {
   const InvalidCredentialsError._();
 
   const factory InvalidCredentialsError({

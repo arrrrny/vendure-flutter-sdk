@@ -7,7 +7,7 @@ part 'product_option_group.freezed.dart';
 part 'product_option_group.g.dart';
 
 @freezed
-class ProductOptionGroup with _$ProductOptionGroup {
+abstract class ProductOptionGroup with _$ProductOptionGroup {
   const ProductOptionGroup._();
 
   const factory ProductOptionGroup({

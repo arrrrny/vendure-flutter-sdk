@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,305 +9,276 @@ part of 'string_operators.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-StringOperators _$StringOperatorsFromJson(Map<String, dynamic> json) {
-  return _StringOperators.fromJson(json);
-}
 
 /// @nodoc
 mixin _$StringOperators {
-  String? get contains => throw _privateConstructorUsedError;
-  set contains(String? value) => throw _privateConstructorUsedError;
-  String? get eq => throw _privateConstructorUsedError;
-  set eq(String? value) => throw _privateConstructorUsedError;
-  @JsonKey(name: 'in')
-  List<String>? get in_ => throw _privateConstructorUsedError;
-  @JsonKey(name: 'in')
-  set in_(List<String>? value) => throw _privateConstructorUsedError;
-  bool? get isNull => throw _privateConstructorUsedError;
-  set isNull(bool? value) => throw _privateConstructorUsedError;
-  String? get notContains => throw _privateConstructorUsedError;
-  set notContains(String? value) => throw _privateConstructorUsedError;
-  String? get notEq => throw _privateConstructorUsedError;
-  set notEq(String? value) => throw _privateConstructorUsedError;
-  List<String>? get notIn => throw _privateConstructorUsedError;
-  set notIn(List<String>? value) => throw _privateConstructorUsedError;
-  String? get regex => throw _privateConstructorUsedError;
-  set regex(String? value) => throw _privateConstructorUsedError;
+
+ String? get contains; set contains(String? value); String? get eq; set eq(String? value);@JsonKey(name: 'in') List<String>? get in_;@JsonKey(name: 'in') set in_(List<String>? value); bool? get isNull; set isNull(bool? value); String? get notContains; set notContains(String? value); String? get notEq; set notEq(String? value); List<String>? get notIn; set notIn(List<String>? value); String? get regex; set regex(String? value);
+/// Create a copy of StringOperators
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$StringOperatorsCopyWith<StringOperators> get copyWith => _$StringOperatorsCopyWithImpl<StringOperators>(this as StringOperators, _$identity);
 
   /// Serializes this StringOperators to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of StringOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $StringOperatorsCopyWith<StringOperators> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+
+@override
+String toString() {
+  return 'StringOperators(contains: $contains, eq: $eq, in_: $in_, isNull: $isNull, notContains: $notContains, notEq: $notEq, notIn: $notIn, regex: $regex)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $StringOperatorsCopyWith<$Res> {
-  factory $StringOperatorsCopyWith(
-          StringOperators value, $Res Function(StringOperators) then) =
-      _$StringOperatorsCopyWithImpl<$Res, StringOperators>;
-  @useResult
-  $Res call(
-      {String? contains,
-      String? eq,
-      @JsonKey(name: 'in') List<String>? in_,
-      bool? isNull,
-      String? notContains,
-      String? notEq,
-      List<String>? notIn,
-      String? regex});
-}
+abstract mixin class $StringOperatorsCopyWith<$Res>  {
+  factory $StringOperatorsCopyWith(StringOperators value, $Res Function(StringOperators) _then) = _$StringOperatorsCopyWithImpl;
+@useResult
+$Res call({
+ String? contains, String? eq,@JsonKey(name: 'in') List<String>? in_, bool? isNull, String? notContains, String? notEq, List<String>? notIn, String? regex
+});
 
+
+
+
+}
 /// @nodoc
-class _$StringOperatorsCopyWithImpl<$Res, $Val extends StringOperators>
+class _$StringOperatorsCopyWithImpl<$Res>
     implements $StringOperatorsCopyWith<$Res> {
-  _$StringOperatorsCopyWithImpl(this._value, this._then);
+  _$StringOperatorsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final StringOperators _self;
+  final $Res Function(StringOperators) _then;
 
-  /// Create a copy of StringOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contains = freezed,
-    Object? eq = freezed,
-    Object? in_ = freezed,
-    Object? isNull = freezed,
-    Object? notContains = freezed,
-    Object? notEq = freezed,
-    Object? notIn = freezed,
-    Object? regex = freezed,
-  }) {
-    return _then(_value.copyWith(
-      contains: freezed == contains
-          ? _value.contains
-          : contains // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eq: freezed == eq
-          ? _value.eq
-          : eq // ignore: cast_nullable_to_non_nullable
-              as String?,
-      in_: freezed == in_
-          ? _value.in_
-          : in_ // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      isNull: freezed == isNull
-          ? _value.isNull
-          : isNull // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notContains: freezed == notContains
-          ? _value.notContains
-          : notContains // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notEq: freezed == notEq
-          ? _value.notEq
-          : notEq // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notIn: freezed == notIn
-          ? _value.notIn
-          : notIn // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      regex: freezed == regex
-          ? _value.regex
-          : regex // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of StringOperators
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? contains = freezed,Object? eq = freezed,Object? in_ = freezed,Object? isNull = freezed,Object? notContains = freezed,Object? notEq = freezed,Object? notIn = freezed,Object? regex = freezed,}) {
+  return _then(_self.copyWith(
+contains: freezed == contains ? _self.contains : contains // ignore: cast_nullable_to_non_nullable
+as String?,eq: freezed == eq ? _self.eq : eq // ignore: cast_nullable_to_non_nullable
+as String?,in_: freezed == in_ ? _self.in_ : in_ // ignore: cast_nullable_to_non_nullable
+as List<String>?,isNull: freezed == isNull ? _self.isNull : isNull // ignore: cast_nullable_to_non_nullable
+as bool?,notContains: freezed == notContains ? _self.notContains : notContains // ignore: cast_nullable_to_non_nullable
+as String?,notEq: freezed == notEq ? _self.notEq : notEq // ignore: cast_nullable_to_non_nullable
+as String?,notIn: freezed == notIn ? _self.notIn : notIn // ignore: cast_nullable_to_non_nullable
+as List<String>?,regex: freezed == regex ? _self.regex : regex // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$StringOperatorsImplCopyWith<$Res>
-    implements $StringOperatorsCopyWith<$Res> {
-  factory _$$StringOperatorsImplCopyWith(_$StringOperatorsImpl value,
-          $Res Function(_$StringOperatorsImpl) then) =
-      __$$StringOperatorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? contains,
-      String? eq,
-      @JsonKey(name: 'in') List<String>? in_,
-      bool? isNull,
-      String? notContains,
-      String? notEq,
-      List<String>? notIn,
-      String? regex});
 }
 
-/// @nodoc
-class __$$StringOperatorsImplCopyWithImpl<$Res>
-    extends _$StringOperatorsCopyWithImpl<$Res, _$StringOperatorsImpl>
-    implements _$$StringOperatorsImplCopyWith<$Res> {
-  __$$StringOperatorsImplCopyWithImpl(
-      _$StringOperatorsImpl _value, $Res Function(_$StringOperatorsImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of StringOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? contains = freezed,
-    Object? eq = freezed,
-    Object? in_ = freezed,
-    Object? isNull = freezed,
-    Object? notContains = freezed,
-    Object? notEq = freezed,
-    Object? notIn = freezed,
-    Object? regex = freezed,
-  }) {
-    return _then(_$StringOperatorsImpl(
-      contains: freezed == contains
-          ? _value.contains
-          : contains // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eq: freezed == eq
-          ? _value.eq
-          : eq // ignore: cast_nullable_to_non_nullable
-              as String?,
-      in_: freezed == in_
-          ? _value.in_
-          : in_ // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      isNull: freezed == isNull
-          ? _value.isNull
-          : isNull // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notContains: freezed == notContains
-          ? _value.notContains
-          : notContains // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notEq: freezed == notEq
-          ? _value.notEq
-          : notEq // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notIn: freezed == notIn
-          ? _value.notIn
-          : notIn // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      regex: freezed == regex
-          ? _value.regex
-          : regex // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [StringOperators].
+extension StringOperatorsPatterns on StringOperators {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _StringOperators value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _StringOperators() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _StringOperators value)  $default,){
+final _that = this;
+switch (_that) {
+case _StringOperators():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _StringOperators value)?  $default,){
+final _that = this;
+switch (_that) {
+case _StringOperators() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? contains,  String? eq, @JsonKey(name: 'in')  List<String>? in_,  bool? isNull,  String? notContains,  String? notEq,  List<String>? notIn,  String? regex)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _StringOperators() when $default != null:
+return $default(_that.contains,_that.eq,_that.in_,_that.isNull,_that.notContains,_that.notEq,_that.notIn,_that.regex);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? contains,  String? eq, @JsonKey(name: 'in')  List<String>? in_,  bool? isNull,  String? notContains,  String? notEq,  List<String>? notIn,  String? regex)  $default,) {final _that = this;
+switch (_that) {
+case _StringOperators():
+return $default(_that.contains,_that.eq,_that.in_,_that.isNull,_that.notContains,_that.notEq,_that.notIn,_that.regex);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? contains,  String? eq, @JsonKey(name: 'in')  List<String>? in_,  bool? isNull,  String? notContains,  String? notEq,  List<String>? notIn,  String? regex)?  $default,) {final _that = this;
+switch (_that) {
+case _StringOperators() when $default != null:
+return $default(_that.contains,_that.eq,_that.in_,_that.isNull,_that.notContains,_that.notEq,_that.notIn,_that.regex);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$StringOperatorsImpl extends _StringOperators {
-  _$StringOperatorsImpl(
-      {this.contains,
-      this.eq,
-      @JsonKey(name: 'in') this.in_,
-      this.isNull,
-      this.notContains,
-      this.notEq,
-      this.notIn,
-      this.regex})
-      : super._();
 
-  factory _$StringOperatorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StringOperatorsImplFromJson(json);
+class _StringOperators extends StringOperators {
+   _StringOperators({this.contains, this.eq, @JsonKey(name: 'in') this.in_, this.isNull, this.notContains, this.notEq, this.notIn, this.regex}): super._();
+  factory _StringOperators.fromJson(Map<String, dynamic> json) => _$StringOperatorsFromJson(json);
 
-  @override
-  String? contains;
-  @override
-  String? eq;
-  @override
-  @JsonKey(name: 'in')
-  List<String>? in_;
-  @override
-  bool? isNull;
-  @override
-  String? notContains;
-  @override
-  String? notEq;
-  @override
-  List<String>? notIn;
-  @override
-  String? regex;
+@override  String? contains;
+@override  String? eq;
+@override@JsonKey(name: 'in')  List<String>? in_;
+@override  bool? isNull;
+@override  String? notContains;
+@override  String? notEq;
+@override  List<String>? notIn;
+@override  String? regex;
 
-  @override
-  String toString() {
-    return 'StringOperators(contains: $contains, eq: $eq, in_: $in_, isNull: $isNull, notContains: $notContains, notEq: $notEq, notIn: $notIn, regex: $regex)';
-  }
+/// Create a copy of StringOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$StringOperatorsCopyWith<_StringOperators> get copyWith => __$StringOperatorsCopyWithImpl<_StringOperators>(this, _$identity);
 
-  /// Create a copy of StringOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StringOperatorsImplCopyWith<_$StringOperatorsImpl> get copyWith =>
-      __$$StringOperatorsImplCopyWithImpl<_$StringOperatorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StringOperatorsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$StringOperatorsToJson(this, );
 }
 
-abstract class _StringOperators extends StringOperators {
-  factory _StringOperators(
-      {String? contains,
-      String? eq,
-      @JsonKey(name: 'in') List<String>? in_,
-      bool? isNull,
-      String? notContains,
-      String? notEq,
-      List<String>? notIn,
-      String? regex}) = _$StringOperatorsImpl;
-  _StringOperators._() : super._();
 
-  factory _StringOperators.fromJson(Map<String, dynamic> json) =
-      _$StringOperatorsImpl.fromJson;
 
-  @override
-  String? get contains;
-  set contains(String? value);
-  @override
-  String? get eq;
-  set eq(String? value);
-  @override
-  @JsonKey(name: 'in')
-  List<String>? get in_;
-  @JsonKey(name: 'in')
-  set in_(List<String>? value);
-  @override
-  bool? get isNull;
-  set isNull(bool? value);
-  @override
-  String? get notContains;
-  set notContains(String? value);
-  @override
-  String? get notEq;
-  set notEq(String? value);
-  @override
-  List<String>? get notIn;
-  set notIn(List<String>? value);
-  @override
-  String? get regex;
-  set regex(String? value);
-
-  /// Create a copy of StringOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StringOperatorsImplCopyWith<_$StringOperatorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'StringOperators(contains: $contains, eq: $eq, in_: $in_, isNull: $isNull, notContains: $notContains, notEq: $notEq, notIn: $notIn, regex: $regex)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$StringOperatorsCopyWith<$Res> implements $StringOperatorsCopyWith<$Res> {
+  factory _$StringOperatorsCopyWith(_StringOperators value, $Res Function(_StringOperators) _then) = __$StringOperatorsCopyWithImpl;
+@override @useResult
+$Res call({
+ String? contains, String? eq,@JsonKey(name: 'in') List<String>? in_, bool? isNull, String? notContains, String? notEq, List<String>? notIn, String? regex
+});
+
+
+
+
+}
+/// @nodoc
+class __$StringOperatorsCopyWithImpl<$Res>
+    implements _$StringOperatorsCopyWith<$Res> {
+  __$StringOperatorsCopyWithImpl(this._self, this._then);
+
+  final _StringOperators _self;
+  final $Res Function(_StringOperators) _then;
+
+/// Create a copy of StringOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? contains = freezed,Object? eq = freezed,Object? in_ = freezed,Object? isNull = freezed,Object? notContains = freezed,Object? notEq = freezed,Object? notIn = freezed,Object? regex = freezed,}) {
+  return _then(_StringOperators(
+contains: freezed == contains ? _self.contains : contains // ignore: cast_nullable_to_non_nullable
+as String?,eq: freezed == eq ? _self.eq : eq // ignore: cast_nullable_to_non_nullable
+as String?,in_: freezed == in_ ? _self.in_ : in_ // ignore: cast_nullable_to_non_nullable
+as List<String>?,isNull: freezed == isNull ? _self.isNull : isNull // ignore: cast_nullable_to_non_nullable
+as bool?,notContains: freezed == notContains ? _self.notContains : notContains // ignore: cast_nullable_to_non_nullable
+as String?,notEq: freezed == notEq ? _self.notEq : notEq // ignore: cast_nullable_to_non_nullable
+as String?,notIn: freezed == notIn ? _self.notIn : notIn // ignore: cast_nullable_to_non_nullable
+as List<String>?,regex: freezed == regex ? _self.regex : regex // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

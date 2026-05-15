@@ -5,7 +5,7 @@ part 'history_entry.freezed.dart';
 part 'history_entry.g.dart';
 
 @freezed
-class HistoryEntry with _$HistoryEntry {
+abstract class HistoryEntry with _$HistoryEntry {
   const HistoryEntry._();
 
   const factory HistoryEntry({

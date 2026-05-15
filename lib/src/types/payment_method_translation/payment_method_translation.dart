@@ -5,7 +5,7 @@ part 'payment_method_translation.freezed.dart';
 part 'payment_method_translation.g.dart';
 
 @freezed
-class PaymentMethodTranslation with _$PaymentMethodTranslation {
+abstract class PaymentMethodTranslation with _$PaymentMethodTranslation {
   const PaymentMethodTranslation._();
 
   const factory PaymentMethodTranslation({

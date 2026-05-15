@@ -6,30 +6,25 @@ part of 'history_entry.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HistoryEntryImpl _$$HistoryEntryImplFromJson(Map json) => _$HistoryEntryImpl(
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      data: (json['data'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      id: json['id'] as String?,
-      type: $enumDecodeNullable(_$HistoryEntryTypeEnumMap, json['type']),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_HistoryEntry _$HistoryEntryFromJson(Map json) => _HistoryEntry(
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  data: (json['data'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
+  id: json['id'] as String?,
+  type: $enumDecodeNullable(_$HistoryEntryTypeEnumMap, json['type']),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$HistoryEntryImplToJson(_$HistoryEntryImpl instance) =>
+Map<String, dynamic> _$HistoryEntryToJson(_HistoryEntry instance) =>
     <String, dynamic>{
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.data case final value?) 'data': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$HistoryEntryTypeEnumMap[instance.type] case final value?)
-        'type': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'data': ?instance.data,
+      'id': ?instance.id,
+      'type': ?_$HistoryEntryTypeEnumMap[instance.type],
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$HistoryEntryTypeEnumMap = {

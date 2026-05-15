@@ -5,7 +5,7 @@ part 'configurable_operation_input.freezed.dart';
 part 'configurable_operation_input.g.dart';
 
 @unfreezed
-class ConfigurableOperationInput with _$ConfigurableOperationInput {
+abstract class ConfigurableOperationInput with _$ConfigurableOperationInput {
   const ConfigurableOperationInput._();
 
   factory ConfigurableOperationInput({

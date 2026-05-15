@@ -6,12 +6,8 @@ import '../string_operators/string_operators.dart';
 part 'history_entry_filter_parameter.freezed.dart';
 part 'history_entry_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class HistoryEntryFilterParameter with _$HistoryEntryFilterParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class HistoryEntryFilterParameter with _$HistoryEntryFilterParameter {
   const HistoryEntryFilterParameter._();
 
   const factory HistoryEntryFilterParameter({

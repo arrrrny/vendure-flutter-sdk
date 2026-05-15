@@ -6,12 +6,8 @@ import '../product_variant_sort_parameter/product_variant_sort_parameter.dart';
 part 'product_variant_list_options.freezed.dart';
 part 'product_variant_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ProductVariantListOptions with _$ProductVariantListOptions {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ProductVariantListOptions with _$ProductVariantListOptions {
   const ProductVariantListOptions._();
 
   const factory ProductVariantListOptions({

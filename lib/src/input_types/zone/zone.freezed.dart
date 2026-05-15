@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,285 +9,300 @@ part of 'zone.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Zone _$ZoneFromJson(Map<String, dynamic> json) {
-  return _Zone.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Zone {
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get customFields => throw _privateConstructorUsedError;
-  String? get id => throw _privateConstructorUsedError;
-  List<Region?>? get members => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+
+ DateTime? get createdAt; Map<String, dynamic>? get customFields; String? get id; List<Region?>? get members; String? get name; DateTime? get updatedAt;
+/// Create a copy of Zone
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZoneCopyWith<Zone> get copyWith => _$ZoneCopyWithImpl<Zone>(this as Zone, _$identity);
 
   /// Serializes this Zone to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of Zone
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ZoneCopyWith<Zone> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Zone&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other.customFields, customFields)&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other.members, members)&&(identical(other.name, name) || other.name == name)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,createdAt,const DeepCollectionEquality().hash(customFields),id,const DeepCollectionEquality().hash(members),name,updatedAt);
+
+@override
+String toString() {
+  return 'Zone(createdAt: $createdAt, customFields: $customFields, id: $id, members: $members, name: $name, updatedAt: $updatedAt)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ZoneCopyWith<$Res> {
-  factory $ZoneCopyWith(Zone value, $Res Function(Zone) then) =
-      _$ZoneCopyWithImpl<$Res, Zone>;
-  @useResult
-  $Res call(
-      {DateTime? createdAt,
-      Map<String, dynamic>? customFields,
-      String? id,
-      List<Region?>? members,
-      String? name,
-      DateTime? updatedAt});
-}
+abstract mixin class $ZoneCopyWith<$Res>  {
+  factory $ZoneCopyWith(Zone value, $Res Function(Zone) _then) = _$ZoneCopyWithImpl;
+@useResult
+$Res call({
+ DateTime? createdAt, Map<String, dynamic>? customFields, String? id, List<Region?>? members, String? name, DateTime? updatedAt
+});
 
+
+
+
+}
 /// @nodoc
-class _$ZoneCopyWithImpl<$Res, $Val extends Zone>
+class _$ZoneCopyWithImpl<$Res>
     implements $ZoneCopyWith<$Res> {
-  _$ZoneCopyWithImpl(this._value, this._then);
+  _$ZoneCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Zone _self;
+  final $Res Function(Zone) _then;
 
-  /// Create a copy of Zone
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? customFields = freezed,
-    Object? id = freezed,
-    Object? members = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      customFields: freezed == customFields
-          ? _value.customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      members: freezed == members
-          ? _value.members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<Region?>?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
-  }
+/// Create a copy of Zone
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? createdAt = freezed,Object? customFields = freezed,Object? id = freezed,Object? members = freezed,Object? name = freezed,Object? updatedAt = freezed,}) {
+  return _then(_self.copyWith(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,customFields: freezed == customFields ? _self.customFields : customFields // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,members: freezed == members ? _self.members : members // ignore: cast_nullable_to_non_nullable
+as List<Region?>?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ZoneImplCopyWith<$Res> implements $ZoneCopyWith<$Res> {
-  factory _$$ZoneImplCopyWith(
-          _$ZoneImpl value, $Res Function(_$ZoneImpl) then) =
-      __$$ZoneImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {DateTime? createdAt,
-      Map<String, dynamic>? customFields,
-      String? id,
-      List<Region?>? members,
-      String? name,
-      DateTime? updatedAt});
 }
 
-/// @nodoc
-class __$$ZoneImplCopyWithImpl<$Res>
-    extends _$ZoneCopyWithImpl<$Res, _$ZoneImpl>
-    implements _$$ZoneImplCopyWith<$Res> {
-  __$$ZoneImplCopyWithImpl(_$ZoneImpl _value, $Res Function(_$ZoneImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of Zone
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? createdAt = freezed,
-    Object? customFields = freezed,
-    Object? id = freezed,
-    Object? members = freezed,
-    Object? name = freezed,
-    Object? updatedAt = freezed,
-  }) {
-    return _then(_$ZoneImpl(
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      customFields: freezed == customFields
-          ? _value._customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      members: freezed == members
-          ? _value._members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<Region?>?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [Zone].
+extension ZonePatterns on Zone {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Zone value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Zone() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Zone value)  $default,){
+final _that = this;
+switch (_that) {
+case _Zone():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Zone value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Zone() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime? createdAt,  Map<String, dynamic>? customFields,  String? id,  List<Region?>? members,  String? name,  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Zone() when $default != null:
+return $default(_that.createdAt,_that.customFields,_that.id,_that.members,_that.name,_that.updatedAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime? createdAt,  Map<String, dynamic>? customFields,  String? id,  List<Region?>? members,  String? name,  DateTime? updatedAt)  $default,) {final _that = this;
+switch (_that) {
+case _Zone():
+return $default(_that.createdAt,_that.customFields,_that.id,_that.members,_that.name,_that.updatedAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime? createdAt,  Map<String, dynamic>? customFields,  String? id,  List<Region?>? members,  String? name,  DateTime? updatedAt)?  $default,) {final _that = this;
+switch (_that) {
+case _Zone() when $default != null:
+return $default(_that.createdAt,_that.customFields,_that.id,_that.members,_that.name,_that.updatedAt);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ZoneImpl extends _Zone {
-  const _$ZoneImpl(
-      {this.createdAt,
-      final Map<String, dynamic>? customFields,
-      this.id,
-      final List<Region?>? members,
-      this.name,
-      this.updatedAt})
-      : _customFields = customFields,
-        _members = members,
-        super._();
 
-  factory _$ZoneImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ZoneImplFromJson(json);
+class _Zone extends Zone {
+  const _Zone({this.createdAt, final  Map<String, dynamic>? customFields, this.id, final  List<Region?>? members, this.name, this.updatedAt}): _customFields = customFields,_members = members,super._();
+  factory _Zone.fromJson(Map<String, dynamic> json) => _$ZoneFromJson(json);
 
-  @override
-  final DateTime? createdAt;
-  final Map<String, dynamic>? _customFields;
-  @override
-  Map<String, dynamic>? get customFields {
-    final value = _customFields;
-    if (value == null) return null;
-    if (_customFields is EqualUnmodifiableMapView) return _customFields;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  final String? id;
-  final List<Region?>? _members;
-  @override
-  List<Region?>? get members {
-    final value = _members;
-    if (value == null) return null;
-    if (_members is EqualUnmodifiableListView) return _members;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final String? name;
-  @override
-  final DateTime? updatedAt;
-
-  @override
-  String toString() {
-    return 'Zone(createdAt: $createdAt, customFields: $customFields, id: $id, members: $members, name: $name, updatedAt: $updatedAt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ZoneImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
-            (identical(other.id, id) || other.id == id) &&
-            const DeepCollectionEquality().equals(other._members, _members) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      createdAt,
-      const DeepCollectionEquality().hash(_customFields),
-      id,
-      const DeepCollectionEquality().hash(_members),
-      name,
-      updatedAt);
-
-  /// Create a copy of Zone
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ZoneImplCopyWith<_$ZoneImpl> get copyWith =>
-      __$$ZoneImplCopyWithImpl<_$ZoneImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ZoneImplToJson(
-      this,
-    );
-  }
+@override final  DateTime? createdAt;
+ final  Map<String, dynamic>? _customFields;
+@override Map<String, dynamic>? get customFields {
+  final value = _customFields;
+  if (value == null) return null;
+  if (_customFields is EqualUnmodifiableMapView) return _customFields;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
 }
 
-abstract class _Zone extends Zone {
-  const factory _Zone(
-      {final DateTime? createdAt,
-      final Map<String, dynamic>? customFields,
-      final String? id,
-      final List<Region?>? members,
-      final String? name,
-      final DateTime? updatedAt}) = _$ZoneImpl;
-  const _Zone._() : super._();
-
-  factory _Zone.fromJson(Map<String, dynamic> json) = _$ZoneImpl.fromJson;
-
-  @override
-  DateTime? get createdAt;
-  @override
-  Map<String, dynamic>? get customFields;
-  @override
-  String? get id;
-  @override
-  List<Region?>? get members;
-  @override
-  String? get name;
-  @override
-  DateTime? get updatedAt;
-
-  /// Create a copy of Zone
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ZoneImplCopyWith<_$ZoneImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override final  String? id;
+ final  List<Region?>? _members;
+@override List<Region?>? get members {
+  final value = _members;
+  if (value == null) return null;
+  if (_members is EqualUnmodifiableListView) return _members;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
 }
+
+@override final  String? name;
+@override final  DateTime? updatedAt;
+
+/// Create a copy of Zone
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZoneCopyWith<_Zone> get copyWith => __$ZoneCopyWithImpl<_Zone>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ZoneToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Zone&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other._customFields, _customFields)&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other._members, _members)&&(identical(other.name, name) || other.name == name)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,createdAt,const DeepCollectionEquality().hash(_customFields),id,const DeepCollectionEquality().hash(_members),name,updatedAt);
+
+@override
+String toString() {
+  return 'Zone(createdAt: $createdAt, customFields: $customFields, id: $id, members: $members, name: $name, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZoneCopyWith<$Res> implements $ZoneCopyWith<$Res> {
+  factory _$ZoneCopyWith(_Zone value, $Res Function(_Zone) _then) = __$ZoneCopyWithImpl;
+@override @useResult
+$Res call({
+ DateTime? createdAt, Map<String, dynamic>? customFields, String? id, List<Region?>? members, String? name, DateTime? updatedAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZoneCopyWithImpl<$Res>
+    implements _$ZoneCopyWith<$Res> {
+  __$ZoneCopyWithImpl(this._self, this._then);
+
+  final _Zone _self;
+  final $Res Function(_Zone) _then;
+
+/// Create a copy of Zone
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? createdAt = freezed,Object? customFields = freezed,Object? id = freezed,Object? members = freezed,Object? name = freezed,Object? updatedAt = freezed,}) {
+  return _then(_Zone(
+createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,customFields: freezed == customFields ? _self._customFields : customFields // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,members: freezed == members ? _self._members : members // ignore: cast_nullable_to_non_nullable
+as List<Region?>?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -5,12 +5,8 @@ import '../permission/permission.dart';
 part 'float_custom_field_config.freezed.dart';
 part 'float_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FloatCustomFieldConfig with _$FloatCustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FloatCustomFieldConfig with _$FloatCustomFieldConfig {
   const FloatCustomFieldConfig._();
 
   const factory FloatCustomFieldConfig({

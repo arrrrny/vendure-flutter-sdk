@@ -6,29 +6,31 @@ part of 'product_option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionImpl _$$ProductOptionImplFromJson(Map json) =>
-    _$ProductOptionImpl(
-      code: json['code'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      groupId: json['groupId'] as String,
-      id: json['id'] as String,
-      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String,
-      translations: (json['translations'] as List<dynamic>)
-          .map((e) => ProductOptionTranslation.fromJson(
-              Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_ProductOption _$ProductOptionFromJson(Map json) => _ProductOption(
+  code: json['code'] as String,
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  groupId: json['groupId'] as String,
+  id: json['id'] as String,
+  languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+  name: json['name'] as String,
+  translations: (json['translations'] as List<dynamic>)
+      .map(
+        (e) => ProductOptionTranslation.fromJson(
+          Map<String, dynamic>.from(e as Map),
+        ),
+      )
+      .toList(),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$ProductOptionImplToJson(_$ProductOptionImpl instance) =>
+Map<String, dynamic> _$ProductOptionToJson(_ProductOption instance) =>
     <String, dynamic>{
       'code': instance.code,
       'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.customFields case final value?) 'customFields': value,
+      'customFields': ?instance.customFields,
       'groupId': instance.groupId,
       'id': instance.id,
       'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,

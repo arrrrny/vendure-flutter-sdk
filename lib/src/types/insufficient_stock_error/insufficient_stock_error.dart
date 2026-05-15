@@ -6,7 +6,7 @@ part 'insufficient_stock_error.freezed.dart';
 part 'insufficient_stock_error.g.dart';
 
 @freezed
-class InsufficientStockError with _$InsufficientStockError {
+abstract class InsufficientStockError with _$InsufficientStockError {
   const InsufficientStockError._();
 
   const factory InsufficientStockError({

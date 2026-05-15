@@ -6,19 +6,19 @@ part of 'identifier_change_token_invalid_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IdentifierChangeTokenInvalidErrorImpl
-    _$$IdentifierChangeTokenInvalidErrorImplFromJson(Map json) =>
-        _$IdentifierChangeTokenInvalidErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-        );
+_IdentifierChangeTokenInvalidError _$IdentifierChangeTokenInvalidErrorFromJson(
+  Map json,
+) => _IdentifierChangeTokenInvalidError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$IdentifierChangeTokenInvalidErrorImplToJson(
-        _$IdentifierChangeTokenInvalidErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$IdentifierChangeTokenInvalidErrorToJson(
+  _IdentifierChangeTokenInvalidError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

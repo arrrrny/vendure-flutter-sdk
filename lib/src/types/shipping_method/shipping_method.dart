@@ -7,7 +7,7 @@ part 'shipping_method.freezed.dart';
 part 'shipping_method.g.dart';
 
 @freezed
-class ShippingMethod with _$ShippingMethod {
+abstract class ShippingMethod with _$ShippingMethod {
   const ShippingMethod._();
 
   const factory ShippingMethod({

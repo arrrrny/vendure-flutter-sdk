@@ -7,7 +7,7 @@ part 'facet_list_options.freezed.dart';
 part 'facet_list_options.g.dart';
 
 @unfreezed
-class FacetListOptions with _$FacetListOptions {
+abstract class FacetListOptions with _$FacetListOptions {
   const FacetListOptions._();
 
   factory FacetListOptions({

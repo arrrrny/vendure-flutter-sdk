@@ -4,7 +4,7 @@ part 'order_tax_summary.freezed.dart';
 part 'order_tax_summary.g.dart';
 
 @freezed
-class OrderTaxSummary with _$OrderTaxSummary {
+abstract class OrderTaxSummary with _$OrderTaxSummary {
   const OrderTaxSummary._();
 
   const factory OrderTaxSummary({

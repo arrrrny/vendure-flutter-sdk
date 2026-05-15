@@ -5,7 +5,7 @@ part 'surcharge.freezed.dart';
 part 'surcharge.g.dart';
 
 @freezed
-class Surcharge with _$Surcharge {
+abstract class Surcharge with _$Surcharge {
   const Surcharge._();
 
   const factory Surcharge({

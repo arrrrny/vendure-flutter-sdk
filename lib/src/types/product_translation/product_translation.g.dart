@@ -6,8 +6,8 @@ part of 'product_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductTranslationImpl _$$ProductTranslationImplFromJson(Map json) =>
-    _$ProductTranslationImpl(
+_ProductTranslation _$ProductTranslationFromJson(Map json) =>
+    _ProductTranslation(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String,
       id: json['id'] as String,
@@ -17,8 +17,7 @@ _$ProductTranslationImpl _$$ProductTranslationImplFromJson(Map json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductTranslationImplToJson(
-        _$ProductTranslationImpl instance) =>
+Map<String, dynamic> _$ProductTranslationToJson(_ProductTranslation instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'description': instance.description,

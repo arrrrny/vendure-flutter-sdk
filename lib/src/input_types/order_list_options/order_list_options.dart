@@ -6,12 +6,8 @@ import '../order_sort_parameter/order_sort_parameter.dart';
 part 'order_list_options.freezed.dart';
 part 'order_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderListOptions with _$OrderListOptions {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderListOptions with _$OrderListOptions {
   const OrderListOptions._();
 
   const factory OrderListOptions({

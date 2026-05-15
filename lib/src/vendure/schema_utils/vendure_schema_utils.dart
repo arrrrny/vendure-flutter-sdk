@@ -18,8 +18,9 @@ class VendureSchemaUtils {
     // Register discovered enums
     for (final enumType in enums) {
       final typeName = enumType['name'] as String;
-      final values =
-          (enumType['values'] as List).map((v) => v['name'] as String).toList();
+      final values = (enumType['values'] as List)
+          .map((v) => v['name'] as String)
+          .toList();
 
       // Find all fields using this enum type
       final relatedFields = fields
@@ -27,11 +28,7 @@ class VendureSchemaUtils {
           .map((f) => f['fieldName'] as String)
           .toList();
 
-      VendureUtils.registerCustomEnum(
-        typeName,
-        relatedFields,
-        values: values,
-      );
+      VendureUtils.registerCustomEnum(typeName, relatedFields, values: values);
     }
   }
 
@@ -88,10 +85,11 @@ class VendureSchemaUtils {
   /// Detects all ENUM types in the Vendure GraphQL schema using introspection.
   /// Returns a list of enum type maps: [{name, values: [{name, description}]}]
   static Future<List<Map<String, dynamic>>> detectEnums(
-      GraphQLClient client) async {
-    final result = await client.query(QueryOptions(
-      document: gql(detectEnumsQuery),
-    ));
+    GraphQLClient client,
+  ) async {
+    final result = await client.query(
+      QueryOptions(document: gql(detectEnumsQuery)),
+    );
 
     if (result.hasException) {
       throw Exception('Failed to introspect schema: ${result.exception}');
@@ -101,11 +99,11 @@ class VendureSchemaUtils {
     final enums = types.where((type) => type['kind'] == 'ENUM').map((type) {
       return {
         'name': type['name'],
-        'values': type['enumValues']
-                ?.map((v) => {
-                      'name': v['name'],
-                      'description': v['description'],
-                    })
+        'values':
+            type['enumValues']
+                ?.map(
+                  (v) => {'name': v['name'], 'description': v['description']},
+                )
                 ?.toList() ??
             [],
       };
@@ -117,9 +115,11 @@ class VendureSchemaUtils {
   /// Returns a list of maps: [{typeName, fieldName, fieldType}]
   /// Each map represents a field whose type is an ENUM.
   static Future<List<Map<String, dynamic>>> detectEnumFields(
-      GraphQLClient client) async {
-    final result =
-        await client.query(QueryOptions(document: gql(detectEnumFieldsQuery)));
+    GraphQLClient client,
+  ) async {
+    final result = await client.query(
+      QueryOptions(document: gql(detectEnumFieldsQuery)),
+    );
     if (result.hasException) {
       throw Exception('Failed to introspect fields: ${result.exception}');
     }

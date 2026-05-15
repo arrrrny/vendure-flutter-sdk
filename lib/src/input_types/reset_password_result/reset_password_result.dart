@@ -5,12 +5,8 @@ import '../error_code/error_code.dart';
 part 'reset_password_result.freezed.dart';
 part 'reset_password_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ResetPasswordResult with _$ResetPasswordResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class ResetPasswordResult with _$ResetPasswordResult {
   const ResetPasswordResult._();
 
   const factory ResetPasswordResult.currentUser({

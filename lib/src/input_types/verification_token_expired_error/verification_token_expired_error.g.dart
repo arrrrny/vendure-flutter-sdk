@@ -6,20 +6,19 @@ part of 'verification_token_expired_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$VerificationTokenExpiredErrorImpl
-    _$$VerificationTokenExpiredErrorImplFromJson(Map json) =>
-        _$VerificationTokenExpiredErrorImpl(
-          errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String?,
-        );
+_VerificationTokenExpiredError _$VerificationTokenExpiredErrorFromJson(
+  Map json,
+) => _VerificationTokenExpiredError(
+  errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String?,
+);
 
-Map<String, dynamic> _$$VerificationTokenExpiredErrorImplToJson(
-        _$VerificationTokenExpiredErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-    };
+Map<String, dynamic> _$VerificationTokenExpiredErrorToJson(
+  _VerificationTokenExpiredError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

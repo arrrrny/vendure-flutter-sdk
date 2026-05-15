@@ -5,7 +5,7 @@ part 'facet_value_result.freezed.dart';
 part 'facet_value_result.g.dart';
 
 @freezed
-class FacetValueResult with _$FacetValueResult {
+abstract class FacetValueResult with _$FacetValueResult {
   const FacetValueResult._();
 
   const factory FacetValueResult({

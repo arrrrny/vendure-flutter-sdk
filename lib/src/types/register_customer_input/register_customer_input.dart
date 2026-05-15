@@ -3,7 +3,7 @@ part 'register_customer_input.freezed.dart';
 part 'register_customer_input.g.dart';
 
 @unfreezed
-class RegisterCustomerInput with _$RegisterCustomerInput {
+abstract class RegisterCustomerInput with _$RegisterCustomerInput {
   const RegisterCustomerInput._();
 
   factory RegisterCustomerInput({

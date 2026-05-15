@@ -5,7 +5,7 @@ part 'password_validation_error.freezed.dart';
 part 'password_validation_error.g.dart';
 
 @freezed
-class PasswordValidationError with _$PasswordValidationError {
+abstract class PasswordValidationError with _$PasswordValidationError {
   const PasswordValidationError._();
 
   const factory PasswordValidationError({

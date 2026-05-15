@@ -4,12 +4,8 @@ import '../adjustment_type/adjustment_type.dart';
 part 'discount.freezed.dart';
 part 'discount.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Discount with _$Discount {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Discount with _$Discount {
   const Discount._();
 
   const factory Discount({

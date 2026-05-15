@@ -5,7 +5,8 @@ part 'ineligible_shipping_method_error.freezed.dart';
 part 'ineligible_shipping_method_error.g.dart';
 
 @freezed
-class IneligibleShippingMethodError with _$IneligibleShippingMethodError {
+abstract class IneligibleShippingMethodError
+    with _$IneligibleShippingMethodError {
   const IneligibleShippingMethodError._();
 
   const factory IneligibleShippingMethodError({

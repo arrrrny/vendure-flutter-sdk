@@ -40,8 +40,10 @@ void main() {
   group('Vendure Order', () {
     test('addItemToOrder', () async {
       try {
-        var result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        var result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -64,13 +66,16 @@ void main() {
 
     test('transitionOrderToState', () async {
       try {
-        await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
 
         final nextStates = await vendure.order.getNextOrderStates();
         if (nextStates.isNotEmpty && nextStates.contains('Cancelled')) {
-          var result =
-              await vendure.order.transitionOrderToState(state: 'Cancelled');
+          var result = await vendure.order.transitionOrderToState(
+            state: 'Cancelled',
+          );
           expect(result, isA<TransitionOrderToStateResult>());
           Order order = Order.fromJson(result.toJson());
           expect(order, isA<Order>());
@@ -83,8 +88,10 @@ void main() {
     });
     test('addItemToOrder', () async {
       try {
-        var result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        var result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -121,8 +128,9 @@ void main() {
 
     test('removeOrderLine', () async {
       try {
-        var result =
-            await vendure.order.removeOrderLine(orderLineId: testOrderLineId);
+        var result = await vendure.order.removeOrderLine(
+          orderLineId: testOrderLineId,
+        );
         expect(result, isA<RemoveOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -133,8 +141,10 @@ void main() {
 
     test('addItemToOrder 2', () async {
       try {
-        var result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        var result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -145,8 +155,10 @@ void main() {
 
     test('addItemToOrder 3', () async {
       try {
-        var result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId2, quantity: 1);
+        var result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId2,
+          quantity: 1,
+        );
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -168,8 +180,10 @@ void main() {
 
     test('addItemToOrder 4', () async {
       try {
-        var result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        var result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -181,13 +195,14 @@ void main() {
     test('setOrderShippingAddress', () async {
       try {
         var result = await vendure.order.setOrderShippingAddress(
-            input: CreateAddressInput(
-          fullName: 'Abraham Lincoln',
-          streetLine1: '1600 Pennsylvania Avenue NW',
-          city: 'Washington',
-          postalCode: '20500',
-          countryCode: 'US',
-        ));
+          input: CreateAddressInput(
+            fullName: 'Abraham Lincoln',
+            streetLine1: '1600 Pennsylvania Avenue NW',
+            city: 'Washington',
+            postalCode: '20500',
+            countryCode: 'US',
+          ),
+        );
         expect(result, isA<ActiveOrderResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -199,13 +214,14 @@ void main() {
     test('setOrderBillingAddress', () async {
       try {
         var result = await vendure.order.setOrderBillingAddress(
-            input: CreateAddressInput(
-          fullName: 'Abraham Lincoln',
-          streetLine1: '1600 Pennsylvania Avenue NW',
-          city: 'Washington',
-          postalCode: '20500',
-          countryCode: 'US',
-        ));
+          input: CreateAddressInput(
+            fullName: 'Abraham Lincoln',
+            streetLine1: '1600 Pennsylvania Avenue NW',
+            city: 'Washington',
+            postalCode: '20500',
+            countryCode: 'US',
+          ),
+        );
         expect(result, isA<ActiveOrderResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -236,7 +252,9 @@ void main() {
     test('setOrderShippingMethod', () async {
       try {
         var result = await vendure.order.setOrderShippingMethod(
-            shippingMethodId: shippingMethodId, additionalMethodIds: []);
+          shippingMethodId: shippingMethodId,
+          additionalMethodIds: [],
+        );
         expect(result, isA<SetOrderShippingMethodResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -286,8 +304,9 @@ void main() {
 
     test('transitionOrderToState', () async {
       try {
-        var result = await vendure.order
-            .transitionOrderToState(state: 'ArrangingPayment');
+        var result = await vendure.order.transitionOrderToState(
+          state: 'ArrangingPayment',
+        );
         expect(result, isA<TransitionOrderToStateResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
@@ -299,9 +318,7 @@ void main() {
       try {
         var result = await vendure.order.setOrderCustomFields(
           input: UpdateOrderInput(
-            customFields: {
-              'giftMessage': 'Happy Birthday!',
-            },
+            customFields: {'giftMessage': 'Happy Birthday!'},
           ),
         );
         expect(result, isA<ActiveOrderResult>());
@@ -333,8 +350,10 @@ void main() {
   group('Guest checkout', () {
     test('guestCheckout', () async {
       try {
-        var result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        var result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         expect(result, isA<UpdateOrderItemsResult>());
         print("passed 1");
 
@@ -343,15 +362,18 @@ void main() {
         expect(activeOrder, isA<Order>());
         print("passed 2");
 
-        var transitionResult =
-            await vendure.order.transitionOrderToState(state: 'Cancelled');
+        var transitionResult = await vendure.order.transitionOrderToState(
+          state: 'Cancelled',
+        );
         expect(transitionResult, isA<TransitionOrderToStateResult>());
         Order cancelledOrder = Order.fromJson(transitionResult.toJson());
         expect(cancelledOrder.state, 'Cancelled');
         print("passed 3");
 
-        result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
         testOrderCode = order.code;
@@ -359,11 +381,12 @@ void main() {
         print("passed 4");
 
         var customerResult = await vendure.order.setCustomerForOrder(
-            input: CreateCustomerInput(
-          emailAddress: 'abcd@def.com',
-          firstName: 'Alice',
-          lastName: 'Bob',
-        ));
+          input: CreateCustomerInput(
+            emailAddress: 'abcd@def.com',
+            firstName: 'Alice',
+            lastName: 'Bob',
+          ),
+        );
 
         expect(customerResult, isA<SetCustomerForOrderResult>());
         order = Order.fromJson(customerResult.toJson());
@@ -384,8 +407,10 @@ void main() {
         expect(order, isA<Order>());
         print("passed 7");
 
-        result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
 
         expect(result, isA<UpdateOrderItemsResult>());
         order = Order.fromJson(result.toJson());
@@ -395,40 +420,45 @@ void main() {
         testOrderCode = order.code;
         testOrderLineId = order.lines.first.id;
 
-        var removedALine =
-            await vendure.order.removeOrderLine(orderLineId: testOrderLineId);
+        var removedALine = await vendure.order.removeOrderLine(
+          orderLineId: testOrderLineId,
+        );
         expect(removedALine, isA<RemoveOrderItemsResult>());
         order = Order.fromJson(removedALine.toJson());
         expect(order, isA<Order>());
         print("passed 9");
 
-        result = await vendure.order
-            .addItemToOrder(productVariantId: productVariantId1, quantity: 1);
+        result = await vendure.order.addItemToOrder(
+          productVariantId: productVariantId1,
+          quantity: 1,
+        );
         order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
         print("passed 10");
 
         var activeOrderResult = await vendure.order.setOrderBillingAddress(
-            input: CreateAddressInput(
-          fullName: 'Abraham Lincoln',
-          streetLine1: '1600 Pennsylvania Avenue NW',
-          city: 'Washington',
-          postalCode: '20500',
-          countryCode: 'US',
-        ));
+          input: CreateAddressInput(
+            fullName: 'Abraham Lincoln',
+            streetLine1: '1600 Pennsylvania Avenue NW',
+            city: 'Washington',
+            postalCode: '20500',
+            countryCode: 'US',
+          ),
+        );
         expect(activeOrderResult, isA<ActiveOrderResult>());
         order = Order.fromJson(activeOrderResult.toJson());
         expect(order, isA<Order>());
         print("passed 11");
 
         activeOrderResult = await vendure.order.setOrderShippingAddress(
-            input: CreateAddressInput(
-          fullName: 'Abraham Lincoln',
-          streetLine1: '1600 Pennsylvania Avenue NW',
-          city: 'Washington',
-          postalCode: '20500',
-          countryCode: 'US',
-        ));
+          input: CreateAddressInput(
+            fullName: 'Abraham Lincoln',
+            streetLine1: '1600 Pennsylvania Avenue NW',
+            city: 'Washington',
+            postalCode: '20500',
+            countryCode: 'US',
+          ),
+        );
         expect(activeOrderResult, isA<ActiveOrderResult>());
         order = Order.fromJson(activeOrderResult.toJson());
         expect(order, isA<Order>());
@@ -444,15 +474,19 @@ void main() {
 
         paymentMethodCode = paymentMethodsResult.first.code;
 
-        var applyCouponResult =
-            await vendure.order.applyCouponCode(couponCode: 'abc123');
+        var applyCouponResult = await vendure.order.applyCouponCode(
+          couponCode: 'abc123',
+        );
         expect(applyCouponResult, isA<ApplyCouponCodeResult>());
-        expect(CouponCodeInvalidError.fromJson(applyCouponResult.toJson()),
-            isA<CouponCodeInvalidError>());
+        expect(
+          CouponCodeInvalidError.fromJson(applyCouponResult.toJson()),
+          isA<CouponCodeInvalidError>(),
+        );
         print("passed 15");
 
-        applyCouponResult =
-            await vendure.order.applyCouponCode(couponCode: 'abc');
+        applyCouponResult = await vendure.order.applyCouponCode(
+          couponCode: 'abc',
+        );
         order = Order.fromJson(applyCouponResult.toJson());
         expect(order, isA<Order>());
         print("passed 16");
@@ -461,11 +495,14 @@ void main() {
         expect(order, isA<Order>());
         print("passed 17");
 
-        transitionResult = await vendure.order
-            .transitionOrderToState(state: 'ArrangingPayment');
+        transitionResult = await vendure.order.transitionOrderToState(
+          state: 'ArrangingPayment',
+        );
         expect(transitionResult, isA<TransitionOrderToStateResult>());
-        expect(OrderStateTransitionError.fromJson(transitionResult.toJson()),
-            isA<OrderStateTransitionError>());
+        expect(
+          OrderStateTransitionError.fromJson(transitionResult.toJson()),
+          isA<OrderStateTransitionError>(),
+        );
         print("passed 18");
 
         var shippingMethods = await vendure.order.getShippingMethods();
@@ -474,12 +511,15 @@ void main() {
         print("passed 19");
 
         var shippingMethodResult = await vendure.order.setOrderShippingMethod(
-            shippingMethodId: shippingMethodId, additionalMethodIds: []);
+          shippingMethodId: shippingMethodId,
+          additionalMethodIds: [],
+        );
         expect(shippingMethodResult, isA<SetOrderShippingMethodResult>());
         print("passed 20");
 
-        transitionResult = await vendure.order
-            .transitionOrderToState(state: 'ArrangingPayment');
+        transitionResult = await vendure.order.transitionOrderToState(
+          state: 'ArrangingPayment',
+        );
         expect(transitionResult, isA<TransitionOrderToStateResult>());
         order = Order.fromJson(transitionResult.toJson());
         expect(order, isA<Order>());
@@ -487,9 +527,7 @@ void main() {
 
         var customFieldsResult = await vendure.order.setOrderCustomFields(
           input: UpdateOrderInput(
-            customFields: {
-              'giftMessage': 'Happy Birthday!',
-            },
+            customFields: {'giftMessage': 'Happy Birthday!'},
           ),
         );
         expect(customFieldsResult, isA<ActiveOrderResult>());
@@ -529,8 +567,9 @@ void main() {
         CollectionListOptions options = CollectionListOptions(
           topLevelOnly: true,
         );
-        var collectionList =
-            await vendure.catalog.getCollections(options: options);
+        var collectionList = await vendure.catalog.getCollections(
+          options: options,
+        );
         expect(collectionList, isA<CollectionList>());
         for (var collection in collectionList.items) {
           expect(collection, isA<Collection>());
@@ -544,13 +583,12 @@ void main() {
       try {
         CollectionListOptions options = CollectionListOptions(
           topLevelOnly: false,
-          filter: CollectionFilterParameter(
-            parentId: IdOperators(eq: '1'),
-          ),
+          filter: CollectionFilterParameter(parentId: IdOperators(eq: '1')),
         );
 
-        var result = await vendure.catalog
-            .getCollectionListWithParentChildren(options: options);
+        var result = await vendure.catalog.getCollectionListWithParentChildren(
+          options: options,
+        );
         expect(result, isA<CollectionList>());
         if (result.items.isNotEmpty) {
           for (var collection in result.items) {
@@ -565,12 +603,11 @@ void main() {
     test('getSubCollections', () async {
       try {
         CollectionListOptions options = CollectionListOptions(
-          filter: CollectionFilterParameter(
-            parentId: IdOperators(eq: '2'),
-          ),
+          filter: CollectionFilterParameter(parentId: IdOperators(eq: '2')),
         );
-        var collectionList =
-            await vendure.catalog.getCollections(options: options);
+        var collectionList = await vendure.catalog.getCollections(
+          options: options,
+        );
         expect(collectionList, isA<CollectionList>());
         for (var collection in collectionList.items) {
           expect(collection, isA<Collection>());
@@ -591,8 +628,9 @@ void main() {
 
     test('getCollectionWithParentChildren', () async {
       try {
-        var collection =
-            await vendure.catalog.getCollectionWithParentChildren(id: '5');
+        var collection = await vendure.catalog.getCollectionWithParentChildren(
+          id: '5',
+        );
         expect(collection, isA<Collection>());
         expect(collection.parent, isA<Collection>());
         expect(collection.children, isA<List<Collection>>());
@@ -604,8 +642,9 @@ void main() {
 
     test('getCollectionWithParent', () async {
       try {
-        var collection =
-            await vendure.catalog.getCollectionWithParent(id: collectionId);
+        var collection = await vendure.catalog.getCollectionWithParent(
+          id: collectionId,
+        );
 
         expect(collection, isA<Collection>());
       } catch (e) {
@@ -615,8 +654,9 @@ void main() {
 
     test('getCollectionWithChildren', () async {
       try {
-        var collection =
-            await vendure.catalog.getCollectionWithChildren(id: collectionId);
+        var collection = await vendure.catalog.getCollectionWithChildren(
+          id: collectionId,
+        );
         expect(collection, isA<Collection>());
       } catch (e) {
         fail('Error getting collection: $e');
@@ -625,8 +665,9 @@ void main() {
 
     test('getCollectionBySlug', () async {
       try {
-        var collection =
-            await vendure.catalog.getCollectionBySlug(slug: collectionSlug);
+        var collection = await vendure.catalog.getCollectionBySlug(
+          slug: collectionSlug,
+        );
         expect(collection, isA<Collection>());
       } catch (e) {
         fail('Error getting collection: $e');
@@ -635,9 +676,7 @@ void main() {
 
     test('getProducts', () async {
       try {
-        ProductListOptions options = ProductListOptions(
-          take: 1,
-        );
+        ProductListOptions options = ProductListOptions(take: 1);
         var products = await vendure.catalog.getProducts(options: options);
         expect(products, isA<ProductList>());
         for (var product in products.items) {
@@ -668,11 +707,10 @@ void main() {
 
     test('searchCatalog', () async {
       try {
-        SearchInput searchInput = SearchInput(
-          term: 'laptop',
+        SearchInput searchInput = SearchInput(term: 'laptop');
+        var searchResponse = await vendure.catalog.searchCatalog(
+          input: searchInput,
         );
-        var searchResponse =
-            await vendure.catalog.searchCatalog(input: searchInput);
         expect(searchResponse, isA<SearchResponse>());
         for (var searchResult in searchResponse.items) {
           expect(searchResult, isA<SearchResult>());
@@ -695,9 +733,7 @@ void main() {
 
     test('getFacets', () async {
       try {
-        FacetListOptions options = FacetListOptions(
-          take: 1,
-        );
+        FacetListOptions options = FacetListOptions(take: 1);
         var facets = await vendure.system.getFacets(options: options);
         expect(facets, isA<FacetList>());
         for (var facet in facets.items) {
@@ -718,7 +754,7 @@ void main() {
     });
   });
 
-//only run below test with an authenticated user with a customer attached
+  //only run below test with an authenticated user with a customer attached
   group('Vendure Customer', () {
     test('getActiveCustomer', () async {
       try {
@@ -750,7 +786,8 @@ void main() {
     test('updateCustomer', () async {
       try {
         var updatedCustomer = await vendure.customer.updateCustomer(
-            input: UpdateCustomerInput(firstName: 'Updated', lastName: 'User'));
+          input: UpdateCustomerInput(firstName: 'Updated', lastName: 'User'),
+        );
         expect(updatedCustomer, isA<Customer>());
       } catch (e) {
         fail('Error updating customer: $e');
@@ -760,12 +797,14 @@ void main() {
     test('createCustomerAddress', () async {
       try {
         var address = await vendure.customer.createCustomerAddress(
-            input: CreateAddressInput(
-                fullName: 'John Doe',
-                streetLine1: '123 Main St',
-                city: 'Springfield',
-                postalCode: '12345',
-                countryCode: 'US'));
+          input: CreateAddressInput(
+            fullName: 'John Doe',
+            streetLine1: '123 Main St',
+            city: 'Springfield',
+            postalCode: '12345',
+            countryCode: 'US',
+          ),
+        );
         expect(address, isA<Address>());
         customerAddressId = address.id;
       } catch (e) {
@@ -776,13 +815,15 @@ void main() {
     test('updateCustomerAddress', () async {
       try {
         var address = await vendure.customer.updateCustomerAddress(
-            input: UpdateAddressInput(
-                id: customerAddressId,
-                fullName: 'John Doe Updated',
-                streetLine1: '456 Main St',
-                city: 'Springfield',
-                postalCode: '12345',
-                countryCode: 'US'));
+          input: UpdateAddressInput(
+            id: customerAddressId,
+            fullName: 'John Doe Updated',
+            streetLine1: '456 Main St',
+            city: 'Springfield',
+            postalCode: '12345',
+            countryCode: 'US',
+          ),
+        );
         expect(address, isA<Address>());
       } catch (e) {
         fail('Error updating customer address: $e');
@@ -791,8 +832,9 @@ void main() {
 
     test('deleteCustomerAddress', () async {
       try {
-        var success =
-            await vendure.customer.deleteCustomerAddress(id: customerAddressId);
+        var success = await vendure.customer.deleteCustomerAddress(
+          id: customerAddressId,
+        );
         expect(success, isA<Success>());
       } catch (e) {
         fail('Error deleting customer address: $e');

@@ -6,21 +6,18 @@ part of 'payment_failed_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentFailedErrorImpl _$$PaymentFailedErrorImplFromJson(Map json) =>
-    _$PaymentFailedErrorImpl(
+_PaymentFailedError _$PaymentFailedErrorFromJson(Map json) =>
+    _PaymentFailedError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
       paymentErrorMessage: json['paymentErrorMessage'] as String?,
     );
 
-Map<String, dynamic> _$$PaymentFailedErrorImplToJson(
-        _$PaymentFailedErrorImpl instance) =>
+Map<String, dynamic> _$PaymentFailedErrorToJson(_PaymentFailedError instance) =>
     <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-      if (instance.paymentErrorMessage case final value?)
-        'paymentErrorMessage': value,
+      'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+      'message': ?instance.message,
+      'paymentErrorMessage': ?instance.paymentErrorMessage,
     };
 
 const _$ErrorCodeEnumMap = {

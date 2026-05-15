@@ -6,18 +6,16 @@ part of 'no_active_order_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NoActiveOrderErrorImpl _$$NoActiveOrderErrorImplFromJson(Map json) =>
-    _$NoActiveOrderErrorImpl(
+_NoActiveOrderError _$NoActiveOrderErrorFromJson(Map json) =>
+    _NoActiveOrderError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$NoActiveOrderErrorImplToJson(
-        _$NoActiveOrderErrorImpl instance) =>
+Map<String, dynamic> _$NoActiveOrderErrorToJson(_NoActiveOrderError instance) =>
     <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
+      'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+      'message': ?instance.message,
     };
 
 const _$ErrorCodeEnumMap = {

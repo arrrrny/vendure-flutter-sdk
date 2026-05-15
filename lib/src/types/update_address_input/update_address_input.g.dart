@@ -6,8 +6,8 @@ part of 'update_address_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UpdateAddressInputImpl _$$UpdateAddressInputImplFromJson(Map json) =>
-    _$UpdateAddressInputImpl(
+_UpdateAddressInput _$UpdateAddressInputFromJson(Map json) =>
+    _UpdateAddressInput(
       city: json['city'] as String?,
       company: json['company'] as String?,
       countryCode: json['countryCode'] as String?,
@@ -25,22 +25,19 @@ _$UpdateAddressInputImpl _$$UpdateAddressInputImplFromJson(Map json) =>
       streetLine2: json['streetLine2'] as String?,
     );
 
-Map<String, dynamic> _$$UpdateAddressInputImplToJson(
-        _$UpdateAddressInputImpl instance) =>
+Map<String, dynamic> _$UpdateAddressInputToJson(_UpdateAddressInput instance) =>
     <String, dynamic>{
-      if (instance.city case final value?) 'city': value,
-      if (instance.company case final value?) 'company': value,
-      if (instance.countryCode case final value?) 'countryCode': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.defaultBillingAddress case final value?)
-        'defaultBillingAddress': value,
-      if (instance.defaultShippingAddress case final value?)
-        'defaultShippingAddress': value,
-      if (instance.fullName case final value?) 'fullName': value,
+      'city': ?instance.city,
+      'company': ?instance.company,
+      'countryCode': ?instance.countryCode,
+      'customFields': ?instance.customFields,
+      'defaultBillingAddress': ?instance.defaultBillingAddress,
+      'defaultShippingAddress': ?instance.defaultShippingAddress,
+      'fullName': ?instance.fullName,
       'id': instance.id,
-      if (instance.phoneNumber case final value?) 'phoneNumber': value,
-      if (instance.postalCode case final value?) 'postalCode': value,
-      if (instance.province case final value?) 'province': value,
-      if (instance.streetLine1 case final value?) 'streetLine1': value,
-      if (instance.streetLine2 case final value?) 'streetLine2': value,
+      'phoneNumber': ?instance.phoneNumber,
+      'postalCode': ?instance.postalCode,
+      'province': ?instance.province,
+      'streetLine1': ?instance.streetLine1,
+      'streetLine2': ?instance.streetLine2,
     };

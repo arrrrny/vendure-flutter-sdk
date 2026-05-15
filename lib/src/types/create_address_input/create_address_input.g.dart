@@ -6,8 +6,8 @@ part of 'create_address_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreateAddressInputImpl _$$CreateAddressInputImplFromJson(Map json) =>
-    _$CreateAddressInputImpl(
+_CreateAddressInput _$CreateAddressInputFromJson(Map json) =>
+    _CreateAddressInput(
       city: json['city'] as String?,
       company: json['company'] as String?,
       countryCode: json['countryCode'] as String,
@@ -24,21 +24,18 @@ _$CreateAddressInputImpl _$$CreateAddressInputImplFromJson(Map json) =>
       streetLine2: json['streetLine2'] as String?,
     );
 
-Map<String, dynamic> _$$CreateAddressInputImplToJson(
-        _$CreateAddressInputImpl instance) =>
+Map<String, dynamic> _$CreateAddressInputToJson(_CreateAddressInput instance) =>
     <String, dynamic>{
-      if (instance.city case final value?) 'city': value,
-      if (instance.company case final value?) 'company': value,
+      'city': ?instance.city,
+      'company': ?instance.company,
       'countryCode': instance.countryCode,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.defaultBillingAddress case final value?)
-        'defaultBillingAddress': value,
-      if (instance.defaultShippingAddress case final value?)
-        'defaultShippingAddress': value,
-      if (instance.fullName case final value?) 'fullName': value,
-      if (instance.phoneNumber case final value?) 'phoneNumber': value,
-      if (instance.postalCode case final value?) 'postalCode': value,
-      if (instance.province case final value?) 'province': value,
+      'customFields': ?instance.customFields,
+      'defaultBillingAddress': ?instance.defaultBillingAddress,
+      'defaultShippingAddress': ?instance.defaultShippingAddress,
+      'fullName': ?instance.fullName,
+      'phoneNumber': ?instance.phoneNumber,
+      'postalCode': ?instance.postalCode,
+      'province': ?instance.province,
       'streetLine1': instance.streetLine1,
-      if (instance.streetLine2 case final value?) 'streetLine2': value,
+      'streetLine2': ?instance.streetLine2,
     };

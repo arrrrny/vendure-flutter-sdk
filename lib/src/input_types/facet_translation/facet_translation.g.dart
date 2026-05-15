@@ -6,31 +6,28 @@ part of 'facet_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetTranslationImpl _$$FacetTranslationImplFromJson(Map json) =>
-    _$FacetTranslationImpl(
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_FacetTranslation _$FacetTranslationFromJson(Map json) => _FacetTranslation(
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$FacetTranslationImplToJson(
-        _$FacetTranslationImpl instance) =>
+Map<String, dynamic> _$FacetTranslationToJson(_FacetTranslation instance) =>
     <String, dynamic>{
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {

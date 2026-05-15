@@ -4,12 +4,8 @@ import '../shipping_method/shipping_method.dart';
 part 'shipping_method_list.freezed.dart';
 part 'shipping_method_list.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ShippingMethodList with _$ShippingMethodList {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ShippingMethodList with _$ShippingMethodList {
   const ShippingMethodList._();
 
   const factory ShippingMethodList({

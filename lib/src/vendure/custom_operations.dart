@@ -37,9 +37,13 @@ class CustomOperations {
 
     final options = isMutation
         ? MutationOptions(
-            document: gql(processedOperation), variables: normalizedVariables)
+            document: gql(processedOperation),
+            variables: normalizedVariables,
+          )
         : QueryOptions(
-            document: gql(processedOperation), variables: normalizedVariables);
+            document: gql(processedOperation),
+            variables: normalizedVariables,
+          );
 
     final result = isMutation
         ? await client.mutate(options as MutationOptions)
@@ -98,7 +102,9 @@ class CustomOperations {
   }
 
   Map<String, dynamic> _extractHeadersFromResponse(
-      QueryResult<Object?> response, List<String> headers) {
+    QueryResult<Object?> response,
+    List<String> headers,
+  ) {
     final context = response.context.entry<HttpLinkResponseContext>()?.headers;
     Map<String, dynamic>? result = {};
     context?.forEach((key, value) {
@@ -215,8 +221,12 @@ class CustomOperations {
     bool convertEnums = false,
   }) async {
     var data = await _executeGraphQLOperation(
-        mutation, variables, true, expectedDataType,
-        convertEnums: convertEnums);
+      mutation,
+      variables,
+      true,
+      expectedDataType,
+      convertEnums: convertEnums,
+    );
 
     if (data == null) {
       throw Exception('No data returned from mutateList');
@@ -273,21 +283,24 @@ class CustomOperations {
 
     if (data is! Map) {
       throw Exception(
-          'Expected map data for PaginatedList but got ${data.runtimeType}');
+        'Expected map data for PaginatedList but got ${data.runtimeType}',
+      );
     }
 
-    final items = (data['items'] as List?)
-            ?.map((item) => fromJson(item is Map<String, dynamic>
-                ? Map<String, dynamic>.from(item)
-                : item))
+    final items =
+        (data['items'] as List?)
+            ?.map(
+              (item) => fromJson(
+                item is Map<String, dynamic>
+                    ? Map<String, dynamic>.from(item)
+                    : item,
+              ),
+            )
             .toList() ??
         [];
     final totalItems = (data['totalItems'] as num?)?.toInt() ?? 0;
 
-    return PaginatedListImpl<T>(
-      items: items,
-      totalItems: totalItems,
-    );
+    return PaginatedListImpl<T>(items: items, totalItems: totalItems);
   }
 
   Future<PaginatedList<T>> mutateListPaginated<T>(
@@ -331,19 +344,18 @@ class CustomOperations {
 
     if (data is! Map) {
       throw Exception(
-          'Expected map data for PaginatedList but got ${data.runtimeType}');
+        'Expected map data for PaginatedList but got ${data.runtimeType}',
+      );
     }
 
-    final items = (data['items'] as List?)
+    final items =
+        (data['items'] as List?)
             ?.map((item) => fromJson(Map<String, dynamic>.from(item)))
             .toList() ??
         [];
     final totalItems = (data['totalItems'] as num?)?.toInt() ?? 0;
 
-    return PaginatedListImpl<T>(
-      items: items,
-      totalItems: totalItems,
-    );
+    return PaginatedListImpl<T>(items: items, totalItems: totalItems);
   }
 
   Future<Map<String, dynamic>> extractResponseHeaders(
@@ -354,8 +366,12 @@ class CustomOperations {
     bool convertEnums = true,
   }) async {
     final result = await _executeGraphQLOperation(
-        operation, variables, operationType == OperationType.mutation, null,
-        convertEnums: convertEnums);
+      operation,
+      variables,
+      operationType == OperationType.mutation,
+      null,
+      convertEnums: convertEnums,
+    );
     return _extractHeadersFromResponse(result, headers);
   }
 }

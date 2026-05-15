@@ -5,7 +5,7 @@ part 'order_sort_parameter.freezed.dart';
 part 'order_sort_parameter.g.dart';
 
 @unfreezed
-class OrderSortParameter with _$OrderSortParameter {
+abstract class OrderSortParameter with _$OrderSortParameter {
   const OrderSortParameter._();
 
   factory OrderSortParameter({

@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String addItemToOrderMutation = orderFragment +
+const String addItemToOrderMutation =
+    orderFragment +
     r'''
 mutation AddItemToOrder($productVariantId: ID!, $quantity: Int!) {
   addItemToOrder(productVariantId: $productVariantId, quantity: $quantity) {

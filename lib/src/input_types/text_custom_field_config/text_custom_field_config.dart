@@ -5,12 +5,8 @@ import '../permission/permission.dart';
 part 'text_custom_field_config.freezed.dart';
 part 'text_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class TextCustomFieldConfig with _$TextCustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class TextCustomFieldConfig with _$TextCustomFieldConfig {
   const TextCustomFieldConfig._();
 
   const factory TextCustomFieldConfig({

@@ -8,12 +8,8 @@ import '../string_operators/string_operators.dart';
 part 'order_filter_parameter.freezed.dart';
 part 'order_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderFilterParameter with _$OrderFilterParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderFilterParameter with _$OrderFilterParameter {
   const OrderFilterParameter._();
 
   const factory OrderFilterParameter({

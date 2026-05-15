@@ -7,7 +7,7 @@ part 'tax_rate.freezed.dart';
 part 'tax_rate.g.dart';
 
 @freezed
-class TaxRate with _$TaxRate {
+abstract class TaxRate with _$TaxRate {
   const TaxRate._();
 
   const factory TaxRate({

@@ -6,9 +6,8 @@ part of 'product_option_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionTranslationImpl _$$ProductOptionTranslationImplFromJson(
-        Map json) =>
-    _$ProductOptionTranslationImpl(
+_ProductOptionTranslation _$ProductOptionTranslationFromJson(Map json) =>
+    _ProductOptionTranslation(
       createdAt: DateTime.parse(json['createdAt'] as String),
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
@@ -16,15 +15,15 @@ _$ProductOptionTranslationImpl _$$ProductOptionTranslationImplFromJson(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductOptionTranslationImplToJson(
-        _$ProductOptionTranslationImpl instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$ProductOptionTranslationToJson(
+  _ProductOptionTranslation instance,
+) => <String, dynamic>{
+  'createdAt': instance.createdAt.toIso8601String(),
+  'id': instance.id,
+  'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+  'name': instance.name,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

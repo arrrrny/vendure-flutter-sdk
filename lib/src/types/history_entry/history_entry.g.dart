@@ -6,15 +6,15 @@ part of 'history_entry.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HistoryEntryImpl _$$HistoryEntryImplFromJson(Map json) => _$HistoryEntryImpl(
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      data: Map<String, dynamic>.from(json['data'] as Map),
-      id: json['id'] as String,
-      type: $enumDecode(_$HistoryEntryTypeEnumMap, json['type']),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_HistoryEntry _$HistoryEntryFromJson(Map json) => _HistoryEntry(
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  data: Map<String, dynamic>.from(json['data'] as Map),
+  id: json['id'] as String,
+  type: $enumDecode(_$HistoryEntryTypeEnumMap, json['type']),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$HistoryEntryImplToJson(_$HistoryEntryImpl instance) =>
+Map<String, dynamic> _$HistoryEntryToJson(_HistoryEntry instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'data': instance.data,

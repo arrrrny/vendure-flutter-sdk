@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,202 +9,275 @@ part of 'payment_declined_error.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-PaymentDeclinedError _$PaymentDeclinedErrorFromJson(Map<String, dynamic> json) {
-  return _PaymentDeclinedError.fromJson(json);
-}
 
 /// @nodoc
 mixin _$PaymentDeclinedError {
-  ErrorCode get errorCode => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
-  String get paymentErrorMessage => throw _privateConstructorUsedError;
+
+ ErrorCode get errorCode; String get message; String get paymentErrorMessage;
+/// Create a copy of PaymentDeclinedError
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$PaymentDeclinedErrorCopyWith<PaymentDeclinedError> get copyWith => _$PaymentDeclinedErrorCopyWithImpl<PaymentDeclinedError>(this as PaymentDeclinedError, _$identity);
 
   /// Serializes this PaymentDeclinedError to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of PaymentDeclinedError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $PaymentDeclinedErrorCopyWith<PaymentDeclinedError> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentDeclinedError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message)&&(identical(other.paymentErrorMessage, paymentErrorMessage) || other.paymentErrorMessage == paymentErrorMessage));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message,paymentErrorMessage);
+
+@override
+String toString() {
+  return 'PaymentDeclinedError(errorCode: $errorCode, message: $message, paymentErrorMessage: $paymentErrorMessage)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $PaymentDeclinedErrorCopyWith<$Res> {
-  factory $PaymentDeclinedErrorCopyWith(PaymentDeclinedError value,
-          $Res Function(PaymentDeclinedError) then) =
-      _$PaymentDeclinedErrorCopyWithImpl<$Res, PaymentDeclinedError>;
-  @useResult
-  $Res call({ErrorCode errorCode, String message, String paymentErrorMessage});
-}
+abstract mixin class $PaymentDeclinedErrorCopyWith<$Res>  {
+  factory $PaymentDeclinedErrorCopyWith(PaymentDeclinedError value, $Res Function(PaymentDeclinedError) _then) = _$PaymentDeclinedErrorCopyWithImpl;
+@useResult
+$Res call({
+ ErrorCode errorCode, String message, String paymentErrorMessage
+});
 
+
+
+
+}
 /// @nodoc
-class _$PaymentDeclinedErrorCopyWithImpl<$Res,
-        $Val extends PaymentDeclinedError>
+class _$PaymentDeclinedErrorCopyWithImpl<$Res>
     implements $PaymentDeclinedErrorCopyWith<$Res> {
-  _$PaymentDeclinedErrorCopyWithImpl(this._value, this._then);
+  _$PaymentDeclinedErrorCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final PaymentDeclinedError _self;
+  final $Res Function(PaymentDeclinedError) _then;
 
-  /// Create a copy of PaymentDeclinedError
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = null,
-    Object? message = null,
-    Object? paymentErrorMessage = null,
-  }) {
-    return _then(_value.copyWith(
-      errorCode: null == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      paymentErrorMessage: null == paymentErrorMessage
-          ? _value.paymentErrorMessage
-          : paymentErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of PaymentDeclinedError
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? errorCode = null,Object? message = null,Object? paymentErrorMessage = null,}) {
+  return _then(_self.copyWith(
+errorCode: null == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,paymentErrorMessage: null == paymentErrorMessage ? _self.paymentErrorMessage : paymentErrorMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$PaymentDeclinedErrorImplCopyWith<$Res>
-    implements $PaymentDeclinedErrorCopyWith<$Res> {
-  factory _$$PaymentDeclinedErrorImplCopyWith(_$PaymentDeclinedErrorImpl value,
-          $Res Function(_$PaymentDeclinedErrorImpl) then) =
-      __$$PaymentDeclinedErrorImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ErrorCode errorCode, String message, String paymentErrorMessage});
 }
 
-/// @nodoc
-class __$$PaymentDeclinedErrorImplCopyWithImpl<$Res>
-    extends _$PaymentDeclinedErrorCopyWithImpl<$Res, _$PaymentDeclinedErrorImpl>
-    implements _$$PaymentDeclinedErrorImplCopyWith<$Res> {
-  __$$PaymentDeclinedErrorImplCopyWithImpl(_$PaymentDeclinedErrorImpl _value,
-      $Res Function(_$PaymentDeclinedErrorImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of PaymentDeclinedError
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = null,
-    Object? message = null,
-    Object? paymentErrorMessage = null,
-  }) {
-    return _then(_$PaymentDeclinedErrorImpl(
-      errorCode: null == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      paymentErrorMessage: null == paymentErrorMessage
-          ? _value.paymentErrorMessage
-          : paymentErrorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [PaymentDeclinedError].
+extension PaymentDeclinedErrorPatterns on PaymentDeclinedError {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PaymentDeclinedError value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _PaymentDeclinedError() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PaymentDeclinedError value)  $default,){
+final _that = this;
+switch (_that) {
+case _PaymentDeclinedError():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PaymentDeclinedError value)?  $default,){
+final _that = this;
+switch (_that) {
+case _PaymentDeclinedError() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ErrorCode errorCode,  String message,  String paymentErrorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _PaymentDeclinedError() when $default != null:
+return $default(_that.errorCode,_that.message,_that.paymentErrorMessage);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ErrorCode errorCode,  String message,  String paymentErrorMessage)  $default,) {final _that = this;
+switch (_that) {
+case _PaymentDeclinedError():
+return $default(_that.errorCode,_that.message,_that.paymentErrorMessage);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ErrorCode errorCode,  String message,  String paymentErrorMessage)?  $default,) {final _that = this;
+switch (_that) {
+case _PaymentDeclinedError() when $default != null:
+return $default(_that.errorCode,_that.message,_that.paymentErrorMessage);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$PaymentDeclinedErrorImpl extends _PaymentDeclinedError {
-  const _$PaymentDeclinedErrorImpl(
-      {required this.errorCode,
-      required this.message,
-      required this.paymentErrorMessage})
-      : super._();
 
-  factory _$PaymentDeclinedErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PaymentDeclinedErrorImplFromJson(json);
+class _PaymentDeclinedError extends PaymentDeclinedError {
+  const _PaymentDeclinedError({required this.errorCode, required this.message, required this.paymentErrorMessage}): super._();
+  factory _PaymentDeclinedError.fromJson(Map<String, dynamic> json) => _$PaymentDeclinedErrorFromJson(json);
 
-  @override
-  final ErrorCode errorCode;
-  @override
-  final String message;
-  @override
-  final String paymentErrorMessage;
+@override final  ErrorCode errorCode;
+@override final  String message;
+@override final  String paymentErrorMessage;
 
-  @override
-  String toString() {
-    return 'PaymentDeclinedError(errorCode: $errorCode, message: $message, paymentErrorMessage: $paymentErrorMessage)';
-  }
+/// Create a copy of PaymentDeclinedError
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PaymentDeclinedErrorCopyWith<_PaymentDeclinedError> get copyWith => __$PaymentDeclinedErrorCopyWithImpl<_PaymentDeclinedError>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PaymentDeclinedErrorImpl &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.paymentErrorMessage, paymentErrorMessage) ||
-                other.paymentErrorMessage == paymentErrorMessage));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, errorCode, message, paymentErrorMessage);
-
-  /// Create a copy of PaymentDeclinedError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PaymentDeclinedErrorImplCopyWith<_$PaymentDeclinedErrorImpl>
-      get copyWith =>
-          __$$PaymentDeclinedErrorImplCopyWithImpl<_$PaymentDeclinedErrorImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PaymentDeclinedErrorImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$PaymentDeclinedErrorToJson(this, );
 }
 
-abstract class _PaymentDeclinedError extends PaymentDeclinedError {
-  const factory _PaymentDeclinedError(
-      {required final ErrorCode errorCode,
-      required final String message,
-      required final String paymentErrorMessage}) = _$PaymentDeclinedErrorImpl;
-  const _PaymentDeclinedError._() : super._();
-
-  factory _PaymentDeclinedError.fromJson(Map<String, dynamic> json) =
-      _$PaymentDeclinedErrorImpl.fromJson;
-
-  @override
-  ErrorCode get errorCode;
-  @override
-  String get message;
-  @override
-  String get paymentErrorMessage;
-
-  /// Create a copy of PaymentDeclinedError
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PaymentDeclinedErrorImplCopyWith<_$PaymentDeclinedErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentDeclinedError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message)&&(identical(other.paymentErrorMessage, paymentErrorMessage) || other.paymentErrorMessage == paymentErrorMessage));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message,paymentErrorMessage);
+
+@override
+String toString() {
+  return 'PaymentDeclinedError(errorCode: $errorCode, message: $message, paymentErrorMessage: $paymentErrorMessage)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$PaymentDeclinedErrorCopyWith<$Res> implements $PaymentDeclinedErrorCopyWith<$Res> {
+  factory _$PaymentDeclinedErrorCopyWith(_PaymentDeclinedError value, $Res Function(_PaymentDeclinedError) _then) = __$PaymentDeclinedErrorCopyWithImpl;
+@override @useResult
+$Res call({
+ ErrorCode errorCode, String message, String paymentErrorMessage
+});
+
+
+
+
+}
+/// @nodoc
+class __$PaymentDeclinedErrorCopyWithImpl<$Res>
+    implements _$PaymentDeclinedErrorCopyWith<$Res> {
+  __$PaymentDeclinedErrorCopyWithImpl(this._self, this._then);
+
+  final _PaymentDeclinedError _self;
+  final $Res Function(_PaymentDeclinedError) _then;
+
+/// Create a copy of PaymentDeclinedError
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? errorCode = null,Object? message = null,Object? paymentErrorMessage = null,}) {
+  return _then(_PaymentDeclinedError(
+errorCode: null == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,paymentErrorMessage: null == paymentErrorMessage ? _self.paymentErrorMessage : paymentErrorMessage // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

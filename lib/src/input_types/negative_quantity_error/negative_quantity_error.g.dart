@@ -6,19 +6,18 @@ part of 'negative_quantity_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NegativeQuantityErrorImpl _$$NegativeQuantityErrorImplFromJson(Map json) =>
-    _$NegativeQuantityErrorImpl(
+_NegativeQuantityError _$NegativeQuantityErrorFromJson(Map json) =>
+    _NegativeQuantityError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$NegativeQuantityErrorImplToJson(
-        _$NegativeQuantityErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-    };
+Map<String, dynamic> _$NegativeQuantityErrorToJson(
+  _NegativeQuantityError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

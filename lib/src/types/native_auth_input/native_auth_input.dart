@@ -3,7 +3,7 @@ part 'native_auth_input.freezed.dart';
 part 'native_auth_input.g.dart';
 
 @unfreezed
-class NativeAuthInput with _$NativeAuthInput {
+abstract class NativeAuthInput with _$NativeAuthInput {
   const NativeAuthInput._();
 
   factory NativeAuthInput({

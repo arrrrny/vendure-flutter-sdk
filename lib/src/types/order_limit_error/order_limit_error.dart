@@ -5,7 +5,7 @@ part 'order_limit_error.freezed.dart';
 part 'order_limit_error.g.dart';
 
 @freezed
-class OrderLimitError with _$OrderLimitError {
+abstract class OrderLimitError with _$OrderLimitError {
   const OrderLimitError._();
 
   const factory OrderLimitError({

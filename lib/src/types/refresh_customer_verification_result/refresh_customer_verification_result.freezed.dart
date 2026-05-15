@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,442 +9,340 @@ part of 'refresh_customer_verification_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 RefreshCustomerVerificationResult _$RefreshCustomerVerificationResultFromJson(
-    Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'nativeAuthStrategyError':
-      return NativeAuthStrategyError.fromJson(json);
-    case 'success':
-      return Success.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(
-          json,
-          'runtimeType',
-          'RefreshCustomerVerificationResult',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+  Map<String, dynamic> json
+) {
+        switch (json['runtimeType']) {
+                  case 'nativeAuthStrategyError':
+          return NativeAuthStrategyError.fromJson(
+            json
+          );
+                case 'success':
+          return Success.fromJson(
+            json
+          );
+        
+          default:
+            throw CheckedFromJsonException(
+  json,
+  'runtimeType',
+  'RefreshCustomerVerificationResult',
+  'Invalid union type "${json['runtimeType']}"!'
+);
+        }
+      
 }
 
 /// @nodoc
 mixin _$RefreshCustomerVerificationResult {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode errorCode, String message)
-        nativeAuthStrategyError,
-    required TResult Function(bool success) success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode errorCode, String message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool success)? success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode errorCode, String message)?
-        nativeAuthStrategyError,
-    TResult Function(bool success)? success,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
 
   /// Serializes this RefreshCustomerVerificationResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RefreshCustomerVerificationResult);
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'RefreshCustomerVerificationResult()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RefreshCustomerVerificationResultCopyWith<$Res> {
-  factory $RefreshCustomerVerificationResultCopyWith(
-          RefreshCustomerVerificationResult value,
-          $Res Function(RefreshCustomerVerificationResult) then) =
-      _$RefreshCustomerVerificationResultCopyWithImpl<$Res,
-          RefreshCustomerVerificationResult>;
+class $RefreshCustomerVerificationResultCopyWith<$Res>  {
+$RefreshCustomerVerificationResultCopyWith(RefreshCustomerVerificationResult _, $Res Function(RefreshCustomerVerificationResult) __);
 }
 
-/// @nodoc
-class _$RefreshCustomerVerificationResultCopyWithImpl<$Res,
-        $Val extends RefreshCustomerVerificationResult>
-    implements $RefreshCustomerVerificationResultCopyWith<$Res> {
-  _$RefreshCustomerVerificationResultCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [RefreshCustomerVerificationResult].
+extension RefreshCustomerVerificationResultPatterns on RefreshCustomerVerificationResult {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( NativeAuthStrategyError value)?  nativeAuthStrategyError,TResult Function( Success value)?  success,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that);case Success() when success != null:
+return success(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( NativeAuthStrategyError value)  nativeAuthStrategyError,required TResult Function( Success value)  success,}){
+final _that = this;
+switch (_that) {
+case NativeAuthStrategyError():
+return nativeAuthStrategyError(_that);case Success():
+return success(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( NativeAuthStrategyError value)?  nativeAuthStrategyError,TResult? Function( Success value)?  success,}){
+final _that = this;
+switch (_that) {
+case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that);case Success() when success != null:
+return success(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( ErrorCode errorCode,  String message)?  nativeAuthStrategyError,TResult Function( bool success)?  success,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that.errorCode,_that.message);case Success() when success != null:
+return success(_that.success);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( ErrorCode errorCode,  String message)  nativeAuthStrategyError,required TResult Function( bool success)  success,}) {final _that = this;
+switch (_that) {
+case NativeAuthStrategyError():
+return nativeAuthStrategyError(_that.errorCode,_that.message);case Success():
+return success(_that.success);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( ErrorCode errorCode,  String message)?  nativeAuthStrategyError,TResult? Function( bool success)?  success,}) {final _that = this;
+switch (_that) {
+case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that.errorCode,_that.message);case Success() when success != null:
+return success(_that.success);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$NativeAuthStrategyErrorImplCopyWith<$Res> {
-  factory _$$NativeAuthStrategyErrorImplCopyWith(
-          _$NativeAuthStrategyErrorImpl value,
-          $Res Function(_$NativeAuthStrategyErrorImpl) then) =
-      __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ErrorCode errorCode, String message});
-}
-
-/// @nodoc
-class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
-    extends _$RefreshCustomerVerificationResultCopyWithImpl<$Res,
-        _$NativeAuthStrategyErrorImpl>
-    implements _$$NativeAuthStrategyErrorImplCopyWith<$Res> {
-  __$$NativeAuthStrategyErrorImplCopyWithImpl(
-      _$NativeAuthStrategyErrorImpl _value,
-      $Res Function(_$NativeAuthStrategyErrorImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = null,
-    Object? message = null,
-  }) {
-    return _then(_$NativeAuthStrategyErrorImpl(
-      errorCode: null == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
-  const _$NativeAuthStrategyErrorImpl(
-      {required this.errorCode, required this.message, final String? $type})
-      : $type = $type ?? 'nativeAuthStrategyError',
-        super._();
-
-  factory _$NativeAuthStrategyErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NativeAuthStrategyErrorImplFromJson(json);
-
-  @override
-  final ErrorCode errorCode;
-  @override
-  final String message;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'RefreshCustomerVerificationResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NativeAuthStrategyErrorImpl &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, errorCode, message);
-
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
-      get copyWith => __$$NativeAuthStrategyErrorImplCopyWithImpl<
-          _$NativeAuthStrategyErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode errorCode, String message)
-        nativeAuthStrategyError,
-    required TResult Function(bool success) success,
-  }) {
-    return nativeAuthStrategyError(errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode errorCode, String message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool success)? success,
-  }) {
-    return nativeAuthStrategyError?.call(errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode errorCode, String message)?
-        nativeAuthStrategyError,
-    TResult Function(bool success)? success,
-    required TResult orElse(),
-  }) {
-    if (nativeAuthStrategyError != null) {
-      return nativeAuthStrategyError(errorCode, message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) {
-    return nativeAuthStrategyError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) {
-    return nativeAuthStrategyError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (nativeAuthStrategyError != null) {
-      return nativeAuthStrategyError(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NativeAuthStrategyErrorImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class NativeAuthStrategyError
-    extends RefreshCustomerVerificationResult {
-  const factory NativeAuthStrategyError(
-      {required final ErrorCode errorCode,
-      required final String message}) = _$NativeAuthStrategyErrorImpl;
-  const NativeAuthStrategyError._() : super._();
-
-  factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) =
-      _$NativeAuthStrategyErrorImpl.fromJson;
-
-  ErrorCode get errorCode;
-  String get message;
-
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool success});
-}
-
-/// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$RefreshCustomerVerificationResultCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? success = null,
-  }) {
-    return _then(_$SuccessImpl(
-      success: null == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessImpl extends Success {
-  const _$SuccessImpl({required this.success, final String? $type})
-      : $type = $type ?? 'success',
-        super._();
 
-  factory _$SuccessImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SuccessImplFromJson(json);
+class NativeAuthStrategyError extends RefreshCustomerVerificationResult {
+  const NativeAuthStrategyError({required this.errorCode, required this.message, final  String? $type}): $type = $type ?? 'nativeAuthStrategyError',super._();
+  factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
 
-  @override
-  final bool success;
+ final  ErrorCode errorCode;
+ final  String message;
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
+@JsonKey(name: 'runtimeType')
+final String $type;
 
-  @override
-  String toString() {
-    return 'RefreshCustomerVerificationResult.success(success: $success)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.success, success) || other.success == success));
-  }
+/// Create a copy of RefreshCustomerVerificationResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NativeAuthStrategyErrorCopyWith<NativeAuthStrategyError> get copyWith => _$NativeAuthStrategyErrorCopyWithImpl<NativeAuthStrategyError>(this, _$identity);
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, success);
-
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode errorCode, String message)
-        nativeAuthStrategyError,
-    required TResult Function(bool success) success,
-  }) {
-    return success(this.success);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode errorCode, String message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool success)? success,
-  }) {
-    return success?.call(this.success);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode errorCode, String message)?
-        nativeAuthStrategyError,
-    TResult Function(bool success)? success,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this.success);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SuccessImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$NativeAuthStrategyErrorToJson(this, );
 }
 
-abstract class Success extends RefreshCustomerVerificationResult {
-  const factory Success({required final bool success}) = _$SuccessImpl;
-  const Success._() : super._();
-
-  factory Success.fromJson(Map<String, dynamic> json) = _$SuccessImpl.fromJson;
-
-  bool get success;
-
-  /// Create a copy of RefreshCustomerVerificationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NativeAuthStrategyError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message);
+
+@override
+String toString() {
+  return 'RefreshCustomerVerificationResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $NativeAuthStrategyErrorCopyWith<$Res> implements $RefreshCustomerVerificationResultCopyWith<$Res> {
+  factory $NativeAuthStrategyErrorCopyWith(NativeAuthStrategyError value, $Res Function(NativeAuthStrategyError) _then) = _$NativeAuthStrategyErrorCopyWithImpl;
+@useResult
+$Res call({
+ ErrorCode errorCode, String message
+});
+
+
+
+
+}
+/// @nodoc
+class _$NativeAuthStrategyErrorCopyWithImpl<$Res>
+    implements $NativeAuthStrategyErrorCopyWith<$Res> {
+  _$NativeAuthStrategyErrorCopyWithImpl(this._self, this._then);
+
+  final NativeAuthStrategyError _self;
+  final $Res Function(NativeAuthStrategyError) _then;
+
+/// Create a copy of RefreshCustomerVerificationResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? errorCode = null,Object? message = null,}) {
+  return _then(NativeAuthStrategyError(
+errorCode: null == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class Success extends RefreshCustomerVerificationResult {
+  const Success({required this.success, final  String? $type}): $type = $type ?? 'success',super._();
+  factory Success.fromJson(Map<String, dynamic> json) => _$SuccessFromJson(json);
+
+ final  bool success;
+
+@JsonKey(name: 'runtimeType')
+final String $type;
+
+
+/// Create a copy of RefreshCustomerVerificationResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SuccessCopyWith<Success> get copyWith => _$SuccessCopyWithImpl<Success>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SuccessToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success&&(identical(other.success, success) || other.success == success));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,success);
+
+@override
+String toString() {
+  return 'RefreshCustomerVerificationResult.success(success: $success)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SuccessCopyWith<$Res> implements $RefreshCustomerVerificationResultCopyWith<$Res> {
+  factory $SuccessCopyWith(Success value, $Res Function(Success) _then) = _$SuccessCopyWithImpl;
+@useResult
+$Res call({
+ bool success
+});
+
+
+
+
+}
+/// @nodoc
+class _$SuccessCopyWithImpl<$Res>
+    implements $SuccessCopyWith<$Res> {
+  _$SuccessCopyWithImpl(this._self, this._then);
+
+  final Success _self;
+  final $Res Function(Success) _then;
+
+/// Create a copy of RefreshCustomerVerificationResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? success = null,}) {
+  return _then(Success(
+success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+// dart format on

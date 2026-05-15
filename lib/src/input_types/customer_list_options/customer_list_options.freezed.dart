@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,307 +9,341 @@ part of 'customer_list_options.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CustomerListOptions _$CustomerListOptionsFromJson(Map<String, dynamic> json) {
-  return _CustomerListOptions.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CustomerListOptions {
-  /// Allows the results to be filtered
-  CustomerFilterParameter? get filter => throw _privateConstructorUsedError;
 
-  /// Specifies whether multiple top-level "filter" fields should be combined with a
-  /// logical AND or OR operation. Defaults to AND.
-  LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
-
-  /// Skips the first n results, for use in pagination
-  int? get skip => throw _privateConstructorUsedError;
-
-  /// Specifies which properties to sort the results by
-  CustomerSortParameter? get sort => throw _privateConstructorUsedError;
-
-  /// Takes n results, for use in pagination
-  int? get take => throw _privateConstructorUsedError;
+/// Allows the results to be filtered
+ CustomerFilterParameter? get filter;/// Specifies whether multiple top-level "filter" fields should be combined with a
+/// logical AND or OR operation. Defaults to AND.
+ LogicalOperator? get filterOperator;/// Skips the first n results, for use in pagination
+ int? get skip;/// Specifies which properties to sort the results by
+ CustomerSortParameter? get sort;/// Takes n results, for use in pagination
+ int? get take;
+/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CustomerListOptionsCopyWith<CustomerListOptions> get copyWith => _$CustomerListOptionsCopyWithImpl<CustomerListOptions>(this as CustomerListOptions, _$identity);
 
   /// Serializes this CustomerListOptions to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CustomerListOptionsCopyWith<CustomerListOptions> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CustomerListOptions&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.filterOperator, filterOperator) || other.filterOperator == filterOperator)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.sort, sort) || other.sort == sort)&&(identical(other.take, take) || other.take == take));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,filter,filterOperator,skip,sort,take);
+
+@override
+String toString() {
+  return 'CustomerListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CustomerListOptionsCopyWith<$Res> {
-  factory $CustomerListOptionsCopyWith(
-          CustomerListOptions value, $Res Function(CustomerListOptions) then) =
-      _$CustomerListOptionsCopyWithImpl<$Res, CustomerListOptions>;
-  @useResult
-  $Res call(
-      {CustomerFilterParameter? filter,
-      LogicalOperator? filterOperator,
-      int? skip,
-      CustomerSortParameter? sort,
-      int? take});
+abstract mixin class $CustomerListOptionsCopyWith<$Res>  {
+  factory $CustomerListOptionsCopyWith(CustomerListOptions value, $Res Function(CustomerListOptions) _then) = _$CustomerListOptionsCopyWithImpl;
+@useResult
+$Res call({
+ CustomerFilterParameter? filter, LogicalOperator? filterOperator, int? skip, CustomerSortParameter? sort, int? take
+});
 
-  $CustomerFilterParameterCopyWith<$Res>? get filter;
-  $CustomerSortParameterCopyWith<$Res>? get sort;
+
+$CustomerFilterParameterCopyWith<$Res>? get filter;$CustomerSortParameterCopyWith<$Res>? get sort;
+
 }
-
 /// @nodoc
-class _$CustomerListOptionsCopyWithImpl<$Res, $Val extends CustomerListOptions>
+class _$CustomerListOptionsCopyWithImpl<$Res>
     implements $CustomerListOptionsCopyWith<$Res> {
-  _$CustomerListOptionsCopyWithImpl(this._value, this._then);
+  _$CustomerListOptionsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CustomerListOptions _self;
+  final $Res Function(CustomerListOptions) _then;
 
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? filter = freezed,
-    Object? filterOperator = freezed,
-    Object? skip = freezed,
-    Object? sort = freezed,
-    Object? take = freezed,
-  }) {
-    return _then(_value.copyWith(
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as CustomerFilterParameter?,
-      filterOperator: freezed == filterOperator
-          ? _value.filterOperator
-          : filterOperator // ignore: cast_nullable_to_non_nullable
-              as LogicalOperator?,
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as CustomerSortParameter?,
-      take: freezed == take
-          ? _value.take
-          : take // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? filter = freezed,Object? filterOperator = freezed,Object? skip = freezed,Object? sort = freezed,Object? take = freezed,}) {
+  return _then(_self.copyWith(
+filter: freezed == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
+as CustomerFilterParameter?,filterOperator: freezed == filterOperator ? _self.filterOperator : filterOperator // ignore: cast_nullable_to_non_nullable
+as LogicalOperator?,skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
+as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as CustomerSortParameter?,take: freezed == take ? _self.take : take // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerFilterParameterCopyWith<$Res>? get filter {
+    if (_self.filter == null) {
+    return null;
   }
 
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CustomerFilterParameterCopyWith<$Res>? get filter {
-    if (_value.filter == null) {
-      return null;
-    }
-
-    return $CustomerFilterParameterCopyWith<$Res>(_value.filter!, (value) {
-      return _then(_value.copyWith(filter: value) as $Val);
-    });
+  return $CustomerFilterParameterCopyWith<$Res>(_self.filter!, (value) {
+    return _then(_self.copyWith(filter: value));
+  });
+}/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerSortParameterCopyWith<$Res>? get sort {
+    if (_self.sort == null) {
+    return null;
   }
 
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CustomerSortParameterCopyWith<$Res>? get sort {
-    if (_value.sort == null) {
-      return null;
-    }
-
-    return $CustomerSortParameterCopyWith<$Res>(_value.sort!, (value) {
-      return _then(_value.copyWith(sort: value) as $Val);
-    });
-  }
+  return $CustomerSortParameterCopyWith<$Res>(_self.sort!, (value) {
+    return _then(_self.copyWith(sort: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$CustomerListOptionsImplCopyWith<$Res>
-    implements $CustomerListOptionsCopyWith<$Res> {
-  factory _$$CustomerListOptionsImplCopyWith(_$CustomerListOptionsImpl value,
-          $Res Function(_$CustomerListOptionsImpl) then) =
-      __$$CustomerListOptionsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {CustomerFilterParameter? filter,
-      LogicalOperator? filterOperator,
-      int? skip,
-      CustomerSortParameter? sort,
-      int? take});
 
-  @override
-  $CustomerFilterParameterCopyWith<$Res>? get filter;
-  @override
-  $CustomerSortParameterCopyWith<$Res>? get sort;
+/// Adds pattern-matching-related methods to [CustomerListOptions].
+extension CustomerListOptionsPatterns on CustomerListOptions {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CustomerListOptions value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CustomerListOptions() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CustomerListOptions value)  $default,){
+final _that = this;
+switch (_that) {
+case _CustomerListOptions():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CustomerListOptions value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CustomerListOptions() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( CustomerFilterParameter? filter,  LogicalOperator? filterOperator,  int? skip,  CustomerSortParameter? sort,  int? take)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CustomerListOptions() when $default != null:
+return $default(_that.filter,_that.filterOperator,_that.skip,_that.sort,_that.take);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( CustomerFilterParameter? filter,  LogicalOperator? filterOperator,  int? skip,  CustomerSortParameter? sort,  int? take)  $default,) {final _that = this;
+switch (_that) {
+case _CustomerListOptions():
+return $default(_that.filter,_that.filterOperator,_that.skip,_that.sort,_that.take);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( CustomerFilterParameter? filter,  LogicalOperator? filterOperator,  int? skip,  CustomerSortParameter? sort,  int? take)?  $default,) {final _that = this;
+switch (_that) {
+case _CustomerListOptions() when $default != null:
+return $default(_that.filter,_that.filterOperator,_that.skip,_that.sort,_that.take);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$CustomerListOptionsImplCopyWithImpl<$Res>
-    extends _$CustomerListOptionsCopyWithImpl<$Res, _$CustomerListOptionsImpl>
-    implements _$$CustomerListOptionsImplCopyWith<$Res> {
-  __$$CustomerListOptionsImplCopyWithImpl(_$CustomerListOptionsImpl _value,
-      $Res Function(_$CustomerListOptionsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? filter = freezed,
-    Object? filterOperator = freezed,
-    Object? skip = freezed,
-    Object? sort = freezed,
-    Object? take = freezed,
-  }) {
-    return _then(_$CustomerListOptionsImpl(
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as CustomerFilterParameter?,
-      filterOperator: freezed == filterOperator
-          ? _value.filterOperator
-          : filterOperator // ignore: cast_nullable_to_non_nullable
-              as LogicalOperator?,
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as CustomerSortParameter?,
-      take: freezed == take
-          ? _value.take
-          : take // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerListOptionsImpl extends _CustomerListOptions {
-  const _$CustomerListOptionsImpl(
-      {this.filter, this.filterOperator, this.skip, this.sort, this.take})
-      : super._();
 
-  factory _$CustomerListOptionsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomerListOptionsImplFromJson(json);
+class _CustomerListOptions extends CustomerListOptions {
+  const _CustomerListOptions({this.filter, this.filterOperator, this.skip, this.sort, this.take}): super._();
+  factory _CustomerListOptions.fromJson(Map<String, dynamic> json) => _$CustomerListOptionsFromJson(json);
 
-  /// Allows the results to be filtered
-  @override
-  final CustomerFilterParameter? filter;
+/// Allows the results to be filtered
+@override final  CustomerFilterParameter? filter;
+/// Specifies whether multiple top-level "filter" fields should be combined with a
+/// logical AND or OR operation. Defaults to AND.
+@override final  LogicalOperator? filterOperator;
+/// Skips the first n results, for use in pagination
+@override final  int? skip;
+/// Specifies which properties to sort the results by
+@override final  CustomerSortParameter? sort;
+/// Takes n results, for use in pagination
+@override final  int? take;
 
-  /// Specifies whether multiple top-level "filter" fields should be combined with a
-  /// logical AND or OR operation. Defaults to AND.
-  @override
-  final LogicalOperator? filterOperator;
+/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CustomerListOptionsCopyWith<_CustomerListOptions> get copyWith => __$CustomerListOptionsCopyWithImpl<_CustomerListOptions>(this, _$identity);
 
-  /// Skips the first n results, for use in pagination
-  @override
-  final int? skip;
-
-  /// Specifies which properties to sort the results by
-  @override
-  final CustomerSortParameter? sort;
-
-  /// Takes n results, for use in pagination
-  @override
-  final int? take;
-
-  @override
-  String toString() {
-    return 'CustomerListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CustomerListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>
-      __$$CustomerListOptionsImplCopyWithImpl<_$CustomerListOptionsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CustomerListOptionsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$CustomerListOptionsToJson(this, );
 }
 
-abstract class _CustomerListOptions extends CustomerListOptions {
-  const factory _CustomerListOptions(
-      {final CustomerFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final CustomerSortParameter? sort,
-      final int? take}) = _$CustomerListOptionsImpl;
-  const _CustomerListOptions._() : super._();
-
-  factory _CustomerListOptions.fromJson(Map<String, dynamic> json) =
-      _$CustomerListOptionsImpl.fromJson;
-
-  /// Allows the results to be filtered
-  @override
-  CustomerFilterParameter? get filter;
-
-  /// Specifies whether multiple top-level "filter" fields should be combined with a
-  /// logical AND or OR operation. Defaults to AND.
-  @override
-  LogicalOperator? get filterOperator;
-
-  /// Skips the first n results, for use in pagination
-  @override
-  int? get skip;
-
-  /// Specifies which properties to sort the results by
-  @override
-  CustomerSortParameter? get sort;
-
-  /// Takes n results, for use in pagination
-  @override
-  int? get take;
-
-  /// Create a copy of CustomerListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CustomerListOptionsImplCopyWith<_$CustomerListOptionsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CustomerListOptions&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.filterOperator, filterOperator) || other.filterOperator == filterOperator)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.sort, sort) || other.sort == sort)&&(identical(other.take, take) || other.take == take));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,filter,filterOperator,skip,sort,take);
+
+@override
+String toString() {
+  return 'CustomerListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CustomerListOptionsCopyWith<$Res> implements $CustomerListOptionsCopyWith<$Res> {
+  factory _$CustomerListOptionsCopyWith(_CustomerListOptions value, $Res Function(_CustomerListOptions) _then) = __$CustomerListOptionsCopyWithImpl;
+@override @useResult
+$Res call({
+ CustomerFilterParameter? filter, LogicalOperator? filterOperator, int? skip, CustomerSortParameter? sort, int? take
+});
+
+
+@override $CustomerFilterParameterCopyWith<$Res>? get filter;@override $CustomerSortParameterCopyWith<$Res>? get sort;
+
+}
+/// @nodoc
+class __$CustomerListOptionsCopyWithImpl<$Res>
+    implements _$CustomerListOptionsCopyWith<$Res> {
+  __$CustomerListOptionsCopyWithImpl(this._self, this._then);
+
+  final _CustomerListOptions _self;
+  final $Res Function(_CustomerListOptions) _then;
+
+/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? filter = freezed,Object? filterOperator = freezed,Object? skip = freezed,Object? sort = freezed,Object? take = freezed,}) {
+  return _then(_CustomerListOptions(
+filter: freezed == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
+as CustomerFilterParameter?,filterOperator: freezed == filterOperator ? _self.filterOperator : filterOperator // ignore: cast_nullable_to_non_nullable
+as LogicalOperator?,skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
+as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as CustomerSortParameter?,take: freezed == take ? _self.take : take // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerFilterParameterCopyWith<$Res>? get filter {
+    if (_self.filter == null) {
+    return null;
+  }
+
+  return $CustomerFilterParameterCopyWith<$Res>(_self.filter!, (value) {
+    return _then(_self.copyWith(filter: value));
+  });
+}/// Create a copy of CustomerListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerSortParameterCopyWith<$Res>? get sort {
+    if (_self.sort == null) {
+    return null;
+  }
+
+  return $CustomerSortParameterCopyWith<$Res>(_self.sort!, (value) {
+    return _then(_self.copyWith(sort: value));
+  });
+}
+}
+
+// dart format on

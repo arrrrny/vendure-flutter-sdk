@@ -5,12 +5,8 @@ import '../refund/refund.dart';
 part 'refund_line.freezed.dart';
 part 'refund_line.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RefundLine with _$RefundLine {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class RefundLine with _$RefundLine {
   const RefundLine._();
 
   const factory RefundLine({

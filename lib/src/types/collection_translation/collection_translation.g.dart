@@ -6,8 +6,8 @@ part of 'collection_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionTranslationImpl _$$CollectionTranslationImplFromJson(Map json) =>
-    _$CollectionTranslationImpl(
+_CollectionTranslation _$CollectionTranslationFromJson(Map json) =>
+    _CollectionTranslation(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String,
       id: json['id'] as String,
@@ -17,17 +17,17 @@ _$CollectionTranslationImpl _$$CollectionTranslationImplFromJson(Map json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$CollectionTranslationImplToJson(
-        _$CollectionTranslationImpl instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'description': instance.description,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'slug': instance.slug,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$CollectionTranslationToJson(
+  _CollectionTranslation instance,
+) => <String, dynamic>{
+  'createdAt': instance.createdAt.toIso8601String(),
+  'description': instance.description,
+  'id': instance.id,
+  'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+  'name': instance.name,
+  'slug': instance.slug,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

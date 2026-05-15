@@ -6,8 +6,8 @@ part of 'product_option_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
-    _$ProductOptionGroupImpl(
+_ProductOptionGroup _$ProductOptionGroupFromJson(Map json) =>
+    _ProductOptionGroup(
       code: json['code'] as String?,
       createdAt: json['createdAt'] == null
           ? null
@@ -16,43 +16,43 @@ _$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
         (k, e) => MapEntry(k as String, e),
       ),
       id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
+      languageCode: $enumDecodeNullable(
+        _$LanguageCodeEnumMap,
+        json['languageCode'],
+      ),
       name: json['name'] as String?,
       options: (json['options'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOption.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : ProductOption.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : ProductOptionGroupTranslation.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : ProductOptionGroupTranslation.fromJson(
+                    Map<String, dynamic>.from(e as Map),
+                  ),
+          )
           .toList(),
       updatedAt: json['updatedAt'] == null
           ? null
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductOptionGroupImplToJson(
-        _$ProductOptionGroupImpl instance) =>
+Map<String, dynamic> _$ProductOptionGroupToJson(_ProductOptionGroup instance) =>
     <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.options?.map((e) => e?.toJson()).toList() case final value?)
-        'options': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'code': ?instance.code,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'options': ?instance.options?.map((e) => e?.toJson()).toList(),
+      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {

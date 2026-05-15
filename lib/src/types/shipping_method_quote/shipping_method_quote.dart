@@ -3,7 +3,7 @@ part 'shipping_method_quote.freezed.dart';
 part 'shipping_method_quote.g.dart';
 
 @freezed
-class ShippingMethodQuote with _$ShippingMethodQuote {
+abstract class ShippingMethodQuote with _$ShippingMethodQuote {
   const ShippingMethodQuote._();
 
   const factory ShippingMethodQuote({

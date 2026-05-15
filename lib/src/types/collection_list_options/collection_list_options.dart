@@ -7,7 +7,7 @@ part 'collection_list_options.freezed.dart';
 part 'collection_list_options.g.dart';
 
 @unfreezed
-class CollectionListOptions with _$CollectionListOptions {
+abstract class CollectionListOptions with _$CollectionListOptions {
   const CollectionListOptions._();
 
   factory CollectionListOptions({

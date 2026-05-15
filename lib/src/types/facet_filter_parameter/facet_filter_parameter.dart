@@ -7,7 +7,7 @@ part 'facet_filter_parameter.freezed.dart';
 part 'facet_filter_parameter.g.dart';
 
 @unfreezed
-class FacetFilterParameter with _$FacetFilterParameter {
+abstract class FacetFilterParameter with _$FacetFilterParameter {
   const FacetFilterParameter._();
 
   factory FacetFilterParameter({

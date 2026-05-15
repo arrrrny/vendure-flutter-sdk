@@ -5,7 +5,7 @@ part 'identifier_change_token_expired_error.freezed.dart';
 part 'identifier_change_token_expired_error.g.dart';
 
 @freezed
-class IdentifierChangeTokenExpiredError
+abstract class IdentifierChangeTokenExpiredError
     with _$IdentifierChangeTokenExpiredError {
   const IdentifierChangeTokenExpiredError._();
 
@@ -15,6 +15,6 @@ class IdentifierChangeTokenExpiredError
   }) = _IdentifierChangeTokenExpiredError;
 
   factory IdentifierChangeTokenExpiredError.fromJson(
-          Map<String, dynamic> json) =>
-      _$IdentifierChangeTokenExpiredErrorFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$IdentifierChangeTokenExpiredErrorFromJson(json);
 }

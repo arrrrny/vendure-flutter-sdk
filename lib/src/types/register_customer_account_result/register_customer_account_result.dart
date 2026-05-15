@@ -5,7 +5,8 @@ part 'register_customer_account_result.freezed.dart';
 part 'register_customer_account_result.g.dart';
 
 @freezed
-class RegisterCustomerAccountResult with _$RegisterCustomerAccountResult {
+sealed class RegisterCustomerAccountResult
+    with _$RegisterCustomerAccountResult {
   const RegisterCustomerAccountResult._();
 
   const factory RegisterCustomerAccountResult.missingPasswordError({
@@ -24,9 +25,8 @@ class RegisterCustomerAccountResult with _$RegisterCustomerAccountResult {
     required String validationErrorMessage,
   }) = PasswordValidationError;
 
-  const factory RegisterCustomerAccountResult.success({
-    required bool success,
-  }) = Success;
+  const factory RegisterCustomerAccountResult.success({required bool success}) =
+      Success;
 
   factory RegisterCustomerAccountResult.fromJson(Map<String, dynamic> json) =>
       _$RegisterCustomerAccountResultFromJson(json);

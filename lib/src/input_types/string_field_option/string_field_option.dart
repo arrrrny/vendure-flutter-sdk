@@ -4,12 +4,8 @@ import '../localized_string/localized_string.dart';
 part 'string_field_option.freezed.dart';
 part 'string_field_option.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class StringFieldOption with _$StringFieldOption {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class StringFieldOption with _$StringFieldOption {
   const StringFieldOption._();
 
   const factory StringFieldOption({

@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String setCustomerForOrderMutation = orderFragment +
+const String setCustomerForOrderMutation =
+    orderFragment +
     r'''
 mutation SetCustomerForOrder($input: CreateCustomerInput!) {
   setCustomerForOrder(input: $input) {

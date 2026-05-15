@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,149 +9,255 @@ part of 'date_list_operators.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-DateListOperators _$DateListOperatorsFromJson(Map<String, dynamic> json) {
-  return _DateListOperators.fromJson(json);
-}
 
 /// @nodoc
 mixin _$DateListOperators {
-  DateTime get inList => throw _privateConstructorUsedError;
-  set inList(DateTime value) => throw _privateConstructorUsedError;
+
+ DateTime get inList; set inList(DateTime value);
+/// Create a copy of DateListOperators
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$DateListOperatorsCopyWith<DateListOperators> get copyWith => _$DateListOperatorsCopyWithImpl<DateListOperators>(this as DateListOperators, _$identity);
 
   /// Serializes this DateListOperators to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of DateListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $DateListOperatorsCopyWith<DateListOperators> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+
+@override
+String toString() {
+  return 'DateListOperators(inList: $inList)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $DateListOperatorsCopyWith<$Res> {
-  factory $DateListOperatorsCopyWith(
-          DateListOperators value, $Res Function(DateListOperators) then) =
-      _$DateListOperatorsCopyWithImpl<$Res, DateListOperators>;
-  @useResult
-  $Res call({DateTime inList});
-}
+abstract mixin class $DateListOperatorsCopyWith<$Res>  {
+  factory $DateListOperatorsCopyWith(DateListOperators value, $Res Function(DateListOperators) _then) = _$DateListOperatorsCopyWithImpl;
+@useResult
+$Res call({
+ DateTime inList
+});
 
+
+
+
+}
 /// @nodoc
-class _$DateListOperatorsCopyWithImpl<$Res, $Val extends DateListOperators>
+class _$DateListOperatorsCopyWithImpl<$Res>
     implements $DateListOperatorsCopyWith<$Res> {
-  _$DateListOperatorsCopyWithImpl(this._value, this._then);
+  _$DateListOperatorsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final DateListOperators _self;
+  final $Res Function(DateListOperators) _then;
 
-  /// Create a copy of DateListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inList = null,
-  }) {
-    return _then(_value.copyWith(
-      inList: null == inList
-          ? _value.inList
-          : inList // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
+/// Create a copy of DateListOperators
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? inList = null,}) {
+  return _then(_self.copyWith(
+inList: null == inList ? _self.inList : inList // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
 }
 
-/// @nodoc
-abstract class _$$DateListOperatorsImplCopyWith<$Res>
-    implements $DateListOperatorsCopyWith<$Res> {
-  factory _$$DateListOperatorsImplCopyWith(_$DateListOperatorsImpl value,
-          $Res Function(_$DateListOperatorsImpl) then) =
-      __$$DateListOperatorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({DateTime inList});
 }
 
-/// @nodoc
-class __$$DateListOperatorsImplCopyWithImpl<$Res>
-    extends _$DateListOperatorsCopyWithImpl<$Res, _$DateListOperatorsImpl>
-    implements _$$DateListOperatorsImplCopyWith<$Res> {
-  __$$DateListOperatorsImplCopyWithImpl(_$DateListOperatorsImpl _value,
-      $Res Function(_$DateListOperatorsImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of DateListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inList = null,
-  }) {
-    return _then(_$DateListOperatorsImpl(
-      inList: null == inList
-          ? _value.inList
-          : inList // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
+/// Adds pattern-matching-related methods to [DateListOperators].
+extension DateListOperatorsPatterns on DateListOperators {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DateListOperators value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _DateListOperators() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DateListOperators value)  $default,){
+final _that = this;
+switch (_that) {
+case _DateListOperators():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DateListOperators value)?  $default,){
+final _that = this;
+switch (_that) {
+case _DateListOperators() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime inList)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _DateListOperators() when $default != null:
+return $default(_that.inList);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime inList)  $default,) {final _that = this;
+switch (_that) {
+case _DateListOperators():
+return $default(_that.inList);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime inList)?  $default,) {final _that = this;
+switch (_that) {
+case _DateListOperators() when $default != null:
+return $default(_that.inList);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$DateListOperatorsImpl extends _DateListOperators {
-  _$DateListOperatorsImpl({required this.inList}) : super._();
 
-  factory _$DateListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DateListOperatorsImplFromJson(json);
+class _DateListOperators extends DateListOperators {
+   _DateListOperators({required this.inList}): super._();
+  factory _DateListOperators.fromJson(Map<String, dynamic> json) => _$DateListOperatorsFromJson(json);
 
-  @override
-  DateTime inList;
+@override  DateTime inList;
 
-  @override
-  String toString() {
-    return 'DateListOperators(inList: $inList)';
-  }
+/// Create a copy of DateListOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$DateListOperatorsCopyWith<_DateListOperators> get copyWith => __$DateListOperatorsCopyWithImpl<_DateListOperators>(this, _$identity);
 
-  /// Create a copy of DateListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DateListOperatorsImplCopyWith<_$DateListOperatorsImpl> get copyWith =>
-      __$$DateListOperatorsImplCopyWithImpl<_$DateListOperatorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DateListOperatorsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$DateListOperatorsToJson(this, );
 }
 
-abstract class _DateListOperators extends DateListOperators {
-  factory _DateListOperators({required DateTime inList}) =
-      _$DateListOperatorsImpl;
-  _DateListOperators._() : super._();
 
-  factory _DateListOperators.fromJson(Map<String, dynamic> json) =
-      _$DateListOperatorsImpl.fromJson;
 
-  @override
-  DateTime get inList;
-  set inList(DateTime value);
-
-  /// Create a copy of DateListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DateListOperatorsImplCopyWith<_$DateListOperatorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'DateListOperators(inList: $inList)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$DateListOperatorsCopyWith<$Res> implements $DateListOperatorsCopyWith<$Res> {
+  factory _$DateListOperatorsCopyWith(_DateListOperators value, $Res Function(_DateListOperators) _then) = __$DateListOperatorsCopyWithImpl;
+@override @useResult
+$Res call({
+ DateTime inList
+});
+
+
+
+
+}
+/// @nodoc
+class __$DateListOperatorsCopyWithImpl<$Res>
+    implements _$DateListOperatorsCopyWith<$Res> {
+  __$DateListOperatorsCopyWithImpl(this._self, this._then);
+
+  final _DateListOperators _self;
+  final $Res Function(_DateListOperators) _then;
+
+/// Create a copy of DateListOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? inList = null,}) {
+  return _then(_DateListOperators(
+inList: null == inList ? _self.inList : inList // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
+}
+
+
+}
+
+// dart format on

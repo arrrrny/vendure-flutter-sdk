@@ -6,15 +6,17 @@ part of 'product_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductTranslationImpl _$$ProductTranslationImplFromJson(Map json) =>
-    _$ProductTranslationImpl(
+_ProductTranslation _$ProductTranslationFromJson(Map json) =>
+    _ProductTranslation(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String?,
       id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
+      languageCode: $enumDecodeNullable(
+        _$LanguageCodeEnumMap,
+        json['languageCode'],
+      ),
       name: json['name'] as String?,
       slug: json['slug'] as String?,
       updatedAt: json['updatedAt'] == null
@@ -22,19 +24,15 @@ _$ProductTranslationImpl _$$ProductTranslationImplFromJson(Map json) =>
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductTranslationImplToJson(
-        _$ProductTranslationImpl instance) =>
+Map<String, dynamic> _$ProductTranslationToJson(_ProductTranslation instance) =>
     <String, dynamic>{
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.slug case final value?) 'slug': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'description': ?instance.description,
+      'id': ?instance.id,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'name': ?instance.name,
+      'slug': ?instance.slug,
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {

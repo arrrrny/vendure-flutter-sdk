@@ -6,13 +6,9 @@ part of 'boolean_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BooleanListOperatorsImpl _$$BooleanListOperatorsImplFromJson(Map json) =>
-    _$BooleanListOperatorsImpl(
-      inList: json['inList'] as bool,
-    );
+_BooleanListOperators _$BooleanListOperatorsFromJson(Map json) =>
+    _BooleanListOperators(inList: json['inList'] as bool);
 
-Map<String, dynamic> _$$BooleanListOperatorsImplToJson(
-        _$BooleanListOperatorsImpl instance) =>
-    <String, dynamic>{
-      'inList': instance.inList,
-    };
+Map<String, dynamic> _$BooleanListOperatorsToJson(
+  _BooleanListOperators instance,
+) => <String, dynamic>{'inList': instance.inList};

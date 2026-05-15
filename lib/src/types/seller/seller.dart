@@ -3,7 +3,7 @@ part 'seller.freezed.dart';
 part 'seller.g.dart';
 
 @freezed
-class Seller with _$Seller {
+abstract class Seller with _$Seller {
   const Seller._();
 
   const factory Seller({

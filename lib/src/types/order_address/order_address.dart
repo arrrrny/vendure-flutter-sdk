@@ -3,7 +3,7 @@ part 'order_address.freezed.dart';
 part 'order_address.g.dart';
 
 @freezed
-class OrderAddress with _$OrderAddress {
+abstract class OrderAddress with _$OrderAddress {
   const OrderAddress._();
 
   const factory OrderAddress({

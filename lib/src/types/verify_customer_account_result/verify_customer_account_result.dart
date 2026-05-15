@@ -6,7 +6,7 @@ part 'verify_customer_account_result.freezed.dart';
 part 'verify_customer_account_result.g.dart';
 
 @freezed
-class VerifyCustomerAccountResult with _$VerifyCustomerAccountResult {
+sealed class VerifyCustomerAccountResult with _$VerifyCustomerAccountResult {
   const VerifyCustomerAccountResult._();
 
   const factory VerifyCustomerAccountResult.currentUser({

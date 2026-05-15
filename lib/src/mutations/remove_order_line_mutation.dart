@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String removeOrderLineMutation = orderFragment +
+const String removeOrderLineMutation =
+    orderFragment +
     r'''
 mutation RemoveOrderLine($orderLineId: ID!) {
   removeOrderLine(orderLineId: $orderLineId) {

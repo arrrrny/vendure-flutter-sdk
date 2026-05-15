@@ -5,7 +5,7 @@ part 'adjustment.freezed.dart';
 part 'adjustment.g.dart';
 
 @freezed
-class Adjustment with _$Adjustment {
+abstract class Adjustment with _$Adjustment {
   const Adjustment._();
 
   const factory Adjustment({

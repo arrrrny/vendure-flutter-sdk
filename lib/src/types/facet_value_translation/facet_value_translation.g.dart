@@ -6,8 +6,8 @@ part of 'facet_value_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetValueTranslationImpl _$$FacetValueTranslationImplFromJson(Map json) =>
-    _$FacetValueTranslationImpl(
+_FacetValueTranslation _$FacetValueTranslationFromJson(Map json) =>
+    _FacetValueTranslation(
       createdAt: DateTime.parse(json['createdAt'] as String),
       id: json['id'] as String,
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
@@ -15,15 +15,15 @@ _$FacetValueTranslationImpl _$$FacetValueTranslationImplFromJson(Map json) =>
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$FacetValueTranslationImplToJson(
-        _$FacetValueTranslationImpl instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$FacetValueTranslationToJson(
+  _FacetValueTranslation instance,
+) => <String, dynamic>{
+  'createdAt': instance.createdAt.toIso8601String(),
+  'id': instance.id,
+  'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+  'name': instance.name,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

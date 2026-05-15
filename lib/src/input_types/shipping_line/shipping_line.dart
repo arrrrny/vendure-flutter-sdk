@@ -5,12 +5,8 @@ import '../shipping_method/shipping_method.dart';
 part 'shipping_line.freezed.dart';
 part 'shipping_line.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ShippingLine with _$ShippingLine {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ShippingLine with _$ShippingLine {
   const ShippingLine._();
 
   const factory ShippingLine({

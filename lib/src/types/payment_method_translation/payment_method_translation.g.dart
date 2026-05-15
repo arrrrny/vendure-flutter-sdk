@@ -6,9 +6,8 @@ part of 'payment_method_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentMethodTranslationImpl _$$PaymentMethodTranslationImplFromJson(
-        Map json) =>
-    _$PaymentMethodTranslationImpl(
+_PaymentMethodTranslation _$PaymentMethodTranslationFromJson(Map json) =>
+    _PaymentMethodTranslation(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String,
       id: json['id'] as String,
@@ -17,16 +16,16 @@ _$PaymentMethodTranslationImpl _$$PaymentMethodTranslationImplFromJson(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$PaymentMethodTranslationImplToJson(
-        _$PaymentMethodTranslationImpl instance) =>
-    <String, dynamic>{
-      'createdAt': instance.createdAt.toIso8601String(),
-      'description': instance.description,
-      'id': instance.id,
-      'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
-      'name': instance.name,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$PaymentMethodTranslationToJson(
+  _PaymentMethodTranslation instance,
+) => <String, dynamic>{
+  'createdAt': instance.createdAt.toIso8601String(),
+  'description': instance.description,
+  'id': instance.id,
+  'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
+  'name': instance.name,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

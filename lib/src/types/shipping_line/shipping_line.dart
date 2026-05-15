@@ -6,7 +6,7 @@ part 'shipping_line.freezed.dart';
 part 'shipping_line.g.dart';
 
 @freezed
-class ShippingLine with _$ShippingLine {
+abstract class ShippingLine with _$ShippingLine {
   const ShippingLine._();
 
   const factory ShippingLine({

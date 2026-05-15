@@ -5,12 +5,8 @@ import '../permission/permission.dart';
 part 'int_custom_field_config.freezed.dart';
 part 'int_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class IntCustomFieldConfig with _$IntCustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class IntCustomFieldConfig with _$IntCustomFieldConfig {
   const IntCustomFieldConfig._();
 
   const factory IntCustomFieldConfig({

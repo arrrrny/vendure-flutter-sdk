@@ -5,7 +5,7 @@ part 'fulfillment.freezed.dart';
 part 'fulfillment.g.dart';
 
 @freezed
-class Fulfillment with _$Fulfillment {
+abstract class Fulfillment with _$Fulfillment {
   const Fulfillment._();
 
   const factory Fulfillment({

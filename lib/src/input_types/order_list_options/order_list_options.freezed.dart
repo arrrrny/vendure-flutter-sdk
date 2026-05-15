@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,307 +9,341 @@ part of 'order_list_options.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-OrderListOptions _$OrderListOptionsFromJson(Map<String, dynamic> json) {
-  return _OrderListOptions.fromJson(json);
-}
 
 /// @nodoc
 mixin _$OrderListOptions {
-  /// Allows the results to be filtered
-  OrderFilterParameter? get filter => throw _privateConstructorUsedError;
 
-  /// Specifies whether multiple top-level "filter" fields should be combined with a
-  /// logical AND or OR operation. Defaults to AND.
-  LogicalOperator? get filterOperator => throw _privateConstructorUsedError;
-
-  /// Skips the first n results, for use in pagination
-  int? get skip => throw _privateConstructorUsedError;
-
-  /// Specifies which properties to sort the results by
-  OrderSortParameter? get sort => throw _privateConstructorUsedError;
-
-  /// Takes n results, for use in pagination
-  int? get take => throw _privateConstructorUsedError;
+/// Allows the results to be filtered
+ OrderFilterParameter? get filter;/// Specifies whether multiple top-level "filter" fields should be combined with a
+/// logical AND or OR operation. Defaults to AND.
+ LogicalOperator? get filterOperator;/// Skips the first n results, for use in pagination
+ int? get skip;/// Specifies which properties to sort the results by
+ OrderSortParameter? get sort;/// Takes n results, for use in pagination
+ int? get take;
+/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$OrderListOptionsCopyWith<OrderListOptions> get copyWith => _$OrderListOptionsCopyWithImpl<OrderListOptions>(this as OrderListOptions, _$identity);
 
   /// Serializes this OrderListOptions to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $OrderListOptionsCopyWith<OrderListOptions> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OrderListOptions&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.filterOperator, filterOperator) || other.filterOperator == filterOperator)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.sort, sort) || other.sort == sort)&&(identical(other.take, take) || other.take == take));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,filter,filterOperator,skip,sort,take);
+
+@override
+String toString() {
+  return 'OrderListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $OrderListOptionsCopyWith<$Res> {
-  factory $OrderListOptionsCopyWith(
-          OrderListOptions value, $Res Function(OrderListOptions) then) =
-      _$OrderListOptionsCopyWithImpl<$Res, OrderListOptions>;
-  @useResult
-  $Res call(
-      {OrderFilterParameter? filter,
-      LogicalOperator? filterOperator,
-      int? skip,
-      OrderSortParameter? sort,
-      int? take});
+abstract mixin class $OrderListOptionsCopyWith<$Res>  {
+  factory $OrderListOptionsCopyWith(OrderListOptions value, $Res Function(OrderListOptions) _then) = _$OrderListOptionsCopyWithImpl;
+@useResult
+$Res call({
+ OrderFilterParameter? filter, LogicalOperator? filterOperator, int? skip, OrderSortParameter? sort, int? take
+});
 
-  $OrderFilterParameterCopyWith<$Res>? get filter;
-  $OrderSortParameterCopyWith<$Res>? get sort;
+
+$OrderFilterParameterCopyWith<$Res>? get filter;$OrderSortParameterCopyWith<$Res>? get sort;
+
 }
-
 /// @nodoc
-class _$OrderListOptionsCopyWithImpl<$Res, $Val extends OrderListOptions>
+class _$OrderListOptionsCopyWithImpl<$Res>
     implements $OrderListOptionsCopyWith<$Res> {
-  _$OrderListOptionsCopyWithImpl(this._value, this._then);
+  _$OrderListOptionsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final OrderListOptions _self;
+  final $Res Function(OrderListOptions) _then;
 
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? filter = freezed,
-    Object? filterOperator = freezed,
-    Object? skip = freezed,
-    Object? sort = freezed,
-    Object? take = freezed,
-  }) {
-    return _then(_value.copyWith(
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as OrderFilterParameter?,
-      filterOperator: freezed == filterOperator
-          ? _value.filterOperator
-          : filterOperator // ignore: cast_nullable_to_non_nullable
-              as LogicalOperator?,
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as OrderSortParameter?,
-      take: freezed == take
-          ? _value.take
-          : take // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? filter = freezed,Object? filterOperator = freezed,Object? skip = freezed,Object? sort = freezed,Object? take = freezed,}) {
+  return _then(_self.copyWith(
+filter: freezed == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
+as OrderFilterParameter?,filterOperator: freezed == filterOperator ? _self.filterOperator : filterOperator // ignore: cast_nullable_to_non_nullable
+as LogicalOperator?,skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
+as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as OrderSortParameter?,take: freezed == take ? _self.take : take // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OrderFilterParameterCopyWith<$Res>? get filter {
+    if (_self.filter == null) {
+    return null;
   }
 
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $OrderFilterParameterCopyWith<$Res>? get filter {
-    if (_value.filter == null) {
-      return null;
-    }
-
-    return $OrderFilterParameterCopyWith<$Res>(_value.filter!, (value) {
-      return _then(_value.copyWith(filter: value) as $Val);
-    });
+  return $OrderFilterParameterCopyWith<$Res>(_self.filter!, (value) {
+    return _then(_self.copyWith(filter: value));
+  });
+}/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OrderSortParameterCopyWith<$Res>? get sort {
+    if (_self.sort == null) {
+    return null;
   }
 
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $OrderSortParameterCopyWith<$Res>? get sort {
-    if (_value.sort == null) {
-      return null;
-    }
-
-    return $OrderSortParameterCopyWith<$Res>(_value.sort!, (value) {
-      return _then(_value.copyWith(sort: value) as $Val);
-    });
-  }
+  return $OrderSortParameterCopyWith<$Res>(_self.sort!, (value) {
+    return _then(_self.copyWith(sort: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$OrderListOptionsImplCopyWith<$Res>
-    implements $OrderListOptionsCopyWith<$Res> {
-  factory _$$OrderListOptionsImplCopyWith(_$OrderListOptionsImpl value,
-          $Res Function(_$OrderListOptionsImpl) then) =
-      __$$OrderListOptionsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {OrderFilterParameter? filter,
-      LogicalOperator? filterOperator,
-      int? skip,
-      OrderSortParameter? sort,
-      int? take});
 
-  @override
-  $OrderFilterParameterCopyWith<$Res>? get filter;
-  @override
-  $OrderSortParameterCopyWith<$Res>? get sort;
+/// Adds pattern-matching-related methods to [OrderListOptions].
+extension OrderListOptionsPatterns on OrderListOptions {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _OrderListOptions value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _OrderListOptions() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _OrderListOptions value)  $default,){
+final _that = this;
+switch (_that) {
+case _OrderListOptions():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _OrderListOptions value)?  $default,){
+final _that = this;
+switch (_that) {
+case _OrderListOptions() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( OrderFilterParameter? filter,  LogicalOperator? filterOperator,  int? skip,  OrderSortParameter? sort,  int? take)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _OrderListOptions() when $default != null:
+return $default(_that.filter,_that.filterOperator,_that.skip,_that.sort,_that.take);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( OrderFilterParameter? filter,  LogicalOperator? filterOperator,  int? skip,  OrderSortParameter? sort,  int? take)  $default,) {final _that = this;
+switch (_that) {
+case _OrderListOptions():
+return $default(_that.filter,_that.filterOperator,_that.skip,_that.sort,_that.take);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( OrderFilterParameter? filter,  LogicalOperator? filterOperator,  int? skip,  OrderSortParameter? sort,  int? take)?  $default,) {final _that = this;
+switch (_that) {
+case _OrderListOptions() when $default != null:
+return $default(_that.filter,_that.filterOperator,_that.skip,_that.sort,_that.take);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$OrderListOptionsImplCopyWithImpl<$Res>
-    extends _$OrderListOptionsCopyWithImpl<$Res, _$OrderListOptionsImpl>
-    implements _$$OrderListOptionsImplCopyWith<$Res> {
-  __$$OrderListOptionsImplCopyWithImpl(_$OrderListOptionsImpl _value,
-      $Res Function(_$OrderListOptionsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? filter = freezed,
-    Object? filterOperator = freezed,
-    Object? skip = freezed,
-    Object? sort = freezed,
-    Object? take = freezed,
-  }) {
-    return _then(_$OrderListOptionsImpl(
-      filter: freezed == filter
-          ? _value.filter
-          : filter // ignore: cast_nullable_to_non_nullable
-              as OrderFilterParameter?,
-      filterOperator: freezed == filterOperator
-          ? _value.filterOperator
-          : filterOperator // ignore: cast_nullable_to_non_nullable
-              as LogicalOperator?,
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sort: freezed == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as OrderSortParameter?,
-      take: freezed == take
-          ? _value.take
-          : take // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$OrderListOptionsImpl extends _OrderListOptions {
-  const _$OrderListOptionsImpl(
-      {this.filter, this.filterOperator, this.skip, this.sort, this.take})
-      : super._();
 
-  factory _$OrderListOptionsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OrderListOptionsImplFromJson(json);
+class _OrderListOptions extends OrderListOptions {
+  const _OrderListOptions({this.filter, this.filterOperator, this.skip, this.sort, this.take}): super._();
+  factory _OrderListOptions.fromJson(Map<String, dynamic> json) => _$OrderListOptionsFromJson(json);
 
-  /// Allows the results to be filtered
-  @override
-  final OrderFilterParameter? filter;
+/// Allows the results to be filtered
+@override final  OrderFilterParameter? filter;
+/// Specifies whether multiple top-level "filter" fields should be combined with a
+/// logical AND or OR operation. Defaults to AND.
+@override final  LogicalOperator? filterOperator;
+/// Skips the first n results, for use in pagination
+@override final  int? skip;
+/// Specifies which properties to sort the results by
+@override final  OrderSortParameter? sort;
+/// Takes n results, for use in pagination
+@override final  int? take;
 
-  /// Specifies whether multiple top-level "filter" fields should be combined with a
-  /// logical AND or OR operation. Defaults to AND.
-  @override
-  final LogicalOperator? filterOperator;
+/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$OrderListOptionsCopyWith<_OrderListOptions> get copyWith => __$OrderListOptionsCopyWithImpl<_OrderListOptions>(this, _$identity);
 
-  /// Skips the first n results, for use in pagination
-  @override
-  final int? skip;
-
-  /// Specifies which properties to sort the results by
-  @override
-  final OrderSortParameter? sort;
-
-  /// Takes n results, for use in pagination
-  @override
-  final int? take;
-
-  @override
-  String toString() {
-    return 'OrderListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OrderListOptionsImpl &&
-            (identical(other.filter, filter) || other.filter == filter) &&
-            (identical(other.filterOperator, filterOperator) ||
-                other.filterOperator == filterOperator) &&
-            (identical(other.skip, skip) || other.skip == skip) &&
-            (identical(other.sort, sort) || other.sort == sort) &&
-            (identical(other.take, take) || other.take == take));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, filter, filterOperator, skip, sort, take);
-
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OrderListOptionsImplCopyWith<_$OrderListOptionsImpl> get copyWith =>
-      __$$OrderListOptionsImplCopyWithImpl<_$OrderListOptionsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OrderListOptionsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$OrderListOptionsToJson(this, );
 }
 
-abstract class _OrderListOptions extends OrderListOptions {
-  const factory _OrderListOptions(
-      {final OrderFilterParameter? filter,
-      final LogicalOperator? filterOperator,
-      final int? skip,
-      final OrderSortParameter? sort,
-      final int? take}) = _$OrderListOptionsImpl;
-  const _OrderListOptions._() : super._();
-
-  factory _OrderListOptions.fromJson(Map<String, dynamic> json) =
-      _$OrderListOptionsImpl.fromJson;
-
-  /// Allows the results to be filtered
-  @override
-  OrderFilterParameter? get filter;
-
-  /// Specifies whether multiple top-level "filter" fields should be combined with a
-  /// logical AND or OR operation. Defaults to AND.
-  @override
-  LogicalOperator? get filterOperator;
-
-  /// Skips the first n results, for use in pagination
-  @override
-  int? get skip;
-
-  /// Specifies which properties to sort the results by
-  @override
-  OrderSortParameter? get sort;
-
-  /// Takes n results, for use in pagination
-  @override
-  int? get take;
-
-  /// Create a copy of OrderListOptions
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OrderListOptionsImplCopyWith<_$OrderListOptionsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OrderListOptions&&(identical(other.filter, filter) || other.filter == filter)&&(identical(other.filterOperator, filterOperator) || other.filterOperator == filterOperator)&&(identical(other.skip, skip) || other.skip == skip)&&(identical(other.sort, sort) || other.sort == sort)&&(identical(other.take, take) || other.take == take));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,filter,filterOperator,skip,sort,take);
+
+@override
+String toString() {
+  return 'OrderListOptions(filter: $filter, filterOperator: $filterOperator, skip: $skip, sort: $sort, take: $take)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$OrderListOptionsCopyWith<$Res> implements $OrderListOptionsCopyWith<$Res> {
+  factory _$OrderListOptionsCopyWith(_OrderListOptions value, $Res Function(_OrderListOptions) _then) = __$OrderListOptionsCopyWithImpl;
+@override @useResult
+$Res call({
+ OrderFilterParameter? filter, LogicalOperator? filterOperator, int? skip, OrderSortParameter? sort, int? take
+});
+
+
+@override $OrderFilterParameterCopyWith<$Res>? get filter;@override $OrderSortParameterCopyWith<$Res>? get sort;
+
+}
+/// @nodoc
+class __$OrderListOptionsCopyWithImpl<$Res>
+    implements _$OrderListOptionsCopyWith<$Res> {
+  __$OrderListOptionsCopyWithImpl(this._self, this._then);
+
+  final _OrderListOptions _self;
+  final $Res Function(_OrderListOptions) _then;
+
+/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? filter = freezed,Object? filterOperator = freezed,Object? skip = freezed,Object? sort = freezed,Object? take = freezed,}) {
+  return _then(_OrderListOptions(
+filter: freezed == filter ? _self.filter : filter // ignore: cast_nullable_to_non_nullable
+as OrderFilterParameter?,filterOperator: freezed == filterOperator ? _self.filterOperator : filterOperator // ignore: cast_nullable_to_non_nullable
+as LogicalOperator?,skip: freezed == skip ? _self.skip : skip // ignore: cast_nullable_to_non_nullable
+as int?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as OrderSortParameter?,take: freezed == take ? _self.take : take // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OrderFilterParameterCopyWith<$Res>? get filter {
+    if (_self.filter == null) {
+    return null;
+  }
+
+  return $OrderFilterParameterCopyWith<$Res>(_self.filter!, (value) {
+    return _then(_self.copyWith(filter: value));
+  });
+}/// Create a copy of OrderListOptions
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OrderSortParameterCopyWith<$Res>? get sort {
+    if (_self.sort == null) {
+    return null;
+  }
+
+  return $OrderSortParameterCopyWith<$Res>(_self.sort!, (value) {
+    return _then(_self.copyWith(sort: value));
+  });
+}
+}
+
+// dart format on

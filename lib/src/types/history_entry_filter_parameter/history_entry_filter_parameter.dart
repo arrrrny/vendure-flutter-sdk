@@ -7,7 +7,7 @@ part 'history_entry_filter_parameter.freezed.dart';
 part 'history_entry_filter_parameter.g.dart';
 
 @unfreezed
-class HistoryEntryFilterParameter with _$HistoryEntryFilterParameter {
+abstract class HistoryEntryFilterParameter with _$HistoryEntryFilterParameter {
   const HistoryEntryFilterParameter._();
 
   factory HistoryEntryFilterParameter({

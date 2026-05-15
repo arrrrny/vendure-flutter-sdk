@@ -17,12 +17,8 @@ import '../surcharge/surcharge.dart';
 part 'apply_coupon_code_result.freezed.dart';
 part 'apply_coupon_code_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ApplyCouponCodeResult with _$ApplyCouponCodeResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class ApplyCouponCodeResult with _$ApplyCouponCodeResult {
   const ApplyCouponCodeResult._();
 
   const factory ApplyCouponCodeResult.couponCodeExpiredError({

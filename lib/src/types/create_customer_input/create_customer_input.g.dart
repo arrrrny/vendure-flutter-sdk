@@ -6,8 +6,8 @@ part of 'create_customer_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(Map json) =>
-    _$CreateCustomerInputImpl(
+_CreateCustomerInput _$CreateCustomerInputFromJson(Map json) =>
+    _CreateCustomerInput(
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
       ),
@@ -18,13 +18,13 @@ _$CreateCustomerInputImpl _$$CreateCustomerInputImplFromJson(Map json) =>
       title: json['title'] as String?,
     );
 
-Map<String, dynamic> _$$CreateCustomerInputImplToJson(
-        _$CreateCustomerInputImpl instance) =>
-    <String, dynamic>{
-      if (instance.customFields case final value?) 'customFields': value,
-      'emailAddress': instance.emailAddress,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      if (instance.phoneNumber case final value?) 'phoneNumber': value,
-      if (instance.title case final value?) 'title': value,
-    };
+Map<String, dynamic> _$CreateCustomerInputToJson(
+  _CreateCustomerInput instance,
+) => <String, dynamic>{
+  'customFields': ?instance.customFields,
+  'emailAddress': instance.emailAddress,
+  'firstName': instance.firstName,
+  'lastName': instance.lastName,
+  'phoneNumber': ?instance.phoneNumber,
+  'title': ?instance.title,
+};

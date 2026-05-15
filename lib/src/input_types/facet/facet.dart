@@ -7,12 +7,8 @@ import '../language_code/language_code.dart';
 part 'facet.freezed.dart';
 part 'facet.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Facet with _$Facet {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Facet with _$Facet {
   const Facet._();
 
   const factory Facet({

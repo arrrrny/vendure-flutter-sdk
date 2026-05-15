@@ -8,7 +8,7 @@ part 'channel.freezed.dart';
 part 'channel.g.dart';
 
 @freezed
-class Channel with _$Channel {
+abstract class Channel with _$Channel {
   const Channel._();
 
   const factory Channel({

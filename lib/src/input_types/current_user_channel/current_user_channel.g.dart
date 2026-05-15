@@ -6,8 +6,8 @@ part of 'current_user_channel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CurrentUserChannelImpl _$$CurrentUserChannelImplFromJson(Map json) =>
-    _$CurrentUserChannelImpl(
+_CurrentUserChannel _$CurrentUserChannelFromJson(Map json) =>
+    _CurrentUserChannel(
       code: json['code'] as String?,
       id: json['id'] as String?,
       permissions: (json['permissions'] as List<dynamic>?)
@@ -16,15 +16,14 @@ _$CurrentUserChannelImpl _$$CurrentUserChannelImplFromJson(Map json) =>
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$$CurrentUserChannelImplToJson(
-        _$CurrentUserChannelImpl instance) =>
+Map<String, dynamic> _$CurrentUserChannelToJson(_CurrentUserChannel instance) =>
     <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList()
-          case final value?)
-        'permissions': value,
-      if (instance.token case final value?) 'token': value,
+      'code': ?instance.code,
+      'id': ?instance.id,
+      'permissions': ?instance.permissions
+          ?.map((e) => _$PermissionEnumMap[e])
+          .toList(),
+      'token': ?instance.token,
     };
 
 const _$PermissionEnumMap = {

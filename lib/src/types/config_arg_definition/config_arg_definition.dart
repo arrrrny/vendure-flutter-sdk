@@ -3,7 +3,7 @@ part 'config_arg_definition.freezed.dart';
 part 'config_arg_definition.g.dart';
 
 @freezed
-class ConfigArgDefinition with _$ConfigArgDefinition {
+abstract class ConfigArgDefinition with _$ConfigArgDefinition {
   const ConfigArgDefinition._();
 
   const factory ConfigArgDefinition({

@@ -5,12 +5,8 @@ import '../permission/permission.dart';
 part 'boolean_custom_field_config.freezed.dart';
 part 'boolean_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class BooleanCustomFieldConfig with _$BooleanCustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class BooleanCustomFieldConfig with _$BooleanCustomFieldConfig {
   const BooleanCustomFieldConfig._();
 
   const factory BooleanCustomFieldConfig({

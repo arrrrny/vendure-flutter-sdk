@@ -5,7 +5,7 @@ part 'identifier_change_token_invalid_error.freezed.dart';
 part 'identifier_change_token_invalid_error.g.dart';
 
 @freezed
-class IdentifierChangeTokenInvalidError
+abstract class IdentifierChangeTokenInvalidError
     with _$IdentifierChangeTokenInvalidError {
   const IdentifierChangeTokenInvalidError._();
 
@@ -15,6 +15,6 @@ class IdentifierChangeTokenInvalidError
   }) = _IdentifierChangeTokenInvalidError;
 
   factory IdentifierChangeTokenInvalidError.fromJson(
-          Map<String, dynamic> json) =>
-      _$IdentifierChangeTokenInvalidErrorFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$IdentifierChangeTokenInvalidErrorFromJson(json);
 }

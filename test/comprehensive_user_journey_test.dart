@@ -127,7 +127,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly rejected invalid credentials: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly rejected invalid credentials: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -141,7 +142,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly rejected invalid login: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly rejected invalid login: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -275,19 +277,22 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid coupon: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled invalid coupon: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
     test('Apply valid coupon code (if any exist)', () async {
       try {
-        var result =
-            await vendure.order.applyCouponCode(couponCode: 'WELCOME10');
+        var result = await vendure.order.applyCouponCode(
+          couponCode: 'WELCOME10',
+        );
         print('📋 Coupon result: ${result.toJson()}');
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '⚠️ No valid coupons available: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '⚠️ No valid coupons available: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -399,8 +404,8 @@ void main() {
 
     test('Get collections with parent and children', () async {
       try {
-        var collections =
-            await vendure.catalog.getCollectionListWithParentChildren();
+        var collections = await vendure.catalog
+            .getCollectionListWithParentChildren();
         expect(collections, isA<CollectionList>());
 
         print('✅ Retrieved collections with parent/children');
@@ -511,9 +516,7 @@ void main() {
             term: 'laptop',
             take: 5,
             skip: 0,
-            sort: SearchResultSortParameter(
-              name: SortOrder.asc,
-            ),
+            sort: SearchResultSortParameter(name: SortOrder.asc),
           ),
         );
 
@@ -576,7 +579,8 @@ void main() {
 
         if (shippingMethods.isNotEmpty) {
           print(
-              '📋 Available methods: ${shippingMethods.map((m) => m.name).join(", ")}');
+            '📋 Available methods: ${shippingMethods.map((m) => m.name).join(", ")}',
+          );
 
           // Set the first shipping method
           try {
@@ -603,7 +607,8 @@ void main() {
         print('✅ Retrieved ${paymentMethods.length} payment methods');
         if (paymentMethods.isNotEmpty) {
           print(
-              '📋 Available methods: ${paymentMethods.map((m) => m.name).join(", ")}');
+            '📋 Available methods: ${paymentMethods.map((m) => m.name).join(", ")}',
+          );
         }
       } catch (e) {
         print('⚠️ Failed to get payment methods: $e');
@@ -628,9 +633,7 @@ void main() {
       try {
         var result = await vendure.order.setOrderCustomFields(
           input: UpdateOrderInput(
-            customFields: {
-              'giftMessage': 'This is a test gift message',
-            },
+            customFields: {'giftMessage': 'This is a test gift message'},
           ),
         );
 
@@ -710,14 +713,14 @@ void main() {
     test('Update customer address', () async {
       if (testAddressId.isNotEmpty) {
         try {
-          var result =
-              await authenticatedVendure.customer.updateCustomerAddress(
-            input: UpdateAddressInput(
-              id: testAddressId,
-              streetLine1: '456 Updated Street',
-              city: 'Updated City',
-            ),
-          );
+          var result = await authenticatedVendure.customer
+              .updateCustomerAddress(
+                input: UpdateAddressInput(
+                  id: testAddressId,
+                  streetLine1: '456 Updated Street',
+                  city: 'Updated City',
+                ),
+              );
 
           expect(result, isA<Address>());
           print('✅ Updated customer address');
@@ -730,10 +733,8 @@ void main() {
     test('Delete customer address', () async {
       if (testAddressId.isNotEmpty) {
         try {
-          var result =
-              await authenticatedVendure.customer.deleteCustomerAddress(
-            id: testAddressId,
-          );
+          var result = await authenticatedVendure.customer
+              .deleteCustomerAddress(id: testAddressId);
 
           expect(result, isA<Success>());
           print('✅ Deleted customer address');
@@ -823,26 +824,29 @@ void main() {
 
     test('Get shipping methods for authenticated order', () async {
       try {
-        var shippingMethods =
-            await authenticatedVendure.order.getShippingMethods();
+        var shippingMethods = await authenticatedVendure.order
+            .getShippingMethods();
         expect(shippingMethods, isA<List<ShippingMethodQuote>>());
 
         print(
-            '✅ Retrieved ${shippingMethods.length} shipping methods for authenticated order');
+          '✅ Retrieved ${shippingMethods.length} shipping methods for authenticated order',
+        );
 
         if (shippingMethods.isNotEmpty) {
           try {
-            var result =
-                await authenticatedVendure.order.setOrderShippingMethod(
-              shippingMethodId: shippingMethods.first.id,
-            );
+            var result = await authenticatedVendure.order
+                .setOrderShippingMethod(
+                  shippingMethodId: shippingMethods.first.id,
+                );
 
             expect(result, isA<SetOrderShippingMethodResult>());
             print(
-                '✅ Set shipping method for authenticated order: ${shippingMethods.first.name}');
+              '✅ Set shipping method for authenticated order: ${shippingMethods.first.name}',
+            );
           } catch (e) {
             print(
-                '⚠️ Failed to set shipping method for authenticated order: $e');
+              '⚠️ Failed to set shipping method for authenticated order: $e',
+            );
           }
         }
       } catch (e) {
@@ -852,15 +856,17 @@ void main() {
 
     test('Get payment methods for authenticated order', () async {
       try {
-        var paymentMethods =
-            await authenticatedVendure.order.getPaymentMethods();
+        var paymentMethods = await authenticatedVendure.order
+            .getPaymentMethods();
         expect(paymentMethods, isA<List<PaymentMethodQuote>>());
 
         print(
-            '✅ Retrieved ${paymentMethods.length} payment methods for authenticated order');
+          '✅ Retrieved ${paymentMethods.length} payment methods for authenticated order',
+        );
         if (paymentMethods.isNotEmpty) {
           print(
-              '📋 Available payment methods: ${paymentMethods.map((m) => m.name).join(", ")}');
+            '📋 Available payment methods: ${paymentMethods.map((m) => m.name).join(", ")}',
+          );
         }
       } catch (e) {
         print('⚠️ Failed to get payment methods for authenticated order: $e');
@@ -915,11 +921,11 @@ void main() {
 
     test('Request email address change', () async {
       try {
-        var result =
-            await authenticatedVendure.auth.requestUpdateCustomerEmailAddress(
-          password: testPassword,
-          newEmailAddress: 'newemail@example.com',
-        );
+        var result = await authenticatedVendure.auth
+            .requestUpdateCustomerEmailAddress(
+              password: testPassword,
+              newEmailAddress: 'newemail@example.com',
+            );
 
         expect(result, isA<RequestUpdateCustomerEmailAddressResult>());
         print('✅ Email change request sent');
@@ -966,21 +972,20 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid variant: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled invalid variant: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
     test('Invalid order line ID', () async {
       try {
-        await vendure.order.adjustOrderLine(
-          orderLineId: "999999",
-          quantity: 1,
-        );
+        await vendure.order.adjustOrderLine(orderLineId: "999999", quantity: 1);
         fail('Should have failed with invalid order line');
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid order line: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled invalid order line: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -991,7 +996,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid collection: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled invalid collection: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -1002,7 +1008,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid product: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled invalid product: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -1021,7 +1028,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled invalid country: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled invalid country: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -1035,7 +1043,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled negative quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled negative quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 
@@ -1049,7 +1058,8 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-            '✅ Correctly handled zero quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}');
+          '✅ Correctly handled zero quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+        );
       }
     });
 

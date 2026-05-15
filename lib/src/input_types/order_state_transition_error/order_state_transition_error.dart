@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'order_state_transition_error.freezed.dart';
 part 'order_state_transition_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderStateTransitionError with _$OrderStateTransitionError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderStateTransitionError with _$OrderStateTransitionError {
   const OrderStateTransitionError._();
 
   const factory OrderStateTransitionError({

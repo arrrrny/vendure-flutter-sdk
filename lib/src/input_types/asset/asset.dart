@@ -6,12 +6,8 @@ import '../tag/tag.dart';
 part 'asset.freezed.dart';
 part 'asset.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Asset with _$Asset {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Asset with _$Asset {
   const Asset._();
 
   const factory Asset({

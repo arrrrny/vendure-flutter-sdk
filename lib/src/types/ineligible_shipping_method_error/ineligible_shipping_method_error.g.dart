@@ -6,19 +6,19 @@ part of 'ineligible_shipping_method_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IneligibleShippingMethodErrorImpl
-    _$$IneligibleShippingMethodErrorImplFromJson(Map json) =>
-        _$IneligibleShippingMethodErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-        );
+_IneligibleShippingMethodError _$IneligibleShippingMethodErrorFromJson(
+  Map json,
+) => _IneligibleShippingMethodError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$IneligibleShippingMethodErrorImplToJson(
-        _$IneligibleShippingMethodErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$IneligibleShippingMethodErrorToJson(
+  _IneligibleShippingMethodError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

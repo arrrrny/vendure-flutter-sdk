@@ -5,7 +5,7 @@ part 'product_variant_sort_parameter.freezed.dart';
 part 'product_variant_sort_parameter.g.dart';
 
 @unfreezed
-class ProductVariantSortParameter with _$ProductVariantSortParameter {
+abstract class ProductVariantSortParameter with _$ProductVariantSortParameter {
   const ProductVariantSortParameter._();
 
   factory ProductVariantSortParameter({

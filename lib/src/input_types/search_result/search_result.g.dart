@@ -6,70 +6,70 @@ part of 'search_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchResultImpl _$$SearchResultImplFromJson(Map json) => _$SearchResultImpl(
-      collectionIds: (json['collectionIds'] as List<dynamic>?)
-          ?.map((e) => e as String?)
-          .toList(),
-      currencyCode:
-          $enumDecodeNullable(_$CurrencyCodeEnumMap, json['currencyCode']),
-      description: json['description'] as String?,
-      facetIds: (json['facetIds'] as List<dynamic>?)
-          ?.map((e) => e as String?)
-          .toList(),
-      facetValueIds: (json['facetValueIds'] as List<dynamic>?)
-          ?.map((e) => e as String?)
-          .toList(),
-      inStock: json['inStock'] as bool?,
-      price: json['price'] == null
-          ? null
-          : SearchResultPrice.fromJson(
-              Map<String, dynamic>.from(json['price'] as Map)),
-      priceWithTax: json['priceWithTax'] == null
-          ? null
-          : SearchResultPrice.fromJson(
-              Map<String, dynamic>.from(json['priceWithTax'] as Map)),
-      productAsset: json['productAsset'] == null
-          ? null
-          : SearchResultAsset.fromJson(
-              Map<String, dynamic>.from(json['productAsset'] as Map)),
-      productId: json['productId'] as String?,
-      productName: json['productName'] as String?,
-      productVariantAsset: json['productVariantAsset'] == null
-          ? null
-          : SearchResultAsset.fromJson(
-              Map<String, dynamic>.from(json['productVariantAsset'] as Map)),
-      productVariantId: json['productVariantId'] as String?,
-      productVariantName: json['productVariantName'] as String?,
-      score: (json['score'] as num?)?.toDouble(),
-      sku: json['sku'] as String?,
-      slug: json['slug'] as String?,
-    );
+_SearchResult _$SearchResultFromJson(Map json) => _SearchResult(
+  collectionIds: (json['collectionIds'] as List<dynamic>?)
+      ?.map((e) => e as String?)
+      .toList(),
+  currencyCode: $enumDecodeNullable(
+    _$CurrencyCodeEnumMap,
+    json['currencyCode'],
+  ),
+  description: json['description'] as String?,
+  facetIds: (json['facetIds'] as List<dynamic>?)
+      ?.map((e) => e as String?)
+      .toList(),
+  facetValueIds: (json['facetValueIds'] as List<dynamic>?)
+      ?.map((e) => e as String?)
+      .toList(),
+  inStock: json['inStock'] as bool?,
+  price: json['price'] == null
+      ? null
+      : SearchResultPrice.fromJson(
+          Map<String, dynamic>.from(json['price'] as Map),
+        ),
+  priceWithTax: json['priceWithTax'] == null
+      ? null
+      : SearchResultPrice.fromJson(
+          Map<String, dynamic>.from(json['priceWithTax'] as Map),
+        ),
+  productAsset: json['productAsset'] == null
+      ? null
+      : SearchResultAsset.fromJson(
+          Map<String, dynamic>.from(json['productAsset'] as Map),
+        ),
+  productId: json['productId'] as String?,
+  productName: json['productName'] as String?,
+  productVariantAsset: json['productVariantAsset'] == null
+      ? null
+      : SearchResultAsset.fromJson(
+          Map<String, dynamic>.from(json['productVariantAsset'] as Map),
+        ),
+  productVariantId: json['productVariantId'] as String?,
+  productVariantName: json['productVariantName'] as String?,
+  score: (json['score'] as num?)?.toDouble(),
+  sku: json['sku'] as String?,
+  slug: json['slug'] as String?,
+);
 
-Map<String, dynamic> _$$SearchResultImplToJson(_$SearchResultImpl instance) =>
+Map<String, dynamic> _$SearchResultToJson(_SearchResult instance) =>
     <String, dynamic>{
-      if (instance.collectionIds case final value?) 'collectionIds': value,
-      if (_$CurrencyCodeEnumMap[instance.currencyCode] case final value?)
-        'currencyCode': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.facetIds case final value?) 'facetIds': value,
-      if (instance.facetValueIds case final value?) 'facetValueIds': value,
-      if (instance.inStock case final value?) 'inStock': value,
-      if (instance.price?.toJson() case final value?) 'price': value,
-      if (instance.priceWithTax?.toJson() case final value?)
-        'priceWithTax': value,
-      if (instance.productAsset?.toJson() case final value?)
-        'productAsset': value,
-      if (instance.productId case final value?) 'productId': value,
-      if (instance.productName case final value?) 'productName': value,
-      if (instance.productVariantAsset?.toJson() case final value?)
-        'productVariantAsset': value,
-      if (instance.productVariantId case final value?)
-        'productVariantId': value,
-      if (instance.productVariantName case final value?)
-        'productVariantName': value,
-      if (instance.score case final value?) 'score': value,
-      if (instance.sku case final value?) 'sku': value,
-      if (instance.slug case final value?) 'slug': value,
+      'collectionIds': ?instance.collectionIds,
+      'currencyCode': ?_$CurrencyCodeEnumMap[instance.currencyCode],
+      'description': ?instance.description,
+      'facetIds': ?instance.facetIds,
+      'facetValueIds': ?instance.facetValueIds,
+      'inStock': ?instance.inStock,
+      'price': ?instance.price?.toJson(),
+      'priceWithTax': ?instance.priceWithTax?.toJson(),
+      'productAsset': ?instance.productAsset?.toJson(),
+      'productId': ?instance.productId,
+      'productName': ?instance.productName,
+      'productVariantAsset': ?instance.productVariantAsset?.toJson(),
+      'productVariantId': ?instance.productVariantId,
+      'productVariantName': ?instance.productVariantName,
+      'score': ?instance.score,
+      'sku': ?instance.sku,
+      'slug': ?instance.slug,
     };
 
 const _$CurrencyCodeEnumMap = {

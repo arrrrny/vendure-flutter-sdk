@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'shipping_method_quote.freezed.dart';
 part 'shipping_method_quote.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ShippingMethodQuote with _$ShippingMethodQuote {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ShippingMethodQuote with _$ShippingMethodQuote {
   const ShippingMethodQuote._();
 
   const factory ShippingMethodQuote({

@@ -9,7 +9,7 @@ part 'order_line.freezed.dart';
 part 'order_line.g.dart';
 
 @freezed
-class OrderLine with _$OrderLine {
+abstract class OrderLine with _$OrderLine {
   const OrderLine._();
 
   const factory OrderLine({

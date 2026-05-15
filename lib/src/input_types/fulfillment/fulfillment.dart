@@ -4,12 +4,8 @@ import '../fulfillment_line/fulfillment_line.dart';
 part 'fulfillment.freezed.dart';
 part 'fulfillment.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Fulfillment with _$Fulfillment {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Fulfillment with _$Fulfillment {
   const Fulfillment._();
 
   const factory Fulfillment({

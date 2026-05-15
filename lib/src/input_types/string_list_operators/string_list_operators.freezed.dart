@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,159 +9,269 @@ part of 'string_list_operators.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-StringListOperators _$StringListOperatorsFromJson(Map<String, dynamic> json) {
-  return _StringListOperators.fromJson(json);
-}
 
 /// @nodoc
 mixin _$StringListOperators {
-  String get inList => throw _privateConstructorUsedError;
+
+ String get inList;
+/// Create a copy of StringListOperators
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$StringListOperatorsCopyWith<StringListOperators> get copyWith => _$StringListOperatorsCopyWithImpl<StringListOperators>(this as StringListOperators, _$identity);
 
   /// Serializes this StringListOperators to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of StringListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $StringListOperatorsCopyWith<StringListOperators> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StringListOperators&&(identical(other.inList, inList) || other.inList == inList));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,inList);
+
+@override
+String toString() {
+  return 'StringListOperators(inList: $inList)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $StringListOperatorsCopyWith<$Res> {
-  factory $StringListOperatorsCopyWith(
-          StringListOperators value, $Res Function(StringListOperators) then) =
-      _$StringListOperatorsCopyWithImpl<$Res, StringListOperators>;
-  @useResult
-  $Res call({String inList});
-}
+abstract mixin class $StringListOperatorsCopyWith<$Res>  {
+  factory $StringListOperatorsCopyWith(StringListOperators value, $Res Function(StringListOperators) _then) = _$StringListOperatorsCopyWithImpl;
+@useResult
+$Res call({
+ String inList
+});
 
+
+
+
+}
 /// @nodoc
-class _$StringListOperatorsCopyWithImpl<$Res, $Val extends StringListOperators>
+class _$StringListOperatorsCopyWithImpl<$Res>
     implements $StringListOperatorsCopyWith<$Res> {
-  _$StringListOperatorsCopyWithImpl(this._value, this._then);
+  _$StringListOperatorsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final StringListOperators _self;
+  final $Res Function(StringListOperators) _then;
 
-  /// Create a copy of StringListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inList = null,
-  }) {
-    return _then(_value.copyWith(
-      inList: null == inList
-          ? _value.inList
-          : inList // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of StringListOperators
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? inList = null,}) {
+  return _then(_self.copyWith(
+inList: null == inList ? _self.inList : inList // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$StringListOperatorsImplCopyWith<$Res>
-    implements $StringListOperatorsCopyWith<$Res> {
-  factory _$$StringListOperatorsImplCopyWith(_$StringListOperatorsImpl value,
-          $Res Function(_$StringListOperatorsImpl) then) =
-      __$$StringListOperatorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String inList});
 }
 
-/// @nodoc
-class __$$StringListOperatorsImplCopyWithImpl<$Res>
-    extends _$StringListOperatorsCopyWithImpl<$Res, _$StringListOperatorsImpl>
-    implements _$$StringListOperatorsImplCopyWith<$Res> {
-  __$$StringListOperatorsImplCopyWithImpl(_$StringListOperatorsImpl _value,
-      $Res Function(_$StringListOperatorsImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of StringListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? inList = null,
-  }) {
-    return _then(_$StringListOperatorsImpl(
-      inList: null == inList
-          ? _value.inList
-          : inList // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [StringListOperators].
+extension StringListOperatorsPatterns on StringListOperators {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _StringListOperators value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _StringListOperators() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _StringListOperators value)  $default,){
+final _that = this;
+switch (_that) {
+case _StringListOperators():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _StringListOperators value)?  $default,){
+final _that = this;
+switch (_that) {
+case _StringListOperators() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String inList)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _StringListOperators() when $default != null:
+return $default(_that.inList);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String inList)  $default,) {final _that = this;
+switch (_that) {
+case _StringListOperators():
+return $default(_that.inList);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String inList)?  $default,) {final _that = this;
+switch (_that) {
+case _StringListOperators() when $default != null:
+return $default(_that.inList);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$StringListOperatorsImpl extends _StringListOperators {
-  const _$StringListOperatorsImpl({required this.inList}) : super._();
 
-  factory _$StringListOperatorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StringListOperatorsImplFromJson(json);
+class _StringListOperators extends StringListOperators {
+  const _StringListOperators({required this.inList}): super._();
+  factory _StringListOperators.fromJson(Map<String, dynamic> json) => _$StringListOperatorsFromJson(json);
 
-  @override
-  final String inList;
+@override final  String inList;
 
-  @override
-  String toString() {
-    return 'StringListOperators(inList: $inList)';
-  }
+/// Create a copy of StringListOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$StringListOperatorsCopyWith<_StringListOperators> get copyWith => __$StringListOperatorsCopyWithImpl<_StringListOperators>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StringListOperatorsImpl &&
-            (identical(other.inList, inList) || other.inList == inList));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, inList);
-
-  /// Create a copy of StringListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StringListOperatorsImplCopyWith<_$StringListOperatorsImpl> get copyWith =>
-      __$$StringListOperatorsImplCopyWithImpl<_$StringListOperatorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StringListOperatorsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$StringListOperatorsToJson(this, );
 }
 
-abstract class _StringListOperators extends StringListOperators {
-  const factory _StringListOperators({required final String inList}) =
-      _$StringListOperatorsImpl;
-  const _StringListOperators._() : super._();
-
-  factory _StringListOperators.fromJson(Map<String, dynamic> json) =
-      _$StringListOperatorsImpl.fromJson;
-
-  @override
-  String get inList;
-
-  /// Create a copy of StringListOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StringListOperatorsImplCopyWith<_$StringListOperatorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StringListOperators&&(identical(other.inList, inList) || other.inList == inList));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,inList);
+
+@override
+String toString() {
+  return 'StringListOperators(inList: $inList)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$StringListOperatorsCopyWith<$Res> implements $StringListOperatorsCopyWith<$Res> {
+  factory _$StringListOperatorsCopyWith(_StringListOperators value, $Res Function(_StringListOperators) _then) = __$StringListOperatorsCopyWithImpl;
+@override @useResult
+$Res call({
+ String inList
+});
+
+
+
+
+}
+/// @nodoc
+class __$StringListOperatorsCopyWithImpl<$Res>
+    implements _$StringListOperatorsCopyWith<$Res> {
+  __$StringListOperatorsCopyWithImpl(this._self, this._then);
+
+  final _StringListOperators _self;
+  final $Res Function(_StringListOperators) _then;
+
+/// Create a copy of StringListOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? inList = null,}) {
+  return _then(_StringListOperators(
+inList: null == inList ? _self.inList : inList // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

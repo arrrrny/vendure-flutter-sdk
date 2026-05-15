@@ -6,12 +6,8 @@ import '../string_operators/string_operators.dart';
 part 'facet_filter_parameter.freezed.dart';
 part 'facet_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FacetFilterParameter with _$FacetFilterParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FacetFilterParameter with _$FacetFilterParameter {
   const FacetFilterParameter._();
 
   const factory FacetFilterParameter({

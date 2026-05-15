@@ -3,7 +3,7 @@ part 'authentication_method.freezed.dart';
 part 'authentication_method.g.dart';
 
 @freezed
-class AuthenticationMethod with _$AuthenticationMethod {
+abstract class AuthenticationMethod with _$AuthenticationMethod {
   const AuthenticationMethod._();
 
   const factory AuthenticationMethod({

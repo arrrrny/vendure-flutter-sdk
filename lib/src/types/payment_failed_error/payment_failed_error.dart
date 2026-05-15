@@ -5,7 +5,7 @@ part 'payment_failed_error.freezed.dart';
 part 'payment_failed_error.g.dart';
 
 @freezed
-class PaymentFailedError with _$PaymentFailedError {
+abstract class PaymentFailedError with _$PaymentFailedError {
   const PaymentFailedError._();
 
   const factory PaymentFailedError({

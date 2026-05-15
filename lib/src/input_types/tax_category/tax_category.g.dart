@@ -6,29 +6,27 @@ part of 'tax_category.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaxCategoryImpl _$$TaxCategoryImplFromJson(Map json) => _$TaxCategoryImpl(
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      id: json['id'] as String?,
-      isDefault: json['isDefault'] as bool?,
-      name: json['name'] as String?,
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_TaxCategory _$TaxCategoryFromJson(Map json) => _TaxCategory(
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  id: json['id'] as String?,
+  isDefault: json['isDefault'] as bool?,
+  name: json['name'] as String?,
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$TaxCategoryImplToJson(_$TaxCategoryImpl instance) =>
+Map<String, dynamic> _$TaxCategoryToJson(_TaxCategory instance) =>
     <String, dynamic>{
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.isDefault case final value?) 'isDefault': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'id': ?instance.id,
+      'isDefault': ?instance.isDefault,
+      'name': ?instance.name,
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };

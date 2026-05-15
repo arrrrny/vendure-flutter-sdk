@@ -6,54 +6,52 @@ part of 'country.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CountryImpl _$$CountryImplFromJson(Map json) => _$CountryImpl(
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      enabled: json['enabled'] as bool?,
-      id: json['id'] as String?,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String?,
-      parent: json['parent'] == null
-          ? null
-          : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
-      parentId: json['parentId'] as String?,
-      translations: (json['translations'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      type: json['type'] as String?,
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_Country _$CountryFromJson(Map json) => _Country(
+  code: json['code'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  enabled: json['enabled'] as bool?,
+  id: json['id'] as String?,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String?,
+  parent: json['parent'] == null
+      ? null
+      : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
+  parentId: json['parentId'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  type: json['type'] as String?,
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) =>
-    <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.enabled case final value?) 'enabled': value,
-      if (instance.id case final value?) 'id': value,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.name case final value?) 'name': value,
-      if (instance.parent?.toJson() case final value?) 'parent': value,
-      if (instance.parentId case final value?) 'parentId': value,
-      if (instance.translations?.map((e) => e?.toJson()).toList()
-          case final value?)
-        'translations': value,
-      if (instance.type case final value?) 'type': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-    };
+Map<String, dynamic> _$CountryToJson(_Country instance) => <String, dynamic>{
+  'code': ?instance.code,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'customFields': ?instance.customFields,
+  'enabled': ?instance.enabled,
+  'id': ?instance.id,
+  'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+  'name': ?instance.name,
+  'parent': ?instance.parent?.toJson(),
+  'parentId': ?instance.parentId,
+  'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+  'type': ?instance.type,
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+};
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',

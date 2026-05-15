@@ -5,12 +5,9 @@ import '../permission/permission.dart';
 part 'locale_string_custom_field_config.freezed.dart';
 part 'locale_string_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class LocaleStringCustomFieldConfig with _$LocaleStringCustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class LocaleStringCustomFieldConfig
+    with _$LocaleStringCustomFieldConfig {
   const LocaleStringCustomFieldConfig._();
 
   const factory LocaleStringCustomFieldConfig({

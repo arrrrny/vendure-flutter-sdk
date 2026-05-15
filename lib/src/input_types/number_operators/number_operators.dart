@@ -4,12 +4,8 @@ import '../number_range/number_range.dart';
 part 'number_operators.freezed.dart';
 part 'number_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class NumberOperators with _$NumberOperators {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class NumberOperators with _$NumberOperators {
   const NumberOperators._();
 
   const factory NumberOperators({

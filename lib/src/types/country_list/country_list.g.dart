@@ -6,14 +6,14 @@ part of 'country_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CountryListImpl _$$CountryListImplFromJson(Map json) => _$CountryListImpl(
-      items: (json['items'] as List<dynamic>)
-          .map((e) => Country.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      totalItems: (json['totalItems'] as num).toInt(),
-    );
+_CountryList _$CountryListFromJson(Map json) => _CountryList(
+  items: (json['items'] as List<dynamic>)
+      .map((e) => Country.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  totalItems: (json['totalItems'] as num).toInt(),
+);
 
-Map<String, dynamic> _$$CountryListImplToJson(_$CountryListImpl instance) =>
+Map<String, dynamic> _$CountryListToJson(_CountryList instance) =>
     <String, dynamic>{
       'items': instance.items.map((e) => e.toJson()).toList(),
       'totalItems': instance.totalItems,

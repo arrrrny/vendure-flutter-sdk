@@ -6,12 +6,8 @@ import '../logical_operator/logical_operator.dart';
 part 'history_entry_list_options.freezed.dart';
 part 'history_entry_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class HistoryEntryListOptions with _$HistoryEntryListOptions {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class HistoryEntryListOptions with _$HistoryEntryListOptions {
   const HistoryEntryListOptions._();
 
   const factory HistoryEntryListOptions({

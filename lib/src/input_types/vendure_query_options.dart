@@ -4,9 +4,7 @@ class VendureQueryOptions {
   VendureQueryOptions({required this.variables});
 
   Map<String, dynamic> toJson() {
-    return {
-      'variables': variables,
-    };
+    return {'variables': variables};
   }
 }
 
@@ -16,8 +14,6 @@ class VendureMutationOptions {
   VendureMutationOptions({required this.variables});
 
   Map<String, dynamic> toJson() {
-    return {
-      'variables': variables,
-    };
+    return {'variables': variables};
   }
 }

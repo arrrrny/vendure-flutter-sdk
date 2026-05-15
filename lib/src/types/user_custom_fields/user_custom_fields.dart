@@ -3,7 +3,7 @@ part 'user_custom_fields.freezed.dart';
 part 'user_custom_fields.g.dart';
 
 @freezed
-class UserCustomFields with _$UserCustomFields {
+abstract class UserCustomFields with _$UserCustomFields {
   const UserCustomFields._();
 
   const factory UserCustomFields({

@@ -6,12 +6,8 @@ import '../logical_operator/logical_operator.dart';
 part 'facet_value_list_options.freezed.dart';
 part 'facet_value_list_options.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FacetValueListOptions with _$FacetValueListOptions {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FacetValueListOptions with _$FacetValueListOptions {
   const FacetValueListOptions._();
 
   const factory FacetValueListOptions({

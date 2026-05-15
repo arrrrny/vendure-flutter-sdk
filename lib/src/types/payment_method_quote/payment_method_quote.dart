@@ -3,7 +3,7 @@ part 'payment_method_quote.freezed.dart';
 part 'payment_method_quote.g.dart';
 
 @freezed
-class PaymentMethodQuote with _$PaymentMethodQuote {
+abstract class PaymentMethodQuote with _$PaymentMethodQuote {
   const PaymentMethodQuote._();
 
   const factory PaymentMethodQuote({

@@ -6,19 +6,18 @@ part of 'email_address_conflict_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EmailAddressConflictErrorImpl _$$EmailAddressConflictErrorImplFromJson(
-        Map json) =>
-    _$EmailAddressConflictErrorImpl(
+_EmailAddressConflictError _$EmailAddressConflictErrorFromJson(Map json) =>
+    _EmailAddressConflictError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$EmailAddressConflictErrorImplToJson(
-        _$EmailAddressConflictErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$EmailAddressConflictErrorToJson(
+  _EmailAddressConflictError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

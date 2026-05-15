@@ -3,7 +3,7 @@ part 'config_arg_input.freezed.dart';
 part 'config_arg_input.g.dart';
 
 @unfreezed
-class ConfigArgInput with _$ConfigArgInput {
+abstract class ConfigArgInput with _$ConfigArgInput {
   const ConfigArgInput._();
 
   factory ConfigArgInput({

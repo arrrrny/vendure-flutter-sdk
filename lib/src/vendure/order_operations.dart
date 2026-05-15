@@ -43,8 +43,9 @@ class OrderOperations {
     );
   }
 
-  Future<ActiveOrderResult> setOrderShippingAddress(
-      {required CreateAddressInput input}) async {
+  Future<ActiveOrderResult> setOrderShippingAddress({
+    required CreateAddressInput input,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,
@@ -56,8 +57,9 @@ class OrderOperations {
     );
   }
 
-  Future<ActiveOrderResult> setOrderBillingAddress(
-      {required CreateAddressInput input}) async {
+  Future<ActiveOrderResult> setOrderBillingAddress({
+    required CreateAddressInput input,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,
@@ -81,8 +83,9 @@ class OrderOperations {
     );
   }
 
-  Future<AddPaymentToOrderResult> addPaymentToOrder(
-      {required PaymentInput input}) async {
+  Future<AddPaymentToOrderResult> addPaymentToOrder({
+    required PaymentInput input,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,
@@ -130,8 +133,9 @@ class OrderOperations {
     );
   }
 
-  Future<SetCustomerForOrderResult> setCustomerForOrder(
-      {required CreateCustomerInput input}) async {
+  Future<SetCustomerForOrderResult> setCustomerForOrder({
+    required CreateCustomerInput input,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,
@@ -154,8 +158,9 @@ class OrderOperations {
     );
   }
 
-  Future<RemoveOrderItemsResult> removeOrderLine(
-      {required String orderLineId}) async {
+  Future<RemoveOrderItemsResult> removeOrderLine({
+    required String orderLineId,
+  }) async {
     return CustomOperations(
       _client,
       customFieldsConfig: customFieldsConfig,

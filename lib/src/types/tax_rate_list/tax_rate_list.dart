@@ -5,7 +5,7 @@ part 'tax_rate_list.freezed.dart';
 part 'tax_rate_list.g.dart';
 
 @freezed
-class TaxRateList with _$TaxRateList {
+abstract class TaxRateList with _$TaxRateList {
   const TaxRateList._();
 
   const factory TaxRateList({

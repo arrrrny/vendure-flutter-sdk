@@ -6,7 +6,7 @@ part 'reset_password_result.freezed.dart';
 part 'reset_password_result.g.dart';
 
 @freezed
-class ResetPasswordResult with _$ResetPasswordResult {
+sealed class ResetPasswordResult with _$ResetPasswordResult {
   const ResetPasswordResult._();
 
   const factory ResetPasswordResult.currentUser({

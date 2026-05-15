@@ -5,7 +5,7 @@ part 'already_logged_in_error.freezed.dart';
 part 'already_logged_in_error.g.dart';
 
 @freezed
-class AlreadyLoggedInError with _$AlreadyLoggedInError {
+abstract class AlreadyLoggedInError with _$AlreadyLoggedInError {
   const AlreadyLoggedInError._();
 
   const factory AlreadyLoggedInError({

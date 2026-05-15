@@ -6,31 +6,33 @@ part of 'product_list_options.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductListOptionsImpl _$$ProductListOptionsImplFromJson(Map json) =>
-    _$ProductListOptionsImpl(
+_ProductListOptions _$ProductListOptionsFromJson(Map json) =>
+    _ProductListOptions(
       filter: json['filter'] == null
           ? null
           : ProductFilterParameter.fromJson(
-              Map<String, dynamic>.from(json['filter'] as Map)),
-      filterOperator:
-          $enumDecodeNullable(_$LogicalOperatorEnumMap, json['filterOperator']),
+              Map<String, dynamic>.from(json['filter'] as Map),
+            ),
+      filterOperator: $enumDecodeNullable(
+        _$LogicalOperatorEnumMap,
+        json['filterOperator'],
+      ),
       skip: (json['skip'] as num?)?.toInt(),
       sort: json['sort'] == null
           ? null
           : ProductSortParameter.fromJson(
-              Map<String, dynamic>.from(json['sort'] as Map)),
+              Map<String, dynamic>.from(json['sort'] as Map),
+            ),
       take: (json['take'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$ProductListOptionsImplToJson(
-        _$ProductListOptionsImpl instance) =>
+Map<String, dynamic> _$ProductListOptionsToJson(_ProductListOptions instance) =>
     <String, dynamic>{
-      if (instance.filter?.toJson() case final value?) 'filter': value,
-      if (_$LogicalOperatorEnumMap[instance.filterOperator] case final value?)
-        'filterOperator': value,
-      if (instance.skip case final value?) 'skip': value,
-      if (instance.sort?.toJson() case final value?) 'sort': value,
-      if (instance.take case final value?) 'take': value,
+      'filter': ?instance.filter?.toJson(),
+      'filterOperator': ?_$LogicalOperatorEnumMap[instance.filterOperator],
+      'skip': ?instance.skip,
+      'sort': ?instance.sort?.toJson(),
+      'take': ?instance.take,
     };
 
 const _$LogicalOperatorEnumMap = {

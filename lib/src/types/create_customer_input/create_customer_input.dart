@@ -4,7 +4,7 @@ part 'create_customer_input.freezed.dart';
 part 'create_customer_input.g.dart';
 
 @unfreezed
-class CreateCustomerInput with _$CreateCustomerInput {
+abstract class CreateCustomerInput with _$CreateCustomerInput {
   const CreateCustomerInput._();
 
   factory CreateCustomerInput({

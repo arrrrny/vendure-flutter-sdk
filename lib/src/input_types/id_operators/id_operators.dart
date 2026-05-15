@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'id_operators.freezed.dart';
 part 'id_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class IdOperators with _$IdOperators {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class IdOperators with _$IdOperators {
   const IdOperators._();
 
   const factory IdOperators({

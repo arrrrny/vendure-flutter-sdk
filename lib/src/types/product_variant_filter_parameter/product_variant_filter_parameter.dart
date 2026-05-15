@@ -8,7 +8,8 @@ part 'product_variant_filter_parameter.freezed.dart';
 part 'product_variant_filter_parameter.g.dart';
 
 @unfreezed
-class ProductVariantFilterParameter with _$ProductVariantFilterParameter {
+abstract class ProductVariantFilterParameter
+    with _$ProductVariantFilterParameter {
   const ProductVariantFilterParameter._();
 
   factory ProductVariantFilterParameter({

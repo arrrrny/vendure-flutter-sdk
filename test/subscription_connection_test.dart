@@ -21,40 +21,48 @@ void main() {
     );
   });
 
-  test('WebSocket connection test - verify subscription can connect',
-      timeout: const Timeout(Duration(seconds: 30)), () async {
-    StreamSubscription<Customer>? subscription;
-    bool connected = false;
+  test(
+    'WebSocket connection test - verify subscription can connect',
+    timeout: const Timeout(Duration(seconds: 30)),
+    () async {
+      StreamSubscription<Customer>? subscription;
+      bool connected = false;
 
-    try {
-      subscription = vendure.customer
-          .activeCustomerStream(
-        websocketEndpoint: wsEndpoint,
-        includeInitialValue: false,
-      )
-          .listen(
-        (customer) {
-          connected = true;
-          print(
-              '✅ Received customer via subscription: ${customer.emailAddress}');
-        },
-        onError: (error) {
-          print('❌ Subscription error: $error');
-        },
-      );
+      try {
+        subscription = vendure.customer
+            .activeCustomerStream(
+              websocketEndpoint: wsEndpoint,
+              includeInitialValue: false,
+            )
+            .listen(
+              (customer) {
+                connected = true;
+                print(
+                  '✅ Received customer via subscription: ${customer.emailAddress}',
+                );
+              },
+              onError: (error) {
+                print('❌ Subscription error: $error');
+              },
+            );
 
-      // Wait a bit to see if connection is established
-      await Future.delayed(const Duration(seconds: 3));
+        // Wait a bit to see if connection is established
+        await Future.delayed(const Duration(seconds: 3));
 
-      expect(connected, isTrue,
-          reason: 'Should receive customer update via subscription');
+        expect(
+          connected,
+          isTrue,
+          reason: 'Should receive customer update via subscription',
+        );
 
-      print(
-          '✅ WebSocket subscription connection established successfully and received data');
-    } catch (e) {
-      fail('Error testing subscription connection: $e');
-    } finally {
-      await subscription?.cancel();
-    }
-  });
+        print(
+          '✅ WebSocket subscription connection established successfully and received data',
+        );
+      } catch (e) {
+        fail('Error testing subscription connection: $e');
+      } finally {
+        await subscription?.cancel();
+      }
+    },
+  );
 }

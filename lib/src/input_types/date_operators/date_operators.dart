@@ -4,12 +4,8 @@ import '../date_range/date_range.dart';
 part 'date_operators.freezed.dart';
 part 'date_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class DateOperators with _$DateOperators {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class DateOperators with _$DateOperators {
   const DateOperators._();
 
   const factory DateOperators({

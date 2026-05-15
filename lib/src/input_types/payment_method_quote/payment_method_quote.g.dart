@@ -6,8 +6,8 @@ part of 'payment_method_quote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(Map json) =>
-    _$PaymentMethodQuoteImpl(
+_PaymentMethodQuote _$PaymentMethodQuoteFromJson(Map json) =>
+    _PaymentMethodQuote(
       code: json['code'] as String?,
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
@@ -19,15 +19,13 @@ _$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(Map json) =>
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$$PaymentMethodQuoteImplToJson(
-        _$PaymentMethodQuoteImpl instance) =>
+Map<String, dynamic> _$PaymentMethodQuoteToJson(_PaymentMethodQuote instance) =>
     <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-      if (instance.customFields case final value?) 'customFields': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.eligibilityMessage case final value?)
-        'eligibilityMessage': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.isEligible case final value?) 'isEligible': value,
-      if (instance.name case final value?) 'name': value,
+      'code': ?instance.code,
+      'customFields': ?instance.customFields,
+      'description': ?instance.description,
+      'eligibilityMessage': ?instance.eligibilityMessage,
+      'id': ?instance.id,
+      'isEligible': ?instance.isEligible,
+      'name': ?instance.name,
     };

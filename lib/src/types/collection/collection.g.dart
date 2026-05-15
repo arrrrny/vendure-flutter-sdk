@@ -6,73 +6,76 @@ part of 'collection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CollectionImpl _$$CollectionImplFromJson(Map json) => _$CollectionImpl(
-      assets: (json['assets'] as List<dynamic>)
-          .map((e) => Asset.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      breadcrumbs: (json['breadcrumbs'] as List<dynamic>)
-          .map((e) => CollectionBreadcrumb.fromJson(
-              Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      children: (json['children'] as List<dynamic>?)
-          ?.map((e) => Collection.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String,
-      featuredAsset: json['featuredAsset'] == null
-          ? null
-          : Asset.fromJson(
-              Map<String, dynamic>.from(json['featuredAsset'] as Map)),
-      filters: (json['filters'] as List<dynamic>)
-          .map((e) => ConfigurableOperation.fromJson(
-              Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      id: json['id'] as String,
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String,
-      parent: json['parent'] == null
-          ? null
-          : Collection.fromJson(
-              Map<String, dynamic>.from(json['parent'] as Map)),
-      parentId: json['parentId'] as String?,
-      position: (json['position'] as num).toInt(),
-      productVariants: json['productVariants'] == null
-          ? null
-          : ProductVariantList.fromJson(
-              Map<String, dynamic>.from(json['productVariants'] as Map)),
-      slug: json['slug'] as String,
-      translations: (json['translations'] as List<dynamic>)
-          .map((e) => CollectionTranslation.fromJson(
-              Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_Collection _$CollectionFromJson(Map json) => _Collection(
+  assets: (json['assets'] as List<dynamic>)
+      .map((e) => Asset.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  breadcrumbs: (json['breadcrumbs'] as List<dynamic>)
+      .map(
+        (e) =>
+            CollectionBreadcrumb.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  children: (json['children'] as List<dynamic>?)
+      ?.map((e) => Collection.fromJson(Map<String, dynamic>.from(e as Map)))
+      .toList(),
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  description: json['description'] as String,
+  featuredAsset: json['featuredAsset'] == null
+      ? null
+      : Asset.fromJson(Map<String, dynamic>.from(json['featuredAsset'] as Map)),
+  filters: (json['filters'] as List<dynamic>)
+      .map(
+        (e) =>
+            ConfigurableOperation.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  id: json['id'] as String,
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  name: json['name'] as String,
+  parent: json['parent'] == null
+      ? null
+      : Collection.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
+  parentId: json['parentId'] as String?,
+  position: (json['position'] as num).toInt(),
+  productVariants: json['productVariants'] == null
+      ? null
+      : ProductVariantList.fromJson(
+          Map<String, dynamic>.from(json['productVariants'] as Map),
+        ),
+  slug: json['slug'] as String,
+  translations: (json['translations'] as List<dynamic>)
+      .map(
+        (e) =>
+            CollectionTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$CollectionImplToJson(_$CollectionImpl instance) =>
+Map<String, dynamic> _$CollectionToJson(_Collection instance) =>
     <String, dynamic>{
       'assets': instance.assets.map((e) => e.toJson()).toList(),
       'breadcrumbs': instance.breadcrumbs.map((e) => e.toJson()).toList(),
-      if (instance.children?.map((e) => e.toJson()).toList() case final value?)
-        'children': value,
+      'children': ?instance.children?.map((e) => e.toJson()).toList(),
       'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.customFields case final value?) 'customFields': value,
+      'customFields': ?instance.customFields,
       'description': instance.description,
-      if (instance.featuredAsset?.toJson() case final value?)
-        'featuredAsset': value,
+      'featuredAsset': ?instance.featuredAsset?.toJson(),
       'filters': instance.filters.map((e) => e.toJson()).toList(),
       'id': instance.id,
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
       'name': instance.name,
-      if (instance.parent?.toJson() case final value?) 'parent': value,
-      if (instance.parentId case final value?) 'parentId': value,
+      'parent': ?instance.parent?.toJson(),
+      'parentId': ?instance.parentId,
       'position': instance.position,
-      if (instance.productVariants?.toJson() case final value?)
-        'productVariants': value,
+      'productVariants': ?instance.productVariants?.toJson(),
       'slug': instance.slug,
       'translations': instance.translations.map((e) => e.toJson()).toList(),
       'updatedAt': instance.updatedAt.toIso8601String(),

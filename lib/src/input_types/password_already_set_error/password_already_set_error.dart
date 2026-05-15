@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'password_already_set_error.freezed.dart';
 part 'password_already_set_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class PasswordAlreadySetError with _$PasswordAlreadySetError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class PasswordAlreadySetError with _$PasswordAlreadySetError {
   const PasswordAlreadySetError._();
 
   const factory PasswordAlreadySetError({

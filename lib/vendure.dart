@@ -66,24 +66,24 @@ class Vendure {
     AppCheckConfig? appCheckConfig,
     String? apiKey,
     String? apiKeyHeaderKey,
-  })  : _tokenManager = fetchToken != null && tokenParams != null
-            ? TokenManager(
-                fetchToken: fetchToken,
-                params: tokenParams,
-                sessionDuration: sessionDuration,
-              )
-            : null,
-        _timeout = timeout,
-        _appCheckConfig = appCheckConfig,
-        _useVendureGuestSession = useVendureGuestSession ?? false,
-        _endpoint = endpoint,
-        _policies = policies,
-        _token = token,
-        _languageCode = languageCode,
-        _channelToken = channelToken,
-        _apiKey = apiKey,
-        _apiKeyHeaderKey = apiKeyHeaderKey ?? 'vendure-api-key',
-        _customFieldsConfig = customFieldsConfig {
+  }) : _tokenManager = fetchToken != null && tokenParams != null
+           ? TokenManager(
+               fetchToken: fetchToken,
+               params: tokenParams,
+               sessionDuration: sessionDuration,
+             )
+           : null,
+       _timeout = timeout,
+       _appCheckConfig = appCheckConfig,
+       _useVendureGuestSession = useVendureGuestSession ?? false,
+       _endpoint = endpoint,
+       _policies = policies,
+       _token = token,
+       _languageCode = languageCode,
+       _channelToken = channelToken,
+       _apiKey = apiKey,
+       _apiKeyHeaderKey = apiKeyHeaderKey ?? 'vendure-api-key',
+       _customFieldsConfig = customFieldsConfig {
     _authClient = GraphQLClient(
       defaultPolicies: DefaultPolicies(
         query: Policies(
@@ -97,9 +97,7 @@ class Vendure {
       ),
       link: HttpLink(
         endpoint,
-        defaultHeaders: {
-          'Content-Type': 'application/json',
-        },
+        defaultHeaders: {'Content-Type': 'application/json'},
         httpClient: _httpClient,
       ),
       cache: GraphQLCache(),
@@ -210,8 +208,10 @@ class Vendure {
     }
 
     // Fetch the token
-    final token =
-        await fetchToken({'username': username, 'password': password});
+    final token = await fetchToken({
+      'username': username,
+      'password': password,
+    });
     if (token == null) {
       throw Exception("Failed to fetch token");
     }
@@ -220,10 +220,7 @@ class Vendure {
     _instance = Vendure._internal(
       endpoint: endpoint,
       fetchToken: fetchToken,
-      tokenParams: {
-        'username': username,
-        'password': password,
-      },
+      tokenParams: {'username': username, 'password': password},
       sessionDuration: sessionDuration,
       token: token,
       customFieldsConfig: customFieldsConfig,
@@ -291,10 +288,7 @@ class Vendure {
     _instance = Vendure._internal(
       endpoint: endpoint,
       fetchToken: fetchToken,
-      tokenParams: {
-        'uid': uid,
-        'jwt': jwt,
-      },
+      tokenParams: {'uid': uid, 'jwt': jwt},
       languageCode: languageCode,
       channelToken: channelToken,
       sessionDuration: sessionDuration,
@@ -379,7 +373,8 @@ class Vendure {
   static Vendure get instance {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     return _instance!;
   }
@@ -440,8 +435,7 @@ class Vendure {
           try {
             final token = await _appCheckConfig.tokenProvider();
             if (token == null && _appCheckConfig.required) {
-              throw Exception(
-                  'App Check token is required but not available');
+              throw Exception('App Check token is required but not available');
             }
             return token;
           } catch (e) {
@@ -474,7 +468,8 @@ class Vendure {
     return GraphQLClient(
       cache: GraphQLCache(),
       link: link,
-      defaultPolicies: _policies ??
+      defaultPolicies:
+          _policies ??
           DefaultPolicies(
             query: Policies(
               fetch: FetchPolicy.noCache,
@@ -515,8 +510,9 @@ class Vendure {
     );
   }
 
-  Future<GraphQLClient> _getSubscriptionClient(
-      {String? websocketEndpoint}) async {
+  Future<GraphQLClient> _getSubscriptionClient({
+    String? websocketEndpoint,
+  }) async {
     final endpointUrl = _buildWebsocketEndpoint(websocketEndpoint);
     final authToken = await _resolveAuthToken();
 
@@ -536,10 +532,7 @@ class Vendure {
       config: socketConfig,
       subProtocol: GraphQLProtocol.graphqlTransportWs,
     );
-    _subscriptionClient = GraphQLClient(
-      cache: GraphQLCache(),
-      link: link,
-    );
+    _subscriptionClient = GraphQLClient(cache: GraphQLCache(), link: link);
     _lastSubscriptionEndpoint = endpointUrl;
     _lastSubscriptionToken = authToken;
     return _subscriptionClient!;
@@ -613,10 +606,7 @@ class Vendure {
     String? websocketEndpoint,
   }) async* {
     final processedOperation = _customFieldsConfig != null
-        ? VendureUtils.sanitizeGraphQLQuery(
-            subscription,
-            _customFieldsConfig,
-          )
+        ? VendureUtils.sanitizeGraphQLQuery(subscription, _customFieldsConfig)
         : subscription;
 
     // VendureUtils.printLongString(processedOperation);
@@ -627,8 +617,9 @@ class Vendure {
             convertEnums: convertEnums,
           )
         : variables;
-    final client =
-        await _getSubscriptionClient(websocketEndpoint: websocketEndpoint);
+    final client = await _getSubscriptionClient(
+      websocketEndpoint: websocketEndpoint,
+    );
     final stream = client.subscribe(
       SubscriptionOptions(
         document: gql(processedOperation),
@@ -691,7 +682,8 @@ class Vendure {
   static void setAuthToken(String token) {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     _instance!._token = token;
   }
@@ -702,7 +694,8 @@ class Vendure {
   static void setLanguageCode(String? languageCode) {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     _instance!._languageCode = languageCode;
   }
@@ -711,7 +704,8 @@ class Vendure {
   static String? getLanguageCode() {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     return _instance!._languageCode;
   }
@@ -720,7 +714,8 @@ class Vendure {
   static String? getChannelToken() {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     return _instance!._channelToken;
   }
@@ -731,7 +726,8 @@ class Vendure {
   static void setChannelToken(String? channelToken) {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     _instance!._channelToken = channelToken;
   }
@@ -742,7 +738,8 @@ class Vendure {
   static void setApiKey(String? apiKey, {String? apiKeyHeaderKey}) {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     _instance!._apiKey = apiKey;
     if (apiKeyHeaderKey != null) {
@@ -755,7 +752,8 @@ class Vendure {
   Future<void> _refreshToken(Map<String, dynamic> params) async {
     if (_tokenManager == null) {
       throw Exception(
-          'No TokenManager configured for this Vendure instance. This method is only available if you initialized Vendure with a TokenFetcher.');
+        'No TokenManager configured for this Vendure instance. This method is only available if you initialized Vendure with a TokenFetcher.',
+      );
     }
     return _tokenManager.refreshToken(params);
   }
@@ -763,7 +761,8 @@ class Vendure {
   static Future<void> refreshToken(Map<String, dynamic> params) async {
     if (_instance == null) {
       throw Exception(
-          'Vendure has not been initialized. Call Vendure.initialize() first.');
+        'Vendure has not been initialized. Call Vendure.initialize() first.',
+      );
     }
     return _instance!._refreshToken(params);
   }
@@ -774,8 +773,10 @@ class Vendure {
   }
 
   /// Centralized post-initialization logic for Vendure instance.
-  static Future<void> _finalizeInitialization(Vendure instance,
-      {bool checkConnection = false}) async {
+  static Future<void> _finalizeInitialization(
+    Vendure instance, {
+    bool checkConnection = false,
+  }) async {
     _instance = instance;
     // Skip token check if using guest session or API key auth
     if (!_instance!._useVendureGuestSession &&
@@ -785,12 +786,13 @@ class Vendure {
     }
     if (checkConnection) {
       try {
-        final result = await _instance!.query(QueryOptions(
-          document: gql('query { __typename }'),
-        ));
+        final result = await _instance!.query(
+          QueryOptions(document: gql('query { __typename }')),
+        );
         if (result.hasException) {
           throw Exception(
-              'Failed to connect to Vendure: ${result.exception.toString()}');
+            'Failed to connect to Vendure: ${result.exception.toString()}',
+          );
         }
       } catch (e) {
         _instance = null;

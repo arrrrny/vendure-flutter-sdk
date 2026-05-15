@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'string_operators.freezed.dart';
 part 'string_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class StringOperators with _$StringOperators {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class StringOperators with _$StringOperators {
   const StringOperators._();
 
   const factory StringOperators({

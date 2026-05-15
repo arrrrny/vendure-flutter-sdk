@@ -5,12 +5,8 @@ import '../permission/permission.dart';
 part 'relation_custom_field_config.freezed.dart';
 part 'relation_custom_field_config.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RelationCustomFieldConfig with _$RelationCustomFieldConfig {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class RelationCustomFieldConfig with _$RelationCustomFieldConfig {
   const RelationCustomFieldConfig._();
 
   const factory RelationCustomFieldConfig({

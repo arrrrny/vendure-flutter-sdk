@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'refresh_customer_verification_result.freezed.dart';
 part 'refresh_customer_verification_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RefreshCustomerVerificationResult
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class RefreshCustomerVerificationResult
     with _$RefreshCustomerVerificationResult {
   const RefreshCustomerVerificationResult._();
 
@@ -18,11 +14,10 @@ class RefreshCustomerVerificationResult
     String? message,
   }) = NativeAuthStrategyError;
 
-  const factory RefreshCustomerVerificationResult.success({
-    bool? success,
-  }) = Success;
+  const factory RefreshCustomerVerificationResult.success({bool? success}) =
+      Success;
 
   factory RefreshCustomerVerificationResult.fromJson(
-          Map<String, dynamic> json) =>
-      _$RefreshCustomerVerificationResultFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$RefreshCustomerVerificationResultFromJson(json);
 }

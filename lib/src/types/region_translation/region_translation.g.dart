@@ -6,17 +6,15 @@ part of 'region_translation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegionTranslationImpl _$$RegionTranslationImplFromJson(Map json) =>
-    _$RegionTranslationImpl(
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      id: json['id'] as String,
-      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String,
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_RegionTranslation _$RegionTranslationFromJson(Map json) => _RegionTranslation(
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  id: json['id'] as String,
+  languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+  name: json['name'] as String,
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$RegionTranslationImplToJson(
-        _$RegionTranslationImpl instance) =>
+Map<String, dynamic> _$RegionTranslationToJson(_RegionTranslation instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'id': instance.id,

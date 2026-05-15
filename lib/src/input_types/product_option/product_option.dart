@@ -6,12 +6,8 @@ import '../product_option_translation/product_option_translation.dart';
 part 'product_option.freezed.dart';
 part 'product_option.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ProductOption with _$ProductOption {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ProductOption with _$ProductOption {
   const ProductOption._();
 
   const factory ProductOption({

@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'request_update_customer_email_address_result.freezed.dart';
 part 'request_update_customer_email_address_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RequestUpdateCustomerEmailAddressResult
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class RequestUpdateCustomerEmailAddressResult
     with _$RequestUpdateCustomerEmailAddressResult {
   const RequestUpdateCustomerEmailAddressResult._();
 
@@ -34,6 +30,6 @@ class RequestUpdateCustomerEmailAddressResult
   }) = Success;
 
   factory RequestUpdateCustomerEmailAddressResult.fromJson(
-          Map<String, dynamic> json) =>
-      _$RequestUpdateCustomerEmailAddressResultFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$RequestUpdateCustomerEmailAddressResultFromJson(json);
 }

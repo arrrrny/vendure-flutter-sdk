@@ -5,7 +5,7 @@ part 'zone.freezed.dart';
 part 'zone.g.dart';
 
 @freezed
-class Zone with _$Zone {
+abstract class Zone with _$Zone {
   const Zone._();
 
   const factory Zone({

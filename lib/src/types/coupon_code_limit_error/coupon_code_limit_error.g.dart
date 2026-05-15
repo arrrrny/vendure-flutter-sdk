@@ -6,22 +6,22 @@ part of 'coupon_code_limit_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CouponCodeLimitErrorImpl _$$CouponCodeLimitErrorImplFromJson(Map json) =>
-    _$CouponCodeLimitErrorImpl(
+_CouponCodeLimitError _$CouponCodeLimitErrorFromJson(Map json) =>
+    _CouponCodeLimitError(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       limit: (json['limit'] as num).toInt(),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$CouponCodeLimitErrorImplToJson(
-        _$CouponCodeLimitErrorImpl instance) =>
-    <String, dynamic>{
-      'couponCode': instance.couponCode,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'limit': instance.limit,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$CouponCodeLimitErrorToJson(
+  _CouponCodeLimitError instance,
+) => <String, dynamic>{
+  'couponCode': instance.couponCode,
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'limit': instance.limit,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

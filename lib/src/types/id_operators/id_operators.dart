@@ -3,7 +3,7 @@ part 'id_operators.freezed.dart';
 part 'id_operators.g.dart';
 
 @unfreezed
-class IdOperators with _$IdOperators {
+abstract class IdOperators with _$IdOperators {
   const IdOperators._();
 
   factory IdOperators({

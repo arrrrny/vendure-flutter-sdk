@@ -5,7 +5,7 @@ part 'refund.freezed.dart';
 part 'refund.g.dart';
 
 @freezed
-class Refund with _$Refund {
+abstract class Refund with _$Refund {
   const Refund._();
 
   const factory Refund({

@@ -2,17 +2,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'boolean_list_operators.freezed.dart';
 part 'boolean_list_operators.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class BooleanListOperators with _$BooleanListOperators {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class BooleanListOperators with _$BooleanListOperators {
   const BooleanListOperators._();
 
-  const factory BooleanListOperators({
-    required bool inList,
-  }) = _BooleanListOperators;
+  const factory BooleanListOperators({required bool inList}) =
+      _BooleanListOperators;
 
   factory BooleanListOperators.fromJson(Map<String, dynamic> json) =>
       _$BooleanListOperatorsFromJson(json);

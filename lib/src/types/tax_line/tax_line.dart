@@ -3,7 +3,7 @@ part 'tax_line.freezed.dart';
 part 'tax_line.g.dart';
 
 @freezed
-class TaxLine with _$TaxLine {
+abstract class TaxLine with _$TaxLine {
   const TaxLine._();
 
   const factory TaxLine({

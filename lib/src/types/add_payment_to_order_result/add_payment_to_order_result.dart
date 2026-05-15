@@ -17,7 +17,7 @@ part 'add_payment_to_order_result.freezed.dart';
 part 'add_payment_to_order_result.g.dart';
 
 @freezed
-class AddPaymentToOrderResult with _$AddPaymentToOrderResult {
+sealed class AddPaymentToOrderResult with _$AddPaymentToOrderResult {
   const AddPaymentToOrderResult._();
 
   const factory AddPaymentToOrderResult.ineligiblePaymentMethodError({

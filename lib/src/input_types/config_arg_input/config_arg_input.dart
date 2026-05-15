@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'config_arg_input.freezed.dart';
 part 'config_arg_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ConfigArgInput with _$ConfigArgInput {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ConfigArgInput with _$ConfigArgInput {
   const ConfigArgInput._();
 
   const factory ConfigArgInput({

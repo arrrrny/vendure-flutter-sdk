@@ -5,7 +5,7 @@ part 'history_entry_list.freezed.dart';
 part 'history_entry_list.g.dart';
 
 @freezed
-class HistoryEntryList with _$HistoryEntryList {
+abstract class HistoryEntryList with _$HistoryEntryList {
   const HistoryEntryList._();
 
   const factory HistoryEntryList({

@@ -5,7 +5,7 @@ part 'facet_translation.freezed.dart';
 part 'facet_translation.g.dart';
 
 @freezed
-class FacetTranslation with _$FacetTranslation {
+abstract class FacetTranslation with _$FacetTranslation {
   const FacetTranslation._();
 
   const factory FacetTranslation({

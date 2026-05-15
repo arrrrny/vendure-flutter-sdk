@@ -5,12 +5,8 @@ import '../search_result_sort_parameter/search_result_sort_parameter.dart';
 part 'search_input.freezed.dart';
 part 'search_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class SearchInput with _$SearchInput {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class SearchInput with _$SearchInput {
   const SearchInput._();
 
   const factory SearchInput({

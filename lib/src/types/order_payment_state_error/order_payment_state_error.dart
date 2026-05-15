@@ -5,7 +5,7 @@ part 'order_payment_state_error.freezed.dart';
 part 'order_payment_state_error.g.dart';
 
 @freezed
-class OrderPaymentStateError with _$OrderPaymentStateError {
+abstract class OrderPaymentStateError with _$OrderPaymentStateError {
   const OrderPaymentStateError._();
 
   const factory OrderPaymentStateError({

@@ -4,12 +4,8 @@ import '../sort_order/sort_order.dart';
 part 'facet_value_sort_parameter.freezed.dart';
 part 'facet_value_sort_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class FacetValueSortParameter with _$FacetValueSortParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class FacetValueSortParameter with _$FacetValueSortParameter {
   const FacetValueSortParameter._();
 
   const factory FacetValueSortParameter({

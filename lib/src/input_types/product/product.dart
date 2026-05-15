@@ -11,12 +11,8 @@ import '../product_variant_list/product_variant_list.dart';
 part 'product.freezed.dart';
 part 'product.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Product with _$Product {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Product with _$Product {
   const Product._();
 
   const factory Product({

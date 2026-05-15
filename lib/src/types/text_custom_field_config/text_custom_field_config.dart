@@ -6,7 +6,7 @@ part 'text_custom_field_config.freezed.dart';
 part 'text_custom_field_config.g.dart';
 
 @freezed
-class TextCustomFieldConfig with _$TextCustomFieldConfig {
+abstract class TextCustomFieldConfig with _$TextCustomFieldConfig {
   const TextCustomFieldConfig._();
 
   const factory TextCustomFieldConfig({

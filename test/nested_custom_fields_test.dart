@@ -4,56 +4,64 @@ import 'package:vendure/src/vendure/vendure_utils.dart';
 void main() {
   group('Nested Custom Fields Support', () {
     test(
-        'generateFragmentWithTypename should treat customFields as scalar if SCALAR_CUSTOM_FIELDS is provided',
-        () {
-      final customFieldsConfig = ['SCALAR_CUSTOM_FIELDS'];
+      'generateFragmentWithTypename should treat customFields as scalar if SCALAR_CUSTOM_FIELDS is provided',
+      () {
+        final customFieldsConfig = ['SCALAR_CUSTOM_FIELDS'];
 
-      final fragment = VendureUtils.generateFragmentWithTypename(
-          'Customer', customFieldsConfig);
+        final fragment = VendureUtils.generateFragmentWithTypename(
+          'Customer',
+          customFieldsConfig,
+        );
 
-      expect(fragment, contains('customFields'));
-      expect(fragment, isNot(contains('customFields {')));
-    });
+        expect(fragment, contains('customFields'));
+        expect(fragment, isNot(contains('customFields {')));
+      },
+    );
 
     test(
-        'sanitizeGraphQLQuery should treat customFields as scalar if SCALAR_CUSTOM_FIELDS is provided',
-        () {
-      final customFieldsConfig = {
-        'Customer': ['SCALAR_CUSTOM_FIELDS']
-      };
+      'sanitizeGraphQLQuery should treat customFields as scalar if SCALAR_CUSTOM_FIELDS is provided',
+      () {
+        final customFieldsConfig = {
+          'Customer': ['SCALAR_CUSTOM_FIELDS'],
+        };
 
-      final query = '''
+        final query = '''
         fragment CustomerDetails on Customer {
           id
           emailAddress
         }
       ''';
 
-      final sanitized =
-          VendureUtils.sanitizeGraphQLQuery(query, customFieldsConfig);
+        final sanitized = VendureUtils.sanitizeGraphQLQuery(
+          query,
+          customFieldsConfig,
+        );
 
-      expect(sanitized, contains('customFields'));
-      expect(sanitized, isNot(contains('customFields {')));
-    });
+        expect(sanitized, contains('customFields'));
+        expect(sanitized, isNot(contains('customFields {')));
+      },
+    );
 
     test('generateFragmentWithTypename handles nested custom fields', () {
       final customFieldsConfig = [
         'simpleField',
         {
-          'nestedEntity': ['id', 'name']
+          'nestedEntity': ['id', 'name'],
         },
         {
           'deepEntity': [
             'id',
             {
-              'subEntity': ['uid']
-            }
-          ]
-        }
+              'subEntity': ['uid'],
+            },
+          ],
+        },
       ];
 
       final fragment = VendureUtils.generateFragmentWithTypename(
-          'Product', customFieldsConfig);
+        'Product',
+        customFieldsConfig,
+      );
 
       expect(fragment, contains('fragment ProductCustomFields on Product {'));
       expect(fragment, contains('customFields {'));
@@ -70,9 +78,9 @@ void main() {
         'Product': [
           'simpleField',
           {
-            'nestedEntity': ['id']
-          }
-        ]
+            'nestedEntity': ['id'],
+          },
+        ],
       };
 
       final query = '''
@@ -87,8 +95,10 @@ void main() {
          }
        ''';
 
-      final sanitized =
-          VendureUtils.sanitizeGraphQLQuery(query, customFieldsConfig);
+      final sanitized = VendureUtils.sanitizeGraphQLQuery(
+        query,
+        customFieldsConfig,
+      );
 
       expect(sanitized, contains('customFields {'));
       expect(sanitized, contains('simpleField'));

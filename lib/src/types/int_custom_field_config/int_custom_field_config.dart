@@ -6,7 +6,7 @@ part 'int_custom_field_config.freezed.dart';
 part 'int_custom_field_config.g.dart';
 
 @freezed
-class IntCustomFieldConfig with _$IntCustomFieldConfig {
+abstract class IntCustomFieldConfig with _$IntCustomFieldConfig {
   const IntCustomFieldConfig._();
 
   factory IntCustomFieldConfig({

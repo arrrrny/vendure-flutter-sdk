@@ -6,7 +6,7 @@ part 'date_time_custom_field_config.freezed.dart';
 part 'date_time_custom_field_config.g.dart';
 
 @freezed
-class DateTimeCustomFieldConfig with _$DateTimeCustomFieldConfig {
+abstract class DateTimeCustomFieldConfig with _$DateTimeCustomFieldConfig {
   const DateTimeCustomFieldConfig._();
 
   /// Expects the same validation formats as the `<input type="datetime-local">` HTML element.

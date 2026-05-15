@@ -5,7 +5,7 @@ part 'region.freezed.dart';
 part 'region.g.dart';
 
 @freezed
-class Region with _$Region {
+abstract class Region with _$Region {
   const Region._();
   const factory Region({
     required String id,

@@ -5,7 +5,8 @@ part 'password_reset_token_invalid_error.freezed.dart';
 part 'password_reset_token_invalid_error.g.dart';
 
 @freezed
-class PasswordResetTokenInvalidError with _$PasswordResetTokenInvalidError {
+abstract class PasswordResetTokenInvalidError
+    with _$PasswordResetTokenInvalidError {
   const PasswordResetTokenInvalidError._();
 
   const factory PasswordResetTokenInvalidError({

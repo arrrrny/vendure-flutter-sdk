@@ -6,7 +6,7 @@ part 'fulfillment_line.freezed.dart';
 part 'fulfillment_line.g.dart';
 
 @freezed
-class FulfillmentLine with _$FulfillmentLine {
+abstract class FulfillmentLine with _$FulfillmentLine {
   const FulfillmentLine._();
 
   const factory FulfillmentLine({

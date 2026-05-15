@@ -6,20 +6,20 @@ part of 'payment_declined_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentDeclinedErrorImpl _$$PaymentDeclinedErrorImplFromJson(Map json) =>
-    _$PaymentDeclinedErrorImpl(
+_PaymentDeclinedError _$PaymentDeclinedErrorFromJson(Map json) =>
+    _PaymentDeclinedError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
       paymentErrorMessage: json['paymentErrorMessage'] as String,
     );
 
-Map<String, dynamic> _$$PaymentDeclinedErrorImplToJson(
-        _$PaymentDeclinedErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-      'paymentErrorMessage': instance.paymentErrorMessage,
-    };
+Map<String, dynamic> _$PaymentDeclinedErrorToJson(
+  _PaymentDeclinedError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+  'paymentErrorMessage': instance.paymentErrorMessage,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

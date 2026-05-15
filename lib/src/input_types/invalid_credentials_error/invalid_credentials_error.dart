@@ -4,12 +4,8 @@ import '../error_code/error_code.dart';
 part 'invalid_credentials_error.freezed.dart';
 part 'invalid_credentials_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class InvalidCredentialsError with _$InvalidCredentialsError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class InvalidCredentialsError with _$InvalidCredentialsError {
   const InvalidCredentialsError._();
 
   const factory InvalidCredentialsError({

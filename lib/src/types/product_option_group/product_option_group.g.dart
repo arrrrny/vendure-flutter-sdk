@@ -6,8 +6,8 @@ part of 'product_option_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
-    _$ProductOptionGroupImpl(
+_ProductOptionGroup _$ProductOptionGroupFromJson(Map json) =>
+    _ProductOptionGroup(
       code: json['code'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       customFields: (json['customFields'] as Map?)?.map(
@@ -17,22 +17,25 @@ _$ProductOptionGroupImpl _$$ProductOptionGroupImplFromJson(Map json) =>
       languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
       name: json['name'] as String,
       options: (json['options'] as List<dynamic>)
-          .map((e) =>
-              ProductOption.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map(
+            (e) => ProductOption.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       translations: (json['translations'] as List<dynamic>)
-          .map((e) => ProductOptionGroupTranslation.fromJson(
-              Map<String, dynamic>.from(e as Map)))
+          .map(
+            (e) => ProductOptionGroupTranslation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
           .toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$ProductOptionGroupImplToJson(
-        _$ProductOptionGroupImpl instance) =>
+Map<String, dynamic> _$ProductOptionGroupToJson(_ProductOptionGroup instance) =>
     <String, dynamic>{
       'code': instance.code,
       'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.customFields case final value?) 'customFields': value,
+      'customFields': ?instance.customFields,
       'id': instance.id,
       'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
       'name': instance.name,

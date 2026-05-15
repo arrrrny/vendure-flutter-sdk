@@ -4,12 +4,8 @@ import '../language_code/language_code.dart';
 part 'region_translation.freezed.dart';
 part 'region_translation.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RegionTranslation with _$RegionTranslation {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class RegionTranslation with _$RegionTranslation {
   const RegionTranslation._();
 
   const factory RegionTranslation({

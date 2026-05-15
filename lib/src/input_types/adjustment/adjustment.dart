@@ -4,12 +4,8 @@ import '../adjustment_type/adjustment_type.dart';
 part 'adjustment.freezed.dart';
 part 'adjustment.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Adjustment with _$Adjustment {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Adjustment with _$Adjustment {
   const Adjustment._();
 
   const factory Adjustment({

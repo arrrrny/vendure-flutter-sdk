@@ -8,7 +8,7 @@ part 'collection_filter_parameter.freezed.dart';
 part 'collection_filter_parameter.g.dart';
 
 @unfreezed
-class CollectionFilterParameter with _$CollectionFilterParameter {
+abstract class CollectionFilterParameter with _$CollectionFilterParameter {
   const CollectionFilterParameter._();
 
   factory CollectionFilterParameter({

@@ -17,12 +17,8 @@ import '../surcharge/surcharge.dart';
 part 'set_customer_for_order_result.freezed.dart';
 part 'set_customer_for_order_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class SetCustomerForOrderResult with _$SetCustomerForOrderResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class SetCustomerForOrderResult with _$SetCustomerForOrderResult {
   const SetCustomerForOrderResult._();
 
   const factory SetCustomerForOrderResult.alreadyLoggedInError({

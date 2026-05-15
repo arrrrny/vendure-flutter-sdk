@@ -6,16 +6,14 @@ part of 'deletion_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DeletionResponseImpl _$$DeletionResponseImplFromJson(Map json) =>
-    _$DeletionResponseImpl(
-      message: json['message'] as String?,
-      result: $enumDecode(_$DeletionResultEnumMap, json['result']),
-    );
+_DeletionResponse _$DeletionResponseFromJson(Map json) => _DeletionResponse(
+  message: json['message'] as String?,
+  result: $enumDecode(_$DeletionResultEnumMap, json['result']),
+);
 
-Map<String, dynamic> _$$DeletionResponseImplToJson(
-        _$DeletionResponseImpl instance) =>
+Map<String, dynamic> _$DeletionResponseToJson(_DeletionResponse instance) =>
     <String, dynamic>{
-      if (instance.message case final value?) 'message': value,
+      'message': ?instance.message,
       'result': _$DeletionResultEnumMap[instance.result]!,
     };
 

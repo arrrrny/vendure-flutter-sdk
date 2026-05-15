@@ -5,7 +5,7 @@ part 'promotion_list.freezed.dart';
 part 'promotion_list.g.dart';
 
 @freezed
-class PromotionList with _$PromotionList {
+abstract class PromotionList with _$PromotionList {
   const PromotionList._();
 
   const factory PromotionList({

@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'order_address.freezed.dart';
 part 'order_address.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class OrderAddress with _$OrderAddress {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class OrderAddress with _$OrderAddress {
   const OrderAddress._();
 
   const factory OrderAddress({

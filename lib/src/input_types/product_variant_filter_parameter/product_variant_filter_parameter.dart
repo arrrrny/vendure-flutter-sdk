@@ -7,12 +7,9 @@ import '../string_operators/string_operators.dart';
 part 'product_variant_filter_parameter.freezed.dart';
 part 'product_variant_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ProductVariantFilterParameter with _$ProductVariantFilterParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ProductVariantFilterParameter
+    with _$ProductVariantFilterParameter {
   const ProductVariantFilterParameter._();
 
   const factory ProductVariantFilterParameter({

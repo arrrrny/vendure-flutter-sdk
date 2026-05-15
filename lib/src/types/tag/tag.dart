@@ -3,7 +3,7 @@ part 'tag.freezed.dart';
 part 'tag.g.dart';
 
 @freezed
-class Tag with _$Tag {
+abstract class Tag with _$Tag {
   const Tag._();
 
   const factory Tag({

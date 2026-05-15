@@ -4,12 +4,8 @@ import '../sort_order/sort_order.dart';
 part 'customer_sort_parameter.freezed.dart';
 part 'customer_sort_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CustomerSortParameter with _$CustomerSortParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CustomerSortParameter with _$CustomerSortParameter {
   const CustomerSortParameter._();
 
   const factory CustomerSortParameter({

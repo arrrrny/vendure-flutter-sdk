@@ -18,12 +18,8 @@ import '../surcharge/surcharge.dart';
 part 'add_payment_to_order_result.freezed.dart';
 part 'add_payment_to_order_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class AddPaymentToOrderResult with _$AddPaymentToOrderResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class AddPaymentToOrderResult with _$AddPaymentToOrderResult {
   const AddPaymentToOrderResult._();
 
   const factory AddPaymentToOrderResult.ineligiblePaymentMethodError({

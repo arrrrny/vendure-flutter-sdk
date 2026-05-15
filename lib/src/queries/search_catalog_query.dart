@@ -1,7 +1,8 @@
 import 'package:vendure/src/fragments/catalog_fragment.dart';
 import 'package:vendure/src/fragments/shared_fragment.dart';
 
-const String searchCatalogQuery = collectionFragment +
+const String searchCatalogQuery =
+    collectionFragment +
     searchResultFragment +
     facetValueFragment +
     r'''

@@ -18,7 +18,7 @@ part 'update_order_items_result.freezed.dart';
 part 'update_order_items_result.g.dart';
 
 @freezed
-class UpdateOrderItemsResult with _$UpdateOrderItemsResult {
+sealed class UpdateOrderItemsResult with _$UpdateOrderItemsResult {
   const UpdateOrderItemsResult._();
 
   const factory UpdateOrderItemsResult.insufficientStockError({

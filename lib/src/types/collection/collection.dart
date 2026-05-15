@@ -10,7 +10,7 @@ part 'collection.freezed.dart';
 part 'collection.g.dart';
 
 @freezed
-class Collection with _$Collection {
+abstract class Collection with _$Collection {
   const Collection._();
 
   const factory Collection({

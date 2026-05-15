@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String applyCouponCodeMutation = orderFragment +
+const String applyCouponCodeMutation =
+    orderFragment +
     r'''
 mutation ApplyCouponCode($couponCode: String!) {
   applyCouponCode(couponCode: $couponCode) {

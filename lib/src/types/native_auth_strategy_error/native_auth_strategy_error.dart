@@ -5,7 +5,7 @@ part 'native_auth_strategy_error.freezed.dart';
 part 'native_auth_strategy_error.g.dart';
 
 @freezed
-class NativeAuthStrategyError with _$NativeAuthStrategyError {
+abstract class NativeAuthStrategyError with _$NativeAuthStrategyError {
   const NativeAuthStrategyError._();
 
   const factory NativeAuthStrategyError({

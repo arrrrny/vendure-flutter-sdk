@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String addPaymentToOrderMutation = orderFragment +
+const String addPaymentToOrderMutation =
+    orderFragment +
     r'''
 mutation AddPaymentToOrder($input: PaymentInput!) {
   addPaymentToOrder(input: $input) {

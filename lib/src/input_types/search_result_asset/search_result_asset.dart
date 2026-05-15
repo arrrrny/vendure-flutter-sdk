@@ -4,12 +4,8 @@ import '../coordinate/coordinate.dart';
 part 'search_result_asset.freezed.dart';
 part 'search_result_asset.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class SearchResultAsset with _$SearchResultAsset {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class SearchResultAsset with _$SearchResultAsset {
   const SearchResultAsset._();
 
   const factory SearchResultAsset({

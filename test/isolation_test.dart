@@ -37,9 +37,7 @@ class VendureSubscriptionTest {
           final token = await _getStoredAuthToken();
           print('WS Initial Payload Token: $token');
           if (token == null) return {};
-          return {
-            'Authorization': 'Bearer $token',
-          };
+          return {'Authorization': 'Bearer $token'};
         },
       ),
       subProtocol: GraphQLProtocol.graphqlTransportWs, // ADDED FIX
@@ -53,10 +51,7 @@ class VendureSubscriptionTest {
     );
 
     // Create client
-    _client = GraphQLClient(
-      link: link,
-      cache: GraphQLCache(),
-    );
+    _client = GraphQLClient(link: link, cache: GraphQLCache());
   }
 
   /// Step 2: Login to get auth token
@@ -81,11 +76,8 @@ class VendureSubscriptionTest {
         document: gql(loginMutation),
         variables: {
           'input': {
-            'native': {
-              'username': email,
-              'password': password,
-            }
-          }
+            'native': {'username': email, 'password': password},
+          },
         },
       ),
     );
@@ -126,9 +118,7 @@ class VendureSubscriptionTest {
     ''';
 
     final subscription = _client.subscribe(
-      SubscriptionOptions(
-        document: gql(subscriptionQuery),
-      ),
+      SubscriptionOptions(document: gql(subscriptionQuery)),
     );
 
     return subscription.map((result) {
@@ -163,9 +153,7 @@ class VendureSubscriptionTest {
       MutationOptions(
         document: gql(updateMutation),
         variables: {
-          'input': {
-            'firstName': firstName,
-          }
+          'input': {'firstName': firstName},
         },
       ),
     );
@@ -198,10 +186,7 @@ void main() {
 
       // 2. Login
       print('\n🔐 Logging in...');
-      await vendureTest.login(
-        TestConfig.shopEmail,
-        TestConfig.shopPassword,
-      );
+      await vendureTest.login(TestConfig.shopEmail, TestConfig.shopPassword);
 
       // 3. Subscribe to customer stream
       print('\n📡 Subscribing to activeCustomerStream...');
@@ -217,7 +202,8 @@ void main() {
           print('   ID: ${customerData['id']}');
           print('   Email: ${customerData['emailAddress']}');
           print(
-              '   Name: ${customerData['firstName']} ${customerData['lastName']}');
+            '   Name: ${customerData['firstName']} ${customerData['lastName']}',
+          );
           if (!completer.isCompleted) completer.complete();
         },
         onError: (error) {
@@ -229,7 +215,8 @@ void main() {
       // Wait a bit for subscription to establish
       await Future.delayed(const Duration(seconds: 2));
       await vendureTest.updateCustomer(
-          'ManualTest-${DateTime.now().millisecondsSinceEpoch}');
+        'ManualTest-${DateTime.now().millisecondsSinceEpoch}',
+      );
 
       // Wait for completion
       await completer.future.timeout(const Duration(seconds: 10));

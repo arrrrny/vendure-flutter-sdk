@@ -5,7 +5,7 @@ part 'no_active_order_error.freezed.dart';
 part 'no_active_order_error.g.dart';
 
 @freezed
-class NoActiveOrderError with _$NoActiveOrderError {
+abstract class NoActiveOrderError with _$NoActiveOrderError {
   const NoActiveOrderError._();
 
   const factory NoActiveOrderError({

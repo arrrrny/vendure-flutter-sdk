@@ -6,41 +6,39 @@ part of 'role.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RoleImpl _$$RoleImplFromJson(Map json) => _$RoleImpl(
-      channels: (json['channels'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Channel.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      code: json['code'] as String?,
-      createdAt: json['createdAt'] == null
-          ? null
-          : DateTime.parse(json['createdAt'] as String),
-      description: json['description'] as String?,
-      id: json['id'] as String?,
-      permissions: (json['permissions'] as List<dynamic>?)
-          ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
-          .toList(),
-      updatedAt: json['updatedAt'] == null
-          ? null
-          : DateTime.parse(json['updatedAt'] as String),
-    );
+_Role _$RoleFromJson(Map json) => _Role(
+  channels: (json['channels'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : Channel.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  code: json['code'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  description: json['description'] as String?,
+  id: json['id'] as String?,
+  permissions: (json['permissions'] as List<dynamic>?)
+      ?.map((e) => $enumDecodeNullable(_$PermissionEnumMap, e))
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$RoleImplToJson(_$RoleImpl instance) =>
-    <String, dynamic>{
-      if (instance.channels?.map((e) => e?.toJson()).toList() case final value?)
-        'channels': value,
-      if (instance.code case final value?) 'code': value,
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.permissions?.map((e) => _$PermissionEnumMap[e]).toList()
-          case final value?)
-        'permissions': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-    };
+Map<String, dynamic> _$RoleToJson(_Role instance) => <String, dynamic>{
+  'channels': ?instance.channels?.map((e) => e?.toJson()).toList(),
+  'code': ?instance.code,
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'description': ?instance.description,
+  'id': ?instance.id,
+  'permissions': ?instance.permissions
+      ?.map((e) => _$PermissionEnumMap[e])
+      .toList(),
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+};
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

@@ -5,12 +5,8 @@ import '../payment_method_translation/payment_method_translation.dart';
 part 'payment_method.freezed.dart';
 part 'payment_method.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class PaymentMethod with _$PaymentMethod {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class PaymentMethod with _$PaymentMethod {
   const PaymentMethod._();
 
   const factory PaymentMethod({

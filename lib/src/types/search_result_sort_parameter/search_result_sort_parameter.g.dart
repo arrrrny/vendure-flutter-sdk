@@ -6,21 +6,17 @@ part of 'search_result_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SearchResultSortParameterImpl _$$SearchResultSortParameterImplFromJson(
-        Map json) =>
-    _$SearchResultSortParameterImpl(
+_SearchResultSortParameter _$SearchResultSortParameterFromJson(Map json) =>
+    _SearchResultSortParameter(
       name: $enumDecodeNullable(_$SortOrderEnumMap, json['name']),
       price: $enumDecodeNullable(_$SortOrderEnumMap, json['price']),
     );
 
-Map<String, dynamic> _$$SearchResultSortParameterImplToJson(
-        _$SearchResultSortParameterImpl instance) =>
-    <String, dynamic>{
-      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
-      if (_$SortOrderEnumMap[instance.price] case final value?) 'price': value,
-    };
-
-const _$SortOrderEnumMap = {
-  SortOrder.asc: 'asc',
-  SortOrder.desc: 'desc',
+Map<String, dynamic> _$SearchResultSortParameterToJson(
+  _SearchResultSortParameter instance,
+) => <String, dynamic>{
+  'name': ?_$SortOrderEnumMap[instance.name],
+  'price': ?_$SortOrderEnumMap[instance.price],
 };
+
+const _$SortOrderEnumMap = {SortOrder.asc: 'asc', SortOrder.desc: 'desc'};

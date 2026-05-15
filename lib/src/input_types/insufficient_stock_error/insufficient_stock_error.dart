@@ -5,12 +5,8 @@ import '../order/order.dart';
 part 'insufficient_stock_error.freezed.dart';
 part 'insufficient_stock_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class InsufficientStockError with _$InsufficientStockError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class InsufficientStockError with _$InsufficientStockError {
   const InsufficientStockError._();
 
   const factory InsufficientStockError({

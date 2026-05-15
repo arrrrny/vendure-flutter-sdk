@@ -6,13 +6,9 @@ part of 'number_list_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NumberListOperatorsImpl _$$NumberListOperatorsImplFromJson(Map json) =>
-    _$NumberListOperatorsImpl(
-      inList: (json['inList'] as num).toDouble(),
-    );
+_NumberListOperators _$NumberListOperatorsFromJson(Map json) =>
+    _NumberListOperators(inList: (json['inList'] as num).toDouble());
 
-Map<String, dynamic> _$$NumberListOperatorsImplToJson(
-        _$NumberListOperatorsImpl instance) =>
-    <String, dynamic>{
-      'inList': instance.inList,
-    };
+Map<String, dynamic> _$NumberListOperatorsToJson(
+  _NumberListOperators instance,
+) => <String, dynamic>{'inList': instance.inList};

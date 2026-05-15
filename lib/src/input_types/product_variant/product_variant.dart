@@ -12,12 +12,8 @@ import '../tax_rate/tax_rate.dart';
 part 'product_variant.freezed.dart';
 part 'product_variant.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class ProductVariant with _$ProductVariant {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class ProductVariant with _$ProductVariant {
   const ProductVariant._();
 
   const factory ProductVariant({

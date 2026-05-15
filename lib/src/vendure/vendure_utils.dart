@@ -54,7 +54,6 @@ class VendureUtils {
     'jobState': 'JobState',
     'state':
         'JobState', // common field name used by Job and others; prefer specific 'jobState' where possible
-
     // global flags and modes
     'mode': 'GlobalFlag',
     'globalFlag': 'GlobalFlag',
@@ -102,8 +101,11 @@ class VendureUtils {
 
   /// Register custom enum types and their fields manually.
   /// This replaces the slow introspection.
-  static void registerCustomEnum(String typeName, List<String> fields,
-      {List<String>? values}) {
+  static void registerCustomEnum(
+    String typeName,
+    List<String> fields, {
+    List<String>? values,
+  }) {
     _knownEnumTypes.add(typeName);
     for (final field in fields) {
       _fieldToEnumType[field] = typeName;
@@ -116,19 +118,24 @@ class VendureUtils {
   /// Legacy method kept for compatibility but no-op or redirects to manual registration if needed.
   /// The dynamic detection is removed to improve performance.
   static Future<void> loadEnumTypeNames(
-      Future<List<Map<String, dynamic>>> Function() detectEnums,
-      {Future<List<Map<String, dynamic>>> Function()? detectFields}) async {
+    Future<List<Map<String, dynamic>>> Function() detectEnums, {
+    Future<List<Map<String, dynamic>>> Function()? detectFields,
+  }) async {
     // No-op: We now rely on static definitions and manual registration.
     // Introspection is too slow.
   }
 
-  static dynamic normalizeGraphQLData(dynamic data,
-      {String? parentKey, bool? convertEnums}) {
+  static dynamic normalizeGraphQLData(
+    dynamic data, {
+    String? parentKey,
+    bool? convertEnums,
+  }) {
     convertEnums = convertEnums ?? convertQueryEnums;
 
     if (data is Map) {
-      final map =
-          data is Map<String, dynamic> ? data : Map<String, dynamic>.from(data);
+      final map = data is Map<String, dynamic>
+          ? data
+          : Map<String, dynamic>.from(data);
       final normalizedData = <String, dynamic>{};
       for (final entry in map.entries) {
         final key = entry.key;
@@ -158,8 +165,11 @@ class VendureUtils {
         }
 
         if (!wasConverted) {
-          normalizedData[key] = normalizeGraphQLData(value,
-              parentKey: key, convertEnums: convertEnums);
+          normalizedData[key] = normalizeGraphQLData(
+            value,
+            parentKey: key,
+            convertEnums: convertEnums,
+          );
         }
       }
       return normalizedData;
@@ -184,13 +194,17 @@ class VendureUtils {
     return data;
   }
 
-  static dynamic normalizeMutationData(dynamic data,
-      {String? parentKey, bool? convertEnums}) {
+  static dynamic normalizeMutationData(
+    dynamic data, {
+    String? parentKey,
+    bool? convertEnums,
+  }) {
     convertEnums = convertEnums ?? convertMutationEnums;
 
     if (data is Map) {
-      final map =
-          data is Map<String, dynamic> ? data : Map<String, dynamic>.from(data);
+      final map = data is Map<String, dynamic>
+          ? data
+          : Map<String, dynamic>.from(data);
       final normalizedData = <String, dynamic>{};
       for (final entry in map.entries) {
         final key = entry.key;
@@ -202,8 +216,10 @@ class VendureUtils {
             _knownEnumTypes.contains(enumType)) {
           if (value is List) {
             normalizedData[key] = value
-                .map((item) =>
-                    item is String ? _convertEnumToGraphQLFormat(item) : item)
+                .map(
+                  (item) =>
+                      item is String ? _convertEnumToGraphQLFormat(item) : item,
+                )
                 .toList();
             continue;
           } else if (value is String) {
@@ -219,8 +235,11 @@ class VendureUtils {
           }
         }
 
-        normalizedData[key] = normalizeMutationData(value,
-            parentKey: key, convertEnums: convertEnums);
+        normalizedData[key] = normalizeMutationData(
+          value,
+          parentKey: key,
+          convertEnums: convertEnums,
+        );
       }
       return normalizedData;
     }
@@ -231,13 +250,16 @@ class VendureUtils {
           enumType != null &&
           _knownEnumTypes.contains(enumType)) {
         return data
-            .map((item) =>
-                item is String ? _convertEnumToGraphQLFormat(item) : item)
+            .map(
+              (item) =>
+                  item is String ? _convertEnumToGraphQLFormat(item) : item,
+            )
             .toList();
       }
       return data
           .map(
-              (item) => normalizeMutationData(item, convertEnums: convertEnums))
+            (item) => normalizeMutationData(item, convertEnums: convertEnums),
+          )
           .toList();
     }
 
@@ -265,26 +287,31 @@ class VendureUtils {
       return parts.first +
           parts
               .skip(1)
-              .map((w) =>
-                  w.isNotEmpty ? w[0].toUpperCase() + w.substring(1) : '')
+              .map(
+                (w) => w.isNotEmpty ? w[0].toUpperCase() + w.substring(1) : '',
+              )
               .join('');
     }
     return enumValue.toLowerCase();
   }
 
   static T c<T>(
-      Map<String, dynamic> jsonMap, T Function(Map<String, dynamic>) fromJson) {
+    Map<String, dynamic> jsonMap,
+    T Function(Map<String, dynamic>) fromJson,
+  ) {
     Map<String, dynamic> mutableJsonMap = _deepCopy(jsonMap);
     mutableJsonMap = _populateFieldsRecursively(mutableJsonMap);
     return fromJson(mutableJsonMap);
   }
 
   static Map<String, dynamic> _populateFieldsRecursively(
-      Map<String, dynamic> jsonMap) {
+    Map<String, dynamic> jsonMap,
+  ) {
     jsonMap.forEach((key, value) {
       if (value is Map<String, dynamic>) {
-        jsonMap[key] =
-            _populateFieldsRecursively(Map<String, dynamic>.from(value));
+        jsonMap[key] = _populateFieldsRecursively(
+          Map<String, dynamic>.from(value),
+        );
       } else if (value is List) {
         jsonMap[key] = value.map((item) {
           if (item is Map<String, dynamic>) {
@@ -309,7 +336,8 @@ class VendureUtils {
       } else if (value is List) {
         copy[key] = value
             .map(
-                (item) => item is Map<String, dynamic> ? _deepCopy(item) : item)
+              (item) => item is Map<String, dynamic> ? _deepCopy(item) : item,
+            )
             .toList();
       } else {
         copy[key] = value;
@@ -363,32 +391,41 @@ class VendureUtils {
   }
 
   static String replaceCustomFieldsFragment(
-      String queryTemplate, Map<String, List<dynamic>> customFieldsConfig) {
+    String queryTemplate,
+    Map<String, List<dynamic>> customFieldsConfig,
+  ) {
     customFieldsConfig.forEach((typeName, customFields) {
       String fragmentName = '${typeName.capitalize()}CustomFields';
-      String generatedFragment =
-          generateFragmentWithTypename(typeName, customFields);
+      String generatedFragment = generateFragmentWithTypename(
+        typeName,
+        customFields,
+      );
 
       queryTemplate = queryTemplate.replaceAll(
-          'fragment $fragmentName on $typeName {\n  __typename\n}',
-          generatedFragment);
+        'fragment $fragmentName on $typeName {\n  __typename\n}',
+        generatedFragment,
+      );
     });
 
     return queryTemplate;
   }
 
   static String generateFragmentWithTypename(
-      String typeName, List<dynamic> customFields) {
+    String typeName,
+    List<dynamic> customFields,
+  ) {
     StringBuffer fragmentBuffer = StringBuffer();
 
     fragmentBuffer.writeln(
-        'fragment ${typeName.capitalize()}CustomFields on ${typeName.capitalize()} {');
+      'fragment ${typeName.capitalize()}CustomFields on ${typeName.capitalize()} {',
+    );
     if (customFields.contains('SCALAR_CUSTOM_FIELDS')) {
       fragmentBuffer.writeln('  customFields');
     } else {
       fragmentBuffer.writeln('  customFields {');
-      fragmentBuffer
-          .write(_generateFieldsRecursive(customFields, indent: '    '));
+      fragmentBuffer.write(
+        _generateFieldsRecursive(customFields, indent: '    '),
+      );
       fragmentBuffer.writeln('  }');
     }
     fragmentBuffer.writeln('}');
@@ -396,8 +433,10 @@ class VendureUtils {
     return fragmentBuffer.toString();
   }
 
-  static String _generateFieldsRecursive(List<dynamic> fields,
-      {String indent = ''}) {
+  static String _generateFieldsRecursive(
+    List<dynamic> fields, {
+    String indent = '',
+  }) {
     StringBuffer buffer = StringBuffer();
     buffer.writeln('${indent}__typename');
 
@@ -420,40 +459,51 @@ class VendureUtils {
   }
 
   static String generateQueryWithCustomFields(
-      String queryTemplate, Map<String, List<dynamic>> customFieldsConfig) {
+    String queryTemplate,
+    Map<String, List<dynamic>> customFieldsConfig,
+  ) {
     customFieldsConfig.forEach((typeName, customFields) {
       if (customFields.isEmpty) {
         queryTemplate = queryTemplate.replaceAll(
-            RegExp(r'\.\.\.' + typeName.capitalize() + r'CustomFields\s*',
-                multiLine: true),
-            '');
+          RegExp(
+            r'\.\.\.' + typeName.capitalize() + r'CustomFields\s*',
+            multiLine: true,
+          ),
+          '',
+        );
 
         queryTemplate = queryTemplate.replaceAll(
-            RegExp(
-                r'fragment\s+' +
-                    typeName.capitalize() +
-                    r'CustomFields\s+on\s+' +
-                    typeName.capitalize() +
-                    r'\s*\{[^}]*\}',
-                multiLine: true),
-            '');
+          RegExp(
+            r'fragment\s+' +
+                typeName.capitalize() +
+                r'CustomFields\s+on\s+' +
+                typeName.capitalize() +
+                r'\s*\{[^}]*\}',
+            multiLine: true,
+          ),
+          '',
+        );
       }
     });
 
     customFieldsConfig.forEach((typeName, customFields) {
       if (customFields.isNotEmpty) {
-        String generatedFragment =
-            generateFragmentWithTypename(typeName, customFields);
+        String generatedFragment = generateFragmentWithTypename(
+          typeName,
+          customFields,
+        );
 
         queryTemplate = queryTemplate.replaceAllMapped(
-            RegExp(
-                r'fragment\s+' +
-                    typeName.capitalize() +
-                    r'CustomFields\s+on\s+' +
-                    typeName.capitalize() +
-                    r'\s*\{[^}]*\}',
-                multiLine: true),
-            (match) => generatedFragment);
+          RegExp(
+            r'fragment\s+' +
+                typeName.capitalize() +
+                r'CustomFields\s+on\s+' +
+                typeName.capitalize() +
+                r'\s*\{[^}]*\}',
+            multiLine: true,
+          ),
+          (match) => generatedFragment,
+        );
       }
     });
 
@@ -465,26 +515,36 @@ class VendureUtils {
   }
 
   static String cleanUpCustomFields(
-      String queryTemplate, Map<String, List<dynamic>> customFieldsConfig) {
+    String queryTemplate,
+    Map<String, List<dynamic>> customFieldsConfig,
+  ) {
     queryTemplate = queryTemplate.replaceAll(
-        RegExp(r'fragment\s+\w+CustomFields\s+on\s+\w+\s*\{[^}]*\}',
-            multiLine: true),
-        '');
+      RegExp(
+        r'fragment\s+\w+CustomFields\s+on\s+\w+\s*\{[^}]*\}',
+        multiLine: true,
+      ),
+      '',
+    );
 
     queryTemplate = queryTemplate.replaceAll(
-        RegExp(r'\.\.\.\w+CustomFields\s*', multiLine: true), '');
+      RegExp(r'\.\.\.\w+CustomFields\s*', multiLine: true),
+      '',
+    );
 
     customFieldsConfig.forEach((typeName, customFields) {
       if (customFields.isNotEmpty) {
-        String generatedFragment =
-            generateFragmentWithTypename(typeName, customFields);
+        String generatedFragment = generateFragmentWithTypename(
+          typeName,
+          customFields,
+        );
 
         queryTemplate += '\n\n$generatedFragment';
 
         queryTemplate = queryTemplate.replaceAllMapped(
-            RegExp(r'(\b' + typeName + r'\b)(\s*\{)', multiLine: true),
-            (match) =>
-                '${match.group(1)}${match.group(2)}\n  ...${typeName.capitalize()}CustomFields');
+          RegExp(r'(\b' + typeName + r'\b)(\s*\{)', multiLine: true),
+          (match) =>
+              '${match.group(1)}${match.group(2)}\n  ...${typeName.capitalize()}CustomFields',
+        );
       }
     });
 
@@ -496,11 +556,14 @@ class VendureUtils {
   }
 
   static String sanitizeGraphQLQuery(
-      String query, Map<String, List<dynamic>> customFieldsConfig) {
+    String query,
+    Map<String, List<dynamic>> customFieldsConfig,
+  ) {
     final entityNames = customFieldsConfig.keys.map(RegExp.escape).join('|');
     final regex = RegExp(
-        r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\b\s*\{([\s\S]*?)\}',
-        multiLine: true);
+      r'fragment\s+(\w+)\s+on\s+(' + entityNames + r')\b\s*\{([\s\S]*?)\}',
+      multiLine: true,
+    );
 
     final buffer = StringBuffer();
     var lastIndex = 0;
@@ -520,14 +583,16 @@ class VendureUtils {
         if (customFields.contains('SCALAR_CUSTOM_FIELDS')) {
           customFieldsFragment = '\n  customFields\n';
         } else {
-          customFieldsFragment = '''
+          customFieldsFragment =
+              '''
 
   customFields {
 ${_generateFieldsRecursive(customFields, indent: '    ')}  }
 ''';
         }
         buffer.write(
-            'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment}');
+          'fragment $fragmentName on $entityName {$fragmentContent$customFieldsFragment}',
+        );
       } else {
         buffer.write(match.group(0));
       }

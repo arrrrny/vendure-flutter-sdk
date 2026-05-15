@@ -5,7 +5,7 @@ part 'facet_value_translation.freezed.dart';
 part 'facet_value_translation.g.dart';
 
 @freezed
-class FacetValueTranslation with _$FacetValueTranslation {
+abstract class FacetValueTranslation with _$FacetValueTranslation {
   const FacetValueTranslation._();
 
   const factory FacetValueTranslation({

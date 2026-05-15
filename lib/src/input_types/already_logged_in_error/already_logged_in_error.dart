@@ -4,18 +4,12 @@ import '../error_code/error_code.dart';
 part 'already_logged_in_error.freezed.dart';
 part 'already_logged_in_error.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class AlreadyLoggedInError with _$AlreadyLoggedInError {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class AlreadyLoggedInError with _$AlreadyLoggedInError {
   const AlreadyLoggedInError._();
 
-  const factory AlreadyLoggedInError({
-    ErrorCode? errorCode,
-    String? message,
-  }) = _AlreadyLoggedInError;
+  const factory AlreadyLoggedInError({ErrorCode? errorCode, String? message}) =
+      _AlreadyLoggedInError;
 
   factory AlreadyLoggedInError.fromJson(Map<String, dynamic> json) =>
       _$AlreadyLoggedInErrorFromJson(json);

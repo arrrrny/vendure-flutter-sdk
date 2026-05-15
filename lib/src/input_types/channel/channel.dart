@@ -7,12 +7,8 @@ import '../zone/zone.dart';
 part 'channel.freezed.dart';
 part 'channel.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Channel with _$Channel {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Channel with _$Channel {
   const Channel._();
 
   const factory Channel({

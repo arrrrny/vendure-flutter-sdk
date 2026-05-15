@@ -5,7 +5,7 @@ part 'collection_list.freezed.dart';
 part 'collection_list.g.dart';
 
 @freezed
-class CollectionList with _$CollectionList {
+abstract class CollectionList with _$CollectionList {
   const CollectionList._();
 
   const factory CollectionList({

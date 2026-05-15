@@ -6,19 +6,19 @@ part of 'verification_token_invalid_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$VerificationTokenInvalidErrorImpl
-    _$$VerificationTokenInvalidErrorImplFromJson(Map json) =>
-        _$VerificationTokenInvalidErrorImpl(
-          errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-          message: json['message'] as String,
-        );
+_VerificationTokenInvalidError _$VerificationTokenInvalidErrorFromJson(
+  Map json,
+) => _VerificationTokenInvalidError(
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$VerificationTokenInvalidErrorImplToJson(
-        _$VerificationTokenInvalidErrorImpl instance) =>
-    <String, dynamic>{
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$VerificationTokenInvalidErrorToJson(
+  _VerificationTokenInvalidError instance,
+) => <String, dynamic>{
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

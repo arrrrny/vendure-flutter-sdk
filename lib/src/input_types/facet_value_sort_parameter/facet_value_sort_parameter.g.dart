@@ -6,9 +6,8 @@ part of 'facet_value_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetValueSortParameterImpl _$$FacetValueSortParameterImplFromJson(
-        Map json) =>
-    _$FacetValueSortParameterImpl(
+_FacetValueSortParameter _$FacetValueSortParameterFromJson(Map json) =>
+    _FacetValueSortParameter(
       code: $enumDecodeNullable(_$SortOrderEnumMap, json['code']),
       createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
       facetId: $enumDecodeNullable(_$SortOrderEnumMap, json['facetId']),
@@ -17,21 +16,15 @@ _$FacetValueSortParameterImpl _$$FacetValueSortParameterImplFromJson(
       updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
     );
 
-Map<String, dynamic> _$$FacetValueSortParameterImplToJson(
-        _$FacetValueSortParameterImpl instance) =>
-    <String, dynamic>{
-      if (_$SortOrderEnumMap[instance.code] case final value?) 'code': value,
-      if (_$SortOrderEnumMap[instance.createdAt] case final value?)
-        'createdAt': value,
-      if (_$SortOrderEnumMap[instance.facetId] case final value?)
-        'facetId': value,
-      if (_$SortOrderEnumMap[instance.id] case final value?) 'id': value,
-      if (_$SortOrderEnumMap[instance.name] case final value?) 'name': value,
-      if (_$SortOrderEnumMap[instance.updatedAt] case final value?)
-        'updatedAt': value,
-    };
-
-const _$SortOrderEnumMap = {
-  SortOrder.asc: 'asc',
-  SortOrder.desc: 'desc',
+Map<String, dynamic> _$FacetValueSortParameterToJson(
+  _FacetValueSortParameter instance,
+) => <String, dynamic>{
+  'code': ?_$SortOrderEnumMap[instance.code],
+  'createdAt': ?_$SortOrderEnumMap[instance.createdAt],
+  'facetId': ?_$SortOrderEnumMap[instance.facetId],
+  'id': ?_$SortOrderEnumMap[instance.id],
+  'name': ?_$SortOrderEnumMap[instance.name],
+  'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
+
+const _$SortOrderEnumMap = {SortOrder.asc: 'asc', SortOrder.desc: 'desc'};

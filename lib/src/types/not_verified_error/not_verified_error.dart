@@ -5,7 +5,7 @@ part 'not_verified_error.freezed.dart';
 part 'not_verified_error.g.dart';
 
 @freezed
-class NotVerifiedError with _$NotVerifiedError {
+abstract class NotVerifiedError with _$NotVerifiedError {
   const NotVerifiedError._();
 
   const factory NotVerifiedError({

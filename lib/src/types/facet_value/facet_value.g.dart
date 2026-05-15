@@ -6,38 +6,40 @@ part of 'facet_value.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FacetValueImpl _$$FacetValueImplFromJson(Map json) => _$FacetValueImpl(
-      code: json['code'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      facetId: json['facetId'] as String,
-      id: json['id'] as String,
-      languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
-      name: json['name'] as String,
-      translations: (json['translations'] as List<dynamic>)
-          .map((e) => FacetValueTranslation.fromJson(
-              Map<String, dynamic>.from(e as Map)))
-          .toList(),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      facet: json['facet'] == null
-          ? null
-          : Facet.fromJson(Map<String, dynamic>.from(json['facet'] as Map)),
-    );
+_FacetValue _$FacetValueFromJson(Map json) => _FacetValue(
+  code: json['code'] as String,
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  facetId: json['facetId'] as String,
+  id: json['id'] as String,
+  languageCode: $enumDecode(_$LanguageCodeEnumMap, json['languageCode']),
+  name: json['name'] as String,
+  translations: (json['translations'] as List<dynamic>)
+      .map(
+        (e) =>
+            FacetValueTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  facet: json['facet'] == null
+      ? null
+      : Facet.fromJson(Map<String, dynamic>.from(json['facet'] as Map)),
+);
 
-Map<String, dynamic> _$$FacetValueImplToJson(_$FacetValueImpl instance) =>
+Map<String, dynamic> _$FacetValueToJson(_FacetValue instance) =>
     <String, dynamic>{
       'code': instance.code,
       'createdAt': instance.createdAt.toIso8601String(),
-      if (instance.customFields case final value?) 'customFields': value,
+      'customFields': ?instance.customFields,
       'facetId': instance.facetId,
       'id': instance.id,
       'languageCode': _$LanguageCodeEnumMap[instance.languageCode]!,
       'name': instance.name,
       'translations': instance.translations.map((e) => e.toJson()).toList(),
       'updatedAt': instance.updatedAt.toIso8601String(),
-      if (instance.facet?.toJson() case final value?) 'facet': value,
+      'facet': ?instance.facet?.toJson(),
     };
 
 const _$LanguageCodeEnumMap = {

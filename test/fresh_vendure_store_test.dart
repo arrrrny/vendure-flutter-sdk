@@ -36,7 +36,8 @@ void main() {
         expect(countries, isNotEmpty);
         print('✅ Retrieved ${countries.length} available countries');
         print(
-            '📋 Sample countries: ${countries.take(3).map((c) => c.name).join(", ")}');
+          '📋 Sample countries: ${countries.take(3).map((c) => c.name).join(", ")}',
+        );
       } catch (e) {
         fail('❌ Failed to get available countries: $e');
       }
@@ -194,12 +195,13 @@ void main() {
 
         // Test authenticated endpoint access
         try {
-          var customer =
-              await authenticatedVendure.customer.getActiveCustomer();
+          var customer = await authenticatedVendure.customer
+              .getActiveCustomer();
           if (customer != null) {
             print('✅ Can access authenticated endpoints');
             print(
-                '📋 Customer: ${customer.firstName} ${customer.lastName} (${customer.emailAddress})');
+              '📋 Customer: ${customer.firstName} ${customer.lastName} (${customer.emailAddress})',
+            );
           } else {
             print('⚠️ Active customer is null');
           }
@@ -234,7 +236,8 @@ void main() {
 
         var firstVariant = firstProduct.variants.first;
         print(
-            '📦 Using variant: ${firstVariant.name} (ID: ${firstVariant.id})');
+          '📦 Using variant: ${firstVariant.name} (ID: ${firstVariant.id})',
+        );
 
         // Add item to order
         var result = await vendure.order.addItemToOrder(
@@ -309,7 +312,8 @@ void main() {
           print('✅ Retrieved collection by ID');
           print('📋 Collection: ${collection.name}');
           print(
-              '📋 Product count: ${collection.productVariants?.totalItems ?? 0}');
+            '📋 Product count: ${collection.productVariants?.totalItems ?? 0}',
+          );
         } else {
           print('ℹ️ No collections available to test');
         }
@@ -351,7 +355,8 @@ void main() {
         print('⚠️ Expected error for invalid product variant, but got success');
       } catch (e) {
         print(
-            '✅ Correctly handled invalid product variant: ${e.toString().substring(0, 100)}...');
+          '✅ Correctly handled invalid product variant: ${e.toString().substring(0, 100)}...',
+        );
         expect(e, isNotNull);
       }
     });
@@ -365,7 +370,8 @@ void main() {
         print('⚠️ Expected authentication error, but got success');
       } catch (e) {
         print(
-            '✅ Correctly handled invalid credentials: ${e.toString().substring(0, 100)}...');
+          '✅ Correctly handled invalid credentials: ${e.toString().substring(0, 100)}...',
+        );
         expect(e, isNotNull);
       }
     });
@@ -376,7 +382,8 @@ void main() {
         print('⚠️ Expected error for invalid collection, but got success');
       } catch (e) {
         print(
-            '✅ Correctly handled invalid collection ID: ${e.toString().substring(0, 100)}...');
+          '✅ Correctly handled invalid collection ID: ${e.toString().substring(0, 100)}...',
+        );
         expect(e, isNotNull);
       }
     });

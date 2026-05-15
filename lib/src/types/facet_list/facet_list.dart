@@ -5,7 +5,7 @@ part 'facet_list.freezed.dart';
 part 'facet_list.g.dart';
 
 @freezed
-class FacetList with _$FacetList {
+abstract class FacetList with _$FacetList {
   const FacetList._();
 
   const factory FacetList({

@@ -18,7 +18,7 @@ part 'set_customer_for_order_result.freezed.dart';
 part 'set_customer_for_order_result.g.dart';
 
 @freezed
-class SetCustomerForOrderResult with _$SetCustomerForOrderResult {
+sealed class SetCustomerForOrderResult with _$SetCustomerForOrderResult {
   const SetCustomerForOrderResult._();
 
   const factory SetCustomerForOrderResult.alreadyLoggedInError({

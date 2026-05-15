@@ -4,18 +4,12 @@ import '../country/country.dart';
 part 'country_list.freezed.dart';
 part 'country_list.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CountryList with _$CountryList {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CountryList with _$CountryList {
   const CountryList._();
 
-  const factory CountryList({
-    List<Country?>? items,
-    int? totalItems,
-  }) = _CountryList;
+  const factory CountryList({List<Country?>? items, int? totalItems}) =
+      _CountryList;
 
   factory CountryList.fromJson(Map<String, dynamic> json) =>
       _$CountryListFromJson(json);

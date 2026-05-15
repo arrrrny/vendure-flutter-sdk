@@ -1,6 +1,7 @@
 import 'package:vendure/src/fragments/order_fragment.dart';
 
-const String setOrderShippingAddressMutation = orderFragment +
+const String setOrderShippingAddressMutation =
+    orderFragment +
     r'''
 mutation SetOrderShippingAddress($input: CreateAddressInput!) {
   setOrderShippingAddress(input: $input) {

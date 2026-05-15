@@ -6,7 +6,7 @@ part 'promotion.freezed.dart';
 part 'promotion.g.dart';
 
 @freezed
-class Promotion with _$Promotion {
+abstract class Promotion with _$Promotion {
   const Promotion._();
 
   const factory Promotion({

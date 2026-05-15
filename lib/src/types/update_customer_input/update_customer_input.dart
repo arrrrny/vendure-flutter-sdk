@@ -3,7 +3,7 @@ part 'update_customer_input.freezed.dart';
 part 'update_customer_input.g.dart';
 
 @unfreezed
-class UpdateCustomerInput with _$UpdateCustomerInput {
+abstract class UpdateCustomerInput with _$UpdateCustomerInput {
   const UpdateCustomerInput._();
 
   factory UpdateCustomerInput({

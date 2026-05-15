@@ -6,12 +6,8 @@ import '../region_translation/region_translation.dart';
 part 'country.freezed.dart';
 part 'country.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Country with _$Country {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Country with _$Country {
   const Country._();
 
   const factory Country({

@@ -5,7 +5,7 @@ part 'password_already_set_error.freezed.dart';
 part 'password_already_set_error.g.dart';
 
 @freezed
-class PasswordAlreadySetError with _$PasswordAlreadySetError {
+abstract class PasswordAlreadySetError with _$PasswordAlreadySetError {
   const PasswordAlreadySetError._();
 
   const factory PasswordAlreadySetError({

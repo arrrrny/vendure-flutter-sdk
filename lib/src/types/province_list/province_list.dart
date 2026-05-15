@@ -5,7 +5,7 @@ part 'province_list.freezed.dart';
 part 'province_list.g.dart';
 
 @freezed
-class ProvinceList with _$ProvinceList {
+abstract class ProvinceList with _$ProvinceList {
   const ProvinceList._();
 
   const factory ProvinceList({

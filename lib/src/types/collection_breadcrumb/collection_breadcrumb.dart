@@ -3,7 +3,7 @@ part 'collection_breadcrumb.freezed.dart';
 part 'collection_breadcrumb.g.dart';
 
 @freezed
-class CollectionBreadcrumb with _$CollectionBreadcrumb {
+abstract class CollectionBreadcrumb with _$CollectionBreadcrumb {
   const CollectionBreadcrumb._();
 
   const factory CollectionBreadcrumb({

@@ -16,12 +16,8 @@ import '../surcharge/surcharge.dart';
 part 'order.freezed.dart';
 part 'order.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Order with _$Order {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Order with _$Order {
   const Order._();
 
   const factory Order({

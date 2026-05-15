@@ -6,20 +6,20 @@ part of 'coupon_code_invalid_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CouponCodeInvalidErrorImpl _$$CouponCodeInvalidErrorImplFromJson(Map json) =>
-    _$CouponCodeInvalidErrorImpl(
+_CouponCodeInvalidError _$CouponCodeInvalidErrorFromJson(Map json) =>
+    _CouponCodeInvalidError(
       couponCode: json['couponCode'] as String,
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$CouponCodeInvalidErrorImplToJson(
-        _$CouponCodeInvalidErrorImpl instance) =>
-    <String, dynamic>{
-      'couponCode': instance.couponCode,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$CouponCodeInvalidErrorToJson(
+  _CouponCodeInvalidError instance,
+) => <String, dynamic>{
+  'couponCode': instance.couponCode,
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

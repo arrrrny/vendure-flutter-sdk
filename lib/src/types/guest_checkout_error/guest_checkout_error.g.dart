@@ -6,15 +6,14 @@ part of 'guest_checkout_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GuestCheckoutErrorImpl _$$GuestCheckoutErrorImplFromJson(Map json) =>
-    _$GuestCheckoutErrorImpl(
+_GuestCheckoutError _$GuestCheckoutErrorFromJson(Map json) =>
+    _GuestCheckoutError(
       errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
       errorDetail: json['errorDetail'] as String,
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$GuestCheckoutErrorImplToJson(
-        _$GuestCheckoutErrorImpl instance) =>
+Map<String, dynamic> _$GuestCheckoutErrorToJson(_GuestCheckoutError instance) =>
     <String, dynamic>{
       'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
       'errorDetail': instance.errorDetail,

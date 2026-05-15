@@ -3,12 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'payment_input.freezed.dart';
 part 'payment_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class PaymentInput with _$PaymentInput {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class PaymentInput with _$PaymentInput {
   const PaymentInput._();
 
   const factory PaymentInput({

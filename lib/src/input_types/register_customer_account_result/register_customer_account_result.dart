@@ -4,12 +4,9 @@ import '../error_code/error_code.dart';
 part 'register_customer_account_result.freezed.dart';
 part 'register_customer_account_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class RegisterCustomerAccountResult with _$RegisterCustomerAccountResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class RegisterCustomerAccountResult
+    with _$RegisterCustomerAccountResult {
   const RegisterCustomerAccountResult._();
 
   const factory RegisterCustomerAccountResult.missingPasswordError({
@@ -28,9 +25,8 @@ class RegisterCustomerAccountResult with _$RegisterCustomerAccountResult {
     String? validationErrorMessage,
   }) = PasswordValidationError;
 
-  const factory RegisterCustomerAccountResult.success({
-    bool? success,
-  }) = Success;
+  const factory RegisterCustomerAccountResult.success({bool? success}) =
+      Success;
 
   factory RegisterCustomerAccountResult.fromJson(Map<String, dynamic> json) =>
       _$RegisterCustomerAccountResultFromJson(json);

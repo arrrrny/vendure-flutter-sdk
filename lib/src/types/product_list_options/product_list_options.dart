@@ -7,7 +7,7 @@ part 'product_list_options.freezed.dart';
 part 'product_list_options.g.dart';
 
 @unfreezed
-class ProductListOptions with _$ProductListOptions {
+abstract class ProductListOptions with _$ProductListOptions {
   const ProductListOptions._();
 
   factory ProductListOptions({

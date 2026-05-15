@@ -6,22 +6,21 @@ part of 'ineligible_payment_method_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IneligiblePaymentMethodErrorImpl _$$IneligiblePaymentMethodErrorImplFromJson(
-        Map json) =>
-    _$IneligiblePaymentMethodErrorImpl(
-      eligibilityCheckerMessage: json['eligibilityCheckerMessage'] as String?,
-      errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
-      message: json['message'] as String,
-    );
+_IneligiblePaymentMethodError _$IneligiblePaymentMethodErrorFromJson(
+  Map json,
+) => _IneligiblePaymentMethodError(
+  eligibilityCheckerMessage: json['eligibilityCheckerMessage'] as String?,
+  errorCode: $enumDecode(_$ErrorCodeEnumMap, json['errorCode']),
+  message: json['message'] as String,
+);
 
-Map<String, dynamic> _$$IneligiblePaymentMethodErrorImplToJson(
-        _$IneligiblePaymentMethodErrorImpl instance) =>
-    <String, dynamic>{
-      if (instance.eligibilityCheckerMessage case final value?)
-        'eligibilityCheckerMessage': value,
-      'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
-      'message': instance.message,
-    };
+Map<String, dynamic> _$IneligiblePaymentMethodErrorToJson(
+  _IneligiblePaymentMethodError instance,
+) => <String, dynamic>{
+  'eligibilityCheckerMessage': ?instance.eligibilityCheckerMessage,
+  'errorCode': _$ErrorCodeEnumMap[instance.errorCode]!,
+  'message': instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

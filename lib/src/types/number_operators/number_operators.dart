@@ -5,7 +5,7 @@ part 'number_operators.freezed.dart';
 part 'number_operators.g.dart';
 
 @unfreezed
-class NumberOperators with _$NumberOperators {
+abstract class NumberOperators with _$NumberOperators {
   const NumberOperators._();
 
   factory NumberOperators({

@@ -6,73 +6,69 @@ part of 'channel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ChannelImpl _$$ChannelImplFromJson(Map json) => _$ChannelImpl(
-      availableCurrencyCodes: (json['availableCurrencyCodes'] as List<dynamic>)
-          .map((e) => $enumDecode(_$CurrencyCodeEnumMap, e))
-          .toList(),
-      availableLanguageCodes: (json['availableLanguageCodes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$LanguageCodeEnumMap, e))
-          .toList(),
-      code: json['code'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      defaultCurrencyCode:
-          $enumDecode(_$CurrencyCodeEnumMap, json['defaultCurrencyCode']),
-      defaultLanguageCode:
-          $enumDecode(_$LanguageCodeEnumMap, json['defaultLanguageCode']),
-      defaultShippingZone: json['defaultShippingZone'] == null
-          ? null
-          : Zone.fromJson(
-              Map<String, dynamic>.from(json['defaultShippingZone'] as Map)),
-      defaultTaxZone: json['defaultTaxZone'] == null
-          ? null
-          : Zone.fromJson(
-              Map<String, dynamic>.from(json['defaultTaxZone'] as Map)),
-      id: json['id'] as String,
-      outOfStockThreshold: (json['outOfStockThreshold'] as num?)?.toInt(),
-      pricesIncludeTax: json['pricesIncludeTax'] as bool,
-      seller: json['seller'] == null
-          ? null
-          : Seller.fromJson(Map<String, dynamic>.from(json['seller'] as Map)),
-      token: json['token'] as String,
-      trackInventory: json['trackInventory'] as bool?,
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+_Channel _$ChannelFromJson(Map json) => _Channel(
+  availableCurrencyCodes: (json['availableCurrencyCodes'] as List<dynamic>)
+      .map((e) => $enumDecode(_$CurrencyCodeEnumMap, e))
+      .toList(),
+  availableLanguageCodes: (json['availableLanguageCodes'] as List<dynamic>?)
+      ?.map((e) => $enumDecode(_$LanguageCodeEnumMap, e))
+      .toList(),
+  code: json['code'] as String,
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  currencyCode: $enumDecode(_$CurrencyCodeEnumMap, json['currencyCode']),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  defaultCurrencyCode: $enumDecode(
+    _$CurrencyCodeEnumMap,
+    json['defaultCurrencyCode'],
+  ),
+  defaultLanguageCode: $enumDecode(
+    _$LanguageCodeEnumMap,
+    json['defaultLanguageCode'],
+  ),
+  defaultShippingZone: json['defaultShippingZone'] == null
+      ? null
+      : Zone.fromJson(
+          Map<String, dynamic>.from(json['defaultShippingZone'] as Map),
+        ),
+  defaultTaxZone: json['defaultTaxZone'] == null
+      ? null
+      : Zone.fromJson(Map<String, dynamic>.from(json['defaultTaxZone'] as Map)),
+  id: json['id'] as String,
+  outOfStockThreshold: (json['outOfStockThreshold'] as num?)?.toInt(),
+  pricesIncludeTax: json['pricesIncludeTax'] as bool,
+  seller: json['seller'] == null
+      ? null
+      : Seller.fromJson(Map<String, dynamic>.from(json['seller'] as Map)),
+  token: json['token'] as String,
+  trackInventory: json['trackInventory'] as bool?,
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
-Map<String, dynamic> _$$ChannelImplToJson(_$ChannelImpl instance) =>
-    <String, dynamic>{
-      'availableCurrencyCodes': instance.availableCurrencyCodes
-          .map((e) => _$CurrencyCodeEnumMap[e]!)
-          .toList(),
-      if (instance.availableLanguageCodes
-              ?.map((e) => _$LanguageCodeEnumMap[e]!)
-              .toList()
-          case final value?)
-        'availableLanguageCodes': value,
-      'code': instance.code,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
-      if (instance.customFields case final value?) 'customFields': value,
-      'defaultCurrencyCode':
-          _$CurrencyCodeEnumMap[instance.defaultCurrencyCode]!,
-      'defaultLanguageCode':
-          _$LanguageCodeEnumMap[instance.defaultLanguageCode]!,
-      if (instance.defaultShippingZone?.toJson() case final value?)
-        'defaultShippingZone': value,
-      if (instance.defaultTaxZone?.toJson() case final value?)
-        'defaultTaxZone': value,
-      'id': instance.id,
-      if (instance.outOfStockThreshold case final value?)
-        'outOfStockThreshold': value,
-      'pricesIncludeTax': instance.pricesIncludeTax,
-      if (instance.seller?.toJson() case final value?) 'seller': value,
-      'token': instance.token,
-      if (instance.trackInventory case final value?) 'trackInventory': value,
-      'updatedAt': instance.updatedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$ChannelToJson(_Channel instance) => <String, dynamic>{
+  'availableCurrencyCodes': instance.availableCurrencyCodes
+      .map((e) => _$CurrencyCodeEnumMap[e]!)
+      .toList(),
+  'availableLanguageCodes': ?instance.availableLanguageCodes
+      ?.map((e) => _$LanguageCodeEnumMap[e]!)
+      .toList(),
+  'code': instance.code,
+  'createdAt': instance.createdAt.toIso8601String(),
+  'currencyCode': _$CurrencyCodeEnumMap[instance.currencyCode]!,
+  'customFields': ?instance.customFields,
+  'defaultCurrencyCode': _$CurrencyCodeEnumMap[instance.defaultCurrencyCode]!,
+  'defaultLanguageCode': _$LanguageCodeEnumMap[instance.defaultLanguageCode]!,
+  'defaultShippingZone': ?instance.defaultShippingZone?.toJson(),
+  'defaultTaxZone': ?instance.defaultTaxZone?.toJson(),
+  'id': instance.id,
+  'outOfStockThreshold': ?instance.outOfStockThreshold,
+  'pricesIncludeTax': instance.pricesIncludeTax,
+  'seller': ?instance.seller?.toJson(),
+  'token': instance.token,
+  'trackInventory': ?instance.trackInventory,
+  'updatedAt': instance.updatedAt.toIso8601String(),
+};
 
 const _$CurrencyCodeEnumMap = {
   CurrencyCode.aed: 'aed',

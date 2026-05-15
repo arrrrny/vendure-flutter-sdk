@@ -4,7 +4,7 @@ part 'current_user_channel.freezed.dart';
 part 'current_user_channel.g.dart';
 
 @freezed
-class CurrentUserChannel with _$CurrentUserChannel {
+abstract class CurrentUserChannel with _$CurrentUserChannel {
   const CurrentUserChannel._();
 
   const factory CurrentUserChannel({

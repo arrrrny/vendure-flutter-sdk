@@ -17,12 +17,8 @@ import '../surcharge/surcharge.dart';
 part 'set_order_shipping_method_result.freezed.dart';
 part 'set_order_shipping_method_result.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class SetOrderShippingMethodResult with _$SetOrderShippingMethodResult {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+sealed class SetOrderShippingMethodResult with _$SetOrderShippingMethodResult {
   const SetOrderShippingMethodResult._();
 
   const factory SetOrderShippingMethodResult.ineligibleShippingMethodError({

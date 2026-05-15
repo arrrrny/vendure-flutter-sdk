@@ -5,7 +5,7 @@ part 'string_field_option.freezed.dart';
 part 'string_field_option.g.dart';
 
 @freezed
-class StringFieldOption with _$StringFieldOption {
+abstract class StringFieldOption with _$StringFieldOption {
   const StringFieldOption._();
 
   const factory StringFieldOption({

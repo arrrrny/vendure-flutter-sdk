@@ -4,12 +4,8 @@ import '../country/country.dart';
 part 'address.freezed.dart';
 part 'address.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class Address with _$Address {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class Address with _$Address {
   const Address._();
 
   const factory Address({

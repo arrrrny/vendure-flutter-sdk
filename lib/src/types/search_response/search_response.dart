@@ -7,7 +7,7 @@ part 'search_response.freezed.dart';
 part 'search_response.g.dart';
 
 @freezed
-class SearchResponse with _$SearchResponse {
+abstract class SearchResponse with _$SearchResponse {
   const SearchResponse._();
 
   const factory SearchResponse({

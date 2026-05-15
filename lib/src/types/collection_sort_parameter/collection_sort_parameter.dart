@@ -5,7 +5,7 @@ part 'collection_sort_parameter.freezed.dart';
 part 'collection_sort_parameter.g.dart';
 
 @unfreezed
-class CollectionSortParameter with _$CollectionSortParameter {
+abstract class CollectionSortParameter with _$CollectionSortParameter {
   const CollectionSortParameter._();
 
   factory CollectionSortParameter({

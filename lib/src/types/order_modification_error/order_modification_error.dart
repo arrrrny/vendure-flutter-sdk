@@ -5,7 +5,7 @@ part 'order_modification_error.freezed.dart';
 part 'order_modification_error.g.dart';
 
 @freezed
-class OrderModificationError with _$OrderModificationError {
+abstract class OrderModificationError with _$OrderModificationError {
   const OrderModificationError._();
 
   const factory OrderModificationError({

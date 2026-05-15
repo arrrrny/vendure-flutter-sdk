@@ -2,12 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'create_customer_input.freezed.dart';
 part 'create_customer_input.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CreateCustomerInput with _$CreateCustomerInput {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CreateCustomerInput with _$CreateCustomerInput {
   const CreateCustomerInput._();
 
   const factory CreateCustomerInput({

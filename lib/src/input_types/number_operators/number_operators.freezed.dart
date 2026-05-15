@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,303 +9,311 @@ part of 'number_operators.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-NumberOperators _$NumberOperatorsFromJson(Map<String, dynamic> json) {
-  return _NumberOperators.fromJson(json);
-}
 
 /// @nodoc
 mixin _$NumberOperators {
-  NumberRange? get between => throw _privateConstructorUsedError;
-  double? get eq => throw _privateConstructorUsedError;
-  double? get gt => throw _privateConstructorUsedError;
-  double? get gte => throw _privateConstructorUsedError;
-  bool? get isNull => throw _privateConstructorUsedError;
-  double? get lt => throw _privateConstructorUsedError;
-  double? get lte => throw _privateConstructorUsedError;
+
+ NumberRange? get between; double? get eq; double? get gt; double? get gte; bool? get isNull; double? get lt; double? get lte;
+/// Create a copy of NumberOperators
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NumberOperatorsCopyWith<NumberOperators> get copyWith => _$NumberOperatorsCopyWithImpl<NumberOperators>(this as NumberOperators, _$identity);
 
   /// Serializes this NumberOperators to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of NumberOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $NumberOperatorsCopyWith<NumberOperators> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NumberOperators&&(identical(other.between, between) || other.between == between)&&(identical(other.eq, eq) || other.eq == eq)&&(identical(other.gt, gt) || other.gt == gt)&&(identical(other.gte, gte) || other.gte == gte)&&(identical(other.isNull, isNull) || other.isNull == isNull)&&(identical(other.lt, lt) || other.lt == lt)&&(identical(other.lte, lte) || other.lte == lte));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,between,eq,gt,gte,isNull,lt,lte);
+
+@override
+String toString() {
+  return 'NumberOperators(between: $between, eq: $eq, gt: $gt, gte: $gte, isNull: $isNull, lt: $lt, lte: $lte)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $NumberOperatorsCopyWith<$Res> {
-  factory $NumberOperatorsCopyWith(
-          NumberOperators value, $Res Function(NumberOperators) then) =
-      _$NumberOperatorsCopyWithImpl<$Res, NumberOperators>;
-  @useResult
-  $Res call(
-      {NumberRange? between,
-      double? eq,
-      double? gt,
-      double? gte,
-      bool? isNull,
-      double? lt,
-      double? lte});
+abstract mixin class $NumberOperatorsCopyWith<$Res>  {
+  factory $NumberOperatorsCopyWith(NumberOperators value, $Res Function(NumberOperators) _then) = _$NumberOperatorsCopyWithImpl;
+@useResult
+$Res call({
+ NumberRange? between, double? eq, double? gt, double? gte, bool? isNull, double? lt, double? lte
+});
 
-  $NumberRangeCopyWith<$Res>? get between;
+
+$NumberRangeCopyWith<$Res>? get between;
+
 }
-
 /// @nodoc
-class _$NumberOperatorsCopyWithImpl<$Res, $Val extends NumberOperators>
+class _$NumberOperatorsCopyWithImpl<$Res>
     implements $NumberOperatorsCopyWith<$Res> {
-  _$NumberOperatorsCopyWithImpl(this._value, this._then);
+  _$NumberOperatorsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final NumberOperators _self;
+  final $Res Function(NumberOperators) _then;
 
-  /// Create a copy of NumberOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? between = freezed,
-    Object? eq = freezed,
-    Object? gt = freezed,
-    Object? gte = freezed,
-    Object? isNull = freezed,
-    Object? lt = freezed,
-    Object? lte = freezed,
-  }) {
-    return _then(_value.copyWith(
-      between: freezed == between
-          ? _value.between
-          : between // ignore: cast_nullable_to_non_nullable
-              as NumberRange?,
-      eq: freezed == eq
-          ? _value.eq
-          : eq // ignore: cast_nullable_to_non_nullable
-              as double?,
-      gt: freezed == gt
-          ? _value.gt
-          : gt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      gte: freezed == gte
-          ? _value.gte
-          : gte // ignore: cast_nullable_to_non_nullable
-              as double?,
-      isNull: freezed == isNull
-          ? _value.isNull
-          : isNull // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      lt: freezed == lt
-          ? _value.lt
-          : lt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lte: freezed == lte
-          ? _value.lte
-          : lte // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ) as $Val);
+/// Create a copy of NumberOperators
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? between = freezed,Object? eq = freezed,Object? gt = freezed,Object? gte = freezed,Object? isNull = freezed,Object? lt = freezed,Object? lte = freezed,}) {
+  return _then(_self.copyWith(
+between: freezed == between ? _self.between : between // ignore: cast_nullable_to_non_nullable
+as NumberRange?,eq: freezed == eq ? _self.eq : eq // ignore: cast_nullable_to_non_nullable
+as double?,gt: freezed == gt ? _self.gt : gt // ignore: cast_nullable_to_non_nullable
+as double?,gte: freezed == gte ? _self.gte : gte // ignore: cast_nullable_to_non_nullable
+as double?,isNull: freezed == isNull ? _self.isNull : isNull // ignore: cast_nullable_to_non_nullable
+as bool?,lt: freezed == lt ? _self.lt : lt // ignore: cast_nullable_to_non_nullable
+as double?,lte: freezed == lte ? _self.lte : lte // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+/// Create a copy of NumberOperators
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NumberRangeCopyWith<$Res>? get between {
+    if (_self.between == null) {
+    return null;
   }
 
-  /// Create a copy of NumberOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $NumberRangeCopyWith<$Res>? get between {
-    if (_value.between == null) {
-      return null;
-    }
-
-    return $NumberRangeCopyWith<$Res>(_value.between!, (value) {
-      return _then(_value.copyWith(between: value) as $Val);
-    });
-  }
+  return $NumberRangeCopyWith<$Res>(_self.between!, (value) {
+    return _then(_self.copyWith(between: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$NumberOperatorsImplCopyWith<$Res>
-    implements $NumberOperatorsCopyWith<$Res> {
-  factory _$$NumberOperatorsImplCopyWith(_$NumberOperatorsImpl value,
-          $Res Function(_$NumberOperatorsImpl) then) =
-      __$$NumberOperatorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {NumberRange? between,
-      double? eq,
-      double? gt,
-      double? gte,
-      bool? isNull,
-      double? lt,
-      double? lte});
 
-  @override
-  $NumberRangeCopyWith<$Res>? get between;
+/// Adds pattern-matching-related methods to [NumberOperators].
+extension NumberOperatorsPatterns on NumberOperators {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _NumberOperators value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _NumberOperators() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _NumberOperators value)  $default,){
+final _that = this;
+switch (_that) {
+case _NumberOperators():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _NumberOperators value)?  $default,){
+final _that = this;
+switch (_that) {
+case _NumberOperators() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( NumberRange? between,  double? eq,  double? gt,  double? gte,  bool? isNull,  double? lt,  double? lte)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _NumberOperators() when $default != null:
+return $default(_that.between,_that.eq,_that.gt,_that.gte,_that.isNull,_that.lt,_that.lte);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( NumberRange? between,  double? eq,  double? gt,  double? gte,  bool? isNull,  double? lt,  double? lte)  $default,) {final _that = this;
+switch (_that) {
+case _NumberOperators():
+return $default(_that.between,_that.eq,_that.gt,_that.gte,_that.isNull,_that.lt,_that.lte);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( NumberRange? between,  double? eq,  double? gt,  double? gte,  bool? isNull,  double? lt,  double? lte)?  $default,) {final _that = this;
+switch (_that) {
+case _NumberOperators() when $default != null:
+return $default(_that.between,_that.eq,_that.gt,_that.gte,_that.isNull,_that.lt,_that.lte);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$NumberOperatorsImplCopyWithImpl<$Res>
-    extends _$NumberOperatorsCopyWithImpl<$Res, _$NumberOperatorsImpl>
-    implements _$$NumberOperatorsImplCopyWith<$Res> {
-  __$$NumberOperatorsImplCopyWithImpl(
-      _$NumberOperatorsImpl _value, $Res Function(_$NumberOperatorsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of NumberOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? between = freezed,
-    Object? eq = freezed,
-    Object? gt = freezed,
-    Object? gte = freezed,
-    Object? isNull = freezed,
-    Object? lt = freezed,
-    Object? lte = freezed,
-  }) {
-    return _then(_$NumberOperatorsImpl(
-      between: freezed == between
-          ? _value.between
-          : between // ignore: cast_nullable_to_non_nullable
-              as NumberRange?,
-      eq: freezed == eq
-          ? _value.eq
-          : eq // ignore: cast_nullable_to_non_nullable
-              as double?,
-      gt: freezed == gt
-          ? _value.gt
-          : gt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      gte: freezed == gte
-          ? _value.gte
-          : gte // ignore: cast_nullable_to_non_nullable
-              as double?,
-      isNull: freezed == isNull
-          ? _value.isNull
-          : isNull // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      lt: freezed == lt
-          ? _value.lt
-          : lt // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lte: freezed == lte
-          ? _value.lte
-          : lte // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NumberOperatorsImpl extends _NumberOperators {
-  const _$NumberOperatorsImpl(
-      {this.between,
-      this.eq,
-      this.gt,
-      this.gte,
-      this.isNull,
-      this.lt,
-      this.lte})
-      : super._();
 
-  factory _$NumberOperatorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NumberOperatorsImplFromJson(json);
+class _NumberOperators extends NumberOperators {
+  const _NumberOperators({this.between, this.eq, this.gt, this.gte, this.isNull, this.lt, this.lte}): super._();
+  factory _NumberOperators.fromJson(Map<String, dynamic> json) => _$NumberOperatorsFromJson(json);
 
-  @override
-  final NumberRange? between;
-  @override
-  final double? eq;
-  @override
-  final double? gt;
-  @override
-  final double? gte;
-  @override
-  final bool? isNull;
-  @override
-  final double? lt;
-  @override
-  final double? lte;
+@override final  NumberRange? between;
+@override final  double? eq;
+@override final  double? gt;
+@override final  double? gte;
+@override final  bool? isNull;
+@override final  double? lt;
+@override final  double? lte;
 
-  @override
-  String toString() {
-    return 'NumberOperators(between: $between, eq: $eq, gt: $gt, gte: $gte, isNull: $isNull, lt: $lt, lte: $lte)';
-  }
+/// Create a copy of NumberOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$NumberOperatorsCopyWith<_NumberOperators> get copyWith => __$NumberOperatorsCopyWithImpl<_NumberOperators>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NumberOperatorsImpl &&
-            (identical(other.between, between) || other.between == between) &&
-            (identical(other.eq, eq) || other.eq == eq) &&
-            (identical(other.gt, gt) || other.gt == gt) &&
-            (identical(other.gte, gte) || other.gte == gte) &&
-            (identical(other.isNull, isNull) || other.isNull == isNull) &&
-            (identical(other.lt, lt) || other.lt == lt) &&
-            (identical(other.lte, lte) || other.lte == lte));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, between, eq, gt, gte, isNull, lt, lte);
-
-  /// Create a copy of NumberOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NumberOperatorsImplCopyWith<_$NumberOperatorsImpl> get copyWith =>
-      __$$NumberOperatorsImplCopyWithImpl<_$NumberOperatorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NumberOperatorsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$NumberOperatorsToJson(this, );
 }
 
-abstract class _NumberOperators extends NumberOperators {
-  const factory _NumberOperators(
-      {final NumberRange? between,
-      final double? eq,
-      final double? gt,
-      final double? gte,
-      final bool? isNull,
-      final double? lt,
-      final double? lte}) = _$NumberOperatorsImpl;
-  const _NumberOperators._() : super._();
-
-  factory _NumberOperators.fromJson(Map<String, dynamic> json) =
-      _$NumberOperatorsImpl.fromJson;
-
-  @override
-  NumberRange? get between;
-  @override
-  double? get eq;
-  @override
-  double? get gt;
-  @override
-  double? get gte;
-  @override
-  bool? get isNull;
-  @override
-  double? get lt;
-  @override
-  double? get lte;
-
-  /// Create a copy of NumberOperators
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NumberOperatorsImplCopyWith<_$NumberOperatorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _NumberOperators&&(identical(other.between, between) || other.between == between)&&(identical(other.eq, eq) || other.eq == eq)&&(identical(other.gt, gt) || other.gt == gt)&&(identical(other.gte, gte) || other.gte == gte)&&(identical(other.isNull, isNull) || other.isNull == isNull)&&(identical(other.lt, lt) || other.lt == lt)&&(identical(other.lte, lte) || other.lte == lte));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,between,eq,gt,gte,isNull,lt,lte);
+
+@override
+String toString() {
+  return 'NumberOperators(between: $between, eq: $eq, gt: $gt, gte: $gte, isNull: $isNull, lt: $lt, lte: $lte)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$NumberOperatorsCopyWith<$Res> implements $NumberOperatorsCopyWith<$Res> {
+  factory _$NumberOperatorsCopyWith(_NumberOperators value, $Res Function(_NumberOperators) _then) = __$NumberOperatorsCopyWithImpl;
+@override @useResult
+$Res call({
+ NumberRange? between, double? eq, double? gt, double? gte, bool? isNull, double? lt, double? lte
+});
+
+
+@override $NumberRangeCopyWith<$Res>? get between;
+
+}
+/// @nodoc
+class __$NumberOperatorsCopyWithImpl<$Res>
+    implements _$NumberOperatorsCopyWith<$Res> {
+  __$NumberOperatorsCopyWithImpl(this._self, this._then);
+
+  final _NumberOperators _self;
+  final $Res Function(_NumberOperators) _then;
+
+/// Create a copy of NumberOperators
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? between = freezed,Object? eq = freezed,Object? gt = freezed,Object? gte = freezed,Object? isNull = freezed,Object? lt = freezed,Object? lte = freezed,}) {
+  return _then(_NumberOperators(
+between: freezed == between ? _self.between : between // ignore: cast_nullable_to_non_nullable
+as NumberRange?,eq: freezed == eq ? _self.eq : eq // ignore: cast_nullable_to_non_nullable
+as double?,gt: freezed == gt ? _self.gt : gt // ignore: cast_nullable_to_non_nullable
+as double?,gte: freezed == gte ? _self.gte : gte // ignore: cast_nullable_to_non_nullable
+as double?,isNull: freezed == isNull ? _self.isNull : isNull // ignore: cast_nullable_to_non_nullable
+as bool?,lt: freezed == lt ? _self.lt : lt // ignore: cast_nullable_to_non_nullable
+as double?,lte: freezed == lte ? _self.lte : lte // ignore: cast_nullable_to_non_nullable
+as double?,
+  ));
+}
+
+/// Create a copy of NumberOperators
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NumberRangeCopyWith<$Res>? get between {
+    if (_self.between == null) {
+    return null;
+  }
+
+  return $NumberRangeCopyWith<$Res>(_self.between!, (value) {
+    return _then(_self.copyWith(between: value));
+  });
+}
+}
+
+// dart format on

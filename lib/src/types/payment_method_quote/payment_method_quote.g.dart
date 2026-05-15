@@ -6,8 +6,8 @@ part of 'payment_method_quote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(Map json) =>
-    _$PaymentMethodQuoteImpl(
+_PaymentMethodQuote _$PaymentMethodQuoteFromJson(Map json) =>
+    _PaymentMethodQuote(
       code: json['code'] as String,
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
@@ -19,14 +19,12 @@ _$PaymentMethodQuoteImpl _$$PaymentMethodQuoteImplFromJson(Map json) =>
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$PaymentMethodQuoteImplToJson(
-        _$PaymentMethodQuoteImpl instance) =>
+Map<String, dynamic> _$PaymentMethodQuoteToJson(_PaymentMethodQuote instance) =>
     <String, dynamic>{
       'code': instance.code,
-      if (instance.customFields case final value?) 'customFields': value,
+      'customFields': ?instance.customFields,
       'description': instance.description,
-      if (instance.eligibilityMessage case final value?)
-        'eligibilityMessage': value,
+      'eligibilityMessage': ?instance.eligibilityMessage,
       'id': instance.id,
       'isEligible': instance.isEligible,
       'name': instance.name,

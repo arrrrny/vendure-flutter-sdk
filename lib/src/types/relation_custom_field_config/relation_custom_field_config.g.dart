@@ -6,18 +6,21 @@ part of 'relation_custom_field_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
-        Map json) =>
-    _$RelationCustomFieldConfigImpl(
+_RelationCustomFieldConfig _$RelationCustomFieldConfigFromJson(Map json) =>
+    _RelationCustomFieldConfig(
       description: (json['description'] as List<dynamic>?)
-          ?.map((e) =>
-              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) =>
+                LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       entity: json['entity'] as String,
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
-          ?.map((e) =>
-              LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)))
+          ?.map(
+            (e) =>
+                LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
           .toList(),
       list: json['list'] as bool,
       name: json['name'] as String,
@@ -30,34 +33,27 @@ _$RelationCustomFieldConfigImpl _$$RelationCustomFieldConfigImplFromJson(
           .map((e) => e as String)
           .toList(),
       type: json['type'] as String,
-      ui: (json['ui'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
+      ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
-Map<String, dynamic> _$$RelationCustomFieldConfigImplToJson(
-        _$RelationCustomFieldConfigImpl instance) =>
-    <String, dynamic>{
-      if (instance.description?.map((e) => e.toJson()).toList()
-          case final value?)
-        'description': value,
-      'entity': instance.entity,
-      if (instance.internal case final value?) 'internal': value,
-      if (instance.label?.map((e) => e.toJson()).toList() case final value?)
-        'label': value,
-      'list': instance.list,
-      'name': instance.name,
-      if (instance.nullable case final value?) 'nullable': value,
-      if (instance.readonly case final value?) 'readonly': value,
-      if (instance.requiresPermission
-              ?.map((e) => _$PermissionEnumMap[e]!)
-              .toList()
-          case final value?)
-        'requiresPermission': value,
-      'scalarFields': instance.scalarFields,
-      'type': instance.type,
-      if (instance.ui case final value?) 'ui': value,
-    };
+Map<String, dynamic> _$RelationCustomFieldConfigToJson(
+  _RelationCustomFieldConfig instance,
+) => <String, dynamic>{
+  'description': ?instance.description?.map((e) => e.toJson()).toList(),
+  'entity': instance.entity,
+  'internal': ?instance.internal,
+  'label': ?instance.label?.map((e) => e.toJson()).toList(),
+  'list': instance.list,
+  'name': instance.name,
+  'nullable': ?instance.nullable,
+  'readonly': ?instance.readonly,
+  'requiresPermission': ?instance.requiresPermission
+      ?.map((e) => _$PermissionEnumMap[e]!)
+      .toList(),
+  'scalarFields': instance.scalarFields,
+  'type': instance.type,
+  'ui': ?instance.ui,
+};
 
 const _$PermissionEnumMap = {
   Permission.authenticated: 'authenticated',

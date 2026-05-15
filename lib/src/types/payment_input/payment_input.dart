@@ -4,7 +4,7 @@ part 'payment_input.freezed.dart';
 part 'payment_input.g.dart';
 
 @unfreezed
-class PaymentInput with _$PaymentInput {
+abstract class PaymentInput with _$PaymentInput {
   const PaymentInput._();
 
   factory PaymentInput({

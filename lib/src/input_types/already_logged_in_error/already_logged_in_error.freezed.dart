@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,179 +9,272 @@ part of 'already_logged_in_error.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AlreadyLoggedInError _$AlreadyLoggedInErrorFromJson(Map<String, dynamic> json) {
-  return _AlreadyLoggedInError.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AlreadyLoggedInError {
-  ErrorCode? get errorCode => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
+
+ ErrorCode? get errorCode; String? get message;
+/// Create a copy of AlreadyLoggedInError
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AlreadyLoggedInErrorCopyWith<AlreadyLoggedInError> get copyWith => _$AlreadyLoggedInErrorCopyWithImpl<AlreadyLoggedInError>(this as AlreadyLoggedInError, _$identity);
 
   /// Serializes this AlreadyLoggedInError to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AlreadyLoggedInError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AlreadyLoggedInErrorCopyWith<AlreadyLoggedInError> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AlreadyLoggedInError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message);
+
+@override
+String toString() {
+  return 'AlreadyLoggedInError(errorCode: $errorCode, message: $message)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AlreadyLoggedInErrorCopyWith<$Res> {
-  factory $AlreadyLoggedInErrorCopyWith(AlreadyLoggedInError value,
-          $Res Function(AlreadyLoggedInError) then) =
-      _$AlreadyLoggedInErrorCopyWithImpl<$Res, AlreadyLoggedInError>;
-  @useResult
-  $Res call({ErrorCode? errorCode, String? message});
-}
+abstract mixin class $AlreadyLoggedInErrorCopyWith<$Res>  {
+  factory $AlreadyLoggedInErrorCopyWith(AlreadyLoggedInError value, $Res Function(AlreadyLoggedInError) _then) = _$AlreadyLoggedInErrorCopyWithImpl;
+@useResult
+$Res call({
+ ErrorCode? errorCode, String? message
+});
 
+
+
+
+}
 /// @nodoc
-class _$AlreadyLoggedInErrorCopyWithImpl<$Res,
-        $Val extends AlreadyLoggedInError>
+class _$AlreadyLoggedInErrorCopyWithImpl<$Res>
     implements $AlreadyLoggedInErrorCopyWith<$Res> {
-  _$AlreadyLoggedInErrorCopyWithImpl(this._value, this._then);
+  _$AlreadyLoggedInErrorCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AlreadyLoggedInError _self;
+  final $Res Function(AlreadyLoggedInError) _then;
 
-  /// Create a copy of AlreadyLoggedInError
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_value.copyWith(
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of AlreadyLoggedInError
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? errorCode = freezed,Object? message = freezed,}) {
+  return _then(_self.copyWith(
+errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode?,message: freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AlreadyLoggedInErrorImplCopyWith<$Res>
-    implements $AlreadyLoggedInErrorCopyWith<$Res> {
-  factory _$$AlreadyLoggedInErrorImplCopyWith(_$AlreadyLoggedInErrorImpl value,
-          $Res Function(_$AlreadyLoggedInErrorImpl) then) =
-      __$$AlreadyLoggedInErrorImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ErrorCode? errorCode, String? message});
 }
 
-/// @nodoc
-class __$$AlreadyLoggedInErrorImplCopyWithImpl<$Res>
-    extends _$AlreadyLoggedInErrorCopyWithImpl<$Res, _$AlreadyLoggedInErrorImpl>
-    implements _$$AlreadyLoggedInErrorImplCopyWith<$Res> {
-  __$$AlreadyLoggedInErrorImplCopyWithImpl(_$AlreadyLoggedInErrorImpl _value,
-      $Res Function(_$AlreadyLoggedInErrorImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of AlreadyLoggedInError
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_$AlreadyLoggedInErrorImpl(
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [AlreadyLoggedInError].
+extension AlreadyLoggedInErrorPatterns on AlreadyLoggedInError {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AlreadyLoggedInError value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AlreadyLoggedInError() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AlreadyLoggedInError value)  $default,){
+final _that = this;
+switch (_that) {
+case _AlreadyLoggedInError():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AlreadyLoggedInError value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AlreadyLoggedInError() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ErrorCode? errorCode,  String? message)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AlreadyLoggedInError() when $default != null:
+return $default(_that.errorCode,_that.message);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ErrorCode? errorCode,  String? message)  $default,) {final _that = this;
+switch (_that) {
+case _AlreadyLoggedInError():
+return $default(_that.errorCode,_that.message);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ErrorCode? errorCode,  String? message)?  $default,) {final _that = this;
+switch (_that) {
+case _AlreadyLoggedInError() when $default != null:
+return $default(_that.errorCode,_that.message);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$AlreadyLoggedInErrorImpl extends _AlreadyLoggedInError {
-  const _$AlreadyLoggedInErrorImpl({this.errorCode, this.message}) : super._();
 
-  factory _$AlreadyLoggedInErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AlreadyLoggedInErrorImplFromJson(json);
+class _AlreadyLoggedInError extends AlreadyLoggedInError {
+  const _AlreadyLoggedInError({this.errorCode, this.message}): super._();
+  factory _AlreadyLoggedInError.fromJson(Map<String, dynamic> json) => _$AlreadyLoggedInErrorFromJson(json);
 
-  @override
-  final ErrorCode? errorCode;
-  @override
-  final String? message;
+@override final  ErrorCode? errorCode;
+@override final  String? message;
 
-  @override
-  String toString() {
-    return 'AlreadyLoggedInError(errorCode: $errorCode, message: $message)';
-  }
+/// Create a copy of AlreadyLoggedInError
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AlreadyLoggedInErrorCopyWith<_AlreadyLoggedInError> get copyWith => __$AlreadyLoggedInErrorCopyWithImpl<_AlreadyLoggedInError>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AlreadyLoggedInErrorImpl &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, errorCode, message);
-
-  /// Create a copy of AlreadyLoggedInError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AlreadyLoggedInErrorImplCopyWith<_$AlreadyLoggedInErrorImpl>
-      get copyWith =>
-          __$$AlreadyLoggedInErrorImplCopyWithImpl<_$AlreadyLoggedInErrorImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AlreadyLoggedInErrorImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AlreadyLoggedInErrorToJson(this, );
 }
 
-abstract class _AlreadyLoggedInError extends AlreadyLoggedInError {
-  const factory _AlreadyLoggedInError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$AlreadyLoggedInErrorImpl;
-  const _AlreadyLoggedInError._() : super._();
-
-  factory _AlreadyLoggedInError.fromJson(Map<String, dynamic> json) =
-      _$AlreadyLoggedInErrorImpl.fromJson;
-
-  @override
-  ErrorCode? get errorCode;
-  @override
-  String? get message;
-
-  /// Create a copy of AlreadyLoggedInError
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AlreadyLoggedInErrorImplCopyWith<_$AlreadyLoggedInErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AlreadyLoggedInError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message);
+
+@override
+String toString() {
+  return 'AlreadyLoggedInError(errorCode: $errorCode, message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AlreadyLoggedInErrorCopyWith<$Res> implements $AlreadyLoggedInErrorCopyWith<$Res> {
+  factory _$AlreadyLoggedInErrorCopyWith(_AlreadyLoggedInError value, $Res Function(_AlreadyLoggedInError) _then) = __$AlreadyLoggedInErrorCopyWithImpl;
+@override @useResult
+$Res call({
+ ErrorCode? errorCode, String? message
+});
+
+
+
+
+}
+/// @nodoc
+class __$AlreadyLoggedInErrorCopyWithImpl<$Res>
+    implements _$AlreadyLoggedInErrorCopyWith<$Res> {
+  __$AlreadyLoggedInErrorCopyWithImpl(this._self, this._then);
+
+  final _AlreadyLoggedInError _self;
+  final $Res Function(_AlreadyLoggedInError) _then;
+
+/// Create a copy of AlreadyLoggedInError
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? errorCode = freezed,Object? message = freezed,}) {
+  return _then(_AlreadyLoggedInError(
+errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode?,message: freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

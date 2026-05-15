@@ -6,19 +6,18 @@ part of 'already_logged_in_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AlreadyLoggedInErrorImpl _$$AlreadyLoggedInErrorImplFromJson(Map json) =>
-    _$AlreadyLoggedInErrorImpl(
+_AlreadyLoggedInError _$AlreadyLoggedInErrorFromJson(Map json) =>
+    _AlreadyLoggedInError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$AlreadyLoggedInErrorImplToJson(
-        _$AlreadyLoggedInErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-    };
+Map<String, dynamic> _$AlreadyLoggedInErrorToJson(
+  _AlreadyLoggedInError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

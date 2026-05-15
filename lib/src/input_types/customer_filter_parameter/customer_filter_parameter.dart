@@ -6,12 +6,8 @@ import '../string_operators/string_operators.dart';
 part 'customer_filter_parameter.freezed.dart';
 part 'customer_filter_parameter.g.dart';
 
-@Freezed(
-  copyWith: true,
-  equal: true,
-  makeCollectionsUnmodifiable: true,
-)
-class CustomerFilterParameter with _$CustomerFilterParameter {
+@Freezed(copyWith: true, equal: true, makeCollectionsUnmodifiable: true)
+abstract class CustomerFilterParameter with _$CustomerFilterParameter {
   const CustomerFilterParameter._();
 
   const factory CustomerFilterParameter({

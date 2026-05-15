@@ -6,19 +6,18 @@ part of 'order_modification_error.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OrderModificationErrorImpl _$$OrderModificationErrorImplFromJson(Map json) =>
-    _$OrderModificationErrorImpl(
+_OrderModificationError _$OrderModificationErrorFromJson(Map json) =>
+    _OrderModificationError(
       errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
       message: json['message'] as String?,
     );
 
-Map<String, dynamic> _$$OrderModificationErrorImplToJson(
-        _$OrderModificationErrorImpl instance) =>
-    <String, dynamic>{
-      if (_$ErrorCodeEnumMap[instance.errorCode] case final value?)
-        'errorCode': value,
-      if (instance.message case final value?) 'message': value,
-    };
+Map<String, dynamic> _$OrderModificationErrorToJson(
+  _OrderModificationError instance,
+) => <String, dynamic>{
+  'errorCode': ?_$ErrorCodeEnumMap[instance.errorCode],
+  'message': ?instance.message,
+};
 
 const _$ErrorCodeEnumMap = {
   ErrorCode.alreadyLoggedInError: 'alreadyLoggedInError',

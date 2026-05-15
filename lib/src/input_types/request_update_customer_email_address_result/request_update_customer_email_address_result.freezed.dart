@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,954 +9,512 @@ part of 'request_update_customer_email_address_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RequestUpdateCustomerEmailAddressResult
-    _$RequestUpdateCustomerEmailAddressResultFromJson(
-        Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'emailAddressConflictError':
-      return EmailAddressConflictError.fromJson(json);
-    case 'invalidCredentialsError':
-      return InvalidCredentialsError.fromJson(json);
-    case 'nativeAuthStrategyError':
-      return NativeAuthStrategyError.fromJson(json);
-    case 'success':
-      return Success.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(
-          json,
-          'runtimeType',
-          'RequestUpdateCustomerEmailAddressResult',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+RequestUpdateCustomerEmailAddressResult _$RequestUpdateCustomerEmailAddressResultFromJson(
+  Map<String, dynamic> json
+) {
+        switch (json['runtimeType']) {
+                  case 'emailAddressConflictError':
+          return EmailAddressConflictError.fromJson(
+            json
+          );
+                case 'invalidCredentialsError':
+          return InvalidCredentialsError.fromJson(
+            json
+          );
+                case 'nativeAuthStrategyError':
+          return NativeAuthStrategyError.fromJson(
+            json
+          );
+                case 'success':
+          return Success.fromJson(
+            json
+          );
+        
+          default:
+            throw CheckedFromJsonException(
+  json,
+  'runtimeType',
+  'RequestUpdateCustomerEmailAddressResult',
+  'Invalid union type "${json['runtimeType']}"!'
+);
+        }
+      
 }
 
 /// @nodoc
 mixin _$RequestUpdateCustomerEmailAddressResult {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
-        emailAddressConflictError,
-    required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
-        invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
-        nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EmailAddressConflictError value)
-        emailAddressConflictError,
-    required TResult Function(InvalidCredentialsError value)
-        invalidCredentialsError,
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult? Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
 
   /// Serializes this RequestUpdateCustomerEmailAddressResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RequestUpdateCustomerEmailAddressResult);
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'RequestUpdateCustomerEmailAddressResult()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RequestUpdateCustomerEmailAddressResultCopyWith<$Res> {
-  factory $RequestUpdateCustomerEmailAddressResultCopyWith(
-          RequestUpdateCustomerEmailAddressResult value,
-          $Res Function(RequestUpdateCustomerEmailAddressResult) then) =
-      _$RequestUpdateCustomerEmailAddressResultCopyWithImpl<$Res,
-          RequestUpdateCustomerEmailAddressResult>;
+class $RequestUpdateCustomerEmailAddressResultCopyWith<$Res>  {
+$RequestUpdateCustomerEmailAddressResultCopyWith(RequestUpdateCustomerEmailAddressResult _, $Res Function(RequestUpdateCustomerEmailAddressResult) __);
 }
 
-/// @nodoc
-class _$RequestUpdateCustomerEmailAddressResultCopyWithImpl<$Res,
-        $Val extends RequestUpdateCustomerEmailAddressResult>
-    implements $RequestUpdateCustomerEmailAddressResultCopyWith<$Res> {
-  _$RequestUpdateCustomerEmailAddressResultCopyWithImpl(
-      this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+/// Adds pattern-matching-related methods to [RequestUpdateCustomerEmailAddressResult].
+extension RequestUpdateCustomerEmailAddressResultPatterns on RequestUpdateCustomerEmailAddressResult {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( EmailAddressConflictError value)?  emailAddressConflictError,TResult Function( InvalidCredentialsError value)?  invalidCredentialsError,TResult Function( NativeAuthStrategyError value)?  nativeAuthStrategyError,TResult Function( Success value)?  success,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case EmailAddressConflictError() when emailAddressConflictError != null:
+return emailAddressConflictError(_that);case InvalidCredentialsError() when invalidCredentialsError != null:
+return invalidCredentialsError(_that);case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that);case Success() when success != null:
+return success(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( EmailAddressConflictError value)  emailAddressConflictError,required TResult Function( InvalidCredentialsError value)  invalidCredentialsError,required TResult Function( NativeAuthStrategyError value)  nativeAuthStrategyError,required TResult Function( Success value)  success,}){
+final _that = this;
+switch (_that) {
+case EmailAddressConflictError():
+return emailAddressConflictError(_that);case InvalidCredentialsError():
+return invalidCredentialsError(_that);case NativeAuthStrategyError():
+return nativeAuthStrategyError(_that);case Success():
+return success(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( EmailAddressConflictError value)?  emailAddressConflictError,TResult? Function( InvalidCredentialsError value)?  invalidCredentialsError,TResult? Function( NativeAuthStrategyError value)?  nativeAuthStrategyError,TResult? Function( Success value)?  success,}){
+final _that = this;
+switch (_that) {
+case EmailAddressConflictError() when emailAddressConflictError != null:
+return emailAddressConflictError(_that);case InvalidCredentialsError() when invalidCredentialsError != null:
+return invalidCredentialsError(_that);case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that);case Success() when success != null:
+return success(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( ErrorCode? errorCode,  String? message)?  emailAddressConflictError,TResult Function( String? authenticationError,  ErrorCode? errorCode,  String? message)?  invalidCredentialsError,TResult Function( ErrorCode? errorCode,  String? message)?  nativeAuthStrategyError,TResult Function( bool? success)?  success,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case EmailAddressConflictError() when emailAddressConflictError != null:
+return emailAddressConflictError(_that.errorCode,_that.message);case InvalidCredentialsError() when invalidCredentialsError != null:
+return invalidCredentialsError(_that.authenticationError,_that.errorCode,_that.message);case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that.errorCode,_that.message);case Success() when success != null:
+return success(_that.success);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( ErrorCode? errorCode,  String? message)  emailAddressConflictError,required TResult Function( String? authenticationError,  ErrorCode? errorCode,  String? message)  invalidCredentialsError,required TResult Function( ErrorCode? errorCode,  String? message)  nativeAuthStrategyError,required TResult Function( bool? success)  success,}) {final _that = this;
+switch (_that) {
+case EmailAddressConflictError():
+return emailAddressConflictError(_that.errorCode,_that.message);case InvalidCredentialsError():
+return invalidCredentialsError(_that.authenticationError,_that.errorCode,_that.message);case NativeAuthStrategyError():
+return nativeAuthStrategyError(_that.errorCode,_that.message);case Success():
+return success(_that.success);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( ErrorCode? errorCode,  String? message)?  emailAddressConflictError,TResult? Function( String? authenticationError,  ErrorCode? errorCode,  String? message)?  invalidCredentialsError,TResult? Function( ErrorCode? errorCode,  String? message)?  nativeAuthStrategyError,TResult? Function( bool? success)?  success,}) {final _that = this;
+switch (_that) {
+case EmailAddressConflictError() when emailAddressConflictError != null:
+return emailAddressConflictError(_that.errorCode,_that.message);case InvalidCredentialsError() when invalidCredentialsError != null:
+return invalidCredentialsError(_that.authenticationError,_that.errorCode,_that.message);case NativeAuthStrategyError() when nativeAuthStrategyError != null:
+return nativeAuthStrategyError(_that.errorCode,_that.message);case Success() when success != null:
+return success(_that.success);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-abstract class _$$EmailAddressConflictErrorImplCopyWith<$Res> {
-  factory _$$EmailAddressConflictErrorImplCopyWith(
-          _$EmailAddressConflictErrorImpl value,
-          $Res Function(_$EmailAddressConflictErrorImpl) then) =
-      __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ErrorCode? errorCode, String? message});
-}
-
-/// @nodoc
-class __$$EmailAddressConflictErrorImplCopyWithImpl<$Res>
-    extends _$RequestUpdateCustomerEmailAddressResultCopyWithImpl<$Res,
-        _$EmailAddressConflictErrorImpl>
-    implements _$$EmailAddressConflictErrorImplCopyWith<$Res> {
-  __$$EmailAddressConflictErrorImplCopyWithImpl(
-      _$EmailAddressConflictErrorImpl _value,
-      $Res Function(_$EmailAddressConflictErrorImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_$EmailAddressConflictErrorImpl(
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$EmailAddressConflictErrorImpl extends EmailAddressConflictError {
-  const _$EmailAddressConflictErrorImpl(
-      {this.errorCode, this.message, final String? $type})
-      : $type = $type ?? 'emailAddressConflictError',
-        super._();
-
-  factory _$EmailAddressConflictErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EmailAddressConflictErrorImplFromJson(json);
-
-  @override
-  final ErrorCode? errorCode;
-  @override
-  final String? message;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'RequestUpdateCustomerEmailAddressResult.emailAddressConflictError(errorCode: $errorCode, message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EmailAddressConflictErrorImpl &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, errorCode, message);
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>
-      get copyWith => __$$EmailAddressConflictErrorImplCopyWithImpl<
-          _$EmailAddressConflictErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
-        emailAddressConflictError,
-    required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
-        invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
-        nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
-  }) {
-    return emailAddressConflictError(errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
-  }) {
-    return emailAddressConflictError?.call(errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
-    required TResult orElse(),
-  }) {
-    if (emailAddressConflictError != null) {
-      return emailAddressConflictError(errorCode, message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EmailAddressConflictError value)
-        emailAddressConflictError,
-    required TResult Function(InvalidCredentialsError value)
-        invalidCredentialsError,
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) {
-    return emailAddressConflictError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult? Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) {
-    return emailAddressConflictError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (emailAddressConflictError != null) {
-      return emailAddressConflictError(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EmailAddressConflictErrorImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class EmailAddressConflictError
-    extends RequestUpdateCustomerEmailAddressResult {
-  const factory EmailAddressConflictError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$EmailAddressConflictErrorImpl;
-  const EmailAddressConflictError._() : super._();
-
-  factory EmailAddressConflictError.fromJson(Map<String, dynamic> json) =
-      _$EmailAddressConflictErrorImpl.fromJson;
-
-  ErrorCode? get errorCode;
-  String? get message;
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EmailAddressConflictErrorImplCopyWith<_$EmailAddressConflictErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InvalidCredentialsErrorImplCopyWith<$Res> {
-  factory _$$InvalidCredentialsErrorImplCopyWith(
-          _$InvalidCredentialsErrorImpl value,
-          $Res Function(_$InvalidCredentialsErrorImpl) then) =
-      __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call(
-      {String? authenticationError, ErrorCode? errorCode, String? message});
-}
-
-/// @nodoc
-class __$$InvalidCredentialsErrorImplCopyWithImpl<$Res>
-    extends _$RequestUpdateCustomerEmailAddressResultCopyWithImpl<$Res,
-        _$InvalidCredentialsErrorImpl>
-    implements _$$InvalidCredentialsErrorImplCopyWith<$Res> {
-  __$$InvalidCredentialsErrorImplCopyWithImpl(
-      _$InvalidCredentialsErrorImpl _value,
-      $Res Function(_$InvalidCredentialsErrorImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? authenticationError = freezed,
-    Object? errorCode = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_$InvalidCredentialsErrorImpl(
-      authenticationError: freezed == authenticationError
-          ? _value.authenticationError
-          : authenticationError // ignore: cast_nullable_to_non_nullable
-              as String?,
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$InvalidCredentialsErrorImpl extends InvalidCredentialsError {
-  const _$InvalidCredentialsErrorImpl(
-      {this.authenticationError,
-      this.errorCode,
-      this.message,
-      final String? $type})
-      : $type = $type ?? 'invalidCredentialsError',
-        super._();
 
-  factory _$InvalidCredentialsErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InvalidCredentialsErrorImplFromJson(json);
+class EmailAddressConflictError extends RequestUpdateCustomerEmailAddressResult {
+  const EmailAddressConflictError({this.errorCode, this.message, final  String? $type}): $type = $type ?? 'emailAddressConflictError',super._();
+  factory EmailAddressConflictError.fromJson(Map<String, dynamic> json) => _$EmailAddressConflictErrorFromJson(json);
 
-  @override
-  final String? authenticationError;
-  @override
-  final ErrorCode? errorCode;
-  @override
-  final String? message;
+ final  ErrorCode? errorCode;
+ final  String? message;
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
+@JsonKey(name: 'runtimeType')
+final String $type;
 
-  @override
-  String toString() {
-    return 'RequestUpdateCustomerEmailAddressResult.invalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InvalidCredentialsErrorImpl &&
-            (identical(other.authenticationError, authenticationError) ||
-                other.authenticationError == authenticationError) &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.message, message) || other.message == message));
-  }
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EmailAddressConflictErrorCopyWith<EmailAddressConflictError> get copyWith => _$EmailAddressConflictErrorCopyWithImpl<EmailAddressConflictError>(this, _$identity);
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, authenticationError, errorCode, message);
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
-      get copyWith => __$$InvalidCredentialsErrorImplCopyWithImpl<
-          _$InvalidCredentialsErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
-        emailAddressConflictError,
-    required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
-        invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
-        nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
-  }) {
-    return invalidCredentialsError(authenticationError, errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
-  }) {
-    return invalidCredentialsError?.call(
-        authenticationError, errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
-    required TResult orElse(),
-  }) {
-    if (invalidCredentialsError != null) {
-      return invalidCredentialsError(authenticationError, errorCode, message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EmailAddressConflictError value)
-        emailAddressConflictError,
-    required TResult Function(InvalidCredentialsError value)
-        invalidCredentialsError,
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) {
-    return invalidCredentialsError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult? Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) {
-    return invalidCredentialsError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (invalidCredentialsError != null) {
-      return invalidCredentialsError(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InvalidCredentialsErrorImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$EmailAddressConflictErrorToJson(this, );
 }
 
-abstract class InvalidCredentialsError
-    extends RequestUpdateCustomerEmailAddressResult {
-  const factory InvalidCredentialsError(
-      {final String? authenticationError,
-      final ErrorCode? errorCode,
-      final String? message}) = _$InvalidCredentialsErrorImpl;
-  const InvalidCredentialsError._() : super._();
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EmailAddressConflictError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message));
+}
 
-  factory InvalidCredentialsError.fromJson(Map<String, dynamic> json) =
-      _$InvalidCredentialsErrorImpl.fromJson;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message);
 
-  String? get authenticationError;
-  ErrorCode? get errorCode;
-  String? get message;
+@override
+String toString() {
+  return 'RequestUpdateCustomerEmailAddressResult.emailAddressConflictError(errorCode: $errorCode, message: $message)';
+}
 
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InvalidCredentialsErrorImplCopyWith<_$InvalidCredentialsErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+
 }
 
 /// @nodoc
-abstract class _$$NativeAuthStrategyErrorImplCopyWith<$Res> {
-  factory _$$NativeAuthStrategyErrorImplCopyWith(
-          _$NativeAuthStrategyErrorImpl value,
-          $Res Function(_$NativeAuthStrategyErrorImpl) then) =
-      __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ErrorCode? errorCode, String? message});
+abstract mixin class $EmailAddressConflictErrorCopyWith<$Res> implements $RequestUpdateCustomerEmailAddressResultCopyWith<$Res> {
+  factory $EmailAddressConflictErrorCopyWith(EmailAddressConflictError value, $Res Function(EmailAddressConflictError) _then) = _$EmailAddressConflictErrorCopyWithImpl;
+@useResult
+$Res call({
+ ErrorCode? errorCode, String? message
+});
+
+
+
+
+}
+/// @nodoc
+class _$EmailAddressConflictErrorCopyWithImpl<$Res>
+    implements $EmailAddressConflictErrorCopyWith<$Res> {
+  _$EmailAddressConflictErrorCopyWithImpl(this._self, this._then);
+
+  final EmailAddressConflictError _self;
+  final $Res Function(EmailAddressConflictError) _then;
+
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? errorCode = freezed,Object? message = freezed,}) {
+  return _then(EmailAddressConflictError(
+errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode?,message: freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-class __$$NativeAuthStrategyErrorImplCopyWithImpl<$Res>
-    extends _$RequestUpdateCustomerEmailAddressResultCopyWithImpl<$Res,
-        _$NativeAuthStrategyErrorImpl>
-    implements _$$NativeAuthStrategyErrorImplCopyWith<$Res> {
-  __$$NativeAuthStrategyErrorImplCopyWithImpl(
-      _$NativeAuthStrategyErrorImpl _value,
-      $Res Function(_$NativeAuthStrategyErrorImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorCode = freezed,
-    Object? message = freezed,
-  }) {
-    return _then(_$NativeAuthStrategyErrorImpl(
-      errorCode: freezed == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as ErrorCode?,
-      message: freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$NativeAuthStrategyErrorImpl extends NativeAuthStrategyError {
-  const _$NativeAuthStrategyErrorImpl(
-      {this.errorCode, this.message, final String? $type})
-      : $type = $type ?? 'nativeAuthStrategyError',
-        super._();
 
-  factory _$NativeAuthStrategyErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NativeAuthStrategyErrorImplFromJson(json);
+class InvalidCredentialsError extends RequestUpdateCustomerEmailAddressResult {
+  const InvalidCredentialsError({this.authenticationError, this.errorCode, this.message, final  String? $type}): $type = $type ?? 'invalidCredentialsError',super._();
+  factory InvalidCredentialsError.fromJson(Map<String, dynamic> json) => _$InvalidCredentialsErrorFromJson(json);
 
-  @override
-  final ErrorCode? errorCode;
-  @override
-  final String? message;
+ final  String? authenticationError;
+ final  ErrorCode? errorCode;
+ final  String? message;
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
+@JsonKey(name: 'runtimeType')
+final String $type;
 
-  @override
-  String toString() {
-    return 'RequestUpdateCustomerEmailAddressResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NativeAuthStrategyErrorImpl &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.message, message) || other.message == message));
-  }
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InvalidCredentialsErrorCopyWith<InvalidCredentialsError> get copyWith => _$InvalidCredentialsErrorCopyWithImpl<InvalidCredentialsError>(this, _$identity);
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, errorCode, message);
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
-      get copyWith => __$$NativeAuthStrategyErrorImplCopyWithImpl<
-          _$NativeAuthStrategyErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
-        emailAddressConflictError,
-    required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
-        invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
-        nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
-  }) {
-    return nativeAuthStrategyError(errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
-  }) {
-    return nativeAuthStrategyError?.call(errorCode, message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
-    required TResult orElse(),
-  }) {
-    if (nativeAuthStrategyError != null) {
-      return nativeAuthStrategyError(errorCode, message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EmailAddressConflictError value)
-        emailAddressConflictError,
-    required TResult Function(InvalidCredentialsError value)
-        invalidCredentialsError,
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) {
-    return nativeAuthStrategyError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult? Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) {
-    return nativeAuthStrategyError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (nativeAuthStrategyError != null) {
-      return nativeAuthStrategyError(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$NativeAuthStrategyErrorImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$InvalidCredentialsErrorToJson(this, );
 }
 
-abstract class NativeAuthStrategyError
-    extends RequestUpdateCustomerEmailAddressResult {
-  const factory NativeAuthStrategyError(
-      {final ErrorCode? errorCode,
-      final String? message}) = _$NativeAuthStrategyErrorImpl;
-  const NativeAuthStrategyError._() : super._();
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InvalidCredentialsError&&(identical(other.authenticationError, authenticationError) || other.authenticationError == authenticationError)&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message));
+}
 
-  factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) =
-      _$NativeAuthStrategyErrorImpl.fromJson;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,authenticationError,errorCode,message);
 
-  ErrorCode? get errorCode;
-  String? get message;
+@override
+String toString() {
+  return 'RequestUpdateCustomerEmailAddressResult.invalidCredentialsError(authenticationError: $authenticationError, errorCode: $errorCode, message: $message)';
+}
 
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$NativeAuthStrategyErrorImplCopyWith<_$NativeAuthStrategyErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool? success});
+abstract mixin class $InvalidCredentialsErrorCopyWith<$Res> implements $RequestUpdateCustomerEmailAddressResultCopyWith<$Res> {
+  factory $InvalidCredentialsErrorCopyWith(InvalidCredentialsError value, $Res Function(InvalidCredentialsError) _then) = _$InvalidCredentialsErrorCopyWithImpl;
+@useResult
+$Res call({
+ String? authenticationError, ErrorCode? errorCode, String? message
+});
+
+
+
+
+}
+/// @nodoc
+class _$InvalidCredentialsErrorCopyWithImpl<$Res>
+    implements $InvalidCredentialsErrorCopyWith<$Res> {
+  _$InvalidCredentialsErrorCopyWithImpl(this._self, this._then);
+
+  final InvalidCredentialsError _self;
+  final $Res Function(InvalidCredentialsError) _then;
+
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? authenticationError = freezed,Object? errorCode = freezed,Object? message = freezed,}) {
+  return _then(InvalidCredentialsError(
+authenticationError: freezed == authenticationError ? _self.authenticationError : authenticationError // ignore: cast_nullable_to_non_nullable
+as String?,errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode?,message: freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$RequestUpdateCustomerEmailAddressResultCopyWithImpl<$Res,
-        _$SuccessImpl> implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? success = freezed,
-  }) {
-    return _then(_$SuccessImpl(
-      success: freezed == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$SuccessImpl extends Success {
-  const _$SuccessImpl({this.success, final String? $type})
-      : $type = $type ?? 'success',
-        super._();
 
-  factory _$SuccessImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SuccessImplFromJson(json);
+class NativeAuthStrategyError extends RequestUpdateCustomerEmailAddressResult {
+  const NativeAuthStrategyError({this.errorCode, this.message, final  String? $type}): $type = $type ?? 'nativeAuthStrategyError',super._();
+  factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
 
-  @override
-  final bool? success;
+ final  ErrorCode? errorCode;
+ final  String? message;
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
+@JsonKey(name: 'runtimeType')
+final String $type;
 
-  @override
-  String toString() {
-    return 'RequestUpdateCustomerEmailAddressResult.success(success: $success)';
-  }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.success, success) || other.success == success));
-  }
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$NativeAuthStrategyErrorCopyWith<NativeAuthStrategyError> get copyWith => _$NativeAuthStrategyErrorCopyWithImpl<NativeAuthStrategyError>(this, _$identity);
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, success);
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ErrorCode? errorCode, String? message)
-        emailAddressConflictError,
-    required TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)
-        invalidCredentialsError,
-    required TResult Function(ErrorCode? errorCode, String? message)
-        nativeAuthStrategyError,
-    required TResult Function(bool? success) success,
-  }) {
-    return success(this.success);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult? Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult? Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult? Function(bool? success)? success,
-  }) {
-    return success?.call(this.success);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ErrorCode? errorCode, String? message)?
-        emailAddressConflictError,
-    TResult Function(
-            String? authenticationError, ErrorCode? errorCode, String? message)?
-        invalidCredentialsError,
-    TResult Function(ErrorCode? errorCode, String? message)?
-        nativeAuthStrategyError,
-    TResult Function(bool? success)? success,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this.success);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EmailAddressConflictError value)
-        emailAddressConflictError,
-    required TResult Function(InvalidCredentialsError value)
-        invalidCredentialsError,
-    required TResult Function(NativeAuthStrategyError value)
-        nativeAuthStrategyError,
-    required TResult Function(Success value) success,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult? Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult? Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult? Function(Success value)? success,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailAddressConflictError value)?
-        emailAddressConflictError,
-    TResult Function(InvalidCredentialsError value)? invalidCredentialsError,
-    TResult Function(NativeAuthStrategyError value)? nativeAuthStrategyError,
-    TResult Function(Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SuccessImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$NativeAuthStrategyErrorToJson(this, );
 }
 
-abstract class Success extends RequestUpdateCustomerEmailAddressResult {
-  const factory Success({final bool? success}) = _$SuccessImpl;
-  const Success._() : super._();
-
-  factory Success.fromJson(Map<String, dynamic> json) = _$SuccessImpl.fromJson;
-
-  bool? get success;
-
-  /// Create a copy of RequestUpdateCustomerEmailAddressResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NativeAuthStrategyError&&(identical(other.errorCode, errorCode) || other.errorCode == errorCode)&&(identical(other.message, message) || other.message == message));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,errorCode,message);
+
+@override
+String toString() {
+  return 'RequestUpdateCustomerEmailAddressResult.nativeAuthStrategyError(errorCode: $errorCode, message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $NativeAuthStrategyErrorCopyWith<$Res> implements $RequestUpdateCustomerEmailAddressResultCopyWith<$Res> {
+  factory $NativeAuthStrategyErrorCopyWith(NativeAuthStrategyError value, $Res Function(NativeAuthStrategyError) _then) = _$NativeAuthStrategyErrorCopyWithImpl;
+@useResult
+$Res call({
+ ErrorCode? errorCode, String? message
+});
+
+
+
+
+}
+/// @nodoc
+class _$NativeAuthStrategyErrorCopyWithImpl<$Res>
+    implements $NativeAuthStrategyErrorCopyWith<$Res> {
+  _$NativeAuthStrategyErrorCopyWithImpl(this._self, this._then);
+
+  final NativeAuthStrategyError _self;
+  final $Res Function(NativeAuthStrategyError) _then;
+
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? errorCode = freezed,Object? message = freezed,}) {
+  return _then(NativeAuthStrategyError(
+errorCode: freezed == errorCode ? _self.errorCode : errorCode // ignore: cast_nullable_to_non_nullable
+as ErrorCode?,message: freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+/// @nodoc
+@JsonSerializable()
+
+class Success extends RequestUpdateCustomerEmailAddressResult {
+  const Success({this.success, final  String? $type}): $type = $type ?? 'success',super._();
+  factory Success.fromJson(Map<String, dynamic> json) => _$SuccessFromJson(json);
+
+ final  bool? success;
+
+@JsonKey(name: 'runtimeType')
+final String $type;
+
+
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SuccessCopyWith<Success> get copyWith => _$SuccessCopyWithImpl<Success>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$SuccessToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Success&&(identical(other.success, success) || other.success == success));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,success);
+
+@override
+String toString() {
+  return 'RequestUpdateCustomerEmailAddressResult.success(success: $success)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $SuccessCopyWith<$Res> implements $RequestUpdateCustomerEmailAddressResultCopyWith<$Res> {
+  factory $SuccessCopyWith(Success value, $Res Function(Success) _then) = _$SuccessCopyWithImpl;
+@useResult
+$Res call({
+ bool? success
+});
+
+
+
+
+}
+/// @nodoc
+class _$SuccessCopyWithImpl<$Res>
+    implements $SuccessCopyWith<$Res> {
+  _$SuccessCopyWithImpl(this._self, this._then);
+
+  final Success _self;
+  final $Res Function(Success) _then;
+
+/// Create a copy of RequestUpdateCustomerEmailAddressResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? success = freezed,}) {
+  return _then(Success(
+success: freezed == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
+as bool?,
+  ));
+}
+
+
+}
+
+// dart format on

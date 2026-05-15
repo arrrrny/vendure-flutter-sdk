@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,186 +9,278 @@ part of 'country_list.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-CountryList _$CountryListFromJson(Map<String, dynamic> json) {
-  return _CountryList.fromJson(json);
-}
 
 /// @nodoc
 mixin _$CountryList {
-  List<Country> get items => throw _privateConstructorUsedError;
-  int get totalItems => throw _privateConstructorUsedError;
+
+ List<Country> get items; int get totalItems;
+/// Create a copy of CountryList
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$CountryListCopyWith<CountryList> get copyWith => _$CountryListCopyWithImpl<CountryList>(this as CountryList, _$identity);
 
   /// Serializes this CountryList to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of CountryList
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $CountryListCopyWith<CountryList> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CountryList&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.totalItems, totalItems) || other.totalItems == totalItems));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(items),totalItems);
+
+@override
+String toString() {
+  return 'CountryList(items: $items, totalItems: $totalItems)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $CountryListCopyWith<$Res> {
-  factory $CountryListCopyWith(
-          CountryList value, $Res Function(CountryList) then) =
-      _$CountryListCopyWithImpl<$Res, CountryList>;
-  @useResult
-  $Res call({List<Country> items, int totalItems});
-}
+abstract mixin class $CountryListCopyWith<$Res>  {
+  factory $CountryListCopyWith(CountryList value, $Res Function(CountryList) _then) = _$CountryListCopyWithImpl;
+@useResult
+$Res call({
+ List<Country> items, int totalItems
+});
 
+
+
+
+}
 /// @nodoc
-class _$CountryListCopyWithImpl<$Res, $Val extends CountryList>
+class _$CountryListCopyWithImpl<$Res>
     implements $CountryListCopyWith<$Res> {
-  _$CountryListCopyWithImpl(this._value, this._then);
+  _$CountryListCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final CountryList _self;
+  final $Res Function(CountryList) _then;
 
-  /// Create a copy of CountryList
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? items = null,
-    Object? totalItems = null,
-  }) {
-    return _then(_value.copyWith(
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Country>,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of CountryList
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? items = null,Object? totalItems = null,}) {
+  return _then(_self.copyWith(
+items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<Country>,totalItems: null == totalItems ? _self.totalItems : totalItems // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$CountryListImplCopyWith<$Res>
-    implements $CountryListCopyWith<$Res> {
-  factory _$$CountryListImplCopyWith(
-          _$CountryListImpl value, $Res Function(_$CountryListImpl) then) =
-      __$$CountryListImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<Country> items, int totalItems});
 }
 
-/// @nodoc
-class __$$CountryListImplCopyWithImpl<$Res>
-    extends _$CountryListCopyWithImpl<$Res, _$CountryListImpl>
-    implements _$$CountryListImplCopyWith<$Res> {
-  __$$CountryListImplCopyWithImpl(
-      _$CountryListImpl _value, $Res Function(_$CountryListImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of CountryList
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? items = null,
-    Object? totalItems = null,
-  }) {
-    return _then(_$CountryListImpl(
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<Country>,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
+/// Adds pattern-matching-related methods to [CountryList].
+extension CountryListPatterns on CountryList {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CountryList value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _CountryList() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CountryList value)  $default,){
+final _that = this;
+switch (_that) {
+case _CountryList():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CountryList value)?  $default,){
+final _that = this;
+switch (_that) {
+case _CountryList() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Country> items,  int totalItems)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _CountryList() when $default != null:
+return $default(_that.items,_that.totalItems);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Country> items,  int totalItems)  $default,) {final _that = this;
+switch (_that) {
+case _CountryList():
+return $default(_that.items,_that.totalItems);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Country> items,  int totalItems)?  $default,) {final _that = this;
+switch (_that) {
+case _CountryList() when $default != null:
+return $default(_that.items,_that.totalItems);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CountryListImpl extends _CountryList {
-  const _$CountryListImpl(
-      {required final List<Country> items, required this.totalItems})
-      : _items = items,
-        super._();
 
-  factory _$CountryListImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CountryListImplFromJson(json);
+class _CountryList extends CountryList {
+  const _CountryList({required final  List<Country> items, required this.totalItems}): _items = items,super._();
+  factory _CountryList.fromJson(Map<String, dynamic> json) => _$CountryListFromJson(json);
 
-  final List<Country> _items;
-  @override
-  List<Country> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
-  }
-
-  @override
-  final int totalItems;
-
-  @override
-  String toString() {
-    return 'CountryList(items: $items, totalItems: $totalItems)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CountryListImpl &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
-            (identical(other.totalItems, totalItems) ||
-                other.totalItems == totalItems));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_items), totalItems);
-
-  /// Create a copy of CountryList
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CountryListImplCopyWith<_$CountryListImpl> get copyWith =>
-      __$$CountryListImplCopyWithImpl<_$CountryListImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CountryListImplToJson(
-      this,
-    );
-  }
+ final  List<Country> _items;
+@override List<Country> get items {
+  if (_items is EqualUnmodifiableListView) return _items;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_items);
 }
 
-abstract class _CountryList extends CountryList {
-  const factory _CountryList(
-      {required final List<Country> items,
-      required final int totalItems}) = _$CountryListImpl;
-  const _CountryList._() : super._();
+@override final  int totalItems;
 
-  factory _CountryList.fromJson(Map<String, dynamic> json) =
-      _$CountryListImpl.fromJson;
+/// Create a copy of CountryList
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$CountryListCopyWith<_CountryList> get copyWith => __$CountryListCopyWithImpl<_CountryList>(this, _$identity);
 
-  @override
-  List<Country> get items;
-  @override
-  int get totalItems;
-
-  /// Create a copy of CountryList
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CountryListImplCopyWith<_$CountryListImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$CountryListToJson(this, );
 }
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CountryList&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.totalItems, totalItems) || other.totalItems == totalItems));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_items),totalItems);
+
+@override
+String toString() {
+  return 'CountryList(items: $items, totalItems: $totalItems)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$CountryListCopyWith<$Res> implements $CountryListCopyWith<$Res> {
+  factory _$CountryListCopyWith(_CountryList value, $Res Function(_CountryList) _then) = __$CountryListCopyWithImpl;
+@override @useResult
+$Res call({
+ List<Country> items, int totalItems
+});
+
+
+
+
+}
+/// @nodoc
+class __$CountryListCopyWithImpl<$Res>
+    implements _$CountryListCopyWith<$Res> {
+  __$CountryListCopyWithImpl(this._self, this._then);
+
+  final _CountryList _self;
+  final $Res Function(_CountryList) _then;
+
+/// Create a copy of CountryList
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? items = null,Object? totalItems = null,}) {
+  return _then(_CountryList(
+items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as List<Country>,totalItems: null == totalItems ? _self.totalItems : totalItems // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

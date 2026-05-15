@@ -5,7 +5,7 @@ part 'address.freezed.dart';
 part 'address.g.dart';
 
 @freezed
-class Address with _$Address {
+abstract class Address with _$Address {
   const Address._();
 
   const factory Address({

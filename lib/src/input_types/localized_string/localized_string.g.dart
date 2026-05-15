@@ -6,19 +6,18 @@ part of 'localized_string.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LocalizedStringImpl _$$LocalizedStringImplFromJson(Map json) =>
-    _$LocalizedStringImpl(
-      languageCode:
-          $enumDecodeNullable(_$LanguageCodeEnumMap, json['languageCode']),
-      value: json['value'] as String?,
-    );
+_LocalizedString _$LocalizedStringFromJson(Map json) => _LocalizedString(
+  languageCode: $enumDecodeNullable(
+    _$LanguageCodeEnumMap,
+    json['languageCode'],
+  ),
+  value: json['value'] as String?,
+);
 
-Map<String, dynamic> _$$LocalizedStringImplToJson(
-        _$LocalizedStringImpl instance) =>
+Map<String, dynamic> _$LocalizedStringToJson(_LocalizedString instance) =>
     <String, dynamic>{
-      if (_$LanguageCodeEnumMap[instance.languageCode] case final value?)
-        'languageCode': value,
-      if (instance.value case final value?) 'value': value,
+      'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
+      'value': ?instance.value,
     };
 
 const _$LanguageCodeEnumMap = {

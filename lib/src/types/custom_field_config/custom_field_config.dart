@@ -7,7 +7,7 @@ part 'custom_field_config.freezed.dart';
 part 'custom_field_config.g.dart';
 
 @freezed
-class CustomFieldConfig with _$CustomFieldConfig {
+sealed class CustomFieldConfig with _$CustomFieldConfig {
   const CustomFieldConfig._();
 
   const factory CustomFieldConfig.booleanCustomFieldConfig({

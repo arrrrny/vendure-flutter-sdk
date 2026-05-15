@@ -6,8 +6,8 @@ part of 'authentication_method.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AuthenticationMethodImpl _$$AuthenticationMethodImplFromJson(Map json) =>
-    _$AuthenticationMethodImpl(
+_AuthenticationMethod _$AuthenticationMethodFromJson(Map json) =>
+    _AuthenticationMethod(
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.parse(json['createdAt'] as String),
@@ -18,13 +18,11 @@ _$AuthenticationMethodImpl _$$AuthenticationMethodImplFromJson(Map json) =>
           : DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$$AuthenticationMethodImplToJson(
-        _$AuthenticationMethodImpl instance) =>
-    <String, dynamic>{
-      if (instance.createdAt?.toIso8601String() case final value?)
-        'createdAt': value,
-      if (instance.id case final value?) 'id': value,
-      if (instance.strategy case final value?) 'strategy': value,
-      if (instance.updatedAt?.toIso8601String() case final value?)
-        'updatedAt': value,
-    };
+Map<String, dynamic> _$AuthenticationMethodToJson(
+  _AuthenticationMethod instance,
+) => <String, dynamic>{
+  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'id': ?instance.id,
+  'strategy': ?instance.strategy,
+  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+};

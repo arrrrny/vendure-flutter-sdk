@@ -1,4 +1,5 @@
-const String addressFragment = countryFragment +
+const String addressFragment =
+    countryFragment +
     r'''
 fragment Address on Address {
   __typename
@@ -136,7 +137,8 @@ fragment Channel on Channel {
 
 ''';
 
-const String roleFragment = channelFragment +
+const String roleFragment =
+    channelFragment +
     r'''
 fragment Role on Role {
   __typename
@@ -236,7 +238,8 @@ fragment TaxRate on TaxRate {
 
 ''';
 
-const String facetFragment = facetValueFragment +
+const String facetFragment =
+    facetValueFragment +
     r'''
     fragment Facet on Facet {
       __typename
