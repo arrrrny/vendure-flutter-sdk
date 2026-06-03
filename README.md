@@ -5,6 +5,17 @@
 
 A Flutter SDK for interacting with the Vendure e-commerce framework's GraphQL API. This SDK simplifies the process of connecting to Vendure and performing common operations like authentication, adding items to the cart, and more.
 
+## Sponsor
+
+[![https://zuzu.dev](./assets/zikzak-ai.png)](https://zuzu.dev) [![Sponsored by ZikZak AI](https://img.shields.io/badge/Sponsored%20by-ZikZak%20AI-8A2BE2?style=flat-square&logo=heart)](https://zuzu.dev)
+
+Thanks to ZikZak AI for sponsoring this project!
+
+ZikZak AI is an AI-Powered Price Comparison app that you scan barcodes, and discover amazing savings instantly. Your personal shopping assistant that never sleeps.
+
+<a href="https://apps.apple.com/tr/app/zik-zak/id1563425450"><img src="assets/app-store-badge.png" width="160" style="margin-right: 8px;"></a>
+<a href="https://play.google.com/store/apps/details?id=dev.zuzu.zingo"><img src="assets/google-play-badge.png" width="160"></a>
+
 ## Features
 
 - Authenticate users
@@ -26,6 +37,7 @@ dependencies:
 ```
 
 Note: Starting with v2.8.0 the SDK exposes global flags to control enum conversion:
+
 - Toggle query/response enum normalization with `VendureUtils.setConvertEnums(queryEnums: true|false)`.
 - Toggle mutation input enum normalization with `VendureUtils.setConvertEnums(mutationEnums: true|false)`.
 
@@ -250,7 +262,6 @@ Future<void> getShippingMethods() async {
   }
 }
 ```
-
 
 ### Set Shipping Method for Order
 
@@ -915,9 +926,11 @@ Future<void> resetPassword(String token, String password) async {
 ```
 
 ## Custom Operations
+
 You can also perform custom operations using the `custom` method.
 
 ### Custom Mutation
+
 ```dart
 Future<void> customMutation() async {
   try {
@@ -950,6 +963,7 @@ Future<void> customMutation() async {
 ```
 
 ### Custom Query
+
 ```dart
 Future<void> customQuery() async {
   try {
@@ -982,6 +996,7 @@ Future<void> customQuery() async {
 ```
 
 ### Custom Query List
+
 ```dart
 Future<void> customQueryList() async {
   try {
