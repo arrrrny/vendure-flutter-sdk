@@ -1,3 +1,11 @@
+## 2.19.0 - 2026-06-16
+
+- **Fix**: Added reentrancy guard to prevent race conditions during concurrent Vendure initialization across all initialization methods.
+- **Fix**: Set `queryRequestTimeout: null` on internal token fetch clients to resolve a graphql 5.x race condition where `Stream.timeout` could double-complete the internal Completer.
+- **Internal**: Proper HTTP client lifecycle management (create and close) in token fetch helper methods.
+- **Internal**: Reset `_initializing` flag on `dispose()` to allow clean re-initialization.
+- **Docs**: Added sponsor badges (App Store, Google Play, Zikzak AI) to README.
+
 ## 2.18.0
 
 - **Change**: Updated dependencies to the latest compatible versions.

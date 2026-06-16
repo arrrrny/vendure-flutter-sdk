@@ -21,6 +21,7 @@ export 'src/vendure/app_check_provider.dart';
 
 class Vendure {
   static Vendure? _instance;
+  static bool _initializing = false;
 
   late final GraphQLClient _authClient;
   final http.Client _httpClient = http.Client();
@@ -101,6 +102,7 @@ class Vendure {
         httpClient: _httpClient,
       ),
       cache: GraphQLCache(),
+      queryRequestTimeout: null,
     );
     auth = AuthOperations(_authClient);
     order = OrderOperations(
@@ -143,27 +145,35 @@ class Vendure {
     String? apiKeyHeaderKey,
     bool enableEnumDiscovery = false,
   }) async {
-    _instance = Vendure._internal(
-      endpoint: endpoint,
-      fetchToken: fetchToken,
-      tokenParams: tokenParams,
-      policies: policies,
-      sessionDuration: sessionDuration,
-      token: token,
-      useVendureGuestSession: useVendureGuestSession,
-      customFieldsConfig: customFieldsConfig,
-      languageCode: languageCode,
-      channelToken: channelToken,
-      timeout: timeout,
-      appCheckConfig: appCheckConfig,
-      apiKey: apiKey,
-      apiKeyHeaderKey: apiKeyHeaderKey,
-    );
+    if (_initializing) {
+      throw StateError('Vendure initialization is already in progress');
+    }
+    _initializing = true;
+    try {
+      _instance = Vendure._internal(
+        endpoint: endpoint,
+        fetchToken: fetchToken,
+        tokenParams: tokenParams,
+        policies: policies,
+        sessionDuration: sessionDuration,
+        token: token,
+        useVendureGuestSession: useVendureGuestSession,
+        customFieldsConfig: customFieldsConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
+        timeout: timeout,
+        appCheckConfig: appCheckConfig,
+        apiKey: apiKey,
+        apiKeyHeaderKey: apiKeyHeaderKey,
+      );
 
-    // Perform a connection check and finalize initialization
-    final vendure = _instance!;
-    await _finalizeInitialization(vendure, checkConnection: true);
-    return vendure;
+      // Perform a connection check and finalize initialization
+      final vendure = _instance!;
+      await _finalizeInitialization(vendure, checkConnection: true);
+      return vendure;
+    } finally {
+      _initializing = false;
+    }
   }
 
   static Future<Vendure> initializeWithNativeAuth({
@@ -179,11 +189,51 @@ class Vendure {
     String? apiKey,
     String? apiKeyHeaderKey,
   }) async {
-    // Helper function to fetch and return token
+    if (_initializing) {
+      throw StateError('Vendure initialization is already in progress');
+    }
+    _initializing = true;
+    try {
+      return await _initializeWithNativeAuthInner(
+        endpoint: endpoint,
+        username: username,
+        password: password,
+        sessionDuration: sessionDuration,
+        timeout: timeout,
+        customFieldsConfig: customFieldsConfig,
+        appCheckConfig: appCheckConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
+        apiKey: apiKey,
+        apiKeyHeaderKey: apiKeyHeaderKey,
+      );
+    } finally {
+      _initializing = false;
+    }
+  }
+
+  static Future<Vendure> _initializeWithNativeAuthInner({
+    required String endpoint,
+    required String username,
+    required String password,
+    Duration sessionDuration = const Duration(days: 365),
+    Duration? timeout,
+    Map<String, List<dynamic>>? customFieldsConfig,
+    AppCheckConfig? appCheckConfig,
+    String? languageCode,
+    String? channelToken,
+    String? apiKey,
+    String? apiKeyHeaderKey,
+  }) async {
+    // Helper function to fetch and return token.
+    // Uses queryRequestTimeout: null to avoid a known race in graphql 5.x
+    // where Stream.timeout can double-complete the internal Completer.
     Future<String?> fetchToken(Map<String, dynamic> params) async {
+      http.Client? httpClient;
       try {
+        httpClient = http.Client();
         final authClient = GraphQLClient(
-          link: HttpLink(endpoint),
+          link: HttpLink(endpoint, httpClient: httpClient),
           defaultPolicies: DefaultPolicies(
             query: Policies(
               fetch: FetchPolicy.noCache,
@@ -195,6 +245,7 @@ class Vendure {
             ),
           ),
           cache: GraphQLCache(),
+          queryRequestTimeout: null,
         );
         final authOperations = AuthOperations(authClient);
         final token = await authOperations.getToken(
@@ -204,6 +255,8 @@ class Vendure {
         return token;
       } catch (e) {
         return null;
+      } finally {
+        httpClient?.close();
       }
     }
 
@@ -250,11 +303,51 @@ class Vendure {
     String? apiKey,
     String? apiKeyHeaderKey,
   }) async {
-    // Helper function to fetch and return token
+    if (_initializing) {
+      throw StateError('Vendure initialization is already in progress');
+    }
+    _initializing = true;
+    try {
+      return await _initializeWithFirebaseAuthInner(
+        endpoint: endpoint,
+        uid: uid,
+        jwt: jwt,
+        sessionDuration: sessionDuration,
+        customFieldsConfig: customFieldsConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
+        timeout: timeout,
+        appCheckConfig: appCheckConfig,
+        apiKey: apiKey,
+        apiKeyHeaderKey: apiKeyHeaderKey,
+      );
+    } finally {
+      _initializing = false;
+    }
+  }
+
+  static Future<Vendure> _initializeWithFirebaseAuthInner({
+    required String endpoint,
+    required String uid,
+    required String jwt,
+    Duration sessionDuration = const Duration(hours: 1),
+    Map<String, List<dynamic>>? customFieldsConfig,
+    String? languageCode,
+    String? channelToken,
+    Duration? timeout,
+    AppCheckConfig? appCheckConfig,
+    String? apiKey,
+    String? apiKeyHeaderKey,
+  }) async {
+    // Helper function to fetch and return token.
+    // Uses queryRequestTimeout: null to avoid a known race in graphql 5.x
+    // where Stream.timeout can double-complete the internal Completer.
     Future<String?> fetchToken(Map<String, dynamic> params) async {
+      http.Client? httpClient;
       try {
+        httpClient = http.Client();
         final authClient = GraphQLClient(
-          link: HttpLink(endpoint),
+          link: HttpLink(endpoint, httpClient: httpClient),
           defaultPolicies: DefaultPolicies(
             query: Policies(
               fetch: FetchPolicy.noCache,
@@ -266,6 +359,7 @@ class Vendure {
             ),
           ),
           cache: GraphQLCache(),
+          queryRequestTimeout: null,
         );
         final authOperations = AuthOperations(authClient);
         final token = await authOperations.getTokenFirebase(
@@ -275,6 +369,8 @@ class Vendure {
         return token;
       } catch (e) {
         return null;
+      } finally {
+        httpClient?.close();
       }
     }
 
@@ -300,7 +396,6 @@ class Vendure {
       apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
-    // Ensure token is set
     // Finalize initialization (token check, enum loading)
     await _finalizeInitialization(_instance!);
     return _instance!;
@@ -318,27 +413,35 @@ class Vendure {
     String? apiKey,
     String? apiKeyHeaderKey,
   }) async {
-    final token = await fetchToken(tokenParams);
-    if (token == null) {
-      throw Exception("Failed to fetch token");
+    if (_initializing) {
+      throw StateError('Vendure initialization is already in progress');
     }
-    _instance = Vendure._internal(
-      endpoint: endpoint,
-      fetchToken: fetchToken,
-      tokenParams: tokenParams,
-      sessionDuration: sessionDuration,
-      token: token,
-      customFieldsConfig: customFieldsConfig,
-      languageCode: languageCode,
-      channelToken: channelToken,
-      timeout: timeout,
-      apiKey: apiKey,
-      apiKeyHeaderKey: apiKeyHeaderKey,
-    );
+    _initializing = true;
+    try {
+      final token = await fetchToken(tokenParams);
+      if (token == null) {
+        throw Exception("Failed to fetch token");
+      }
+      _instance = Vendure._internal(
+        endpoint: endpoint,
+        fetchToken: fetchToken,
+        tokenParams: tokenParams,
+        sessionDuration: sessionDuration,
+        token: token,
+        customFieldsConfig: customFieldsConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
+        timeout: timeout,
+        apiKey: apiKey,
+        apiKeyHeaderKey: apiKeyHeaderKey,
+      );
 
-    // Finalize initialization (token check, enum loading)
-    await _finalizeInitialization(_instance!);
-    return _instance!;
+      // Finalize initialization (token check, enum loading)
+      await _finalizeInitialization(_instance!);
+      return _instance!;
+    } finally {
+      _initializing = false;
+    }
   }
 
   /// Initialize Vendure with API key authentication.
@@ -354,20 +457,28 @@ class Vendure {
     Duration? timeout,
     AppCheckConfig? appCheckConfig,
   }) async {
-    _instance = Vendure._internal(
-      endpoint: endpoint,
-      apiKey: apiKey,
-      apiKeyHeaderKey: apiKeyHeaderKey,
-      customFieldsConfig: customFieldsConfig,
-      languageCode: languageCode,
-      channelToken: channelToken,
-      timeout: timeout,
-      appCheckConfig: appCheckConfig,
-    );
+    if (_initializing) {
+      throw StateError('Vendure initialization is already in progress');
+    }
+    _initializing = true;
+    try {
+      _instance = Vendure._internal(
+        endpoint: endpoint,
+        apiKey: apiKey,
+        apiKeyHeaderKey: apiKeyHeaderKey,
+        customFieldsConfig: customFieldsConfig,
+        languageCode: languageCode,
+        channelToken: channelToken,
+        timeout: timeout,
+        appCheckConfig: appCheckConfig,
+      );
 
-    // Finalize initialization (connection check, enum loading)
-    await _finalizeInitialization(_instance!, checkConnection: true);
-    return _instance!;
+      // Finalize initialization (connection check, enum loading)
+      await _finalizeInitialization(_instance!, checkConnection: true);
+      return _instance!;
+    } finally {
+      _initializing = false;
+    }
   }
 
   static Vendure get instance {
@@ -389,6 +500,7 @@ class Vendure {
     instance._httpClient.close();
     instance._subscriptionClient = null;
     _instance = null;
+    _initializing = false;
   }
 
   Future<GraphQLClient> _getClient() async {
