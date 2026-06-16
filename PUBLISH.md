@@ -19,13 +19,18 @@
 
 1. Update `pubspec.yaml` version
 2. Update `CHANGELOG.md` with new version entry
-3. Commit and push to a release branch (e.g., `publish-<version>`)
-4. `dart pub publish`
-5. `git tag v<version>` and `git push origin v<version>`
+3. Create release branch: `git checkout -b publish-<version>`
+4. Commit and push: `git add -A && git commit -m "Prepare for publishing version <version>" && git push origin publish-<version>`
+5. Validate: `dart pub publish --dry-run`
+6. Publish: `dart pub publish`
+7. Tag: `git tag v<version> && git push origin v<version>`
+8. Merge to master: `git checkout master && git merge publish-<version> && git push origin master`
+9. Delete release branch locally: `git branch -d publish-<version>`
+10. (Optional) Delete remote branch: `git push origin --delete publish-<version>`
 
 ## Notes
 
 - The package version in `pubspec.yaml` is the source of truth.
 - CHANGELOG is maintained manually per release.
-- There are no pre-publish or post-publish automation scripts.
 - Validate with `dart pub publish --dry-run` before actual publish.
+- The release branch (`publish-<version>`) is temporary and deleted after merging.
