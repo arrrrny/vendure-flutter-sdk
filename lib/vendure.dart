@@ -104,7 +104,7 @@ class Vendure {
       cache: GraphQLCache(),
       queryRequestTimeout: null,
     );
-    auth = AuthOperations(_authClient);
+    auth = AuthOperations(_authClient, tokenManager: _tokenManager);
     order = OrderOperations(
       _getClient,
       customFieldsConfig: _customFieldsConfig,
