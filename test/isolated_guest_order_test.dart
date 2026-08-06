@@ -30,12 +30,12 @@ void main() {
         var products = await vendure.catalog.getProducts();
         expect(products.items, isNotEmpty);
 
-        var productWithVariants = products.items.firstWhere(
-          (p) => p.variants.isNotEmpty,
-          orElse: () => products.items.first,
+        var productWithVariants = products.items!.firstWhere(
+          (p) => p.variants!.isNotEmpty,
+          orElse: () => products.items!.first,
         );
 
-        testProductVariantId = productWithVariants.variants.first.id;
+        testProductVariantId = productWithVariants.variants!.first!.id!;
         print('✅ Found test product variant: ${productWithVariants.name}');
         print('📋 Variant ID: $testProductVariantId');
 

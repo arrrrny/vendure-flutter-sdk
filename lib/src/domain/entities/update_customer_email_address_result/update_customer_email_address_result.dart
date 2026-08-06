@@ -9,16 +9,16 @@ sealed class UpdateCustomerEmailAddressResult {
   factory UpdateCustomerEmailAddressResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'IdentifierChangeTokenExpiredError':
+      case 'identifierChangeTokenExpiredError':
         return IdentifierChangeTokenExpiredError.fromJson(json);
-      case 'IdentifierChangeTokenInvalidError':
+      case 'identifierChangeTokenInvalidError':
         return IdentifierChangeTokenInvalidError.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'Success':
+      case 'success':
         return Success.fromJson(json);
       default:
-        throw ArgumentError('Unknown UpdateCustomerEmailAddressResult variant: \$runtimeType');
+        throw ArgumentError('Unknown UpdateCustomerEmailAddressResult variant: $runtimeType');
     }
   }
 

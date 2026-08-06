@@ -9,16 +9,16 @@ sealed class UpdateCustomerPasswordResult {
   factory UpdateCustomerPasswordResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'InvalidCredentialsError':
+      case 'invalidCredentialsError':
         return InvalidCredentialsError.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'PasswordValidationError':
+      case 'passwordValidationError':
         return PasswordValidationError.fromJson(json);
-      case 'Success':
+      case 'success':
         return Success.fromJson(json);
       default:
-        throw ArgumentError('Unknown UpdateCustomerPasswordResult variant: \$runtimeType');
+        throw ArgumentError('Unknown UpdateCustomerPasswordResult variant: $runtimeType');
     }
   }
 

@@ -48,8 +48,8 @@ void main() {
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
 
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
       } catch (e) {
         fail('Error adding item to cart: $e');
       }
@@ -96,8 +96,8 @@ void main() {
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
 
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
       } catch (e) {
         fail('Error adding item to cart: $e');
       }
@@ -243,7 +243,7 @@ void main() {
       try {
         var result = await vendure.order.getShippingMethods();
         expect(result, isA<List<ShippingMethodQuote>>());
-        shippingMethodId = result.first.id;
+        shippingMethodId = result.first!.id!;
       } catch (e) {
         fail('Error getting shipping methods: $e');
       }
@@ -267,7 +267,7 @@ void main() {
       try {
         var result = await vendure.order.getPaymentMethods();
         expect(result, isA<List<PaymentMethodQuote>>());
-        paymentMethodCode = result.first.code;
+        paymentMethodCode = result.first!.code!;
       } catch (e) {
         fail('Error getting payment methods: $e');
       }
@@ -340,7 +340,7 @@ void main() {
         expect(result, isA<AddPaymentToOrderResult>());
         Order order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
-        testOrderCode = order.code;
+        testOrderCode = order.code!;
       } catch (e) {
         fail('Error adding payment to order: $e');
       }
@@ -376,8 +376,8 @@ void main() {
         );
         order = Order.fromJson(result.toJson());
         expect(order, isA<Order>());
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
         print("passed 4");
 
         var customerResult = await vendure.order.setCustomerForOrder(
@@ -417,8 +417,8 @@ void main() {
         expect(order, isA<Order>());
         print("passed 8");
 
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
 
         var removedALine = await vendure.order.removeOrderLine(
           orderLineId: testOrderLineId,
@@ -472,7 +472,7 @@ void main() {
         expect(paymentMethodsResult, isA<List<PaymentMethodQuote>>());
         print("passed 14");
 
-        paymentMethodCode = paymentMethodsResult.first.code;
+        paymentMethodCode = paymentMethodsResult.first!.code!;
 
         var applyCouponResult = await vendure.order.applyCouponCode(
           couponCode: 'abc123',
@@ -507,7 +507,7 @@ void main() {
 
         var shippingMethods = await vendure.order.getShippingMethods();
         expect(shippingMethods, isA<List<ShippingMethodQuote>>());
-        shippingMethodId = shippingMethods.first.id;
+        shippingMethodId = shippingMethods!.first!.id!;
         print("passed 19");
 
         var shippingMethodResult = await vendure.order.setOrderShippingMethod(
@@ -547,7 +547,7 @@ void main() {
         expect(order.state, 'PaymentAuthorized');
         print("passed 23");
 
-        var paidOrder = await vendure.order.getOrderByCode(code: order.code);
+        var paidOrder = await vendure.order.getOrderByCode(code: order.code!);
         expect(paidOrder, isA<Order>());
         expect(paidOrder.state, 'PaymentAuthorized');
         print("passed 24");
@@ -571,7 +571,7 @@ void main() {
           options: options,
         );
         expect(collectionList, isA<CollectionList>());
-        for (var collection in collectionList.items) {
+        for (var collection in collectionList.items!) {
           expect(collection, isA<Collection>());
         }
       } catch (e) {
@@ -590,8 +590,8 @@ void main() {
           options: options,
         );
         expect(result, isA<CollectionList>());
-        if (result.items.isNotEmpty) {
-          for (var collection in result.items) {
+        if (result.items!.isNotEmpty) {
+          for (var collection in result.items!) {
             expect(collection, isA<Collection>());
           }
         }
@@ -609,7 +609,7 @@ void main() {
           options: options,
         );
         expect(collectionList, isA<CollectionList>());
-        for (var collection in collectionList.items) {
+        for (var collection in collectionList.items!) {
           expect(collection, isA<Collection>());
         }
       } catch (e) {
@@ -679,7 +679,7 @@ void main() {
         ProductListOptions options = ProductListOptions(take: 1);
         var products = await vendure.catalog.getProducts(options: options);
         expect(products, isA<ProductList>());
-        for (var product in products.items) {
+        for (var product in products.items!) {
           expect(product, isA<Product>());
         }
       } catch (e) {
@@ -712,7 +712,7 @@ void main() {
           input: searchInput,
         );
         expect(searchResponse, isA<SearchResponse>());
-        for (var searchResult in searchResponse.items) {
+        for (var searchResult in searchResponse.items!) {
           expect(searchResult, isA<SearchResult>());
         }
       } catch (e) {
@@ -736,7 +736,7 @@ void main() {
         FacetListOptions options = FacetListOptions(take: 1);
         var facets = await vendure.system.getFacets(options: options);
         expect(facets, isA<FacetList>());
-        for (var facet in facets.items) {
+        for (var facet in facets.items!) {
           expect(facet, isA<Facet>());
         }
       } catch (e) {
@@ -806,7 +806,7 @@ void main() {
           ),
         );
         expect(address, isA<Address>());
-        customerAddressId = address.id;
+        customerAddressId = address.id!;
       } catch (e) {
         fail('Error creating customer address: $e');
       }

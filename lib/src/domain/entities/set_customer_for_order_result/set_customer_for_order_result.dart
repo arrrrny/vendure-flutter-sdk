@@ -22,18 +22,18 @@ sealed class SetCustomerForOrderResult {
   factory SetCustomerForOrderResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'AlreadyLoggedInError':
+      case 'alreadyLoggedInError':
         return AlreadyLoggedInError.fromJson(json);
-      case 'EmailAddressConflictError':
+      case 'emailAddressConflictError':
         return EmailAddressConflictError.fromJson(json);
-      case 'GuestCheckoutError':
+      case 'guestCheckoutError':
         return GuestCheckoutError.fromJson(json);
-      case 'NoActiveOrderError':
+      case 'noActiveOrderError':
         return NoActiveOrderError.fromJson(json);
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
       default:
-        throw ArgumentError('Unknown SetCustomerForOrderResult variant: \$runtimeType');
+        throw ArgumentError('Unknown SetCustomerForOrderResult variant: $runtimeType');
     }
   }
 

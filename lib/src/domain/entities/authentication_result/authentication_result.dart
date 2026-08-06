@@ -10,14 +10,14 @@ sealed class AuthenticationResult {
   factory AuthenticationResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'CurrentUser':
+      case 'currentUser':
         return CurrentUser.fromJson(json);
-      case 'InvalidCredentialsError':
+      case 'invalidCredentialsError':
         return InvalidCredentialsError.fromJson(json);
-      case 'NotVerifiedError':
+      case 'notVerifiedError':
         return NotVerifiedError.fromJson(json);
       default:
-        throw ArgumentError('Unknown AuthenticationResult variant: \$runtimeType');
+        throw ArgumentError('Unknown AuthenticationResult variant: $runtimeType');
     }
   }
 

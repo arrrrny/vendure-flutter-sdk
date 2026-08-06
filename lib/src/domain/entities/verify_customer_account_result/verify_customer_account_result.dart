@@ -10,22 +10,22 @@ sealed class VerifyCustomerAccountResult {
   factory VerifyCustomerAccountResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'CurrentUser':
+      case 'currentUser':
         return CurrentUser.fromJson(json);
-      case 'MissingPasswordError':
+      case 'missingPasswordError':
         return MissingPasswordError.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'PasswordAlreadySetError':
+      case 'passwordAlreadySetError':
         return PasswordAlreadySetError.fromJson(json);
-      case 'PasswordValidationError':
+      case 'passwordValidationError':
         return PasswordValidationError.fromJson(json);
-      case 'VerificationTokenExpiredError':
+      case 'verificationTokenExpiredError':
         return VerificationTokenExpiredError.fromJson(json);
-      case 'VerificationTokenInvalidError':
+      case 'verificationTokenInvalidError':
         return VerificationTokenInvalidError.fromJson(json);
       default:
-        throw ArgumentError('Unknown VerifyCustomerAccountResult variant: \$runtimeType');
+        throw ArgumentError('Unknown VerifyCustomerAccountResult variant: $runtimeType');
     }
   }
 

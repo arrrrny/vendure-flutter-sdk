@@ -21,22 +21,22 @@ sealed class AddPaymentToOrderResult {
   factory AddPaymentToOrderResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'IneligiblePaymentMethodError':
+      case 'ineligiblePaymentMethodError':
         return IneligiblePaymentMethodError.fromJson(json);
-      case 'NoActiveOrderError':
+      case 'noActiveOrderError':
         return NoActiveOrderError.fromJson(json);
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
-      case 'OrderPaymentStateError':
+      case 'orderPaymentStateError':
         return OrderPaymentStateError.fromJson(json);
-      case 'OrderStateTransitionError':
+      case 'orderStateTransitionError':
         return OrderStateTransitionError.fromJson(json);
-      case 'PaymentDeclinedError':
+      case 'paymentDeclinedError':
         return PaymentDeclinedError.fromJson(json);
-      case 'PaymentFailedError':
+      case 'paymentFailedError':
         return PaymentFailedError.fromJson(json);
       default:
-        throw ArgumentError('Unknown AddPaymentToOrderResult variant: \$runtimeType');
+        throw ArgumentError('Unknown AddPaymentToOrderResult variant: $runtimeType');
     }
   }
 

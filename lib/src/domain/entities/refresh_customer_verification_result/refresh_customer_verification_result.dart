@@ -9,12 +9,12 @@ sealed class RefreshCustomerVerificationResult {
   factory RefreshCustomerVerificationResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'Success':
+      case 'success':
         return Success.fromJson(json);
       default:
-        throw ArgumentError('Unknown RefreshCustomerVerificationResult variant: \$runtimeType');
+        throw ArgumentError('Unknown RefreshCustomerVerificationResult variant: $runtimeType');
     }
   }
 

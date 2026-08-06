@@ -8,12 +8,12 @@ sealed class SearchResultPrice {
   factory SearchResultPrice.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'PriceRange':
+      case 'priceRange':
         return PriceRange.fromJson(json);
-      case 'SinglePrice':
+      case 'singlePrice':
         return SinglePrice.fromJson(json);
       default:
-        throw ArgumentError('Unknown SearchResultPrice variant: \$runtimeType');
+        throw ArgumentError('Unknown SearchResultPrice variant: $runtimeType');
     }
   }
 

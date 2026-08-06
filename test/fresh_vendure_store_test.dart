@@ -34,7 +34,7 @@ void main() {
         var countries = await vendure.system.getAvailableCountries();
         expect(countries, isA<List<Country>>());
         expect(countries, isNotEmpty);
-        print('✅ Retrieved ${countries.length} available countries');
+        print('✅ Retrieved ${countries.length!} available countries');
         print(
           '📋 Sample countries: ${countries.take(3).map((c) => c.name).join(", ")}',
         );
@@ -48,8 +48,8 @@ void main() {
         var collections = await vendure.catalog.getCollections();
         expect(collections, isA<CollectionList>());
         print('✅ Retrieved ${collections.totalItems} collections');
-        if (collections.items.isNotEmpty) {
-          print('📋 Sample collection: ${collections.items.first.name}');
+        if (collections.items!.isNotEmpty) {
+          print('📋 Sample collection: ${collections.items!.first!.name}');
         }
       } catch (e) {
         fail('❌ Failed to get collections: $e');
@@ -61,8 +61,8 @@ void main() {
         var products = await vendure.catalog.getProducts();
         expect(products, isA<ProductList>());
         print('✅ Retrieved ${products.totalItems} products');
-        if (products.items.isNotEmpty) {
-          print('📋 Sample product: ${products.items.first.name}');
+        if (products.items!.isNotEmpty) {
+          print('📋 Sample product: ${products.items!.first!.name}');
         }
       } catch (e) {
         fail('❌ Failed to get products: $e');
@@ -74,8 +74,8 @@ void main() {
         var facets = await vendure.system.getFacets();
         expect(facets, isA<FacetList>());
         print('✅ Retrieved ${facets.totalItems} facets');
-        if (facets.items.isNotEmpty) {
-          print('📋 Sample facet: ${facets.items.first.name}');
+        if (facets.items!.isNotEmpty) {
+          print('📋 Sample facet: ${facets.items!.first!.name}');
         }
       } catch (e) {
         fail('❌ Failed to get facets: $e');
@@ -170,7 +170,7 @@ void main() {
         if (token != null) {
           expect(token, isA<String>());
           print('✅ Token retrieved successfully');
-          print('📋 Token: ${token.substring(0, 20)}...');
+          print('📋 Token: ${token.substring!(0, 20)}...');
         } else {
           print('⚠️ Token is null - authentication may have failed');
         }
@@ -191,7 +191,7 @@ void main() {
         expect(authenticatedVendure, isA<Vendure>());
         expect(authenticatedVendure.token, isNotNull);
         print('✅ Native auth initialization successful');
-        print('📋 Token: ${authenticatedVendure.token?.substring(0, 20)}...');
+        print('📋 Token: ${authenticatedVendure.token?.substring!(0, 20)}...');
 
         // Test authenticated endpoint access
         try {
@@ -220,28 +220,28 @@ void main() {
       try {
         // First, get available products
         var products = await vendure.catalog.getProducts();
-        if (products.items.isEmpty) {
+        if (products.items!.isEmpty) {
           print('⚠️ No products available to test order creation');
           return;
         }
 
-        var firstProduct = products.items.first;
+        var firstProduct = products.items!.first;
         print('🛍️ Testing with product: ${firstProduct.name}');
 
         // Get product variants
-        if (firstProduct.variants.isEmpty) {
+        if (firstProduct.variants!.isEmpty) {
           print('⚠️ Product has no variants available');
           return;
         }
 
-        var firstVariant = firstProduct.variants.first;
+        var firstVariant = firstProduct.variants!.first;
         print(
-          '📦 Using variant: ${firstVariant.name} (ID: ${firstVariant.id})',
+          '📦 Using variant: ${firstVariant!.name} (ID: ${firstVariant.id})',
         );
 
         // Add item to order
         var result = await vendure.order.addItemToOrder(
-          productVariantId: firstVariant.id,
+          productVariantId: firstVariant!.id!,
           quantity: 1,
         );
         print(result);
@@ -254,7 +254,7 @@ void main() {
         print('✅ Successfully added item to guest order');
         print('📋 Order code: ${order.code}');
         print('📋 Order total: ${order.totalWithTax}');
-        print('📋 Line items: ${order.lines.length}');
+        print('📋 Line items: ${order.lines!.length}');
       } catch (e) {
         print('⚠️ Failed to create guest order: $e');
         // Don't fail test as this depends on product availability
@@ -289,9 +289,9 @@ void main() {
         print('✅ Search completed');
         print('📋 Found ${searchResult.totalItems} items for "laptop"');
 
-        if (searchResult.items.isNotEmpty) {
-          var firstResult = searchResult.items.first;
-          print('📋 First result: ${firstResult.productName}');
+        if (searchResult.items!.isNotEmpty) {
+          var firstResult = searchResult.items!.first;
+          print('📋 First result: ${firstResult!.productName}');
         }
       } catch (e) {
         print('⚠️ Search failed: $e');
@@ -301,11 +301,11 @@ void main() {
     test('Get collection by ID (if available)', () async {
       try {
         var collections = await vendure.catalog.getCollections();
-        if (collections.items.isNotEmpty) {
-          var firstCollection = collections.items.first;
+        if (collections.items!.isNotEmpty) {
+          var firstCollection = collections.items!.first;
 
           var collection = await vendure.catalog.getCollectionById(
-            id: firstCollection.id,
+            id: firstCollection.id!,
           );
 
           expect(collection, isA<Collection>());
@@ -325,17 +325,17 @@ void main() {
     test('Get product by ID (if available)', () async {
       try {
         var products = await vendure.catalog.getProducts();
-        if (products.items.isNotEmpty) {
-          var firstProduct = products.items.first;
+        if (products.items!.isNotEmpty) {
+          var firstProduct = products.items!.first;
 
           var product = await vendure.catalog.getProductById(
-            id: firstProduct.id,
+            id: firstProduct.id!,
           );
 
           expect(product, isA<Product>());
           print('✅ Retrieved product by ID');
           print('📋 Product: ${product.name}');
-          print('📋 Description: ${product.description.substring(0, 50)}...');
+          print('📋 Description: ${product.description!.substring(0, 50)}...');
         } else {
           print('ℹ️ No products available to test');
         }
@@ -355,7 +355,7 @@ void main() {
         print('⚠️ Expected error for invalid product variant, but got success');
       } catch (e) {
         print(
-          '✅ Correctly handled invalid product variant: ${e.toString().substring(0, 100)}...',
+          '✅ Correctly handled invalid product variant: ${e.toString().substring!(0, 100)}...',
         );
         expect(e, isNotNull);
       }
@@ -370,7 +370,7 @@ void main() {
         print('⚠️ Expected authentication error, but got success');
       } catch (e) {
         print(
-          '✅ Correctly handled invalid credentials: ${e.toString().substring(0, 100)}...',
+          '✅ Correctly handled invalid credentials: ${e.toString().substring!(0, 100)}...',
         );
         expect(e, isNotNull);
       }
@@ -382,7 +382,7 @@ void main() {
         print('⚠️ Expected error for invalid collection, but got success');
       } catch (e) {
         print(
-          '✅ Correctly handled invalid collection ID: ${e.toString().substring(0, 100)}...',
+          '✅ Correctly handled invalid collection ID: ${e.toString().substring!(0, 100)}...',
         );
         expect(e, isNotNull);
       }

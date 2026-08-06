@@ -21,12 +21,12 @@ sealed class RemoveOrderItemsResult {
   factory RemoveOrderItemsResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
-      case 'OrderModificationError':
+      case 'orderModificationError':
         return OrderModificationError.fromJson(json);
       default:
-        throw ArgumentError('Unknown RemoveOrderItemsResult variant: \$runtimeType');
+        throw ArgumentError('Unknown RemoveOrderItemsResult variant: $runtimeType');
     }
   }
 

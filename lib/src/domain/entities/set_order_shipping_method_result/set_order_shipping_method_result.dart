@@ -21,16 +21,16 @@ sealed class SetOrderShippingMethodResult {
   factory SetOrderShippingMethodResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'IneligibleShippingMethodError':
+      case 'ineligibleShippingMethodError':
         return IneligibleShippingMethodError.fromJson(json);
-      case 'NoActiveOrderError':
+      case 'noActiveOrderError':
         return NoActiveOrderError.fromJson(json);
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
-      case 'OrderModificationError':
+      case 'orderModificationError':
         return OrderModificationError.fromJson(json);
       default:
-        throw ArgumentError('Unknown SetOrderShippingMethodResult variant: \$runtimeType');
+        throw ArgumentError('Unknown SetOrderShippingMethodResult variant: $runtimeType');
     }
   }
 

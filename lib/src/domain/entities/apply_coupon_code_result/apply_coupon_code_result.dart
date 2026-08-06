@@ -21,16 +21,16 @@ sealed class ApplyCouponCodeResult {
   factory ApplyCouponCodeResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'CouponCodeExpiredError':
+      case 'couponCodeExpiredError':
         return CouponCodeExpiredError.fromJson(json);
-      case 'CouponCodeInvalidError':
+      case 'couponCodeInvalidError':
         return CouponCodeInvalidError.fromJson(json);
-      case 'CouponCodeLimitError':
+      case 'couponCodeLimitError':
         return CouponCodeLimitError.fromJson(json);
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
       default:
-        throw ArgumentError('Unknown ApplyCouponCodeResult variant: \$runtimeType');
+        throw ArgumentError('Unknown ApplyCouponCodeResult variant: $runtimeType');
     }
   }
 
