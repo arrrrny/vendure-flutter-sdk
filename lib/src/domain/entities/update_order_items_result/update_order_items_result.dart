@@ -21,18 +21,18 @@ sealed class UpdateOrderItemsResult {
   factory UpdateOrderItemsResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'InsufficientStockError':
+      case 'insufficientStockError':
         return InsufficientStockError.fromJson(json);
-      case 'NegativeQuantityError':
+      case 'negativeQuantityError':
         return NegativeQuantityError.fromJson(json);
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
-      case 'OrderLimitError':
+      case 'orderLimitError':
         return OrderLimitError.fromJson(json);
-      case 'OrderModificationError':
+      case 'orderModificationError':
         return OrderModificationError.fromJson(json);
       default:
-        throw ArgumentError('Unknown UpdateOrderItemsResult variant: \$runtimeType');
+        throw ArgumentError('Unknown UpdateOrderItemsResult variant: $runtimeType');
     }
   }
 

@@ -146,10 +146,10 @@ class TestConfig {
 
     final variantIds = <String>{};
     for (final product in products.items) {
-      for (final variant in product.variants) {
+      for (final variant in product.variants!) {
         if (variantIds.length >= count) break;
-        if (variant.id.isNotEmpty) {
-          variantIds.add(variant.id);
+        if (variant!.id!.isNotEmpty) {
+          variantIds.add(variant!.id!);
         }
       }
       if (variantIds.length >= count) break;
@@ -173,7 +173,7 @@ class TestConfig {
     if (products.items.isEmpty) {
       throw StateError('No products available');
     }
-    return products.items.first.id;
+    return products.items!.first!.id!;
   }
 
   static Future<String> fetchAnyProductSlug(Vendure vendure) async {
@@ -183,7 +183,7 @@ class TestConfig {
     if (products.items.isEmpty) {
       throw StateError('No products available');
     }
-    return products.items.first.slug;
+    return products.items!.first!.slug!;
   }
 
   static Future<String> fetchAnyCollectionId(Vendure vendure) async {
@@ -191,7 +191,7 @@ class TestConfig {
     if (collections.items.isEmpty) {
       throw StateError('No collections available');
     }
-    return collections.items.first.id;
+    return collections.items!.first!.id!;
   }
 
   static Future<String> fetchAnyCollectionSlug(Vendure vendure) async {
@@ -199,7 +199,7 @@ class TestConfig {
     if (collections.items.isEmpty) {
       throw StateError('No collections available');
     }
-    return collections.items.first.slug;
+    return collections.items!.first!.slug!;
   }
 
   static String _toWebSocketUrl(String httpUrl) {

@@ -9,16 +9,16 @@ sealed class RequestUpdateCustomerEmailAddressResult {
   factory RequestUpdateCustomerEmailAddressResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'EmailAddressConflictError':
+      case 'emailAddressConflictError':
         return EmailAddressConflictError.fromJson(json);
-      case 'InvalidCredentialsError':
+      case 'invalidCredentialsError':
         return InvalidCredentialsError.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'Success':
+      case 'success':
         return Success.fromJson(json);
       default:
-        throw ArgumentError('Unknown RequestUpdateCustomerEmailAddressResult variant: \$runtimeType');
+        throw ArgumentError('Unknown RequestUpdateCustomerEmailAddressResult variant: $runtimeType');
     }
   }
 

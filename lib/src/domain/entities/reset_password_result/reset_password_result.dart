@@ -10,20 +10,20 @@ sealed class ResetPasswordResult {
   factory ResetPasswordResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'CurrentUser':
+      case 'currentUser':
         return CurrentUser.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'NotVerifiedError':
+      case 'notVerifiedError':
         return NotVerifiedError.fromJson(json);
-      case 'PasswordResetTokenExpiredError':
+      case 'passwordResetTokenExpiredError':
         return PasswordResetTokenExpiredError.fromJson(json);
-      case 'PasswordResetTokenInvalidError':
+      case 'passwordResetTokenInvalidError':
         return PasswordResetTokenInvalidError.fromJson(json);
-      case 'PasswordValidationError':
+      case 'passwordValidationError':
         return PasswordValidationError.fromJson(json);
       default:
-        throw ArgumentError('Unknown ResetPasswordResult variant: \$runtimeType');
+        throw ArgumentError('Unknown ResetPasswordResult variant: $runtimeType');
     }
   }
 

@@ -37,12 +37,12 @@ void main() {
         var products = await vendure.catalog.getProducts();
         expect(products.items, isNotEmpty);
 
-        var productWithVariants = products.items.firstWhere(
-          (p) => p.variants.isNotEmpty,
-          orElse: () => products.items.first,
+        var productWithVariants = products.items!.firstWhere(
+          (p) => p.variants!.isNotEmpty,
+          orElse: () => products.items!.first,
         );
 
-        testProductVariantId = productWithVariants.variants.first.id;
+        testProductVariantId = productWithVariants.variants!.first!.id!;
         print('✅ Found test product variant: ${productWithVariants.name}');
         print('📋 Variant ID: $testProductVariantId');
       } catch (e) {
@@ -93,7 +93,7 @@ void main() {
         expect(token, isNotNull);
         expect(token, isA<String>());
         print('✅ Token retrieved successfully');
-        print('📋 Token: ${token!.substring(0, 20)}...');
+        print('📋 Token: ${token!.substring!(0, 20)}...');
       } catch (e) {
         fail('❌ Token fetch failed: $e');
       }
@@ -111,7 +111,7 @@ void main() {
         expect(authenticatedVendure, isA<Vendure>());
         expect(authenticatedVendure.token, isNotNull);
         print('✅ Native auth initialization successful');
-        print('📋 Token: ${authenticatedVendure.token?.substring(0, 20)}...');
+        print('📋 Token: ${authenticatedVendure.token?.substring!(0, 20)}...');
       } catch (e) {
         fail('❌ Native auth initialization failed: $e');
       }
@@ -127,7 +127,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly rejected invalid credentials: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly rejected invalid credentials: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -142,7 +142,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly rejected invalid login: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly rejected invalid login: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -198,8 +198,8 @@ void main() {
         Order order = Order.fromJson(result.toJson());
         expect(order.lines, isNotEmpty);
 
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
 
         print('✅ Added item to guest order');
         print('📋 Order code: $testOrderCode');
@@ -218,7 +218,7 @@ void main() {
 
         print('✅ Retrieved active order');
         print('📋 Order state: ${order.state}');
-        print('📋 Line count: ${order.lines.length}');
+        print('📋 Line count: ${order.lines!.length}');
       } catch (e) {
         fail('❌ Failed to get active order: $e');
       }
@@ -233,10 +233,10 @@ void main() {
 
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
-        expect(order.lines.first.quantity, equals(3));
+        expect(order.lines!.first!.quantity, equals(3));
 
         print('✅ Adjusted order line quantity');
-        print('📋 New quantity: ${order.lines.first.quantity}');
+        print('📋 New quantity: ${order.lines!.first!.quantity}');
       } catch (e) {
         fail('❌ Failed to adjust order line: $e');
       }
@@ -277,7 +277,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled invalid coupon: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled invalid coupon: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -291,7 +291,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '⚠️ No valid coupons available: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '⚠️ No valid coupons available: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -332,8 +332,8 @@ void main() {
 
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
 
         print('✅ Added item back for shipping tests');
       } catch (e) {
@@ -348,14 +348,14 @@ void main() {
         var countries = await vendure.system.getAvailableCountries();
         expect(countries, isNotEmpty);
 
-        print('✅ Retrieved ${countries.length} countries');
+        print('✅ Retrieved ${countries.length!} countries');
 
         // Find US for address testing
         var usCountry = countries.firstWhere(
           (c) => c.code == 'US',
           orElse: () => countries.first,
         );
-        testCountryCode = usCountry.code;
+        testCountryCode = usCountry.code!;
         print('📋 Using country: ${usCountry.name} (${usCountry.code})');
       } catch (e) {
         fail('❌ Failed to get countries: $e');
@@ -368,8 +368,8 @@ void main() {
         expect(facets, isA<FacetList>());
 
         print('✅ Retrieved ${facets.totalItems} facets');
-        if (facets.items.isNotEmpty) {
-          print('📋 Sample facet: ${facets.items.first.name}');
+        if (facets.items!.isNotEmpty) {
+          print('📋 Sample facet: ${facets.items!.first!.name}');
         }
       } catch (e) {
         fail('❌ Failed to get facets: $e');
@@ -379,12 +379,12 @@ void main() {
     test('Get specific facet by ID', () async {
       try {
         var facets = await vendure.system.getFacets();
-        if (facets.items.isNotEmpty) {
-          var facet = await vendure.system.getFacet(id: facets.items.first.id);
+        if (facets.items!.isNotEmpty) {
+          var facet = await vendure.system.getFacet(id: facets.items!.first!.id!);
           expect(facet, isA<Facet>());
 
           print('✅ Retrieved specific facet: ${facet.name}');
-          print('📋 Facet values: ${facet.values?.length ?? 0}');
+          print('📋 Facet values: ${facet.values?.length! ?? 0}');
         }
       } catch (e) {
         print('⚠️ Failed to get specific facet: $e');
@@ -417,9 +417,9 @@ void main() {
     test('Get collection by ID', () async {
       try {
         var collections = await vendure.catalog.getCollections();
-        if (collections.items.isNotEmpty) {
+        if (collections.items!.isNotEmpty) {
           var collection = await vendure.catalog.getCollectionById(
-            id: collections.items.first.id,
+            id: collections.items!.first!.id!,
           );
 
           expect(collection, isA<Collection>());
@@ -433,10 +433,10 @@ void main() {
     test('Get collection by slug', () async {
       try {
         var collections = await vendure.catalog.getCollections();
-        if (collections.items.isNotEmpty) {
-          var firstCollection = collections.items.first;
+        if (collections.items!.isNotEmpty) {
+          var firstCollection = collections.items!.first;
           var collection = await vendure.catalog.getCollectionBySlug(
-            slug: firstCollection.slug,
+            slug: firstCollection.slug!,
           );
 
           expect(collection, isA<Collection>());
@@ -461,14 +461,14 @@ void main() {
     test('Get product by ID', () async {
       try {
         var products = await vendure.catalog.getProducts();
-        if (products.items.isNotEmpty) {
+        if (products.items!.isNotEmpty) {
           var product = await vendure.catalog.getProductById(
-            id: products.items.first.id,
+            id: products.items!.first!.id!,
           );
 
           expect(product, isA<Product>());
           print('✅ Retrieved product by ID: ${product.name}');
-          print('📋 Variants: ${product.variants.length}');
+          print('📋 Variants: ${product.variants!.length}');
         }
       } catch (e) {
         fail('❌ Failed to get product by ID: $e');
@@ -478,10 +478,10 @@ void main() {
     test('Get product by slug', () async {
       try {
         var products = await vendure.catalog.getProducts();
-        if (products.items.isNotEmpty) {
-          var firstProduct = products.items.first;
+        if (products.items!.isNotEmpty) {
+          var firstProduct = products.items!.first;
           var product = await vendure.catalog.getProductBySlug(
-            slug: firstProduct.slug,
+            slug: firstProduct.slug!,
           );
 
           expect(product, isA<Product>());
@@ -522,7 +522,7 @@ void main() {
 
         expect(result, isA<SearchResponse>());
         print('✅ Search with filters: ${result.totalItems} results');
-        print('📋 Facet values: ${result.facetValues.length}');
+        print('📋 Facet values: ${result.facetValues!.length}');
       } catch (e) {
         print('⚠️ Search with filters failed: $e');
       }
@@ -575,7 +575,7 @@ void main() {
         var shippingMethods = await vendure.order.getShippingMethods();
         expect(shippingMethods, isA<List<ShippingMethodQuote>>());
 
-        print('✅ Retrieved ${shippingMethods.length} shipping methods');
+        print('✅ Retrieved ${shippingMethods.length!} shipping methods');
 
         if (shippingMethods.isNotEmpty) {
           print(
@@ -585,11 +585,11 @@ void main() {
           // Set the first shipping method
           try {
             var result = await vendure.order.setOrderShippingMethod(
-              shippingMethodId: shippingMethods.first.id,
+              shippingMethodId: shippingMethods!.first!.id!,
             );
 
             expect(result, isA<SetOrderShippingMethodResult>());
-            print('✅ Set shipping method: ${shippingMethods.first.name}');
+            print('✅ Set shipping method: ${shippingMethods!.first!.name}');
           } catch (e) {
             print('⚠️ Failed to set shipping method: $e');
           }
@@ -604,7 +604,7 @@ void main() {
         var paymentMethods = await vendure.order.getPaymentMethods();
         expect(paymentMethods, isA<List<PaymentMethodQuote>>());
 
-        print('✅ Retrieved ${paymentMethods.length} payment methods');
+        print('✅ Retrieved ${paymentMethods.length!} payment methods');
         if (paymentMethods.isNotEmpty) {
           print(
             '📋 Available methods: ${paymentMethods.map((m) => m.name).join(", ")}',
@@ -620,7 +620,7 @@ void main() {
         var states = await vendure.order.getNextOrderStates();
         expect(states, isA<List<String>>());
 
-        print('✅ Retrieved ${states.length} next order states');
+        print('✅ Retrieved ${states.length!} next order states');
         if (states.isNotEmpty) {
           print('📋 Next states: ${states.join(", ")}');
         }
@@ -680,7 +680,7 @@ void main() {
         );
 
         expect(result, isA<Customer>());
-        expect(result.firstName, equals('Updated'));
+        expect(result.firstName!, equals('Updated'));
         print('✅ Updated customer details');
         print('📋 New name: ${result.firstName} ${result.lastName}');
       } catch (e) {
@@ -702,7 +702,7 @@ void main() {
         );
 
         expect(result, isA<Address>());
-        testAddressId = result.id;
+        testAddressId = result.id!;
         print('✅ Created customer address');
         print('📋 Address ID: ${result.id}');
       } catch (e) {
@@ -757,8 +757,8 @@ void main() {
         Order order = Order.fromJson(result.toJson());
         expect(order.lines, isNotEmpty);
 
-        testOrderCode = order.code;
-        testOrderLineId = order.lines.first.id;
+        testOrderCode = order.code!;
+        testOrderLineId = order.lines!.first!.id!;
 
         print('✅ Added item to authenticated order');
         print('📋 Order code: $testOrderCode');
@@ -829,19 +829,19 @@ void main() {
         expect(shippingMethods, isA<List<ShippingMethodQuote>>());
 
         print(
-          '✅ Retrieved ${shippingMethods.length} shipping methods for authenticated order',
+          '✅ Retrieved ${shippingMethods.length!} shipping methods for authenticated order',
         );
 
         if (shippingMethods.isNotEmpty) {
           try {
             var result = await authenticatedVendure.order
                 .setOrderShippingMethod(
-                  shippingMethodId: shippingMethods.first.id,
+                  shippingMethodId: shippingMethods!.first!.id!,
                 );
 
             expect(result, isA<SetOrderShippingMethodResult>());
             print(
-              '✅ Set shipping method for authenticated order: ${shippingMethods.first.name}',
+              '✅ Set shipping method for authenticated order: ${shippingMethods!.first!.name}',
             );
           } catch (e) {
             print(
@@ -861,7 +861,7 @@ void main() {
         expect(paymentMethods, isA<List<PaymentMethodQuote>>());
 
         print(
-          '✅ Retrieved ${paymentMethods.length} payment methods for authenticated order',
+          '✅ Retrieved ${paymentMethods.length!} payment methods for authenticated order',
         );
         if (paymentMethods.isNotEmpty) {
           print(
@@ -972,7 +972,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled invalid variant: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled invalid variant: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -984,7 +984,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled invalid order line: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled invalid order line: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -996,7 +996,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled invalid collection: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled invalid collection: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -1008,7 +1008,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled invalid product: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled invalid product: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -1028,7 +1028,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled invalid country: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled invalid country: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -1043,7 +1043,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled negative quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled negative quantity: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });
@@ -1058,7 +1058,7 @@ void main() {
       } catch (e) {
         String errorMsg = e.toString();
         print(
-          '✅ Correctly handled zero quantity: ${errorMsg.length > 100 ? '${errorMsg.substring(0, 100)}...' : errorMsg}',
+          '✅ Correctly handled zero quantity: ${errorMsg.length! > 100 ? '${errorMsg.substring!(0, 100)}...' : errorMsg}',
         );
       }
     });

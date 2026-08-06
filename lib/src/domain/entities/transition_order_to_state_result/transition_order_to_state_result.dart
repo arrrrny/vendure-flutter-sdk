@@ -21,12 +21,12 @@ sealed class TransitionOrderToStateResult {
   factory TransitionOrderToStateResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
-      case 'OrderStateTransitionError':
+      case 'orderStateTransitionError':
         return OrderStateTransitionError.fromJson(json);
       default:
-        throw ArgumentError('Unknown TransitionOrderToStateResult variant: \$runtimeType');
+        throw ArgumentError('Unknown TransitionOrderToStateResult variant: $runtimeType');
     }
   }
 

@@ -11,26 +11,26 @@ sealed class CustomFieldConfig {
   factory CustomFieldConfig.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'BooleanCustomFieldConfig':
+      case 'booleanCustomFieldConfig':
         return BooleanCustomFieldConfig.fromJson(json);
-      case 'DateTimeCustomFieldConfig':
+      case 'dateTimeCustomFieldConfig':
         return DateTimeCustomFieldConfig.fromJson(json);
-      case 'FloatCustomFieldConfig':
+      case 'floatCustomFieldConfig':
         return FloatCustomFieldConfig.fromJson(json);
-      case 'IntCustomFieldConfig':
+      case 'intCustomFieldConfig':
         return IntCustomFieldConfig.fromJson(json);
-      case 'LocaleStringCustomFieldConfig':
+      case 'localeStringCustomFieldConfig':
         return LocaleStringCustomFieldConfig.fromJson(json);
-      case 'LocaleTextCustomFieldConfig':
+      case 'localeTextCustomFieldConfig':
         return LocaleTextCustomFieldConfig.fromJson(json);
-      case 'RelationCustomFieldConfig':
+      case 'relationCustomFieldConfig':
         return RelationCustomFieldConfig.fromJson(json);
-      case 'StringCustomFieldConfig':
+      case 'stringCustomFieldConfig':
         return StringCustomFieldConfig.fromJson(json);
-      case 'TextCustomFieldConfig':
+      case 'textCustomFieldConfig':
         return TextCustomFieldConfig.fromJson(json);
       default:
-        throw ArgumentError('Unknown CustomFieldConfig variant: \$runtimeType');
+        throw ArgumentError('Unknown CustomFieldConfig variant: $runtimeType');
     }
   }
 

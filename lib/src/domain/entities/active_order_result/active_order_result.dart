@@ -21,12 +21,12 @@ sealed class ActiveOrderResult {
   factory ActiveOrderResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'NoActiveOrderError':
+      case 'noActiveOrderError':
         return NoActiveOrderError.fromJson(json);
-      case 'Order':
+      case 'order':
         return Order.fromJson(json);
       default:
-        throw ArgumentError('Unknown ActiveOrderResult variant: \$runtimeType');
+        throw ArgumentError('Unknown ActiveOrderResult variant: $runtimeType');
     }
   }
 

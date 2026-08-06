@@ -10,16 +10,16 @@ sealed class NativeAuthenticationResult {
   factory NativeAuthenticationResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'CurrentUser':
+      case 'currentUser':
         return CurrentUser.fromJson(json);
-      case 'InvalidCredentialsError':
+      case 'invalidCredentialsError':
         return InvalidCredentialsError.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'NotVerifiedError':
+      case 'notVerifiedError':
         return NotVerifiedError.fromJson(json);
       default:
-        throw ArgumentError('Unknown NativeAuthenticationResult variant: \$runtimeType');
+        throw ArgumentError('Unknown NativeAuthenticationResult variant: $runtimeType');
     }
   }
 

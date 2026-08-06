@@ -9,16 +9,16 @@ sealed class RegisterCustomerAccountResult {
   factory RegisterCustomerAccountResult.fromJson(Map<String, dynamic> json) {
     final runtimeType = json['runtimeType'] as String?;
     switch (runtimeType) {
-      case 'MissingPasswordError':
+      case 'missingPasswordError':
         return MissingPasswordError.fromJson(json);
-      case 'NativeAuthStrategyError':
+      case 'nativeAuthStrategyError':
         return NativeAuthStrategyError.fromJson(json);
-      case 'PasswordValidationError':
+      case 'passwordValidationError':
         return PasswordValidationError.fromJson(json);
-      case 'Success':
+      case 'success':
         return Success.fromJson(json);
       default:
-        throw ArgumentError('Unknown RegisterCustomerAccountResult variant: \$runtimeType');
+        throw ArgumentError('Unknown RegisterCustomerAccountResult variant: $runtimeType');
     }
   }
 
