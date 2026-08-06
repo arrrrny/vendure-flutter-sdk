@@ -1,0 +1,119 @@
+import 'package:json_annotation/json_annotation.dart';
+import '../current_user_channel/current_user_channel.dart';
+import '../enums/error_code.dart';
+
+part 'reset_password_result.g.dart';
+
+sealed class ResetPasswordResult {
+  const ResetPasswordResult._();
+
+  factory ResetPasswordResult.fromJson(Map<String, dynamic> json) {
+    final runtimeType = json['runtimeType'] as String?;
+    switch (runtimeType) {
+      case 'CurrentUser':
+        return CurrentUser.fromJson(json);
+      case 'NativeAuthStrategyError':
+        return NativeAuthStrategyError.fromJson(json);
+      case 'NotVerifiedError':
+        return NotVerifiedError.fromJson(json);
+      case 'PasswordResetTokenExpiredError':
+        return PasswordResetTokenExpiredError.fromJson(json);
+      case 'PasswordResetTokenInvalidError':
+        return PasswordResetTokenInvalidError.fromJson(json);
+      case 'PasswordValidationError':
+        return PasswordValidationError.fromJson(json);
+      default:
+        throw ArgumentError('Unknown ResetPasswordResult variant: \$runtimeType');
+    }
+  }
+
+  Map<String, dynamic> toJson();
+}
+
+@JsonSerializable(explicitToJson: true)
+class CurrentUser extends ResetPasswordResult {
+  List<CurrentUserChannel> channels;
+  String id;
+  String identifier;
+
+  CurrentUser({
+    required this.channels,
+    required this.id,
+    required this.identifier,
+  }) : super._();
+
+  factory CurrentUser.fromJson(Map<String, dynamic> json) => _$CurrentUserFromJson(json);
+  Map<String, dynamic> toJson() => _$CurrentUserToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class NativeAuthStrategyError extends ResetPasswordResult {
+  ErrorCode errorCode;
+  String message;
+
+  NativeAuthStrategyError({
+    required this.errorCode,
+    required this.message,
+  }) : super._();
+
+  factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
+  Map<String, dynamic> toJson() => _$NativeAuthStrategyErrorToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class NotVerifiedError extends ResetPasswordResult {
+  ErrorCode errorCode;
+  String message;
+
+  NotVerifiedError({
+    required this.errorCode,
+    required this.message,
+  }) : super._();
+
+  factory NotVerifiedError.fromJson(Map<String, dynamic> json) => _$NotVerifiedErrorFromJson(json);
+  Map<String, dynamic> toJson() => _$NotVerifiedErrorToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class PasswordResetTokenExpiredError extends ResetPasswordResult {
+  ErrorCode errorCode;
+  String message;
+
+  PasswordResetTokenExpiredError({
+    required this.errorCode,
+    required this.message,
+  }) : super._();
+
+  factory PasswordResetTokenExpiredError.fromJson(Map<String, dynamic> json) => _$PasswordResetTokenExpiredErrorFromJson(json);
+  Map<String, dynamic> toJson() => _$PasswordResetTokenExpiredErrorToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class PasswordResetTokenInvalidError extends ResetPasswordResult {
+  ErrorCode errorCode;
+  String message;
+
+  PasswordResetTokenInvalidError({
+    required this.errorCode,
+    required this.message,
+  }) : super._();
+
+  factory PasswordResetTokenInvalidError.fromJson(Map<String, dynamic> json) => _$PasswordResetTokenInvalidErrorFromJson(json);
+  Map<String, dynamic> toJson() => _$PasswordResetTokenInvalidErrorToJson(this);
+}
+
+@JsonSerializable(explicitToJson: true)
+class PasswordValidationError extends ResetPasswordResult {
+  ErrorCode errorCode;
+  String message;
+  String validationErrorMessage;
+
+  PasswordValidationError({
+    required this.errorCode,
+    required this.message,
+    required this.validationErrorMessage,
+  }) : super._();
+
+  factory PasswordValidationError.fromJson(Map<String, dynamic> json) => _$PasswordValidationErrorFromJson(json);
+  Map<String, dynamic> toJson() => _$PasswordValidationErrorToJson(this);
+}

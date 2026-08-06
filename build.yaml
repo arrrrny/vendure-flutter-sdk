@@ -2,13 +2,12 @@ targets:
   $default:
     builders:
       json_serializable:
+        enabled: true
+        generate_for:
+          - lib/src/domain/entities/**/*.dart
         options:
           explicit_to_json: true
           include_if_null: false
           any_map: true
-      # graphql_codegen:
-      #   options:
-      #     assetsPath: lib/graphql/**
-      #     outputDirectory: __generated__
-      #     clients:
-      #       - graphql_flutter
+      source_gen:combining_builder:
+        enabled: true
