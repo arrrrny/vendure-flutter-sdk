@@ -1,0 +1,34 @@
+import 'package:json_annotation/json_annotation.dart';
+import '../collection_filter_parameter/collection_filter_parameter.dart';
+import '../collection_sort_parameter/collection_sort_parameter.dart';
+import '../enums/logical_operator.dart';
+
+part 'collection_list_options.g.dart';
+
+@JsonSerializable(explicitToJson: true)
+class CollectionListOptions {
+  /// Allows the results to be filtered
+  CollectionFilterParameter? filter;
+  /// Specifies whether multiple top-level "filter" fields should be combined with a
+  /// logical AND or OR operation. Defaults to AND.
+  LogicalOperator? filterOperator;
+  /// Skips the first n results, for use in pagination
+  int? skip;
+  /// Specifies which properties to sort the results by
+  CollectionSortParameter? sort;
+  /// Takes n results, for use in pagination
+  int? take;
+  bool? topLevelOnly;
+
+  CollectionListOptions({
+    this.filter,
+    this.filterOperator,
+    this.skip,
+    this.sort,
+    this.take,
+    this.topLevelOnly,
+  });
+
+  factory CollectionListOptions.fromJson(Map<String, dynamic> json) => _$CollectionListOptionsFromJson(json);
+  Map<String, dynamic> toJson() => _$CollectionListOptionsToJson(this);
+}

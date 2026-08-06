@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'customer_group.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+CustomerGroup _$CustomerGroupFromJson(Map json) => CustomerGroup(
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  customers: json['customers'] == null
+      ? null
+      : CustomerList.fromJson(
+          Map<String, dynamic>.from(json['customers'] as Map),
+        ),
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
+
+Map<String, dynamic> _$CustomerGroupToJson(CustomerGroup instance) =>
+    <String, dynamic>{
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'customers': ?instance.customers?.toJson(),
+      'id': ?instance.id,
+      'name': ?instance.name,
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
+    };

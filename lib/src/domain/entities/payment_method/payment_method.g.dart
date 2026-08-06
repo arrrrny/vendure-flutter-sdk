@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'payment_method.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+PaymentMethod _$PaymentMethodFromJson(Map json) => PaymentMethod(
+  checker: json['checker'] == null
+      ? null
+      : ConfigurableOperation.fromJson(
+          Map<String, dynamic>.from(json['checker'] as Map),
+        ),
+  code: json['code'] as String?,
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  customFields: (json['customFields'] as Map?)?.map(
+    (k, e) => MapEntry(k as String, e),
+  ),
+  description: json['description'] as String?,
+  enabled: json['enabled'] as bool?,
+  handler: json['handler'] == null
+      ? null
+      : ConfigurableOperation.fromJson(
+          Map<String, dynamic>.from(json['handler'] as Map),
+        ),
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  translations: (json['translations'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : PaymentMethodTranslation.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+      )
+      .toList(),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+);
+
+Map<String, dynamic> _$PaymentMethodToJson(PaymentMethod instance) =>
+    <String, dynamic>{
+      'checker': ?instance.checker?.toJson(),
+      'code': ?instance.code,
+      'createdAt': ?instance.createdAt?.toIso8601String(),
+      'customFields': ?instance.customFields,
+      'description': ?instance.description,
+      'enabled': ?instance.enabled,
+      'handler': ?instance.handler?.toJson(),
+      'id': ?instance.id,
+      'name': ?instance.name,
+      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'updatedAt': ?instance.updatedAt?.toIso8601String(),
+    };

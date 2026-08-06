@@ -4,7 +4,7 @@ import 'package:graphql/client.dart';
 import 'package:http/http.dart' as http;
 
 import 'src/subscriptions/active_customer_stream_subscription.dart';
-import 'src/types/customer/customer.dart' show Customer;
+import 'src/domain/entities/customer/customer.dart' show Customer;
 import 'src/vendure/app_check_provider.dart';
 import 'src/vendure/auth_operations.dart';
 import 'src/vendure/catalog_operations.dart';
@@ -15,8 +15,8 @@ import 'src/vendure/system_operations.dart';
 import 'src/vendure/token_manager.dart';
 import 'vendure_utils.dart';
 export 'src/types/exports.dart';
-export 'src/input_types/vendure_query_options.dart';
-export 'src/input_types/paginated_list.dart';
+export 'src/domain/entities/vendure_query_options.dart';
+export 'src/domain/entities/paginated_list.dart';
 export 'src/vendure/app_check_provider.dart';
 
 class Vendure {

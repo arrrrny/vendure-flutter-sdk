@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'configurable_operation_definition.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+ConfigurableOperationDefinition _$ConfigurableOperationDefinitionFromJson(
+  Map json,
+) => ConfigurableOperationDefinition(
+  args: (json['args'] as List<dynamic>?)
+      ?.map(
+        (e) => e == null
+            ? null
+            : ConfigArgDefinition.fromJson(Map<String, dynamic>.from(e as Map)),
+      )
+      .toList(),
+  code: json['code'] as String?,
+  description: json['description'] as String?,
+);
+
+Map<String, dynamic> _$ConfigurableOperationDefinitionToJson(
+  ConfigurableOperationDefinition instance,
+) => <String, dynamic>{
+  'args': ?instance.args?.map((e) => e?.toJson()).toList(),
+  'code': ?instance.code,
+  'description': ?instance.description,
+};
