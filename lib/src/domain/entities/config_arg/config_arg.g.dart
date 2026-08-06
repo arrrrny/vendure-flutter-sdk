@@ -7,9 +7,9 @@ part of 'config_arg.dart';
 // **************************************************************************
 
 ConfigArg _$ConfigArgFromJson(Map json) =>
-    ConfigArg(name: json['name'] as String?, value: json['value'] as String?);
+    ConfigArg(name: json['name'] as String, value: json['value'] as String);
 
 Map<String, dynamic> _$ConfigArgToJson(ConfigArg instance) => <String, dynamic>{
-  'name': ?instance.name,
-  'value': ?instance.value,
+  'name': instance.name,
+  'value': instance.value,
 };

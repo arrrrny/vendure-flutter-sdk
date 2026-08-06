@@ -5,7 +5,6 @@ part 'id_operators.g.dart';
 @JsonSerializable(explicitToJson: true)
 class IdOperators {
   String? eq;
-  @JsonKey(name: 'in')
   List<String>? in_;
   bool? isNull;
   String? notEq;
@@ -13,7 +12,7 @@ class IdOperators {
 
   IdOperators({
     this.eq,
-    @JsonKey(name: 'in') this.in_,
+    this.in_,
     this.isNull,
     this.notEq,
     this.notIn,
