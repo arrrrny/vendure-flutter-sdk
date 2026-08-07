@@ -243,7 +243,7 @@ void main() {
       try {
         var result = await vendure.order.getShippingMethods();
         expect(result, isA<List<ShippingMethodQuote>>());
-        shippingMethodId = result.first!.id!;
+        shippingMethodId = result.first.id!;
       } catch (e) {
         fail('Error getting shipping methods: $e');
       }
@@ -267,7 +267,7 @@ void main() {
       try {
         var result = await vendure.order.getPaymentMethods();
         expect(result, isA<List<PaymentMethodQuote>>());
-        paymentMethodCode = result.first!.code!;
+        paymentMethodCode = result.first.code!;
       } catch (e) {
         fail('Error getting payment methods: $e');
       }
@@ -472,7 +472,7 @@ void main() {
         expect(paymentMethodsResult, isA<List<PaymentMethodQuote>>());
         print("passed 14");
 
-        paymentMethodCode = paymentMethodsResult.first!.code!;
+        paymentMethodCode = paymentMethodsResult.first.code!;
 
         var applyCouponResult = await vendure.order.applyCouponCode(
           couponCode: 'abc123',
@@ -507,7 +507,7 @@ void main() {
 
         var shippingMethods = await vendure.order.getShippingMethods();
         expect(shippingMethods, isA<List<ShippingMethodQuote>>());
-        shippingMethodId = shippingMethods!.first!.id!;
+        shippingMethodId = shippingMethods.first.id!;
         print("passed 19");
 
         var shippingMethodResult = await vendure.order.setOrderShippingMethod(

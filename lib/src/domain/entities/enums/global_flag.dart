@@ -2,10 +2,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum GlobalFlag {
-  @JsonKey(name: 'FALSE')
+  @JsonValue('FALSE')
   false_,
-  @JsonKey(name: 'INHERIT')
+  @JsonValue('INHERIT')
   inherit,
-  @JsonKey(name: 'TRUE')
+  @JsonValue('TRUE')
   true_,
 }

@@ -27,56 +27,60 @@ sealed class RequestUpdateCustomerEmailAddressResult {
 
 @JsonSerializable(explicitToJson: true)
 class EmailAddressConflictError extends RequestUpdateCustomerEmailAddressResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   EmailAddressConflictError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory EmailAddressConflictError.fromJson(Map<String, dynamic> json) => _$EmailAddressConflictErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$EmailAddressConflictErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class InvalidCredentialsError extends RequestUpdateCustomerEmailAddressResult {
-  String authenticationError;
-  ErrorCode errorCode;
-  String message;
+  String? authenticationError;
+  ErrorCode? errorCode;
+  String? message;
 
   InvalidCredentialsError({
-    required this.authenticationError,
-    required this.errorCode,
-    required this.message,
+    this.authenticationError,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory InvalidCredentialsError.fromJson(Map<String, dynamic> json) => _$InvalidCredentialsErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$InvalidCredentialsErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NativeAuthStrategyError extends RequestUpdateCustomerEmailAddressResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NativeAuthStrategyError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NativeAuthStrategyErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class Success extends RequestUpdateCustomerEmailAddressResult {
-  bool success;
+  bool? success;
 
   Success({
-    required this.success,
+    this.success,
   }) : super._();
 
   factory Success.fromJson(Map<String, dynamic> json) => _$SuccessFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$SuccessToJson(this);
 }

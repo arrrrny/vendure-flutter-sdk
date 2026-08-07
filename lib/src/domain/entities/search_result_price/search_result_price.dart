@@ -22,26 +22,28 @@ sealed class SearchResultPrice {
 
 @JsonSerializable(explicitToJson: true)
 class PriceRange extends SearchResultPrice {
-  double max;
-  double min;
+  double? max;
+  double? min;
 
   PriceRange({
-    required this.max,
-    required this.min,
+    this.max,
+    this.min,
   }) : super._();
 
   factory PriceRange.fromJson(Map<String, dynamic> json) => _$PriceRangeFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$PriceRangeToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class SinglePrice extends SearchResultPrice {
-  double value;
+  double? value;
 
   SinglePrice({
-    required this.value,
+    this.value,
   }) : super._();
 
   factory SinglePrice.fromJson(Map<String, dynamic> json) => _$SinglePriceFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$SinglePriceToJson(this);
 }

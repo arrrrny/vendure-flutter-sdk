@@ -7,7 +7,7 @@ part of 'single_price.dart';
 // **************************************************************************
 
 SinglePrice _$SinglePriceFromJson(Map json) =>
-    SinglePrice(value: (json['value'] as num).toDouble());
+    SinglePrice(value: (json['value'] as num?)?.toDouble());
 
 Map<String, dynamic> _$SinglePriceToJson(SinglePrice instance) =>
-    <String, dynamic>{'value': instance.value};
+    <String, dynamic>{'value': ?instance.value};

@@ -4,16 +4,16 @@ part 'order_tax_summary.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class OrderTaxSummary {
-  String description;
-  double taxBase;
-  double taxRate;
-  double taxTotal;
+  String? description;
+  double? taxBase;
+  double? taxRate;
+  double? taxTotal;
 
   OrderTaxSummary({
-    required this.description,
-    required this.taxBase,
-    required this.taxRate,
-    required this.taxTotal,
+    this.description,
+    this.taxBase,
+    this.taxRate,
+    this.taxTotal,
   });
 
   factory OrderTaxSummary.fromJson(Map<String, dynamic> json) => _$OrderTaxSummaryFromJson(json);

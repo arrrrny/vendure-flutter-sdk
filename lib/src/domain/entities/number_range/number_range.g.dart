@@ -7,9 +7,9 @@ part of 'number_range.dart';
 // **************************************************************************
 
 NumberRange _$NumberRangeFromJson(Map json) => NumberRange(
-  end: (json['end'] as num).toDouble(),
-  start: (json['start'] as num).toDouble(),
+  end: (json['end'] as num?)?.toDouble(),
+  start: (json['start'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$NumberRangeToJson(NumberRange instance) =>
-    <String, dynamic>{'end': instance.end, 'start': instance.start};
+    <String, dynamic>{'end': ?instance.end, 'start': ?instance.start};

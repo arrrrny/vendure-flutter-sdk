@@ -8,7 +8,7 @@ part of 'register_customer_input.dart';
 
 RegisterCustomerInput _$RegisterCustomerInputFromJson(Map json) =>
     RegisterCustomerInput(
-      emailAddress: json['emailAddress'] as String,
+      emailAddress: json['emailAddress'] as String?,
       firstName: json['firstName'] as String?,
       lastName: json['lastName'] as String?,
       password: json['password'] as String?,
@@ -19,7 +19,7 @@ RegisterCustomerInput _$RegisterCustomerInputFromJson(Map json) =>
 Map<String, dynamic> _$RegisterCustomerInputToJson(
   RegisterCustomerInput instance,
 ) => <String, dynamic>{
-  'emailAddress': instance.emailAddress,
+  'emailAddress': ?instance.emailAddress,
   'firstName': ?instance.firstName,
   'lastName': ?instance.lastName,
   'password': ?instance.password,

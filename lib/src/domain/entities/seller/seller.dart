@@ -4,18 +4,18 @@ part 'seller.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Seller {
-  DateTime createdAt;
+  DateTime? createdAt;
   Map<String, dynamic>? customFields;
-  String id;
-  String name;
-  DateTime updatedAt;
+  String? id;
+  String? name;
+  DateTime? updatedAt;
 
   Seller({
-    required this.createdAt,
+    this.createdAt,
     this.customFields,
-    required this.id,
-    required this.name,
-    required this.updatedAt,
+    this.id,
+    this.name,
+    this.updatedAt,
   });
 
   factory Seller.fromJson(Map<String, dynamic> json) => _$SellerFromJson(json);

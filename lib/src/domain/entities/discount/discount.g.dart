@@ -23,7 +23,7 @@ Map<String, dynamic> _$DiscountToJson(Discount instance) => <String, dynamic>{
 };
 
 const _$AdjustmentTypeEnumMap = {
-  AdjustmentType.distributedOrderPromotion: 'distributedOrderPromotion',
-  AdjustmentType.other: 'other',
-  AdjustmentType.promotion: 'promotion',
+  AdjustmentType.distributedOrderPromotion: 'DISTRIBUTED_ORDER_PROMOTION',
+  AdjustmentType.other: 'OTHER',
+  AdjustmentType.promotion: 'PROMOTION',
 };

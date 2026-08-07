@@ -42,128 +42,133 @@ sealed class SetCustomerForOrderResult {
 
 @JsonSerializable(explicitToJson: true)
 class AlreadyLoggedInError extends SetCustomerForOrderResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   AlreadyLoggedInError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory AlreadyLoggedInError.fromJson(Map<String, dynamic> json) => _$AlreadyLoggedInErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$AlreadyLoggedInErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class EmailAddressConflictError extends SetCustomerForOrderResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   EmailAddressConflictError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory EmailAddressConflictError.fromJson(Map<String, dynamic> json) => _$EmailAddressConflictErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$EmailAddressConflictErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class GuestCheckoutError extends SetCustomerForOrderResult {
-  ErrorCode errorCode;
-  String errorDetail;
-  String message;
+  ErrorCode? errorCode;
+  String? errorDetail;
+  String? message;
 
   GuestCheckoutError({
-    required this.errorCode,
-    required this.errorDetail,
-    required this.message,
+    this.errorCode,
+    this.errorDetail,
+    this.message,
   }) : super._();
 
   factory GuestCheckoutError.fromJson(Map<String, dynamic> json) => _$GuestCheckoutErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$GuestCheckoutErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NoActiveOrderError extends SetCustomerForOrderResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NoActiveOrderError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NoActiveOrderError.fromJson(Map<String, dynamic> json) => _$NoActiveOrderErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NoActiveOrderErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class Order extends SetCustomerForOrderResult {
-  bool active;
+  bool? active;
   OrderAddress? billingAddress;
-  String code;
-  List<String> couponCodes;
-  DateTime createdAt;
-  CurrencyCode currencyCode;
+  String? code;
+  List<String>? couponCodes;
+  DateTime? createdAt;
+  CurrencyCode? currencyCode;
   Map<String, dynamic>? customFields;
   Customer? customer;
-  List<Discount> discounts;
+  List<Discount>? discounts;
   List<Fulfillment>? fulfillments;
-  HistoryEntryList history;
-  String id;
-  List<OrderLine> lines;
+  HistoryEntryList? history;
+  String? id;
+  List<OrderLine>? lines;
   DateTime? orderPlacedAt;
   List<Payment>? payments;
-  List<Promotion> promotions;
-  double shipping;
+  List<Promotion>? promotions;
+  double? shipping;
   OrderAddress? shippingAddress;
-  List<ShippingLine> shippingLines;
-  double shippingWithTax;
-  String state;
-  double subTotal;
-  double subTotalWithTax;
-  List<Surcharge> surcharges;
-  List<OrderTaxSummary> taxSummary;
-  double total;
-  int totalQuantity;
-  double totalWithTax;
-  OrderType type;
-  DateTime updatedAt;
+  List<ShippingLine>? shippingLines;
+  double? shippingWithTax;
+  String? state;
+  double? subTotal;
+  double? subTotalWithTax;
+  List<Surcharge>? surcharges;
+  List<OrderTaxSummary>? taxSummary;
+  double? total;
+  int? totalQuantity;
+  double? totalWithTax;
+  OrderType? type;
+  DateTime? updatedAt;
 
   Order({
-    required this.active,
+    this.active,
     this.billingAddress,
-    required this.code,
-    required this.couponCodes,
-    required this.createdAt,
-    required this.currencyCode,
+    this.code,
+    this.couponCodes,
+    this.createdAt,
+    this.currencyCode,
     this.customFields,
     this.customer,
-    required this.discounts,
+    this.discounts,
     this.fulfillments,
-    required this.history,
-    required this.id,
-    required this.lines,
+    this.history,
+    this.id,
+    this.lines,
     this.orderPlacedAt,
     this.payments,
-    required this.promotions,
-    required this.shipping,
+    this.promotions,
+    this.shipping,
     this.shippingAddress,
-    required this.shippingLines,
-    required this.shippingWithTax,
-    required this.state,
-    required this.subTotal,
-    required this.subTotalWithTax,
-    required this.surcharges,
-    required this.taxSummary,
-    required this.total,
-    required this.totalQuantity,
-    required this.totalWithTax,
-    required this.type,
-    required this.updatedAt,
+    this.shippingLines,
+    this.shippingWithTax,
+    this.state,
+    this.subTotal,
+    this.subTotalWithTax,
+    this.surcharges,
+    this.taxSummary,
+    this.total,
+    this.totalQuantity,
+    this.totalWithTax,
+    this.type,
+    this.updatedAt,
   }) : super._();
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$OrderToJson(this);
 }

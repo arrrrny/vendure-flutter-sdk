@@ -26,46 +26,49 @@ sealed class AuthenticationResult {
 
 @JsonSerializable(explicitToJson: true)
 class CurrentUser extends AuthenticationResult {
-  List<CurrentUserChannel> channels;
-  String id;
-  String identifier;
+  List<CurrentUserChannel>? channels;
+  String? id;
+  String? identifier;
 
   CurrentUser({
-    required this.channels,
-    required this.id,
-    required this.identifier,
+    this.channels,
+    this.id,
+    this.identifier,
   }) : super._();
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) => _$CurrentUserFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CurrentUserToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class InvalidCredentialsError extends AuthenticationResult {
-  String authenticationError;
-  ErrorCode errorCode;
-  String message;
+  String? authenticationError;
+  ErrorCode? errorCode;
+  String? message;
 
   InvalidCredentialsError({
-    required this.authenticationError,
-    required this.errorCode,
-    required this.message,
+    this.authenticationError,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory InvalidCredentialsError.fromJson(Map<String, dynamic> json) => _$InvalidCredentialsErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$InvalidCredentialsErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NotVerifiedError extends AuthenticationResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NotVerifiedError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NotVerifiedError.fromJson(Map<String, dynamic> json) => _$NotVerifiedErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NotVerifiedErrorToJson(this);
 }

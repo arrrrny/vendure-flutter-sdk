@@ -4,20 +4,20 @@ part 'tax_category.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class TaxCategory {
-  DateTime createdAt;
+  DateTime? createdAt;
   Map<String, dynamic>? customFields;
-  String id;
-  bool isDefault;
-  String name;
-  DateTime updatedAt;
+  String? id;
+  bool? isDefault;
+  String? name;
+  DateTime? updatedAt;
 
   TaxCategory({
-    required this.createdAt,
+    this.createdAt,
     this.customFields,
-    required this.id,
-    required this.isDefault,
-    required this.name,
-    required this.updatedAt,
+    this.id,
+    this.isDefault,
+    this.name,
+    this.updatedAt,
   });
 
   factory TaxCategory.fromJson(Map<String, dynamic> json) => _$TaxCategoryFromJson(json);

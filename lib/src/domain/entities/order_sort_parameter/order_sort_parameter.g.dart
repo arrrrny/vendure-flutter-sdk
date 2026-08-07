@@ -45,4 +45,4 @@ Map<String, dynamic> _$OrderSortParameterToJson(OrderSortParameter instance) =>
       'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
     };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'asc', SortOrder.desc: 'desc'};
+const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};

@@ -2,10 +2,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum AssetType {
-  @JsonKey(name: 'BINARY')
+  @JsonValue('BINARY')
   binary,
-  @JsonKey(name: 'IMAGE')
+  @JsonValue('IMAGE')
   image,
-  @JsonKey(name: 'VIDEO')
+  @JsonValue('VIDEO')
   video,
 }

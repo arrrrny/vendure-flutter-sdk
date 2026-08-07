@@ -4,10 +4,10 @@ part 'success.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Success {
-  bool success;
+  bool? success;
 
   Success({
-    required this.success,
+    this.success,
   });
 
   factory Success.fromJson(Map<String, dynamic> json) => _$SuccessFromJson(json);

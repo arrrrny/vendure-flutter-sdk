@@ -4,10 +4,10 @@ part 'single_price.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class SinglePrice {
-  double value;
+  double? value;
 
   SinglePrice({
-    required this.value,
+    this.value,
   });
 
   factory SinglePrice.fromJson(Map<String, dynamic> json) => _$SinglePriceFromJson(json);

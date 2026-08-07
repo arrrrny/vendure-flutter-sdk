@@ -7,8 +7,8 @@ part of 'number_list_operators.dart';
 // **************************************************************************
 
 NumberListOperators _$NumberListOperatorsFromJson(Map json) =>
-    NumberListOperators(inList: (json['inList'] as num).toDouble());
+    NumberListOperators(inList: (json['inList'] as num?)?.toDouble());
 
 Map<String, dynamic> _$NumberListOperatorsToJson(
   NumberListOperators instance,
-) => <String, dynamic>{'inList': instance.inList};
+) => <String, dynamic>{'inList': ?instance.inList};

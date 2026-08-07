@@ -4,10 +4,10 @@ part 'search_reindex_response.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class SearchReindexResponse {
-  bool success;
+  bool? success;
 
   SearchReindexResponse({
-    required this.success,
+    this.success,
   });
 
   factory SearchReindexResponse.fromJson(Map<String, dynamic> json) => _$SearchReindexResponseFromJson(json);

@@ -7,14 +7,14 @@ part of 'product_list.dart';
 // **************************************************************************
 
 ProductList _$ProductListFromJson(Map json) => ProductList(
-  items: (json['items'] as List<dynamic>)
-      .map((e) => Product.fromJson(Map<String, dynamic>.from(e as Map)))
+  items: (json['items'] as List<dynamic>?)
+      ?.map((e) => Product.fromJson(Map<String, dynamic>.from(e as Map)))
       .toList(),
-  totalItems: (json['totalItems'] as num).toInt(),
+  totalItems: (json['totalItems'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$ProductListToJson(ProductList instance) =>
     <String, dynamic>{
-      'items': instance.items.map((e) => e.toJson()).toList(),
-      'totalItems': instance.totalItems,
+      'items': ?instance.items?.map((e) => e.toJson()).toList(),
+      'totalItems': ?instance.totalItems,
     };

@@ -392,3 +392,77 @@ Zero `.zorphy.dart` part directives exist in any cross-referencing entity.
 - **Decision**: All 179 entities remain on fallback form. The 41
   scalar-only leaf entities are flagged as `zorphyCandidate: true` in
   entity-manifest.json for future conversion when #272 is resolved.
+
+
+---
+
+## AC-1: dart analyze — clean (T042)
+
+**Date**: 2026-08-07
+**Command**: `dart analyze`
+**Result**: `No issues found!` (0 errors, 0 warnings, 0 info)
+
+### Cleanup performed
+
+1. **Removed legacy freezed files** — deleted 411 files from `lib/src/types/`
+   (keeping only `exports.dart` shim) and 413 files from `lib/src/input_types/`.
+   These were old freezed-based implementations superseded by the new
+   `lib/src/domain/entities/` entities. They referenced `freezed_annotation`
+   (no longer a dependency), producing 19 692 errors.
+2. **Auto-fixed lints** — `dart fix --apply` resolved 182 issues across 28 files
+   (`unnecessary_non_null_assertion`, `annotate_overrides`, `unused_import`,
+   `unnecessary_string_interpolations`).
+3. **Fixed doc-comment angle brackets** — 6 lines in `tool/migrate_entities.dart`
+   wrapped in backticks to silence `unintended_html_in_doc_comment`.
+
+### No remaining pre-existing warnings
+
+The final `dart analyze` is fully clean. No pre-existing warnings remain.
+
+---
+
+## AC-2 / AC-4: dart test + dependency verification (T043)
+
+### Environment
+
+| Field | Value |
+|-------|-------|
+| Vendure endpoint | `http://localhost:3000/shop-api` (sandbox) |
+| Vendure version | 2.x (translation-based admin inputs; `dummy-payment-handler`) |
+| Channel | `__default_channel__` (token `ts8y3k56ef2nkyop31c`) |
+| Dart SDK | 3.11.0 (stable) |
+| Flutter | 3.41.1 (stable) |
+| Test run date | 2026-08-07 |
+
+### dart test results
+
+```
+155 passed, 1 skipped, 11 failed  (167 total)
+```
+
+The 11 remaining failures are **environment / test-design issues**, not SDK bugs:
+
+| Category | Count | Root cause |
+|----------|-------|------------|
+| WebSocket subscriptions | 3 | Vendure instance returns HTTP 400 on WS upgrade (`active_customer_stream_test`, `subscription_connection_test`, `isolation_test`) — the sandbox instance is not configured for GraphQL subscriptions. |
+| Comprehensive cascade | 4 | `LateInitializationError` — the `Vendure` singleton is reset between test groups, leaving `late Vendure vendure` uninitialised in subsequent groups. |
+| Hardcoded IDs / order state | 4 | `vendure_test.dart` uses hardcoded collection `id: '5'` and calls `getShippingMethods().first` without an active order / shipping address. |
+
+### Instance seeding
+
+The sandbox instance was seeded (via admin API) with the data the test suite
+expects: 4 countries (US/GB/DE/FR), a verified customer `a@b.com`/`123456`,
+1 product with 1 variant (stock 100), 2 collections (parent + child), 1 facet,
+1 shipping method, 1 payment method, and a tax zone + rate + channel
+defaultTaxZone.
+
+### AC-4: pubspec.yaml dependency check
+
+| Dependency | Status |
+|------------|--------|
+| `freezed` | **absent** ✓ |
+| `freezed_annotation` | **absent** ✓ |
+| `mocktail` | **absent** ✓ |
+| `json_serializable` | **dev_dependencies only** ✓ (D1 deviation — kept for `@JsonSerializable` codegen) |
+| `json_annotation` | `dependencies` (runtime — needed by entities) |
+| `pubspec.lock` freezed refs | 0 ✓ |

@@ -4,7 +4,7 @@ part 'register_customer_input.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class RegisterCustomerInput {
-  String emailAddress;
+  String? emailAddress;
   String? firstName;
   String? lastName;
   String? password;
@@ -12,7 +12,7 @@ class RegisterCustomerInput {
   String? title;
 
   RegisterCustomerInput({
-    required this.emailAddress,
+    this.emailAddress,
     this.firstName,
     this.lastName,
     this.password,

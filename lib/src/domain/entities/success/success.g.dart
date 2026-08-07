@@ -7,8 +7,8 @@ part of 'success.dart';
 // **************************************************************************
 
 Success _$SuccessFromJson(Map json) =>
-    Success(success: json['success'] as bool);
+    Success(success: json['success'] as bool?);
 
 Map<String, dynamic> _$SuccessToJson(Success instance) => <String, dynamic>{
-  'success': instance.success,
+  'success': ?instance.success,
 };

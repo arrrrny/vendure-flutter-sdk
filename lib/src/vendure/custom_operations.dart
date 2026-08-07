@@ -1,6 +1,6 @@
 import 'package:graphql/client.dart';
 import 'package:vendure/data/datasources/remote/vendure_remote_datasource.dart';
-import 'package:vendure/src/input_types/paginated_list.dart';
+import 'package:vendure/src/domain/entities/paginated_list.dart';
 import 'package:vendure/src/vendure/operation_type_enum.dart';
 import 'package:vendure/src/vendure/vendure_utils.dart';
 

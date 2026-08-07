@@ -7,8 +7,8 @@ part of 'boolean_list_operators.dart';
 // **************************************************************************
 
 BooleanListOperators _$BooleanListOperatorsFromJson(Map json) =>
-    BooleanListOperators(inList: json['inList'] as bool);
+    BooleanListOperators(inList: json['inList'] as bool?);
 
 Map<String, dynamic> _$BooleanListOperatorsToJson(
   BooleanListOperators instance,
-) => <String, dynamic>{'inList': instance.inList};
+) => <String, dynamic>{'inList': ?instance.inList};

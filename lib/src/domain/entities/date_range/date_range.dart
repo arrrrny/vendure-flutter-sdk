@@ -4,12 +4,12 @@ part 'date_range.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class DateRange {
-  DateTime end;
-  DateTime start;
+  DateTime? end;
+  DateTime? start;
 
   DateRange({
-    required this.end,
-    required this.start,
+    this.end,
+    this.start,
   });
 
   factory DateRange.fromJson(Map<String, dynamic> json) => _$DateRangeFromJson(json);

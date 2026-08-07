@@ -7,11 +7,11 @@ part of 'tax_line.dart';
 // **************************************************************************
 
 TaxLine _$TaxLineFromJson(Map json) => TaxLine(
-  description: json['description'] as String,
-  taxRate: (json['taxRate'] as num).toDouble(),
+  description: json['description'] as String?,
+  taxRate: (json['taxRate'] as num?)?.toDouble(),
 );
 
 Map<String, dynamic> _$TaxLineToJson(TaxLine instance) => <String, dynamic>{
-  'description': instance.description,
-  'taxRate': instance.taxRate,
+  'description': ?instance.description,
+  'taxRate': ?instance.taxRate,
 };

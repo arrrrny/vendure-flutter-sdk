@@ -42,28 +42,29 @@ class BooleanCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
-  String name;
+  bool? list;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   BooleanCustomFieldConfig({
     this.description,
     this.internal,
     this.label,
-    required this.list,
-    required this.name,
+    this.list,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory BooleanCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$BooleanCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$BooleanCustomFieldConfigToJson(this);
 }
 
@@ -72,34 +73,35 @@ class DateTimeCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
+  bool? list;
   String? max;
   String? min;
-  String name;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
   int? step;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   DateTimeCustomFieldConfig({
     this.description,
     this.internal,
     this.label,
-    required this.list,
+    this.list,
     this.max,
     this.min,
-    required this.name,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
     this.step,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory DateTimeCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$DateTimeCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$DateTimeCustomFieldConfigToJson(this);
 }
 
@@ -108,34 +110,35 @@ class FloatCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
+  bool? list;
   double? max;
   double? min;
-  String name;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
   double? step;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   FloatCustomFieldConfig({
     this.description,
     this.internal,
     this.label,
-    required this.list,
+    this.list,
     this.max,
     this.min,
-    required this.name,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
     this.step,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory FloatCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$FloatCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$FloatCustomFieldConfigToJson(this);
 }
 
@@ -144,34 +147,35 @@ class IntCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
+  bool? list;
   int? max;
   int? min;
-  String name;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
   int? step;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   IntCustomFieldConfig({
     this.description,
     this.internal,
     this.label,
-    required this.list,
+    this.list,
     this.max,
     this.min,
-    required this.name,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
     this.step,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory IntCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$IntCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$IntCustomFieldConfigToJson(this);
 }
 
@@ -181,13 +185,13 @@ class LocaleStringCustomFieldConfig extends CustomFieldConfig {
   bool? internal;
   List<LocalizedString>? label;
   int? length;
-  bool list;
-  String name;
+  bool? list;
+  String? name;
   bool? nullable;
   String? pattern;
   bool? readonly;
   List<Permission>? requiresPermission;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   LocaleStringCustomFieldConfig({
@@ -195,17 +199,18 @@ class LocaleStringCustomFieldConfig extends CustomFieldConfig {
     this.internal,
     this.label,
     this.length,
-    required this.list,
-    required this.name,
+    this.list,
+    this.name,
     this.nullable,
     this.pattern,
     this.readonly,
     this.requiresPermission,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory LocaleStringCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$LocaleStringCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$LocaleStringCustomFieldConfigToJson(this);
 }
 
@@ -214,62 +219,64 @@ class LocaleTextCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
-  String name;
+  bool? list;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   LocaleTextCustomFieldConfig({
     this.description,
     this.internal,
     this.label,
-    required this.list,
-    required this.name,
+    this.list,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory LocaleTextCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$LocaleTextCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$LocaleTextCustomFieldConfigToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class RelationCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
-  String entity;
+  String? entity;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
-  String name;
+  bool? list;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
-  List<String> scalarFields;
-  String type;
+  List<String>? scalarFields;
+  String? type;
   Map<String, dynamic>? ui;
 
   RelationCustomFieldConfig({
     this.description,
-    required this.entity,
+    this.entity,
     this.internal,
     this.label,
-    required this.list,
-    required this.name,
+    this.list,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
-    required this.scalarFields,
-    required this.type,
+    this.scalarFields,
+    this.type,
     this.ui,
   }) : super._();
 
   factory RelationCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$RelationCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$RelationCustomFieldConfigToJson(this);
 }
 
@@ -279,14 +286,14 @@ class StringCustomFieldConfig extends CustomFieldConfig {
   bool? internal;
   List<LocalizedString>? label;
   int? length;
-  bool list;
-  String name;
+  bool? list;
+  String? name;
   bool? nullable;
   List<StringFieldOption>? options;
   String? pattern;
   bool? readonly;
   List<Permission>? requiresPermission;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   StringCustomFieldConfig({
@@ -294,18 +301,19 @@ class StringCustomFieldConfig extends CustomFieldConfig {
     this.internal,
     this.label,
     this.length,
-    required this.list,
-    required this.name,
+    this.list,
+    this.name,
     this.nullable,
     this.options,
     this.pattern,
     this.readonly,
     this.requiresPermission,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory StringCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$StringCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$StringCustomFieldConfigToJson(this);
 }
 
@@ -314,27 +322,28 @@ class TextCustomFieldConfig extends CustomFieldConfig {
   List<LocalizedString>? description;
   bool? internal;
   List<LocalizedString>? label;
-  bool list;
-  String name;
+  bool? list;
+  String? name;
   bool? nullable;
   bool? readonly;
   List<Permission>? requiresPermission;
-  String type;
+  String? type;
   Map<String, dynamic>? ui;
 
   TextCustomFieldConfig({
     this.description,
     this.internal,
     this.label,
-    required this.list,
-    required this.name,
+    this.list,
+    this.name,
     this.nullable,
     this.readonly,
     this.requiresPermission,
-    required this.type,
+    this.type,
     this.ui,
   }) : super._();
 
   factory TextCustomFieldConfig.fromJson(Map<String, dynamic> json) => _$TextCustomFieldConfigFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$TextCustomFieldConfigToJson(this);
 }

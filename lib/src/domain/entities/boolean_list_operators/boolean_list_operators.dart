@@ -4,10 +4,10 @@ part 'boolean_list_operators.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class BooleanListOperators {
-  bool inList;
+  bool? inList;
 
   BooleanListOperators({
-    required this.inList,
+    this.inList,
   });
 
   factory BooleanListOperators.fromJson(Map<String, dynamic> json) => _$BooleanListOperatorsFromJson(json);

@@ -23,26 +23,28 @@ sealed class RequestPasswordResetResult {
 
 @JsonSerializable(explicitToJson: true)
 class NativeAuthStrategyError extends RequestPasswordResetResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NativeAuthStrategyError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NativeAuthStrategyErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class Success extends RequestPasswordResetResult {
-  bool success;
+  bool? success;
 
   Success({
-    required this.success,
+    this.success,
   }) : super._();
 
   factory Success.fromJson(Map<String, dynamic> json) => _$SuccessFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$SuccessToJson(this);
 }

@@ -4,10 +4,10 @@ part 'id_list_operators.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class IdListOperators {
-  String inList;
+  String? inList;
 
   IdListOperators({
-    required this.inList,
+    this.inList,
   });
 
   factory IdListOperators.fromJson(Map<String, dynamic> json) => _$IdListOperatorsFromJson(json);

@@ -4,12 +4,12 @@ part 'tax_line.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class TaxLine {
-  String description;
-  double taxRate;
+  String? description;
+  double? taxRate;
 
   TaxLine({
-    required this.description,
-    required this.taxRate,
+    this.description,
+    this.taxRate,
   });
 
   factory TaxLine.fromJson(Map<String, dynamic> json) => _$TaxLineFromJson(json);

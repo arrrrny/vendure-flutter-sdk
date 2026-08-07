@@ -21,14 +21,14 @@ BooleanCustomFieldConfig _$BooleanCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
-      name: json['name'] as String,
+      list: json['list'] as bool?,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -38,111 +38,111 @@ Map<String, dynamic> _$BooleanCustomFieldConfigToJson(
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
-  'name': instance.name,
+  'list': ?instance.list,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
 const _$PermissionEnumMap = {
-  Permission.authenticated: 'authenticated',
-  Permission.createAdministrator: 'createAdministrator',
-  Permission.createAsset: 'createAsset',
-  Permission.createCatalog: 'createCatalog',
-  Permission.createChannel: 'createChannel',
-  Permission.createCollection: 'createCollection',
-  Permission.createCountry: 'createCountry',
-  Permission.createCustomer: 'createCustomer',
-  Permission.createCustomerGroup: 'createCustomerGroup',
-  Permission.createFacet: 'createFacet',
-  Permission.createOrder: 'createOrder',
-  Permission.createPaymentMethod: 'createPaymentMethod',
-  Permission.createProduct: 'createProduct',
-  Permission.createPromotion: 'createPromotion',
-  Permission.createSeller: 'createSeller',
-  Permission.createSettings: 'createSettings',
-  Permission.createShippingMethod: 'createShippingMethod',
-  Permission.createStockLocation: 'createStockLocation',
-  Permission.createSystem: 'createSystem',
-  Permission.createTag: 'createTag',
-  Permission.createTaxCategory: 'createTaxCategory',
-  Permission.createTaxRate: 'createTaxRate',
-  Permission.createZone: 'createZone',
-  Permission.deleteAdministrator: 'deleteAdministrator',
-  Permission.deleteAsset: 'deleteAsset',
-  Permission.deleteCatalog: 'deleteCatalog',
-  Permission.deleteChannel: 'deleteChannel',
-  Permission.deleteCollection: 'deleteCollection',
-  Permission.deleteCountry: 'deleteCountry',
-  Permission.deleteCustomer: 'deleteCustomer',
-  Permission.deleteCustomerGroup: 'deleteCustomerGroup',
-  Permission.deleteFacet: 'deleteFacet',
-  Permission.deleteOrder: 'deleteOrder',
-  Permission.deletePaymentMethod: 'deletePaymentMethod',
-  Permission.deleteProduct: 'deleteProduct',
-  Permission.deletePromotion: 'deletePromotion',
-  Permission.deleteSeller: 'deleteSeller',
-  Permission.deleteSettings: 'deleteSettings',
-  Permission.deleteShippingMethod: 'deleteShippingMethod',
-  Permission.deleteStockLocation: 'deleteStockLocation',
-  Permission.deleteSystem: 'deleteSystem',
-  Permission.deleteTag: 'deleteTag',
-  Permission.deleteTaxCategory: 'deleteTaxCategory',
-  Permission.deleteTaxRate: 'deleteTaxRate',
-  Permission.deleteZone: 'deleteZone',
-  Permission.owner: 'owner',
-  Permission.public: 'public',
-  Permission.readAdministrator: 'readAdministrator',
-  Permission.readAsset: 'readAsset',
-  Permission.readCatalog: 'readCatalog',
-  Permission.readChannel: 'readChannel',
-  Permission.readCollection: 'readCollection',
-  Permission.readCountry: 'readCountry',
-  Permission.readCustomer: 'readCustomer',
-  Permission.readCustomerGroup: 'readCustomerGroup',
-  Permission.readFacet: 'readFacet',
-  Permission.readOrder: 'readOrder',
-  Permission.readPaymentMethod: 'readPaymentMethod',
-  Permission.readProduct: 'readProduct',
-  Permission.readPromotion: 'readPromotion',
-  Permission.readSeller: 'readSeller',
-  Permission.readSettings: 'readSettings',
-  Permission.readShippingMethod: 'readShippingMethod',
-  Permission.readStockLocation: 'readStockLocation',
-  Permission.readSystem: 'readSystem',
-  Permission.readTag: 'readTag',
-  Permission.readTaxCategory: 'readTaxCategory',
-  Permission.readTaxRate: 'readTaxRate',
-  Permission.readZone: 'readZone',
-  Permission.superAdmin: 'superAdmin',
-  Permission.updateAdministrator: 'updateAdministrator',
-  Permission.updateAsset: 'updateAsset',
-  Permission.updateCatalog: 'updateCatalog',
-  Permission.updateChannel: 'updateChannel',
-  Permission.updateCollection: 'updateCollection',
-  Permission.updateCountry: 'updateCountry',
-  Permission.updateCustomer: 'updateCustomer',
-  Permission.updateCustomerGroup: 'updateCustomerGroup',
-  Permission.updateFacet: 'updateFacet',
-  Permission.updateGlobalSettings: 'updateGlobalSettings',
-  Permission.updateOrder: 'updateOrder',
-  Permission.updatePaymentMethod: 'updatePaymentMethod',
-  Permission.updateProduct: 'updateProduct',
-  Permission.updatePromotion: 'updatePromotion',
-  Permission.updateSeller: 'updateSeller',
-  Permission.updateSettings: 'updateSettings',
-  Permission.updateShippingMethod: 'updateShippingMethod',
-  Permission.updateStockLocation: 'updateStockLocation',
-  Permission.updateSystem: 'updateSystem',
-  Permission.updateTag: 'updateTag',
-  Permission.updateTaxCategory: 'updateTaxCategory',
-  Permission.updateTaxRate: 'updateTaxRate',
-  Permission.updateZone: 'updateZone',
+  Permission.authenticated: 'Authenticated',
+  Permission.createAdministrator: 'CreateAdministrator',
+  Permission.createAsset: 'CreateAsset',
+  Permission.createCatalog: 'CreateCatalog',
+  Permission.createChannel: 'CreateChannel',
+  Permission.createCollection: 'CreateCollection',
+  Permission.createCountry: 'CreateCountry',
+  Permission.createCustomer: 'CreateCustomer',
+  Permission.createCustomerGroup: 'CreateCustomerGroup',
+  Permission.createFacet: 'CreateFacet',
+  Permission.createOrder: 'CreateOrder',
+  Permission.createPaymentMethod: 'CreatePaymentMethod',
+  Permission.createProduct: 'CreateProduct',
+  Permission.createPromotion: 'CreatePromotion',
+  Permission.createSeller: 'CreateSeller',
+  Permission.createSettings: 'CreateSettings',
+  Permission.createShippingMethod: 'CreateShippingMethod',
+  Permission.createStockLocation: 'CreateStockLocation',
+  Permission.createSystem: 'CreateSystem',
+  Permission.createTag: 'CreateTag',
+  Permission.createTaxCategory: 'CreateTaxCategory',
+  Permission.createTaxRate: 'CreateTaxRate',
+  Permission.createZone: 'CreateZone',
+  Permission.deleteAdministrator: 'DeleteAdministrator',
+  Permission.deleteAsset: 'DeleteAsset',
+  Permission.deleteCatalog: 'DeleteCatalog',
+  Permission.deleteChannel: 'DeleteChannel',
+  Permission.deleteCollection: 'DeleteCollection',
+  Permission.deleteCountry: 'DeleteCountry',
+  Permission.deleteCustomer: 'DeleteCustomer',
+  Permission.deleteCustomerGroup: 'DeleteCustomerGroup',
+  Permission.deleteFacet: 'DeleteFacet',
+  Permission.deleteOrder: 'DeleteOrder',
+  Permission.deletePaymentMethod: 'DeletePaymentMethod',
+  Permission.deleteProduct: 'DeleteProduct',
+  Permission.deletePromotion: 'DeletePromotion',
+  Permission.deleteSeller: 'DeleteSeller',
+  Permission.deleteSettings: 'DeleteSettings',
+  Permission.deleteShippingMethod: 'DeleteShippingMethod',
+  Permission.deleteStockLocation: 'DeleteStockLocation',
+  Permission.deleteSystem: 'DeleteSystem',
+  Permission.deleteTag: 'DeleteTag',
+  Permission.deleteTaxCategory: 'DeleteTaxCategory',
+  Permission.deleteTaxRate: 'DeleteTaxRate',
+  Permission.deleteZone: 'DeleteZone',
+  Permission.owner: 'Owner',
+  Permission.public: 'Public',
+  Permission.readAdministrator: 'ReadAdministrator',
+  Permission.readAsset: 'ReadAsset',
+  Permission.readCatalog: 'ReadCatalog',
+  Permission.readChannel: 'ReadChannel',
+  Permission.readCollection: 'ReadCollection',
+  Permission.readCountry: 'ReadCountry',
+  Permission.readCustomer: 'ReadCustomer',
+  Permission.readCustomerGroup: 'ReadCustomerGroup',
+  Permission.readFacet: 'ReadFacet',
+  Permission.readOrder: 'ReadOrder',
+  Permission.readPaymentMethod: 'ReadPaymentMethod',
+  Permission.readProduct: 'ReadProduct',
+  Permission.readPromotion: 'ReadPromotion',
+  Permission.readSeller: 'ReadSeller',
+  Permission.readSettings: 'ReadSettings',
+  Permission.readShippingMethod: 'ReadShippingMethod',
+  Permission.readStockLocation: 'ReadStockLocation',
+  Permission.readSystem: 'ReadSystem',
+  Permission.readTag: 'ReadTag',
+  Permission.readTaxCategory: 'ReadTaxCategory',
+  Permission.readTaxRate: 'ReadTaxRate',
+  Permission.readZone: 'ReadZone',
+  Permission.superAdmin: 'SuperAdmin',
+  Permission.updateAdministrator: 'UpdateAdministrator',
+  Permission.updateAsset: 'UpdateAsset',
+  Permission.updateCatalog: 'UpdateCatalog',
+  Permission.updateChannel: 'UpdateChannel',
+  Permission.updateCollection: 'UpdateCollection',
+  Permission.updateCountry: 'UpdateCountry',
+  Permission.updateCustomer: 'UpdateCustomer',
+  Permission.updateCustomerGroup: 'UpdateCustomerGroup',
+  Permission.updateFacet: 'UpdateFacet',
+  Permission.updateGlobalSettings: 'UpdateGlobalSettings',
+  Permission.updateOrder: 'UpdateOrder',
+  Permission.updatePaymentMethod: 'UpdatePaymentMethod',
+  Permission.updateProduct: 'UpdateProduct',
+  Permission.updatePromotion: 'UpdatePromotion',
+  Permission.updateSeller: 'UpdateSeller',
+  Permission.updateSettings: 'UpdateSettings',
+  Permission.updateShippingMethod: 'UpdateShippingMethod',
+  Permission.updateStockLocation: 'UpdateStockLocation',
+  Permission.updateSystem: 'UpdateSystem',
+  Permission.updateTag: 'UpdateTag',
+  Permission.updateTaxCategory: 'UpdateTaxCategory',
+  Permission.updateTaxRate: 'UpdateTaxRate',
+  Permission.updateZone: 'UpdateZone',
 };
 
 DateTimeCustomFieldConfig _$DateTimeCustomFieldConfigFromJson(Map json) =>
@@ -160,17 +160,17 @@ DateTimeCustomFieldConfig _$DateTimeCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
+      list: json['list'] as bool?,
       max: json['max'] as String?,
       min: json['min'] as String?,
-      name: json['name'] as String,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       step: (json['step'] as num?)?.toInt(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -180,17 +180,17 @@ Map<String, dynamic> _$DateTimeCustomFieldConfigToJson(
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
+  'list': ?instance.list,
   'max': ?instance.max,
   'min': ?instance.min,
-  'name': instance.name,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
   'step': ?instance.step,
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -209,17 +209,17 @@ FloatCustomFieldConfig _$FloatCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
+      list: json['list'] as bool?,
       max: (json['max'] as num?)?.toDouble(),
       min: (json['min'] as num?)?.toDouble(),
-      name: json['name'] as String,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       step: (json['step'] as num?)?.toDouble(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -229,17 +229,17 @@ Map<String, dynamic> _$FloatCustomFieldConfigToJson(
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
+  'list': ?instance.list,
   'max': ?instance.max,
   'min': ?instance.min,
-  'name': instance.name,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
   'step': ?instance.step,
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -258,17 +258,17 @@ IntCustomFieldConfig _$IntCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
+      list: json['list'] as bool?,
       max: (json['max'] as num?)?.toInt(),
       min: (json['min'] as num?)?.toInt(),
-      name: json['name'] as String,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
       step: (json['step'] as num?)?.toInt(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -278,17 +278,17 @@ Map<String, dynamic> _$IntCustomFieldConfigToJson(
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
+  'list': ?instance.list,
   'max': ?instance.max,
   'min': ?instance.min,
-  'name': instance.name,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
   'step': ?instance.step,
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -307,15 +307,15 @@ LocaleStringCustomFieldConfig _$LocaleStringCustomFieldConfigFromJson(
       )
       .toList(),
   length: (json['length'] as num?)?.toInt(),
-  list: json['list'] as bool,
-  name: json['name'] as String,
+  list: json['list'] as bool?,
+  name: json['name'] as String?,
   nullable: json['nullable'] as bool?,
   pattern: json['pattern'] as String?,
   readonly: json['readonly'] as bool?,
   requiresPermission: (json['requiresPermission'] as List<dynamic>?)
       ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
       .toList(),
-  type: json['type'] as String,
+  type: json['type'] as String?,
   ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
 );
 
@@ -326,15 +326,15 @@ Map<String, dynamic> _$LocaleStringCustomFieldConfigToJson(
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
   'length': ?instance.length,
-  'list': instance.list,
-  'name': instance.name,
+  'list': ?instance.list,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'pattern': ?instance.pattern,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -353,14 +353,14 @@ LocaleTextCustomFieldConfig _$LocaleTextCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
-      name: json['name'] as String,
+      list: json['list'] as bool?,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -370,14 +370,14 @@ Map<String, dynamic> _$LocaleTextCustomFieldConfigToJson(
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
-  'name': instance.name,
+  'list': ?instance.list,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -389,7 +389,7 @@ RelationCustomFieldConfig _$RelationCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      entity: json['entity'] as String,
+      entity: json['entity'] as String?,
       internal: json['internal'] as bool?,
       label: (json['label'] as List<dynamic>?)
           ?.map(
@@ -397,17 +397,17 @@ RelationCustomFieldConfig _$RelationCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
-      name: json['name'] as String,
+      list: json['list'] as bool?,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      scalarFields: (json['scalarFields'] as List<dynamic>)
-          .map((e) => e as String)
+      scalarFields: (json['scalarFields'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -415,18 +415,18 @@ Map<String, dynamic> _$RelationCustomFieldConfigToJson(
   RelationCustomFieldConfig instance,
 ) => <String, dynamic>{
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
-  'entity': instance.entity,
+  'entity': ?instance.entity,
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
-  'name': instance.name,
+  'list': ?instance.list,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
-  'scalarFields': instance.scalarFields,
-  'type': instance.type,
+  'scalarFields': ?instance.scalarFields,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -446,8 +446,8 @@ StringCustomFieldConfig _$StringCustomFieldConfigFromJson(Map json) =>
           )
           .toList(),
       length: (json['length'] as num?)?.toInt(),
-      list: json['list'] as bool,
-      name: json['name'] as String,
+      list: json['list'] as bool?,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       options: (json['options'] as List<dynamic>?)
           ?.map(
@@ -460,7 +460,7 @@ StringCustomFieldConfig _$StringCustomFieldConfigFromJson(Map json) =>
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -471,8 +471,8 @@ Map<String, dynamic> _$StringCustomFieldConfigToJson(
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
   'length': ?instance.length,
-  'list': instance.list,
-  'name': instance.name,
+  'list': ?instance.list,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'options': ?instance.options?.map((e) => e.toJson()).toList(),
   'pattern': ?instance.pattern,
@@ -480,7 +480,7 @@ Map<String, dynamic> _$StringCustomFieldConfigToJson(
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };
 
@@ -499,14 +499,14 @@ TextCustomFieldConfig _$TextCustomFieldConfigFromJson(Map json) =>
                 LocalizedString.fromJson(Map<String, dynamic>.from(e as Map)),
           )
           .toList(),
-      list: json['list'] as bool,
-      name: json['name'] as String,
+      list: json['list'] as bool?,
+      name: json['name'] as String?,
       nullable: json['nullable'] as bool?,
       readonly: json['readonly'] as bool?,
       requiresPermission: (json['requiresPermission'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$PermissionEnumMap, e))
           .toList(),
-      type: json['type'] as String,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -516,13 +516,13 @@ Map<String, dynamic> _$TextCustomFieldConfigToJson(
   'description': ?instance.description?.map((e) => e.toJson()).toList(),
   'internal': ?instance.internal,
   'label': ?instance.label?.map((e) => e.toJson()).toList(),
-  'list': instance.list,
-  'name': instance.name,
+  'list': ?instance.list,
+  'name': ?instance.name,
   'nullable': ?instance.nullable,
   'readonly': ?instance.readonly,
   'requiresPermission': ?instance.requiresPermission
       ?.map((e) => _$PermissionEnumMap[e]!)
       .toList(),
-  'type': instance.type,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };

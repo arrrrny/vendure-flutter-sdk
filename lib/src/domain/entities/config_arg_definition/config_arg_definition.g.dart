@@ -13,10 +13,10 @@ ConfigArgDefinition _$ConfigArgDefinitionFromJson(Map json) =>
       ),
       description: json['description'] as String?,
       label: json['label'] as String?,
-      list: json['list'] as bool,
-      name: json['name'] as String,
-      required_: json['required_'] as bool,
-      type: json['type'] as String,
+      list: json['list'] as bool?,
+      name: json['name'] as String?,
+      required_: json['required_'] as bool?,
+      type: json['type'] as String?,
       ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
     );
 
@@ -26,9 +26,9 @@ Map<String, dynamic> _$ConfigArgDefinitionToJson(
   'defaultValue': ?instance.defaultValue,
   'description': ?instance.description,
   'label': ?instance.label,
-  'list': instance.list,
-  'name': instance.name,
-  'required_': instance.required_,
-  'type': instance.type,
+  'list': ?instance.list,
+  'name': ?instance.name,
+  'required_': ?instance.required_,
+  'type': ?instance.type,
   'ui': ?instance.ui,
 };

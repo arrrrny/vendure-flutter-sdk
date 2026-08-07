@@ -2,8 +2,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum DeletionResult {
-  @JsonKey(name: 'DELETED')
+  @JsonValue('DELETED')
   deleted,
-  @JsonKey(name: 'NOT_DELETED')
+  @JsonValue('NOT_DELETED')
   notDeleted,
 }

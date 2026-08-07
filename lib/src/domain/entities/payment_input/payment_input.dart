@@ -4,12 +4,12 @@ part 'payment_input.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class PaymentInput {
-  Map<String, dynamic> metadata;
-  String method;
+  Map<String, dynamic>? metadata;
+  String? method;
 
   PaymentInput({
-    required this.metadata,
-    required this.method,
+    this.metadata,
+    this.method,
   });
 
   factory PaymentInput.fromJson(Map<String, dynamic> json) => _$PaymentInputFromJson(json);
