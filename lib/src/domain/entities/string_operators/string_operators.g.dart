@@ -9,7 +9,7 @@ part of 'string_operators.dart';
 StringOperators _$StringOperatorsFromJson(Map json) => StringOperators(
   contains: json['contains'] as String?,
   eq: json['eq'] as String?,
-  in_: (json['in'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  in_: (json['in_'] as List<dynamic>?)?.map((e) => e as String).toList(),
   isNull: json['isNull'] as bool?,
   notContains: json['notContains'] as String?,
   notEq: json['notEq'] as String?,
@@ -21,7 +21,7 @@ Map<String, dynamic> _$StringOperatorsToJson(StringOperators instance) =>
     <String, dynamic>{
       'contains': ?instance.contains,
       'eq': ?instance.eq,
-      'in': ?instance.in_,
+      'in_': ?instance.in_,
       'isNull': ?instance.isNull,
       'notContains': ?instance.notContains,
       'notEq': ?instance.notEq,

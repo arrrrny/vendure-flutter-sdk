@@ -239,3 +239,156 @@ The `introspect_schema.dart` script was written as a standalone Dart file using 
 4. Prints statistics to stderr
 
 This script is the documented fallback for environments where `zfa graphql introspect` cannot run (e.g., no Flutter SDK, dependency conflicts).
+
+---
+
+## R5 (T029): Canonical Generation Source Provenance
+
+### Source: schema.graphql
+
+The canonical generation source for all 179 entities in this SDK is the
+**Vendure GraphQL schema**, captured as SDL via a standalone introspection
+script (documented fallback per T003 — see R5 above).
+
+| Field | Value |
+|-------|-------|
+| Introspection method | Standalone  script ( + , full  query) |
+| Target endpoint |  |
+| Capture date | 2026-08-06 |
+| Vendure instance version | 2.x (headless commerce, verified via  ping) |
+| Zuraffa HEAD |  (development branch) |
+| Zuraffa CLI version | v5.1.0 (lib version 5.7.1) |
+
+### Entity / Enum Counts
+
+| Category | Count |
+|----------|-------|
+| Total entities (OBJECT + INPUT_OBJECT types) | **179** |
+| Scalar-only leaf entities (no cross-references) | **41** |
+| Cross-referencing entities (import other entity types) | **138** |
+| Enum types (merged superset) | **12** |
+| Interface types | 6 |
+| Union types | 22 |
+| Scalar types (built-in + custom) | 9 |
+
+### Generation Pipeline
+
+1.  (SDL) +  ← introspection of running Vendure instance
+2.  ← derived from introspection JSON (entity names, fields, cross-refs)
+3.  ← generated from manifest via migration script
+4.  ← shim re-exporting from domain/entities
+
+The  file is gitignored (FR-003) because it is a
+machine-generated artifact of the live Vendure instance. The manifest
+and domain entity sources are the persistent, version-controlled
+representation.
+
+
+---
+
+## R5 (T029): Canonical Generation Source Provenance
+
+### Source: schema.graphql
+
+The canonical generation source for all 179 entities in this SDK is the
+**Vendure GraphQL schema**, captured as SDL via a standalone introspection
+script (documented fallback per T003 — see R5 above).
+
+| Field | Value |
+|-------|-------|
+| Introspection method | Standalone introspect_schema.dart script (dart:io + dart:convert, full __schema query) |
+| Target endpoint | http://localhost:3000/shop-api |
+| Capture date | 2026-08-06 |
+| Vendure instance version | 2.x (headless commerce, verified via __typename: Query ping) |
+| Zuraffa HEAD | aae3fdf3b1ccc6c4e413eaa0bbb3ba4330587b58 (development branch) |
+| Zuraffa CLI version | v5.1.0 (lib version 5.7.1) |
+
+### Entity / Enum Counts
+
+| Category | Count |
+|----------|-------|
+| Total entities (OBJECT + INPUT_OBJECT types) | **179** |
+| Scalar-only leaf entities (no cross-references) | **41** |
+| Cross-referencing entities (import other entity types) | **138** |
+| Enum types (merged superset) | **12** |
+| Interface types | 6 |
+| Union types | 22 |
+| Scalar types (built-in + custom) | 9 |
+
+### Generation Pipeline
+
+1. schema.graphql (SDL) + schema.introspection.json ← introspection of running Vendure instance
+2. entity-manifest.json ← derived from introspection JSON (entity names, fields, cross-refs)
+3. lib/src/domain/entities/<snake>/<name>.dart ← generated from manifest via migration script
+4. lib/src/types/exports.dart ← shim re-exporting from domain/entities
+
+The schema.graphql file is gitignored (FR-003) because it is a
+machine-generated artifact of the live Vendure instance. The manifest
+and domain entity sources are the persistent, version-controlled
+representation.
+---
+
+---
+
+## R6 (T031): Cross-Referencing Entity Fallback Form Verification + T030 Exercise
+
+### T030: Zorphy Form Exercise for Scalar-Only Leaf Entities
+
+**Approach**: Converted all 41 scalar-only leaf entities from `@JsonSerializable`
+concrete classes to full Zorphy form (`@Zorphy(generateJson: true)` abstract
+`$X` class with getter fields + `part '<x>.zorphy.dart'` + `part '<x>.g.dart'`).
+
+**Verified with `Coordinate`**:
+- Source: `abstract class $Coordinate { double get x; double get y; }`
+- zorphy generated `coordinate.zorphy.dart` with concrete `Coordinate` class:
+  - `final double x; final double y;`
+  - Constructor: `Coordinate({required this.x, required this.y})`
+  - `copyWith()`, `patchWithCoordinate()`, `operator ==`, `hashCode`, `toString()`
+  - `factory Coordinate.fromJson(Map<String, dynamic> json)`
+  - `Map<String, dynamic> toJson()` and `toJsonLean()`
+  - `CoordinatePatch`, `CoordinateFields` (query descriptors), `CompareE` extension
+- json_serializable generated `coordinate.g.dart` with
+  `_$CoordinateFromJson` / `_$CoordinateToJson`
+
+**Invariant confirmed**: The concrete `Coordinate` class exposes the same
+`fromJson` / `toJson` / field surface as the original `@JsonSerializable`
+version.
+
+**Full build attempted**: After converting all 41 entities, ran
+`dart run build_runner build`. Zorphy successfully generated `.zorphy.dart`
+for all 41 entities. However, json_serializable failed on 6 cross-referencing
+entities with `InvalidType` errors (see #272 reproduction below).
+
+All 41 entities were reverted to fallback form to maintain a clean build.
+
+### T031: Cross-Referencing Entity Fallback Form
+
+All 138 cross-referencing entities retain the fallback form:
+
+```dart
+part '<name>.g.dart';  // json_serializable only
+``
+Zero `.zorphy.dart` part directives exist in any cross-referencing entity.
+
+### Zuraffa Issue #272 — REPRODUCED in Vendure Toolchain
+
+- **Issue**: https://github.com/arrrrny/zuraffa/issues/272
+- **Symptom**: json_serializable throws `InvalidType` when a fallback-form
+  entity references a Zorphy-generated entity defined in another file.
+- **Previous status (T004 spike)**: NOT reproduced in minimal 3-entity spike.
+- **REPRODUCED in this execution**: When all 41 scalar-only leaf entities
+  were converted to Zorphy form, 6 cross-referencing entities failed with
+  `InvalidType`:
+  - `User.customFields: UserCustomFields?` — InvalidType
+  - `OrderAddress` referenced by `Order` — InvalidType
+  - `SearchResultAsset.coordinate: Coordinate?` — InvalidType
+  - And 3 more
+- **Root cause**: json_serializable cannot resolve the concrete class type
+  when it is generated by zorphy in a `.zorphy.dart` part file in another
+  library. This is the cross-file reference variant of #272.
+- **Impact**: Until #272 is fixed, ALL entities in a project must use the
+  same form. Mixing Zorphy and fallback forms in the same build causes
+  InvalidType errors on any cross-file reference to a Zorphy entity.
+- **Decision**: All 179 entities remain on fallback form. The 41
+  scalar-only leaf entities are flagged as `zorphyCandidate: true` in
+  entity-manifest.json for future conversion when #272 is resolved.

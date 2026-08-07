@@ -1,4 +1,3 @@
-library vendure;
 
 import 'package:graphql/client.dart';
 import 'package:http/http.dart' as http;
@@ -8,12 +7,17 @@ import 'src/domain/entities/customer/customer.dart' show Customer;
 import 'src/vendure/app_check_provider.dart';
 import 'src/vendure/auth_operations.dart';
 import 'src/vendure/catalog_operations.dart';
-import 'src/vendure/custom_operations.dart';
 import 'src/vendure/customer_operations.dart';
+import 'src/vendure/custom_operations.dart';
 import 'src/vendure/order_operations.dart';
 import 'src/vendure/system_operations.dart';
 import 'src/vendure/token_manager.dart';
 import 'vendure_utils.dart';
+import 'data/datasources/remote/vendure_remote_datasource.dart';
+import 'data/repositories/data_order_repository.dart';
+import 'data/repositories/data_catalog_repository.dart';
+import 'data/repositories/data_customer_repository.dart';
+import 'data/repositories/data_system_repository.dart';
 export 'src/types/exports.dart';
 export 'src/domain/entities/vendure_query_options.dart';
 export 'src/domain/entities/paginated_list.dart';
@@ -105,27 +109,28 @@ class Vendure {
       queryRequestTimeout: null,
     );
     auth = AuthOperations(_authClient);
-    order = OrderOperations(
-      _getClient,
+
+    // --- T037: Create data-source + repositories + operations ---
+    final dataSource = VendureRemoteDataSource(
+      getClient: _getClient,
       customFieldsConfig: _customFieldsConfig,
     );
+    final orderRepo = DataOrderRepository(dataSource: dataSource);
+    final catalogRepo = DataCatalogRepository(dataSource: dataSource);
+    final customerRepo = DataCustomerRepository(dataSource: dataSource);
+    final systemRepo = DataSystemRepository(dataSource: dataSource);
+
+    order = OrderOperations(orderRepo);
     custom = CustomOperations(
       _getClient,
       customFieldsConfig: _customFieldsConfig,
     );
     customer = CustomerOperations(
-      _getClient,
-      customFieldsConfig: _customFieldsConfig,
+      customerRepo,
       activeCustomerStreamProvider: activeCustomerStream,
     );
-    catalog = CatalogOperations(
-      _getClient,
-      customFieldsConfig: _customFieldsConfig,
-    );
-    system = SystemOperations(
-      _getClient,
-      customFieldsConfig: _customFieldsConfig,
-    );
+    catalog = CatalogOperations(catalogRepo);
+    system = SystemOperations(systemRepo);
   }
 
   static Future<Vendure> initialize({
@@ -225,9 +230,6 @@ class Vendure {
     String? apiKey,
     String? apiKeyHeaderKey,
   }) async {
-    // Helper function to fetch and return token.
-    // Uses queryRequestTimeout: null to avoid a known race in graphql 5.x
-    // where Stream.timeout can double-complete the internal Completer.
     Future<String?> fetchToken(Map<String, dynamic> params) async {
       http.Client? httpClient;
       try {
@@ -260,7 +262,6 @@ class Vendure {
       }
     }
 
-    // Fetch the token
     final token = await fetchToken({
       'username': username,
       'password': password,
@@ -269,7 +270,6 @@ class Vendure {
       throw Exception("Failed to fetch token");
     }
 
-    // Initialize Vendure instance with the fetched token
     _instance = Vendure._internal(
       endpoint: endpoint,
       fetchToken: fetchToken,
@@ -285,7 +285,6 @@ class Vendure {
       apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
-    // Finalize initialization (token check, enum loading)
     await _finalizeInitialization(_instance!);
     return _instance!;
   }
@@ -339,9 +338,6 @@ class Vendure {
     String? apiKey,
     String? apiKeyHeaderKey,
   }) async {
-    // Helper function to fetch and return token.
-    // Uses queryRequestTimeout: null to avoid a known race in graphql 5.x
-    // where Stream.timeout can double-complete the internal Completer.
     Future<String?> fetchToken(Map<String, dynamic> params) async {
       http.Client? httpClient;
       try {
@@ -374,13 +370,11 @@ class Vendure {
       }
     }
 
-    // Fetch the token
     final token = await fetchToken({'uid': uid, 'jwt': jwt});
     if (token == null) {
       throw Exception("Failed to fetch token");
     }
 
-    // Initialize Vendure instance with the fetched token
     _instance = Vendure._internal(
       endpoint: endpoint,
       fetchToken: fetchToken,
@@ -391,12 +385,10 @@ class Vendure {
       token: token,
       customFieldsConfig: customFieldsConfig,
       timeout: timeout,
-      appCheckConfig: appCheckConfig,
       apiKey: apiKey,
       apiKeyHeaderKey: apiKeyHeaderKey,
     );
 
-    // Finalize initialization (token check, enum loading)
     await _finalizeInitialization(_instance!);
     return _instance!;
   }
@@ -436,7 +428,6 @@ class Vendure {
         apiKeyHeaderKey: apiKeyHeaderKey,
       );
 
-      // Finalize initialization (token check, enum loading)
       await _finalizeInitialization(_instance!);
       return _instance!;
     } finally {
@@ -444,9 +435,6 @@ class Vendure {
     }
   }
 
-  /// Initialize Vendure with API key authentication.
-  /// This is useful for machine-to-machine authentication where you have a long-lived API key.
-  /// The API key is sent in the header specified by [apiKeyHeaderKey] (defaults to 'vendure-api-key').
   static Future<Vendure> initializeWithApiKey({
     required String endpoint,
     required String apiKey,
@@ -473,7 +461,6 @@ class Vendure {
         appCheckConfig: appCheckConfig,
       );
 
-      // Finalize initialization (connection check, enum loading)
       await _finalizeInitialization(_instance!, checkConnection: true);
       return _instance!;
     } finally {
@@ -490,10 +477,6 @@ class Vendure {
     return _instance!;
   }
 
-  /// Destroys the current Vendure instance, closing the underlying HTTP client
-  /// and clearing all state. Call this on user sign-out to ensure a clean slate
-  /// for the next user session. After calling [destroy], you must call one of the
-  /// [initialize], [initializeWithFirebaseAuth], etc. methods before using Vendure again.
   static void destroy() {
     final instance = _instance;
     if (instance == null) return;
@@ -504,7 +487,6 @@ class Vendure {
   }
 
   Future<GraphQLClient> _getClient() async {
-    // Construct endpoint with language code if available, using proper URI parsing
     String endpointUrl;
     if (_languageCode != null) {
       final uri = Uri.parse(_endpoint);
@@ -512,16 +494,13 @@ class Vendure {
       queryParameters['languageCode'] = _languageCode!;
       endpointUrl = uri.replace(queryParameters: queryParameters).toString();
     } else {
-      // If no language code is set, use the original endpoint as-is
       endpointUrl = _endpoint;
     }
 
     final httpLink = HttpLink(endpointUrl);
 
-    // Build the link chain starting with the API key link if configured
     Link link = httpLink;
 
-    // Add API key link if configured (machine-to-machine auth)
     if (_apiKey != null) {
       final apiKeyLink = AuthLink(
         headerKey: _apiKeyHeaderKey!,
@@ -530,7 +509,6 @@ class Vendure {
       link = apiKeyLink.concat(link);
     }
 
-    // Add channel token link if configured
     if (_channelToken != null) {
       final vendureTokenLink = AuthLink(
         headerKey: 'vendure-token',
@@ -539,7 +517,6 @@ class Vendure {
       link = vendureTokenLink.concat(link);
     }
 
-    // Add App Check token link if configured
     if (_appCheckConfig != null) {
       final appCheckLink = AuthLink(
         headerKey: _appCheckConfig.headerName,
@@ -561,10 +538,8 @@ class Vendure {
       link = appCheckLink.concat(link);
     }
 
-    // Add Authorization Bearer token if not using guest session
     if (!_useVendureGuestSession) {
       final authLink = AuthLink(
-        // 'Authorization' is the default headerKey
         getToken: () async {
           if (_token != null) {
             return 'Bearer $_token';
@@ -683,11 +658,9 @@ class Vendure {
 
   Future<Map<String, dynamic>> _buildWebsocketPayload() async {
     final payload = <String, dynamic>{};
-    // Add API key if configured (machine-to-machine auth)
     if (_apiKey != null) {
       payload[_apiKeyHeaderKey!] = _apiKey;
     }
-    // Only add authorization token if not using guest session
     if (!_useVendureGuestSession) {
       final authToken = await _resolveAuthToken();
       if (authToken != null) {
@@ -720,8 +693,6 @@ class Vendure {
     final processedOperation = _customFieldsConfig != null
         ? VendureUtils.sanitizeGraphQLQuery(subscription, _customFieldsConfig)
         : subscription;
-
-    // VendureUtils.printLongString(processedOperation);
 
     final normalizedVariables = convertEnums
         ? VendureUtils.normalizeMutationData(
@@ -790,7 +761,6 @@ class Vendure {
     return data[expectedDataType];
   }
 
-  /// Updates the authentication token on the initialized Vendure instance.
   static void setAuthToken(String token) {
     if (_instance == null) {
       throw Exception(
@@ -800,9 +770,6 @@ class Vendure {
     _instance!._token = token;
   }
 
-  /// Updates the language code on the initialized Vendure instance.
-  /// This affects all subsequent GraphQL requests by adding the languageCode as a query parameter.
-  /// Pass null to remove the language code from requests.
   static void setLanguageCode(String? languageCode) {
     if (_instance == null) {
       throw Exception(
@@ -812,7 +779,6 @@ class Vendure {
     _instance!._languageCode = languageCode;
   }
 
-  /// Gets the current language code from the initialized Vendure instance.
   static String? getLanguageCode() {
     if (_instance == null) {
       throw Exception(
@@ -822,7 +788,6 @@ class Vendure {
     return _instance!._languageCode;
   }
 
-  /// Gets the current channel token from the initialized Vendure instance.
   static String? getChannelToken() {
     if (_instance == null) {
       throw Exception(
@@ -832,9 +797,6 @@ class Vendure {
     return _instance!._channelToken;
   }
 
-  /// Updates the channel token on the initialized Vendure instance.
-  /// This affects all subsequent GraphQL requests by adding the vendure-token header.
-  /// Pass null to remove the channel token from requests.
   static void setChannelToken(String? channelToken) {
     if (_instance == null) {
       throw Exception(
@@ -844,9 +806,6 @@ class Vendure {
     _instance!._channelToken = channelToken;
   }
 
-  /// Updates the API key on the initialized Vendure instance.
-  /// This affects all subsequent GraphQL requests by adding the API key header.
-  /// Pass null to remove the API key from requests.
   static void setApiKey(String? apiKey, {String? apiKeyHeaderKey}) {
     if (_instance == null) {
       throw Exception(
@@ -859,12 +818,10 @@ class Vendure {
     }
   }
 
-  /// Fetch a new Vendure session token using the instance's TokenManager fetcher and params.
-  /// Throws if no TokenManager is configured.
   Future<void> _refreshToken(Map<String, dynamic> params) async {
     if (_tokenManager == null) {
       throw Exception(
-        'No TokenManager configured for this Vendure instance. This method is only available if you initialized Vendure with a TokenFetcher.',
+        'No TokenManager configured for this Vendure instance.',
       );
     }
     return _tokenManager.refreshToken(params);
@@ -884,13 +841,11 @@ class Vendure {
     return client.query(options);
   }
 
-  /// Centralized post-initialization logic for Vendure instance.
   static Future<void> _finalizeInitialization(
     Vendure instance, {
     bool checkConnection = false,
   }) async {
     _instance = instance;
-    // Skip token check if using guest session or API key auth
     if (!_instance!._useVendureGuestSession &&
         _instance!._token == null &&
         _instance!._apiKey == null) {

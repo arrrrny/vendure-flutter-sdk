@@ -4,25 +4,24 @@ part 'shipping_method_quote.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class ShippingMethodQuote {
-  String? code;
+  String code;
   Map<String, dynamic>? customFields;
-  String? description;
-  String? id;
-  /// Any optional metadata returned by the ShippingCalculator in the ShippingCalculationResult
+  String description;
+  String id;
   Map<String, dynamic>? metadata;
-  String? name;
-  double? price;
-  double? priceWithTax;
+  String name;
+  double price;
+  double priceWithTax;
 
   ShippingMethodQuote({
-    this.code,
+    required this.code,
     this.customFields,
-    this.description,
-    this.id,
+    required this.description,
+    required this.id,
     this.metadata,
-    this.name,
-    this.price,
-    this.priceWithTax,
+    required this.name,
+    required this.price,
+    required this.priceWithTax,
   });
 
   factory ShippingMethodQuote.fromJson(Map<String, dynamic> json) => _$ShippingMethodQuoteFromJson(json);

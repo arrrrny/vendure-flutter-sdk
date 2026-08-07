@@ -4,22 +4,22 @@ part 'payment_method_quote.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class PaymentMethodQuote {
-  String? code;
+  String code;
   Map<String, dynamic>? customFields;
-  String? description;
+  String description;
   String? eligibilityMessage;
-  String? id;
-  bool? isEligible;
-  String? name;
+  String id;
+  bool isEligible;
+  String name;
 
   PaymentMethodQuote({
-    this.code,
+    required this.code,
     this.customFields,
-    this.description,
+    required this.description,
     this.eligibilityMessage,
-    this.id,
-    this.isEligible,
-    this.name,
+    required this.id,
+    required this.isEligible,
+    required this.name,
   });
 
   factory PaymentMethodQuote.fromJson(Map<String, dynamic> json) => _$PaymentMethodQuoteFromJson(json);

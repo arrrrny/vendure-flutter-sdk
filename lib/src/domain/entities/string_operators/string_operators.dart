@@ -6,7 +6,6 @@ part 'string_operators.g.dart';
 class StringOperators {
   String? contains;
   String? eq;
-  @JsonKey(name: 'in')
   List<String>? in_;
   bool? isNull;
   String? notContains;
@@ -17,7 +16,7 @@ class StringOperators {
   StringOperators({
     this.contains,
     this.eq,
-    @JsonKey(name: 'in') this.in_,
+    this.in_,
     this.isNull,
     this.notContains,
     this.notEq,

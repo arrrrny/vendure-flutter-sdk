@@ -4,16 +4,16 @@ part 'tag.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Tag {
-  DateTime? createdAt;
-  String? id;
-  DateTime? updatedAt;
-  String? value;
+  DateTime createdAt;
+  String id;
+  DateTime updatedAt;
+  String value;
 
   Tag({
-    this.createdAt,
-    this.id,
-    this.updatedAt,
-    this.value,
+    required this.createdAt,
+    required this.id,
+    required this.updatedAt,
+    required this.value,
   });
 
   factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
