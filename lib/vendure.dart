@@ -108,11 +108,9 @@ class Vendure {
       cache: GraphQLCache(),
       queryRequestTimeout: null,
     );
-    auth = AuthOperations(_authClient);
-
-    // --- T037: Create data-source + repositories + operations ---
-    final dataSource = VendureRemoteDataSource(
-      getClient: _getClient,
+    auth = AuthOperations(_authClient, tokenManager: _tokenManager);
+    order = OrderOperations(
+      _getClient,
       customFieldsConfig: _customFieldsConfig,
     );
     final orderRepo = DataOrderRepository(dataSource: dataSource);
