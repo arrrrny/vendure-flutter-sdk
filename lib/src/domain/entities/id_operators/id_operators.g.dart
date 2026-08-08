@@ -8,7 +8,7 @@ part of 'id_operators.dart';
 
 IdOperators _$IdOperatorsFromJson(Map json) => IdOperators(
   eq: json['eq'] as String?,
-  in_: (json['in'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  in_: (json['in_'] as List<dynamic>?)?.map((e) => e as String).toList(),
   isNull: json['isNull'] as bool?,
   notEq: json['notEq'] as String?,
   notIn: (json['notIn'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -17,7 +17,7 @@ IdOperators _$IdOperatorsFromJson(Map json) => IdOperators(
 Map<String, dynamic> _$IdOperatorsToJson(IdOperators instance) =>
     <String, dynamic>{
       'eq': ?instance.eq,
-      'in': ?instance.in_,
+      'in_': ?instance.in_,
       'isNull': ?instance.isNull,
       'notEq': ?instance.notEq,
       'notIn': ?instance.notIn,

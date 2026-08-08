@@ -4,12 +4,12 @@ part 'price_range.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class PriceRange {
-  double? max;
-  double? min;
+  double max;
+  double min;
 
   PriceRange({
-    this.max,
-    this.min,
+    required this.max,
+    required this.min,
   });
 
   factory PriceRange.fromJson(Map<String, dynamic> json) => _$PriceRangeFromJson(json);

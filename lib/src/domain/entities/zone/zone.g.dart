@@ -7,31 +7,19 @@ part of 'zone.dart';
 // **************************************************************************
 
 Zone _$ZoneFromJson(Map json) => Zone(
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
+  createdAt: DateTime.parse(json['createdAt'] as String),
   customFields: (json['customFields'] as Map?)?.map(
     (k, e) => MapEntry(k as String, e),
   ),
-  id: json['id'] as String?,
-  members: (json['members'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : Region.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  name: json['name'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
+  id: json['id'] as String,
+  name: json['name'] as String,
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
 );
 
 Map<String, dynamic> _$ZoneToJson(Zone instance) => <String, dynamic>{
-  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'createdAt': instance.createdAt.toIso8601String(),
   'customFields': ?instance.customFields,
-  'id': ?instance.id,
-  'members': ?instance.members?.map((e) => e?.toJson()).toList(),
-  'name': ?instance.name,
-  'updatedAt': ?instance.updatedAt?.toIso8601String(),
+  'id': instance.id,
+  'name': instance.name,
+  'updatedAt': instance.updatedAt.toIso8601String(),
 };

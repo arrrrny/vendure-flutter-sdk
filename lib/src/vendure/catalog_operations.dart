@@ -1,152 +1,59 @@
-import 'package:graphql/client.dart';
-import 'package:vendure/src/queries/get_collections_query.dart';
-import 'package:vendure/src/queries/get_product_by_id_query.dart';
-import 'package:vendure/src/queries/get_product_by_slug_query.dart';
-import 'package:vendure/src/queries/get_products_query.dart';
-import 'package:vendure/src/queries/search_catalog_query.dart';
-import 'package:vendure/src/types/exports.dart';
-import 'package:vendure/src/vendure/custom_operations.dart';
+
+import '../domain/repositories/catalog_repository.dart';
+import '../types/exports.dart';
 
 class CatalogOperations {
-  final Future<GraphQLClient> Function() _client;
-  final Map<String, List<dynamic>>? customFieldsConfig;
-  CatalogOperations(this._client, {this.customFieldsConfig});
+  final CatalogRepository _repository;
+
+  CatalogOperations(this._repository);
 
   Future<CollectionList> getCollections({
     CollectionListOptions? options,
-  }) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<CollectionList>(
-      getCollectionsQuery,
-      {"options": options?.toJson()},
-      fromJson: CollectionList.fromJson,
-      expectedDataType: 'collections',
-    );
+  }) {
+    return _repository.getCollections(options: options);
   }
 
-  Future<Collection> getCollectionById({required String id}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Collection>(
-      getCollectionByIdQuery,
-      {'id': id},
-      fromJson: Collection.fromJson,
-      expectedDataType: 'collection',
-    );
+  Future<Collection> getCollectionById({required String id}) {
+    return _repository.getCollectionById(id: id);
   }
 
-  Future<Collection> getCollectionBySlug({required String slug}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Collection>(
-      getCollectionBySlugQuery,
-      {'slug': slug},
-      fromJson: Collection.fromJson,
-      expectedDataType: 'collection',
-    );
+  Future<Collection> getCollectionBySlug({required String slug}) {
+    return _repository.getCollectionBySlug(slug: slug);
   }
 
-  Future<ProductList> getProducts({ProductListOptions? options}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<ProductList>(
-      getProductsQuery,
-      {"options": options?.toJson()},
-      fromJson: ProductList.fromJson,
-      expectedDataType: 'products',
-    );
+  Future<ProductList> getProducts({ProductListOptions? options}) {
+    return _repository.getProducts(options: options);
   }
 
-  Future<Product> getProductById({required String id}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Product>(
-      getProductByIdQuery,
-      {'id': id},
-      fromJson: Product.fromJson,
-      expectedDataType: 'product',
-    );
+  Future<Product> getProductById({required String id}) {
+    return _repository.getProductById(id: id);
   }
 
-  Future<Product> getProductBySlug({required String slug}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Product>(
-      getProductBySlugQuery,
-      {'slug': slug},
-      fromJson: Product.fromJson,
-      expectedDataType: 'product',
-    );
+  Future<Product> getProductBySlug({required String slug}) {
+    return _repository.getProductBySlug(slug: slug);
   }
 
-  Future<SearchResponse> searchCatalog({required SearchInput input}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<SearchResponse>(
-      searchCatalogQuery,
-      {'input': input.toJson()},
-      fromJson: SearchResponse.fromJson,
-      expectedDataType: 'search',
-    );
+  Future<SearchResponse> searchCatalog({required SearchInput input}) {
+    return _repository.searchCatalog(input: input);
   }
 
   Future<Collection> getCollectionWithParentChildren({
     required String id,
-  }) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Collection>(
-      getCollectionWithParentChildrenQuery,
-      {'id': id},
-      fromJson: Collection.fromJson,
-      expectedDataType: 'collection',
-    );
+  }) {
+    return _repository.getCollectionWithParentChildren(id: id);
   }
 
-  Future<Collection> getCollectionWithParent({required String id}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Collection>(
-      getCollectionWithParentQuery,
-      {'id': id},
-      fromJson: Collection.fromJson,
-      expectedDataType: 'collection',
-    );
+  Future<Collection> getCollectionWithParent({required String id}) {
+    return _repository.getCollectionWithParent(id: id);
   }
 
-  Future<Collection> getCollectionWithChildren({required String id}) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<Collection>(
-      getCollectionWithChildrenQuery,
-      {'id': id},
-      fromJson: Collection.fromJson,
-      expectedDataType: 'collection',
-    );
+  Future<Collection> getCollectionWithChildren({required String id}) {
+    return _repository.getCollectionWithChildren(id: id);
   }
 
   Future<CollectionList> getCollectionListWithParentChildren({
     CollectionListOptions? options,
-  }) async {
-    return CustomOperations(
-      _client,
-      customFieldsConfig: customFieldsConfig,
-    ).query<CollectionList>(
-      getCollectionListWithParentChildrenQuery,
-      {"options": options?.toJson()},
-      fromJson: CollectionList.fromJson,
-      expectedDataType: 'collections',
-    );
+  }) {
+    return _repository.getCollectionListWithParentChildren(options: options);
   }
 }

@@ -4,12 +4,12 @@ part 'coordinate.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Coordinate {
-  double? x;
-  double? y;
+  double x;
+  double y;
 
   Coordinate({
-    this.x,
-    this.y,
+    required this.x,
+    required this.y,
   });
 
   factory Coordinate.fromJson(Map<String, dynamic> json) => _$CoordinateFromJson(json);

@@ -4,16 +4,16 @@ part 'authentication_method.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class AuthenticationMethod {
-  DateTime? createdAt;
-  String? id;
-  String? strategy;
-  DateTime? updatedAt;
+  DateTime createdAt;
+  String id;
+  String strategy;
+  DateTime updatedAt;
 
   AuthenticationMethod({
-    this.createdAt,
-    this.id,
-    this.strategy,
-    this.updatedAt,
+    required this.createdAt,
+    required this.id,
+    required this.strategy,
+    required this.updatedAt,
   });
 
   factory AuthenticationMethod.fromJson(Map<String, dynamic> json) => _$AuthenticationMethodFromJson(json);

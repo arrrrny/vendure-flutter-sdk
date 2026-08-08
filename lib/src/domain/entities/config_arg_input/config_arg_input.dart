@@ -5,7 +5,6 @@ part 'config_arg_input.g.dart';
 @JsonSerializable(explicitToJson: true)
 class ConfigArgInput {
   String name;
-  /// A JSON stringified representation of the actual value
   String value;
 
   ConfigArgInput({

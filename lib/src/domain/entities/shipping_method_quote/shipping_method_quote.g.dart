@@ -8,29 +8,29 @@ part of 'shipping_method_quote.dart';
 
 ShippingMethodQuote _$ShippingMethodQuoteFromJson(Map json) =>
     ShippingMethodQuote(
-      code: json['code'] as String?,
+      code: json['code'] as String,
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
       ),
-      description: json['description'] as String?,
-      id: json['id'] as String?,
+      description: json['description'] as String,
+      id: json['id'] as String,
       metadata: (json['metadata'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
       ),
-      name: json['name'] as String?,
-      price: (json['price'] as num?)?.toDouble(),
-      priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),
+      name: json['name'] as String,
+      price: (json['price'] as num).toDouble(),
+      priceWithTax: (json['priceWithTax'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$ShippingMethodQuoteToJson(
   ShippingMethodQuote instance,
 ) => <String, dynamic>{
-  'code': ?instance.code,
+  'code': instance.code,
   'customFields': ?instance.customFields,
-  'description': ?instance.description,
-  'id': ?instance.id,
+  'description': instance.description,
+  'id': instance.id,
   'metadata': ?instance.metadata,
-  'name': ?instance.name,
-  'price': ?instance.price,
-  'priceWithTax': ?instance.priceWithTax,
+  'name': instance.name,
+  'price': instance.price,
+  'priceWithTax': instance.priceWithTax,
 };
