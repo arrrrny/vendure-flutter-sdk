@@ -2,318 +2,318 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum CurrencyCode {
-  @JsonKey(name: 'AED')
+  @JsonValue('AED')
   aed,
-  @JsonKey(name: 'AFN')
+  @JsonValue('AFN')
   afn,
-  @JsonKey(name: 'ALL')
+  @JsonValue('ALL')
   all,
-  @JsonKey(name: 'AMD')
+  @JsonValue('AMD')
   amd,
-  @JsonKey(name: 'ANG')
+  @JsonValue('ANG')
   ang,
-  @JsonKey(name: 'AOA')
+  @JsonValue('AOA')
   aoa,
-  @JsonKey(name: 'ARS')
+  @JsonValue('ARS')
   ars,
-  @JsonKey(name: 'AUD')
+  @JsonValue('AUD')
   aud,
-  @JsonKey(name: 'AWG')
+  @JsonValue('AWG')
   awg,
-  @JsonKey(name: 'AZN')
+  @JsonValue('AZN')
   azn,
-  @JsonKey(name: 'BAM')
+  @JsonValue('BAM')
   bam,
-  @JsonKey(name: 'BBD')
+  @JsonValue('BBD')
   bbd,
-  @JsonKey(name: 'BDT')
+  @JsonValue('BDT')
   bdt,
-  @JsonKey(name: 'BGN')
+  @JsonValue('BGN')
   bgn,
-  @JsonKey(name: 'BHD')
+  @JsonValue('BHD')
   bhd,
-  @JsonKey(name: 'BIF')
+  @JsonValue('BIF')
   bif,
-  @JsonKey(name: 'BMD')
+  @JsonValue('BMD')
   bmd,
-  @JsonKey(name: 'BND')
+  @JsonValue('BND')
   bnd,
-  @JsonKey(name: 'BOB')
+  @JsonValue('BOB')
   bob,
-  @JsonKey(name: 'BRL')
+  @JsonValue('BRL')
   brl,
-  @JsonKey(name: 'BSD')
+  @JsonValue('BSD')
   bsd,
-  @JsonKey(name: 'BTN')
+  @JsonValue('BTN')
   btn,
-  @JsonKey(name: 'BWP')
+  @JsonValue('BWP')
   bwp,
-  @JsonKey(name: 'BYN')
+  @JsonValue('BYN')
   byn,
-  @JsonKey(name: 'BZD')
+  @JsonValue('BZD')
   bzd,
-  @JsonKey(name: 'CAD')
+  @JsonValue('CAD')
   cad,
-  @JsonKey(name: 'CDF')
+  @JsonValue('CDF')
   cdf,
-  @JsonKey(name: 'CHF')
+  @JsonValue('CHF')
   chf,
-  @JsonKey(name: 'CLP')
+  @JsonValue('CLP')
   clp,
-  @JsonKey(name: 'CNY')
+  @JsonValue('CNY')
   cny,
-  @JsonKey(name: 'COP')
+  @JsonValue('COP')
   cop,
-  @JsonKey(name: 'CRC')
+  @JsonValue('CRC')
   crc,
-  @JsonKey(name: 'CUC')
+  @JsonValue('CUC')
   cuc,
-  @JsonKey(name: 'CUP')
+  @JsonValue('CUP')
   cup,
-  @JsonKey(name: 'CVE')
+  @JsonValue('CVE')
   cve,
-  @JsonKey(name: 'CZK')
+  @JsonValue('CZK')
   czk,
-  @JsonKey(name: 'DJF')
+  @JsonValue('DJF')
   djf,
-  @JsonKey(name: 'DKK')
+  @JsonValue('DKK')
   dkk,
-  @JsonKey(name: 'DOP')
+  @JsonValue('DOP')
   dop,
-  @JsonKey(name: 'DZD')
+  @JsonValue('DZD')
   dzd,
-  @JsonKey(name: 'EGP')
+  @JsonValue('EGP')
   egp,
-  @JsonKey(name: 'ERN')
+  @JsonValue('ERN')
   ern,
-  @JsonKey(name: 'ETB')
+  @JsonValue('ETB')
   etb,
-  @JsonKey(name: 'EUR')
+  @JsonValue('EUR')
   eur,
-  @JsonKey(name: 'FJD')
+  @JsonValue('FJD')
   fjd,
-  @JsonKey(name: 'FKP')
+  @JsonValue('FKP')
   fkp,
-  @JsonKey(name: 'GBP')
+  @JsonValue('GBP')
   gbp,
-  @JsonKey(name: 'GEL')
+  @JsonValue('GEL')
   gel,
-  @JsonKey(name: 'GHS')
+  @JsonValue('GHS')
   ghs,
-  @JsonKey(name: 'GIP')
+  @JsonValue('GIP')
   gip,
-  @JsonKey(name: 'GMD')
+  @JsonValue('GMD')
   gmd,
-  @JsonKey(name: 'GNF')
+  @JsonValue('GNF')
   gnf,
-  @JsonKey(name: 'GTQ')
+  @JsonValue('GTQ')
   gtq,
-  @JsonKey(name: 'GYD')
+  @JsonValue('GYD')
   gyd,
-  @JsonKey(name: 'HKD')
+  @JsonValue('HKD')
   hkd,
-  @JsonKey(name: 'HNL')
+  @JsonValue('HNL')
   hnl,
-  @JsonKey(name: 'HRK')
+  @JsonValue('HRK')
   hrk,
-  @JsonKey(name: 'HTG')
+  @JsonValue('HTG')
   htg,
-  @JsonKey(name: 'HUF')
+  @JsonValue('HUF')
   huf,
-  @JsonKey(name: 'IDR')
+  @JsonValue('IDR')
   idr,
-  @JsonKey(name: 'ILS')
+  @JsonValue('ILS')
   ils,
-  @JsonKey(name: 'INR')
+  @JsonValue('INR')
   inr,
-  @JsonKey(name: 'IQD')
+  @JsonValue('IQD')
   iqd,
-  @JsonKey(name: 'IRR')
+  @JsonValue('IRR')
   irr,
-  @JsonKey(name: 'ISK')
+  @JsonValue('ISK')
   isk,
-  @JsonKey(name: 'JMD')
+  @JsonValue('JMD')
   jmd,
-  @JsonKey(name: 'JOD')
+  @JsonValue('JOD')
   jod,
-  @JsonKey(name: 'JPY')
+  @JsonValue('JPY')
   jpy,
-  @JsonKey(name: 'KES')
+  @JsonValue('KES')
   kes,
-  @JsonKey(name: 'KGS')
+  @JsonValue('KGS')
   kgs,
-  @JsonKey(name: 'KHR')
+  @JsonValue('KHR')
   khr,
-  @JsonKey(name: 'KMF')
+  @JsonValue('KMF')
   kmf,
-  @JsonKey(name: 'KPW')
+  @JsonValue('KPW')
   kpw,
-  @JsonKey(name: 'KRW')
+  @JsonValue('KRW')
   krw,
-  @JsonKey(name: 'KWD')
+  @JsonValue('KWD')
   kwd,
-  @JsonKey(name: 'KYD')
+  @JsonValue('KYD')
   kyd,
-  @JsonKey(name: 'KZT')
+  @JsonValue('KZT')
   kzt,
-  @JsonKey(name: 'LAK')
+  @JsonValue('LAK')
   lak,
-  @JsonKey(name: 'LBP')
+  @JsonValue('LBP')
   lbp,
-  @JsonKey(name: 'LKR')
+  @JsonValue('LKR')
   lkr,
-  @JsonKey(name: 'LRD')
+  @JsonValue('LRD')
   lrd,
-  @JsonKey(name: 'LSL')
+  @JsonValue('LSL')
   lsl,
-  @JsonKey(name: 'LYD')
+  @JsonValue('LYD')
   lyd,
-  @JsonKey(name: 'MAD')
+  @JsonValue('MAD')
   mad,
-  @JsonKey(name: 'MDL')
+  @JsonValue('MDL')
   mdl,
-  @JsonKey(name: 'MGA')
+  @JsonValue('MGA')
   mga,
-  @JsonKey(name: 'MKD')
+  @JsonValue('MKD')
   mkd,
-  @JsonKey(name: 'MMK')
+  @JsonValue('MMK')
   mmk,
-  @JsonKey(name: 'MNT')
+  @JsonValue('MNT')
   mnt,
-  @JsonKey(name: 'MOP')
+  @JsonValue('MOP')
   mop,
-  @JsonKey(name: 'MRU')
+  @JsonValue('MRU')
   mru,
-  @JsonKey(name: 'MUR')
+  @JsonValue('MUR')
   mur,
-  @JsonKey(name: 'MVR')
+  @JsonValue('MVR')
   mvr,
-  @JsonKey(name: 'MWK')
+  @JsonValue('MWK')
   mwk,
-  @JsonKey(name: 'MXN')
+  @JsonValue('MXN')
   mxn,
-  @JsonKey(name: 'MYR')
+  @JsonValue('MYR')
   myr,
-  @JsonKey(name: 'MZN')
+  @JsonValue('MZN')
   mzn,
-  @JsonKey(name: 'NAD')
+  @JsonValue('NAD')
   nad,
-  @JsonKey(name: 'NGN')
+  @JsonValue('NGN')
   ngn,
-  @JsonKey(name: 'NIO')
+  @JsonValue('NIO')
   nio,
-  @JsonKey(name: 'NOK')
+  @JsonValue('NOK')
   nok,
-  @JsonKey(name: 'NPR')
+  @JsonValue('NPR')
   npr,
-  @JsonKey(name: 'NZD')
+  @JsonValue('NZD')
   nzd,
-  @JsonKey(name: 'OMR')
+  @JsonValue('OMR')
   omr,
-  @JsonKey(name: 'PAB')
+  @JsonValue('PAB')
   pab,
-  @JsonKey(name: 'PEN')
+  @JsonValue('PEN')
   pen,
-  @JsonKey(name: 'PGK')
+  @JsonValue('PGK')
   pgk,
-  @JsonKey(name: 'PHP')
+  @JsonValue('PHP')
   php,
-  @JsonKey(name: 'PKR')
+  @JsonValue('PKR')
   pkr,
-  @JsonKey(name: 'PLN')
+  @JsonValue('PLN')
   pln,
-  @JsonKey(name: 'PYG')
+  @JsonValue('PYG')
   pyg,
-  @JsonKey(name: 'QAR')
+  @JsonValue('QAR')
   qar,
-  @JsonKey(name: 'RON')
+  @JsonValue('RON')
   ron,
-  @JsonKey(name: 'RSD')
+  @JsonValue('RSD')
   rsd,
-  @JsonKey(name: 'RUB')
+  @JsonValue('RUB')
   rub,
-  @JsonKey(name: 'RWF')
+  @JsonValue('RWF')
   rwf,
-  @JsonKey(name: 'SAR')
+  @JsonValue('SAR')
   sar,
-  @JsonKey(name: 'SBD')
+  @JsonValue('SBD')
   sbd,
-  @JsonKey(name: 'SCR')
+  @JsonValue('SCR')
   scr,
-  @JsonKey(name: 'SDG')
+  @JsonValue('SDG')
   sdg,
-  @JsonKey(name: 'SEK')
+  @JsonValue('SEK')
   sek,
-  @JsonKey(name: 'SGD')
+  @JsonValue('SGD')
   sgd,
-  @JsonKey(name: 'SHP')
+  @JsonValue('SHP')
   shp,
-  @JsonKey(name: 'SLL')
+  @JsonValue('SLL')
   sll,
-  @JsonKey(name: 'SOS')
+  @JsonValue('SOS')
   sos,
-  @JsonKey(name: 'SRD')
+  @JsonValue('SRD')
   srd,
-  @JsonKey(name: 'SSP')
+  @JsonValue('SSP')
   ssp,
-  @JsonKey(name: 'STN')
+  @JsonValue('STN')
   stn,
-  @JsonKey(name: 'SVC')
+  @JsonValue('SVC')
   svc,
-  @JsonKey(name: 'SYP')
+  @JsonValue('SYP')
   syp,
-  @JsonKey(name: 'SZL')
+  @JsonValue('SZL')
   szl,
-  @JsonKey(name: 'THB')
+  @JsonValue('THB')
   thb,
-  @JsonKey(name: 'TJS')
+  @JsonValue('TJS')
   tjs,
-  @JsonKey(name: 'TMT')
+  @JsonValue('TMT')
   tmt,
-  @JsonKey(name: 'TND')
+  @JsonValue('TND')
   tnd,
-  @JsonKey(name: 'TOP')
+  @JsonValue('TOP')
   top,
-  @JsonKey(name: 'TRY')
+  @JsonValue('TRY')
   try_,
-  @JsonKey(name: 'TTD')
+  @JsonValue('TTD')
   ttd,
-  @JsonKey(name: 'TWD')
+  @JsonValue('TWD')
   twd,
-  @JsonKey(name: 'TZS')
+  @JsonValue('TZS')
   tzs,
-  @JsonKey(name: 'UAH')
+  @JsonValue('UAH')
   uah,
-  @JsonKey(name: 'UGX')
+  @JsonValue('UGX')
   ugx,
-  @JsonKey(name: 'USD')
+  @JsonValue('USD')
   usd,
-  @JsonKey(name: 'UYU')
+  @JsonValue('UYU')
   uyu,
-  @JsonKey(name: 'UZS')
+  @JsonValue('UZS')
   uzs,
-  @JsonKey(name: 'VES')
+  @JsonValue('VES')
   ves,
-  @JsonKey(name: 'VND')
+  @JsonValue('VND')
   vnd,
-  @JsonKey(name: 'VUV')
+  @JsonValue('VUV')
   vuv,
-  @JsonKey(name: 'WST')
+  @JsonValue('WST')
   wst,
-  @JsonKey(name: 'XAF')
+  @JsonValue('XAF')
   xaf,
-  @JsonKey(name: 'XCD')
+  @JsonValue('XCD')
   xcd,
-  @JsonKey(name: 'XOF')
+  @JsonValue('XOF')
   xof,
-  @JsonKey(name: 'XPF')
+  @JsonValue('XPF')
   xpf,
-  @JsonKey(name: 'YER')
+  @JsonValue('YER')
   yer,
-  @JsonKey(name: 'ZAR')
+  @JsonValue('ZAR')
   zar,
-  @JsonKey(name: 'ZMW')
+  @JsonValue('ZMW')
   zmw,
-  @JsonKey(name: 'ZWL')
+  @JsonValue('ZWL')
   zwl,
 }

@@ -2,10 +2,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum AdjustmentType {
-  @JsonKey(name: 'DISTRIBUTED_ORDER_PROMOTION')
+  @JsonValue('DISTRIBUTED_ORDER_PROMOTION')
   distributedOrderPromotion,
-  @JsonKey(name: 'OTHER')
+  @JsonValue('OTHER')
   other,
-  @JsonKey(name: 'PROMOTION')
+  @JsonValue('PROMOTION')
   promotion,
 }

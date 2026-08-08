@@ -34,7 +34,7 @@ void main() {
         var countries = await vendure.system.getAvailableCountries();
         expect(countries, isA<List<Country>>());
         expect(countries, isNotEmpty);
-        print('✅ Retrieved ${countries.length!} available countries');
+        print('✅ Retrieved ${countries.length} available countries');
         print(
           '📋 Sample countries: ${countries.take(3).map((c) => c.name).join(", ")}',
         );
@@ -49,7 +49,7 @@ void main() {
         expect(collections, isA<CollectionList>());
         print('✅ Retrieved ${collections.totalItems} collections');
         if (collections.items!.isNotEmpty) {
-          print('📋 Sample collection: ${collections.items!.first!.name}');
+          print('📋 Sample collection: ${collections.items!.first.name}');
         }
       } catch (e) {
         fail('❌ Failed to get collections: $e');
@@ -62,7 +62,7 @@ void main() {
         expect(products, isA<ProductList>());
         print('✅ Retrieved ${products.totalItems} products');
         if (products.items!.isNotEmpty) {
-          print('📋 Sample product: ${products.items!.first!.name}');
+          print('📋 Sample product: ${products.items!.first.name}');
         }
       } catch (e) {
         fail('❌ Failed to get products: $e');
@@ -170,7 +170,7 @@ void main() {
         if (token != null) {
           expect(token, isA<String>());
           print('✅ Token retrieved successfully');
-          print('📋 Token: ${token.substring!(0, 20)}...');
+          print('📋 Token: ${token.substring(0, 20)}...');
         } else {
           print('⚠️ Token is null - authentication may have failed');
         }
@@ -191,7 +191,7 @@ void main() {
         expect(authenticatedVendure, isA<Vendure>());
         expect(authenticatedVendure.token, isNotNull);
         print('✅ Native auth initialization successful');
-        print('📋 Token: ${authenticatedVendure.token?.substring!(0, 20)}...');
+        print('📋 Token: ${authenticatedVendure.token?.substring(0, 20)}...');
 
         // Test authenticated endpoint access
         try {
@@ -241,7 +241,7 @@ void main() {
 
         // Add item to order
         var result = await vendure.order.addItemToOrder(
-          productVariantId: firstVariant!.id!,
+          productVariantId: firstVariant.id!,
           quantity: 1,
         );
         print(result);
@@ -355,7 +355,7 @@ void main() {
         print('⚠️ Expected error for invalid product variant, but got success');
       } catch (e) {
         print(
-          '✅ Correctly handled invalid product variant: ${e.toString().substring!(0, 100)}...',
+          '✅ Correctly handled invalid product variant: ${(e.toString().length > 100 ? e.toString().substring(0, 100) : e.toString())}...',
         );
         expect(e, isNotNull);
       }
@@ -370,7 +370,7 @@ void main() {
         print('⚠️ Expected authentication error, but got success');
       } catch (e) {
         print(
-          '✅ Correctly handled invalid credentials: ${e.toString().substring!(0, 100)}...',
+          '✅ Correctly handled invalid credentials: ${(e.toString().length > 100 ? e.toString().substring(0, 100) : e.toString())}...',
         );
         expect(e, isNotNull);
       }
@@ -382,7 +382,7 @@ void main() {
         print('⚠️ Expected error for invalid collection, but got success');
       } catch (e) {
         print(
-          '✅ Correctly handled invalid collection ID: ${e.toString().substring!(0, 100)}...',
+          '✅ Correctly handled invalid collection ID: ${(e.toString().length > 100 ? e.toString().substring(0, 100) : e.toString())}...',
         );
         expect(e, isNotNull);
       }

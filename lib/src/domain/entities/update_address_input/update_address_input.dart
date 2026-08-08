@@ -11,7 +11,7 @@ class UpdateAddressInput {
   bool? defaultBillingAddress;
   bool? defaultShippingAddress;
   String? fullName;
-  String id;
+  String? id;
   String? phoneNumber;
   String? postalCode;
   String? province;
@@ -26,7 +26,7 @@ class UpdateAddressInput {
     this.defaultBillingAddress,
     this.defaultShippingAddress,
     this.fullName,
-    required this.id,
+    this.id,
     this.phoneNumber,
     this.postalCode,
     this.province,

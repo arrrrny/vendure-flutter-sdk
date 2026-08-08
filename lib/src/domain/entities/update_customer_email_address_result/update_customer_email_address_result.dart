@@ -27,54 +27,58 @@ sealed class UpdateCustomerEmailAddressResult {
 
 @JsonSerializable(explicitToJson: true)
 class IdentifierChangeTokenExpiredError extends UpdateCustomerEmailAddressResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   IdentifierChangeTokenExpiredError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory IdentifierChangeTokenExpiredError.fromJson(Map<String, dynamic> json) => _$IdentifierChangeTokenExpiredErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$IdentifierChangeTokenExpiredErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class IdentifierChangeTokenInvalidError extends UpdateCustomerEmailAddressResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   IdentifierChangeTokenInvalidError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory IdentifierChangeTokenInvalidError.fromJson(Map<String, dynamic> json) => _$IdentifierChangeTokenInvalidErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$IdentifierChangeTokenInvalidErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NativeAuthStrategyError extends UpdateCustomerEmailAddressResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NativeAuthStrategyError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NativeAuthStrategyErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class Success extends UpdateCustomerEmailAddressResult {
-  bool success;
+  bool? success;
 
   Success({
-    required this.success,
+    this.success,
   }) : super._();
 
   factory Success.fromJson(Map<String, dynamic> json) => _$SuccessFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$SuccessToJson(this);
 }

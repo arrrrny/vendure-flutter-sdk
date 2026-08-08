@@ -4,10 +4,10 @@ part 'order_tax_summary.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class OrderTaxSummary {
-  String description;
-  double taxBase;
-  double taxRate;
-  double taxTotal;
+  String? description;
+  double? taxBase;
+  double? taxRate;
+  double? taxTotal;
 
   OrderTaxSummary({
     required this.description,

@@ -153,9 +153,13 @@ class VendureRemoteDataSource {
     }
 
     if (data is Map || data is List) {
+      // Response normalization: always convertEnums=false because entity
+      // .g.dart files now use @JsonValue enum maps (_$EnumNameEnumMap) which
+      // expect the raw GraphQL enum values (e.g. 'USD', 'INSUFFICIENT_STOCK_ERROR').
+      // The __typename -> runtimeType conversion still runs for union discrimination.
       data = VendureUtils.normalizeGraphQLData(
         data,
-        convertEnums: convertEnums,
+        convertEnums: false,
       );
     }
     if (fromJson != null) {
@@ -187,9 +191,10 @@ class VendureRemoteDataSource {
       throw Exception('No data returned from query');
     }
     if (data is Map || data is List) {
+      // Response normalization: always convertEnums=false (see mutate() above).
       data = VendureUtils.normalizeGraphQLData(
         data,
-        convertEnums: convertEnums,
+        convertEnums: false,
       );
     }
     if (fromJson != null) {

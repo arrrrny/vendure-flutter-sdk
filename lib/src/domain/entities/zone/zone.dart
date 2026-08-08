@@ -6,16 +6,16 @@ part 'zone.g.dart';
 class Zone {
   DateTime createdAt;
   Map<String, dynamic>? customFields;
-  String id;
-  String name;
-  DateTime updatedAt;
+  String? id;
+  String? name;
+  DateTime? updatedAt;
 
   Zone({
     required this.createdAt,
     this.customFields,
-    required this.id,
-    required this.name,
-    required this.updatedAt,
+    this.id,
+    this.name,
+    this.updatedAt,
   });
 
   factory Zone.fromJson(Map<String, dynamic> json) => _$ZoneFromJson(json);

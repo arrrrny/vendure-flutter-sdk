@@ -4,10 +4,10 @@ part 'date_list_operators.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class DateListOperators {
-  DateTime inList;
+  DateTime? inList;
 
   DateListOperators({
-    required this.inList,
+    this.inList,
   });
 
   factory DateListOperators.fromJson(Map<String, dynamic> json) => _$DateListOperatorsFromJson(json);

@@ -2,8 +2,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum SortOrder {
-  @JsonKey(name: 'ASC')
+  @JsonValue('ASC')
   asc,
-  @JsonKey(name: 'DESC')
+  @JsonValue('DESC')
   desc,
 }

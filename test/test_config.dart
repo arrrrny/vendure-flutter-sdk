@@ -140,16 +140,16 @@ class TestConfig {
     final products = await vendure.catalog.getProducts(
       options: ProductListOptions(take: 50, skip: 0),
     );
-    if (products.items.isEmpty) {
+    if (products.items!.isEmpty) {
       throw StateError('No products available');
     }
 
     final variantIds = <String>{};
-    for (final product in products.items) {
+    for (final product in products.items!) {
       for (final variant in product.variants!) {
         if (variantIds.length >= count) break;
         if (variant!.id!.isNotEmpty) {
-          variantIds.add(variant!.id!);
+          variantIds.add(variant.id!);
         }
       }
       if (variantIds.length >= count) break;
@@ -170,36 +170,36 @@ class TestConfig {
     final products = await vendure.catalog.getProducts(
       options: ProductListOptions(take: 1, skip: 0),
     );
-    if (products.items.isEmpty) {
+    if (products.items!.isEmpty) {
       throw StateError('No products available');
     }
-    return products.items!.first!.id!;
+    return products.items!.first.id!;
   }
 
   static Future<String> fetchAnyProductSlug(Vendure vendure) async {
     final products = await vendure.catalog.getProducts(
       options: ProductListOptions(take: 1, skip: 0),
     );
-    if (products.items.isEmpty) {
+    if (products.items!.isEmpty) {
       throw StateError('No products available');
     }
-    return products.items!.first!.slug!;
+    return products.items!.first.slug!;
   }
 
   static Future<String> fetchAnyCollectionId(Vendure vendure) async {
     final collections = await vendure.catalog.getCollections();
-    if (collections.items.isEmpty) {
+    if (collections.items!.isEmpty) {
       throw StateError('No collections available');
     }
-    return collections.items!.first!.id!;
+    return collections.items!.first.id!;
   }
 
   static Future<String> fetchAnyCollectionSlug(Vendure vendure) async {
     final collections = await vendure.catalog.getCollections();
-    if (collections.items.isEmpty) {
+    if (collections.items!.isEmpty) {
       throw StateError('No collections available');
     }
-    return collections.items!.first!.slug!;
+    return collections.items!.first.slug!;
   }
 
   static String _toWebSocketUrl(String httpUrl) {

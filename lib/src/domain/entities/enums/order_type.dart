@@ -2,10 +2,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum OrderType {
-  @JsonKey(name: 'Aggregate')
+  @JsonValue('Aggregate')
   aggregate,
-  @JsonKey(name: 'Regular')
+  @JsonValue('Regular')
   regular,
-  @JsonKey(name: 'Seller')
+  @JsonValue('Seller')
   seller,
 }

@@ -19,4 +19,4 @@ Map<String, dynamic> _$SearchResultSortParameterToJson(
   'price': ?_$SortOrderEnumMap[instance.price],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'asc', SortOrder.desc: 'desc'};
+const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};

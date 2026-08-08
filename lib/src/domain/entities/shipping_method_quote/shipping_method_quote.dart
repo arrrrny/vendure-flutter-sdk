@@ -6,8 +6,8 @@ part 'shipping_method_quote.g.dart';
 class ShippingMethodQuote {
   String code;
   Map<String, dynamic>? customFields;
-  String description;
-  String id;
+  String? description;
+  String? id;
   Map<String, dynamic>? metadata;
   String name;
   double price;

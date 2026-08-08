@@ -39,6 +39,6 @@ Map<String, dynamic> _$CollectionListOptionsToJson(
 };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'and',
-  LogicalOperator.or: 'or',
+  LogicalOperator.and: 'AND',
+  LogicalOperator.or: 'OR',
 };

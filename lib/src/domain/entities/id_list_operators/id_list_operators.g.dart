@@ -7,7 +7,7 @@ part of 'id_list_operators.dart';
 // **************************************************************************
 
 IdListOperators _$IdListOperatorsFromJson(Map json) =>
-    IdListOperators(inList: json['inList'] as String);
+    IdListOperators(inList: json['inList'] as String?);
 
 Map<String, dynamic> _$IdListOperatorsToJson(IdListOperators instance) =>
-    <String, dynamic>{'inList': instance.inList};
+    <String, dynamic>{'inList': ?instance.inList};

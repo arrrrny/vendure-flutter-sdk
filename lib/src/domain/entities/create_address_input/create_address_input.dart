@@ -6,7 +6,7 @@ part 'create_address_input.g.dart';
 class CreateAddressInput {
   String? city;
   String? company;
-  String countryCode;
+  String? countryCode;
   Map<String, dynamic>? customFields;
   bool? defaultBillingAddress;
   bool? defaultShippingAddress;
@@ -14,13 +14,13 @@ class CreateAddressInput {
   String? phoneNumber;
   String? postalCode;
   String? province;
-  String streetLine1;
+  String? streetLine1;
   String? streetLine2;
 
   CreateAddressInput({
     this.city,
     this.company,
-    required this.countryCode,
+    this.countryCode,
     this.customFields,
     this.defaultBillingAddress,
     this.defaultShippingAddress,
@@ -28,7 +28,7 @@ class CreateAddressInput {
     this.phoneNumber,
     this.postalCode,
     this.province,
-    required this.streetLine1,
+    this.streetLine1,
     this.streetLine2,
   });
 

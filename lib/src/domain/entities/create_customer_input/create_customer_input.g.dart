@@ -11,9 +11,9 @@ CreateCustomerInput _$CreateCustomerInputFromJson(Map json) =>
       customFields: (json['customFields'] as Map?)?.map(
         (k, e) => MapEntry(k as String, e),
       ),
-      emailAddress: json['emailAddress'] as String,
-      firstName: json['firstName'] as String,
-      lastName: json['lastName'] as String,
+      emailAddress: json['emailAddress'] as String?,
+      firstName: json['firstName'] as String?,
+      lastName: json['lastName'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
       title: json['title'] as String?,
     );
@@ -22,9 +22,9 @@ Map<String, dynamic> _$CreateCustomerInputToJson(
   CreateCustomerInput instance,
 ) => <String, dynamic>{
   'customFields': ?instance.customFields,
-  'emailAddress': instance.emailAddress,
-  'firstName': instance.firstName,
-  'lastName': instance.lastName,
+  'emailAddress': ?instance.emailAddress,
+  'firstName': ?instance.firstName,
+  'lastName': ?instance.lastName,
   'phoneNumber': ?instance.phoneNumber,
   'title': ?instance.title,
 };

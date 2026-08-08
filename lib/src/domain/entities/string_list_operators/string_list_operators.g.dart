@@ -7,8 +7,8 @@ part of 'string_list_operators.dart';
 // **************************************************************************
 
 StringListOperators _$StringListOperatorsFromJson(Map json) =>
-    StringListOperators(inList: json['inList'] as String);
+    StringListOperators(inList: json['inList'] as String?);
 
 Map<String, dynamic> _$StringListOperatorsToJson(
   StringListOperators instance,
-) => <String, dynamic>{'inList': instance.inList};
+) => <String, dynamic>{'inList': ?instance.inList};

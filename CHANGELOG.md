@@ -1,3 +1,70 @@
+## 3.0.0 - 2026-08-07
+
+Complete SDK rewrite using the Zuraffa v5 + Zorphy architecture. All Freezed-based
+models have been replaced with concrete `@JsonSerializable` entities generated from
+the Vendure GraphQL schema. The package now follows a clean-architecture layout
+(domain / data layers) while preserving the public `Vendure` facade API.
+
+### Breaking Changes (AC-7)
+
+- **Entities relocated** — all entity classes moved from `lib/src/types/` and
+  `lib/src/input_types/` to `lib/src/domain/entities/<snake_case>/`. The old
+  `lib/src/types/` directory is now a single shim (`exports.dart`) that re-exports
+  from the new location. `lib/src/input_types/` has been removed entirely;
+  `PaginatedList` / `ListOptions` now live at `lib/src/domain/entities/paginated_list.dart`.
+- **Merged enums** — the 12 enum types (CurrencyCode, ErrorCode, LanguageCode,
+  Permission, SortOrder, AdjustmentType, AssetType, DeletionResult, GlobalFlag,
+  HistoryEntryType, LogicalOperator, OrderType) are now a merged superset of the
+  former `types/` and `input_types/` variants, located at
+  `lib/src/domain/entities/enums/`. Enum values use `@JsonValue` for correct
+  GraphQL round-tripping (e.g. `CurrencyCode.usd` ↔ `"USD"`).
+- **Dropped generated `copyWith` / `==` / `hashCode` / `when` extensions** —
+  Freezed is no longer a dependency. Entities are plain `@JsonSerializable` classes
+  without generated equality, copyWith, or union `when` methods. Consumers that
+  relied on `.copyWith()` must implement manual copy logic.
+- **`json_serializable` is now dev-only** (D1 deviation, AC-7) — `freezed`,
+  `freezed_annotation`, and `mocktail` have been removed from dependencies.
+  `json_serializable` remains in `dev_dependencies` (not fully removed) because
+  entities use `@JsonSerializable` for JSON round-tripping; this is documented as
+  deviation D1.
+- **`mocktail` removed** — test doubles are no longer bundled; the test suite
+  runs against a live Vendure instance.
+- **`vendure_session.dart` removed** — session management is handled internally
+  by the `Vendure` facade and `TokenManager`; the standalone session file is gone.
+
+### Architecture (clean-architecture layout)
+
+- `lib/src/domain/entities/` — 179 Zorphy-style entities (fallback form:
+  `@JsonSerializable` concrete classes; 41 scalar-only leaf entities flagged as
+  `zorphyCandidate: true` in `entity-manifest.json` for future Zorphy migration
+  once [zuraffa#272](https://github.com/arrrrny/zuraffa/issues/272) is resolved).
+- `lib/src/domain/repositories/` — repository interfaces (Order, Catalog,
+  Customer, System).
+- `lib/src/domain/usecases/` — use-case classes per domain area.
+- `lib/data/datasources/remote/` — `VendureRemoteDataSource` (GraphQL execution).
+- `lib/data/repositories/` — data-layer repository implementations.
+- `lib/vendure.dart` — public `Vendure` facade (unchanged public API surface).
+
+### Schema Source (FR-003 / AC-5)
+
+All 179 entities were generated from the Vendure GraphQL schema captured via
+standalone introspection (`tool/introspect_schema.dart`) on 2026-08-06. Provenance
+and counts are recorded in `specs/001-vendure-zuraffa-plugin-rewri/research.md`
+(179 entities, 12 enums, 22 unions, 6 interfaces, 9 scalars).
+
+### Fixes
+
+- **Enum JSON round-tripping** — enum values now use `@JsonValue` annotations so
+  that GraphQL uppercase values (e.g. `"USD"`, `"INSUFFICIENT_STOCK_ERROR"`)
+  decode correctly. Previously the fallback `$enumDecode` matched by Dart enum
+  name (lowercase) and crashed on uppercase GraphQL values.
+- **Nullable entity fields** — entity fields are now nullable to match the
+  Vendure GraphQL schema (most fields are nullable), preventing `Null` cast
+  crashes during deserialization.
+- **Response enum normalization** — `VendureRemoteDataSource` no longer
+  double-converts enum values in mutation responses; raw GraphQL values are
+  passed to the generated `_$EnumMap` decoders.
+
 ## 2.19.0 - 2026-06-16
 
 - **Fix**: Added reentrancy guard to prevent race conditions during concurrent Vendure initialization across all initialization methods.

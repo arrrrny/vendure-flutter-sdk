@@ -7,14 +7,14 @@ part of 'refund_line.dart';
 // **************************************************************************
 
 RefundLine _$RefundLineFromJson(Map json) => RefundLine(
-  orderLineId: json['orderLineId'] as String,
-  quantity: (json['quantity'] as num).toInt(),
-  refundId: json['refundId'] as String,
+  orderLineId: json['orderLineId'] as String?,
+  quantity: (json['quantity'] as num?)?.toInt(),
+  refundId: json['refundId'] as String?,
 );
 
 Map<String, dynamic> _$RefundLineToJson(RefundLine instance) =>
     <String, dynamic>{
-      'orderLineId': instance.orderLineId,
-      'quantity': instance.quantity,
-      'refundId': instance.refundId,
+      'orderLineId': ?instance.orderLineId,
+      'quantity': ?instance.quantity,
+      'refundId': ?instance.refundId,
     };

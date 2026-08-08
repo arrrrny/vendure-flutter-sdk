@@ -32,88 +32,94 @@ sealed class ResetPasswordResult {
 
 @JsonSerializable(explicitToJson: true)
 class CurrentUser extends ResetPasswordResult {
-  List<CurrentUserChannel> channels;
-  String id;
-  String identifier;
+  List<CurrentUserChannel>? channels;
+  String? id;
+  String? identifier;
 
   CurrentUser({
-    required this.channels,
-    required this.id,
-    required this.identifier,
+    this.channels,
+    this.id,
+    this.identifier,
   }) : super._();
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) => _$CurrentUserFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CurrentUserToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NativeAuthStrategyError extends ResetPasswordResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NativeAuthStrategyError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NativeAuthStrategyErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NotVerifiedError extends ResetPasswordResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NotVerifiedError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NotVerifiedError.fromJson(Map<String, dynamic> json) => _$NotVerifiedErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NotVerifiedErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class PasswordResetTokenExpiredError extends ResetPasswordResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   PasswordResetTokenExpiredError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory PasswordResetTokenExpiredError.fromJson(Map<String, dynamic> json) => _$PasswordResetTokenExpiredErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$PasswordResetTokenExpiredErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class PasswordResetTokenInvalidError extends ResetPasswordResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   PasswordResetTokenInvalidError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory PasswordResetTokenInvalidError.fromJson(Map<String, dynamic> json) => _$PasswordResetTokenInvalidErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$PasswordResetTokenInvalidErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class PasswordValidationError extends ResetPasswordResult {
-  ErrorCode errorCode;
-  String message;
-  String validationErrorMessage;
+  ErrorCode? errorCode;
+  String? message;
+  String? validationErrorMessage;
 
   PasswordValidationError({
-    required this.errorCode,
-    required this.message,
-    required this.validationErrorMessage,
+    this.errorCode,
+    this.message,
+    this.validationErrorMessage,
   }) : super._();
 
   factory PasswordValidationError.fromJson(Map<String, dynamic> json) => _$PasswordValidationErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$PasswordValidationErrorToJson(this);
 }

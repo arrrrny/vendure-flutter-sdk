@@ -4,12 +4,12 @@ part 'number_range.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class NumberRange {
-  double end;
-  double start;
+  double? end;
+  double? start;
 
   NumberRange({
-    required this.end,
-    required this.start,
+    this.end,
+    this.start,
   });
 
   factory NumberRange.fromJson(Map<String, dynamic> json) => _$NumberRangeFromJson(json);

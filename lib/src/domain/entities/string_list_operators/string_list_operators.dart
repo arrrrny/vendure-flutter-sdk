@@ -4,10 +4,10 @@ part 'string_list_operators.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class StringListOperators {
-  String inList;
+  String? inList;
 
   StringListOperators({
-    required this.inList,
+    this.inList,
   });
 
   factory StringListOperators.fromJson(Map<String, dynamic> json) => _$StringListOperatorsFromJson(json);

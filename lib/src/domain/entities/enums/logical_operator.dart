@@ -2,8 +2,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum LogicalOperator {
-  @JsonKey(name: 'AND')
+  @JsonValue('AND')
   and,
-  @JsonKey(name: 'OR')
+  @JsonValue('OR')
   or,
 }

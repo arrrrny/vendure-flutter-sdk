@@ -6,7 +6,7 @@ enum LanguageCode {
   ak,
   am,
   ar,
-  @JsonKey(name: 'as')
+  @JsonValue('as')
   as_,
   az,
   be,
@@ -24,40 +24,40 @@ enum LanguageCode {
   cy,
   da,
   de,
-  @JsonKey(name: 'de_AT')
+  @JsonValue('de_AT')
   deAt,
-  @JsonKey(name: 'de_CH')
+  @JsonValue('de_CH')
   deCh,
   dz,
   ee,
   el,
   en,
-  @JsonKey(name: 'en_AU')
+  @JsonValue('en_AU')
   enAu,
-  @JsonKey(name: 'en_CA')
+  @JsonValue('en_CA')
   enCa,
-  @JsonKey(name: 'en_GB')
+  @JsonValue('en_GB')
   enGb,
-  @JsonKey(name: 'en_US')
+  @JsonValue('en_US')
   enUs,
   eo,
   es,
-  @JsonKey(name: 'es_ES')
+  @JsonValue('es_ES')
   esEs,
-  @JsonKey(name: 'es_MX')
+  @JsonValue('es_MX')
   esMx,
   et,
   eu,
   fa,
-  @JsonKey(name: 'fa_AF')
+  @JsonValue('fa_AF')
   faAf,
   ff,
   fi,
   fo,
   fr,
-  @JsonKey(name: 'fr_CA')
+  @JsonValue('fr_CA')
   frCa,
-  @JsonKey(name: 'fr_CH')
+  @JsonValue('fr_CH')
   frCh,
   fy,
   ga,
@@ -76,7 +76,7 @@ enum LanguageCode {
   id,
   ig,
   ii,
-  @JsonKey(name: 'is')
+  @JsonValue('is')
   is_,
   it,
   ja,
@@ -113,7 +113,7 @@ enum LanguageCode {
   nd,
   ne,
   nl,
-  @JsonKey(name: 'nl_BE')
+  @JsonValue('nl_BE')
   nlBe,
   nn,
   ny,
@@ -124,15 +124,15 @@ enum LanguageCode {
   pl,
   ps,
   pt,
-  @JsonKey(name: 'pt_BR')
+  @JsonValue('pt_BR')
   ptBr,
-  @JsonKey(name: 'pt_PT')
+  @JsonValue('pt_PT')
   ptPt,
   qu,
   rm,
   rn,
   ro,
-  @JsonKey(name: 'ro_MD')
+  @JsonValue('ro_MD')
   roMd,
   ru,
   rw,
@@ -152,7 +152,7 @@ enum LanguageCode {
   su,
   sv,
   sw,
-  @JsonKey(name: 'sw_CD')
+  @JsonValue('sw_CD')
   swCd,
   ta,
   te,
@@ -174,9 +174,9 @@ enum LanguageCode {
   yi,
   yo,
   zh,
-  @JsonKey(name: 'zh_Hans')
+  @JsonValue('zh_Hans')
   zhHans,
-  @JsonKey(name: 'zh_Hant')
+  @JsonValue('zh_Hant')
   zhHant,
   zu,
 }

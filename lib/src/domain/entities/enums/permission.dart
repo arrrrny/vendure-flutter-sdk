@@ -2,190 +2,190 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum Permission {
-  @JsonKey(name: 'Authenticated')
+  @JsonValue('Authenticated')
   authenticated,
-  @JsonKey(name: 'CreateAdministrator')
+  @JsonValue('CreateAdministrator')
   createAdministrator,
-  @JsonKey(name: 'CreateAsset')
+  @JsonValue('CreateAsset')
   createAsset,
-  @JsonKey(name: 'CreateCatalog')
+  @JsonValue('CreateCatalog')
   createCatalog,
-  @JsonKey(name: 'CreateChannel')
+  @JsonValue('CreateChannel')
   createChannel,
-  @JsonKey(name: 'CreateCollection')
+  @JsonValue('CreateCollection')
   createCollection,
-  @JsonKey(name: 'CreateCountry')
+  @JsonValue('CreateCountry')
   createCountry,
-  @JsonKey(name: 'CreateCustomer')
+  @JsonValue('CreateCustomer')
   createCustomer,
-  @JsonKey(name: 'CreateCustomerGroup')
+  @JsonValue('CreateCustomerGroup')
   createCustomerGroup,
-  @JsonKey(name: 'CreateFacet')
+  @JsonValue('CreateFacet')
   createFacet,
-  @JsonKey(name: 'CreateOrder')
+  @JsonValue('CreateOrder')
   createOrder,
-  @JsonKey(name: 'CreatePaymentMethod')
+  @JsonValue('CreatePaymentMethod')
   createPaymentMethod,
-  @JsonKey(name: 'CreateProduct')
+  @JsonValue('CreateProduct')
   createProduct,
-  @JsonKey(name: 'CreatePromotion')
+  @JsonValue('CreatePromotion')
   createPromotion,
-  @JsonKey(name: 'CreateSeller')
+  @JsonValue('CreateSeller')
   createSeller,
-  @JsonKey(name: 'CreateSettings')
+  @JsonValue('CreateSettings')
   createSettings,
-  @JsonKey(name: 'CreateShippingMethod')
+  @JsonValue('CreateShippingMethod')
   createShippingMethod,
-  @JsonKey(name: 'CreateStockLocation')
+  @JsonValue('CreateStockLocation')
   createStockLocation,
-  @JsonKey(name: 'CreateSystem')
+  @JsonValue('CreateSystem')
   createSystem,
-  @JsonKey(name: 'CreateTag')
+  @JsonValue('CreateTag')
   createTag,
-  @JsonKey(name: 'CreateTaxCategory')
+  @JsonValue('CreateTaxCategory')
   createTaxCategory,
-  @JsonKey(name: 'CreateTaxRate')
+  @JsonValue('CreateTaxRate')
   createTaxRate,
-  @JsonKey(name: 'CreateZone')
+  @JsonValue('CreateZone')
   createZone,
-  @JsonKey(name: 'DeleteAdministrator')
+  @JsonValue('DeleteAdministrator')
   deleteAdministrator,
-  @JsonKey(name: 'DeleteAsset')
+  @JsonValue('DeleteAsset')
   deleteAsset,
-  @JsonKey(name: 'DeleteCatalog')
+  @JsonValue('DeleteCatalog')
   deleteCatalog,
-  @JsonKey(name: 'DeleteChannel')
+  @JsonValue('DeleteChannel')
   deleteChannel,
-  @JsonKey(name: 'DeleteCollection')
+  @JsonValue('DeleteCollection')
   deleteCollection,
-  @JsonKey(name: 'DeleteCountry')
+  @JsonValue('DeleteCountry')
   deleteCountry,
-  @JsonKey(name: 'DeleteCustomer')
+  @JsonValue('DeleteCustomer')
   deleteCustomer,
-  @JsonKey(name: 'DeleteCustomerGroup')
+  @JsonValue('DeleteCustomerGroup')
   deleteCustomerGroup,
-  @JsonKey(name: 'DeleteFacet')
+  @JsonValue('DeleteFacet')
   deleteFacet,
-  @JsonKey(name: 'DeleteOrder')
+  @JsonValue('DeleteOrder')
   deleteOrder,
-  @JsonKey(name: 'DeletePaymentMethod')
+  @JsonValue('DeletePaymentMethod')
   deletePaymentMethod,
-  @JsonKey(name: 'DeleteProduct')
+  @JsonValue('DeleteProduct')
   deleteProduct,
-  @JsonKey(name: 'DeletePromotion')
+  @JsonValue('DeletePromotion')
   deletePromotion,
-  @JsonKey(name: 'DeleteSeller')
+  @JsonValue('DeleteSeller')
   deleteSeller,
-  @JsonKey(name: 'DeleteSettings')
+  @JsonValue('DeleteSettings')
   deleteSettings,
-  @JsonKey(name: 'DeleteShippingMethod')
+  @JsonValue('DeleteShippingMethod')
   deleteShippingMethod,
-  @JsonKey(name: 'DeleteStockLocation')
+  @JsonValue('DeleteStockLocation')
   deleteStockLocation,
-  @JsonKey(name: 'DeleteSystem')
+  @JsonValue('DeleteSystem')
   deleteSystem,
-  @JsonKey(name: 'DeleteTag')
+  @JsonValue('DeleteTag')
   deleteTag,
-  @JsonKey(name: 'DeleteTaxCategory')
+  @JsonValue('DeleteTaxCategory')
   deleteTaxCategory,
-  @JsonKey(name: 'DeleteTaxRate')
+  @JsonValue('DeleteTaxRate')
   deleteTaxRate,
-  @JsonKey(name: 'DeleteZone')
+  @JsonValue('DeleteZone')
   deleteZone,
-  @JsonKey(name: 'Owner')
+  @JsonValue('Owner')
   owner,
-  @JsonKey(name: 'Public')
+  @JsonValue('Public')
   public,
-  @JsonKey(name: 'ReadAdministrator')
+  @JsonValue('ReadAdministrator')
   readAdministrator,
-  @JsonKey(name: 'ReadAsset')
+  @JsonValue('ReadAsset')
   readAsset,
-  @JsonKey(name: 'ReadCatalog')
+  @JsonValue('ReadCatalog')
   readCatalog,
-  @JsonKey(name: 'ReadChannel')
+  @JsonValue('ReadChannel')
   readChannel,
-  @JsonKey(name: 'ReadCollection')
+  @JsonValue('ReadCollection')
   readCollection,
-  @JsonKey(name: 'ReadCountry')
+  @JsonValue('ReadCountry')
   readCountry,
-  @JsonKey(name: 'ReadCustomer')
+  @JsonValue('ReadCustomer')
   readCustomer,
-  @JsonKey(name: 'ReadCustomerGroup')
+  @JsonValue('ReadCustomerGroup')
   readCustomerGroup,
-  @JsonKey(name: 'ReadFacet')
+  @JsonValue('ReadFacet')
   readFacet,
-  @JsonKey(name: 'ReadOrder')
+  @JsonValue('ReadOrder')
   readOrder,
-  @JsonKey(name: 'ReadPaymentMethod')
+  @JsonValue('ReadPaymentMethod')
   readPaymentMethod,
-  @JsonKey(name: 'ReadProduct')
+  @JsonValue('ReadProduct')
   readProduct,
-  @JsonKey(name: 'ReadPromotion')
+  @JsonValue('ReadPromotion')
   readPromotion,
-  @JsonKey(name: 'ReadSeller')
+  @JsonValue('ReadSeller')
   readSeller,
-  @JsonKey(name: 'ReadSettings')
+  @JsonValue('ReadSettings')
   readSettings,
-  @JsonKey(name: 'ReadShippingMethod')
+  @JsonValue('ReadShippingMethod')
   readShippingMethod,
-  @JsonKey(name: 'ReadStockLocation')
+  @JsonValue('ReadStockLocation')
   readStockLocation,
-  @JsonKey(name: 'ReadSystem')
+  @JsonValue('ReadSystem')
   readSystem,
-  @JsonKey(name: 'ReadTag')
+  @JsonValue('ReadTag')
   readTag,
-  @JsonKey(name: 'ReadTaxCategory')
+  @JsonValue('ReadTaxCategory')
   readTaxCategory,
-  @JsonKey(name: 'ReadTaxRate')
+  @JsonValue('ReadTaxRate')
   readTaxRate,
-  @JsonKey(name: 'ReadZone')
+  @JsonValue('ReadZone')
   readZone,
-  @JsonKey(name: 'SuperAdmin')
+  @JsonValue('SuperAdmin')
   superAdmin,
-  @JsonKey(name: 'UpdateAdministrator')
+  @JsonValue('UpdateAdministrator')
   updateAdministrator,
-  @JsonKey(name: 'UpdateAsset')
+  @JsonValue('UpdateAsset')
   updateAsset,
-  @JsonKey(name: 'UpdateCatalog')
+  @JsonValue('UpdateCatalog')
   updateCatalog,
-  @JsonKey(name: 'UpdateChannel')
+  @JsonValue('UpdateChannel')
   updateChannel,
-  @JsonKey(name: 'UpdateCollection')
+  @JsonValue('UpdateCollection')
   updateCollection,
-  @JsonKey(name: 'UpdateCountry')
+  @JsonValue('UpdateCountry')
   updateCountry,
-  @JsonKey(name: 'UpdateCustomer')
+  @JsonValue('UpdateCustomer')
   updateCustomer,
-  @JsonKey(name: 'UpdateCustomerGroup')
+  @JsonValue('UpdateCustomerGroup')
   updateCustomerGroup,
-  @JsonKey(name: 'UpdateFacet')
+  @JsonValue('UpdateFacet')
   updateFacet,
-  @JsonKey(name: 'UpdateGlobalSettings')
+  @JsonValue('UpdateGlobalSettings')
   updateGlobalSettings,
-  @JsonKey(name: 'UpdateOrder')
+  @JsonValue('UpdateOrder')
   updateOrder,
-  @JsonKey(name: 'UpdatePaymentMethod')
+  @JsonValue('UpdatePaymentMethod')
   updatePaymentMethod,
-  @JsonKey(name: 'UpdateProduct')
+  @JsonValue('UpdateProduct')
   updateProduct,
-  @JsonKey(name: 'UpdatePromotion')
+  @JsonValue('UpdatePromotion')
   updatePromotion,
-  @JsonKey(name: 'UpdateSeller')
+  @JsonValue('UpdateSeller')
   updateSeller,
-  @JsonKey(name: 'UpdateSettings')
+  @JsonValue('UpdateSettings')
   updateSettings,
-  @JsonKey(name: 'UpdateShippingMethod')
+  @JsonValue('UpdateShippingMethod')
   updateShippingMethod,
-  @JsonKey(name: 'UpdateStockLocation')
+  @JsonValue('UpdateStockLocation')
   updateStockLocation,
-  @JsonKey(name: 'UpdateSystem')
+  @JsonValue('UpdateSystem')
   updateSystem,
-  @JsonKey(name: 'UpdateTag')
+  @JsonValue('UpdateTag')
   updateTag,
-  @JsonKey(name: 'UpdateTaxCategory')
+  @JsonValue('UpdateTaxCategory')
   updateTaxCategory,
-  @JsonKey(name: 'UpdateTaxRate')
+  @JsonValue('UpdateTaxRate')
   updateTaxRate,
-  @JsonKey(name: 'UpdateZone')
+  @JsonValue('UpdateZone')
   updateZone,
 }

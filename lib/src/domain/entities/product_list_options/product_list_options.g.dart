@@ -35,6 +35,6 @@ Map<String, dynamic> _$ProductListOptionsToJson(ProductListOptions instance) =>
     };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'and',
-  LogicalOperator.or: 'or',
+  LogicalOperator.and: 'AND',
+  LogicalOperator.or: 'OR',
 };

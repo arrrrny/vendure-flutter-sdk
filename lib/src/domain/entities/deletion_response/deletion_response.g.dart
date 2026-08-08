@@ -18,6 +18,6 @@ Map<String, dynamic> _$DeletionResponseToJson(DeletionResponse instance) =>
     };
 
 const _$DeletionResultEnumMap = {
-  DeletionResult.deleted: 'deleted',
-  DeletionResult.notDeleted: 'notDeleted',
+  DeletionResult.deleted: 'DELETED',
+  DeletionResult.notDeleted: 'NOT_DELETED',
 };

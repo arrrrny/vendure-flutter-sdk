@@ -5,12 +5,12 @@ part 'configurable_operation_input.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class ConfigurableOperationInput {
-  List<ConfigArgInput> arguments;
-  String code;
+  List<ConfigArgInput>? arguments;
+  String? code;
 
   ConfigurableOperationInput({
-    required this.arguments,
-    required this.code,
+    this.arguments,
+    this.code,
   });
 
   factory ConfigurableOperationInput.fromJson(Map<String, dynamic> json) => _$ConfigurableOperationInputFromJson(json);

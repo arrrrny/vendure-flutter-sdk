@@ -39,118 +39,122 @@ sealed class ApplyCouponCodeResult {
 
 @JsonSerializable(explicitToJson: true)
 class CouponCodeExpiredError extends ApplyCouponCodeResult {
-  String couponCode;
-  ErrorCode errorCode;
-  String message;
+  String? couponCode;
+  ErrorCode? errorCode;
+  String? message;
 
   CouponCodeExpiredError({
-    required this.couponCode,
-    required this.errorCode,
-    required this.message,
+    this.couponCode,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory CouponCodeExpiredError.fromJson(Map<String, dynamic> json) => _$CouponCodeExpiredErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CouponCodeExpiredErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class CouponCodeInvalidError extends ApplyCouponCodeResult {
-  String couponCode;
-  ErrorCode errorCode;
-  String message;
+  String? couponCode;
+  ErrorCode? errorCode;
+  String? message;
 
   CouponCodeInvalidError({
-    required this.couponCode,
-    required this.errorCode,
-    required this.message,
+    this.couponCode,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory CouponCodeInvalidError.fromJson(Map<String, dynamic> json) => _$CouponCodeInvalidErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CouponCodeInvalidErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class CouponCodeLimitError extends ApplyCouponCodeResult {
-  String couponCode;
-  ErrorCode errorCode;
-  int limit;
-  String message;
+  String? couponCode;
+  ErrorCode? errorCode;
+  int? limit;
+  String? message;
 
   CouponCodeLimitError({
-    required this.couponCode,
-    required this.errorCode,
-    required this.limit,
-    required this.message,
+    this.couponCode,
+    this.errorCode,
+    this.limit,
+    this.message,
   }) : super._();
 
   factory CouponCodeLimitError.fromJson(Map<String, dynamic> json) => _$CouponCodeLimitErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CouponCodeLimitErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class Order extends ApplyCouponCodeResult {
-  bool active;
+  bool? active;
   OrderAddress? billingAddress;
-  String code;
-  List<String> couponCodes;
-  DateTime createdAt;
-  CurrencyCode currencyCode;
+  String? code;
+  List<String>? couponCodes;
+  DateTime? createdAt;
+  CurrencyCode? currencyCode;
   Map<String, dynamic>? customFields;
-  List<Discount> discounts;
+  List<Discount>? discounts;
   List<Fulfillment>? fulfillments;
-  HistoryEntryList history;
-  String id;
-  List<OrderLine> lines;
+  HistoryEntryList? history;
+  String? id;
+  List<OrderLine>? lines;
   DateTime? orderPlacedAt;
   List<Payment>? payments;
-  List<Promotion> promotions;
-  double shipping;
+  List<Promotion>? promotions;
+  double? shipping;
   OrderAddress? shippingAddress;
-  List<ShippingLine> shippingLines;
-  double shippingWithTax;
-  String state;
-  double subTotal;
-  double subTotalWithTax;
-  List<Surcharge> surcharges;
-  List<OrderTaxSummary> taxSummary;
-  double total;
-  int totalQuantity;
-  double totalWithTax;
-  OrderType type;
-  DateTime updatedAt;
+  List<ShippingLine>? shippingLines;
+  double? shippingWithTax;
+  String? state;
+  double? subTotal;
+  double? subTotalWithTax;
+  List<Surcharge>? surcharges;
+  List<OrderTaxSummary>? taxSummary;
+  double? total;
+  int? totalQuantity;
+  double? totalWithTax;
+  OrderType? type;
+  DateTime? updatedAt;
 
   Order({
-    required this.active,
+    this.active,
     this.billingAddress,
-    required this.code,
-    required this.couponCodes,
-    required this.createdAt,
-    required this.currencyCode,
+    this.code,
+    this.couponCodes,
+    this.createdAt,
+    this.currencyCode,
     this.customFields,
-    required this.discounts,
+    this.discounts,
     this.fulfillments,
-    required this.history,
-    required this.id,
-    required this.lines,
+    this.history,
+    this.id,
+    this.lines,
     this.orderPlacedAt,
     this.payments,
-    required this.promotions,
-    required this.shipping,
+    this.promotions,
+    this.shipping,
     this.shippingAddress,
-    required this.shippingLines,
-    required this.shippingWithTax,
-    required this.state,
-    required this.subTotal,
-    required this.subTotalWithTax,
-    required this.surcharges,
-    required this.taxSummary,
-    required this.total,
-    required this.totalQuantity,
-    required this.totalWithTax,
-    required this.type,
-    required this.updatedAt,
+    this.shippingLines,
+    this.shippingWithTax,
+    this.state,
+    this.subTotal,
+    this.subTotalWithTax,
+    this.surcharges,
+    this.taxSummary,
+    this.total,
+    this.totalQuantity,
+    this.totalWithTax,
+    this.type,
+    this.updatedAt,
   }) : super._();
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$OrderToJson(this);
 }

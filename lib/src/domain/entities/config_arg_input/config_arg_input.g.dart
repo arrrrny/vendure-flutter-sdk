@@ -7,9 +7,9 @@ part of 'config_arg_input.dart';
 // **************************************************************************
 
 ConfigArgInput _$ConfigArgInputFromJson(Map json) => ConfigArgInput(
-  name: json['name'] as String,
-  value: json['value'] as String,
+  name: json['name'] as String?,
+  value: json['value'] as String?,
 );
 
 Map<String, dynamic> _$ConfigArgInputToJson(ConfigArgInput instance) =>
-    <String, dynamic>{'name': instance.name, 'value': instance.value};
+    <String, dynamic>{'name': ?instance.name, 'value': ?instance.value};

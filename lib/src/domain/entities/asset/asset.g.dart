@@ -57,7 +57,7 @@ Map<String, dynamic> _$AssetToJson(Asset instance) => <String, dynamic>{
 };
 
 const _$AssetTypeEnumMap = {
-  AssetType.binary: 'binary',
-  AssetType.image: 'image',
-  AssetType.video: 'video',
+  AssetType.binary: 'BINARY',
+  AssetType.image: 'IMAGE',
+  AssetType.video: 'VIDEO',
 };

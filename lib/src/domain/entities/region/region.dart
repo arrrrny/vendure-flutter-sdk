@@ -5,30 +5,30 @@ part 'region.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Region {
-  String id;
-  DateTime createdAt;
-  DateTime updatedAt;
-  String languageCode;
-  String code;
-  String type;
-  String name;
-  bool enabled;
+  String? id;
+  DateTime? createdAt;
+  DateTime? updatedAt;
+  String? languageCode;
+  String? code;
+  String? type;
+  String? name;
+  bool? enabled;
   Region? parent;
   String? parentId;
-  List<RegionTranslation> translations;
+  List<RegionTranslation>? translations;
 
   Region({
-    required this.id,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.languageCode,
-    required this.code,
-    required this.type,
-    required this.name,
-    required this.enabled,
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.languageCode,
+    this.code,
+    this.type,
+    this.name,
+    this.enabled,
     this.parent,
     this.parentId,
-    required this.translations,
+    this.translations,
   });
 
   factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);

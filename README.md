@@ -107,11 +107,34 @@ void main() async {
         },
     );
 
+    // Initialize with API Key (machine-to-machine auth)
+    vendure = await Vendure.initializeWithApiKey(
+      endpoint: 'http://localhost:3000/shop-api',
+      apiKey: 'your-api-key',
+      apiKeyHeaderKey: 'vendure-api-key', // optional, defaults to 'vendure-api-key'
+    );
+
+    // Initialize with a guest session (no auth, creates an anonymous order)
+    vendure = await Vendure.initialize(
+      endpoint: 'http://localhost:3000/shop-api',
+      useVendureGuestSession: true,
+      languageCode: 'en',
+      channelToken: 'your-channel-token',
+    );
+
     // Use the vendure instance for various operations
     Vendure vendure = Vendure.instance;
 
     // Update the authentication token at runtime (e.g., after refresh)
     Vendure.setAuthToken('your-new-token');
+
+    // Update runtime configuration
+    Vendure.setLanguageCode('tr');
+    Vendure.setChannelToken('your-channel-token');
+    Vendure.setApiKey('your-api-key');
+
+    // Clean up when done (releases the singleton and HTTP client)
+    Vendure.destroy();
 }
 ```
 

@@ -631,8 +631,8 @@ List<FieldInfo> _parseFieldsFromLines(
   return fields;
 }
 
-/// Split text by commas that are at the top level (not inside < > brackets).
-/// This handles types like Map<String, dynamic> correctly.
+/// `Split text by commas that are at the top level (not inside < > brackets).`
+/// `This handles types like Map<String, dynamic> correctly.`
 List<String> _splitByTopLevelCommas(String text) {
   final segments = <String>[];
   final buf = StringBuffer();
@@ -664,10 +664,10 @@ List<String> _splitByTopLevelCommas(String text) {
 }
 
 /// Parse a single field line like:
-///   @JsonKey(name: '_and') List<CollectionFilterParameter>? and
+/// `  @JsonKey(name: '_and') List<CollectionFilterParameter>? and`
 ///   required Country country
 ///   String? city
-///   Map<String, dynamic>? customFields
+/// `  Map<String, dynamic>? customFields`
 ///   bool defaultBillingAddress = false
 FieldInfo? _parseSingleFieldLine(String line) {
   var normalized = line.replaceAll(RegExp(r'\s+'), ' ').trim();
@@ -758,9 +758,9 @@ FieldInfo? _parseSingleFieldLine(String line) {
   );
 }
 
-/// Split "List<CollectionFilterParameter>? and" → ("List<CollectionFilterParameter>?", "and")
+/// `Split "List<CollectionFilterParameter>? and" → ("List<CollectionFilterParameter>?", "and")`
 /// Split "Country country" → ("Country", "country")
-/// Split "Map<String, dynamic>? customFields" → ("Map<String, dynamic>?", "customFields")
+/// `Split "Map<String, dynamic>? customFields" → ("Map<String, dynamic>?", "customFields")`
 (String, String)? _splitTypeAndName(String text) {
   text = text.trim();
   if (text.isEmpty) return null;
@@ -974,7 +974,7 @@ void _printDryRun(
     List<GeneratedOutput> generated, List<FreezedClass> parsed) {
   stderr.writeln('\n${"=" * 70}');
   stderr.writeln('DRY-RUN: ${generated.length} files would be generated');
-  stderr.writeln('${"=" * 70}');
+  stderr.writeln("=" * 70);
 
   for (int i = 0; i < generated.length; i++) {
     final gen = generated[i];

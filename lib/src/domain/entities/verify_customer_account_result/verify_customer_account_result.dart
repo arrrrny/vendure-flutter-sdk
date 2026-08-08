@@ -34,102 +34,109 @@ sealed class VerifyCustomerAccountResult {
 
 @JsonSerializable(explicitToJson: true)
 class CurrentUser extends VerifyCustomerAccountResult {
-  List<CurrentUserChannel> channels;
-  String id;
-  String identifier;
+  List<CurrentUserChannel>? channels;
+  String? id;
+  String? identifier;
 
   CurrentUser({
-    required this.channels,
-    required this.id,
-    required this.identifier,
+    this.channels,
+    this.id,
+    this.identifier,
   }) : super._();
 
   factory CurrentUser.fromJson(Map<String, dynamic> json) => _$CurrentUserFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$CurrentUserToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class MissingPasswordError extends VerifyCustomerAccountResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   MissingPasswordError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory MissingPasswordError.fromJson(Map<String, dynamic> json) => _$MissingPasswordErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$MissingPasswordErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class NativeAuthStrategyError extends VerifyCustomerAccountResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   NativeAuthStrategyError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory NativeAuthStrategyError.fromJson(Map<String, dynamic> json) => _$NativeAuthStrategyErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$NativeAuthStrategyErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class PasswordAlreadySetError extends VerifyCustomerAccountResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   PasswordAlreadySetError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory PasswordAlreadySetError.fromJson(Map<String, dynamic> json) => _$PasswordAlreadySetErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$PasswordAlreadySetErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class PasswordValidationError extends VerifyCustomerAccountResult {
-  ErrorCode errorCode;
-  String message;
-  String validationErrorMessage;
+  ErrorCode? errorCode;
+  String? message;
+  String? validationErrorMessage;
 
   PasswordValidationError({
-    required this.errorCode,
-    required this.message,
-    required this.validationErrorMessage,
+    this.errorCode,
+    this.message,
+    this.validationErrorMessage,
   }) : super._();
 
   factory PasswordValidationError.fromJson(Map<String, dynamic> json) => _$PasswordValidationErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$PasswordValidationErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class VerificationTokenExpiredError extends VerifyCustomerAccountResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   VerificationTokenExpiredError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory VerificationTokenExpiredError.fromJson(Map<String, dynamic> json) => _$VerificationTokenExpiredErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$VerificationTokenExpiredErrorToJson(this);
 }
 
 @JsonSerializable(explicitToJson: true)
 class VerificationTokenInvalidError extends VerifyCustomerAccountResult {
-  ErrorCode errorCode;
-  String message;
+  ErrorCode? errorCode;
+  String? message;
 
   VerificationTokenInvalidError({
-    required this.errorCode,
-    required this.message,
+    this.errorCode,
+    this.message,
   }) : super._();
 
   factory VerificationTokenInvalidError.fromJson(Map<String, dynamic> json) => _$VerificationTokenInvalidErrorFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$VerificationTokenInvalidErrorToJson(this);
 }

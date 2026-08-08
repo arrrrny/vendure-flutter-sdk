@@ -4,12 +4,12 @@ part 'config_arg_input.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class ConfigArgInput {
-  String name;
-  String value;
+  String? name;
+  String? value;
 
   ConfigArgInput({
-    required this.name,
-    required this.value,
+    this.name,
+    this.value,
   });
 
   factory ConfigArgInput.fromJson(Map<String, dynamic> json) => _$ConfigArgInputFromJson(json);
