@@ -7,8 +7,8 @@ part of 'search_reindex_response.dart';
 // **************************************************************************
 
 SearchReindexResponse _$SearchReindexResponseFromJson(Map json) =>
-    SearchReindexResponse(success: json['success'] as bool?);
+    SearchReindexResponse(success: json['success'] as bool);
 
 Map<String, dynamic> _$SearchReindexResponseToJson(
   SearchReindexResponse instance,
-) => <String, dynamic>{'success': ?instance.success};
+) => <String, dynamic>{'success': instance.success};

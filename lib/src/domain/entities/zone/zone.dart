@@ -4,14 +4,14 @@ part 'zone.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Zone {
-  DateTime? createdAt;
+  DateTime createdAt;
   Map<String, dynamic>? customFields;
   String? id;
   String? name;
   DateTime? updatedAt;
 
   Zone({
-    this.createdAt,
+    required this.createdAt,
     this.customFields,
     this.id,
     this.name,

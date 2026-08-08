@@ -7,9 +7,7 @@ part of 'zone.dart';
 // **************************************************************************
 
 Zone _$ZoneFromJson(Map json) => Zone(
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
+  createdAt: DateTime.parse(json['createdAt'] as String),
   customFields: (json['customFields'] as Map?)?.map(
     (k, e) => MapEntry(k as String, e),
   ),
@@ -21,7 +19,7 @@ Zone _$ZoneFromJson(Map json) => Zone(
 );
 
 Map<String, dynamic> _$ZoneToJson(Zone instance) => <String, dynamic>{
-  'createdAt': ?instance.createdAt?.toIso8601String(),
+  'createdAt': instance.createdAt.toIso8601String(),
   'customFields': ?instance.customFields,
   'id': ?instance.id,
   'name': ?instance.name,

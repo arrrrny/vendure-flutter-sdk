@@ -10,10 +10,10 @@ class OrderTaxSummary {
   double? taxTotal;
 
   OrderTaxSummary({
-    this.description,
-    this.taxBase,
-    this.taxRate,
-    this.taxTotal,
+    required this.description,
+    required this.taxBase,
+    required this.taxRate,
+    required this.taxTotal,
   });
 
   factory OrderTaxSummary.fromJson(Map<String, dynamic> json) => _$OrderTaxSummaryFromJson(json);
