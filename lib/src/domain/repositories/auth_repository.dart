@@ -4,6 +4,8 @@
 ///
 /// FLAG: Vendure-specific methods — the return types and parameter shapes
 /// are coupled to the Vendure GraphQL schema.
+library;
+
 
 import '../../types/exports.dart';
 

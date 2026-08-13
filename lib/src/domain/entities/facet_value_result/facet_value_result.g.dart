@@ -6,14 +6,19 @@ part of 'facet_value_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FacetValueResult _$FacetValueResultFromJson(Map json) => FacetValueResult(
-  count: (json['count'] as num?)?.toInt(),
-  facetValue: json['facetValue'] == null
-      ? null
-      : FacetValue.fromJson(
-          Map<String, dynamic>.from(json['facetValue'] as Map),
+FacetValueResult _$FacetValueResultFromJson(Map json) =>
+    $checkedCreate('FacetValueResult', json, ($checkedConvert) {
+      final val = FacetValueResult(
+        count: $checkedConvert('count', (v) => (v as num?)?.toInt()),
+        facetValue: $checkedConvert(
+          'facetValue',
+          (v) => v == null
+              ? null
+              : FacetValue.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-);
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FacetValueResultToJson(FacetValueResult instance) =>
     <String, dynamic>{

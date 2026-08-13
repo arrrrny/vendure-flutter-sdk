@@ -6,49 +6,71 @@ part of 'facet_filter_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FacetFilterParameter _$FacetFilterParameterFromJson(
-  Map json,
-) => FacetFilterParameter(
-  and: (json['_and'] as List<dynamic>?)
-      ?.map(
-        (e) =>
-            FacetFilterParameter.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  or: (json['_or'] as List<dynamic>?)
-      ?.map(
-        (e) =>
-            FacetFilterParameter.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  code: json['code'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['code'] as Map),
-        ),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['createdAt'] as Map),
-        ),
-  id: json['id'] == null
-      ? null
-      : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
-  languageCode: json['languageCode'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['languageCode'] as Map),
-        ),
-  name: json['name'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['name'] as Map),
-        ),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['updatedAt'] as Map),
-        ),
+FacetFilterParameter _$FacetFilterParameterFromJson(Map json) => $checkedCreate(
+  'FacetFilterParameter',
+  json,
+  ($checkedConvert) {
+    final val = FacetFilterParameter(
+      and: $checkedConvert(
+        '_and',
+        (v) => (v as List<dynamic>?)
+            ?.map(
+              (e) => FacetFilterParameter.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+            )
+            .toList(),
+      ),
+      or: $checkedConvert(
+        '_or',
+        (v) => (v as List<dynamic>?)
+            ?.map(
+              (e) => FacetFilterParameter.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+            )
+            .toList(),
+      ),
+      code: $checkedConvert(
+        'code',
+        (v) => v == null
+            ? null
+            : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+      createdAt: $checkedConvert(
+        'createdAt',
+        (v) => v == null
+            ? null
+            : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+      id: $checkedConvert(
+        'id',
+        (v) => v == null
+            ? null
+            : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+      languageCode: $checkedConvert(
+        'languageCode',
+        (v) => v == null
+            ? null
+            : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+      name: $checkedConvert(
+        'name',
+        (v) => v == null
+            ? null
+            : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+      updatedAt: $checkedConvert(
+        'updatedAt',
+        (v) => v == null
+            ? null
+            : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+      ),
+    );
+    return val;
+  },
+  fieldKeyMap: const {'and': '_and', 'or': '_or'},
 );
 
 Map<String, dynamic> _$FacetFilterParameterToJson(

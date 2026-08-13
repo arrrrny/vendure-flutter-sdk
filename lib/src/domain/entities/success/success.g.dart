@@ -6,9 +6,13 @@ part of 'success.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Success _$SuccessFromJson(Map json) =>
-    Success(success: json['success'] as bool);
+Success _$SuccessFromJson(Map json) => $checkedCreate('Success', json, (
+  $checkedConvert,
+) {
+  final val = Success(success: $checkedConvert('success', (v) => v as bool?));
+  return val;
+});
 
 Map<String, dynamic> _$SuccessToJson(Success instance) => <String, dynamic>{
-  'success': instance.success,
+  'success': ?instance.success,
 };

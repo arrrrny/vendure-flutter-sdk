@@ -306,7 +306,6 @@ const String searchResultFragment = r'''
         facetValueIds
         collectionIds
         score
-        inStock
     }
     ''';
 

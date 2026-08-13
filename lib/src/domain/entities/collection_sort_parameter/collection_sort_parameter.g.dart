@@ -7,16 +7,43 @@ part of 'collection_sort_parameter.dart';
 // **************************************************************************
 
 CollectionSortParameter _$CollectionSortParameterFromJson(Map json) =>
-    CollectionSortParameter(
-      createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
-      description: $enumDecodeNullable(_$SortOrderEnumMap, json['description']),
-      id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
-      name: $enumDecodeNullable(_$SortOrderEnumMap, json['name']),
-      parentId: $enumDecodeNullable(_$SortOrderEnumMap, json['parentId']),
-      position: $enumDecodeNullable(_$SortOrderEnumMap, json['position']),
-      slug: $enumDecodeNullable(_$SortOrderEnumMap, json['slug']),
-      updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
-    );
+    $checkedCreate('CollectionSortParameter', json, ($checkedConvert) {
+      final val = CollectionSortParameter(
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        description: $checkedConvert(
+          'description',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        id: $checkedConvert(
+          'id',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        name: $checkedConvert(
+          'name',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        parentId: $checkedConvert(
+          'parentId',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        position: $checkedConvert(
+          'position',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        slug: $checkedConvert(
+          'slug',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CollectionSortParameterToJson(
   CollectionSortParameter instance,
@@ -31,4 +58,4 @@ Map<String, dynamic> _$CollectionSortParameterToJson(
   'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

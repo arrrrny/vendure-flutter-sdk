@@ -5,3 +5,6 @@ analyzer:
     - example/**
   errors:
     invalid_annotation_target: ignore
+    # zorphy_annotation is a git dependency until zorphy lands on pub.dev
+    # (PUBLISH.md). Publish is deferred until then — documented deviation.
+    invalid_dependency: ignore

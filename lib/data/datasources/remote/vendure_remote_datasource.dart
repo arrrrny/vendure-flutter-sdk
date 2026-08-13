@@ -88,8 +88,10 @@ class VendureRemoteDataSource {
 
     data = _extractExpectedData(data, expectedDataType);
     if (data == null) {
-      throw Exception(
-          'No data returned for expected type: $expectedDataType');
+      // A null result is legitimate for nullable operations (e.g.
+      // getActiveOrder when there is no active order) — return null so
+      // callers can distinguish "no data" from a transport failure.
+      return null;
     }
 
     if (data is Map && data['__typename'] == 'ErrorResult') {
@@ -149,7 +151,9 @@ class VendureRemoteDataSource {
     );
 
     if (data == null) {
-      throw Exception('No data returned from mutate');
+      // A null result is legitimate for nullable operations — return null so
+      // callers can distinguish "no data" from a transport failure.
+      return null as T;
     }
 
     if (data is Map || data is List) {
@@ -188,7 +192,9 @@ class VendureRemoteDataSource {
     );
 
     if (data == null) {
-      throw Exception('No data returned from query');
+      // A null result is legitimate for nullable operations (e.g.
+      // getActiveOrder when there is no active order) — return null.
+      return null as T;
     }
     if (data is Map || data is List) {
       // Response normalization: always convertEnums=false (see mutate() above).

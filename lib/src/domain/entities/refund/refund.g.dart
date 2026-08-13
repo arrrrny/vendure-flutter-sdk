@@ -6,39 +6,48 @@ part of 'refund.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Refund _$RefundFromJson(Map json) => Refund(
-  adjustment: (json['adjustment'] as num?)?.toDouble(),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  id: json['id'] as String?,
-  items: (json['items'] as num?)?.toDouble(),
-  lines: (json['lines'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : RefundLine.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  metadata: (json['metadata'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
-  method: json['method'] as String?,
-  paymentId: json['paymentId'] as String?,
-  reason: json['reason'] as String?,
-  shipping: (json['shipping'] as num?)?.toDouble(),
-  state: json['state'] as String?,
-  total: (json['total'] as num?)?.toDouble(),
-  transactionId: json['transactionId'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+Refund _$RefundFromJson(Map json) => $checkedCreate('Refund', json, (
+  $checkedConvert,
+) {
+  final val = Refund(
+    adjustment: $checkedConvert('adjustment', (v) => (v as num?)?.toDouble()),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    id: $checkedConvert('id', (v) => v as String?),
+    items: $checkedConvert('items', (v) => (v as num?)?.toDouble()),
+    lines: $checkedConvert(
+      'lines',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => RefundLine.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+    ),
+    metadata: $checkedConvert(
+      'metadata',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+    method: $checkedConvert('method', (v) => v as String?),
+    paymentId: $checkedConvert('paymentId', (v) => v as String?),
+    reason: $checkedConvert('reason', (v) => v as String?),
+    shipping: $checkedConvert('shipping', (v) => (v as num?)?.toDouble()),
+    state: $checkedConvert('state', (v) => v as String?),
+    total: $checkedConvert('total', (v) => (v as num?)?.toDouble()),
+    transactionId: $checkedConvert('transactionId', (v) => v as String?),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$RefundToJson(Refund instance) => <String, dynamic>{
   'adjustment': ?instance.adjustment,
   'createdAt': ?instance.createdAt?.toIso8601String(),
   'id': ?instance.id,
   'items': ?instance.items,
-  'lines': ?instance.lines?.map((e) => e?.toJson()).toList(),
+  'lines': ?instance.lines?.map((e) => e.toJson()).toList(),
   'metadata': ?instance.metadata,
   'method': ?instance.method,
   'paymentId': ?instance.paymentId,

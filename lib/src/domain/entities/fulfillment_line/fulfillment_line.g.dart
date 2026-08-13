@@ -6,19 +6,27 @@ part of 'fulfillment_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FulfillmentLine _$FulfillmentLineFromJson(Map json) => FulfillmentLine(
-  fulfillment: json['fulfillment'] == null
-      ? null
-      : Fulfillment.fromJson(
-          Map<String, dynamic>.from(json['fulfillment'] as Map),
+FulfillmentLine _$FulfillmentLineFromJson(Map json) =>
+    $checkedCreate('FulfillmentLine', json, ($checkedConvert) {
+      final val = FulfillmentLine(
+        fulfillment: $checkedConvert(
+          'fulfillment',
+          (v) => v == null
+              ? null
+              : Fulfillment.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  fulfillmentId: json['fulfillmentId'] as String?,
-  orderLine: json['orderLine'] == null
-      ? null
-      : OrderLine.fromJson(Map<String, dynamic>.from(json['orderLine'] as Map)),
-  orderLineId: json['orderLineId'] as String?,
-  quantity: (json['quantity'] as num?)?.toInt(),
-);
+        fulfillmentId: $checkedConvert('fulfillmentId', (v) => v as String?),
+        orderLine: $checkedConvert(
+          'orderLine',
+          (v) => v == null
+              ? null
+              : OrderLine.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+        orderLineId: $checkedConvert('orderLineId', (v) => v as String?),
+        quantity: $checkedConvert('quantity', (v) => (v as num?)?.toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FulfillmentLineToJson(FulfillmentLine instance) =>
     <String, dynamic>{

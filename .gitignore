@@ -39,3 +39,6 @@ schema.graphql
 .specify
 
 .memsearch
+
+# Zuraffa CLI transient plans
+.zfa/

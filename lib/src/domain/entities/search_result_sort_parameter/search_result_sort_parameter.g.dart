@@ -7,10 +7,19 @@ part of 'search_result_sort_parameter.dart';
 // **************************************************************************
 
 SearchResultSortParameter _$SearchResultSortParameterFromJson(Map json) =>
-    SearchResultSortParameter(
-      name: $enumDecodeNullable(_$SortOrderEnumMap, json['name']),
-      price: $enumDecodeNullable(_$SortOrderEnumMap, json['price']),
-    );
+    $checkedCreate('SearchResultSortParameter', json, ($checkedConvert) {
+      final val = SearchResultSortParameter(
+        name: $checkedConvert(
+          'name',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        price: $checkedConvert(
+          'price',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$SearchResultSortParameterToJson(
   SearchResultSortParameter instance,
@@ -19,4 +28,4 @@ Map<String, dynamic> _$SearchResultSortParameterToJson(
   'price': ?_$SortOrderEnumMap[instance.price],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

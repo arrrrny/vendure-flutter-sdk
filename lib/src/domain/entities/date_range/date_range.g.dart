@@ -6,10 +6,20 @@ part of 'date_range.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DateRange _$DateRangeFromJson(Map json) => DateRange(
-  end: json['end'] == null ? null : DateTime.parse(json['end'] as String),
-  start: json['start'] == null ? null : DateTime.parse(json['start'] as String),
-);
+DateRange _$DateRangeFromJson(Map json) =>
+    $checkedCreate('DateRange', json, ($checkedConvert) {
+      final val = DateRange(
+        end: $checkedConvert(
+          'end',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        start: $checkedConvert(
+          'start',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$DateRangeToJson(DateRange instance) => <String, dynamic>{
   'end': ?instance.end?.toIso8601String(),

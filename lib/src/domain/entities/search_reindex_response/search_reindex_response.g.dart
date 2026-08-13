@@ -7,8 +7,13 @@ part of 'search_reindex_response.dart';
 // **************************************************************************
 
 SearchReindexResponse _$SearchReindexResponseFromJson(Map json) =>
-    SearchReindexResponse(success: json['success'] as bool);
+    $checkedCreate('SearchReindexResponse', json, ($checkedConvert) {
+      final val = SearchReindexResponse(
+        success: $checkedConvert('success', (v) => v as bool?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$SearchReindexResponseToJson(
   SearchReindexResponse instance,
-) => <String, dynamic>{'success': instance.success};
+) => <String, dynamic>{'success': ?instance.success};

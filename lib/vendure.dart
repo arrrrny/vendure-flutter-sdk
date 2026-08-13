@@ -29,6 +29,8 @@ class Vendure {
 
   late final GraphQLClient _authClient;
   final http.Client _httpClient = http.Client();
+  late final http.Client _sessionAwareHttpClient;
+  String? _guestSessionToken;
   late final OrderOperations order;
   late final AuthOperations auth;
   late final CustomOperations custom;
@@ -89,6 +91,14 @@ class Vendure {
        _apiKey = apiKey,
        _apiKeyHeaderKey = apiKeyHeaderKey ?? 'vendure-api-key',
        _customFieldsConfig = customFieldsConfig {
+    // Capture the Vendure session token (`vendure-auth-token` response header)
+    // on every request — Vendure 3.x requires it to be sent back as
+    // `Authorization: Bearer <token>` to keep the guest session (and its
+    // active order) alive across calls.
+    _sessionAwareHttpClient = TokenInterceptorClient(
+      _httpClient,
+      (token) => _guestSessionToken = token,
+    );
     _authClient = GraphQLClient(
       defaultPolicies: DefaultPolicies(
         query: Policies(
@@ -103,7 +113,7 @@ class Vendure {
       link: HttpLink(
         endpoint,
         defaultHeaders: {'Content-Type': 'application/json'},
-        httpClient: _httpClient,
+        httpClient: _sessionAwareHttpClient,
       ),
       cache: GraphQLCache(),
       queryRequestTimeout: null,
@@ -497,7 +507,7 @@ class Vendure {
       endpointUrl = _endpoint;
     }
 
-    final httpLink = HttpLink(endpointUrl);
+    final httpLink = HttpLink(endpointUrl, httpClient: _sessionAwareHttpClient);
 
     Link link = httpLink;
 
@@ -538,7 +548,17 @@ class Vendure {
       link = appCheckLink.concat(link);
     }
 
-    if (!_useVendureGuestSession) {
+    if (_useVendureGuestSession) {
+      // Guest sessions still carry a session token once one has been issued —
+      // Vendure 3.x returns `vendure-auth-token` on the first request and
+      // requires it back (`Authorization: Bearer <token>`) to keep the session
+      // and its active order alive.
+      final guestSessionLink = AuthLink(
+        getToken: () async =>
+            _guestSessionToken != null ? 'Bearer $_guestSessionToken' : null,
+      );
+      link = guestSessionLink.concat(link);
+    } else {
       final authLink = AuthLink(
         getToken: () async {
           if (_token != null) {

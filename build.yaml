@@ -1,6 +1,10 @@
 targets:
   $default:
     builders:
+      zorphy:zorphy:
+        enabled: true
+        generate_for:
+          - lib/src/domain/entities/**/*.dart
       json_serializable:
         enabled: true
         generate_for:

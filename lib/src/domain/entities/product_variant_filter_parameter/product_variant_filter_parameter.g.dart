@@ -8,73 +8,97 @@ part of 'product_variant_filter_parameter.dart';
 
 ProductVariantFilterParameter _$ProductVariantFilterParameterFromJson(
   Map json,
-) => ProductVariantFilterParameter(
-  and: (json['_and'] as List<dynamic>?)
-      ?.map(
-        (e) => ProductVariantFilterParameter.fromJson(
-          Map<String, dynamic>.from(e as Map),
-        ),
-      )
-      .toList(),
-  or: (json['_or'] as List<dynamic>?)
-      ?.map(
-        (e) => ProductVariantFilterParameter.fromJson(
-          Map<String, dynamic>.from(e as Map),
-        ),
-      )
-      .toList(),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['createdAt'] as Map),
-        ),
-  currencyCode: json['currencyCode'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['currencyCode'] as Map),
-        ),
-  id: json['id'] == null
-      ? null
-      : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
-  languageCode: json['languageCode'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['languageCode'] as Map),
-        ),
-  name: json['name'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['name'] as Map),
-        ),
-  price: json['price'] == null
-      ? null
-      : NumberOperators.fromJson(
-          Map<String, dynamic>.from(json['price'] as Map),
-        ),
-  priceWithTax: json['priceWithTax'] == null
-      ? null
-      : NumberOperators.fromJson(
-          Map<String, dynamic>.from(json['priceWithTax'] as Map),
-        ),
-  productId: json['productId'] == null
-      ? null
-      : IdOperators.fromJson(
-          Map<String, dynamic>.from(json['productId'] as Map),
-        ),
-  sku: json['sku'] == null
-      ? null
-      : StringOperators.fromJson(Map<String, dynamic>.from(json['sku'] as Map)),
-  stockLevel: json['stockLevel'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['stockLevel'] as Map),
-        ),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['updatedAt'] as Map),
-        ),
-);
+) => $checkedCreate('ProductVariantFilterParameter', json, ($checkedConvert) {
+  final val = ProductVariantFilterParameter(
+    and: $checkedConvert(
+      '_and',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => ProductVariantFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    or: $checkedConvert(
+      '_or',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => ProductVariantFilterParameter.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null
+          ? null
+          : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    currencyCode: $checkedConvert(
+      'currencyCode',
+      (v) => v == null
+          ? null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    id: $checkedConvert(
+      'id',
+      (v) => v == null
+          ? null
+          : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    languageCode: $checkedConvert(
+      'languageCode',
+      (v) => v == null
+          ? null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    name: $checkedConvert(
+      'name',
+      (v) => v == null
+          ? null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    price: $checkedConvert(
+      'price',
+      (v) => v == null
+          ? null
+          : NumberOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    priceWithTax: $checkedConvert(
+      'priceWithTax',
+      (v) => v == null
+          ? null
+          : NumberOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    productId: $checkedConvert(
+      'productId',
+      (v) => v == null
+          ? null
+          : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    sku: $checkedConvert(
+      'sku',
+      (v) => v == null
+          ? null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    stockLevel: $checkedConvert(
+      'stockLevel',
+      (v) => v == null
+          ? null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null
+          ? null
+          : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+  );
+  return val;
+}, fieldKeyMap: const {'and': '_and', 'or': '_or'});
 
 Map<String, dynamic> _$ProductVariantFilterParameterToJson(
   ProductVariantFilterParameter instance,

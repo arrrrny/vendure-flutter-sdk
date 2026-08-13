@@ -6,27 +6,64 @@ part of 'order_sort_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-OrderSortParameter _$OrderSortParameterFromJson(Map json) => OrderSortParameter(
-  code: $enumDecodeNullable(_$SortOrderEnumMap, json['code']),
-  createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
-  id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
-  orderPlacedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['orderPlacedAt']),
-  shipping: $enumDecodeNullable(_$SortOrderEnumMap, json['shipping']),
-  shippingWithTax: $enumDecodeNullable(
-    _$SortOrderEnumMap,
-    json['shippingWithTax'],
-  ),
-  state: $enumDecodeNullable(_$SortOrderEnumMap, json['state']),
-  subTotal: $enumDecodeNullable(_$SortOrderEnumMap, json['subTotal']),
-  subTotalWithTax: $enumDecodeNullable(
-    _$SortOrderEnumMap,
-    json['subTotalWithTax'],
-  ),
-  total: $enumDecodeNullable(_$SortOrderEnumMap, json['total']),
-  totalQuantity: $enumDecodeNullable(_$SortOrderEnumMap, json['totalQuantity']),
-  totalWithTax: $enumDecodeNullable(_$SortOrderEnumMap, json['totalWithTax']),
-  updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
-);
+OrderSortParameter _$OrderSortParameterFromJson(Map json) =>
+    $checkedCreate('OrderSortParameter', json, ($checkedConvert) {
+      final val = OrderSortParameter(
+        code: $checkedConvert(
+          'code',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        id: $checkedConvert(
+          'id',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        orderPlacedAt: $checkedConvert(
+          'orderPlacedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        shipping: $checkedConvert(
+          'shipping',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        shippingWithTax: $checkedConvert(
+          'shippingWithTax',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        state: $checkedConvert(
+          'state',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        subTotal: $checkedConvert(
+          'subTotal',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        subTotalWithTax: $checkedConvert(
+          'subTotalWithTax',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        total: $checkedConvert(
+          'total',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        totalQuantity: $checkedConvert(
+          'totalQuantity',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        totalWithTax: $checkedConvert(
+          'totalWithTax',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$OrderSortParameterToJson(OrderSortParameter instance) =>
     <String, dynamic>{
@@ -45,4 +82,4 @@ Map<String, dynamic> _$OrderSortParameterToJson(OrderSortParameter instance) =>
       'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
     };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

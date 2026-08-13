@@ -7,25 +7,34 @@ part of 'collection_list_options.dart';
 // **************************************************************************
 
 CollectionListOptions _$CollectionListOptionsFromJson(Map json) =>
-    CollectionListOptions(
-      filter: json['filter'] == null
-          ? null
-          : CollectionFilterParameter.fromJson(
-              Map<String, dynamic>.from(json['filter'] as Map),
-            ),
-      filterOperator: $enumDecodeNullable(
-        _$LogicalOperatorEnumMap,
-        json['filterOperator'],
-      ),
-      skip: (json['skip'] as num?)?.toInt(),
-      sort: json['sort'] == null
-          ? null
-          : CollectionSortParameter.fromJson(
-              Map<String, dynamic>.from(json['sort'] as Map),
-            ),
-      take: (json['take'] as num?)?.toInt(),
-      topLevelOnly: json['topLevelOnly'] as bool?,
-    );
+    $checkedCreate('CollectionListOptions', json, ($checkedConvert) {
+      final val = CollectionListOptions(
+        filter: $checkedConvert(
+          'filter',
+          (v) => v == null
+              ? null
+              : CollectionFilterParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        filterOperator: $checkedConvert(
+          'filterOperator',
+          (v) => $enumDecodeNullable(_$LogicalOperatorEnumMap, v),
+        ),
+        skip: $checkedConvert('skip', (v) => (v as num?)?.toInt()),
+        sort: $checkedConvert(
+          'sort',
+          (v) => v == null
+              ? null
+              : CollectionSortParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        take: $checkedConvert('take', (v) => (v as num?)?.toInt()),
+        topLevelOnly: $checkedConvert('topLevelOnly', (v) => v as bool?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CollectionListOptionsToJson(
   CollectionListOptions instance,
@@ -39,6 +48,6 @@ Map<String, dynamic> _$CollectionListOptionsToJson(
 };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'AND',
-  LogicalOperator.or: 'OR',
+  LogicalOperator.AND: 'AND',
+  LogicalOperator.OR: 'OR',
 };

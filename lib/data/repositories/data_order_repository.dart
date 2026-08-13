@@ -201,11 +201,16 @@ class DataOrderRepository implements OrderRepository {
   Future<TransitionOrderToStateResult> transitionOrderToState({
     required String state,
   }) {
+    // convertEnums: false — the order state is a plain String ('Cancelled',
+    // 'ArrangingPayment'), not an enum. The blanket 'state' -> JobState map in
+    // VendureUtils would uppercase it to 'CANCELLED', which Vendure 3.x
+    // rejects with ORDER_STATE_TRANSITION_ERROR.
     return _dataSource.mutate<TransitionOrderToStateResult>(
       transitionOrderToStateMutation,
       {'state': state},
       fromJson: TransitionOrderToStateResult.fromJson,
       expectedDataType: 'transitionOrderToState',
+      convertEnums: false,
     );
   }
 

@@ -6,25 +6,39 @@ part of 'search_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchInput _$SearchInputFromJson(Map json) => SearchInput(
-  collectionId: json['collectionId'] as String?,
-  collectionSlug: json['collectionSlug'] as String?,
-  facetValueFilters: (json['facetValueFilters'] as List<dynamic>?)
-      ?.map(
-        (e) =>
-            FacetValueFilterInput.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  groupByProduct: json['groupByProduct'] as bool?,
-  inStock: json['inStock'] as bool?,
-  skip: (json['skip'] as num?)?.toInt(),
-  sort: json['sort'] == null
-      ? null
-      : SearchResultSortParameter.fromJson(
-          Map<String, dynamic>.from(json['sort'] as Map),
-        ),
-  take: (json['take'] as num?)?.toInt(),
-  term: json['term'] as String?,
+SearchInput _$SearchInputFromJson(Map json) => $checkedCreate(
+  'SearchInput',
+  json,
+  ($checkedConvert) {
+    final val = SearchInput(
+      collectionId: $checkedConvert('collectionId', (v) => v as String?),
+      collectionSlug: $checkedConvert('collectionSlug', (v) => v as String?),
+      facetValueFilters: $checkedConvert(
+        'facetValueFilters',
+        (v) => (v as List<dynamic>?)
+            ?.map(
+              (e) => FacetValueFilterInput.fromJson(
+                Map<String, dynamic>.from(e as Map),
+              ),
+            )
+            .toList(),
+      ),
+      groupByProduct: $checkedConvert('groupByProduct', (v) => v as bool?),
+      inStock: $checkedConvert('inStock', (v) => v as bool?),
+      skip: $checkedConvert('skip', (v) => (v as num?)?.toInt()),
+      sort: $checkedConvert(
+        'sort',
+        (v) => v == null
+            ? null
+            : SearchResultSortParameter.fromJson(
+                Map<String, dynamic>.from(v as Map),
+              ),
+      ),
+      take: $checkedConvert('take', (v) => (v as num?)?.toInt()),
+      term: $checkedConvert('term', (v) => v as String?),
+    );
+    return val;
+  },
 );
 
 Map<String, dynamic> _$SearchInputToJson(SearchInput instance) =>

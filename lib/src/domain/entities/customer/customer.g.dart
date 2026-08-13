@@ -6,39 +6,51 @@ part of 'customer.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Customer _$CustomerFromJson(Map json) => Customer(
-  addresses: (json['addresses'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : Address.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  emailAddress: json['emailAddress'] as String?,
-  firstName: json['firstName'] as String?,
-  id: json['id'] as String?,
-  lastName: json['lastName'] as String?,
-  orders: json['orders'] == null
-      ? null
-      : OrderList.fromJson(Map<String, dynamic>.from(json['orders'] as Map)),
-  phoneNumber: json['phoneNumber'] as String?,
-  title: json['title'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  user: json['user'] == null
-      ? null
-      : User.fromJson(Map<String, dynamic>.from(json['user'] as Map)),
-);
+Customer _$CustomerFromJson(Map json) => $checkedCreate('Customer', json, (
+  $checkedConvert,
+) {
+  final val = Customer(
+    addresses: $checkedConvert(
+      'addresses',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => Address.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+    ),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    customFields: $checkedConvert(
+      'customFields',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+    emailAddress: $checkedConvert('emailAddress', (v) => v as String?),
+    firstName: $checkedConvert('firstName', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String?),
+    lastName: $checkedConvert('lastName', (v) => v as String?),
+    orders: $checkedConvert(
+      'orders',
+      (v) => v == null
+          ? null
+          : OrderList.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+    title: $checkedConvert('title', (v) => v as String?),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    user: $checkedConvert(
+      'user',
+      (v) =>
+          v == null ? null : User.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$CustomerToJson(Customer instance) => <String, dynamic>{
-  'addresses': ?instance.addresses?.map((e) => e?.toJson()).toList(),
+  'addresses': ?instance.addresses?.map((e) => e.toJson()).toList(),
   'createdAt': ?instance.createdAt?.toIso8601String(),
   'customFields': ?instance.customFields,
   'emailAddress': ?instance.emailAddress,

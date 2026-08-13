@@ -6,24 +6,34 @@ part of 'product_list_options.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ProductListOptions _$ProductListOptionsFromJson(Map json) => ProductListOptions(
-  filter: json['filter'] == null
-      ? null
-      : ProductFilterParameter.fromJson(
-          Map<String, dynamic>.from(json['filter'] as Map),
+ProductListOptions _$ProductListOptionsFromJson(Map json) =>
+    $checkedCreate('ProductListOptions', json, ($checkedConvert) {
+      final val = ProductListOptions(
+        filter: $checkedConvert(
+          'filter',
+          (v) => v == null
+              ? null
+              : ProductFilterParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
         ),
-  filterOperator: $enumDecodeNullable(
-    _$LogicalOperatorEnumMap,
-    json['filterOperator'],
-  ),
-  skip: (json['skip'] as num?)?.toInt(),
-  sort: json['sort'] == null
-      ? null
-      : ProductSortParameter.fromJson(
-          Map<String, dynamic>.from(json['sort'] as Map),
+        filterOperator: $checkedConvert(
+          'filterOperator',
+          (v) => $enumDecodeNullable(_$LogicalOperatorEnumMap, v),
         ),
-  take: (json['take'] as num?)?.toInt(),
-);
+        skip: $checkedConvert('skip', (v) => (v as num?)?.toInt()),
+        sort: $checkedConvert(
+          'sort',
+          (v) => v == null
+              ? null
+              : ProductSortParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        take: $checkedConvert('take', (v) => (v as num?)?.toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ProductListOptionsToJson(ProductListOptions instance) =>
     <String, dynamic>{
@@ -35,6 +45,6 @@ Map<String, dynamic> _$ProductListOptionsToJson(ProductListOptions instance) =>
     };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'AND',
-  LogicalOperator.or: 'OR',
+  LogicalOperator.AND: 'AND',
+  LogicalOperator.OR: 'OR',
 };

@@ -7,7 +7,13 @@ part of 'boolean_operators.dart';
 // **************************************************************************
 
 BooleanOperators _$BooleanOperatorsFromJson(Map json) =>
-    BooleanOperators(eq: json['eq'] as bool?, isNull: json['isNull'] as bool?);
+    $checkedCreate('BooleanOperators', json, ($checkedConvert) {
+      final val = BooleanOperators(
+        eq: $checkedConvert('eq', (v) => v as bool?),
+        isNull: $checkedConvert('isNull', (v) => v as bool?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$BooleanOperatorsToJson(BooleanOperators instance) =>
     <String, dynamic>{'eq': ?instance.eq, 'isNull': ?instance.isNull};

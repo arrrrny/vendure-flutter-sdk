@@ -6,41 +6,52 @@ part of 'payment_method.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PaymentMethod _$PaymentMethodFromJson(Map json) => PaymentMethod(
-  checker: json['checker'] == null
-      ? null
-      : ConfigurableOperation.fromJson(
-          Map<String, dynamic>.from(json['checker'] as Map),
-        ),
-  code: json['code'] as String?,
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  description: json['description'] as String?,
-  enabled: json['enabled'] as bool?,
-  handler: json['handler'] == null
-      ? null
-      : ConfigurableOperation.fromJson(
-          Map<String, dynamic>.from(json['handler'] as Map),
-        ),
-  id: json['id'] as String?,
-  name: json['name'] as String?,
-  translations: (json['translations'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : PaymentMethodTranslation.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+PaymentMethod _$PaymentMethodFromJson(
+  Map json,
+) => $checkedCreate('PaymentMethod', json, ($checkedConvert) {
+  final val = PaymentMethod(
+    checker: $checkedConvert(
+      'checker',
+      (v) => v == null
+          ? null
+          : ConfigurableOperation.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    code: $checkedConvert('code', (v) => v as String?),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    customFields: $checkedConvert(
+      'customFields',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+    description: $checkedConvert('description', (v) => v as String?),
+    enabled: $checkedConvert('enabled', (v) => v as bool?),
+    handler: $checkedConvert(
+      'handler',
+      (v) => v == null
+          ? null
+          : ConfigurableOperation.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    id: $checkedConvert('id', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v as String?),
+    translations: $checkedConvert(
+      'translations',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => PaymentMethodTranslation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PaymentMethodToJson(PaymentMethod instance) =>
     <String, dynamic>{
@@ -53,6 +64,6 @@ Map<String, dynamic> _$PaymentMethodToJson(PaymentMethod instance) =>
       'handler': ?instance.handler?.toJson(),
       'id': ?instance.id,
       'name': ?instance.name,
-      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'translations': ?instance.translations?.map((e) => e.toJson()).toList(),
       'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };

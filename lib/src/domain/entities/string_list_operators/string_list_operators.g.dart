@@ -7,7 +7,12 @@ part of 'string_list_operators.dart';
 // **************************************************************************
 
 StringListOperators _$StringListOperatorsFromJson(Map json) =>
-    StringListOperators(inList: json['inList'] as String?);
+    $checkedCreate('StringListOperators', json, ($checkedConvert) {
+      final val = StringListOperators(
+        inList: $checkedConvert('inList', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$StringListOperatorsToJson(
   StringListOperators instance,

@@ -6,29 +6,43 @@ part of 'region.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Region _$RegionFromJson(Map json) => Region(
-  id: json['id'] as String?,
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  languageCode: json['languageCode'] as String?,
-  code: json['code'] as String?,
-  type: json['type'] as String?,
-  name: json['name'] as String?,
-  enabled: json['enabled'] as bool?,
-  parent: json['parent'] == null
-      ? null
-      : Region.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
-  parentId: json['parentId'] as String?,
-  translations: (json['translations'] as List<dynamic>?)
-      ?.map(
-        (e) => RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-);
+Region _$RegionFromJson(Map json) => $checkedCreate('Region', json, (
+  $checkedConvert,
+) {
+  final val = Region(
+    id: $checkedConvert('id', (v) => v as String?),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    languageCode: $checkedConvert('languageCode', (v) => v as String?),
+    code: $checkedConvert('code', (v) => v as String?),
+    type: $checkedConvert('type', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v as String?),
+    enabled: $checkedConvert('enabled', (v) => v as bool?),
+    parent: $checkedConvert(
+      'parent',
+      (v) => v == null
+          ? null
+          : Region.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    parentId: $checkedConvert('parentId', (v) => v as String?),
+    translations: $checkedConvert(
+      'translations',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) =>
+                RegionTranslation.fromJson(Map<String, dynamic>.from(e as Map)),
+          )
+          .toList(),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$RegionToJson(Region instance) => <String, dynamic>{
   'id': ?instance.id,

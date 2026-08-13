@@ -6,12 +6,16 @@ part of 'tax_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TaxLine _$TaxLineFromJson(Map json) => TaxLine(
-  description: json['description'] as String,
-  taxRate: (json['taxRate'] as num).toDouble(),
-);
+TaxLine _$TaxLineFromJson(Map json) =>
+    $checkedCreate('TaxLine', json, ($checkedConvert) {
+      final val = TaxLine(
+        description: $checkedConvert('description', (v) => v as String?),
+        taxRate: $checkedConvert('taxRate', (v) => (v as num?)?.toDouble()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$TaxLineToJson(TaxLine instance) => <String, dynamic>{
-  'description': instance.description,
-  'taxRate': instance.taxRate,
+  'description': ?instance.description,
+  'taxRate': ?instance.taxRate,
 };

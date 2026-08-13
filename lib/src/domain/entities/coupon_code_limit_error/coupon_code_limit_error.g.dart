@@ -7,12 +7,18 @@ part of 'coupon_code_limit_error.dart';
 // **************************************************************************
 
 CouponCodeLimitError _$CouponCodeLimitErrorFromJson(Map json) =>
-    CouponCodeLimitError(
-      couponCode: json['couponCode'] as String?,
-      errorCode: $enumDecodeNullable(_$ErrorCodeEnumMap, json['errorCode']),
-      limit: (json['limit'] as num?)?.toInt(),
-      message: json['message'] as String?,
-    );
+    $checkedCreate('CouponCodeLimitError', json, ($checkedConvert) {
+      final val = CouponCodeLimitError(
+        couponCode: $checkedConvert('couponCode', (v) => v as String?),
+        errorCode: $checkedConvert(
+          'errorCode',
+          (v) => $enumDecodeNullable(_$ErrorCodeEnumMap, v),
+        ),
+        limit: $checkedConvert('limit', (v) => (v as num?)?.toInt()),
+        message: $checkedConvert('message', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CouponCodeLimitErrorToJson(
   CouponCodeLimitError instance,
@@ -24,38 +30,44 @@ Map<String, dynamic> _$CouponCodeLimitErrorToJson(
 };
 
 const _$ErrorCodeEnumMap = {
-  ErrorCode.alreadyLoggedInError: 'ALREADY_LOGGED_IN_ERROR',
-  ErrorCode.couponCodeExpiredError: 'COUPON_CODE_EXPIRED_ERROR',
-  ErrorCode.couponCodeInvalidError: 'COUPON_CODE_INVALID_ERROR',
-  ErrorCode.couponCodeLimitError: 'COUPON_CODE_LIMIT_ERROR',
-  ErrorCode.emailAddressConflictError: 'EMAIL_ADDRESS_CONFLICT_ERROR',
-  ErrorCode.guestCheckoutError: 'GUEST_CHECKOUT_ERROR',
-  ErrorCode.identifierChangeTokenExpiredError:
-      'IDENTIFIER_CHANGE_TOKEN_EXPIRED_ERROR',
-  ErrorCode.identifierChangeTokenInvalidError:
+  ErrorCode.UNKNOWN_ERROR: 'UNKNOWN_ERROR',
+  ErrorCode.NATIVE_AUTH_STRATEGY_ERROR: 'NATIVE_AUTH_STRATEGY_ERROR',
+  ErrorCode.INVALID_CREDENTIALS_ERROR: 'INVALID_CREDENTIALS_ERROR',
+  ErrorCode.ORDER_STATE_TRANSITION_ERROR: 'ORDER_STATE_TRANSITION_ERROR',
+  ErrorCode.EMAIL_ADDRESS_CONFLICT_ERROR: 'EMAIL_ADDRESS_CONFLICT_ERROR',
+  ErrorCode.GUEST_CHECKOUT_ERROR: 'GUEST_CHECKOUT_ERROR',
+  ErrorCode.ORDER_LIMIT_ERROR: 'ORDER_LIMIT_ERROR',
+  ErrorCode.NEGATIVE_QUANTITY_ERROR: 'NEGATIVE_QUANTITY_ERROR',
+  ErrorCode.INSUFFICIENT_STOCK_ERROR: 'INSUFFICIENT_STOCK_ERROR',
+  ErrorCode.COUPON_CODE_INVALID_ERROR: 'COUPON_CODE_INVALID_ERROR',
+  ErrorCode.COUPON_CODE_EXPIRED_ERROR: 'COUPON_CODE_EXPIRED_ERROR',
+  ErrorCode.COUPON_CODE_LIMIT_ERROR: 'COUPON_CODE_LIMIT_ERROR',
+  ErrorCode.ORDER_MODIFICATION_ERROR: 'ORDER_MODIFICATION_ERROR',
+  ErrorCode.INELIGIBLE_SHIPPING_METHOD_ERROR:
+      'INELIGIBLE_SHIPPING_METHOD_ERROR',
+  ErrorCode.NO_ACTIVE_ORDER_ERROR: 'NO_ACTIVE_ORDER_ERROR',
+  ErrorCode.ORDER_INTERCEPTOR_ERROR: 'ORDER_INTERCEPTOR_ERROR',
+  ErrorCode.ORDER_PAYMENT_STATE_ERROR: 'ORDER_PAYMENT_STATE_ERROR',
+  ErrorCode.INELIGIBLE_PAYMENT_METHOD_ERROR: 'INELIGIBLE_PAYMENT_METHOD_ERROR',
+  ErrorCode.PAYMENT_FAILED_ERROR: 'PAYMENT_FAILED_ERROR',
+  ErrorCode.PAYMENT_DECLINED_ERROR: 'PAYMENT_DECLINED_ERROR',
+  ErrorCode.COUPON_REMOVED_DURING_CHECKOUT_ERROR:
+      'COUPON_REMOVED_DURING_CHECKOUT_ERROR',
+  ErrorCode.ALREADY_LOGGED_IN_ERROR: 'ALREADY_LOGGED_IN_ERROR',
+  ErrorCode.MISSING_PASSWORD_ERROR: 'MISSING_PASSWORD_ERROR',
+  ErrorCode.PASSWORD_VALIDATION_ERROR: 'PASSWORD_VALIDATION_ERROR',
+  ErrorCode.PASSWORD_ALREADY_SET_ERROR: 'PASSWORD_ALREADY_SET_ERROR',
+  ErrorCode.VERIFICATION_TOKEN_INVALID_ERROR:
+      'VERIFICATION_TOKEN_INVALID_ERROR',
+  ErrorCode.VERIFICATION_TOKEN_EXPIRED_ERROR:
+      'VERIFICATION_TOKEN_EXPIRED_ERROR',
+  ErrorCode.IDENTIFIER_CHANGE_TOKEN_INVALID_ERROR:
       'IDENTIFIER_CHANGE_TOKEN_INVALID_ERROR',
-  ErrorCode.ineligiblePaymentMethodError: 'INELIGIBLE_PAYMENT_METHOD_ERROR',
-  ErrorCode.ineligibleShippingMethodError: 'INELIGIBLE_SHIPPING_METHOD_ERROR',
-  ErrorCode.insufficientStockError: 'INSUFFICIENT_STOCK_ERROR',
-  ErrorCode.invalidCredentialsError: 'INVALID_CREDENTIALS_ERROR',
-  ErrorCode.missingPasswordError: 'MISSING_PASSWORD_ERROR',
-  ErrorCode.nativeAuthStrategyError: 'NATIVE_AUTH_STRATEGY_ERROR',
-  ErrorCode.negativeQuantityError: 'NEGATIVE_QUANTITY_ERROR',
-  ErrorCode.notVerifiedError: 'NOT_VERIFIED_ERROR',
-  ErrorCode.noActiveOrderError: 'NO_ACTIVE_ORDER_ERROR',
-  ErrorCode.orderLimitError: 'ORDER_LIMIT_ERROR',
-  ErrorCode.orderModificationError: 'ORDER_MODIFICATION_ERROR',
-  ErrorCode.orderPaymentStateError: 'ORDER_PAYMENT_STATE_ERROR',
-  ErrorCode.orderStateTransitionError: 'ORDER_STATE_TRANSITION_ERROR',
-  ErrorCode.passwordAlreadySetError: 'PASSWORD_ALREADY_SET_ERROR',
-  ErrorCode.passwordResetTokenExpiredError:
-      'PASSWORD_RESET_TOKEN_EXPIRED_ERROR',
-  ErrorCode.passwordResetTokenInvalidError:
+  ErrorCode.IDENTIFIER_CHANGE_TOKEN_EXPIRED_ERROR:
+      'IDENTIFIER_CHANGE_TOKEN_EXPIRED_ERROR',
+  ErrorCode.PASSWORD_RESET_TOKEN_INVALID_ERROR:
       'PASSWORD_RESET_TOKEN_INVALID_ERROR',
-  ErrorCode.passwordValidationError: 'PASSWORD_VALIDATION_ERROR',
-  ErrorCode.paymentDeclinedError: 'PAYMENT_DECLINED_ERROR',
-  ErrorCode.paymentFailedError: 'PAYMENT_FAILED_ERROR',
-  ErrorCode.unknownError: 'UNKNOWN_ERROR',
-  ErrorCode.verificationTokenExpiredError: 'VERIFICATION_TOKEN_EXPIRED_ERROR',
-  ErrorCode.verificationTokenInvalidError: 'VERIFICATION_TOKEN_INVALID_ERROR',
+  ErrorCode.PASSWORD_RESET_TOKEN_EXPIRED_ERROR:
+      'PASSWORD_RESET_TOKEN_EXPIRED_ERROR',
+  ErrorCode.NOT_VERIFIED_ERROR: 'NOT_VERIFIED_ERROR',
 };

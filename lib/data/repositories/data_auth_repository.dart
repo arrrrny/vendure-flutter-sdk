@@ -7,6 +7,8 @@
 /// FLAG: Vendure-specific methods delegate to [AuthBaseOperations] which
 /// is the original auth pipeline. [VendureRemoteDataSource] is not used for
 /// auth mutations because the error handling differs from the generic pipeline.
+library;
+
 
 import 'package:graphql/client.dart';
 import 'package:vendure/data/datasources/local/token_local_datasource.dart';

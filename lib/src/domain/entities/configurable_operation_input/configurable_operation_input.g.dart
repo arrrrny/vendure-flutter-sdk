@@ -7,14 +7,22 @@ part of 'configurable_operation_input.dart';
 // **************************************************************************
 
 ConfigurableOperationInput _$ConfigurableOperationInputFromJson(Map json) =>
-    ConfigurableOperationInput(
-      arguments: (json['arguments'] as List<dynamic>?)
-          ?.map(
-            (e) => ConfigArgInput.fromJson(Map<String, dynamic>.from(e as Map)),
-          )
-          .toList(),
-      code: json['code'] as String?,
-    );
+    $checkedCreate('ConfigurableOperationInput', json, ($checkedConvert) {
+      final val = ConfigurableOperationInput(
+        arguments: $checkedConvert(
+          'arguments',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => ConfigArgInput.fromJson(
+                  Map<String, dynamic>.from(e as Map),
+                ),
+              )
+              .toList(),
+        ),
+        code: $checkedConvert('code', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ConfigurableOperationInputToJson(
   ConfigurableOperationInput instance,

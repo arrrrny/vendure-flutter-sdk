@@ -6,18 +6,22 @@ part of 'user_custom_fields.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserCustomFields _$UserCustomFieldsFromJson(Map json) => UserCustomFields(
-  city: json['city'] as String?,
-  deviceToken: json['deviceToken'] as String?,
-  email: json['email'] as String?,
-  fullName: json['fullName'] as String?,
-  neighborhood: json['neighborhood'] as String?,
-  os: json['os'] as String?,
-  osVersion: json['osVersion'] as String?,
-  phoneBrand: json['phoneBrand'] as String?,
-  phoneModel: json['phoneModel'] as String?,
-  town: json['town'] as String?,
-);
+UserCustomFields _$UserCustomFieldsFromJson(Map json) =>
+    $checkedCreate('UserCustomFields', json, ($checkedConvert) {
+      final val = UserCustomFields(
+        city: $checkedConvert('city', (v) => v as String?),
+        deviceToken: $checkedConvert('deviceToken', (v) => v as String?),
+        email: $checkedConvert('email', (v) => v as String?),
+        fullName: $checkedConvert('fullName', (v) => v as String?),
+        neighborhood: $checkedConvert('neighborhood', (v) => v as String?),
+        os: $checkedConvert('os', (v) => v as String?),
+        osVersion: $checkedConvert('osVersion', (v) => v as String?),
+        phoneBrand: $checkedConvert('phoneBrand', (v) => v as String?),
+        phoneModel: $checkedConvert('phoneModel', (v) => v as String?),
+        town: $checkedConvert('town', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$UserCustomFieldsToJson(UserCustomFields instance) =>
     <String, dynamic>{

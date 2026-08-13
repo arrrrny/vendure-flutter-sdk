@@ -7,7 +7,12 @@ part of 'id_list_operators.dart';
 // **************************************************************************
 
 IdListOperators _$IdListOperatorsFromJson(Map json) =>
-    IdListOperators(inList: json['inList'] as String?);
+    $checkedCreate('IdListOperators', json, ($checkedConvert) {
+      final val = IdListOperators(
+        inList: $checkedConvert('inList', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$IdListOperatorsToJson(IdListOperators instance) =>
     <String, dynamic>{'inList': ?instance.inList};

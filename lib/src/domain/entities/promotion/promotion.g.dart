@@ -6,61 +6,77 @@ part of 'promotion.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Promotion _$PromotionFromJson(Map json) => Promotion(
-  actions: (json['actions'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : ConfigurableOperation.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  conditions: (json['conditions'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : ConfigurableOperation.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  couponCode: json['couponCode'] as String?,
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  description: json['description'] as String?,
-  enabled: json['enabled'] as bool?,
-  endsAt: json['endsAt'] == null
-      ? null
-      : DateTime.parse(json['endsAt'] as String),
-  id: json['id'] as String?,
-  name: json['name'] as String?,
-  perCustomerUsageLimit: (json['perCustomerUsageLimit'] as num?)?.toInt(),
-  startsAt: json['startsAt'] == null
-      ? null
-      : DateTime.parse(json['startsAt'] as String),
-  translations: (json['translations'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : PromotionTranslation.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  usageLimit: (json['usageLimit'] as num?)?.toInt(),
-);
+Promotion _$PromotionFromJson(Map json) => $checkedCreate('Promotion', json, (
+  $checkedConvert,
+) {
+  final val = Promotion(
+    actions: $checkedConvert(
+      'actions',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => ConfigurableOperation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    conditions: $checkedConvert(
+      'conditions',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => ConfigurableOperation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    couponCode: $checkedConvert('couponCode', (v) => v as String?),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    customFields: $checkedConvert(
+      'customFields',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+    description: $checkedConvert('description', (v) => v as String?),
+    enabled: $checkedConvert('enabled', (v) => v as bool?),
+    endsAt: $checkedConvert(
+      'endsAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    id: $checkedConvert('id', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v as String?),
+    perCustomerUsageLimit: $checkedConvert(
+      'perCustomerUsageLimit',
+      (v) => (v as num?)?.toInt(),
+    ),
+    startsAt: $checkedConvert(
+      'startsAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    translations: $checkedConvert(
+      'translations',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => PromotionTranslation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    usageLimit: $checkedConvert('usageLimit', (v) => (v as num?)?.toInt()),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$PromotionToJson(Promotion instance) => <String, dynamic>{
-  'actions': ?instance.actions?.map((e) => e?.toJson()).toList(),
-  'conditions': ?instance.conditions?.map((e) => e?.toJson()).toList(),
+  'actions': ?instance.actions?.map((e) => e.toJson()).toList(),
+  'conditions': ?instance.conditions?.map((e) => e.toJson()).toList(),
   'couponCode': ?instance.couponCode,
   'createdAt': ?instance.createdAt?.toIso8601String(),
   'customFields': ?instance.customFields,
@@ -71,7 +87,7 @@ Map<String, dynamic> _$PromotionToJson(Promotion instance) => <String, dynamic>{
   'name': ?instance.name,
   'perCustomerUsageLimit': ?instance.perCustomerUsageLimit,
   'startsAt': ?instance.startsAt?.toIso8601String(),
-  'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+  'translations': ?instance.translations?.map((e) => e.toJson()).toList(),
   'updatedAt': ?instance.updatedAt?.toIso8601String(),
   'usageLimit': ?instance.usageLimit,
 };

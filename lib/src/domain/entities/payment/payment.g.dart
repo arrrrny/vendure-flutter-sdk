@@ -6,28 +6,36 @@ part of 'payment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Payment _$PaymentFromJson(Map json) => Payment(
-  amount: (json['amount'] as num?)?.toDouble(),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  errorMessage: json['errorMessage'] as String?,
-  id: json['id'] as String?,
-  metadata: (json['metadata'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
-  method: json['method'] as String?,
-  refunds: (json['refunds'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : Refund.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  state: json['state'] as String?,
-  transactionId: json['transactionId'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+Payment _$PaymentFromJson(Map json) =>
+    $checkedCreate('Payment', json, ($checkedConvert) {
+      final val = Payment(
+        amount: $checkedConvert('amount', (v) => (v as num?)?.toDouble()),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        errorMessage: $checkedConvert('errorMessage', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        metadata: $checkedConvert(
+          'metadata',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        method: $checkedConvert('method', (v) => v as String?),
+        refunds: $checkedConvert(
+          'refunds',
+          (v) => (v as List<dynamic>?)
+              ?.map((e) => Refund.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList(),
+        ),
+        state: $checkedConvert('state', (v) => v as String?),
+        transactionId: $checkedConvert('transactionId', (v) => v as String?),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$PaymentToJson(Payment instance) => <String, dynamic>{
   'amount': ?instance.amount,
@@ -36,7 +44,7 @@ Map<String, dynamic> _$PaymentToJson(Payment instance) => <String, dynamic>{
   'id': ?instance.id,
   'metadata': ?instance.metadata,
   'method': ?instance.method,
-  'refunds': ?instance.refunds?.map((e) => e?.toJson()).toList(),
+  'refunds': ?instance.refunds?.map((e) => e.toJson()).toList(),
   'state': ?instance.state,
   'transactionId': ?instance.transactionId,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),

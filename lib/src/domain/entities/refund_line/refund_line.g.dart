@@ -6,11 +6,15 @@ part of 'refund_line.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RefundLine _$RefundLineFromJson(Map json) => RefundLine(
-  orderLineId: json['orderLineId'] as String?,
-  quantity: (json['quantity'] as num?)?.toInt(),
-  refundId: json['refundId'] as String?,
-);
+RefundLine _$RefundLineFromJson(Map json) =>
+    $checkedCreate('RefundLine', json, ($checkedConvert) {
+      final val = RefundLine(
+        orderLineId: $checkedConvert('orderLineId', (v) => v as String?),
+        quantity: $checkedConvert('quantity', (v) => (v as num?)?.toInt()),
+        refundId: $checkedConvert('refundId', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$RefundLineToJson(RefundLine instance) =>
     <String, dynamic>{

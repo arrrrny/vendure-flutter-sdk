@@ -1,0 +1,8 @@
+# Generated enums carry wire-exact member names (UPPER_SNAKE / PascalCase per
+# the Vendure schema, e.g. ErrorCode.ALREADY_LOGGED_IN_ERROR, Permission
+# .UpdateStockLocation). The Dart constant_identifier_names lint does not apply
+# to these generated names; the members must match the wire values verbatim.
+analyzer:
+  errors:
+    constant_identifier_names: ignore
+    unnecessary_library_name: ignore

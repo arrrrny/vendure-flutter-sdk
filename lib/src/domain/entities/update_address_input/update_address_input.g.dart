@@ -6,23 +6,34 @@ part of 'update_address_input.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UpdateAddressInput _$UpdateAddressInputFromJson(Map json) => UpdateAddressInput(
-  city: json['city'] as String?,
-  company: json['company'] as String?,
-  countryCode: json['countryCode'] as String?,
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  defaultBillingAddress: json['defaultBillingAddress'] as bool?,
-  defaultShippingAddress: json['defaultShippingAddress'] as bool?,
-  fullName: json['fullName'] as String?,
-  id: json['id'] as String?,
-  phoneNumber: json['phoneNumber'] as String?,
-  postalCode: json['postalCode'] as String?,
-  province: json['province'] as String?,
-  streetLine1: json['streetLine1'] as String?,
-  streetLine2: json['streetLine2'] as String?,
-);
+UpdateAddressInput _$UpdateAddressInputFromJson(Map json) =>
+    $checkedCreate('UpdateAddressInput', json, ($checkedConvert) {
+      final val = UpdateAddressInput(
+        city: $checkedConvert('city', (v) => v as String?),
+        company: $checkedConvert('company', (v) => v as String?),
+        countryCode: $checkedConvert('countryCode', (v) => v as String?),
+        customFields: $checkedConvert(
+          'customFields',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        defaultBillingAddress: $checkedConvert(
+          'defaultBillingAddress',
+          (v) => v as bool?,
+        ),
+        defaultShippingAddress: $checkedConvert(
+          'defaultShippingAddress',
+          (v) => v as bool?,
+        ),
+        fullName: $checkedConvert('fullName', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+        postalCode: $checkedConvert('postalCode', (v) => v as String?),
+        province: $checkedConvert('province', (v) => v as String?),
+        streetLine1: $checkedConvert('streetLine1', (v) => v as String?),
+        streetLine2: $checkedConvert('streetLine2', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$UpdateAddressInputToJson(UpdateAddressInput instance) =>
     <String, dynamic>{

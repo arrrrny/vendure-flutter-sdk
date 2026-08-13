@@ -7,24 +7,33 @@ part of 'history_entry_list_options.dart';
 // **************************************************************************
 
 HistoryEntryListOptions _$HistoryEntryListOptionsFromJson(Map json) =>
-    HistoryEntryListOptions(
-      filter: json['filter'] == null
-          ? null
-          : HistoryEntryFilterParameter.fromJson(
-              Map<String, dynamic>.from(json['filter'] as Map),
-            ),
-      filterOperator: $enumDecodeNullable(
-        _$LogicalOperatorEnumMap,
-        json['filterOperator'],
-      ),
-      skip: (json['skip'] as num?)?.toInt(),
-      sort: json['sort'] == null
-          ? null
-          : HistoryEntrySortParameter.fromJson(
-              Map<String, dynamic>.from(json['sort'] as Map),
-            ),
-      take: (json['take'] as num?)?.toInt(),
-    );
+    $checkedCreate('HistoryEntryListOptions', json, ($checkedConvert) {
+      final val = HistoryEntryListOptions(
+        filter: $checkedConvert(
+          'filter',
+          (v) => v == null
+              ? null
+              : HistoryEntryFilterParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        filterOperator: $checkedConvert(
+          'filterOperator',
+          (v) => $enumDecodeNullable(_$LogicalOperatorEnumMap, v),
+        ),
+        skip: $checkedConvert('skip', (v) => (v as num?)?.toInt()),
+        sort: $checkedConvert(
+          'sort',
+          (v) => v == null
+              ? null
+              : HistoryEntrySortParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        take: $checkedConvert('take', (v) => (v as num?)?.toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$HistoryEntryListOptionsToJson(
   HistoryEntryListOptions instance,
@@ -37,6 +46,6 @@ Map<String, dynamic> _$HistoryEntryListOptionsToJson(
 };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'AND',
-  LogicalOperator.or: 'OR',
+  LogicalOperator.AND: 'AND',
+  LogicalOperator.OR: 'OR',
 };

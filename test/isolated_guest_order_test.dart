@@ -35,7 +35,7 @@ void main() {
           orElse: () => products.items!.first,
         );
 
-        testProductVariantId = productWithVariants.variants!.first!.id!;
+        testProductVariantId = productWithVariants.variants!.first.id!;
         print('✅ Found test product variant: ${productWithVariants.name}');
         print('📋 Variant ID: $testProductVariantId');
 

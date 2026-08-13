@@ -7,7 +7,12 @@ part of 'number_list_operators.dart';
 // **************************************************************************
 
 NumberListOperators _$NumberListOperatorsFromJson(Map json) =>
-    NumberListOperators(inList: (json['inList'] as num?)?.toDouble());
+    $checkedCreate('NumberListOperators', json, ($checkedConvert) {
+      final val = NumberListOperators(
+        inList: $checkedConvert('inList', (v) => (v as num?)?.toDouble()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$NumberListOperatorsToJson(
   NumberListOperators instance,

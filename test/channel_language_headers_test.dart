@@ -9,6 +9,8 @@
 /// internal _getClient / _buildWebsocketPayload logic.
 /// For full HTTP-level header verification, a running Vendure server is
 /// required (see integration tests).
+library;
+
 
 import 'package:test/test.dart';
 import 'package:vendure/vendure.dart';

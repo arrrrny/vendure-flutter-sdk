@@ -7,14 +7,35 @@ part of 'facet_value_sort_parameter.dart';
 // **************************************************************************
 
 FacetValueSortParameter _$FacetValueSortParameterFromJson(Map json) =>
-    FacetValueSortParameter(
-      code: $enumDecodeNullable(_$SortOrderEnumMap, json['code']),
-      createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
-      facetId: $enumDecodeNullable(_$SortOrderEnumMap, json['facetId']),
-      id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
-      name: $enumDecodeNullable(_$SortOrderEnumMap, json['name']),
-      updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
-    );
+    $checkedCreate('FacetValueSortParameter', json, ($checkedConvert) {
+      final val = FacetValueSortParameter(
+        code: $checkedConvert(
+          'code',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        facetId: $checkedConvert(
+          'facetId',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        id: $checkedConvert(
+          'id',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        name: $checkedConvert(
+          'name',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FacetValueSortParameterToJson(
   FacetValueSortParameter instance,
@@ -27,4 +48,4 @@ Map<String, dynamic> _$FacetValueSortParameterToJson(
   'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

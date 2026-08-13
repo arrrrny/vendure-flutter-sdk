@@ -42,7 +42,7 @@ void main() {
           orElse: () => products.items!.first,
         );
 
-        testProductVariantId = productWithVariants.variants!.first!.id!;
+        testProductVariantId = productWithVariants.variants!.first.id!;
         print('✅ Found test product variant: ${productWithVariants.name}');
         print('📋 Variant ID: $testProductVariantId');
       } catch (e) {
@@ -199,7 +199,7 @@ void main() {
         expect(order.lines, isNotEmpty);
 
         testOrderCode = order.code!;
-        testOrderLineId = order.lines!.first!.id!;
+        testOrderLineId = order.lines!.first.id!;
 
         print('✅ Added item to guest order');
         print('📋 Order code: $testOrderCode');
@@ -233,10 +233,10 @@ void main() {
 
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
-        expect(order.lines!.first!.quantity, equals(3));
+        expect(order.lines!.first.quantity, equals(3));
 
         print('✅ Adjusted order line quantity');
-        print('📋 New quantity: ${order.lines!.first!.quantity}');
+        print('📋 New quantity: ${order.lines!.first.quantity}');
       } catch (e) {
         fail('❌ Failed to adjust order line: $e');
       }
@@ -298,11 +298,21 @@ void main() {
 
     test('Remove order line', () async {
       try {
+        // Use the current active order's first line (the shared-session
+        // order may have been re-created between tests, invalidating the
+        // previously captured line id).
+        final active = await vendure.order.getActiveOrder();
+        final lineId = active?.lines?.isNotEmpty == true
+            ? active!.lines!.first.id
+            : null;
+        if (lineId == null) {
+          fail('No active order line to remove');
+        }
         var result = await vendure.order.removeOrderLine(
-          orderLineId: testOrderLineId,
+          orderLineId: lineId,
         );
 
-        expect(result, isA<UpdateOrderItemsResult>());
+        expect(result, isA<RemoveOrderItemsResult>());
         print('✅ Removed order line');
       } catch (e) {
         fail('❌ Failed to remove order line: $e');
@@ -333,7 +343,7 @@ void main() {
         expect(result, isA<UpdateOrderItemsResult>());
         Order order = Order.fromJson(result.toJson());
         testOrderCode = order.code!;
-        testOrderLineId = order.lines!.first!.id!;
+        testOrderLineId = order.lines!.first.id!;
 
         print('✅ Added item back for shipping tests');
       } catch (e) {
@@ -369,7 +379,7 @@ void main() {
 
         print('✅ Retrieved ${facets.totalItems} facets');
         if (facets.items!.isNotEmpty) {
-          print('📋 Sample facet: ${facets.items!.first!.name}');
+          print('📋 Sample facet: ${facets.items!.first.name}');
         }
       } catch (e) {
         fail('❌ Failed to get facets: $e');
@@ -380,7 +390,7 @@ void main() {
       try {
         var facets = await vendure.system.getFacets();
         if (facets.items!.isNotEmpty) {
-          var facet = await vendure.system.getFacet(id: facets.items!.first!.id!);
+          var facet = await vendure.system.getFacet(id: facets.items!.first.id!);
           expect(facet, isA<Facet>());
 
           print('✅ Retrieved specific facet: ${facet.name}');
@@ -516,7 +526,7 @@ void main() {
             term: 'laptop',
             take: 5,
             skip: 0,
-            sort: SearchResultSortParameter(name: SortOrder.asc),
+            sort: SearchResultSortParameter(name: SortOrder.ASC),
           ),
         );
 
@@ -758,7 +768,7 @@ void main() {
         expect(order.lines, isNotEmpty);
 
         testOrderCode = order.code!;
-        testOrderLineId = order.lines!.first!.id!;
+        testOrderLineId = order.lines!.first.id!;
 
         print('✅ Added item to authenticated order');
         print('📋 Order code: $testOrderCode');

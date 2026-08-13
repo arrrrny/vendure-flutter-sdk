@@ -7,14 +7,17 @@ part of 'register_customer_input.dart';
 // **************************************************************************
 
 RegisterCustomerInput _$RegisterCustomerInputFromJson(Map json) =>
-    RegisterCustomerInput(
-      emailAddress: json['emailAddress'] as String?,
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
-      password: json['password'] as String?,
-      phoneNumber: json['phoneNumber'] as String?,
-      title: json['title'] as String?,
-    );
+    $checkedCreate('RegisterCustomerInput', json, ($checkedConvert) {
+      final val = RegisterCustomerInput(
+        emailAddress: $checkedConvert('emailAddress', (v) => v as String?),
+        firstName: $checkedConvert('firstName', (v) => v as String?),
+        lastName: $checkedConvert('lastName', (v) => v as String?),
+        password: $checkedConvert('password', (v) => v as String?),
+        phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+        title: $checkedConvert('title', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$RegisterCustomerInputToJson(
   RegisterCustomerInput instance,

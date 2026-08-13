@@ -6,55 +6,74 @@ part of 'facet_value_filter_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FacetValueFilterParameter _$FacetValueFilterParameterFromJson(
-  Map json,
-) => FacetValueFilterParameter(
-  and: (json['_and'] as List<dynamic>?)
-      ?.map(
-        (e) => FacetValueFilterParameter.fromJson(
-          Map<String, dynamic>.from(e as Map),
+FacetValueFilterParameter _$FacetValueFilterParameterFromJson(Map json) =>
+    $checkedCreate('FacetValueFilterParameter', json, ($checkedConvert) {
+      final val = FacetValueFilterParameter(
+        and: $checkedConvert(
+          '_and',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => FacetValueFilterParameter.fromJson(
+                  Map<String, dynamic>.from(e as Map),
+                ),
+              )
+              .toList(),
         ),
-      )
-      .toList(),
-  or: (json['_or'] as List<dynamic>?)
-      ?.map(
-        (e) => FacetValueFilterParameter.fromJson(
-          Map<String, dynamic>.from(e as Map),
+        or: $checkedConvert(
+          '_or',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => FacetValueFilterParameter.fromJson(
+                  Map<String, dynamic>.from(e as Map),
+                ),
+              )
+              .toList(),
         ),
-      )
-      .toList(),
-  code: json['code'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['code'] as Map),
+        code: $checkedConvert(
+          'code',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['createdAt'] as Map),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null
+              ? null
+              : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  facetId: json['facetId'] == null
-      ? null
-      : IdOperators.fromJson(Map<String, dynamic>.from(json['facetId'] as Map)),
-  id: json['id'] == null
-      ? null
-      : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
-  languageCode: json['languageCode'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['languageCode'] as Map),
+        facetId: $checkedConvert(
+          'facetId',
+          (v) => v == null
+              ? null
+              : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  name: json['name'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['name'] as Map),
+        id: $checkedConvert(
+          'id',
+          (v) => v == null
+              ? null
+              : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['updatedAt'] as Map),
+        languageCode: $checkedConvert(
+          'languageCode',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-);
+        name: $checkedConvert(
+          'name',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => v == null
+              ? null
+              : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'and': '_and', 'or': '_or'});
 
 Map<String, dynamic> _$FacetValueFilterParameterToJson(
   FacetValueFilterParameter instance,

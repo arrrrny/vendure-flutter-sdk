@@ -6,34 +6,46 @@ part of 'tax_rate.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TaxRate _$TaxRateFromJson(Map json) => TaxRate(
-  category: json['category'] == null
-      ? null
-      : TaxCategory.fromJson(
-          Map<String, dynamic>.from(json['category'] as Map),
-        ),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  customerGroup: json['customerGroup'] == null
-      ? null
-      : CustomerGroup.fromJson(
-          Map<String, dynamic>.from(json['customerGroup'] as Map),
-        ),
-  enabled: json['enabled'] as bool?,
-  id: json['id'] as String?,
-  name: json['name'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  value: (json['value'] as num?)?.toDouble(),
-  zone: json['zone'] == null
-      ? null
-      : Zone.fromJson(Map<String, dynamic>.from(json['zone'] as Map)),
-);
+TaxRate _$TaxRateFromJson(Map json) => $checkedCreate('TaxRate', json, (
+  $checkedConvert,
+) {
+  final val = TaxRate(
+    category: $checkedConvert(
+      'category',
+      (v) => v == null
+          ? null
+          : TaxCategory.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    customFields: $checkedConvert(
+      'customFields',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+    customerGroup: $checkedConvert(
+      'customerGroup',
+      (v) => v == null
+          ? null
+          : CustomerGroup.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    enabled: $checkedConvert('enabled', (v) => v as bool?),
+    id: $checkedConvert('id', (v) => v as String?),
+    name: $checkedConvert('name', (v) => v as String?),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    value: $checkedConvert('value', (v) => (v as num?)?.toDouble()),
+    zone: $checkedConvert(
+      'zone',
+      (v) =>
+          v == null ? null : Zone.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$TaxRateToJson(TaxRate instance) => <String, dynamic>{
   'category': ?instance.category?.toJson(),

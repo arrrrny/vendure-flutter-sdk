@@ -75,7 +75,7 @@ void main() {
         expect(facets, isA<FacetList>());
         print('✅ Retrieved ${facets.totalItems} facets');
         if (facets.items!.isNotEmpty) {
-          print('📋 Sample facet: ${facets.items!.first!.name}');
+          print('📋 Sample facet: ${facets.items!.first.name}');
         }
       } catch (e) {
         fail('❌ Failed to get facets: $e');
@@ -236,7 +236,7 @@ void main() {
 
         var firstVariant = firstProduct.variants!.first;
         print(
-          '📦 Using variant: ${firstVariant!.name} (ID: ${firstVariant.id})',
+          '📦 Using variant: ${firstVariant.name} (ID: ${firstVariant.id})',
         );
 
         // Add item to order
@@ -291,7 +291,7 @@ void main() {
 
         if (searchResult.items!.isNotEmpty) {
           var firstResult = searchResult.items!.first;
-          print('📋 First result: ${firstResult!.productName}');
+          print('📋 First result: ${firstResult.productName}');
         }
       } catch (e) {
         print('⚠️ Search failed: $e');

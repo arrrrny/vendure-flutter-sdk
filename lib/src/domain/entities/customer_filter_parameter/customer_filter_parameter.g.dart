@@ -6,61 +6,81 @@ part of 'customer_filter_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CustomerFilterParameter _$CustomerFilterParameterFromJson(Map json) =>
-    CustomerFilterParameter(
-      and: (json['_and'] as List<dynamic>?)
+CustomerFilterParameter _$CustomerFilterParameterFromJson(
+  Map json,
+) => $checkedCreate('CustomerFilterParameter', json, ($checkedConvert) {
+  final val = CustomerFilterParameter(
+    and: $checkedConvert(
+      '_and',
+      (v) => (v as List<dynamic>?)
           ?.map(
             (e) => CustomerFilterParameter.fromJson(
               Map<String, dynamic>.from(e as Map),
             ),
           )
           .toList(),
-      or: (json['_or'] as List<dynamic>?)
+    ),
+    or: $checkedConvert(
+      '_or',
+      (v) => (v as List<dynamic>?)
           ?.map(
             (e) => CustomerFilterParameter.fromJson(
               Map<String, dynamic>.from(e as Map),
             ),
           )
           .toList(),
-      createdAt: json['createdAt'] == null
+    ),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null
           ? null
-          : DateOperators.fromJson(
-              Map<String, dynamic>.from(json['createdAt'] as Map),
-            ),
-      emailAddress: json['emailAddress'] == null
+          : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    emailAddress: $checkedConvert(
+      'emailAddress',
+      (v) => v == null
           ? null
-          : StringOperators.fromJson(
-              Map<String, dynamic>.from(json['emailAddress'] as Map),
-            ),
-      firstName: json['firstName'] == null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    firstName: $checkedConvert(
+      'firstName',
+      (v) => v == null
           ? null
-          : StringOperators.fromJson(
-              Map<String, dynamic>.from(json['firstName'] as Map),
-            ),
-      id: json['id'] == null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    id: $checkedConvert(
+      'id',
+      (v) => v == null
           ? null
-          : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
-      lastName: json['lastName'] == null
+          : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    lastName: $checkedConvert(
+      'lastName',
+      (v) => v == null
           ? null
-          : StringOperators.fromJson(
-              Map<String, dynamic>.from(json['lastName'] as Map),
-            ),
-      phoneNumber: json['phoneNumber'] == null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    phoneNumber: $checkedConvert(
+      'phoneNumber',
+      (v) => v == null
           ? null
-          : StringOperators.fromJson(
-              Map<String, dynamic>.from(json['phoneNumber'] as Map),
-            ),
-      title: json['title'] == null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    title: $checkedConvert(
+      'title',
+      (v) => v == null
           ? null
-          : StringOperators.fromJson(
-              Map<String, dynamic>.from(json['title'] as Map),
-            ),
-      updatedAt: json['updatedAt'] == null
+          : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null
           ? null
-          : DateOperators.fromJson(
-              Map<String, dynamic>.from(json['updatedAt'] as Map),
-            ),
-    );
+          : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+  );
+  return val;
+}, fieldKeyMap: const {'and': '_and', 'or': '_or'});
 
 Map<String, dynamic> _$CustomerFilterParameterToJson(
   CustomerFilterParameter instance,

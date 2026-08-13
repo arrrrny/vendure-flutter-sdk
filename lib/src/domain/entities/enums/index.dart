@@ -1,4 +1,9 @@
-// Auto-generated barrel for merged enums
+// Auto-generated enum barrel file
+// Exports all enums for easy importing
+// Generated at: 2026-08-13T23:14:22.981948
+
+library enums;
+
 export 'adjustment_type.dart';
 export 'asset_type.dart';
 export 'currency_code.dart';

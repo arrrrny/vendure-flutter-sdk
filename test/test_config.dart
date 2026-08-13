@@ -148,7 +148,7 @@ class TestConfig {
     for (final product in products.items!) {
       for (final variant in product.variants!) {
         if (variantIds.length >= count) break;
-        if (variant!.id!.isNotEmpty) {
+        if (variant.id!.isNotEmpty) {
           variantIds.add(variant.id!);
         }
       }

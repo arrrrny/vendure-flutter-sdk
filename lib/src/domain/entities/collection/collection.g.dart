@@ -6,90 +6,106 @@ part of 'collection.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Collection _$CollectionFromJson(Map json) => Collection(
-  assets: (json['assets'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : Asset.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  breadcrumbs: (json['breadcrumbs'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : CollectionBreadcrumb.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  children: (json['children'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : Collection.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  description: json['description'] as String?,
-  featuredAsset: json['featuredAsset'] == null
-      ? null
-      : Asset.fromJson(Map<String, dynamic>.from(json['featuredAsset'] as Map)),
-  filters: (json['filters'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : ConfigurableOperation.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  id: json['id'] as String?,
-  languageCode: $enumDecodeNullable(
-    _$LanguageCodeEnumMap,
-    json['languageCode'],
-  ),
-  name: json['name'] as String?,
-  parent: json['parent'] == null
-      ? null
-      : Collection.fromJson(Map<String, dynamic>.from(json['parent'] as Map)),
-  parentId: json['parentId'] as String?,
-  position: (json['position'] as num?)?.toInt(),
-  productVariants: json['productVariants'] == null
-      ? null
-      : ProductVariantList.fromJson(
-          Map<String, dynamic>.from(json['productVariants'] as Map),
-        ),
-  slug: json['slug'] as String?,
-  translations: (json['translations'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : CollectionTranslation.fromJson(
-                Map<String, dynamic>.from(e as Map),
-              ),
-      )
-      .toList(),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+Collection _$CollectionFromJson(
+  Map json,
+) => $checkedCreate('Collection', json, ($checkedConvert) {
+  final val = Collection(
+    assets: $checkedConvert(
+      'assets',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+    ),
+    breadcrumbs: $checkedConvert(
+      'breadcrumbs',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => CollectionBreadcrumb.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    children: $checkedConvert(
+      'children',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => Collection.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+    ),
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    customFields: $checkedConvert(
+      'customFields',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+    description: $checkedConvert('description', (v) => v as String?),
+    featuredAsset: $checkedConvert(
+      'featuredAsset',
+      (v) => v == null
+          ? null
+          : Asset.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    filters: $checkedConvert(
+      'filters',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => ConfigurableOperation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    id: $checkedConvert('id', (v) => v as String?),
+    languageCode: $checkedConvert(
+      'languageCode',
+      (v) => $enumDecodeNullable(_$LanguageCodeEnumMap, v),
+    ),
+    name: $checkedConvert('name', (v) => v as String?),
+    parent: $checkedConvert(
+      'parent',
+      (v) => v == null
+          ? null
+          : Collection.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    parentId: $checkedConvert('parentId', (v) => v as String?),
+    position: $checkedConvert('position', (v) => (v as num?)?.toInt()),
+    productVariants: $checkedConvert(
+      'productVariants',
+      (v) => v == null
+          ? null
+          : ProductVariantList.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    slug: $checkedConvert('slug', (v) => v as String?),
+    translations: $checkedConvert(
+      'translations',
+      (v) => (v as List<dynamic>?)
+          ?.map(
+            (e) => CollectionTranslation.fromJson(
+              Map<String, dynamic>.from(e as Map),
+            ),
+          )
+          .toList(),
+    ),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$CollectionToJson(Collection instance) =>
     <String, dynamic>{
-      'assets': ?instance.assets?.map((e) => e?.toJson()).toList(),
-      'breadcrumbs': ?instance.breadcrumbs?.map((e) => e?.toJson()).toList(),
-      'children': ?instance.children?.map((e) => e?.toJson()).toList(),
+      'assets': ?instance.assets?.map((e) => e.toJson()).toList(),
+      'breadcrumbs': ?instance.breadcrumbs?.map((e) => e.toJson()).toList(),
+      'children': ?instance.children?.map((e) => e.toJson()).toList(),
       'createdAt': ?instance.createdAt?.toIso8601String(),
       'customFields': ?instance.customFields,
       'description': ?instance.description,
       'featuredAsset': ?instance.featuredAsset?.toJson(),
-      'filters': ?instance.filters?.map((e) => e?.toJson()).toList(),
+      'filters': ?instance.filters?.map((e) => e.toJson()).toList(),
       'id': ?instance.id,
       'languageCode': ?_$LanguageCodeEnumMap[instance.languageCode],
       'name': ?instance.name,
@@ -98,166 +114,166 @@ Map<String, dynamic> _$CollectionToJson(Collection instance) =>
       'position': ?instance.position,
       'productVariants': ?instance.productVariants?.toJson(),
       'slug': ?instance.slug,
-      'translations': ?instance.translations?.map((e) => e?.toJson()).toList(),
+      'translations': ?instance.translations?.map((e) => e.toJson()).toList(),
       'updatedAt': ?instance.updatedAt?.toIso8601String(),
     };
 
 const _$LanguageCodeEnumMap = {
   LanguageCode.af: 'af',
   LanguageCode.ak: 'ak',
+  LanguageCode.sq: 'sq',
   LanguageCode.am: 'am',
   LanguageCode.ar: 'ar',
+  LanguageCode.hy: 'hy',
   LanguageCode.as_: 'as',
   LanguageCode.az: 'az',
-  LanguageCode.be: 'be',
-  LanguageCode.bg: 'bg',
   LanguageCode.bm: 'bm',
   LanguageCode.bn: 'bn',
-  LanguageCode.bo: 'bo',
-  LanguageCode.br: 'br',
+  LanguageCode.eu: 'eu',
+  LanguageCode.be: 'be',
   LanguageCode.bs: 'bs',
+  LanguageCode.br: 'br',
+  LanguageCode.bg: 'bg',
+  LanguageCode.my: 'my',
   LanguageCode.ca: 'ca',
   LanguageCode.ce: 'ce',
-  LanguageCode.co: 'co',
-  LanguageCode.cs: 'cs',
+  LanguageCode.zh: 'zh',
+  LanguageCode.zh_Hans: 'zh_Hans',
+  LanguageCode.zh_Hant: 'zh_Hant',
   LanguageCode.cu: 'cu',
-  LanguageCode.cy: 'cy',
+  LanguageCode.kw: 'kw',
+  LanguageCode.co: 'co',
+  LanguageCode.hr: 'hr',
+  LanguageCode.cs: 'cs',
   LanguageCode.da: 'da',
-  LanguageCode.de: 'de',
-  LanguageCode.deAt: 'de_AT',
-  LanguageCode.deCh: 'de_CH',
+  LanguageCode.nl: 'nl',
+  LanguageCode.nl_BE: 'nl_BE',
   LanguageCode.dz: 'dz',
-  LanguageCode.ee: 'ee',
-  LanguageCode.el: 'el',
   LanguageCode.en: 'en',
-  LanguageCode.enAu: 'en_AU',
-  LanguageCode.enCa: 'en_CA',
-  LanguageCode.enGb: 'en_GB',
-  LanguageCode.enUs: 'en_US',
+  LanguageCode.en_AU: 'en_AU',
+  LanguageCode.en_CA: 'en_CA',
+  LanguageCode.en_GB: 'en_GB',
+  LanguageCode.en_US: 'en_US',
   LanguageCode.eo: 'eo',
-  LanguageCode.es: 'es',
-  LanguageCode.esEs: 'es_ES',
-  LanguageCode.esMx: 'es_MX',
   LanguageCode.et: 'et',
-  LanguageCode.eu: 'eu',
-  LanguageCode.fa: 'fa',
-  LanguageCode.faAf: 'fa_AF',
-  LanguageCode.ff: 'ff',
-  LanguageCode.fi: 'fi',
+  LanguageCode.ee: 'ee',
   LanguageCode.fo: 'fo',
+  LanguageCode.fi: 'fi',
   LanguageCode.fr: 'fr',
-  LanguageCode.frCa: 'fr_CA',
-  LanguageCode.frCh: 'fr_CH',
-  LanguageCode.fy: 'fy',
-  LanguageCode.ga: 'ga',
-  LanguageCode.gd: 'gd',
+  LanguageCode.fr_CA: 'fr_CA',
+  LanguageCode.fr_CH: 'fr_CH',
+  LanguageCode.ff: 'ff',
   LanguageCode.gl: 'gl',
+  LanguageCode.lg: 'lg',
+  LanguageCode.ka: 'ka',
+  LanguageCode.de: 'de',
+  LanguageCode.de_AT: 'de_AT',
+  LanguageCode.de_CH: 'de_CH',
+  LanguageCode.el: 'el',
   LanguageCode.gu: 'gu',
-  LanguageCode.gv: 'gv',
+  LanguageCode.ht: 'ht',
   LanguageCode.ha: 'ha',
   LanguageCode.he: 'he',
   LanguageCode.hi: 'hi',
-  LanguageCode.hr: 'hr',
-  LanguageCode.ht: 'ht',
   LanguageCode.hu: 'hu',
-  LanguageCode.hy: 'hy',
-  LanguageCode.ia: 'ia',
-  LanguageCode.id: 'id',
-  LanguageCode.ig: 'ig',
-  LanguageCode.ii: 'ii',
   LanguageCode.is_: 'is',
+  LanguageCode.ig: 'ig',
+  LanguageCode.id: 'id',
+  LanguageCode.ia: 'ia',
+  LanguageCode.ga: 'ga',
   LanguageCode.it: 'it',
   LanguageCode.ja: 'ja',
   LanguageCode.jv: 'jv',
-  LanguageCode.ka: 'ka',
-  LanguageCode.ki: 'ki',
-  LanguageCode.kk: 'kk',
   LanguageCode.kl: 'kl',
-  LanguageCode.km: 'km',
   LanguageCode.kn: 'kn',
-  LanguageCode.ko: 'ko',
   LanguageCode.ks: 'ks',
+  LanguageCode.kk: 'kk',
+  LanguageCode.km: 'km',
+  LanguageCode.ki: 'ki',
+  LanguageCode.rw: 'rw',
+  LanguageCode.ko: 'ko',
   LanguageCode.ku: 'ku',
-  LanguageCode.kw: 'kw',
   LanguageCode.ky: 'ky',
-  LanguageCode.la: 'la',
-  LanguageCode.lb: 'lb',
-  LanguageCode.lg: 'lg',
-  LanguageCode.ln: 'ln',
   LanguageCode.lo: 'lo',
+  LanguageCode.la: 'la',
+  LanguageCode.lv: 'lv',
+  LanguageCode.ln: 'ln',
   LanguageCode.lt: 'lt',
   LanguageCode.lu: 'lu',
-  LanguageCode.lv: 'lv',
-  LanguageCode.mg: 'mg',
-  LanguageCode.mi: 'mi',
+  LanguageCode.lb: 'lb',
   LanguageCode.mk: 'mk',
-  LanguageCode.ml: 'ml',
-  LanguageCode.mn: 'mn',
-  LanguageCode.mr: 'mr',
+  LanguageCode.mg: 'mg',
   LanguageCode.ms: 'ms',
+  LanguageCode.ml: 'ml',
   LanguageCode.mt: 'mt',
-  LanguageCode.my: 'my',
-  LanguageCode.nb: 'nb',
-  LanguageCode.nd: 'nd',
+  LanguageCode.gv: 'gv',
+  LanguageCode.mi: 'mi',
+  LanguageCode.mr: 'mr',
+  LanguageCode.mn: 'mn',
   LanguageCode.ne: 'ne',
-  LanguageCode.nl: 'nl',
-  LanguageCode.nlBe: 'nl_BE',
+  LanguageCode.nd: 'nd',
+  LanguageCode.se: 'se',
+  LanguageCode.nb: 'nb',
   LanguageCode.nn: 'nn',
   LanguageCode.ny: 'ny',
-  LanguageCode.om: 'om',
   LanguageCode.or: 'or',
+  LanguageCode.om: 'om',
   LanguageCode.os: 'os',
-  LanguageCode.pa: 'pa',
-  LanguageCode.pl: 'pl',
   LanguageCode.ps: 'ps',
+  LanguageCode.fa: 'fa',
+  LanguageCode.fa_AF: 'fa_AF',
+  LanguageCode.pl: 'pl',
   LanguageCode.pt: 'pt',
-  LanguageCode.ptBr: 'pt_BR',
-  LanguageCode.ptPt: 'pt_PT',
+  LanguageCode.pt_BR: 'pt_BR',
+  LanguageCode.pt_PT: 'pt_PT',
+  LanguageCode.pa: 'pa',
   LanguageCode.qu: 'qu',
+  LanguageCode.ro: 'ro',
+  LanguageCode.ro_MD: 'ro_MD',
   LanguageCode.rm: 'rm',
   LanguageCode.rn: 'rn',
-  LanguageCode.ro: 'ro',
-  LanguageCode.roMd: 'ro_MD',
   LanguageCode.ru: 'ru',
-  LanguageCode.rw: 'rw',
-  LanguageCode.sa: 'sa',
-  LanguageCode.sd: 'sd',
-  LanguageCode.se: 'se',
+  LanguageCode.sm: 'sm',
   LanguageCode.sg: 'sg',
+  LanguageCode.sa: 'sa',
+  LanguageCode.gd: 'gd',
+  LanguageCode.sr: 'sr',
+  LanguageCode.sn: 'sn',
+  LanguageCode.ii: 'ii',
+  LanguageCode.sd: 'sd',
   LanguageCode.si: 'si',
   LanguageCode.sk: 'sk',
   LanguageCode.sl: 'sl',
-  LanguageCode.sm: 'sm',
-  LanguageCode.sn: 'sn',
   LanguageCode.so: 'so',
-  LanguageCode.sq: 'sq',
-  LanguageCode.sr: 'sr',
   LanguageCode.st: 'st',
+  LanguageCode.es: 'es',
+  LanguageCode.es_ES: 'es_ES',
+  LanguageCode.es_MX: 'es_MX',
   LanguageCode.su: 'su',
-  LanguageCode.sv: 'sv',
   LanguageCode.sw: 'sw',
-  LanguageCode.swCd: 'sw_CD',
-  LanguageCode.ta: 'ta',
-  LanguageCode.te: 'te',
+  LanguageCode.sw_CD: 'sw_CD',
+  LanguageCode.sv: 'sv',
   LanguageCode.tg: 'tg',
+  LanguageCode.ta: 'ta',
+  LanguageCode.tt: 'tt',
+  LanguageCode.te: 'te',
   LanguageCode.th: 'th',
+  LanguageCode.bo: 'bo',
   LanguageCode.ti: 'ti',
-  LanguageCode.tk: 'tk',
   LanguageCode.to: 'to',
   LanguageCode.tr: 'tr',
-  LanguageCode.tt: 'tt',
-  LanguageCode.ug: 'ug',
+  LanguageCode.tk: 'tk',
   LanguageCode.uk: 'uk',
   LanguageCode.ur: 'ur',
+  LanguageCode.ug: 'ug',
   LanguageCode.uz: 'uz',
   LanguageCode.vi: 'vi',
   LanguageCode.vo: 'vo',
+  LanguageCode.cy: 'cy',
+  LanguageCode.fy: 'fy',
   LanguageCode.wo: 'wo',
   LanguageCode.xh: 'xh',
   LanguageCode.yi: 'yi',
   LanguageCode.yo: 'yo',
-  LanguageCode.zh: 'zh',
-  LanguageCode.zhHans: 'zh_Hans',
-  LanguageCode.zhHant: 'zh_Hant',
   LanguageCode.zu: 'zu',
 };

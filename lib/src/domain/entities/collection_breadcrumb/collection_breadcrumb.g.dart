@@ -7,16 +7,19 @@ part of 'collection_breadcrumb.dart';
 // **************************************************************************
 
 CollectionBreadcrumb _$CollectionBreadcrumbFromJson(Map json) =>
-    CollectionBreadcrumb(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      slug: json['slug'] as String,
-    );
+    $checkedCreate('CollectionBreadcrumb', json, ($checkedConvert) {
+      final val = CollectionBreadcrumb(
+        id: $checkedConvert('id', (v) => v as String?),
+        name: $checkedConvert('name', (v) => v as String?),
+        slug: $checkedConvert('slug', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CollectionBreadcrumbToJson(
   CollectionBreadcrumb instance,
 ) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'slug': instance.slug,
+  'id': ?instance.id,
+  'name': ?instance.name,
+  'slug': ?instance.slug,
 };

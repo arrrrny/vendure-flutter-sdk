@@ -6,24 +6,32 @@ part of 'customer_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CustomerGroup _$CustomerGroupFromJson(Map json) => CustomerGroup(
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  customers: json['customers'] == null
-      ? null
-      : CustomerList.fromJson(
-          Map<String, dynamic>.from(json['customers'] as Map),
+CustomerGroup _$CustomerGroupFromJson(Map json) =>
+    $checkedCreate('CustomerGroup', json, ($checkedConvert) {
+      final val = CustomerGroup(
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
         ),
-  id: json['id'] as String?,
-  name: json['name'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+        customFields: $checkedConvert(
+          'customFields',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        customers: $checkedConvert(
+          'customers',
+          (v) => v == null
+              ? null
+              : CustomerList.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+        id: $checkedConvert('id', (v) => v as String?),
+        name: $checkedConvert('name', (v) => v as String?),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CustomerGroupToJson(CustomerGroup instance) =>
     <String, dynamic>{

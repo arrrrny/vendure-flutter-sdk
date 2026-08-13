@@ -7,7 +7,12 @@ part of 'boolean_list_operators.dart';
 // **************************************************************************
 
 BooleanListOperators _$BooleanListOperatorsFromJson(Map json) =>
-    BooleanListOperators(inList: json['inList'] as bool?);
+    $checkedCreate('BooleanListOperators', json, ($checkedConvert) {
+      final val = BooleanListOperators(
+        inList: $checkedConvert('inList', (v) => v as bool?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$BooleanListOperatorsToJson(
   BooleanListOperators instance,

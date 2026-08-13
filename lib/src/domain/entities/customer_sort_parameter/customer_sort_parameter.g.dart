@@ -7,19 +7,43 @@ part of 'customer_sort_parameter.dart';
 // **************************************************************************
 
 CustomerSortParameter _$CustomerSortParameterFromJson(Map json) =>
-    CustomerSortParameter(
-      createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
-      emailAddress: $enumDecodeNullable(
-        _$SortOrderEnumMap,
-        json['emailAddress'],
-      ),
-      firstName: $enumDecodeNullable(_$SortOrderEnumMap, json['firstName']),
-      id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
-      lastName: $enumDecodeNullable(_$SortOrderEnumMap, json['lastName']),
-      phoneNumber: $enumDecodeNullable(_$SortOrderEnumMap, json['phoneNumber']),
-      title: $enumDecodeNullable(_$SortOrderEnumMap, json['title']),
-      updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
-    );
+    $checkedCreate('CustomerSortParameter', json, ($checkedConvert) {
+      final val = CustomerSortParameter(
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        emailAddress: $checkedConvert(
+          'emailAddress',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        firstName: $checkedConvert(
+          'firstName',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        id: $checkedConvert(
+          'id',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        lastName: $checkedConvert(
+          'lastName',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        phoneNumber: $checkedConvert(
+          'phoneNumber',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        title: $checkedConvert(
+          'title',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CustomerSortParameterToJson(
   CustomerSortParameter instance,
@@ -34,4 +58,4 @@ Map<String, dynamic> _$CustomerSortParameterToJson(
   'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

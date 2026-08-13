@@ -7,30 +7,38 @@ part of 'shipping_method_quote.dart';
 // **************************************************************************
 
 ShippingMethodQuote _$ShippingMethodQuoteFromJson(Map json) =>
-    ShippingMethodQuote(
-      code: json['code'] as String,
-      customFields: (json['customFields'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String,
-      id: json['id'] as String,
-      metadata: (json['metadata'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      name: json['name'] as String,
-      price: (json['price'] as num).toDouble(),
-      priceWithTax: (json['priceWithTax'] as num).toDouble(),
-    );
+    $checkedCreate('ShippingMethodQuote', json, ($checkedConvert) {
+      final val = ShippingMethodQuote(
+        code: $checkedConvert('code', (v) => v as String?),
+        customFields: $checkedConvert(
+          'customFields',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        description: $checkedConvert('description', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        metadata: $checkedConvert(
+          'metadata',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        name: $checkedConvert('name', (v) => v as String?),
+        price: $checkedConvert('price', (v) => (v as num?)?.toDouble()),
+        priceWithTax: $checkedConvert(
+          'priceWithTax',
+          (v) => (v as num?)?.toDouble(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ShippingMethodQuoteToJson(
   ShippingMethodQuote instance,
 ) => <String, dynamic>{
-  'code': instance.code,
+  'code': ?instance.code,
   'customFields': ?instance.customFields,
-  'description': instance.description,
-  'id': instance.id,
+  'description': ?instance.description,
+  'id': ?instance.id,
   'metadata': ?instance.metadata,
-  'name': instance.name,
-  'price': instance.price,
-  'priceWithTax': instance.priceWithTax,
+  'name': ?instance.name,
+  'price': ?instance.price,
+  'priceWithTax': ?instance.priceWithTax,
 };

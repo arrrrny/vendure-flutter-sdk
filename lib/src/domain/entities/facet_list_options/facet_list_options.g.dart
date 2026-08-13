@@ -6,24 +6,31 @@ part of 'facet_list_options.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-FacetListOptions _$FacetListOptionsFromJson(Map json) => FacetListOptions(
-  filter: json['filter'] == null
-      ? null
-      : FacetFilterParameter.fromJson(
-          Map<String, dynamic>.from(json['filter'] as Map),
-        ),
-  filterOperator: $enumDecodeNullable(
-    _$LogicalOperatorEnumMap,
-    json['filterOperator'],
-  ),
-  skip: (json['skip'] as num?)?.toInt(),
-  sort: json['sort'] == null
-      ? null
-      : FacetSortParameter.fromJson(
-          Map<String, dynamic>.from(json['sort'] as Map),
-        ),
-  take: (json['take'] as num?)?.toInt(),
-);
+FacetListOptions _$FacetListOptionsFromJson(
+  Map json,
+) => $checkedCreate('FacetListOptions', json, ($checkedConvert) {
+  final val = FacetListOptions(
+    filter: $checkedConvert(
+      'filter',
+      (v) => v == null
+          ? null
+          : FacetFilterParameter.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    filterOperator: $checkedConvert(
+      'filterOperator',
+      (v) => $enumDecodeNullable(_$LogicalOperatorEnumMap, v),
+    ),
+    skip: $checkedConvert('skip', (v) => (v as num?)?.toInt()),
+    sort: $checkedConvert(
+      'sort',
+      (v) => v == null
+          ? null
+          : FacetSortParameter.fromJson(Map<String, dynamic>.from(v as Map)),
+    ),
+    take: $checkedConvert('take', (v) => (v as num?)?.toInt()),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$FacetListOptionsToJson(FacetListOptions instance) =>
     <String, dynamic>{
@@ -35,6 +42,6 @@ Map<String, dynamic> _$FacetListOptionsToJson(FacetListOptions instance) =>
     };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'AND',
-  LogicalOperator.or: 'OR',
+  LogicalOperator.AND: 'AND',
+  LogicalOperator.OR: 'OR',
 };

@@ -7,20 +7,47 @@ part of 'product_variant_sort_parameter.dart';
 // **************************************************************************
 
 ProductVariantSortParameter _$ProductVariantSortParameterFromJson(Map json) =>
-    ProductVariantSortParameter(
-      createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
-      id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
-      name: $enumDecodeNullable(_$SortOrderEnumMap, json['name']),
-      price: $enumDecodeNullable(_$SortOrderEnumMap, json['price']),
-      priceWithTax: $enumDecodeNullable(
-        _$SortOrderEnumMap,
-        json['priceWithTax'],
-      ),
-      productId: $enumDecodeNullable(_$SortOrderEnumMap, json['productId']),
-      sku: $enumDecodeNullable(_$SortOrderEnumMap, json['sku']),
-      stockLevel: $enumDecodeNullable(_$SortOrderEnumMap, json['stockLevel']),
-      updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
-    );
+    $checkedCreate('ProductVariantSortParameter', json, ($checkedConvert) {
+      final val = ProductVariantSortParameter(
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        id: $checkedConvert(
+          'id',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        name: $checkedConvert(
+          'name',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        price: $checkedConvert(
+          'price',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        priceWithTax: $checkedConvert(
+          'priceWithTax',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        productId: $checkedConvert(
+          'productId',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        sku: $checkedConvert(
+          'sku',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        stockLevel: $checkedConvert(
+          'stockLevel',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ProductVariantSortParameterToJson(
   ProductVariantSortParameter instance,
@@ -36,4 +63,4 @@ Map<String, dynamic> _$ProductVariantSortParameterToJson(
   'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

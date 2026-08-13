@@ -6,10 +6,17 @@ part of 'deletion_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DeletionResponse _$DeletionResponseFromJson(Map json) => DeletionResponse(
-  message: json['message'] as String?,
-  result: $enumDecodeNullable(_$DeletionResultEnumMap, json['result']),
-);
+DeletionResponse _$DeletionResponseFromJson(Map json) =>
+    $checkedCreate('DeletionResponse', json, ($checkedConvert) {
+      final val = DeletionResponse(
+        message: $checkedConvert('message', (v) => v as String?),
+        result: $checkedConvert(
+          'result',
+          (v) => $enumDecodeNullable(_$DeletionResultEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$DeletionResponseToJson(DeletionResponse instance) =>
     <String, dynamic>{
@@ -18,6 +25,6 @@ Map<String, dynamic> _$DeletionResponseToJson(DeletionResponse instance) =>
     };
 
 const _$DeletionResultEnumMap = {
-  DeletionResult.deleted: 'DELETED',
-  DeletionResult.notDeleted: 'NOT_DELETED',
+  DeletionResult.DELETED: 'DELETED',
+  DeletionResult.NOT_DELETED: 'NOT_DELETED',
 };

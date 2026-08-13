@@ -4,6 +4,8 @@
 ///
 /// FLAG: This class is a thin wrapper with no additional logic.
 /// All token/expiry/refresh behavior delegates directly to [TokenManager].
+library;
+
 import 'package:vendure/src/vendure/token_manager.dart';
 
 class TokenLocalDataSource {

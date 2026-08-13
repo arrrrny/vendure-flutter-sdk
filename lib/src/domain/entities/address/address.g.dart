@@ -6,31 +6,47 @@ part of 'address.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Address _$AddressFromJson(Map json) => Address(
-  city: json['city'] as String?,
-  company: json['company'] as String?,
-  country: json['country'] == null
-      ? null
-      : Country.fromJson(Map<String, dynamic>.from(json['country'] as Map)),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  customFields: (json['customFields'] as Map?)?.map(
-    (k, e) => MapEntry(k as String, e),
-  ),
-  defaultBillingAddress: json['defaultBillingAddress'] as bool?,
-  defaultShippingAddress: json['defaultShippingAddress'] as bool?,
-  fullName: json['fullName'] as String?,
-  id: json['id'] as String?,
-  phoneNumber: json['phoneNumber'] as String?,
-  postalCode: json['postalCode'] as String?,
-  province: json['province'] as String?,
-  streetLine1: json['streetLine1'] as String?,
-  streetLine2: json['streetLine2'] as String?,
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+Address _$AddressFromJson(Map json) =>
+    $checkedCreate('Address', json, ($checkedConvert) {
+      final val = Address(
+        city: $checkedConvert('city', (v) => v as String?),
+        company: $checkedConvert('company', (v) => v as String?),
+        country: $checkedConvert(
+          'country',
+          (v) => v == null
+              ? null
+              : Country.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        customFields: $checkedConvert(
+          'customFields',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        defaultBillingAddress: $checkedConvert(
+          'defaultBillingAddress',
+          (v) => v as bool?,
+        ),
+        defaultShippingAddress: $checkedConvert(
+          'defaultShippingAddress',
+          (v) => v as bool?,
+        ),
+        fullName: $checkedConvert('fullName', (v) => v as String?),
+        id: $checkedConvert('id', (v) => v as String?),
+        phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
+        postalCode: $checkedConvert('postalCode', (v) => v as String?),
+        province: $checkedConvert('province', (v) => v as String?),
+        streetLine1: $checkedConvert('streetLine1', (v) => v as String?),
+        streetLine2: $checkedConvert('streetLine2', (v) => v as String?),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AddressToJson(Address instance) => <String, dynamic>{
   'city': ?instance.city,

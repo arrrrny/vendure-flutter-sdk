@@ -6,27 +6,36 @@ part of 'surcharge.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Surcharge _$SurchargeFromJson(Map json) => Surcharge(
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateTime.parse(json['createdAt'] as String),
-  description: json['description'] as String?,
-  id: json['id'] as String?,
-  price: (json['price'] as num?)?.toDouble(),
-  priceWithTax: (json['priceWithTax'] as num?)?.toDouble(),
-  sku: json['sku'] as String?,
-  taxLines: (json['taxLines'] as List<dynamic>?)
-      ?.map(
-        (e) => e == null
-            ? null
-            : TaxLine.fromJson(Map<String, dynamic>.from(e as Map)),
-      )
-      .toList(),
-  taxRate: (json['taxRate'] as num?)?.toDouble(),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateTime.parse(json['updatedAt'] as String),
-);
+Surcharge _$SurchargeFromJson(Map json) => $checkedCreate('Surcharge', json, (
+  $checkedConvert,
+) {
+  final val = Surcharge(
+    createdAt: $checkedConvert(
+      'createdAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    description: $checkedConvert('description', (v) => v as String?),
+    id: $checkedConvert('id', (v) => v as String?),
+    price: $checkedConvert('price', (v) => (v as num?)?.toDouble()),
+    priceWithTax: $checkedConvert(
+      'priceWithTax',
+      (v) => (v as num?)?.toDouble(),
+    ),
+    sku: $checkedConvert('sku', (v) => v as String?),
+    taxLines: $checkedConvert(
+      'taxLines',
+      (v) => (v as List<dynamic>?)
+          ?.map((e) => TaxLine.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+    ),
+    taxRate: $checkedConvert('taxRate', (v) => (v as num?)?.toDouble()),
+    updatedAt: $checkedConvert(
+      'updatedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$SurchargeToJson(Surcharge instance) => <String, dynamic>{
   'createdAt': ?instance.createdAt?.toIso8601String(),
@@ -35,7 +44,7 @@ Map<String, dynamic> _$SurchargeToJson(Surcharge instance) => <String, dynamic>{
   'price': ?instance.price,
   'priceWithTax': ?instance.priceWithTax,
   'sku': ?instance.sku,
-  'taxLines': ?instance.taxLines?.map((e) => e?.toJson()).toList(),
+  'taxLines': ?instance.taxLines?.map((e) => e.toJson()).toList(),
   'taxRate': ?instance.taxRate,
   'updatedAt': ?instance.updatedAt?.toIso8601String(),
 };

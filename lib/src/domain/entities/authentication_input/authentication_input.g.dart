@@ -7,13 +7,17 @@ part of 'authentication_input.dart';
 // **************************************************************************
 
 AuthenticationInput _$AuthenticationInputFromJson(Map json) =>
-    AuthenticationInput(
-      native: json['native'] == null
-          ? null
-          : NativeAuthInput.fromJson(
-              Map<String, dynamic>.from(json['native'] as Map),
-            ),
-    );
+    $checkedCreate('AuthenticationInput', json, ($checkedConvert) {
+      final val = AuthenticationInput(
+        native: $checkedConvert(
+          'native',
+          (v) => v == null
+              ? null
+              : NativeAuthInput.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AuthenticationInputToJson(
   AuthenticationInput instance,

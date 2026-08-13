@@ -7,24 +7,33 @@ part of 'facet_value_list_options.dart';
 // **************************************************************************
 
 FacetValueListOptions _$FacetValueListOptionsFromJson(Map json) =>
-    FacetValueListOptions(
-      filter: json['filter'] == null
-          ? null
-          : FacetValueFilterParameter.fromJson(
-              Map<String, dynamic>.from(json['filter'] as Map),
-            ),
-      filterOperator: $enumDecodeNullable(
-        _$LogicalOperatorEnumMap,
-        json['filterOperator'],
-      ),
-      skip: (json['skip'] as num?)?.toInt(),
-      sort: json['sort'] == null
-          ? null
-          : FacetValueSortParameter.fromJson(
-              Map<String, dynamic>.from(json['sort'] as Map),
-            ),
-      take: (json['take'] as num?)?.toInt(),
-    );
+    $checkedCreate('FacetValueListOptions', json, ($checkedConvert) {
+      final val = FacetValueListOptions(
+        filter: $checkedConvert(
+          'filter',
+          (v) => v == null
+              ? null
+              : FacetValueFilterParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        filterOperator: $checkedConvert(
+          'filterOperator',
+          (v) => $enumDecodeNullable(_$LogicalOperatorEnumMap, v),
+        ),
+        skip: $checkedConvert('skip', (v) => (v as num?)?.toInt()),
+        sort: $checkedConvert(
+          'sort',
+          (v) => v == null
+              ? null
+              : FacetValueSortParameter.fromJson(
+                  Map<String, dynamic>.from(v as Map),
+                ),
+        ),
+        take: $checkedConvert('take', (v) => (v as num?)?.toInt()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FacetValueListOptionsToJson(
   FacetValueListOptions instance,
@@ -37,6 +46,6 @@ Map<String, dynamic> _$FacetValueListOptionsToJson(
 };
 
 const _$LogicalOperatorEnumMap = {
-  LogicalOperator.and: 'AND',
-  LogicalOperator.or: 'OR',
+  LogicalOperator.AND: 'AND',
+  LogicalOperator.OR: 'OR',
 };

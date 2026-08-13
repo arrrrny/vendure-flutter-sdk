@@ -6,17 +6,31 @@ part of 'date_operators.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DateOperators _$DateOperatorsFromJson(Map json) => DateOperators(
-  after: json['after'] == null ? null : DateTime.parse(json['after'] as String),
-  before: json['before'] == null
-      ? null
-      : DateTime.parse(json['before'] as String),
-  between: json['between'] == null
-      ? null
-      : DateRange.fromJson(Map<String, dynamic>.from(json['between'] as Map)),
-  eq: json['eq'] == null ? null : DateTime.parse(json['eq'] as String),
-  isNull: json['isNull'] as bool?,
-);
+DateOperators _$DateOperatorsFromJson(Map json) =>
+    $checkedCreate('DateOperators', json, ($checkedConvert) {
+      final val = DateOperators(
+        after: $checkedConvert(
+          'after',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        before: $checkedConvert(
+          'before',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        between: $checkedConvert(
+          'between',
+          (v) => v == null
+              ? null
+              : DateRange.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+        eq: $checkedConvert(
+          'eq',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+        isNull: $checkedConvert('isNull', (v) => v as bool?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$DateOperatorsToJson(DateOperators instance) =>
     <String, dynamic>{

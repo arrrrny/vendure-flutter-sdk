@@ -7,10 +7,16 @@ part of 'facet_value_filter_input.dart';
 // **************************************************************************
 
 FacetValueFilterInput _$FacetValueFilterInputFromJson(Map json) =>
-    FacetValueFilterInput(
-      and: json['and'] as String?,
-      or: (json['or'] as List<dynamic>?)?.map((e) => e as String).toList(),
-    );
+    $checkedCreate('FacetValueFilterInput', json, ($checkedConvert) {
+      final val = FacetValueFilterInput(
+        and: $checkedConvert('and', (v) => v as String?),
+        or: $checkedConvert(
+          'or',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$FacetValueFilterInputToJson(
   FacetValueFilterInput instance,

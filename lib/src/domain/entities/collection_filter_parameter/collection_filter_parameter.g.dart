@@ -6,67 +6,86 @@ part of 'collection_filter_parameter.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CollectionFilterParameter _$CollectionFilterParameterFromJson(
-  Map json,
-) => CollectionFilterParameter(
-  and: (json['_and'] as List<dynamic>?)
-      ?.map(
-        (e) => CollectionFilterParameter.fromJson(
-          Map<String, dynamic>.from(e as Map),
+CollectionFilterParameter _$CollectionFilterParameterFromJson(Map json) =>
+    $checkedCreate('CollectionFilterParameter', json, ($checkedConvert) {
+      final val = CollectionFilterParameter(
+        and: $checkedConvert(
+          '_and',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => CollectionFilterParameter.fromJson(
+                  Map<String, dynamic>.from(e as Map),
+                ),
+              )
+              .toList(),
         ),
-      )
-      .toList(),
-  or: (json['_or'] as List<dynamic>?)
-      ?.map(
-        (e) => CollectionFilterParameter.fromJson(
-          Map<String, dynamic>.from(e as Map),
+        or: $checkedConvert(
+          '_or',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => CollectionFilterParameter.fromJson(
+                  Map<String, dynamic>.from(e as Map),
+                ),
+              )
+              .toList(),
         ),
-      )
-      .toList(),
-  createdAt: json['createdAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['createdAt'] as Map),
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => v == null
+              ? null
+              : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  description: json['description'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['description'] as Map),
+        description: $checkedConvert(
+          'description',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  id: json['id'] == null
-      ? null
-      : IdOperators.fromJson(Map<String, dynamic>.from(json['id'] as Map)),
-  languageCode: json['languageCode'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['languageCode'] as Map),
+        id: $checkedConvert(
+          'id',
+          (v) => v == null
+              ? null
+              : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  name: json['name'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['name'] as Map),
+        languageCode: $checkedConvert(
+          'languageCode',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  parentId: json['parentId'] == null
-      ? null
-      : IdOperators.fromJson(
-          Map<String, dynamic>.from(json['parentId'] as Map),
+        name: $checkedConvert(
+          'name',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  position: json['position'] == null
-      ? null
-      : NumberOperators.fromJson(
-          Map<String, dynamic>.from(json['position'] as Map),
+        parentId: $checkedConvert(
+          'parentId',
+          (v) => v == null
+              ? null
+              : IdOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  slug: json['slug'] == null
-      ? null
-      : StringOperators.fromJson(
-          Map<String, dynamic>.from(json['slug'] as Map),
+        position: $checkedConvert(
+          'position',
+          (v) => v == null
+              ? null
+              : NumberOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-  updatedAt: json['updatedAt'] == null
-      ? null
-      : DateOperators.fromJson(
-          Map<String, dynamic>.from(json['updatedAt'] as Map),
+        slug: $checkedConvert(
+          'slug',
+          (v) => v == null
+              ? null
+              : StringOperators.fromJson(Map<String, dynamic>.from(v as Map)),
         ),
-);
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => v == null
+              ? null
+              : DateOperators.fromJson(Map<String, dynamic>.from(v as Map)),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'and': '_and', 'or': '_or'});
 
 Map<String, dynamic> _$CollectionFilterParameterToJson(
   CollectionFilterParameter instance,

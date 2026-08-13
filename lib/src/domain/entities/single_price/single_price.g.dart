@@ -7,7 +7,12 @@ part of 'single_price.dart';
 // **************************************************************************
 
 SinglePrice _$SinglePriceFromJson(Map json) =>
-    SinglePrice(value: (json['value'] as num).toDouble());
+    $checkedCreate('SinglePrice', json, ($checkedConvert) {
+      final val = SinglePrice(
+        value: $checkedConvert('value', (v) => (v as num?)?.toDouble()),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$SinglePriceToJson(SinglePrice instance) =>
-    <String, dynamic>{'value': instance.value};
+    <String, dynamic>{'value': ?instance.value};

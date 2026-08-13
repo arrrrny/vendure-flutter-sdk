@@ -7,18 +7,25 @@ part of 'config_arg_definition.dart';
 // **************************************************************************
 
 ConfigArgDefinition _$ConfigArgDefinitionFromJson(Map json) =>
-    ConfigArgDefinition(
-      defaultValue: (json['defaultValue'] as Map?)?.map(
-        (k, e) => MapEntry(k as String, e),
-      ),
-      description: json['description'] as String?,
-      label: json['label'] as String?,
-      list: json['list'] as bool?,
-      name: json['name'] as String?,
-      required_: json['required_'] as bool?,
-      type: json['type'] as String?,
-      ui: (json['ui'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
-    );
+    $checkedCreate('ConfigArgDefinition', json, ($checkedConvert) {
+      final val = ConfigArgDefinition(
+        defaultValue: $checkedConvert(
+          'defaultValue',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        description: $checkedConvert('description', (v) => v as String?),
+        label: $checkedConvert('label', (v) => v as String?),
+        list: $checkedConvert('list', (v) => v as bool?),
+        name: $checkedConvert('name', (v) => v as String?),
+        required_: $checkedConvert('required', (v) => v as bool?),
+        type: $checkedConvert('type', (v) => v as String?),
+        ui: $checkedConvert(
+          'ui',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'required_': 'required'});
 
 Map<String, dynamic> _$ConfigArgDefinitionToJson(
   ConfigArgDefinition instance,
@@ -28,7 +35,7 @@ Map<String, dynamic> _$ConfigArgDefinitionToJson(
   'label': ?instance.label,
   'list': ?instance.list,
   'name': ?instance.name,
-  'required_': ?instance.required_,
+  'required': ?instance.required_,
   'type': ?instance.type,
   'ui': ?instance.ui,
 };

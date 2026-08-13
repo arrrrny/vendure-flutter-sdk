@@ -7,9 +7,15 @@ part of 'config_arg.dart';
 // **************************************************************************
 
 ConfigArg _$ConfigArgFromJson(Map json) =>
-    ConfigArg(name: json['name'] as String, value: json['value'] as String);
+    $checkedCreate('ConfigArg', json, ($checkedConvert) {
+      final val = ConfigArg(
+        name: $checkedConvert('name', (v) => v as String?),
+        value: $checkedConvert('value', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ConfigArgToJson(ConfigArg instance) => <String, dynamic>{
-  'name': instance.name,
-  'value': instance.value,
+  'name': ?instance.name,
+  'value': ?instance.value,
 };

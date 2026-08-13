@@ -7,11 +7,23 @@ part of 'history_entry_sort_parameter.dart';
 // **************************************************************************
 
 HistoryEntrySortParameter _$HistoryEntrySortParameterFromJson(Map json) =>
-    HistoryEntrySortParameter(
-      createdAt: $enumDecodeNullable(_$SortOrderEnumMap, json['createdAt']),
-      id: $enumDecodeNullable(_$SortOrderEnumMap, json['id']),
-      updatedAt: $enumDecodeNullable(_$SortOrderEnumMap, json['updatedAt']),
-    );
+    $checkedCreate('HistoryEntrySortParameter', json, ($checkedConvert) {
+      final val = HistoryEntrySortParameter(
+        createdAt: $checkedConvert(
+          'createdAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        id: $checkedConvert(
+          'id',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+        updatedAt: $checkedConvert(
+          'updatedAt',
+          (v) => $enumDecodeNullable(_$SortOrderEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$HistoryEntrySortParameterToJson(
   HistoryEntrySortParameter instance,
@@ -21,4 +33,4 @@ Map<String, dynamic> _$HistoryEntrySortParameterToJson(
   'updatedAt': ?_$SortOrderEnumMap[instance.updatedAt],
 };
 
-const _$SortOrderEnumMap = {SortOrder.asc: 'ASC', SortOrder.desc: 'DESC'};
+const _$SortOrderEnumMap = {SortOrder.ASC: 'ASC', SortOrder.DESC: 'DESC'};

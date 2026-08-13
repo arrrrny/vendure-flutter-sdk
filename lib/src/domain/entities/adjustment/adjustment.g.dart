@@ -6,13 +6,26 @@ part of 'adjustment.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Adjustment _$AdjustmentFromJson(Map json) => Adjustment(
-  adjustmentSource: json['adjustmentSource'] as String?,
-  amount: (json['amount'] as num?)?.toDouble(),
-  data: (json['data'] as Map?)?.map((k, e) => MapEntry(k as String, e)),
-  description: json['description'] as String?,
-  type: $enumDecodeNullable(_$AdjustmentTypeEnumMap, json['type']),
-);
+Adjustment _$AdjustmentFromJson(Map json) =>
+    $checkedCreate('Adjustment', json, ($checkedConvert) {
+      final val = Adjustment(
+        adjustmentSource: $checkedConvert(
+          'adjustmentSource',
+          (v) => v as String?,
+        ),
+        amount: $checkedConvert('amount', (v) => (v as num?)?.toDouble()),
+        data: $checkedConvert(
+          'data',
+          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+        ),
+        description: $checkedConvert('description', (v) => v as String?),
+        type: $checkedConvert(
+          'type',
+          (v) => $enumDecodeNullable(_$AdjustmentTypeEnumMap, v),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AdjustmentToJson(Adjustment instance) =>
     <String, dynamic>{
@@ -24,7 +37,7 @@ Map<String, dynamic> _$AdjustmentToJson(Adjustment instance) =>
     };
 
 const _$AdjustmentTypeEnumMap = {
-  AdjustmentType.distributedOrderPromotion: 'DISTRIBUTED_ORDER_PROMOTION',
-  AdjustmentType.other: 'OTHER',
-  AdjustmentType.promotion: 'PROMOTION',
+  AdjustmentType.PROMOTION: 'PROMOTION',
+  AdjustmentType.DISTRIBUTED_ORDER_PROMOTION: 'DISTRIBUTED_ORDER_PROMOTION',
+  AdjustmentType.OTHER: 'OTHER',
 };
