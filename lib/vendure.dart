@@ -55,6 +55,7 @@ class Vendure {
   final Duration? _timeout;
   final AppCheckConfig? _appCheckConfig;
   GraphQLClient? _subscriptionClient;
+  WebSocketLink? _subscriptionLink;
   String? _lastSubscriptionEndpoint;
   String? _lastSubscriptionToken;
 
@@ -491,6 +492,11 @@ class Vendure {
     final instance = _instance;
     if (instance == null) return;
     instance._httpClient.close();
+    // Dispose the WebSocketLink so its SocketClient stops reconnecting.
+    // Simply null-assigning _subscriptionClient leaves the underlying
+    // SocketClient alive with autoReconnect=true, causing a reconnect loop.
+    instance._subscriptionLink?.dispose();
+    instance._subscriptionLink = null;
     instance._subscriptionClient = null;
     _instance = null;
     _initializing = false;
@@ -639,6 +645,7 @@ class Vendure {
       config: socketConfig,
       subProtocol: GraphQLProtocol.graphqlTransportWs,
     );
+    _subscriptionLink = link;
     _subscriptionClient = GraphQLClient(cache: GraphQLCache(), link: link);
     _lastSubscriptionEndpoint = endpointUrl;
     _lastSubscriptionToken = authToken;
