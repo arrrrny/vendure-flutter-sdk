@@ -1,0 +1,49 @@
+# GYM artifact — package-level exercises for the vendure Flutter SDK.
+# See github.com/arrrrny/gym for the paradigm,
+#     github.com/arrrrny/miki (gym.mjs) for the runner that consumes this file.
+#
+# Mirrors the package-level gym.yaml shape established in
+# github.com/arrrrny/zuraffa (.gym/gym.yaml) so the miki GYM runner can
+# consume this package without code changes (spec 022 / issue #397).
+#
+# A gym is a folder of exercises with two phases:
+#   WARMUP    — mandatory reps that build reflex. No reps, no phase 2.
+#   EXERCISES — graded work that proves the muscle under real load.
+# The gate only lets the proven through. A mis-fire is a DROP CARD.
+name: vendure
+version: 1.0.0
+warmup:
+  - id: 01-deps
+    name: Resolve package dependencies (root + example)
+    command: dart run .gym/warmup/01-deps.dart
+  - id: 02-build
+    name: Compile the SDK (dart analyze, zero errors)
+    command: dart run .gym/warmup/02-build.dart
+  - id: 03-smoke
+    name: Authenticated client init against a local Vendure API
+    command: dart run .gym/warmup/03-smoke.dart
+exercises:
+  - id: fetch-product-by-id
+    brief: |
+      A genuine dev task (spec 022 / issue #397), not a re-skinned unit
+      test: integrate the SDK against a running Vendure server and fetch a
+      product by id. The exercise stands up an in-process mock Vendure
+      GraphQL server (dart:io HttpServer — hermetic, deterministic, no
+      network egress), initializes the client with a bearer token AND a
+      channel token, drives `product.getProductById(id: '1')`, and
+      asserts the returned Product is typed with the fixture's fields
+      (id/name/slug/description/enabled) AND that the SDK actually sent
+      the getProductById query for id 1 carrying both auth headers. Also
+      proves the service-unavailable edge: initialization against a 503
+      endpoint fails fast with a clear error instead of hanging or
+      silently passing. Mis-fires emit a structured DROP CARD
+      (Did/Expected/Happened/Where) under .gym/.drops/; grading is
+      exit-code based.
+    setup: |
+      Ensure `dart` is on PATH and `flutter` for dependency resolution
+      (the bundled example app is a Flutter project).
+      Run the warmup reps first (.gym/warmup/*).
+      The mock server and any scratch state live under .gym/.sandbox/ —
+      the package source tree is never mutated.
+    verifyCommand: dart run .gym/exercise-fetch-product-by-id.dart
+    evaluate: exit 0 => pass; exit !=0 => fail
