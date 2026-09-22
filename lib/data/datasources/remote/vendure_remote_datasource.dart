@@ -1,4 +1,5 @@
 import 'package:graphql/client.dart';
+import 'package:http/http.dart' as http;
 import 'package:vendure/src/vendure/vendure_utils.dart';
 
 /// Data source responsible for executing GraphQL operations against the Vendure
@@ -20,10 +21,18 @@ class VendureRemoteDataSource {
   /// [VendureUtils.sanitizeGraphQLQuery].
   final Map<String, List<dynamic>>? customFieldsConfig;
 
-  VendureRemoteDataSource({
-    required this.getClient,
-    this.customFieldsConfig,
-  });
+  VendureRemoteDataSource({required this.getClient, this.customFieldsConfig});
+
+  /// Maximum number of retries for transient connection-level failures —
+  /// requests where the connection died before any response bytes arrived
+  /// (e.g. "Connection closed before full header was received").
+  static const int _maxTransientNetworkRetries = 2;
+
+  /// Backoff delays between transient-network retries.
+  static const List<Duration> _transientRetryDelays = [
+    Duration(milliseconds: 500),
+    Duration(milliseconds: 1500),
+  ];
 
   // -------------------------------------------------------------------
   //  Internal pipeline (previously lived inside CustomOperations)
@@ -46,7 +55,6 @@ class VendureRemoteDataSource {
     bool convertEnums = false,
   }) async {
     final processedOperation = _prepareOperation(operation);
-    final client = await getClient();
 
     // Normalize variables for mutations (convert enums to CAPITAL_SNAKE_CASE)
     // if enabled.
@@ -57,21 +65,60 @@ class VendureRemoteDataSource {
           )
         : variables;
 
-    final options = isMutation
-        ? MutationOptions(
-            document: gql(processedOperation),
-            variables: normalizedVariables,
-          )
-        : QueryOptions(
-            document: gql(processedOperation),
-            variables: normalizedVariables,
-          );
+    // Retry loop: transient connection-level failures (server or proxy
+    // closed the connection before responding) are retried on a fresh client
+    // with a short backoff. Every other outcome — success, GraphQL errors,
+    // timeouts, exhausted retries — exits through [_handleErrors] exactly as
+    // a single attempt would.
+    for (var attempt = 0; ; attempt++) {
+      final client = await getClient();
 
-    final QueryResult<Object?> result = isMutation
-        ? await client.mutate(options as MutationOptions)
-        : await client.query(options as QueryOptions);
+      final options = isMutation
+          ? MutationOptions(
+              document: gql(processedOperation),
+              variables: normalizedVariables,
+            )
+          : QueryOptions(
+              document: gql(processedOperation),
+              variables: normalizedVariables,
+            );
 
-    return _handleErrors(result, expectedDataType);
+      final QueryResult<Object?> result = isMutation
+          ? await client.mutate(options as MutationOptions)
+          : await client.query(options as QueryOptions);
+
+      final exception = result.exception;
+      if (exception == null ||
+          attempt >= _maxTransientNetworkRetries ||
+          !_isTransientNetworkError(exception)) {
+        return _handleErrors(result, expectedDataType);
+      }
+
+      await Future<void>.delayed(_transientRetryDelays[attempt]);
+    }
+  }
+
+  /// Whether [exception] is a connection-level failure where no HTTP response
+  /// was received. Both shapes reach the data source depending on where the
+  /// connection died:
+  ///
+  /// - [ServerException] wrapping an `http.ClientException` — the HttpLink
+  ///   transport error for closed/reset connections and DNS/socket failures
+  ///   (e.g. "Connection closed before full header was received").
+  /// - [NetworkException] — link-level network failures bubbling up outside
+  ///   the HttpLink (e.g. a socket error from an auth token fetch).
+  ///
+  /// Note: a retried mutation may, in the worst case, be processed twice by
+  /// the server if the connection died after the request was delivered but
+  /// before the response arrived. This mirrors standard GraphQL retry links
+  /// (e.g. Apollo's RetryLink); callers needing strict idempotency should
+  /// gate retries themselves.
+  bool _isTransientNetworkError(OperationException exception) {
+    final linkException = exception.linkException;
+    if (linkException is ServerException) {
+      return linkException.originalException is http.ClientException;
+    }
+    return linkException is NetworkException;
   }
 
   /// Validates the [QueryResult] and extracts the expected data key.
