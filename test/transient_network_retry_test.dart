@@ -70,10 +70,86 @@ class ServerErrorHttpClient extends http.BaseClient {
   }
 }
 
+/// [http.BaseClient] that answers with HTTP 200 carrying a GraphQL `errors`
+/// array — the shape a Vendure API uses for rejected operations.
+class GraphQLErrorHttpClient extends http.BaseClient {
+  var callCount = 0;
+
+  @override
+  Future<http.StreamedResponse> send(http.BaseRequest request) async {
+    callCount++;
+    return http.StreamedResponse(
+      Stream.value(utf8.encode('{"errors":[{"message":"boom"}]}')),
+      200,
+      headers: {'content-type': 'application/json'},
+    );
+  }
+}
+
+/// [http.BaseClient] whose requests never complete, standing in for a stalled
+/// connection while the facade's request timeout runs out.
+class HangingHttpClient extends http.BaseClient {
+  var callCount = 0;
+
+  @override
+  Future<http.StreamedResponse> send(http.BaseRequest request) {
+    callCount++;
+    return Completer<http.StreamedResponse>().future;
+  }
+}
+
+/// Fake link that fails the first [failuresBeforeSuccess] requests with a
+/// link-level [NetworkException] — the second arm of the data source's
+/// classifier, reached without going through `HttpLink`.
+class FlakyNetworkLink {
+  FlakyNetworkLink({
+    required this.failuresBeforeSuccess,
+    this.responseBody = _successBody,
+  });
+
+  final int failuresBeforeSuccess;
+  final String responseBody;
+  var callCount = 0;
+
+  Link get link => Link.function((request, [forward]) async* {
+    final index = callCount++;
+    if (index < failuresBeforeSuccess) {
+      throw NetworkException.fromException(
+        originalException: Exception(_connectionClosed),
+        originalStackTrace: StackTrace.current,
+        message: _connectionClosed,
+        uri: Uri.parse(_endpoint),
+      );
+    }
+    final decoded = jsonDecode(responseBody) as Map<String, dynamic>;
+    yield Response(
+      data: decoded['data'] as Map<String, dynamic>?,
+      response: decoded,
+    );
+  });
+}
+
 VendureRemoteDataSource dataSourceFor(http.BaseClient httpClient) {
   final graphQLClient = GraphQLClient(
     link: HttpLink(_endpoint, httpClient: httpClient),
     cache: GraphQLCache(),
+  );
+  return VendureRemoteDataSource(getClient: () async => graphQLClient);
+}
+
+VendureRemoteDataSource dataSourceForLink(Link link) {
+  final graphQLClient = GraphQLClient(link: link, cache: GraphQLCache());
+  return VendureRemoteDataSource(getClient: () async => graphQLClient);
+}
+
+VendureRemoteDataSource dataSourceWithTimeout(
+  http.BaseClient httpClient,
+  Duration queryRequestTimeout,
+) {
+  final graphQLClient = GraphQLClient(
+    link: HttpLink(_endpoint, httpClient: httpClient),
+    cache: GraphQLCache(),
+    queryRequestTimeout: queryRequestTimeout,
   );
   return VendureRemoteDataSource(getClient: () async => graphQLClient);
 }
@@ -145,6 +221,79 @@ void main() {
           convertEnums: false,
         ),
         throwsA(isA<Exception>()),
+      );
+      expect(httpClient.callCount, 1);
+    });
+
+    test(
+      'does not retry GraphQL error responses (HTTP 200 + errors)',
+      () async {
+        final httpClient = GraphQLErrorHttpClient();
+        final dataSource = dataSourceFor(httpClient);
+
+        await expectLater(
+          dataSource.mutate<dynamic>(
+            _mutation,
+            const {'input': <String, dynamic>{}},
+            expectedDataType: 'createEngagementEvent',
+            convertEnums: false,
+          ),
+          throwsA(predicate<Object>((e) => '$e'.contains('boom'))),
+        );
+        expect(httpClient.callCount, 1);
+      },
+    );
+
+    test('retries link-level NetworkException failures', () async {
+      final flakyLink = FlakyNetworkLink(failuresBeforeSuccess: 1);
+      final dataSource = dataSourceForLink(flakyLink.link);
+
+      final data = await dataSource.mutate<dynamic>(
+        _mutation,
+        const {'input': <String, dynamic>{}},
+        expectedDataType: 'createEngagementEvent',
+        convertEnums: false,
+      );
+
+      expect((data as Map)['id'], 'evt_1');
+      // 1 initial attempt + 1 retry.
+      expect(flakyLink.callCount, 2);
+    });
+
+    test('does not retry client-level request timeouts', () async {
+      final httpClient = HangingHttpClient();
+      final dataSource = dataSourceWithTimeout(
+        httpClient,
+        const Duration(milliseconds: 100),
+      );
+
+      await expectLater(
+        dataSource.mutate<dynamic>(
+          _mutation,
+          const {'input': <String, dynamic>{}},
+          expectedDataType: 'createEngagementEvent',
+          convertEnums: false,
+        ),
+        // The facade's timeout surfaces as an UnknownException wrapping
+        // TimeoutException, i.e. neither ServerException nor NetworkException.
+        throwsA(predicate<Object>((e) => '$e'.contains('TimeoutException'))),
+      );
+      expect(httpClient.callCount, 1);
+    });
+
+    test('retryOnTransientNetworkErrors: false skips the retry', () async {
+      final httpClient = FlakyHttpClient(failuresBeforeSuccess: 2);
+      final dataSource = dataSourceFor(httpClient);
+
+      await expectLater(
+        dataSource.mutate<dynamic>(
+          _mutation,
+          const {'input': <String, dynamic>{}},
+          expectedDataType: 'createEngagementEvent',
+          convertEnums: false,
+          retryOnTransientNetworkErrors: false,
+        ),
+        throwsA(predicate<Object>((e) => '$e'.contains(_connectionClosed))),
       );
       expect(httpClient.callCount, 1);
     });

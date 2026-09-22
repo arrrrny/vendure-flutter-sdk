@@ -53,6 +53,7 @@ class VendureRemoteDataSource {
     bool isMutation,
     String? expectedDataType, {
     bool convertEnums = false,
+    bool retryOnTransientNetworkErrors = true,
   }) async {
     final processedOperation = _prepareOperation(operation);
 
@@ -70,6 +71,15 @@ class VendureRemoteDataSource {
     // with a short backoff. Every other outcome — success, GraphQL errors,
     // timeouts, exhausted retries — exits through [_handleErrors] exactly as
     // a single attempt would.
+    //
+    // Timeouts remain single-attempt because the facade applies its timeout
+    // policy as `GraphQLClient.queryRequestTimeout`, i.e. `Stream.timeout`
+    // *outside* the link chain. The resulting `TimeoutException` is translated
+    // by `QueryManager` into an `UnknownException`, which is neither of the
+    // shapes [_isTransientNetworkError] accepts. A caller that instead
+    // enforces timeouts inside a custom `http.BaseClient` throws
+    // `http.ClientException`, which *is* retried.
+    assert(_transientRetryDelays.length >= _maxTransientNetworkRetries);
     for (var attempt = 0; ; attempt++) {
       final client = await getClient();
 
@@ -89,6 +99,7 @@ class VendureRemoteDataSource {
 
       final exception = result.exception;
       if (exception == null ||
+          !retryOnTransientNetworkErrors ||
           attempt >= _maxTransientNetworkRetries ||
           !_isTransientNetworkError(exception)) {
         return _handleErrors(result, expectedDataType);
@@ -111,8 +122,11 @@ class VendureRemoteDataSource {
   /// Note: a retried mutation may, in the worst case, be processed twice by
   /// the server if the connection died after the request was delivered but
   /// before the response arrived. This mirrors standard GraphQL retry links
-  /// (e.g. Apollo's RetryLink); callers needing strict idempotency should
-  /// gate retries themselves.
+  /// (e.g. Apollo's RetryLink). Callers running non-idempotent mutations —
+  /// payments, order transitions — should pass
+  /// `retryOnTransientNetworkErrors: false` to [mutate] / [mutateList] so a
+  /// transient failure surfaces on the first attempt instead of being
+  /// replayed.
   bool _isTransientNetworkError(OperationException exception) {
     final linkException = exception.linkException;
     if (linkException is ServerException) {
@@ -186,6 +200,7 @@ class VendureRemoteDataSource {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
     bool convertEnums = true,
+    bool retryOnTransientNetworkErrors = true,
   }) async {
     var data = await _executeGraphQLOperation(
       mutation,
@@ -193,6 +208,7 @@ class VendureRemoteDataSource {
       true,
       expectedDataType,
       convertEnums: convertEnums,
+      retryOnTransientNetworkErrors: retryOnTransientNetworkErrors,
     );
 
     if (data == null) {
@@ -291,6 +307,7 @@ class VendureRemoteDataSource {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
     bool convertEnums = false,
+    bool retryOnTransientNetworkErrors = true,
   }) async {
     var data = await _executeGraphQLOperation(
       mutation,
@@ -298,6 +315,7 @@ class VendureRemoteDataSource {
       true,
       expectedDataType,
       convertEnums: convertEnums,
+      retryOnTransientNetworkErrors: retryOnTransientNetworkErrors,
     );
 
     if (data == null) {

@@ -25,6 +25,7 @@ class CustomOperations {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
     bool convertEnums = true,
+    bool retryOnTransientNetworkErrors = true,
   }) {
     return _dataSource.mutate<T>(
       mutation,
@@ -32,6 +33,7 @@ class CustomOperations {
       fromJson: fromJson,
       expectedDataType: expectedDataType,
       convertEnums: convertEnums,
+      retryOnTransientNetworkErrors: retryOnTransientNetworkErrors,
     );
   }
 
@@ -73,6 +75,7 @@ class CustomOperations {
     T Function(Map<String, dynamic>)? fromJson,
     String? expectedDataType,
     bool convertEnums = false,
+    bool retryOnTransientNetworkErrors = true,
   }) {
     return _dataSource.mutateList<T>(
       mutation,
@@ -80,6 +83,7 @@ class CustomOperations {
       fromJson: fromJson,
       expectedDataType: expectedDataType,
       convertEnums: convertEnums,
+      retryOnTransientNetworkErrors: retryOnTransientNetworkErrors,
     );
   }
 
