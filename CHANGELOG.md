@@ -1,3 +1,18 @@
+## 3.0.1 - 2026-09-22
+
+### Fixes
+
+- **Transient network failures**: Added retry logic for transient connection-level network failures in the data source layer, improving reliability in unstable network conditions.
+
+### Features
+
+- **Real exercises**: Added gym exercises for the Vendure SDK — warmup and fetch-product-by-id operations to validate SDK functionality.
+
+### Chores
+
+- Added `.memsearch` recall artifact to `.gitignore`.
+- Post-publish steps documented in `PUBLISH.md`.
+
 ## 3.0.0 - 2026-08-07
 
 Complete SDK rewrite using the Zuraffa v5 + Zorphy architecture. All Freezed-based
