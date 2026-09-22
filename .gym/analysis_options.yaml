@@ -1,0 +1,8 @@
+# GYM scripts follow the issue-#397 `<id>-<name>.dart` rep format
+# (e.g. 01-deps.dart, 03-smoke.dart) and are standalone `dart run`
+# scripts graded by the miki GYM runner — not part of the SDK's compiled
+# surface. They live outside the package's lint regime, mirroring how
+# zuraffa excludes .gym/** in its analysis_options.yaml.
+analyzer:
+  exclude:
+    - '**'
