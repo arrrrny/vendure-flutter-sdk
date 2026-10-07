@@ -39,3 +39,25 @@ schema.graphql
 .specify
 
 .memsearch
+
+# --- forklift: fleet extension set (committed on purpose) ---
+# The `.**` rule above ignores every dotfile, which would swallow the payload a
+# cloud lane needs: .specify/extensions/** (the assess/triage commands) and the
+# .agents/.kimi-code skill files they register. Re-include them explicitly.
+!.specify/
+.specify/*
+!.specify/extensions/
+!.specify/extensions.yml
+!.specify/memory/
+.specify/memory/*
+!.specify/memory/constitution.md
+!.agents/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/speckit-*/
+!.kimi-code/
+.kimi-code/*
+!.kimi-code/skills/
+.kimi-code/skills/*
+!.kimi-code/skills/speckit-*/
