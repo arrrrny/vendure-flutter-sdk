@@ -824,7 +824,16 @@ class Vendure {
         'No TokenManager configured for this Vendure instance.',
       );
     }
-    return _tokenManager.refreshToken(params);
+    await _tokenManager.refreshToken(params);
+    // Mirror the refreshed token onto the instance: the HTTP link reads
+    // `_token` first — set once at initialization — and only falls back to
+    // the TokenManager when it is null, so a refresh that touched only the
+    // manager never reached the wire and authenticated sessions went
+    // permanently stale (arrrrny/vendure-flutter-sdk#17).
+    final refreshed = _tokenManager.token;
+    if (refreshed != null) {
+      _token = refreshed;
+    }
   }
 
   static Future<void> refreshToken(Map<String, dynamic> params) async {

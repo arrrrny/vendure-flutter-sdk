@@ -1,3 +1,9 @@
+## 3.0.2 - 2026-10-24
+
+### Fixes
+
+- **Session refresh now reaches the wire**: `Vendure.refreshToken()` updated only the internal `TokenManager`, while the HTTP link kept sending the token captured at initialization. Refreshed sessions were never used, so once the server-side session expired, every authenticated request kept failing (e.g. `403 {code: FORBIDDEN, reason: AUTHENTICATION_REQUIRED}` behind deny-anonymous Shop API gates). `refreshToken` now mirrors the new token onto the instance the link reads (arrrrny/vendure-flutter-sdk#17).
+
 ## 3.0.1 - 2026-09-22
 
 ### Fixes
