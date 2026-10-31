@@ -22,6 +22,7 @@ ZikZak AI is an AI-Powered Price Comparison app that you scan barcodes, and disc
 - Add items to the cart
 - Manage orders
 - Manage customers
+- Customer-group segmentation matrix: derive the built-in Vendure `CustomerGroup`s (age × shopping style × brand) for any customer, with typed accessors for the notifications boolean
 - Access catalog and system information
 - Extendable to support custom GraphQL operations
 - Global enum conversion toggles: `VendureUtils.convertQueryEnums` and `VendureUtils.convertMutationEnums` (both default to `true`). Use `VendureUtils.setConvertEnums({bool? queryEnums, bool? mutationEnums})` to change them globally.
@@ -694,6 +695,44 @@ Future<void> deleteCustomerAddress(String addressId) async {
     print('Error deleting customer address: $e');
   }
 }
+```
+
+### Customer Groups (Segmentation Matrix)
+
+Vendure segments customers with its built-in `CustomerGroup`s. The SDK models
+the 3-axis segmentation matrix — **age group** (derived from
+`profile.yearOfBirth`), **shopping style** (`cheap`/`value`/`brand` =
+budget/value/brand) and **brand segment** — and derives, for any customer,
+exactly the built-in group names the server groups by (`age-*`, `style-*`,
+`brand-*`; one per set axis). The shop API exposes no group query or mutation,
+so assignment itself happens server-side; the SDK names the groups, persists
+the axes and answers the notifications question.
+
+```dart
+import 'package:vendure/vendure_utils.dart';
+
+// The full matrix, indexed by axis — the catalog a dashboard iterates over.
+CustomerGroupMatrix.axes['age'];   // age-teen … age-senior
+CustomerGroupMatrix.allGroups;     // every built-in group name (13)
+
+// Which built-in groups does this customer belong to?
+final groups = CustomerGroupMatrix.groupsForCustomer(customer);
+// e.g. ['age-adult', 'style-brand', 'brand-premium']
+
+// Persist a segmentation axis without wiping the others (Vendure replaces
+// the whole `profile` struct on write, so always merge, never patch):
+await vendure.customer.updateCustomer(
+  input: UpdateCustomerInput(
+    customFields: CustomerGroupMatrix.mergedProfileCustomFields(
+      currentCustomFields: customer.customFields,
+      profileUpdates: {'shoppingStyle': 'brand', 'brandSegment': 'premium'},
+    ),
+  ),
+);
+
+// Notifications: yes — the flag is saved as a boolean on the customer
+// profile (`isNotificationsEnabled` custom field).
+final enabled = CustomerGroupMatrix.notificationsEnabled(customer.customFields);
 ```
 
 ## System Operations
