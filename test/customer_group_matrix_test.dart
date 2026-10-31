@@ -94,6 +94,20 @@ void main() {
       expect(CustomerGroupMatrix.styleGroupName(''), isNull);
     });
 
+    test('unknown style values parse to null, never a fabricated name', () {
+      // 'budget' is the app's UI label, not a wire option; emitting
+      // style-budget would fabricate a group the server never created.
+      expect(CustomerGroupMatrix.styleGroupName('budget'), isNull);
+      expect(CustomerGroupMatrix.styleGroupName('garbage'), isNull);
+      expect(CustomerGroupMatrix.styleGroupName('123'), isNull);
+    });
+
+    test('style wire values match case-insensitively', () {
+      expect(CustomerGroupMatrix.styleGroupName('Cheap'), 'style-cheap');
+      expect(CustomerGroupMatrix.styleGroupName('VALUE'), 'style-value');
+      expect(CustomerGroupMatrix.styleGroupName('Brand'), 'style-brand');
+    });
+
     test('brand axis uses the brand- prefix with kebab-cased segments', () {
       expect(
         CustomerGroupMatrix.brandGroupName(BrandSegment.premium),
@@ -177,6 +191,13 @@ void main() {
         expect(name, matches(RegExp(r'^[a-z]+(-[a-z]+)*$')), reason: name);
       }
     });
+
+    test('allGroups is a constant catalog, not rebuilt per access', () {
+      expect(
+        CustomerGroupMatrix.allGroups,
+        same(CustomerGroupMatrix.allGroups),
+      );
+    });
   });
 
   group('CustomerGroupMatrix groupsForProfile', () {
@@ -216,6 +237,40 @@ void main() {
       );
       expect(CustomerGroupMatrix.groupsForProfile(null), isEmpty);
       expect(CustomerGroupMatrix.groupsForProfile({}), isEmpty);
+    });
+
+    test('an unknown shoppingStyle is skipped, not emitted', () {
+      expect(
+        CustomerGroupMatrix.groupsForProfile({'shoppingStyle': 'garbage'}),
+        isEmpty,
+      );
+      expect(
+        CustomerGroupMatrix.groupsForProfile({'shoppingStyle': 'budget'}),
+        isEmpty,
+      );
+    });
+
+    test('malformed wire types parse to null instead of throwing', () {
+      // customFields is an opaque wire blob; one bad customer row must not
+      // crash every derivation that consumes it.
+      expect(
+        CustomerGroupMatrix.groupsForProfile({'yearOfBirth': '1990'}),
+        isEmpty,
+      );
+      expect(
+        CustomerGroupMatrix.groupsForProfile({'yearOfBirth': true}),
+        isEmpty,
+      );
+      expect(
+        CustomerGroupMatrix.groupsForProfile({'shoppingStyle': 42}),
+        isEmpty,
+      );
+      expect(
+        CustomerGroupMatrix.groupsForProfile({
+          'brandSegment': ['premium'],
+        }),
+        isEmpty,
+      );
     });
 
     test('orders groups age, then style, then brand', () {
@@ -268,6 +323,16 @@ void main() {
           Customer.fromJson(customerJson({})),
         ),
         isEmpty,
+      );
+    });
+
+    test('a malformed profile struct is skipped, not thrown', () {
+      final customer = Customer.fromJson(
+        customerJson({'profile': 'x', 'shoppingStyle': 'brand'}),
+      );
+      expect(
+        CustomerGroupMatrix.groupsForCustomer(customer, referenceYear: 2026),
+        ['style-brand'],
       );
     });
   });
@@ -329,6 +394,14 @@ void main() {
         isNull,
       );
     });
+
+    test('a malformed profile struct yields null instead of throwing', () {
+      expect(
+        CustomerGroupMatrix.notificationsEnabled({'profile': 'x'}),
+        isNull,
+      );
+      expect(CustomerGroupMatrix.notificationsEnabled({'profile': 7}), isNull);
+    });
   });
 
   group('CustomerGroupMatrix mergedProfileCustomFields', () {
@@ -374,6 +447,14 @@ void main() {
         profileUpdates: {'shoppingStyle': 'brand'},
       );
       expect(current['profile'], {'shoppingStyle': 'cheap'});
+    });
+
+    test('a malformed current profile struct does not throw', () {
+      final merged = CustomerGroupMatrix.mergedProfileCustomFields(
+        currentCustomFields: {'profile': 'x'},
+        profileUpdates: {'brandSegment': 'premium'},
+      );
+      expect(merged['profile'], {'brandSegment': 'premium'});
     });
   });
 }

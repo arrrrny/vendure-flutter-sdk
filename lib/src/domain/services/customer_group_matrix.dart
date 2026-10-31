@@ -71,7 +71,7 @@ abstract final class CustomerGroupMatrix {
   ];
 
   /// Every built-in group name of the matrix — [axes] flattened.
-  static List<String> get allGroups => [
+  static const List<String> allGroups = [
     ...ageGroupNames,
     ...styleGroupNames,
     ...brandGroupNames,
@@ -106,13 +106,21 @@ abstract final class CustomerGroupMatrix {
   static String? ageGroupName(AgeGroup? group) =>
       group == null ? null : 'age-${_kebab(group.name)}';
 
+  /// The server's `profile.shoppingStyle` wire options (`cheap`/`value`/
+  /// `brand`; the app's UI labels are budget/value/brand).
+  static const Set<String> _shoppingStyles = {'cheap', 'value', 'brand'};
+
   /// The Vendure customer-group name for a shopping-style value — the
   /// server's `profile.shoppingStyle` option (`cheap`/`value`/`brand` =
-  /// budget/value/brand).
-  static String? styleGroupName(String? shoppingStyle) =>
-      (shoppingStyle == null || shoppingStyle.isEmpty)
-      ? null
-      : 'style-${_kebab(shoppingStyle)}';
+  /// budget/value/brand), matched case-insensitively. Unknown values
+  /// parse to `null` instead of fabricating a group name, like the brand
+  /// axis — only one of the 13 built-ins may be emitted.
+  static String? styleGroupName(String? shoppingStyle) {
+    if (shoppingStyle == null || shoppingStyle.isEmpty) return null;
+    final normalized = shoppingStyle.toLowerCase();
+    if (!_shoppingStyles.contains(normalized)) return null;
+    return 'style-$normalized';
+  }
 
   /// The Vendure customer-group name for a brand segment.
   static String? brandGroupName(BrandSegment? segment) =>
@@ -130,12 +138,12 @@ abstract final class CustomerGroupMatrix {
     return [
       ?ageGroupName(
         ageGroupFor(
-          (profile['yearOfBirth'] as num?)?.toInt(),
+          _asNum(profile['yearOfBirth'])?.toInt(),
           referenceYear: referenceYear,
         ),
       ),
-      ?styleGroupName(profile['shoppingStyle'] as String?),
-      ?brandGroupName(brandSegmentFor(profile['brandSegment'] as String?)),
+      ?styleGroupName(_asString(profile['shoppingStyle'])),
+      ?brandGroupName(brandSegmentFor(_asString(profile['brandSegment']))),
     ];
   }
 
@@ -149,7 +157,7 @@ abstract final class CustomerGroupMatrix {
     final customFields = customer?.customFields;
     if (customFields == null) return const [];
     final profile = Map<String, dynamic>.from(
-      (customFields['profile'] as Map?)?.cast<String, dynamic>() ?? const {},
+      _asMap(customFields['profile']) ?? const <String, dynamic>{},
     );
     profile['yearOfBirth'] ??= customFields['yearOfBirth'];
     profile['shoppingStyle'] ??= customFields['shoppingStyle'];
@@ -157,18 +165,18 @@ abstract final class CustomerGroupMatrix {
     return groupsForProfile(profile, referenceYear: referenceYear);
   }
 
-  /// The notifications flag from the customer's custom fields: the server
-  /// stores it as the built-in `isNotificationsEnabled` boolean on the
-  /// customer, with the zik_zak profile-level `notificationsEnabled` as
-  /// fallback. Anything that is not a `bool` yields `null` instead of
-  /// throwing.
+  /// The notifications flag from the customer's custom fields, checked in
+  /// precedence order: the server's built-in `isNotificationsEnabled`
+  /// boolean on the customer, then a top-level `notificationsEnabled`
+  /// custom field, then the zik_zak profile-level `notificationsEnabled`.
+  /// Anything that is not a `bool` yields `null` instead of throwing.
   static bool? notificationsEnabled(Map<String, dynamic>? customFields) {
     if (customFields == null) return null;
     final server = customFields['isNotificationsEnabled'];
     if (server is bool) return server;
     final topLevel = customFields['notificationsEnabled'];
     if (topLevel is bool) return topLevel;
-    final profile = (customFields['profile'] as Map?)?['notificationsEnabled'];
+    final profile = _asMap(customFields['profile'])?['notificationsEnabled'];
     if (profile is bool) return profile;
     return null;
   }
@@ -186,8 +194,7 @@ abstract final class CustomerGroupMatrix {
     Map<String, dynamic>? profileUpdates,
   }) {
     final currentProfile =
-        (currentCustomFields?['profile'] as Map?)?.cast<String, dynamic>() ??
-        const <String, dynamic>{};
+        _asMap(currentCustomFields?['profile']) ?? const <String, dynamic>{};
     return {
       ...?currentCustomFields,
       'profile': {...currentProfile, ...?profileUpdates},
@@ -203,4 +210,17 @@ abstract final class CustomerGroupMatrix {
   /// `privateLabel` / `private_label` / `private-label` → `privatelabel`.
   static String _squash(String value) =>
       value.toLowerCase().replaceAll('_', '').replaceAll('-', '');
+
+  /// A wire value as a [num]; anything else parses to `null`.
+  static num? _asNum(dynamic value) => value is num ? value : null;
+
+  /// A wire value as a [String]; anything else parses to `null`.
+  static String? _asString(dynamic value) => value is String ? value : null;
+
+  /// A wire value as a string-keyed map; anything else parses to `null`.
+  /// `customFields` is an opaque scalar blob, so a malformed payload must
+  /// parse to `null` instead of throwing (the rule [brandSegmentFor] and
+  /// [notificationsEnabled] already follow).
+  static Map<String, dynamic>? _asMap(dynamic value) =>
+      value is Map ? value.cast<String, dynamic>() : null;
 }
