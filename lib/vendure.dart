@@ -21,6 +21,7 @@ import 'data/repositories/data_system_repository.dart';
 export 'src/types/exports.dart';
 export 'src/domain/entities/vendure_query_options.dart';
 export 'src/domain/entities/paginated_list.dart';
+export 'src/domain/services/customer_group_matrix.dart';
 export 'src/vendure/app_check_provider.dart';
 
 class Vendure {

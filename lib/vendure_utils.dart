@@ -7,3 +7,4 @@
 library;
 
 export 'src/vendure/vendure_utils.dart';
+export 'src/domain/services/customer_group_matrix.dart';
