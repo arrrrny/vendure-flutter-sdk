@@ -1,3 +1,16 @@
+<!-- ZURAFFA-LAUNCH-PROMO (valid until Dec 1, 2026) -->
+## 🦒 [Zuraffa Browser](https://zuraffa.com) — now live
+
+<div align="center">
+  <a href="https://zuraffa.com"><img src="https://zuraffa.com/img/zuraffa-browser-home.jpg" alt="Zuraffa Browser — 10 Browsers. One window." width="800"></a>
+</div>
+
+**[Zuraffa Browser](https://zuraffa.com)** — the multi-tasking browser for AI agents & humans — is live on the [Mac App Store](https://apps.apple.com/app/id6811352058).
+
+🎁 **Launch offer: 6 months free with code `ZURAFFA`** — no credit card, no subscription, no payment. Redeem in-app until **Dec 1, 2026**.
+
+---
+
 # Vendure Flutter SDK
 
 [![Pub Version](https://img.shields.io/pub/v/vendure.svg)](https://pub.dev/packages/vendure)
@@ -34,7 +47,7 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  vendure: ^2.8.0
+  vendure: ^7.3.8
 ```
 
 Note: Starting with v2.8.0 the SDK exposes global flags to control enum conversion:
