@@ -10,7 +10,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:graphql/client.dart';
+import 'package:graphql_plus/graphql_plus.dart';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 import 'package:vendure/data/datasources/remote/vendure_remote_datasource.dart';
