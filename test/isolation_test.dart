@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:graphql/client.dart';
+import 'package:graphql_plus/graphql_plus.dart';
 import 'dart:async';
 
 import 'test_config.dart';

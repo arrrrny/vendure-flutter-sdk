@@ -1,5 +1,5 @@
 
-import 'package:graphql/client.dart';
+import 'package:graphql_plus/graphql_plus.dart';
 import 'package:http/http.dart' as http;
 
 import 'src/subscriptions/active_customer_stream_subscription.dart';

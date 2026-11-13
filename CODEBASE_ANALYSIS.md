@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-The Vendure Flutter SDK is a comprehensive GraphQL-based e-commerce client for Flutter applications. It provides a clean, well-structured architecture for connecting to Vendure's headless commerce backend. The SDK is built on the `graphql` and `http` Dart packages and uses a modular approach with clear separation of concerns.
+The Vendure Flutter SDK is a comprehensive GraphQL-based e-commerce client for Flutter applications. It provides a clean, well-structured architecture for connecting to Vendure's headless commerce backend. The SDK is built on the `graphql_plus` (hardened fork of `graphql`) and `http` Dart packages and uses a modular approach with clear separation of concerns.
 
 ---
 
@@ -773,7 +773,7 @@ class AdminOperations {
 ## 12. Dependency Analysis
 
 ```
-graphql: ^5.2.1       → GraphQL client
+graphql_plus: ^5.2.6  → GraphQL client (hardened fork of graphql 5.x)
 http: ^1.0.0          → HTTP requests
 freezed_annotation    → Type generation
 json_annotation       → JSON serialization

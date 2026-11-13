@@ -1,4 +1,4 @@
-import 'package:graphql/client.dart';
+import 'package:graphql_plus/graphql_plus.dart';
 
 import '../../../vendure_utils.dart';
 

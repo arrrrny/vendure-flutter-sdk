@@ -1,4 +1,4 @@
-import 'package:graphql/client.dart';
+import 'package:graphql_plus/graphql_plus.dart';
 import 'package:vendure/src/vendure/operation_type_enum.dart';
 import 'package:vendure/src/vendure/vendure_utils.dart';
 

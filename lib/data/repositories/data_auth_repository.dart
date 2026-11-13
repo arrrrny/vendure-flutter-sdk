@@ -8,7 +8,7 @@
 /// is the original auth pipeline. [VendureRemoteDataSource] is not used for
 /// auth mutations because the error handling differs from the generic pipeline.
 
-import 'package:graphql/client.dart';
+import 'package:graphql_plus/graphql_plus.dart';
 import 'package:vendure/data/datasources/local/token_local_datasource.dart';
 import 'package:vendure/src/domain/repositories/auth_repository.dart';
 import 'package:vendure/src/mutations/authenticate_mutation.dart';
