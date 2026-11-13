@@ -1,0 +1,10 @@
+# Repo-internal fleet/agent scaffolding — committed to the repo on purpose,
+# but not part of the published SDK (dart.dev/go/pubignore). The .gitignore
+# re-includes the fleet extension payload so cloud lanes get it; this file
+# keeps that payload out of the pub.dev archive instead.
+.specify/
+.kimi-code/
+.agents/
+.claude/
+.gym/
+.memsearch/
