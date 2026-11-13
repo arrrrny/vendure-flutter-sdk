@@ -1,3 +1,9 @@
+## Unreleased
+
+### Changes
+
+- **GraphQL client swapped to the hardened fork `graphql_plus`**: the SDK's GraphQL dependency moved from stock `graphql` to `graphql_plus` 5.2.6 — a source fork of `graphql` 5.2.4 that adds the QueryManager double-completion fix (the root cause of the `Bad state: Future already completed` timeout storms) plus cancellation APIs (`queryCancellable`, `mutateCancellable`, `CancellationToken`, `CancellableOperation`, `CancelledException`). Consumers must not mix `graphql` and `graphql_plus` in one app: they are distinct package identities with distinct type universes, so a `graphql` `Client`/`Link` cannot be passed where this SDK expects a `graphql_plus` one.
+
 ## 3.0.2 - 2026-10-24
 
 ### Fixes
