@@ -107,3 +107,45 @@ for `dart test`; pass the flag anyway when you override it, and never raise
 the number on a host that also runs the forklift pool. CI carries the same
 flags in `.github/workflows`.
 <!-- test-concurrency:end -->
+
+<!-- dependency-bump-rule:begin -->
+## Publishing without a dependency bump is a no-op — file the upgrade chore
+
+Before any release, resolve the lockfile and align the DECLARED constraints to
+what actually resolved. The lockfile is what ships: a `pubspec.yaml` saying
+`^7.3.8` next to a resolved `7.4.2` only guarantees the next machine resolves
+to something else, so the release you just cut is not the release anyone else
+gets.
+
+```bash
+rm -f pubspec.lock
+dart pub get                     # or `flutter pub get` for an app
+# then set every caret constraint to the version the resolver picked
+```
+
+**Then look at what is still held back.** `dart pub outdated` (or
+`flutter pub outdated`) lists every package whose declared constraint refuses
+an available upgrade — the canonical example is `google_fonts` sitting on
+`8.2.1` while `9.0.0` is out. Those are the upgrades this release did NOT take.
+
+**The rule:** when a package could be upgraded but was not bumped
+automatically, the publish **continues as normal** — do not block the release
+on it — and you MUST file a GitHub chore issue for the available upgrades.
+A publish that silently leaves upgrades on the table is not a smaller publish;
+it is a publish nobody knows is stale. File the issue with the package names,
+the current and available versions, and whether the constraint or a transitive
+pin is what holds it.
+
+Two corollaries worth remembering:
+
+- **A `dart pub upgrade` that changes nothing is a signal, not a success.**
+  If the constraint blocks the upgrade, bumping the constraint is the fix —
+  and that is exactly the chore issue above.
+- **Transitive holds are still chore material.** A package held only because
+  a dependency pins it is not this repo's constraint to widen, but it is still
+  an available upgrade a human should decide on.
+
+This applies to every Dart/Flutter repo in the fleet. A repo whose publish
+flow already runs the lockfile dance (see each repo's `PUBLISH.md`) still owes
+the chore issue for whatever `pub outdated` reports.
+<!-- dependency-bump-rule:end -->
