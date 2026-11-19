@@ -13,6 +13,16 @@
 
 # Vendure Flutter SDK
 
+> **⚠️ DEPRECATED (2026-11-19) — superseded by
+> [arrrrny/zuraffa_vendure](https://github.com/arrrrny/zuraffa_vendure).**
+> The `vendure` package name on [pub.dev](https://pub.dev/packages/vendure)
+> now belongs to the successor repo (7.4.x line, mono-versioned with the
+> zuraffa fleet). This repository is in maintenance-only mode: **no further
+> versions will be published from here** (see [PUBLISH.md](PUBLISH.md) — the
+> publish flow is retired and `dart pub publish` is disabled via
+> `publish_to: 'none'`). Existing `3.0.x` consumers should migrate to the
+> successor SDK for continued releases.
+
 [![Pub Version](https://img.shields.io/pub/v/vendure.svg)](https://pub.dev/packages/vendure)
 [![Build Status](https://github.com/your_username/vendure/workflows/CI/badge.svg)](https://github.com/arrrrny/vendure-flutter-sdk/actions)
 
