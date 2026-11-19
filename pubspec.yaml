@@ -2,6 +2,11 @@ name: vendure
 description: Flutter SDK for Vendure Open Source Headless Commerce Framework.
 version: 3.0.2
 homepage: https://github.com/arrrrny/vendure-flutter-sdk
+# Retired publish flow (issue #22): the `vendure` pub.dev name now belongs to
+# arrrrny/zuraffa_vendure (7.4.x). Publishing 3.0.2 from here would be a
+# regressive release into the successor's live line, so publishing is stopped
+# at the package level. See PUBLISH.md.
+publish_to: 'none'
 
 environment:
   sdk: ">=3.11.0 <4.0.0"
