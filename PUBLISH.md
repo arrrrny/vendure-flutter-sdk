@@ -7,11 +7,14 @@
 > the successor: [pub.dev/packages/vendure](https://pub.dev/packages/vendure)
 > resolves to `arrrrny/zuraffa_vendure` (7.4.x line when this was written,
 > latest published 2026-11-11; the live line has since moved to 7.5.x). The
-> last version published from THIS repo was `3.0.1` (2026-09-22); the
-> `pubspec.yaml` on `master` sits at `3.0.2`, below the live line — a publish
-> here would be a **regressive release into a name the successor owns**, and
-> `dart pub publish --dry-run` on master exits 65 with the server hint
-> "The latest published version is 7.4.1".
+> last version published from THIS repo was `3.0.2` (2026-11-13, ~7h after
+> issue #22 was filed — the misfired publish eventually shipped; pub.dev does
+> not expose the uploader anonymously, so the attribution is not recorded
+> here); the `pubspec.yaml` on `master` sits at the same `3.0.2` — a publish
+> here is a **duplicate-version rejection** (already live on pub.dev under a
+> name the successor owns), and any **bumped** future publish would be the
+> regressive release into that name. `dart pub publish --dry-run` on master
+> exits 65 with the server hint "The latest published version is 7.5.0".
 >
 > `pubspec.yaml` therefore carries `publish_to: 'none'` and the real
 > `dart pub publish` refuses mechanically:
@@ -34,7 +37,7 @@
 
 | branch | version | registry | state |
 |---|---|---|---|
-| `master` (default) | 3.0.2 | pub.dev (no `publish_to` before this change) | below live **7.4.1** → regressive |
+| `master` (default) | 3.0.2 | pub.dev (no `publish_to` before this change) | 3.0.2 already live (2026-11-13) → duplicate-version rejection |
 | `development` | 3.1.1 | `https://pub.zuzu.dev` | **already published** (2026-08-23, `4ca0beb`) — nothing new to ship |
 
 - `development`'s dependency graph no longer resolves either: its

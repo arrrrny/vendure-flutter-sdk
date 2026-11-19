@@ -16,8 +16,8 @@
 > **⚠️ DEPRECATED (2026-11-19) — superseded by
 > [arrrrny/zuraffa_vendure](https://github.com/arrrrny/zuraffa_vendure).**
 > The `vendure` package name on [pub.dev](https://pub.dev/packages/vendure)
-> now belongs to the successor repo (7.4.x line, mono-versioned with the
-> zuraffa fleet). This repository is in maintenance-only mode: **no further
+> now belongs to the successor repo (mono-versioned with the
+> zuraffa fleet; the pub badge below shows the live version). This repository is in maintenance-only mode: **no further
 > versions will be published from here** (see [PUBLISH.md](PUBLISH.md) — the
 > publish flow is retired and `dart pub publish` is disabled via
 > `publish_to: 'none'`). Existing `3.0.x` consumers should migrate to the
